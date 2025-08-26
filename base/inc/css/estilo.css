@@ -1,0 +1,186 @@
+body { 
+    background: url(../../img/fondo_global.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.img_fix_full{
+    width: 100%;
+}
+/*
+Permite utilizar FontAwesome con &#xHHHH ej &#xf030; se usa cuando no se puede usar el tag < i > ver http://fontawesome.io/cheatsheet/ 
+*/
+.fa-fa {
+    font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu>.dropdown-menu {
+    top:0;
+    left:100%;
+    margin-top:-6px;
+    margin-left:-1px;
+    -webkit-border-radius:0 6px 6px 6px;
+    -moz-border-radius:0 6px 6px 6px;
+    border-radius:0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+    display:block;
+}
+.dropdown-submenu>a:after {
+    display:block;
+    content:" ";
+    float:right;
+    width:0;
+    height:0;
+    border-color:transparent;
+    border-style:solid;
+    border-width:5px 0 5px 5px;
+    border-left-color:#cccccc;
+    margin-top:5px;
+    margin-right:-10px;
+}
+.dropdown-submenu:hover>a:after {
+    border-left-color:#ffffff;
+}
+.dropdown-submenu.pull-left {
+    float:none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left:-100%;
+    margin-left:10px;
+    -webkit-border-radius:6px 0 6px 6px;
+    -moz-border-radius:6px 0 6px 6px;
+    border-radius:6px 0 6px 6px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #FFFFFF;
+}
+
+.navbar-inverse {
+    background-image: linear-gradient(to bottom, #DB4646 0px, #B50000 100%);
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .open > a {
+    background-image: linear-gradient(to bottom, #c93a3a 0px, #840000 100%);
+}
+
+.puntero{
+    cursor: pointer;
+}
+
+.table_fix_nav{
+    width:140px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.form-inline .fecha2{
+    display: inline-block;
+    width: 50px;
+}
+
+.form-inline .fecha4{
+    display: inline-block;
+    width: 75px;
+}
+
+.checkbox_efect label:after, 
+.radio_efect label:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.checkbox_efect .cr,
+.radio_efect .cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #a9a9a9;
+    border-radius: .25em;
+    width: 1.3em;
+    height: 1.3em;
+    float: left;
+    margin-right: .5em;
+}
+
+.radio_efect .cr {
+    border-radius: 50%;
+}
+
+.checkbox_efect .cr .cr-icon,
+.radio_efect .cr .cr-icon {
+    position: absolute;
+    font-size: .8em;
+    line-height: 0;
+    top: 50%;
+    left: 20%;
+}
+
+.radio_efect .cr .cr-icon {
+    margin-left: 0.04em;
+}
+
+.checkbox_efect label input[type="checkbox"],
+.radio_efect label input[type="radio"] {
+    display: none;
+}
+
+.checkbox_efect label input[type="checkbox"] + .cr > .cr-icon,
+.radio_efect label input[type="radio"] + .cr > .cr-icon {
+    transform: scale(3) rotateZ(-20deg);
+    opacity: 0;
+    transition: all .3s ease-in;
+}
+
+.checkbox_efect label input[type="checkbox"]:checked + .cr > .cr-icon,
+.radio_efect label input[type="radio"]:checked + .cr > .cr-icon {
+    transform: scale(1) rotateZ(0deg);
+    opacity: 1;
+}
+
+.checkbox_efect label input[type="checkbox"]:disabled + .cr,
+.radio_efect label input[type="radio"]:disabled + .cr {
+    opacity: .5;
+}
+
+@media only screen and (min-width: 1200px){
+    #fix_valing_log{
+        width: 100%;
+        height: 70px;
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    #fix_valing_log{
+        width: 100%;
+        height: 70px;
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    #fix_valing_log{
+        width: 100%;
+        height: 70px;
+        display: block;
+    }
+}
+
+@media only screen and  (max-width: 767px) {
+    #fix_valing_log{
+        width: 100%;
+        height: 70px;
+        display: none;
+    }
+}
