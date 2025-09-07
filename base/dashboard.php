@@ -1,6 +1,15 @@
 <?php
-    session_start();
-    $rol = $_SESSION['rol'];
+    include(dirname(__FILE__) . "/lib/mysession/mySession.class.php");
+    include(dirname(__FILE__) . "/lib/mysession/mySession.conf.php");
+
+    $mySessionController = mySession::getIstance($_MYSESSION_CONF);
+    $rol = $mySessionController->getVar("rol");
+
+    if (!$rol) {
+        header("Location: login.php");
+        exit();
+    }
+
 
     switch ($rol) {
         case 1: // Estudiante
@@ -19,7 +28,3 @@
             echo "Rol no reconocido.";
     }
 ?>
-<!DOCTYPE html>
-<html>
-
-</html>
