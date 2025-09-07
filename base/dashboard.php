@@ -10,7 +10,6 @@
         exit();
     }
 
-
     switch ($rol) {
         case 1: // Estudiante
             include 'panel_estudiante.php';
