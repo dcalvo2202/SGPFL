@@ -16,7 +16,7 @@
     </head>
     <body>
         <div className="page-container">
-            <h1 className="mb-4">Autoevaluacion</h1>
+            <h1 className="mb-4">Estudiante</h1>
             <main className="flex-grow-1 container py-4">
                 <a href="index.php">Inicio</a>
                 <a href="/">Envio documentos</a>
