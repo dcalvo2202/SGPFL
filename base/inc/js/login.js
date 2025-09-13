@@ -49,12 +49,13 @@ function Do_Login(){
         //AJAX Insercion
         ajax.open("POST",_URL_,true);
         ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        ajax.setRequestHeader("Content-length", _values_send.length);
-        ajax.setRequestHeader("Connection", "close");
+        //ajax.setRequestHeader("Content-length", _values_send.length);
+        //ajax.setRequestHeader("Connection", "close");
         ajax.send(_values_send);
         ajax.onreadystatechange = function() {//Call a function when the state changes.
             if(ajax.readyState == 4 && ajax.status == 200) {
                 var response = ajax.responseText;
+                console.log("Respuesta del backend:", response);
                 if(response== "0"){
                     window.location=document.getElementById("cds_domain_locate").value+"main.php";
                 }else if ( response== "1"){

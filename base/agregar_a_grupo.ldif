@@ -1,0 +1,4 @@
+dn: cn=Estudiantes,ou=Groups,dc=una,dc=ac,dc=cr
+changetype: modify
+add: member
+member: uid=prueba1,ou=People,dc=una,dc=ac,dc=cr

@@ -36,7 +36,7 @@
                         <form method="post" action="mod/login/ajax_login.php">
                             <div class="form-group">
                                 <label for="user"><?= $vocab["login_user"] ?> </label>
-                                <input id="user" name="user" class="form-control" type="text" placeholder="<?= $vocab["login_user"] ?>" onkeypress="return onlyNumbers(event, 0);"/>
+                                <input id="user" name="user" class="form-control" type="text" placeholder="<?= $vocab["login_user"] ?>"/>
                                 <p class="help-block" id="guia_1"><small><?= $vocab["login_user_desc"] ?></small></p>
                             </div>
                             <div class="form-group">
