@@ -1,25 +1,32 @@
 <?php
+
 $mensaje = '';
 
+// Establece la fecha actual para el campo de aprobación (solo fecha)
+$fecha_actual = date('Y-m-d');
+
+// Procesa el formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Recoge los datos del formulario
     $nombre = trim($_POST['nombre'] ?? '');
     $estudiante = trim($_POST['estudiante'] ?? '');
     $comite = trim($_POST['comite'] ?? '');
     $categoria = trim($_POST['categoria'] ?? '');
-    $fecha_aprobacion = trim($_POST['fecha_aprobacion'] ?? '');
+    // La fecha y hora actual para guardar en la base de datos
+    $fecha_aprobacion = date('Y-m-d H:i:s');
+    $documento = $_FILES['documento'] ?? null;
 
     // Validación básica
-    if ($nombre === '' || $estudiante === '' || $comite === '' || $categoria === '' || $fecha_aprobacion === '') {
-        $mensaje = '<div style="color:red;">Todos los campos son obligatorios.</div>';
+    if ($nombre === '' || $estudiante === '' || $comite === '' || $categoria === '' || !$documento || $documento['error'] !== UPLOAD_ERR_OK) {
+        $mensaje = '<div style="color:red;">Todos los campos y el documento son obligatorios.</div>';
     } else {
-        // Aquí puedes agregar la lógica para guardar en la base de datos
-        // Ejemplo:
+        // Aquí puedes agregar la lógica para guardar en la base de datos y subir el archivo
         // require_once 'inc/db/db.php';
         // $sql = "INSERT INTO proyectos (...) VALUES (...)";
         // $result = mysqli_query($conn, $sql);
+        // move_uploaded_file($documento['tmp_name'], 'ruta/destino/' . $documento['name']);
 
-        $mensaje = '<div style="color:green;">Proyecto validado correctamente. (Falta guardar en la base de datos)</div>';
+        $mensaje = '<div style="color:green;">Proyecto validado correctamente. (Falta guardar en la base de datos y subir el documento)</div>';
     }
 }
 ?><!doctype html>
@@ -81,13 +88,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(9,37,103,0.08);
   }
   label {
     font-weight: bold;
+    color: var(--navy-dark);
   }
   input, select, button {
     padding: 8px;
     font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  input[type="file"] {
+    border: none;
   }
   button {
     background: var(--navy-mid);
@@ -95,10 +112,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     border: none;
     cursor: pointer;
     transition: background .3s;
+    margin-top: 10px;
   }
   button:hover {
     background: var(--navy-dark);
   }
+   .btn-tfg {
+    display: inline-block;
+    background-color: #1e73be;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+  }
+  .btn-tfg:hover {
+    background-color: #155a92;
+  }
+
 </style>
 </head>
 <body>
@@ -119,26 +154,75 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php if ($mensaje) echo $mensaje; ?>
   </div>
 
-  <form action="panel_ctfg.php" method="post">
+  <form action="panel_ctfg.php" method="post" enctype="multipart/form-data">
     <label for="nombre">Nombre del proyecto:</label>
     <input type="text" id="nombre" name="nombre" required>
 
     <label for="estudiante">Estudiante:</label>
     <select id="estudiante" name="estudiante" required>
       <option value="">Selecciona un estudiante</option>
+      <!-- Opciones dinámicas aquí -->
     </select>
 
     <label for="comite">Comité asesor:</label>
     <select id="comite" name="comite" required>
       <option value="">Selecciona un comité</option>
+      <!-- Opciones dinámicas aquí -->
     </select>
 
     <label for="categoria">Categoría:</label>
     <select id="categoria" name="categoria" required>
       <option value="">Selecciona una categoría</option>
+      <!-- Opciones dinámicas aquí -->
     </select>
 
-    <label for="fecha_aprobacion">Fecha de aprobación:</label>
-    <input type="date" id="fecha_aprobacion" name="fecha_aprobacion" required>
+    <label for="documento">Documento (Word, PDF, Excel):</label>
+    <label for="documento" class="btn-tfg">Subir documento</label>
+    <input type="file" id="documento" name="documento" accept=".pdf,.doc,.docx,.xls,.xlsx" required hidden>
 
-    <button type="submit">Registrar
+    <!-- Miniatura del documento -->
+    <div id="previewBox" style="display:none;align-items:center;gap:10px;margin:10px 0;">
+      <img id="previewIcon" src="" alt="icono" style="width:40px;height:40px;">
+      <span id="previewName" style="font-size:0.95rem;color:#092567;"></span>
+    </div>
+
+    <label for="fecha_aprobacion">Fecha de aprobación:</label>
+    <input type="date" id="fecha_aprobacion" name="fecha_aprobacion" value="<?php echo $fecha_actual; ?>" readonly>
+
+    <button type="submit">Registrar proyecto</button>
+  </form>
+
+  <script>
+    // Iconos base64 para mostrar miniatura según tipo de archivo
+    const icons = {
+      pdf: 'data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjYmQxMDE2IiB2aWV3Qm94PSIwIDAgMzIgMzIiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iI2ZmZmZmZiIvPjxwYXRoIGQ9Ik0yNCAyMEgyMFYyNEgyNFYyMFpNMjQgMTZIMjBWMThIMjRWMThaIiBmaWxsPSIjYmQxMDE2Ii8+PC9zdmc+',
+      doc: 'data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDkyNTY3IiB2aWV3Qm94PSIwIDAgMzIgMzIiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iI2ZmZmZmZiIvPjxwYXRoIGQ9Ik0yNCAyMEgyMFYyNEgyNFYyMFpNMjQgMTZIMjBWMThIMjRWMThaIiBmaWxsPSIjMDkyNTY3Ii8+PC9zdmc+',
+      xls: 'data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMGU0ZDkzIiB2aWV3Qm94PSIwIDAgMzIgMzIiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iI2ZmZmZmZiIvPjxwYXRoIGQ9Ik0yNCAyMEgyMFYyNEgyNFYyMFpNMjQgMTZIMjBWMThIMjRWMThaIiBmaWxsPSIjMGU0ZDkzIi8+PC9zdmc+'
+    };
+
+    // Mostrar el input file al hacer click en el label
+    document.querySelector('.btn-tfg').onclick = function(e) {
+      e.preventDefault();
+      document.getElementById('documento').click();
+    };
+
+    // Mostrar miniatura al seleccionar archivo
+    document.getElementById('documento').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file) {
+        document.getElementById('previewBox').style.display = 'none';
+        return;
+      }
+      const ext = file.name.split('.').pop().toLowerCase();
+      let icon = icons.pdf; // Default
+      if (['doc', 'docx'].includes(ext)) icon = icons.doc;
+      else if (['xls', 'xlsx'].includes(ext)) icon = icons.xls;
+      else if (ext === 'pdf') icon = icons.pdf;
+
+      document.getElementById('previewIcon').src = icon;
+      document.getElementById('previewName').textContent = file.name;
+      document.getElementById('previewBox').style.display = 'flex';
+    });
+  </script>
+</body>
+</html>
