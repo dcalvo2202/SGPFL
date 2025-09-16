@@ -1,3 +1,20 @@
+/*
+    Opcion para mostrar y ocultar la clave en el formulario de ingreso.
+*/
+function togglePassword() {
+            var input = document.getElementById("pass");
+            var icon = document.getElementById("togglePasswordIcon");
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                input.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+}
+
 /**
  * Captura las teclas ingresadas en el formulario de ingreso
  * si la tecla es "Intro" entonces procede al ingreso
@@ -13,7 +30,7 @@ function onEnterLogin(keytxt) {
 /**
  * Valida que la información requerida para el ingreso sea digitada completamente
  * alerta al usuario en caso de no cumplir los requisitos
- * @returns {Boolean} Verdadero todo bien / Flaso Falta algun dato
+ * @returns {Boolean} Verdadero todo bien / Falso Falta algun dato
  */
 function Validate_Login() {
     if(document.getElementById('user').value == ""){
@@ -56,13 +73,13 @@ function Do_Login(){
             if(ajax.readyState == 4 && ajax.status == 200) {
                 var response = ajax.responseText;
                 console.log("Respuesta del backend:", response);
-                if(response== "0"){
+                if(response.trim() == "0"){
                     window.location=document.getElementById("cds_domain_locate").value+"main.php";
-                }else if ( response== "1"){
+                }else if ( response.trim()== "1"){
                     jAlert('Clave invalida','Error');
                     page.innerHTML="";
                 //setTimeout("".value,15000);
-                }else if(response== "2"){
+                }else if(response.trim() == "2"){
                     jAlert('Este usuario no existe\n\tComuniquese con el administrador','Error');
                     page.innerHTML="";
                 //setTimeout("".value,15000);
