@@ -63,7 +63,8 @@ if ($out == 0) {
 
     //Incluir un medio de control para seleccionar automaticamente el idioma,
     //ya sea obteniendo la conf del navegador o desde la base de datos  
-    require'../../lang/lang.es';
+    // require'../../lang/lang.es';
+    require __DIR__ . '/../../lang/lang.es';
     $sql1 = "SELECT id_roll FROM sis_login WHERE id='" . $user . "';";
     $sqlout1 = seleccion($sql1);
     $mySessionController = mySession::getIstance($_MYSESSION_CONF);

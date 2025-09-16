@@ -272,7 +272,7 @@ class AuthLdap {
             $sec   = substr( $date,12,2);
 
             $timestamp = mktime( $hour,$min,$sec,$month,$day,$year);
-            $today  = mktime();
+            $today  = time();
             $diff   = $timestamp-$today;
             return round( ( ( ( $diff/60)/60)/24));
         }

@@ -30,7 +30,7 @@ function Validate_Login() {
 }
 
 /**
- * Revisa que la infroamción del usuario sea valida y el mismo tenga permisos
+ * Revisa que la información del usuario sea valida y el mismo tenga permisos
  * para ingresar en este sistema.
  * @returns Redirecciona hacia la pagina principal del sistema
  */

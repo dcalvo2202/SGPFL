@@ -6,7 +6,7 @@ require 'bdcommon.inc';
 $id_con = mysqli_connect($db_host, $usuario, $clave, $db);
 mysqli_set_charset($id_con, "utf8");
 
-/** Ejecuta SELECT y retorna un arrreglo con los resultados
+/* Ejecuta SELECT y retorna un arrreglo con los resultados
  * @param string $sql sentencia SQL
  * @return arreglo $a 
  */
@@ -24,7 +24,7 @@ function seleccion($sql) {
     mysqli_close($id_con); 
     return $a; 
 }
-/** Retorna en un arreglo de un solo row con la respuesta de mysql de una 
+/* Retorna en un arreglo de un solo row con la respuesta de mysql de una 
  * transacion es decir 0 si todo se ejecuto bien, otro valor dependiendo del
  * error.
  * 

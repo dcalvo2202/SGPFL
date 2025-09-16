@@ -639,6 +639,7 @@ CREATE TABLE `sis_login` (
 -- Records of sis_login
 -- ----------------------------
 INSERT INTO `sis_login` VALUES ('112170040', 'd41d8cd98f00b204e9800998ecf8427e', '1');
+INSERT INTO `sis_login` VALUES ('rrodrigo123', '5d7845ac6ee7cfffafc5fe5f35cf666d', '2');
 
 -- ----------------------------
 -- Table structure for `sis_mod`
@@ -655,9 +656,17 @@ CREATE TABLE `sis_mod` (
 -- ----------------------------
 -- Records of sis_mod
 -- ----------------------------
-INSERT INTO `sis_mod` VALUES ('1', 'Administración', 'Administración del sistema', '1');
-INSERT INTO `sis_mod` VALUES ('2', 'Roles', 'Permite el acceso al modulo de roles para el sistema', '1');
-INSERT INTO `sis_mod` VALUES ('3', 'Usuarios', 'Controla los usuarios del sistema', '1');
+INSERT INTO `sis_mod` VALUES ('1', 'Acceso', 'Modulo de acceso al sistema', '1');
+INSERT INTO `sis_mod` VALUES ('2', 'Busqueda', 'Modulo de busqueda de proyectos', '1');
+INSERT INTO `sis_mod` VALUES ('3', 'Historial y Auditoria', 'Modulo de historial y auditoria de los documentos', '1');
+INSERT INTO `sis_mod` VALUES ('4', 'Notificaciones', 'Modulo de notificaciones para el sistema', '1');
+INSERT INTO `sis_mod` VALUES ('5', 'Documentacion y versionado', 'Modulo para la documentacion y versionado de los documentos', '1');
+INSERT INTO `sis_mod` VALUES ('6', 'Gestion de proyectos', 'Modulo para la gestion de los proyectos', '1');
+INSERT INTO `sis_mod` VALUES ('7', 'Reportes y paneles', 'Modulo que permite el acceso a reportes y paneles', '1');
+INSERT INTO `sis_mod` VALUES ('8', 'Gestion academica', 'Modulo para la gestion academica del sistema', '1');
+--INSERT INTO `sis_mod` VALUES ('1', 'Administración', 'Administración del sistema', '1');
+--INSERT INTO `sis_mod` VALUES ('2', 'Roles', 'Permite el acceso al modulo de roles para el sistema', '1');
+--INSERT INTO `sis_mod` VALUES ('3', 'Usuarios', 'Controla los usuarios del sistema', '1');
 
 -- ----------------------------
 -- Table structure for `sis_mod_actions`
@@ -717,24 +726,47 @@ CREATE TABLE `sis_permits` (
 -- ----------------------------
 -- Records of sis_permits
 -- ----------------------------
+
+--Permisos para SuperAdmin
+--Permisos para Administrador
 INSERT INTO `sis_permits` VALUES ('1', '1', '1', '2');
 INSERT INTO `sis_permits` VALUES ('2', '1', '2', '2');
 INSERT INTO `sis_permits` VALUES ('3', '1', '3', '2');
 INSERT INTO `sis_permits` VALUES ('4', '1', '4', '2');
 INSERT INTO `sis_permits` VALUES ('5', '1', '5', '2');
 INSERT INTO `sis_permits` VALUES ('6', '1', '6', '2');
+
 INSERT INTO `sis_permits` VALUES ('7', '2', '1', '2');
 INSERT INTO `sis_permits` VALUES ('8', '2', '2', '2');
 INSERT INTO `sis_permits` VALUES ('9', '2', '3', '2');
 INSERT INTO `sis_permits` VALUES ('10', '2', '4', '2');
 INSERT INTO `sis_permits` VALUES ('11', '2', '5', '2');
 INSERT INTO `sis_permits` VALUES ('12', '2', '6', '2');
+
 INSERT INTO `sis_permits` VALUES ('13', '3', '1', '2');
 INSERT INTO `sis_permits` VALUES ('14', '3', '2', '2');
 INSERT INTO `sis_permits` VALUES ('15', '3', '3', '2');
 INSERT INTO `sis_permits` VALUES ('16', '3', '4', '2');
 INSERT INTO `sis_permits` VALUES ('17', '3', '5', '2');
 INSERT INTO `sis_permits` VALUES ('18', '3', '6', '2');
+
+--Permisos para CTFG/Subdirección
+
+--Permisos para Estudiante
+INSERT INTO `sis_permits` VALUES ('19', '3', '1', '2');
+INSERT INTO `sis_permits` VALUES ('20', '3', '2', '2');
+INSERT INTO `sis_permits` VALUES ('21', '3', '3', '2');
+INSERT INTO `sis_permits` VALUES ('22', '3', '4', '2');
+INSERT INTO `sis_permits` VALUES ('23', '3', '5', '2');
+INSERT INTO `sis_permits` VALUES ('24', '3', '6', '2');
+
+--Permisos para Asesor externo
+INSERT INTO `sis_permits` VALUES ('25', '3', '1', '2');
+INSERT INTO `sis_permits` VALUES ('26', '3', '2', '2');
+INSERT INTO `sis_permits` VALUES ('27', '3', '3', '2');
+INSERT INTO `sis_permits` VALUES ('28', '3', '4', '2');
+INSERT INTO `sis_permits` VALUES ('29', '3', '5', '2');
+INSERT INTO `sis_permits` VALUES ('30', '3', '6', '2');
 
 -- ----------------------------
 -- Table structure for `sis_provincia`
@@ -773,6 +805,10 @@ CREATE TABLE `sis_rolls` (
 -- ----------------------------
 INSERT INTO `sis_rolls` VALUES ('1', 'SuperAdmin', 'Permisos totales sobre todos los modulos este usuario no encuentra ninguna restricción');
 INSERT INTO `sis_rolls` VALUES ('2', 'Administrador', 'Administradores del sistema');
+INSERT INTO `sis_rolls` VALUES ('3', 'CTFG/Subdirección', 'Comisión de trabajos finales de graduación tiene permisos de lectura sobre los documentos de los estudiantes y puede aprobar o rechazar los trabajos finales de graduación');
+INSERT INTO `sis_rolls` VALUES ('4', 'Estudiante', 'Estudiantes de la universidad tiene permisos de lectura y escritura sobre sus documentos y puede enviar solicitudes de trabajos finales de graduación');
+INSERT INTO `sis_rolls` VALUES ('5', 'Asesor externo', 'Tiene acceso de lectura a los modulos del estudiante');
+--insertar roles de SGPFL
 
 -- ----------------------------
 -- Table structure for `sis_sessions`
@@ -892,7 +928,7 @@ CREATE TABLE `sis_user` (
 -- Records of sis_user
 -- ----------------------------
 INSERT INTO `sis_user` VALUES ('112170040', 'AARON CASTILLO ALPIZAR', 'acastil@una.cr', '83419199', 'M');
-
+INSERT INTO `sis_user` VALUES ('rrodrigo123', 'Rodrigo', 'rodrigo@una.cr', '88888888', 'M');
 -- ----------------------------
 -- View structure for `vis_user`
 -- ----------------------------
