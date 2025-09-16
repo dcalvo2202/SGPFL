@@ -3,16 +3,15 @@ error_reporting(0);
 include("mod/login/check.php");
 $vocab = $mySessionController->getVar("vocab");
 $user_rol = $mySessionController->getVar("rol");
+include('includes.php');
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="icon" type="image/webp" href="<?= $favicon_url ?>">
         <title><?php echo $mySessionController->getVar("page_title") ?></title>
-        <?php
-        include('includes.php');
-        ?>
     </head>
     <body onload="javascript:OpcionMenu('home.php?', '');">
         <div style="height: 60px;">

@@ -1,5 +1,5 @@
 {
     "require-dev": {
-        "codeception/codeception": "^1.1"
+        "phpunit/phpunit": "^12.3"
     }
 }
