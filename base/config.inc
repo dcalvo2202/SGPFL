@@ -9,7 +9,7 @@
  *  por ejemplo: "/sistema/", "/lib/sistema/"
  */
 
-$cds_domain = "http://localhost";
+$cds_domain = "https://localhost";
 $cds_locate = "/base/"; 
 
 $ldap_status = 1;
@@ -18,6 +18,8 @@ $ldap_status = 1;
 
 $ldap_server[0] = "ldap://localhost:389";
 $ldap_dn = "dc=una,dc=ac,dc=cr";
+$ldap_user = "cn=admin,dc=una,dc=ac,dc=cr";
+$ldap_pass = "admin";
 
 
 /* ********* Preferencias

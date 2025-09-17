@@ -11,6 +11,7 @@ $user_rol = $mySessionController->getVar("rol");
     </div>
     <div class="col-lg-5 col-md-5 col-sm-8 col-xs-12">
         <form method="post" action="">
+            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($mySessionController->getCsrfToken()) ?>">
             <div class="form-group">
                 <label  for="id_user"><?= $vocab["user_id"] ?> </label>
                 <input id="id_user" name="id_user" class="form-control" type="text" placeholder="123456789" onchange="javascrip:onchange_cedula();" onblur="javascrip:onchange_cedula();" /> 

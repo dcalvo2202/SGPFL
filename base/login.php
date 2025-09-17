@@ -11,6 +11,7 @@
     <!-- Logo de la escuela -->
     <link rel="icon" type="image/webp" href="<?= $favicon_url ?>">
     </head>
+
     <body>
         <!-- Valores Ocultos -->
         <input type="hidden" id="cds_domain_locate" value="<?php echo $cds_domain . $cds_locate; ?>"/>
