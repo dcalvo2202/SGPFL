@@ -1,4 +1,13 @@
+
 <?php
+// CORS headers para permitir peticiones desde otros orígenes
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
 
 include(dirname(__FILE__) . "/../../lib/mysession/mySession.class.php");
 include(dirname(__FILE__) . "/../../lib/mysession/mySession.conf.php");
@@ -59,15 +68,21 @@ if ($ldap_status == 1) {
     }
 }
 
-if ($out == 0) {
 
+if ($out == 0) {
+    // Regenerar el ID de sesión para prevenir session fixation
+    $mySessionController = mySession::getIstance($_MYSESSION_CONF);
+    if (method_exists($mySessionController, 'regenerateId')) {
+        $mySessionController->regenerateId();
+    } elseif (function_exists('session_regenerate_id')) {
+        session_regenerate_id(true);
+    }
     //Incluir un medio de control para seleccionar automaticamente el idioma,
     //ya sea obteniendo la conf del navegador o desde la base de datos  
     // require'../../lang/lang.es';
     require __DIR__ . '/../../lang/lang.es';
     $sql1 = "SELECT id_roll FROM sis_login WHERE id='" . $user . "';";
     $sqlout1 = seleccion($sql1);
-    $mySessionController = mySession::getIstance($_MYSESSION_CONF);
     $mySessionController->save("usuario", $user);
     $mySessionController->save("nombre", $user_name);
     $mySessionController->save("rol", $sqlout1[0]['id_roll']);

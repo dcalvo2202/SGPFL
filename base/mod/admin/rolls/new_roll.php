@@ -14,6 +14,7 @@ $user_rol = $mySessionController->getVar("rol");
     </div>
 
     <form method="post" action="">
+    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($mySessionController->getCsrfToken()) ?>">
         <div class="row">
             <div class="col-lg-5 col-md-5 col-sm-8 col-xs-12">
                 <div class="form-group">

@@ -334,26 +334,31 @@ class AuthLdap {
      */
     function getAttribute ( $uname,$attribute) {
         // builds the appropriate dn, based on whether $this->people and/or $this->group is set
-        $checkDn = $this->setDn( true);
+        $checkDn = $this->setDn(true);
         $results[0] = $attribute;
 
         // We need to search for this user in order to get their entry.
-        $this->result = @ldap_search( $this->connection,$checkDn,$this->getUserIdentifier()."=$uname",$results);
-        $info = ldap_get_entries( $this->connection, $this->result);
+        $this->result = @ldap_search($this->connection, $checkDn, $this->getUserIdentifier()."=$uname", $results);
+        if ($this->result === false) {
+            $this->ldapErrorCode = ldap_errno($this->connection);
+            $this->ldapErrorText = ldap_error($this->connection);
+            return false;
+        }
+        $info = ldap_get_entries($this->connection, $this->result);
 
         // Only one entry should ever be returned (no user will have the same uid)
-        $entry = ldap_first_entry( $this->connection, $this->result);
+        $entry = ldap_first_entry($this->connection, $this->result);
 
-        if ( !$entry) {
+        if (!$entry) {
             $this->ldapErrorCode = -1;
             $this->ldapErrorText = "Couldn't find user";
             return false;  // Couldn't find the user...
         }
 
         // Get all the member DNs
-        if ( !$values = @ldap_get_values( $this->connection, $entry, $attribute)) {
-            $this->ldapErrorCode = ldap_errno( $this->connection);
-            $this->ldapErrorText = ldap_error( $this->connection);
+        if (!$values = @ldap_get_values($this->connection, $entry, $attribute)) {
+            $this->ldapErrorCode = ldap_errno($this->connection);
+            $this->ldapErrorText = ldap_error($this->connection);
             return false; // No matching attributes
         }
 

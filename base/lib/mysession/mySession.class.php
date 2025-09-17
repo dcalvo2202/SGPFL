@@ -28,6 +28,11 @@
  */
 class mySession
 {
+    /**
+     * CSRF token para la sesión
+     * @var string
+     */
+    private $csrfToken;
     /*
      * STATIC FIELD
      */
@@ -53,6 +58,12 @@ class mySession
     /* PRIVATE FIELDS
      * All fields are private, accesible from outside only by get method
      */
+
+    /**
+     * Expiración forzada de la sesión (timestamp)
+     * @var int
+     */
+    private $forcedExpire;
 
     /**
      * Store the sessionId
@@ -427,11 +438,37 @@ class mySession
     }
 
     /**
+     * Regenera el ID de sesión de forma segura (session fixation protection)
+     */
+    public function regenerateId() {
+        if (session_status() === PHP_SESSION_ACTIVE) {
+            session_regenerate_id(true);
+            // Actualizar el sessionId interno
+            if (isset($_COOKIE[$this->sid_name])) {
+                $this->sessionId = $_COOKIE[$this->sid_name];
+            } else {
+                $this->sessionId = session_id();
+            }
+            // Insertar el nuevo sessionId en la tabla de sesiones, pero sin generar uno nuevo aleatorio
+            $this->forcedExpire = time() + $this->session_max_duration;
+            $expireTime = time() + $this->session_duration;
+            $this->SQLStatement_InsertSession->bindParam(':expires', $expireTime, PDO::PARAM_INT);
+            $this->SQLStatement_InsertSession->bindParam(':forcedExpires', $this->forcedExpire, PDO::PARAM_INT);
+            $this->SQLStatement_InsertSession->bindParam(':sid', $this->sessionId, PDO::PARAM_STR, $this->sid_len);
+            $ua = $this->getUa();
+            $this->SQLStatement_InsertSession->bindParam(':ua', $ua, PDO::PARAM_STR, 40);
+            $this->SQLStatement_InsertSession->execute();
+        }
+    }
+
+    /**
      * Get the session id
      *
      * @access public
      * @return string SessionId
      */
+
+     
     public function getSessionId() {
         return $this->sessionId;
     }
@@ -564,52 +601,48 @@ class mySession
      */
     private function readSessionId() {
         
-            if ($this->use_cookie==true) { //cookie enabled
-        
-                    if (isset($_COOKIE[$this->sid_name])) { //there some jam in the cookie
 
-                            $this->sessionId=$_COOKIE[$this->sid_name];
-                            //check if the jam can be eated
-                            if ($this->checkSessionId()) {
+        if ($this->use_cookie==true) { // cookie enabled
+            // Determina si la cookie debe tener el flag Secure (solo por HTTPS)
+            $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
+            // El flag HttpOnly previene acceso por JavaScript
+            $httponly = true;
+            // Parámetros para setcookie: nombre, valor, expiración, ruta, dominio, Secure, HttpOnly
+            $cookieParams = [$this->sid_name, null, time()+$this->session_duration, "/", '', $secure, $httponly];
 
-
-                                $num = $this->getSidCount($this->sessionId);
-                                if ($num != 1) {
-                                    //there is a sessiod in the cookie and no sessid in the DB
-                                    //the only thing to do is to generate a new Sid
-                                    if (!$this->newSid()) {
-                                            trigger_error("Unable to load session.",E_USER_ERROR);
-                                        } else {
-                                            if (!$this->overwrite) setcookie ($this->sid_name, $this->sessionId,time()+$this->session_duration,"/",'',false,true);
-                                        }
-
-                                } else {
-                                    //ok the jam is good!
-                                    if (!$this->overwrite) {
-                                        setcookie ($this->sid_name, $this->sessionId,time()+$this->session_duration,"/",'',false,true);                                        
-                                    }
-                                    $this->loadSesionVars();
-                                }
-                                
-                            } else {
-                                //bad bad bad think ... something goes wrong with the
-                                //jam .. maybe uncle tom eated it before ..                                
-                                $this->destroySession(FALSE);
-                                trigger_error("Unable to load session.",E_USER_ERROR);
-                            }
-
-                    } else { 
-
-                            //Damn, no id ... i create some jam!
-                                    
-                                        if (!$this->newSid()) {
-                                            trigger_error("Unable to load session.",E_USER_ERROR);
-                                        } else {
-                                            if (!$this->overwrite) setcookie ($this->sid_name, $this->sessionId,time()+$this->session_duration,"/",'',false,true);
-                                        }
-                            
-
+            // Si existe la cookie de sesión
+            if (isset($_COOKIE[$this->sid_name])) {
+                $this->sessionId=$_COOKIE[$this->sid_name];
+                // Verifica si el ID de sesión es válido
+                if ($this->checkSessionId()) {
+                    $num = $this->getSidCount($this->sessionId);
+                    if ($num != 1) {
+                        // Si el ID no existe en la base de datos, genera uno nuevo
+                        if (!$this->newSid()) {
+                            trigger_error("Unable to load session.",E_USER_ERROR);
+                        } else {
+                            // Establece la cookie de sesión con los flags de seguridad
+                            if (!$this->overwrite) call_user_func_array('setcookie', $cookieParams);
+                        }
+                    } else {
+                        // Refresca la cookie de sesión y carga variables
+                        if (!$this->overwrite) call_user_func_array('setcookie', $cookieParams);
+                        $this->loadSesionVars();
                     }
+                } else {
+                    // Si el ID de sesión es inválido, destruye la sesión
+                    $this->destroySession(FALSE);
+                    trigger_error("Unable to load session.",E_USER_ERROR);
+                }
+            } else {
+                // Si no existe la cookie, crea un nuevo ID de sesión
+                if (!$this->newSid()) {
+                    trigger_error("Unable to load session.",E_USER_ERROR);
+                } else {
+                    // Establece la cookie de sesión con los flags de seguridad
+                    if (!$this->overwrite) call_user_func_array('setcookie', $cookieParams);
+                }
+            }
 
             } else { //no cookie allowed.. bad thing! search elsewhere
 
@@ -651,7 +684,7 @@ class mySession
             $val = $this->SQLStatement_GetSessionInfos->fetchAll(PDO::FETCH_ASSOC);
             //var_dump($val);
             //echo "<br> UA:".$this->getUa()."<br>";
-            if ($val[0]["ua"] ==$this->getUa()) {
+            if (isset($val[0]["ua"]) && $val[0]["ua"] == $this->getUa()) {
                 $hijackTest = TRUE;
             } else {
                 $hijackTest = FALSE;
@@ -660,8 +693,11 @@ class mySession
             $hijackTest = TRUE;
         }
 
-        if ($hijackTest==TRUE) return true;
-            else return false;
+        if ($hijackTest === TRUE) {
+            return true;
+        } else {
+            return false;
+        }
         
     }
 
@@ -673,34 +709,47 @@ class mySession
      */
     private function newSid() {
 
-            $this->sessionId=$this->generateString($this->sid_len);
-            
-            while ( $this->getSidCount($this->sessionId) > 0 || is_int($this->sessionId) ) {
 
-                    $this->sessionId=$this->generateString($this->sid_len);
+        $this->sessionId = $this->generateString($this->sid_len);
+        while ($this->getSidCount($this->sessionId) > 0 || is_int($this->sessionId)) {
+            $this->sessionId = $this->generateString($this->sid_len);
+        }
 
-            }
+        // Generar CSRF token único para la sesión
+        $this->csrfToken = bin2hex(random_bytes(32));
+        $_SESSION['csrf_token'] = $this->csrfToken;
 
-            $this->forcedExpire = time()+ $this->session_max_duration;
-            $expireTime = time() + $this->session_duration;
+        $this->forcedExpire = time() + $this->session_max_duration;
+        $expireTime = time() + $this->session_duration;
 
-            $this->SQLStatement_InsertSession->bindParam(':expires', $expireTime, PDO::PARAM_INT);
-            $this->SQLStatement_InsertSession->bindParam(':forcedExpires', $this->forcedExpire, PDO::PARAM_INT);
-            $this->SQLStatement_InsertSession->bindParam(':sid', $this->sessionId, PDO::PARAM_STR, $this->sid_len);
-            /*
-             * USTDS FIX
-             * Eror Only variables should be passed by reference
-             * 
-             * Se modifica la siguiente linea para enviar una variable por parametro en vez de metodo de forma directa
-             * 
-             * $this->SQLStatement_InsertSession->bindParam(':ua', $this->getUa(), PDO::PARAM_STR, 40);
-             * 
-             */
-            $ua = $this->getUa();
-            $this->SQLStatement_InsertSession->bindParam(':ua', $ua, PDO::PARAM_STR, 40);
+        $this->SQLStatement_InsertSession->bindParam(':expires', $expireTime, PDO::PARAM_INT);
+        $this->SQLStatement_InsertSession->bindParam(':forcedExpires', $this->forcedExpire, PDO::PARAM_INT);
+        $this->SQLStatement_InsertSession->bindParam(':sid', $this->sessionId, PDO::PARAM_STR, $this->sid_len);
+        $ua = $this->getUa();
+        $this->SQLStatement_InsertSession->bindParam(':ua', $ua, PDO::PARAM_STR, 40);
 
-            return $this->SQLStatement_InsertSession->execute();
+        return $this->SQLStatement_InsertSession->execute();
+    }
 
+    /**
+     * Obtener el token CSRF de la sesión
+     * @return string
+     */
+    public function getCsrfToken() {
+        if (!$this->csrfToken && isset($_SESSION['csrf_token'])) {
+            $this->csrfToken = $_SESSION['csrf_token'];
+        }
+        return $this->csrfToken;
+    }
+
+    /**
+     * Validar un token CSRF recibido
+     * @param string $token
+     * @return bool
+     */
+    public function validateCsrfToken($token) {
+        $sessionToken = $this->getCsrfToken();
+        return hash_equals($sessionToken, $token);
     }
 
     /**
