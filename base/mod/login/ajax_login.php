@@ -14,11 +14,9 @@ include(dirname(__FILE__) . "/../../lib/AuthLdap/class.AuthLdap.php");
 include("../../inc/db/db.php");
 include("../../config.inc");
 
-$user = isset($_POST['user']) ? trim($_POST['user']) : '';
+// Sanitización y validación básica de entrada (compatible PHP 8.1+)
+$user = isset($_POST['user']) ? strip_tags(trim($_POST['user'])) : '';
 $pass = isset($_POST['pass']) ? trim($_POST['pass']) : '';
-// Validación y sanitización básica de entrada
-$user = filter_var($user, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH);
-$pass = filter_var($pass, FILTER_UNSAFE_RAW); // No se recomienda modificar la contraseña, solo validar presencia
 if ($user === '' || $pass === '') {
     echo 6; // Código: datos de entrada inválidos
     exit();
