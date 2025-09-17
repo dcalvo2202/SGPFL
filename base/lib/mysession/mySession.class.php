@@ -709,7 +709,6 @@ class mySession
      */
     private function newSid() {
 
-
         $this->sessionId = $this->generateString($this->sid_len);
         while ($this->getSidCount($this->sessionId) > 0 || is_int($this->sessionId)) {
             $this->sessionId = $this->generateString($this->sid_len);

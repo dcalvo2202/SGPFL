@@ -1,4 +1,3 @@
-
 <?php
 // CORS headers para permitir peticiones desde otros orígenes
 header('Access-Control-Allow-Origin: *');
@@ -20,52 +19,55 @@ $pass = $_POST['pass'];
 $out = "";
 $user_name = "";
 
+// 1. Intentar autenticación por LDAP primero
 if ($ldap_status == 1) {
-    $sql = "SELECT checklogin('" . $user . "','" . md5($pass) . "') as li_out;";
-    $sqlout = seleccion($sql);
-    $out = $sqlout[0]['li_out']; //2 si el susuario no existe en la tabla de usuarios
-    if ($out == 1) {
-        $ldap = new AuthLdap();
-        $ldap->server = $ldap_server;
-        $ldap->dn = $ldap_dn; // Base DN of our organization
-        $ldap->people = "People";   // Ajusta si tu estructura LDAP es diferente
-        $ldap->groups = "Groups";   // Ajusta si tu estructura LDAP es diferente
+    $ldap = new AuthLdap();
+    $ldap->server = $ldap_server;
+    $ldap->dn = $ldap_dn; // Base DN of our organization
+    $searchUser = $ldap_user;
+    $searchPassword = $ldap_pass;
+    $ldap->people = "People";   // Ajusta si tu estructura LDAP es diferente
+    $ldap->groups = "Groups";   // Ajusta si tu estructura LDAP es diferente
 
-        if ($ldap->connect()) {
-            if ($ldap->checkPass($user, $pass)) {
-                // Validar userAccountControl (solo si es Active Directory)
-                if ($serverType === "ActiveDirectory") {
-                    $uac = $ldap->getAttribute($user, 'userAccountControl');
-                    if ($uac && isset($uac[0]) && ($uac[0] & 2)) {
-                        $out = 4; // Cuenta deshabilitada
+    if ($ldap->connect()) {
+        if ($ldap->checkPass($user, $pass)) {
+            $out = 0;
+            
+            // Buscando información adicional del usuario
+            $base_dn = "ou=People,dc=una,dc=ac,dc=cr";
+            $filtro = "(uid=$user)";
+            $atributos = ["cn", "mail", "sn", "telephonenumber"];
+
+            // Hay que hacer un bind porque la conexión anónima no permite búsquedas
+            $bind = @ldap_bind($ldap->connection, $searchUser, $searchPassword);
+            if ($bind) {
+                // Buscar atributos
+                $search = ldap_search($ldap->connection, $base_dn, $filtro);
+                if ($search) {
+                    // Obtener entradas y cargarlas en varibles
+                    $entries = ldap_get_entries($ldap->connection, $search);
+                    if ($entries["count"] > 0) {
+                        $user_name = isset($entries[0]["cn"][0]) ? $entries[0]["cn"][0] : ' ';
+                        $user_email = isset($entries[0]["mail"][0]) ? $entries[0]["mail"][0] : ' ';
+                        $user_tel = isset($entries[0]["telephonenumber"][0]) ? $entries[0]["telephonenumber"][0] : ' ';
+                    } else {
+                        $user_name = $user_email = $user_tel = ' ';
                     }
-                }
-                // Verificar grupo autorizado (por ejemplo, "Estudiantes")
-                if ($out == 1 || !$ldap->checkGroup($user, "Estudiantes")) {
-                    $out = 5; // No pertenece al grupo autorizado
                 } else {
-                    $out = 0;
-                    if ($attrib = $ldap->getAttribute($user, "cn")) {
-                        $user_name = $attrib[0];
-                    }
+                    $user_name = $user_email = $user_tel = '';
                 }
             } else {
-                $out = 1;
+                $user_name = $user_email = $user_tel = ' ';
             }
-            $ldap->close();
         } else {
-            $out = 3;
+            $out = 1;
         }
+        $ldap->close();
+    } else {
+        $out = 3;
     }
 } else {
-    $sql = "SELECT checklogin('" . $user . "','" . md5($pass) . "') as li_out;";
-    $sqlout = seleccion($sql);
-    $out = $sqlout[0]['li_out'];
-    if ($out == 0) {
-        $sql0 = "SELECT nombre FROM sis_user WHERE id='" . $user . "';";
-        $sqlout0 = seleccion($sql0);
-        $user_name = $sqlout0[0]['nombre'];
-    }
+    $out = 1;
 }
 
 
@@ -77,15 +79,44 @@ if ($out == 0) {
     } elseif (function_exists('session_regenerate_id')) {
         session_regenerate_id(true);
     }
-    //Incluir un medio de control para seleccionar automaticamente el idioma,
-    //ya sea obteniendo la conf del navegador o desde la base de datos  
-    // require'../../lang/lang.es';
     require __DIR__ . '/../../lang/lang.es';
-    $sql1 = "SELECT id_roll FROM sis_login WHERE id='" . $user . "';";
+
+    // --- Lógica para usuarios LDAP: crear si no existe y mapear rol ---
+    // Obtener nombre y rol usando JOIN
+    $sql1 = "SELECT l.id_roll, u.nombre FROM sis_login l LEFT JOIN sis_user u ON l.id = u.id WHERE l.id='" . $user . "';";
     $sqlout1 = seleccion($sql1);
+
+    // Si no existe, sincronizar el usuario en ambas tablas
+    if (!$sqlout1 || count($sqlout1) == 0) {
+        // Mapear grupo LDAP a rol interno
+        function mapearGrupoALRol($grupo) {
+            $mapa = [
+                'Administradores' => 1,
+                'CTFG' => 2,
+                'Estudiantes' => 3,
+                'Asesores Externos' => 4
+            ];
+            return isset($mapa[$grupo]) ? $mapa[$grupo] : 3;
+        }
+        $rol_ldap = isset($rol_ldap) ? $rol_ldap : 'Estudiantes';
+        $rol_interno = mapearGrupoALRol($rol_ldap);
+
+        // Insertar en sis_login con pass en md5
+        $pass_md5 = md5($pass);
+        $sql_insert_login = "INSERT INTO sis_login (id, pass, id_roll) VALUES ('" . $user . "', '" . $pass_md5 . "', '" . $rol_interno . "');";
+        transaccion($sql_insert_login);
+        // Insertar en sis_user con todos los campos
+        $sql_insert_user = "INSERT INTO sis_user (id, nombre, email, telefono, id_tipo_tel) VALUES ('" . $user . "', '" . $user_name . "', '" . $user_email . "', '" . $user_tel . "', 'M');";
+        transaccion($sql_insert_user);
+        $id_roll = $rol_interno;
+        $nombre_final = $user_name;
+    } else {
+        $id_roll = $sqlout1[0]['id_roll'];
+        $nombre_final = $sqlout1[0]['nombre'];
+    }
     $mySessionController->save("usuario", $user);
-    $mySessionController->save("nombre", $user_name);
-    $mySessionController->save("rol", $sqlout1[0]['id_roll']);
+    $mySessionController->save("nombre", $nombre_final);
+    $mySessionController->save("rol", $id_roll);
     $mySessionController->save("cds_domain", $cds_domain);
     $mySessionController->save("cds_locate", $cds_locate);
     $mySessionController->save("page_cant", $page_cant);

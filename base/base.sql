@@ -308,10 +308,10 @@ CREATE TABLE `sis_rolls` (
 -- ----------------------------
 -- Records of sis_rolls
 -- ----------------------------
-INSERT INTO `sis_rolls` VALUES ('1', 'Administrador', 'Permisos totales sobre todos los modulos este usuario no encuentra ninguna restricción');
+INSERT INTO `sis_rolls` VALUES ('1', 'Administradores', 'Permisos totales sobre todos los modulos este usuario no encuentra ninguna restricción');
 INSERT INTO `sis_rolls` VALUES ('2', 'CTFG/Subdireccion', 'Comisión de trabajos finales de graduación tiene permisos de lectura sobre los documentos de los estudiantes y puede aprobar o rechazar los trabajos finales de graduación');
-INSERT INTO `sis_rolls` VALUES ('3', 'Estudiante', 'Estudiantes de la universidad tiene permisos de lectura y escritura sobre sus documentos y puede enviar solicitudes de trabajos finales de graduación');
-INSERT INTO `sis_rolls` VALUES ('4', 'Asesor externo', 'Tiene acceso de lectura a los modulos del estudiante');
+INSERT INTO `sis_rolls` VALUES ('3', 'Estudiantes', 'Estudiantes de la universidad tiene permisos de lectura y escritura sobre sus documentos y puede enviar solicitudes de trabajos finales de graduación');
+INSERT INTO `sis_rolls` VALUES ('4', 'Asesores externos', 'Tiene acceso de lectura a los modulos del estudiante');
 
 -- ----------------------------
 -- Table structure for `sis_permits`

@@ -1,0 +1,73 @@
+checkDn: ou=People, dc=una,dc=ac,dc=cr
+filtro: uid=Prueba2
+checkDn: ou=People, dc=una,dc=ac,dc=cr
+filtro: uid=Prueba2
+checkDn: ou=People, dc=una,dc=ac,dc=cr
+filtro: uid=Prueba2
+checkDn: ou=People, dc=una,dc=ac,dc=cr
+filtro: uid=Prueba2
+checkDn: ou=People, dc=una,dc=ac,dc=cr
+filtro: uid=Prueba2
+checkDn: ou=People, dc=una,dc=ac,dc=cr
+filtro: uid=Prueba2
+getUserAllAttributes base_dn: ou=People, dc=una,dc=ac,dc=cr
+getUserAllAttributes filter: (uid=Prueba2)
+getUserAllAttributes attributes: array (
+  0 => 'cn',
+  1 => 'sn',
+  2 => 'mail',
+  3 => 'uid',
+  4 => 'givenName',
+)
+getUserAllAttributes base_dn: ou=People, dc=una,dc=ac,dc=cr
+getUserAllAttributes filter: (uid=prueba1)
+getUserAllAttributes attributes: array (
+  0 => 'cn',
+  1 => 'sn',
+  2 => 'mail',
+  3 => 'uid',
+  4 => 'givenName',
+)
+getUserAllAttributes base_dn: ou=People, dc=una,dc=ac,dc=cr
+getUserAllAttributes filter: (uid=Prueba2)
+getUserAllAttributes attributes: array (
+  0 => 'cn',
+  1 => 'mail',
+  2 => 'sn',
+  3 => 'uid',
+  4 => 'givenName',
+  5 => 'Email',
+  6 => 'Telephone',
+)
+getUserAllAttributes base_dn: ou=People, dc=una,dc=ac,dc=cr
+getUserAllAttributes filter: (uid=Prueba2)
+getUserAllAttributes attributes: array (
+  0 => 'cn',
+  1 => 'mail',
+  2 => 'sn',
+  3 => 'uid',
+  4 => 'givenName',
+  5 => 'Email',
+  6 => 'Telephone',
+)
+getUserAllAttributes base_dn: ou=People, dc=una,dc=ac,dc=cr
+getUserAllAttributes filter: (uid=Prueba2)
+getUserAllAttributes attributes: array (
+  0 => 'cn',
+  1 => 'mail',
+  2 => 'sn',
+)
+getUserAllAttributes base_dn: ou=People, dc=una,dc=ac,dc=cr
+getUserAllAttributes filter: (uid=Prueba2)
+getUserAllAttributes attributes: array (
+  0 => 'cn',
+  1 => 'mail',
+  2 => 'sn',
+)
+getUserAllAttributes base_dn: ou=People, dc=una,dc=ac,dc=cr
+getUserAllAttributes filter: (uid=Prueba2)
+getUserAllAttributes attributes: array (
+  0 => 'cn',
+  1 => 'mail',
+  2 => 'sn',
+)

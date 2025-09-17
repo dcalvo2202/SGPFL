@@ -1,0 +1,8 @@
+base_dn: ou=People,dc=una,dc=ac,dc=cr
+filter: (uid=Prueba2)
+base_dn: ou=People,dc=una,dc=ac,dc=cr
+filter: (uid=Prueba2)
+base_dn: ou=People,dc=una,dc=ac,dc=cr
+filter: (uid=Prueba2)
+base_dn: ou=People,dc=una,dc=ac,dc=cr
+filter: (uid=Prueba2)

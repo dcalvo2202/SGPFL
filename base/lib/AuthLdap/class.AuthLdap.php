@@ -115,13 +115,16 @@ class AuthLdap {
      */
     function connect() {
         foreach ($this->server as $key => $host) {
-            $this->connection = ldap_connect( $host);
-            if ( $this->connection) {
+            $this->connection = ldap_connect($host);
+            if ($this->connection) {
+                // Forzar protocolo LDAPv3 y desactivar referrals
+                ldap_set_option($this->connection, LDAP_OPT_PROTOCOL_VERSION, 3);
+                ldap_set_option($this->connection, LDAP_OPT_REFERRALS, 0);
                 if ($this->serverType == "ActiveDirectory") {
                     return true;
                 } else {
                     // Connected, now try binding anonymously
-                    $this->result=@ldap_bind( $this->connection);
+                    $this->result = @ldap_bind($this->connection);
                 }
                 return true;
             }
@@ -283,48 +286,55 @@ class AuthLdap {
      * true, and returns false if the user isn't in the group, or any other
      * error occurs (eg:- no such user, no group by that name etc.)
      */
-    function checkGroup ( $uname,$group) {
+    function checkGroup($uname, $group) {
         // builds the appropriate dn, based on whether $this->people and/or $this->group is set
         $checkDn = $this->setDn(false);
-        // We need to search for the group in order to get it's entry.
-        $this->result = @ldap_search( $this->connection, $checkDn, "cn=" .$group);
-        $info = @ldap_get_entries( $this->connection, $this->result);
+        $this->result = @ldap_search($this->connection, $checkDn, "cn=" . $group);
+        $info = @ldap_get_entries($this->connection, $this->result);
 
-        // Only one entry should be returned(no groups will have the same name)
-        $entry = ldap_first_entry( $this->connection,$this->result);
-
-        if ( !$entry) {
-            $this->ldapErrorCode = ldap_errno( $this->connection);
-            $this->ldapErrorText = ldap_error( $this->connection);
+        $entry = ldap_first_entry($this->connection, $this->result);
+        if (!$entry) {
+            $this->ldapErrorCode = ldap_errno($this->connection);
+            $this->ldapErrorText = ldap_error($this->connection);
             return false;  // Couldn't find the group...
         }
-        // Get all the member DNs
-        if ( !$values = @ldap_get_values( $this->connection, $entry, "uniqueMember")) {
-            $this->ldapErrorCode = ldap_errno( $this->connection);
-            $this->ldapErrorText = ldap_error( $this->connection);
+
+        // Obtener el DN exacto del usuario
+        $userDn = $this->getUserDn($uname);
+        if (!$userDn) {
+            return false;
+        }
+
+        // Obtener todos los miembros directos del grupo
+        $values = @ldap_get_values($this->connection, $entry, "uniqueMember");
+        if (!$values) {
+            $this->ldapErrorCode = ldap_errno($this->connection);
+            $this->ldapErrorText = ldap_error($this->connection);
             return false; // No users in the group
         }
-        foreach ( $values as $key => $value) {
-            /* Loop through all members - see if the uname is there...
-            ** Also check for sub-groups - this allows us to define a group as
-            ** having membership of another group.
-            ** FIXME:- This is pretty ugly code and unoptimised. It takes ages
-            ** to search if you have sub-groups.
-            */
-            list( $cn,$ou) = explode( ",",$value);
-            list( $ou_l,$ou_r) = explode( "=",$ou);
 
-            if ( $this->groups==$ou_r) {
-                list( $cn_l,$cn_r) = explode( "=",$cn);
-                // OK, So we now check the sub-group...
-                if ( $this->checkGroup ( $uname,$cn_r)) {
-                    return true;
-                }
-            }
-            if ( preg_match( "/$uname/i",$value)) {
+        // Comparar DN exacto (sin subgrupos ni coincidencias parciales)
+        foreach ($values as $key => $value) {
+            if ($value === $userDn) {
                 return true;
             }
         }
+        return false;
+    }
+
+    // Obtener el DN exacto de un usuario
+    function getUserDn($uname) {
+        $checkDn = $this->setDn(true);
+        $filter = $this->getUserIdentifier() . "=" . $uname;
+        $this->result = @ldap_search($this->connection, $checkDn, $filter);
+        if ($this->result === false) {
+            return false;
+        }
+        $info = @ldap_get_entries($this->connection, $this->result);
+        if ($info && $info["count"] > 0 && isset($info[0]["dn"])) {
+            return $info[0]["dn"];
+        }
+        return false;
     }
     // 2.4 Attribute methods -----------------------------------------------------
     /**
@@ -332,39 +342,60 @@ class AuthLdap {
      * For most searches, this will just be one row, but sometimes multiple
      * results are returned (eg:- multiple email addresses)
      */
-    function getAttribute ( $uname,$attribute) {
+    function getAttribute ( $uname, $attribute) {
         // builds the appropriate dn, based on whether $this->people and/or $this->group is set
-        $checkDn = $this->setDn(true);
-        $results[0] = $attribute;
+    $checkDn = $this->setDn(true);
+    $results[0] = $attribute;
 
-        // We need to search for this user in order to get their entry.
-        $this->result = @ldap_search($this->connection, $checkDn, $this->getUserIdentifier()."=$uname", $results);
-        if ($this->result === false) {
-            $this->ldapErrorCode = ldap_errno($this->connection);
-            $this->ldapErrorText = ldap_error($this->connection);
-            return false;
-        }
-        $info = ldap_get_entries($this->connection, $this->result);
+    // Usar filtro con paréntesis como en la prueba directa
+    $filter = "(" . $this->getUserIdentifier() . "=$uname)";
+    $this->result = ldap_search($this->connection, $checkDn, $filter, $results);
+    $info = ldap_get_entries($this->connection, $this->result);
 
         // Only one entry should ever be returned (no user will have the same uid)
-        $entry = ldap_first_entry($this->connection, $this->result);
+        $entry = ldap_first_entry( $this->connection, $this->result);
 
-        if (!$entry) {
+        if ( !$entry) {
             $this->ldapErrorCode = -1;
             $this->ldapErrorText = "Couldn't find user";
             return false;  // Couldn't find the user...
         }
 
         // Get all the member DNs
-        if (!$values = @ldap_get_values($this->connection, $entry, $attribute)) {
-            $this->ldapErrorCode = ldap_errno($this->connection);
-            $this->ldapErrorText = ldap_error($this->connection);
+        if ( !$values = @ldap_get_values( $this->connection, $entry, $attribute)) {
+            $this->ldapErrorCode = ldap_errno( $this->connection);
+            $this->ldapErrorText = ldap_error( $this->connection);
             return false; // No matching attributes
         }
 
         // Return an array containing the attributes.
         return $values;
     }
+    /**
+     * getAttribute: Obtiene un solo atributo de un usuario LDAP.
+     *   - Uso: $ldap->getAttribute($uname, "cn");
+     *   - Retorna: array de valores del atributo o false si no existe.
+     *
+     * getUserAllAttributes: Obtiene varios atributos de un usuario LDAP en una sola consulta.
+     *   - Uso: $ldap->getUserAllAttributes($uname, ["cn", "mail", "sn"]);
+     *   - Retorna: array asociativo con todos los atributos solicitados.
+     *   - Recomendado para eficiencia y para obtener todos los datos de una vez.
+     */
+    /**
+     * Obtiene todos los atributos especificados de un usuario LDAP.
+     * @param string $uname Nombre de usuario (uid)
+     * @param array $attributes Lista de atributos a obtener
+     * @return array|false Array de atributos o false si falla
+     */
+    public function getUserAllAttributes($uname, $attributes = ["cn", "mail", "sn"]) {
+        $base_dn = $this->setDn(true);
+        $filter = "(" . $this->getUserIdentifier() . "=$uname)";
+        $search = ldap_search($this->connection, $base_dn, $filter, $attributes);
+        if ($search === false) return false;
+        $entries = ldap_get_entries($this->connection, $search);
+        return $entries;
+    }
+
     /**
      * 2.4.2 : Allows an attribute value to be set.
      * This can only usually be done after an authenticated bind as a
@@ -439,15 +470,15 @@ class AuthLdap {
      * @param boolean specifies whether to build a groups dn or a people dn 
      * @return string if true ou=$this->people,$this->dn, else ou=$this->groups,$this->dn
      */
-    function setDn($peopleOrGroups) {
+   function setDn($peopleOrGroups) {
 
         if ($peopleOrGroups) {
             if ( isset($this->people) && (strlen($this->people) > 0) ) {
-                $checkDn = "ou=" .$this->people. ", " .$this->dn;
+                $checkDn = "ou=" .$this->people. "," .$this->dn;
             }
         } else {
             if ( isset($this->groups) && (strlen($this->groups) > 0) ) {
-                $checkDn = "ou=" .$this->groups. ", " .$this->dn;
+                $checkDn = "ou=" .$this->groups. "," .$this->dn;
             }
         }
 
