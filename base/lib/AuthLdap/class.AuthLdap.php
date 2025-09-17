@@ -182,7 +182,8 @@ class AuthLdap {
      * server as a user - specified in the DN. There are several reasons why
      * this login could fail - these are listed below.
      */
-    function checkPass( $uname,$pass) {
+    // Modificado: Validar userAccountControl para excluir cuentas deshabilitadas en Active Directory
+    function checkPass($uname, $pass) {
         /* Construct the full DN, eg:-
         ** "uid=username, ou=People, dc=orgname,dc=com"
         */
@@ -192,8 +193,27 @@ class AuthLdap {
             $checkDn = $this->getUserIdentifier() . "=$uname, " . $this->setDn(true);
         }
         // Try and connect...
-        $this->result = @ldap_bind( $this->connection,$checkDn,$pass);
-        if ( $this->result) {
+        $this->result = @ldap_bind($this->connection, $checkDn, $pass);
+        if ($this->result) {
+            // Si es Active Directory, validar userAccountControl
+            if ($this->serverType == "ActiveDirectory") {
+                $base_dn = $this->setDn(true);
+                $filter = "(" . $this->getUserIdentifier() . "=$uname)";
+                $attributes = ["userAccountControl"];
+                $search = @ldap_search($this->connection, $base_dn, $filter, $attributes);
+                if ($search) {
+                    $entries = @ldap_get_entries($this->connection, $search);
+                    if ($entries && $entries["count"] > 0 && isset($entries[0]["useraccountcontrol"][0])) {
+                        $uac = $entries[0]["useraccountcontrol"][0];
+                        // 0x2 = ACCOUNTDISABLE
+                        if (($uac & 2) == 2) {
+                            $this->ldapErrorCode = -2;
+                            $this->ldapErrorText = "Cuenta deshabilitada (userAccountControl)";
+                            return false;
+                        }
+                    }
+                }
+            }
             // Connected OK - login credentials are fine!
             return true;
         } else {
@@ -205,8 +225,8 @@ class AuthLdap {
             ** 49 - Wrong password
             ** 53 - Account inactive (manually locked out by administrator)
             */
-            $this->ldapErrorCode = ldap_errno( $this->connection);
-            $this->ldapErrorText = ldap_error( $this->connection);
+            $this->ldapErrorCode = ldap_errno($this->connection);
+            $this->ldapErrorText = ldap_error($this->connection);
             return false;
         }
     }

@@ -1,3 +1,22 @@
+// Estilos para SweetAlert2, alertas del sistema.
+var swal2CustomStyle = document.createElement('style');
+swal2CustomStyle.innerHTML = `
+.swal2-popup {
+    border-radius: 1.5em !important;
+}
+.swal2-ok-btn-lg,
+.swal2-confirm {
+    background-color: #1565c0 !important;
+    color: #fff !important;
+    border: none !important;
+    font-size: 1.3em !important;
+    padding: 1em 2em !important;
+    min-width: 3rem !important;
+    border-radius: 0.5rem !important;
+}
+`;
+document.head.appendChild(swal2CustomStyle);
+
 /*
     Opcion para mostrar y ocultar la clave en el formulario de ingreso.
 */
@@ -34,12 +53,27 @@ function onEnterLogin(keytxt) {
  */
 function Validate_Login() {
     if(document.getElementById('user').value == ""){
-        jAlert("Ingrese su id de usuario","Dato Requerido");
+        // Cambiado: Usar SweetAlert2 en vez de jAlert
+            Swal.fire({
+                icon: 'warning',
+                title: '<span style="font-size:1.3em;">Dato Requerido</span>',
+                html: '<span style="font-size:1.3em;">Ingrese su identificación</span>',
+                customClass: {
+                    confirmButton: 'swal2-ok-btn-lg'
+                }
+            });
         document.getElementById('user').focus();
         return false;
     }
     if(document.getElementById('pass').value == ""){
-        jAlert("Ingrese su clave de usuario","Dato Requerido");
+            Swal.fire({
+                icon: 'warning',
+                title: '<span style="font-size:1.3em;">Dato Requerido</span>',
+                html: '<span style="font-size:1.3em;">Ingrese su contraseña</span>',
+                customClass: {
+                    confirmButton: 'swal2-ok-btn-lg'
+                }
+            });
         document.getElementById('pass').focus();
         return false;
     }
@@ -73,20 +107,81 @@ function Do_Login(){
             if(ajax.readyState == 4 && ajax.status == 200) {
                 var response = ajax.responseText;
                 console.log("Respuesta del backend:", response);
+
+                //Tuvo éxito el ingreso, entonces redirecciona.
                 if(response.trim() == "0"){
                     window.location=document.getElementById("cds_domain_locate").value+"main.php";
-                }else if ( response.trim()== "1"){
-                    jAlert('Clave invalida','Error');
+                }
+                // Sino tuvo éxito, muestra el error correspondiente.
+                else if ( response.trim()== "1" || response.trim() == "2"){
+                        Swal.fire({
+                            icon: 'error',
+                            title: '<span style="font-size:1.3em;">Este usuario no existe</span>',
+                            html: '<span style="font-size:1.3em;">Por favor comunicarse con el administrador.</span>',
+                            customClass: {
+                                confirmButton: 'swal2-ok-btn-lg'
+                            }
+                        });
                     page.innerHTML="";
-                //setTimeout("".value,15000);
-                }else if(response.trim() == "2"){
-                    jAlert('Este usuario no existe\n\tComuniquese con el administrador','Error');
+                }else if(response.trim() == "3"){
+                        Swal.fire({
+                            icon: 'error',
+                            title: '<span style="font-size:1.3em;">Error del Servidor</span>',
+                            html: '<span style="font-size:1.3em;">Por favor comunicarse con el administrador.</span>',
+                            customClass: {
+                                confirmButton: 'swal2-ok-btn-lg'
+                            }
+                        });
                     page.innerHTML="";
-                //setTimeout("".value,15000);
+                }else if(response.trim() == "4"){
+                        Swal.fire({
+                            icon: 'error',
+                            title: '<span style="font-size:1.3em;">Cuenta deshabilitada</span>',
+                            html: '<span style="font-size:1.3em;">Por favor comunicarse con el administrador.</span>',
+                            customClass: {
+                                confirmButton: 'swal2-ok-btn-lg'
+                            }
+                        });
+                    page.innerHTML="";
+                }else if(response.trim() == "5"){
+                        Swal.fire({
+                            icon: 'error',
+                            title: '<span style="font-size:1.3em;">Acceso denegado</span>',
+                            html: '<span style="font-size:1.2em;">El usuario no pertenece a un grupo autorizado.<br>Por favor comunicarse con el administrador.</span>',
+                            customClass: {
+                                confirmButton: 'swal2-ok-btn-lg'
+                            }
+                        });
+                    page.innerHTML="";
+                }else if(response.trim() == "6"){
+                        Swal.fire({
+                            icon: 'error',
+                            title: '<span style="font-size:1.3em;">Datos inválidos</span>',
+                            html: '<span style="font-size:1.2em;">Por favor verifique su usuario y contraseña.</span>',
+                            customClass: {
+                                confirmButton: 'swal2-ok-btn-lg'
+                            }
+                        });
+                    page.innerHTML="";
+                }else if(response.trim() == "7"){
+                        Swal.fire({
+                            icon: 'error',
+                            title: '<span style="font-size:1.3em;">Error de Base de Datos</span>',
+                            html: '<span style="font-size:1.2em;">Por favor comunicarse con el administrador.</span>',
+                            customClass: {
+                                confirmButton: 'swal2-ok-btn-lg'
+                            }
+                        });
+                    page.innerHTML="";
                 }else{
-                    jAlert('Sucedio un error inesperado','Error');
-                    
-                //setTimeout("".value,15000);
+                        Swal.fire({
+                            icon: 'error',
+                            title: '<span style="font-size:1.3em;">Error</span>',
+                            html: '<span style="font-size:1.3em;">Sucedió un error inesperado</span>',
+                            customClass: {
+                                confirmButton: 'swal2-ok-btn-lg'
+                            }
+                        });
                 }
             }
         }

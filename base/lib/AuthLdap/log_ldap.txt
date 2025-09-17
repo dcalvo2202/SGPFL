@@ -71,3 +71,5 @@ getUserAllAttributes attributes: array (
   1 => 'mail',
   2 => 'sn',
 )
+2025-09-17 11:06:36 | Usuario: rrodrigo123 | Resultado: 5  | Nombre: Rodrigo Rojas
+2025-09-17 11:07:19 | Usuario: Prueba2 | Resultado: 5  | Nombre: Prueba2
