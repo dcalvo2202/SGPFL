@@ -3,6 +3,7 @@
     $Host = "localhost";	
     $db_host = "localhost";
     $usuario = "root";
-    $clave = "root";
+    $clave = "";
     $DBMS="mysql";
+    $base_url = '/SGPFL/base/';
 ?>

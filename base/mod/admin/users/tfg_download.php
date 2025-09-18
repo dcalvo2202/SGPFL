@@ -1,0 +1,54 @@
+<?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+include __DIR__ . '/../../../inc/db/bdcommon.inc';
+
+$conn = new mysqli($db_host, $usuario, $clave, $db);
+if ($conn->connect_error) {
+    http_response_code(503); // Service Unavailable
+    die("Error de conexión con el servicio.");
+}
+
+// COMENTAR O ELIMINAR ESTA LÍNEA EN PRODUCCIÓN.
+$user_id = $_SESSION['id'] ?? '112170040'; 
+
+$id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+if ($id <= 0) {
+    http_response_code(400); // Bad Request
+    die("Solicitud inválida. ID no proporcionado.");
+}
+
+$sql = "SELECT file_name, mime_type, file_size, document FROM tfg_proposals WHERE id = ? AND user_id = ?";
+$stmt = $conn->prepare($sql);
+
+if (!$stmt) {
+    http_response_code(500); // Internal Server Error
+    die("Error interno al preparar la consulta.");
+}
+
+$stmt->bind_param("is", $id, $user_id);
+$stmt->execute();
+$stmt->store_result();
+
+if ($stmt->num_rows === 0) {
+    $stmt->close();
+    $conn->close();
+    http_response_code(404); // Not Found
+    die("Archivo no encontrado o no tienes permiso para acceder a él.");
+}
+
+$stmt->bind_result($file_name, $mime_type, $file_size, $document);
+$stmt->fetch();
+$stmt->close();
+$conn->close();
+
+// Enviar los headers correctos para la descarga/visualización
+header('Content-Type: ' . ($mime_type ?: 'application/octet-stream'));
+header('Content-Length: ' . (int)$file_size);
+header('Content-Disposition: inline; filename="' . basename(str_replace('"', '', $file_name)) . '"');
+
+// Enviar el contenido del archivo
+echo $document;
+exit;
+?>
