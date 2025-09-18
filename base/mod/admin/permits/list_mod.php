@@ -74,10 +74,7 @@ $res = seleccion($sql);
 <!--  ****** Titulo ***** -->
 <div class="well well-sm"><h1><?= $vocab["permits_list_title"] ?></h1></div>
 <form name="con_ct" action="" method="post">
-<<<<<<< HEAD
-=======
     <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($mySessionController->getCsrfToken()) ?>">
->>>>>>> origin/main
     <!--  ****** Variable Oculta ***** -->
     <input type="hidden" id="order_key" name="order_key" value="<?= $order_key ?>" />
     <!--  ****** Menu de Busqueda ***** -->
