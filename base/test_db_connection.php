@@ -1,14 +1,12 @@
 <?php
-$host = "localhost";
-$user = "root"; // Cambia si tienes otro usuario
-$pass = "";     // Cambia si tienes contraseña
-$db   = "base"; // Cambia por el nombre real
+// test_db_connection.php
+include 'inc/db/bdcommon.inc';
 
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = new mysqli($db_host, $usuario, $clave, $db);
 
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
-echo "¡Conexión exitosa a la base de datos!";
+echo "¡Conexión exitosa!";
 $conn->close();
 ?>

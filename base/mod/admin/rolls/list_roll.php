@@ -1,4 +1,13 @@
+
 <?php
+// CORS headers para permitir peticiones desde otros orígenes
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
 /**
  * Lista los roles del sistema, no utilizar este tipo de tablas para los modulos
  */
@@ -56,6 +65,7 @@ $res = seleccion($sql);
 <!--  ****** Titulo ***** -->
 <div class="well well-sm"><h1><?= $vocab["rols_list_title"] ?></h1></div>
 <form name="con_ct" action="" method="post">
+    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($mySessionController->getCsrfToken()) ?>">
     <!--  ****** Variable Oculta ***** -->
     <input type="hidden" id="order_key" name="order_key" value="<?= $order_key ?>" />
     <!--  ****** Menu de Busqueda ***** -->

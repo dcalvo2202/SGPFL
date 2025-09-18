@@ -1,9 +1,8 @@
 <?php
-    $db = "base";
+    $db = "base_db";
     $Host = "localhost";	
     $db_host = "localhost";
     $usuario = "root";
     $clave = "";
     $DBMS="mysql";
-    $base_url = '/SGPFL/base/';
 ?>
