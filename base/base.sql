@@ -807,6 +807,26 @@ CREATE TABLE `sis_sessions_vars` (
   CONSTRAINT `sis_sessions_vars_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `sis_sessions` (`sid`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+-- ----------------------------
+-- Table structure for `proyecto_aprobado`
+-- ----------------------------
+CREATE TABLE proyecto_aprobado (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(255) NOT NULL,
+  estudiante_id varchar(50) NOT NULL,
+  comite_id INT NOT NULL,
+  categoria_id INT NOT NULL,
+  documento LONGBLOB,
+  aprobado BOOLEAN DEFAULT 0,
+  identificador VARCHAR(30) NOT NULL,
+  fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (estudiante_id) REFERENCES sis_user(id),
+  FOREIGN KEY (comite_id) REFERENCES comite(id),
+  FOREIGN KEY (categoria_id) REFERENCES categorias(idCategoria)
+);
+
+
 -- ----------------------------
 -- Records of sis_sessions_vars
 -- ----------------------------
