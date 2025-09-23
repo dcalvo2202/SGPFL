@@ -425,7 +425,12 @@ class mySession
      * @return object Store variable
      */
     public function getVar($nome) {
+        // Devuelve el valor de la variable de sesión si existe, si no devuelve null
+        if (isset($this->VARS[$nome])) {
             return $this->VARS[$nome];
+        } else {
+            return null;
+        }
     }
 
     /**

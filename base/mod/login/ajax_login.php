@@ -14,6 +14,7 @@ include(dirname(__FILE__) . "/../../lib/AuthLdap/class.AuthLdap.php");
 include("../../inc/db/db.php");
 include("../../config.inc");
 
+
 // Sanitización y validación básica de entrada (compatible PHP 8.1+)
 $user = isset($_POST['user']) ? strip_tags(trim($_POST['user'])) : '';
 $pass = isset($_POST['pass']) ? trim($_POST['pass']) : '';
@@ -23,6 +24,15 @@ if ($user === '' || $pass === '') {
 }
 $out = "";
 $user_name = "";
+
+// --- NUEVO: Verificar si ya hay sesión activa para este usuario ---
+$mySessionController = mySession::getIstance($_MYSESSION_CONF);
+$usuario_sesion = $mySessionController->getVar('usuario');
+if (!empty($usuario_sesion) && $usuario_sesion === $user) {
+    // Ya hay sesión activa para este usuario, retornar éxito sin reloguear
+    echo 0;
+    exit();
+}
 
 // 1. Intentar autenticación por LDAP primero
 if ($ldap_status == 1) {
