@@ -4,15 +4,33 @@ swal2CustomStyle.innerHTML = `
 .swal2-popup {
     border-radius: 1.5em !important;
 }
+.swal2-icon {
+    margin-top: 2em !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+}
+.swal2-title {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    padding-bottom: 0.30em !important;
+    padding-top: 0.20em !important;
+}
+.swal2-html-container {
+    margin-bottom: 0.05em !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+}
 .swal2-ok-btn-lg,
 .swal2-confirm {
     background-color: #1565c0 !important;
     color: #fff !important;
     border: none !important;
-    font-size: 1.3em !important;
-    padding: 1em 2em !important;
+    font-size: 1.4em !important;
+    padding: 0.65em 1.5em !important;
     min-width: 3rem !important;
     border-radius: 0.5rem !important;
+    margin-top: 0 !important;
 }
 `;
 document.head.appendChild(swal2CustomStyle);

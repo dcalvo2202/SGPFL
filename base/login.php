@@ -30,28 +30,27 @@
                 </div>
                 <div id="loading_container"></div>
                 <form method="post" action="mod/login/ajax_login.php" onsubmit="Do_Login(); return false;">
-                    <div class="form-group mb-4">
+                    <div class="form-group">
                         <label for="user" class="fw-bold"><?= $vocab["login_user"] ?> </label>
                         <div class="input-group">
                             <span class="input-group-addon bg-white"><i class="fa fa-user"></i></span>
-                            <input id="user" name="user" class="form-control form-control-lg" type="text" placeholder="<?= $vocab["login_user"] ?>" onkeypress="onEnterLogin(event);"/>
+                            <input id="user" name="user" class="form-control form-control-lg" type="text" placeholder="<?= $vocab["login_user_desc"] ?>" onkeypress="onEnterLogin(event);"/>
                         </div>
-                        <p class="help-block" id="guia_1"><small><?= $vocab["login_user_desc"] ?></small></p>
+                        <!--<p class="help-block" id="guia_1"><small><?= $vocab["login_user_desc"] ?></small></p> -->
                     </div>
-                    <div class="form-group mb-4">
+                    <div class="form-group mt-4">
                         <label for="pass" class="fw-bold"><?= $vocab["login_pass"] ?></label>
                         <div class="input-group">
                             <span class="input-group-addon bg-white"><i class="fa fa-lock"></i></span>
-                            <input id="pass" name="pass" type="password" class="form-control form-control-lg" placeholder="<?= $vocab["login_pass"] ?>" onkeypress="onEnterLogin(event);">
+                            <input id="pass" name="pass" type="password" class="form-control form-control-lg" placeholder="<?= $vocab["login_pass_desc"] ?>" onkeypress="onEnterLogin(event);">
                             <span class="input-group-addon puntero bg-white" onclick="togglePassword()">
                                 <i class="fa fa-eye" id="togglePasswordIcon" style="opacity:0.5;transition:opacity 0.2s;"></i>
                             </span>
                         </div>
-                        <p class="help-block" id="guia_2"><small><?= $vocab["login_pass_desc"] ?></small></p> 
+                       <!-- <p class="help-block" id="guia_2"><small><?= $vocab["login_pass_desc"] ?></small></p> -->
                     </div>
 
-                    
-                    <div class="text-center">
+                    <div class="text-center mt-2">
                         <a href="https://www.dtic.una.ac.cr/index.php/plataf-servicios/recuperacion-contrasenas" target="_blank" class="btn btn-link w-100 mt-2" tabindex="-1">
                         ¿Olvidó su nombre de usuario o contraseña?
                         </a>   
@@ -66,7 +65,7 @@
                         <a href="registro.php" class="btn btn-outline-secondary w-100" tabindex="-1">
                             <!--¿No tienes cuenta? Regístrate aquí -->
                         </a>
-                        <!-- TODO: Implementar la vista registro.php -->
+                        <!-- Implementar la vista registro.php -->
                     </div>
                 </form>
         

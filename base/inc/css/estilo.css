@@ -199,6 +199,16 @@ Permite utilizar FontAwesome con &#xHHHH ej &#xf030; se usa cuando no se puede u
     height: auto;
 }
 
+/* Espaciado extra entre usuario y contraseña en login */
+.login-card .form-group:first-of-type {
+    margin-top: 1.5rem !important;
+    margin-bottom: 2.5rem !important;
+}
+.login-card .form-group + .form-group {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+}
+
 @media (min-width: 400px) {
   .login-card {
     max-width: 32rem;
