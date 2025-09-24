@@ -76,6 +76,7 @@ function Validate_Login() {
                 icon: 'warning',
                 title: '<span style="font-size:1.3em;">Dato Requerido</span>',
                 html: '<span style="font-size:1.3em;">Ingrese su identificación</span>',
+                confirmButtonText: 'Aceptar',
                 customClass: {
                     confirmButton: 'swal2-ok-btn-lg'
                 }
@@ -88,6 +89,7 @@ function Validate_Login() {
                 icon: 'warning',
                 title: '<span style="font-size:1.3em;">Dato Requerido</span>',
                 html: '<span style="font-size:1.3em;">Ingrese su contraseña</span>',
+                confirmButtonText: 'Aceptar',
                 customClass: {
                     confirmButton: 'swal2-ok-btn-lg'
                 }
@@ -140,6 +142,7 @@ function Do_Login(){
                             icon: 'error',
                             title: '<span style="font-size:1.3em;">Este usuario no existe</span>',
                             html: '<span style="font-size:1.3em;">Por favor comunicarse con el administrador.</span>',
+                            confirmButtonText: 'Aceptar',
                             customClass: {
                                 confirmButton: 'swal2-ok-btn-lg'
                             }
@@ -150,6 +153,7 @@ function Do_Login(){
                             icon: 'error',
                             title: '<span style="font-size:1.3em;">Error del Servidor</span>',
                             html: '<span style="font-size:1.3em;">Por favor comunicarse con el administrador.</span>',
+                            confirmButtonText: 'Aceptar',
                             customClass: {
                                 confirmButton: 'swal2-ok-btn-lg'
                             }
@@ -160,6 +164,7 @@ function Do_Login(){
                             icon: 'error',
                             title: '<span style="font-size:1.3em;">Cuenta deshabilitada</span>',
                             html: '<span style="font-size:1.3em;">Por favor comunicarse con el administrador.</span>',
+                            confirmButtonText: 'Aceptar',
                             customClass: {
                                 confirmButton: 'swal2-ok-btn-lg'
                             }
@@ -170,6 +175,7 @@ function Do_Login(){
                             icon: 'error',
                             title: '<span style="font-size:1.3em;">Acceso denegado</span>',
                             html: '<span style="font-size:1.2em;">El usuario no pertenece a un grupo autorizado.<br>Por favor comunicarse con el administrador.</span>',
+                            confirmButtonText: 'Aceptar',
                             customClass: {
                                 confirmButton: 'swal2-ok-btn-lg'
                             }
@@ -180,6 +186,7 @@ function Do_Login(){
                             icon: 'error',
                             title: '<span style="font-size:1.3em;">Datos inválidos</span>',
                             html: '<span style="font-size:1.2em;">Por favor verifique su usuario y contraseña.</span>',
+                            confirmButtonText: 'Aceptar',
                             customClass: {
                                 confirmButton: 'swal2-ok-btn-lg'
                             }
@@ -190,6 +197,7 @@ function Do_Login(){
                             icon: 'error',
                             title: '<span style="font-size:1.3em;">Error de Base de Datos</span>',
                             html: '<span style="font-size:1.2em;">Por favor comunicarse con el administrador.</span>',
+                            confirmButtonText: 'Aceptar',
                             customClass: {
                                 confirmButton: 'swal2-ok-btn-lg'
                             }
@@ -200,6 +208,7 @@ function Do_Login(){
                             icon: 'error',
                             title: '<span style="font-size:1.3em;">Error</span>',
                             html: '<span style="font-size:1.3em;">Sucedió un error inesperado</span>',
+                            confirmButtonText: 'Aceptar',
                             customClass: {
                                 confirmButton: 'swal2-ok-btn-lg'
                             }
