@@ -15,12 +15,42 @@ include("../../inc/db/db.php");
 include("../../config.inc");
 
 
+// Función para destruir sesión y eliminar cookie si login falla
+function destroySessionAndCookie() {
+    if (isset($_COOKIE['base_sis'])) {
+        setcookie('base_sis', '', time() - 3600, '/');
+    }
+    if (session_status() === PHP_SESSION_ACTIVE) {
+        session_destroy();
+    }
+}
+
+// Función centralizada para enviar errores, destruir sesión y terminar ejecución
+function sendError($code, $message = '') {
+    destroySessionAndCookie();
+    echo $code;
+    exit();
+}
+
+// Función para mapear grupo LDAP a rol interno usando la base de datos
+function mapearGrupoALRol($grupo) {
+    $mapa = [];
+    $sql = "SELECT id_roll, roll_name FROM sis_rolls";
+    $result = seleccion($sql);
+    if ($result && count($result) > 0) {
+        foreach ($result as $row) {
+            $mapa[$row['roll_name']] = $row['id_roll'];
+        }
+    }
+    // Si el grupo existe en la tabla, retorna el id_roll, si no, retorna el primer id_roll (por defecto)
+    return isset($mapa[$grupo]) ? $mapa[$grupo] : (count($mapa) > 0 ? reset($mapa) : 1);
+}
+
 // Sanitización y validación básica de entrada (compatible PHP 8.1+)
 $user = isset($_POST['user']) ? strip_tags(trim($_POST['user'])) : '';
 $pass = isset($_POST['pass']) ? trim($_POST['pass']) : '';
 if ($user === '' || $pass === '') {
-    echo 6; // Código: datos de entrada inválidos
-    exit();
+    sendError(6); // Código: datos de entrada inválidos
 }
 $out = "";
 $user_name = "";
@@ -39,10 +69,41 @@ $sql = "SELECT checklogin('" . $user . "','" . md5($pass) . "') as li_out;";
 $sqlout = seleccion($sql);
 $out = $sqlout[0]['li_out']; //2 si el susuario no existe en la tabla de usuarios
 if ($out == 0) {
-       goto skip_ldap;
+      // Regenerar el ID de sesión para prevenir session fixation
+    $mySessionController = mySession::getIstance($_MYSESSION_CONF);
+    if (method_exists($mySessionController, 'regenerateId')) {
+        $mySessionController->regenerateId();
+    } elseif (function_exists('session_regenerate_id')) {
+        session_regenerate_id(true);
+    }
+
+    require __DIR__ . '/../../lang/lang.es';
+    // --- Lógica para usuarios LDAP: crear si no existe y mapear rol ---
+    // Obtener nombre y rol usando JOIN
+    $sql1 = "SELECT l.id_roll, u.nombre FROM sis_login l LEFT JOIN sis_user u ON l.id = u.id WHERE l.id='" . $user . "';";
+    $sqlout1 = seleccion($sql1);
+    if ($sqlout1 === false) {
+        sendError(7); // Código: error en consulta a la base de datos
+    }
+
+    $id_roll = $sqlout1[0]['id_roll'];
+    $nombre_final = $sqlout1[0]['nombre'];
+
+    $mySessionController->save("usuario", $user);
+    $mySessionController->save("nombre", $nombre_final);
+    $mySessionController->save("rol", $id_roll);
+    $mySessionController->save("cds_domain", $cds_domain);
+    $mySessionController->save("cds_locate", $cds_locate);
+    $mySessionController->save("page_cant", $page_cant);
+    $mySessionController->save("page_title", $page_title);
+    $mySessionController->save("footer_title", $footer_title);
+    $mySessionController->save('vocab', $vocab);
+
+    echo $out; // 0 todo bien
+    exit();
 }
 // 2. Intentar autenticación por LDAP
-elseif ($ldap_status == 1) {
+else if ($ldap_status == 1) {
 
     // --- Verificar disponibilidad del servidor LDAP con socket ---
     $ldap_server_str = is_array($ldap_server) ? $ldap_server[0] : $ldap_server;
@@ -56,9 +117,7 @@ elseif ($ldap_status == 1) {
     $socket_timeout = 1; // segundos
     $fp = @fsockopen($ldap_host, $ldap_port, $errno, $errstr, $socket_timeout);
     if (!$fp) {
-        $out = 3; // problema con LDAP
-        echo $out;
-        exit();
+        sendError(3); // Código: problema con servidor LDAP
     } else {
         fclose($fp);
     }
@@ -112,12 +171,18 @@ elseif ($ldap_status == 1) {
                         }
                         // Si no tiene grupos, denegar acceso
                         if (empty($grupos_usuario)) {
-                            echo 5; // No pertenece a ningún grupo
-                            exit();
+                            sendError(5); // Código: no pertenece al grupo autorizado
                         }
 
-                        // Definir grupos autorizados
-                        $grupos_autorizados = array('Administradores', 'CTFG/Subdireccion', 'Estudiantes', 'Asesores Externos');
+                        // Definir grupos autorizados dinámicamente desde la base de datos
+                        $grupos_autorizados = array();
+                        $sql_grupos = "SELECT roll_name FROM sis_rolls";
+                        $result_grupos = seleccion($sql_grupos);
+                        if ($result_grupos && count($result_grupos) > 0) {
+                            foreach ($result_grupos as $row) {
+                                $grupos_autorizados[] = $row['roll_name'];
+                            }
+                        }
                         $grupo_valido = '';
                         foreach ($grupos_usuario as $g) {
                             if (in_array($g, $grupos_autorizados)) {
@@ -127,8 +192,7 @@ elseif ($ldap_status == 1) {
                         }
                         // Si no pertenece a grupo autorizado, denegar acceso antes de importar/login
                         if ($grupo_valido == '') {
-                            echo 5; // Código: no pertenece a un grupo autorizado
-                            exit();
+                            sendError(5); // Código: no pertenece al grupo autorizado
                         }
                         // Mapeo simple a rol interno (sin modificar variables originales)
                         // $grupo_valido contiene el grupo autorizado
@@ -144,20 +208,19 @@ elseif ($ldap_status == 1) {
                 $user_name = $user_email = $user_tel = ' ';
             }
         } else {
-            $out = 1;
+            $out = 1; // Contraseña incorrecta
         }
         $ldap->close();
     } else {
-        $out = 3;
+        $out = 3; // Problema con LDAP
     }
 } else {
-    $out = 1;
+    $out = 1; // Usuario no existe en la base de datos local y LDAP está deshabilitado
 }
 
 
 if ($out == 0) {
 
-    skip_ldap:
     // Regenerar el ID de sesión para prevenir session fixation
     $mySessionController = mySession::getIstance($_MYSESSION_CONF);
     if (method_exists($mySessionController, 'regenerateId')) {
@@ -165,30 +228,20 @@ if ($out == 0) {
     } elseif (function_exists('session_regenerate_id')) {
         session_regenerate_id(true);
     }
-    require __DIR__ . '/../../lang/lang.es';
 
+    require __DIR__ . '/../../lang/lang.es';
 
     // --- Lógica para usuarios LDAP: crear si no existe y mapear rol ---
     // Obtener nombre y rol usando JOIN
     $sql1 = "SELECT l.id_roll, u.nombre FROM sis_login l LEFT JOIN sis_user u ON l.id = u.id WHERE l.id='" . $user . "';";
     $sqlout1 = seleccion($sql1);
     if ($sqlout1 === false) {
-        echo 7; // Código: error en consulta a la base de datos
-        exit();
+        sendError(7); // Código: error en consulta a la base de datos
     }
 
     // Si no existe, sincronizar el usuario en ambas tablas
     if (!$sqlout1 || count($sqlout1) == 0) {
         // Mapear grupo LDAP a rol interno
-        function mapearGrupoALRol($grupo) {
-            $mapa = [
-                'Administradores' => 1,
-                'CTFG/Subdireccion' => 2,
-                'Estudiantes' => 3,
-                'Asesores Externos' => 4
-            ];
-            return isset($mapa[$grupo]) ? $mapa[$grupo] : 3;
-        }
         $rol_ldap = isset($rol_ldap) ? $rol_ldap : 'Estudiantes';
         $rol_interno = mapearGrupoALRol($rol_ldap);
 
@@ -196,14 +249,12 @@ if ($out == 0) {
         $pass_md5 = md5($pass);
         $sql_insert_login = "INSERT INTO sis_login (id, pass, id_roll) VALUES ('" . $user . "', '" . $pass_md5 . "', '" . $rol_interno . "');";
         if (transaccion($sql_insert_login) === false) {
-            echo 7; // Código: error en inserción a la base de datos
-            exit();
+            sendError(7); // Código: error en base de datos
         }
         // Insertar en sis_user con todos los campos
         $sql_insert_user = "INSERT INTO sis_user (id, nombre, email, telefono, id_tipo_tel) VALUES ('" . $user . "', '" . $user_name . "', '" . $user_email . "', '" . $user_tel . "', 'M');";
         if (transaccion($sql_insert_user) === false) {
-            echo 7; // Código: error en inserción a la base de datos
-            exit();
+            sendError(7); // Código: error en base de datos
         }
         $id_roll = $rol_interno;
         $nombre_final = $user_name;
@@ -213,6 +264,7 @@ if ($out == 0) {
         $sync_msg = date('Y-m-d H:i:s') . " | Nuevo usuario sincronizado | ID: $user | Nombre: $user_name | Email: $user_email | Rol: $rol_ldap\n";
         file_put_contents($sync_log, $sync_msg, FILE_APPEND);
     } else {
+        // Ya existe, usar datos existentes
         $id_roll = $sqlout1[0]['id_roll'];
         $nombre_final = $sqlout1[0]['nombre'];
     }
@@ -226,6 +278,10 @@ if ($out == 0) {
     $mySessionController->save("footer_title", $footer_title);
     $mySessionController->save('vocab', $vocab);
 }
+else{
+    // Si falla el login, enviar error
+    sendError($out);
+}
 
-echo $out; // 0 todo bien / 1 contraseña erronea / 2 usuario no existe /3 problema con LDAP /4 cuenta deshabilitada /5 no pertenece al grupo autorizado / 6 datos de entrada inválidos /7 error en base de datos
+// echo $out; / 0 todo bien / 1 contraseña erronea / 2 usuario no existe /3 problema con LDAP /4 cuenta deshabilitada /5 no pertenece al grupo autorizado / 6 datos de entrada inválidos /7 error en base de datos
 ?>
