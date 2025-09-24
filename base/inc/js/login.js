@@ -106,6 +106,9 @@ function Validate_Login() {
 function Do_Login(){
     //AJAX Cargando
     var page = document.getElementById('loading_container');
+    // Deshabilitar el botón de ingreso para evitar múltiples envíos
+    var loginBtn = document.getElementById('saveForm');
+    if (loginBtn) loginBtn.disabled = true;
     page.innerHTML = cargando_bar;
     if(Validate_Login()){
         //Obtener variables
@@ -202,8 +205,11 @@ function Do_Login(){
                             }
                         });
                 }
+                if (loginBtn) loginBtn.disabled = false;
             }
         }
+    } else {
+        if (loginBtn) loginBtn.disabled = false;
     }
     page.innerHTML="";
 }

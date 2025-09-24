@@ -34,8 +34,36 @@ if (!empty($usuario_sesion) && $usuario_sesion === $user) {
     exit();
 }
 
-// 1. Intentar autenticación por LDAP primero
-if ($ldap_status == 1) {
+// 1. Verificar si el usuario existe en la base de datos local
+$sql = "SELECT checklogin('" . $user . "','" . md5($pass) . "') as li_out;";
+$sqlout = seleccion($sql);
+$out = $sqlout[0]['li_out']; //2 si el susuario no existe en la tabla de usuarios
+if ($out == 0) {
+       goto skip_ldap;
+}
+// 2. Intentar autenticación por LDAP
+elseif ($ldap_status == 1) {
+
+    // --- Verificar disponibilidad del servidor LDAP con socket ---
+    $ldap_server_str = is_array($ldap_server) ? $ldap_server[0] : $ldap_server;
+    if (preg_match('/ldap:\/\/([^:]+):(\d+)/', $ldap_server_str, $matches)) {
+        $ldap_host = $matches[1];
+        $ldap_port = (int)$matches[2];
+    } else {
+        $ldap_host = $ldap_server_str;
+        $ldap_port = 389;
+    }
+    $socket_timeout = 1; // segundos
+    $fp = @fsockopen($ldap_host, $ldap_port, $errno, $errstr, $socket_timeout);
+    if (!$fp) {
+        $out = 3; // problema con LDAP
+        echo $out;
+        exit();
+    } else {
+        fclose($fp);
+    }
+
+    // Continuar con la autenticación LDAP
     $ldap = new AuthLdap();
     $ldap->server = $ldap_server;
     $ldap->dn = $ldap_dn; // Base DN of our organization
@@ -128,6 +156,8 @@ if ($ldap_status == 1) {
 
 
 if ($out == 0) {
+
+    skip_ldap:
     // Regenerar el ID de sesión para prevenir session fixation
     $mySessionController = mySession::getIstance($_MYSESSION_CONF);
     if (method_exists($mySessionController, 'regenerateId')) {
@@ -136,6 +166,7 @@ if ($out == 0) {
         session_regenerate_id(true);
     }
     require __DIR__ . '/../../lang/lang.es';
+
 
     // --- Lógica para usuarios LDAP: crear si no existe y mapear rol ---
     // Obtener nombre y rol usando JOIN
