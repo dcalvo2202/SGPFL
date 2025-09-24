@@ -28,7 +28,7 @@ $ldap_pass = "admin";
  *  en los diferentes modulos
  */
 
-$favicon_url = "img/logo.webp";
+$favicon_url = "/img/logo.webp";
 
 $page_cant = 10;
 

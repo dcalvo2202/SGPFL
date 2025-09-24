@@ -1,4 +1,8 @@
 <?php
+// =============================
+// INICIALIZACIÓN Y CONFIGURACIÓN
+// =============================
+
 // CORS headers para permitir peticiones desde otros orígenes
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
@@ -14,6 +18,9 @@ include(dirname(__FILE__) . "/../../lib/AuthLdap/class.AuthLdap.php");
 include("../../inc/db/db.php");
 include("../../config.inc");
 
+// =============================
+// FUNCIONES AUXILIARES
+// =============================
 
 // Función para destruir sesión y eliminar cookie si login falla
 function destroySessionAndCookie() {
@@ -46,6 +53,10 @@ function mapearGrupoALRol($grupo) {
     return isset($mapa[$grupo]) ? $mapa[$grupo] : (count($mapa) > 0 ? reset($mapa) : 1);
 }
 
+// =============================
+// VALIDACIÓN DE ENTRADA
+// =============================
+
 // Sanitización y validación básica de entrada (compatible PHP 8.1+)
 $user = isset($_POST['user']) ? strip_tags(trim($_POST['user'])) : '';
 $pass = isset($_POST['pass']) ? trim($_POST['pass']) : '';
@@ -55,7 +66,11 @@ if ($user === '' || $pass === '') {
 $out = "";
 $user_name = "";
 
-// --- NUEVO: Verificar si ya hay sesión activa para este usuario ---
+// =============================
+// VERIFICACIÓN DE SESIÓN ACTIVA
+// =============================
+
+// Verificar si ya hay sesión activa para este usuario ---
 $mySessionController = mySession::getIstance($_MYSESSION_CONF);
 $usuario_sesion = $mySessionController->getVar('usuario');
 if (!empty($usuario_sesion) && $usuario_sesion === $user) {
@@ -63,6 +78,10 @@ if (!empty($usuario_sesion) && $usuario_sesion === $user) {
     echo 0;
     exit();
 }
+
+// =============================
+// AUTENTICACIÓN LOCAL (BASE DE DATOS)
+// =============================
 
 // 1. Verificar si el usuario existe en la base de datos local
 $sql = "SELECT checklogin('" . $user . "','" . md5($pass) . "') as li_out;";
@@ -102,6 +121,11 @@ if ($out == 0) {
     echo $out; // 0 todo bien
     exit();
 }
+
+// =============================
+// AUTENTICACIÓN POR LDAP
+// =============================
+
 // 2. Intentar autenticación por LDAP
 else if ($ldap_status == 1) {
 
@@ -218,6 +242,9 @@ else if ($ldap_status == 1) {
     $out = 1; // Usuario no existe en la base de datos local y LDAP está deshabilitado
 }
 
+// =============================
+// RESPUESTA FINAL Y MANEJO DE ERRORES
+// =============================
 
 if ($out == 0) {
 
