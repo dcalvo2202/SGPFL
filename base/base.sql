@@ -172,6 +172,8 @@ CREATE TABLE `sis_distrito` (
 -- ----------------------------
 -- Records of sis_distrito
 -- ----------------------------
+
+-- San José
 INSERT INTO `sis_distrito` VALUES
 ('1','01','01','Carmen'),
 ('1','01','02','Merced'),
@@ -182,17 +184,721 @@ INSERT INTO `sis_distrito` VALUES
 ('1','01','07','Uruca'),
 ('1','01','08','Mata Redonda'),
 ('1','01','09','Pavas'),
-('1','01','10','La Uruca'),
-('1','01','11','Los Yoses'),
-('1','01','12','San Sebastián'),
-('1','01','13','San Pedro'),
-('1','01','14','Santiago'),
-('1','01','15','San Juan'),
-('1','01','16','San Vicente'),
-('1','01','17','San Isidro'),
-('1','01','18','San Miguel'),
-('1','01','19','San José'),
-('1','01','20','San Rafael');
+('1','01','10','Hatillo'),
+('1','01','11','San Sebastián');
+
+-- Escazú
+INSERT INTO `sis_distrito` VALUES
+('1','02','01','Escazú'),
+('1','02','02','San Antonio'),
+('1','02','03','San Rafael');
+
+-- Desamparados
+INSERT INTO `sis_distrito` VALUES
+('1','03','01','Desamparados'),
+('1','03','02','San Miguel'),
+('1','03','03','San Juan de Dios'),
+('1','03','04','San Rafael Arriba'),
+('1','03','05','San Antonio'),
+('1','03','06','Frailes'),
+('1','03','07','Patarrá'),
+('1','03','08','San Cristóbal'),
+('1','03','09','Rosario'),
+('1','03','10','Damas'),
+('1','03','11','San Rafael Abajo'),
+('1','03','12','Gravilias'),
+('1','03','13','Los Guido');
+
+-- Puriscal
+INSERT INTO `sis_distrito` VALUES
+('1','04','01','Santiago'),
+('1','04','02','Mercedes Sur'),
+('1','04','03','Barbacoas'),
+('1','04','04','Grifo Alto'),
+('1','04','05','San Rafael'),
+('1','04','06','Candelarita'),
+('1','04','07','Desamparaditos'),
+('1','04','08','San Antonio'),
+('1','04','09','Chires');
+
+-- Tarrazú
+INSERT INTO `sis_distrito` VALUES
+('1','05','01','San Marcos'),
+('1','05','02','San Lorenzo'),
+('1','05','03','San Carlos');
+
+-- Aserrí
+INSERT INTO `sis_distrito` VALUES
+('1','06','01','Aserrí'),
+('1','06','02','Tarbaca'),
+('1','06','03','Vuelta de Jorco'),
+('1','06','04','San Gabriel'),
+('1','06','05','Legua'),
+('1','06','06','Monterrey'),
+('1','06','07','Salitrillos');
+
+-- Mora
+INSERT INTO `sis_distrito` VALUES
+('1','07','01','Colón'),
+('1','07','02','Guayabo'),
+('1','07','03','Tabarcia'),
+('1','07','04','Piedras Negras'),
+('1','07','05','Picagres');
+
+-- Goicoechea
+INSERT INTO `sis_distrito` VALUES
+('1','08','01','Guadalupe'),
+('1','08','02','San Francisco'),
+('1','08','03','Calle Blancos'),
+('1','08','04','Mata de Plátano'),
+('1','08','05','Ipís'),
+('1','08','06','Rancho Redondo'),
+('1','08','07','Purral');
+
+-- Santa Ana
+INSERT INTO `sis_distrito` VALUES
+('1','09','01','Santa Ana'),
+('1','09','02','Salitral'),
+('1','09','03','Pozos'),
+('1','09','04','Uruca'),
+('1','09','05','Piedades'),
+('1','09','06','Brasil');
+
+-- Alajuelita
+INSERT INTO `sis_distrito` VALUES
+('1','10','01','Alajuelita'),
+('1','10','02','San Josecito'),
+('1','10','03','San Antonio'),
+('1','10','04','Concepción'),
+('1','10','05','San Felipe');
+
+-- Vásquez de Coronado
+INSERT INTO `sis_distrito` VALUES
+('1','11','01','San Isidro'),
+('1','11','02','San Rafael'),
+('1','11','03','Dulce Nombre de Jesús'),
+('1','11','04','Patalillo'),
+('1','11','05','Cascajal');
+
+-- Acosta
+INSERT INTO `sis_distrito` VALUES
+('1','12','01','San Ignacio'),
+('1','12','02','Guaitil'),
+('1','12','03','Palmichal'),
+('1','12','04','Cangrejal'),
+('1','12','05','Sabanillas');
+
+-- Tibás
+INSERT INTO `sis_distrito` VALUES
+('1','13','01','San Juan'),
+('1','13','02','Cinco Esquinas'),
+('1','13','03','Anselmo Llorente'),
+('1','13','04','León XIII'),
+('1','13','05','Colima');
+
+-- Moravia
+INSERT INTO `sis_distrito` VALUES
+('1','14','01','San Vicente'),
+('1','14','02','San Jerónimo'),
+('1','14','03','La Trinidad');
+
+-- Montes de Oca
+INSERT INTO `sis_distrito` VALUES
+('1','15','01','San Pedro'),
+('1','15','02','Sabanilla'),
+('1','15','03','Mercedes'),
+('1','15','04','San Rafael');
+
+-- Turrubares
+INSERT INTO `sis_distrito` VALUES
+('1','16','01','San Pablo'),
+('1','16','02','San Pedro'),
+('1','16','03','San Juan de Mata'),
+('1','16','04','San Luis'),
+('1','16','05','Carara');
+
+-- Dota
+INSERT INTO `sis_distrito` VALUES
+('1','17','01','Santa María'),
+('1','17','02','Jardín'),
+('1','17','03','Copey');
+
+-- Curridabat
+INSERT INTO `sis_distrito` VALUES
+('1','18','01','Curridabat'),
+('1','18','02','Granadilla'),
+('1','18','03','Sánchez'),
+('1','18','04','Tirrases');
+
+-- Pérez Zeledón
+INSERT INTO `sis_distrito` VALUES
+('1','19','01','San Isidro de El General'),
+('1','19','02','El General'),
+('1','19','03','Daniel Flores'),
+('1','19','04','Rivas'),
+('1','19','05','San Pedro'),
+('1','19','06','Platanares'),
+('1','19','07','Pejibaye'),
+('1','19','08','Cajón'),
+('1','19','09','Barú'),
+('1','19','10','Río Nuevo'),
+('1','19','11','Páramo');
+
+-- León Cortés
+INSERT INTO `sis_distrito` VALUES
+('1','20','01','San Pablo'),
+('1','20','02','San Andrés'),
+('1','20','03','Llano Bonito'),
+('1','20','04','San Isidro'),
+('1','20','05','Santa Cruz'),
+('1','20','06','San Antonio');
+
+--  Alajuela
+INSERT INTO `sis_distrito` VALUES
+('2','01','01','Alajuela'),
+('2','01','02','San José'),
+('2','01','03','Carrizal'),
+('2','01','04','San Antonio'),
+('2','01','05','Guácima'),
+('2','01','06','San Isidro'),
+('2','01','07','Sabanilla'),
+('2','01','08','San Rafael'),
+('2','01','09','Río Segundo'),
+('2','01','10','Desamparados'),
+('2','01','11','Turrúcares'),
+('2','01','12','Tambor'),
+('2','01','13','Garita'),
+('2','01','14','Sarapiquí');
+
+--  San Ramón
+INSERT INTO `sis_distrito` VALUES
+('2','02','01','San Ramón'),
+('2','02','02','Santiago'),
+('2','02','03','San Juan'),
+('2','02','04','Piedades Norte'),
+('2','02','05','Piedades Sur'),
+('2','02','06','San Rafael'),
+('2','02','07','San Isidro'),
+('2','02','08','Ángeles'),
+('2','02','09','Alfaro'),
+('2','02','10','Volio'),
+('2','02','11','Concepción'),
+('2','02','12','Zapotal'),
+('2','02','13','Peñas Blancas');
+
+--  Grecia
+INSERT INTO `sis_distrito` VALUES
+('2','03','01','Grecia'),
+('2','03','02','San Isidro'),
+('2','03','03','San José'),
+('2','03','04','San Roque'),
+('2','03','05','Tacares'),
+('2','03','06','Río Cuarto'),
+('2','03','07','Puente de Piedra'),
+('2','03','08','Bolívar');
+
+-- San Mateo
+INSERT INTO `sis_distrito` VALUES
+('2','04','01','San Mateo'),
+('2','04','02','Desmonte'),
+('2','04','03','Jesús María'),
+('2','04','04','Labrador');
+
+-- Atenas
+INSERT INTO `sis_distrito` VALUES
+('2','05','01','Atenas'),
+('2','05','02','Jesús'),
+('2','05','03','Mercedes'),
+('2','05','04','San Isidro'),
+('2','05','05','Concepción'),
+('2','05','06','San José'),
+('2','05','07','Santa Eulalia'),
+('2','05','08','Escobal');
+
+--  Naranjo
+INSERT INTO `sis_distrito` VALUES
+('2','06','01','Naranjo'),
+('2','06','02','San Miguel'),
+('2','06','03','San José'),
+('2','06','04','Cirrí Sur'),
+('2','06','05','San Jerónimo'),
+('2','06','06','San Juan'),
+('2','06','07','El Rosario'),
+('2','06','08','Palmitos');
+
+-- Palmares
+INSERT INTO `sis_distrito` VALUES
+('2','07','01','Palmares'),
+('2','07','02','Zaragoza'),
+('2','07','03','Buenos Aires'),
+('2','07','04','Santiago'),
+('2','07','05','Candelaria'),
+('2','07','06','Esquipulas'),
+('2','07','07','La Granja');
+
+-- Poás
+INSERT INTO `sis_distrito` VALUES
+('2','08','01','San Pedro'),
+('2','08','02','San Juan'),
+('2','08','03','San Rafael'),
+('2','08','04','Carrillos'),
+('2','08','05','Sabana Redonda');
+
+-- Orotina
+INSERT INTO `sis_distrito` VALUES
+('2','09','01','Orotina'),
+('2','09','02','El Mastate'),
+('2','09','03','Hacienda Vieja'),
+('2','09','04','Coyolar'),
+('2','09','05','La Ceiba');
+
+-- San Carlos
+INSERT INTO `sis_distrito` VALUES
+('2','10','01','Quesada'),
+('2','10','02','Florencia'),
+('2','10','03','Buenavista'),
+('2','10','04','Aguas Zarcas'),
+('2','10','05','Venecia'),
+('2','10','06','Pital'),
+('2','10','07','La Fortuna'),
+('2','10','08','La Tigra'),
+('2','10','09','La Palmera'),
+('2','10','10','Venado'),
+('2','10','11','Cutris'),
+('2','10','12','Monterrey'),
+('2','10','13','Pocosol');
+
+-- Zarcero
+INSERT INTO `sis_distrito` VALUES
+('2','11','01','Zarcero'),
+('2','11','02','Laguna'),
+('2','11','03','Tapesco'),
+('2','11','04','Guadalupe'),
+('2','11','05','Palmira'),
+('2','11','06','Zapote'),
+('2','11','07','Brisas');
+
+-- Valverde Vega
+INSERT INTO `sis_distrito` VALUES
+('2','12','01','Sarchí Norte'),
+('2','12','02','Sarchí Sur'),
+('2','12','03','Toro Amarillo'),
+('2','12','04','San Pedro'),
+('2','12','05','Rodríguez');
+
+-- Upala
+INSERT INTO `sis_distrito` VALUES
+('2','13','01','Upala'),
+('2','13','02','Aguas Claras'),
+('2','13','03','San José'),
+('2','13','04','Bijagua'),
+('2','13','05','Delicias'),
+('2','13','06','Dos Ríos'),
+('2','13','07','Yolillal');
+
+-- Los Chiles
+INSERT INTO `sis_distrito` VALUES
+('2','14','01','Los Chiles'),
+('2','14','02','Caño Negro'),
+('2','14','03','El Amparo'),
+('2','14','04','San Jorge');
+
+-- Guatuso
+INSERT INTO `sis_distrito` VALUES
+('2','15','01','San Rafael'),
+('2','15','02','Buenavista'),
+('2','15','03','Cote'),
+('2','15','04','Katira');
+
+-- Río Cuarto
+INSERT INTO `sis_distrito` VALUES
+('2','16','01','Río Cuarto'),
+('2','16','02','Santa Rita'),
+('2','16','03','Santa Isabel');
+
+--  Cartago
+INSERT INTO `sis_distrito` VALUES
+('3','01','01','Oriental'),
+('3','01','02','Occidental'),
+('3','01','03','Carmen'),
+('3','01','04','San Nicolás'),
+('3','01','05','Aguacaliente'),
+('3','01','06','Guadalupe'),
+('3','01','07','Corralillo'),
+('3','01','08','Tierra Blanca'),
+('3','01','09','Dulce Nombre'),
+('3','01','10','Llano Grande'),
+('3','01','11','Quebradilla');
+
+--  Paraíso
+INSERT INTO `sis_distrito` VALUES
+('3','02','01','Paraíso'),
+('3','02','02','Santiago'),
+('3','02','03','Orosi'),
+('3','02','04','Cachí'),
+('3','02','05','Llanos de Santa Lucía');
+
+--  La Unión
+INSERT INTO `sis_distrito` VALUES
+('3','03','01','Tres Ríos'),
+('3','03','02','San Diego'),
+('3','03','03','San Juan'),
+('3','03','04','San Rafael'),
+('3','03','05','Concepción'),
+('3','03','06','Dulce Nombre'),
+('3','03','07','San Ramón'),
+('3','03','08','Río Azul');
+
+-- Jiménez
+INSERT INTO `sis_distrito` VALUES
+('3','04','01','Juan Viñas'),
+('3','04','02','Tucurrique'),
+('3','04','03','Pejibaye');
+
+-- Turrialba
+INSERT INTO `sis_distrito` VALUES
+('3','05','01','Turrialba'),
+('3','05','02','La Suiza'),
+('3','05','03','Peralta'),
+('3','05','04','Santa Cruz'),
+('3','05','05','Santa Rosa'),
+('3','05','06','Pavones'),
+('3','05','07','Tuis'),
+('3','05','08','Tayutic'),
+('3','05','09','Santa Teresita'),
+('3','05','10','La Isabel'),
+('3','05','11','Chirripó');
+
+--  Alvarado
+INSERT INTO `sis_distrito` VALUES
+('3','06','01','Pacayas'),
+('3','06','02','Cervantes'),
+('3','06','03','Capellades');
+
+-- Oreamuno
+INSERT INTO `sis_distrito` VALUES
+('3','07','01','San Rafael'),
+('3','07','02','Cot'),
+('3','07','03','Potrero Cerrado'),
+('3','07','04','Cipreses'),
+('3','07','05','Santa Rosa');
+
+-- El Guarco
+INSERT INTO `sis_distrito` VALUES
+('3','08','01','El Tejar'),
+('3','08','02','San Isidro'),
+('3','08','03','Tobosi'),
+('3','08','04','Patio de Agua');
+
+--  Heredia
+INSERT INTO `sis_distrito` VALUES
+('4','01','01','Heredia'),
+('4','01','02','Mercedes'),
+('4','01','03','San Francisco'),
+('4','01','04','Ulloa'),
+('4','01','05','Varablanca');
+
+--  Barva
+INSERT INTO `sis_distrito` VALUES
+('4','02','01','Barva'),
+('4','02','02','San Pedro'),
+('4','02','03','San Pablo'),
+('4','02','04','San Roque'),
+('4','02','05','Santa Lucía'),
+('4','02','06','San José de la Montaña');
+
+--  Santo Domingo
+INSERT INTO `sis_distrito` VALUES
+('4','03','01','Santo Domingo'),
+('4','03','02','San Vicente'),
+('4','03','03','San Miguel'),
+('4','03','04','Paracito'),
+('4','03','05','Santo Tomás'),
+('4','03','06','Santa Rosa'),
+('4','03','07','Tures'),
+('4','03','08','Pará');
+
+-- Santa Bárbara
+INSERT INTO `sis_distrito` VALUES
+('4','04','01','Santa Bárbara'),
+('4','04','02','San Pedro'),
+('4','04','03','San Juan'),
+('4','04','04','Jesús'),
+('4','04','05','Santo Domingo'),
+('4','04','06','Purabá');
+
+-- San Rafael
+INSERT INTO `sis_distrito` VALUES
+('4','05','01','San Rafael'),
+('4','05','02','San Josecito'),
+('4','05','03','Santiago'),
+('4','05','04','Ángeles'),
+('4','05','05','Concepción');
+
+--  San Isidro
+INSERT INTO `sis_distrito` VALUES
+('4','06','01','San Isidro'),
+('4','06','02','San José'),
+('4','06','03','Concepción'),
+('4','06','04','San Francisco');
+
+-- Belén
+INSERT INTO `sis_distrito` VALUES
+('4','07','01','San Antonio'),
+('4','07','02','La Ribera'),
+('4','07','03','La Asunción');
+
+-- Flores
+INSERT INTO `sis_distrito` VALUES
+('4','08','01','San Joaquín'),
+('4','08','02','Barrantes'),
+('4','08','03','Llorente');
+
+-- San Pablo
+INSERT INTO `sis_distrito` VALUES
+('4','09','01','San Pablo'),
+('4','09','02','Rincón de Sabanilla');
+
+-- Sarapiquí
+INSERT INTO `sis_distrito` VALUES
+('4','10','01','Puerto Viejo'),
+('4','10','02','La Virgen'),
+('4','10','03','Horquetas'),
+('4','10','04','Llanuras del Gaspar'),
+('4','10','05','Cureña');
+
+--  Liberia
+INSERT INTO `sis_distrito` VALUES
+('5','01','01','Liberia'),
+('5','01','02','Cañas Dulces'),
+('5','01','03','Mayorga'),
+('5','01','04','Nacascolo'),
+('5','01','05','Curubandé');
+
+--  Nicoya
+INSERT INTO `sis_distrito` VALUES
+('5','02','01','Nicoya'),
+('5','02','02','Mansión'),
+('5','02','03','San Antonio'),
+('5','02','04','Quebrada Honda'),
+('5','02','05','Sámara'),
+('5','02','06','Nosara'),
+('5','02','07','Belén de Nosarita');
+
+--  Santa Cruz
+INSERT INTO `sis_distrito` VALUES
+('5','03','01','Santa Cruz'),
+('5','03','02','Bolsón'),
+('5','03','03','Veintisiete de Abril'),
+('5','03','04','Tempate'),
+('5','03','05','Cartagena'),
+('5','03','06','Cuajiniquil'),
+('5','03','07','Diriá'),
+('5','03','08','Cabo Velas'),
+('5','03','09','Tamarindo');
+
+-- Bagaces
+INSERT INTO `sis_distrito` VALUES
+('5','04','01','Bagaces'),
+('5','04','02','La Fortuna'),
+('5','04','03','Mogote'),
+('5','04','04','Río Naranjo');
+
+-- Carrillo
+INSERT INTO `sis_distrito` VALUES
+('5','05','01','Filadelfia'),
+('5','05','02','Palmira'),
+('5','05','03','Sardinal'),
+('5','05','04','Belén');
+
+--  Cañas
+INSERT INTO `sis_distrito` VALUES
+('5','06','01','Cañas'),
+('5','06','02','Palmira'),
+('5','06','03','San Miguel'),
+('5','06','04','Bebedero'),
+('5','06','05','Porozal');
+
+-- Abangares
+INSERT INTO `sis_distrito` VALUES
+('5','07','01','Las Juntas'),
+('5','07','02','Sierra'),
+('5','07','03','San Juan'),
+('5','07','04','Colorado');
+
+-- Tilarán
+INSERT INTO `sis_distrito` VALUES
+('5','08','01','Tilarán'),
+('5','08','02','Quebrada Grande'),
+('5','08','03','Tronadora'),
+('5','08','04','Santa Rosa'),
+('5','08','05','Líbano'),
+('5','08','06','Tierras Morenas'),
+('5','08','07','Arenal'),
+('5','08','08','Cabeceras');
+
+-- Nandayure
+INSERT INTO `sis_distrito` VALUES
+('5','09','01','Carmona'),
+('5','09','02','Santa Rita'),
+('5','09','03','Zapotal'),
+('5','09','04','San Pablo'),
+('5','09','05','Porvenir'),
+('5','09','06','Bejuco');
+
+-- La Cruz
+INSERT INTO `sis_distrito` VALUES
+('5','10','01','La Cruz'),
+('5','10','02','Santa Cecilia'),
+('5','10','03','La Garita'),
+('5','10','04','Santa Elena');
+
+-- Hojancha
+INSERT INTO `sis_distrito` VALUES
+('5','11','01','Hojancha'),
+('5','11','02','Monte Romo'),
+('5','11','03','Puerto Carrillo'),
+('5','11','04','Huacas'),
+('5','11','05','Matambú');
+
+--  Puntarenas
+INSERT INTO `sis_distrito` VALUES
+('6','01','01','Puntarenas'),
+('6','01','02','Pitahaya'),
+('6','01','03','Chomes'),
+('6','01','04','Lepanto'),
+('6','01','05','Paquera'),
+('6','01','06','Manzanillo'),
+('6','01','07','Guacimal'),
+('6','01','08','Barranca'),
+('6','01','09','Monte Verde'),
+('6','01','10','Isla del Coco'),
+('6','01','11','Cobano'),
+('6','01','12','Chacarita'),
+('6','01','13','Chira'),
+('6','01','14','Acapulco'),
+('6','01','15','El Roble'),
+('6','01','16','Arancibia');
+
+--  Esparza
+INSERT INTO `sis_distrito` VALUES
+('6','02','01','Espíritu Santo'),
+('6','02','02','San Juan Grande'),
+('6','02','03','Macacona'),
+('6','02','04','San Rafael'),
+('6','02','05','San Jerónimo'),
+('6','02','06','Caldera');
+
+--  Buenos Aires
+INSERT INTO `sis_distrito` VALUES
+('6','03','01','Buenos Aires'),
+('6','03','02','Volcán'),
+('6','03','03','Potrero Grande'),
+('6','03','04','Boruca'),
+('6','03','05','Pilas'),
+('6','03','06','Colinas'),
+('6','03','07','Chánguena'),
+('6','03','08','Biolley'),
+('6','03','09','Brunka');
+
+-- Montes de Oro
+INSERT INTO `sis_distrito` VALUES
+('6','04','01','Miramar'),
+('6','04','02','La Unión'),
+('6','04','03','San Isidro');
+
+-- Osa
+INSERT INTO `sis_distrito` VALUES
+('6','05','01','Ciudad Cortés'),
+('6','05','02','Palmar'),
+('6','05','03','Sierpe'),
+('6','05','04','Bahía Ballena'),
+('6','05','05','Piedras Blancas');
+
+--  Quepos
+INSERT INTO `sis_distrito` VALUES
+('6','06','01','Quepos'),
+('6','06','02','Savegre'),
+('6','06','03','Naranjito');
+
+-- Golfito
+INSERT INTO `sis_distrito` VALUES
+('6','07','01','Golfito'),
+('6','07','02','Puerto Jiménez'),
+('6','07','03','Guaycará'),
+('6','07','04','Pavón');
+
+-- Coto Brus
+INSERT INTO `sis_distrito` VALUES
+('6','08','01','San Vito'),
+('6','08','02','Sabalito'),
+('6','08','03','Aguabuena'),
+('6','08','04','Limoncito'),
+('6','08','05','Pittier');
+
+-- Parrita
+INSERT INTO `sis_distrito` VALUES
+('6','09','01','Parrita');
+
+-- Corredores
+INSERT INTO `sis_distrito` VALUES
+('6','10','01','Corredor'),
+('6','10','02','La Cuesta'),
+('6','10','03','Canoas'),
+('6','10','04','Laurel');
+
+-- Garabito
+INSERT INTO `sis_distrito` VALUES
+('6','11','01','Jacó'),
+('6','11','02','Tárcoles');
+
+--  Limón
+INSERT INTO `sis_distrito` VALUES
+('7','01','01','Limón'),
+('7','01','02','Valle La Estrella'),
+('7','01','03','Río Blanco'),
+('7','01','04','Matama');
+
+--  Pococí
+INSERT INTO `sis_distrito` VALUES
+('7','02','01','Guápiles'),
+('7','02','02','Jiménez'),
+('7','02','03','La Rita'),
+('7','02','04','Roxana'),
+('7','02','05','Cariari'),
+('7','02','06','Colorado'),
+('7','02','07','La Colonia');
+
+--  Siquirres
+INSERT INTO `sis_distrito` VALUES
+('7','03','01','Siquirres'),
+('7','03','02','Pacuarito'),
+('7','03','03','Florida'),
+('7','03','04','Germania'),
+('7','03','05','El Cairo'),
+('7','03','06','Alegría'),
+('7','03','07','Reventazón');
+
+-- Talamanca
+INSERT INTO `sis_distrito` VALUES
+('7','04','01','Bratsi'),
+('7','04','02','Sixaola'),
+('7','04','03','Cahuita'),
+('7','04','04','Telire');
+
+-- Matina
+INSERT INTO `sis_distrito` VALUES
+('7','05','01','Matina'),
+('7','05','02','Batán'),
+('7','05','03','Carrandi');
+
+--  Guácimo
+INSERT INTO `sis_distrito` VALUES
+('7','06','01','Guácimo'),
+('7','06','02','Mercedes'),
+('7','06','03','Pocora'),
+('7','06','04','Río Jiménez'),
+('7','06','05','Duacarí');
 
 -- ----------------------------
 -- Table structure for `sis_log`
@@ -308,10 +1014,11 @@ CREATE TABLE `sis_rolls` (
 -- ----------------------------
 -- Records of sis_rolls
 -- ----------------------------
-INSERT INTO `sis_rolls` VALUES ('1', 'Administradores', 'Permisos totales sobre todos los modulos este usuario no encuentra ninguna restricción');
-INSERT INTO `sis_rolls` VALUES ('2', 'CTFG/Subdireccion', 'Comisión de trabajos finales de graduación tiene permisos de lectura sobre los documentos de los estudiantes y puede aprobar o rechazar los trabajos finales de graduación');
-INSERT INTO `sis_rolls` VALUES ('3', 'Estudiantes', 'Estudiantes de la universidad tiene permisos de lectura y escritura sobre sus documentos y puede enviar solicitudes de trabajos finales de graduación');
-INSERT INTO `sis_rolls` VALUES ('4', 'Asesores externos', 'Tiene acceso de lectura a los modulos del estudiante');
+INSERT INTO `sis_rolls` VALUES ('1', 'Administrador', 'Permisos totales sobre todos los modulos este usuario no encuentra ninguna restricción');
+INSERT INTO `sis_rolls` VALUES ('2', 'Gestor Academico', 'Tiene todos los permisos, excepto los relacionados al control de modulos y permisos de usuarios');
+INSERT INTO `sis_rolls` VALUES ('3', 'CTFG', 'Comisión de trabajos finales de graduación tiene permisos de lectura sobre los documentos de los estudiantes y puede aprobar o rechazar los trabajos finales de graduación');
+INSERT INTO `sis_rolls` VALUES ('4', 'Estudiante', 'Estudiantes de la universidad tiene permisos de lectura y escritura sobre sus documentos y puede enviar solicitudes de trabajos finales de graduación');
+INSERT INTO `sis_rolls` VALUES ('5', 'Asesor externo', 'Tiene acceso de lectura a los modulos del estudiante');
 
 -- ----------------------------
 -- Table structure for `sis_permits`
@@ -347,40 +1054,52 @@ INSERT INTO `sis_permits` (`id_mod`, `id_action`, `id_roll`) VALUES
 (7, 1, 1), (7, 2, 1), (7, 3, 1), (7, 4, 1), (7, 5, 1), (7, 6, 1),
 (8, 1, 1), (8, 2, 1), (8, 3, 1), (8, 4, 1), (8, 5, 1), (8, 6, 1);
 
--- Permisos para CTFG/Subdirección
--- Permisos limitados para el rol CTFG/Subdirección (id_roll = 2)
+-- Permisos para Gestor Academico
+-- Permisos completos para el rol Gestor Academico, excepcion modificacion de modulos (id_roll = 2)
 INSERT INTO `sis_permits` (`id_mod`, `id_action`, `id_roll`) VALUES
-(1, 1, 2), (1, 3, 2),
-(2, 1, 2), (2, 2, 2), (2, 4, 2), (2, 5, 2), (2, 6, 2),
+(1, 1, 2), (1, 2, 2), (1, 6, 2),
+(2, 1, 2), (2, 2, 2), (2, 3, 2), (2, 4, 2), (2, 5, 2), (2, 6, 2),
 (3, 1, 2), (3, 2, 2), (3, 3, 2), (3, 4, 2), (3, 5, 2), (3, 6, 2),
 (4, 1, 2), (4, 2, 2), (4, 3, 2), (4, 4, 2), (4, 5, 2), (4, 6, 2),
 (5, 1, 2), (5, 2, 2), (5, 3, 2), (5, 4, 2), (5, 5, 2), (5, 6, 2),
 (6, 1, 2), (6, 2, 2), (6, 3, 2), (6, 4, 2), (6, 5, 2), (6, 6, 2),
-(7, 1, 2), (7, 2, 2), (7, 6, 2),
+(7, 1, 2), (7, 2, 2), (7, 3, 2), (7, 4, 2), (7, 5, 2), (7, 6, 2),
 (8, 1, 2), (8, 2, 2), (8, 3, 2), (8, 4, 2), (8, 5, 2), (8, 6, 2);
 
--- Permisos para Estudiante
--- Permisos limitados para el rol Estudiante (id_roll = 3)
+-- Permisos para CTFG
+-- Permisos limitados para el rol CTFG (id_roll = 3)
 INSERT INTO `sis_permits` (`id_mod`, `id_action`, `id_roll`) VALUES
-(1, 1, 3),
-(3, 1, 3), (3, 2, 3), (3, 6, 3),
-(4, 1, 3), (4, 2, 3), (4, 6, 3),
+(1, 1, 3), (1, 3, 3),
+(2, 1, 3), (2, 2, 3), (2, 4, 3), (2, 5, 3), (2, 6, 3),
+(3, 1, 3), (3, 2, 3), (3, 3, 3), (3, 4, 3), (3, 5, 3), (3, 6, 3),
+(4, 1, 3), (4, 2, 3), (4, 3, 3), (4, 4, 3), (4, 5, 3), (4, 6, 3),
 (5, 1, 3), (5, 2, 3), (5, 3, 3), (5, 4, 3), (5, 5, 3), (5, 6, 3),
-(6, 1, 3), (6, 3, 3), (6, 4, 3), (6, 6, 3),
-(7, 1, 3), (7, 6, 3),
-(8, 1, 3), (8, 3, 3), (8, 4, 3);
+(6, 1, 3), (6, 2, 3), (6, 3, 3), (6, 4, 3), (6, 5, 3), (6, 6, 3),
+(7, 1, 3), (7, 2, 3), (7, 6, 3),
+(8, 1, 3), (8, 2, 3), (8, 3, 3), (8, 4, 3), (8, 5, 3), (8, 6, 3);
 
--- Permisos para Asesor externo
--- Permisos limitados para el rol Asesor externo (id_roll = 4)
+-- Permisos para Estudiante
+-- Permisos limitados para el rol Estudiante (id_roll = 4)
 INSERT INTO `sis_permits` (`id_mod`, `id_action`, `id_roll`) VALUES
 (1, 1, 4),
-(2, 1, 4),
-(3, 1, 4), (3, 2, 4),
+(3, 1, 4), (3, 2, 4), (3, 6, 4),
 (4, 1, 4), (4, 2, 4), (4, 6, 4),
-(5, 1, 4),
+(5, 1, 4), (5, 2, 4), (5, 3, 4), (5, 4, 4), (5, 5, 4), (5, 6, 4),
 (6, 1, 4), (6, 3, 4), (6, 4, 4), (6, 6, 4),
 (7, 1, 4), (7, 6, 4),
-(8, 1, 4);
+(8, 1, 4), (8, 3, 4), (8, 4, 4);
+
+-- Permisos para Asesor externo
+-- Permisos limitados para el rol Asesor externo (id_roll = 5)
+INSERT INTO `sis_permits` (`id_mod`, `id_action`, `id_roll`) VALUES
+(1, 1, 5),
+(2, 1, 5),
+(3, 1, 5), (3, 2, 5),
+(4, 1, 5), (4, 2, 5), (4, 6, 5),
+(5, 1, 5),
+(6, 1, 5), (6, 3, 5), (6, 4, 5), (6, 6, 5),
+(7, 1, 5), (7, 6, 5),
+(8, 1, 5);
 
 -- ----------------------------
 -- Table structure for `sis_parametros_varios`
