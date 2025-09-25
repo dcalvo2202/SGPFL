@@ -932,8 +932,30 @@ CREATE TABLE `sis_login` (
 -- ----------------------------
 -- Records of sis_login
 -- ----------------------------
-INSERT INTO `sis_login` VALUES ('112170040', 'd41d8cd98f00b204e9800998ecf8427e', '1');
-INSERT INTO `sis_login` VALUES ('rrodrigo123', '5d7845ac6ee7cfffafc5fe5f35cf666d', '2');
+
+-- Administrador
+INSERT INTO `sis_login` VALUES ('205610158', '5d7845ac6ee7cfffafc5fe5f35cf666d', '1');
+-- Gestor Academico
+INSERT INTO `sis_login` VALUES ('111710169', '5d7845ac6ee7cfffafc5fe5f35cf666d', '2');
+INSERT INTO `sis_login` VALUES ('800810596', '5d7845ac6ee7cfffafc5fe5f35cf666d', '2');
+-- Comision
+INSERT INTO `sis_login` VALUES ('110600492', '5d7845ac6ee7cfffafc5fe5f35cf666d', '3');
+INSERT INTO `sis_login` VALUES ('503230754', '5d7845ac6ee7cfffafc5fe5f35cf666d', '3');
+INSERT INTO `sis_login` VALUES ('503020651', '5d7845ac6ee7cfffafc5fe5f35cf666d', '3');
+-- Estudiantes
+INSERT INTO `sis_login` VALUES ('206580363', '5d7845ac6ee7cfffafc5fe5f35cf666d', '4');
+INSERT INTO `sis_login` VALUES ('503550224', '5d7845ac6ee7cfffafc5fe5f35cf666d', '4');
+INSERT INTO `sis_login` VALUES ('504410118', '5d7845ac6ee7cfffafc5fe5f35cf666d', '4');
+INSERT INTO `sis_login` VALUES ('504430777', '5d7845ac6ee7cfffafc5fe5f35cf666d', '4');
+INSERT INTO `sis_login` VALUES ('118440202', '5d7845ac6ee7cfffafc5fe5f35cf666d', '4');
+INSERT INTO `sis_login` VALUES ('402290345', '5d7845ac6ee7cfffafc5fe5f35cf666d', '4');
+INSERT INTO `sis_login` VALUES ('116440018', '5d7845ac6ee7cfffafc5fe5f35cf666d', '4');
+-- Asesor externo
+INSERT INTO `sis_login` VALUES ('105710421', '5d7845ac6ee7cfffafc5fe5f35cf666d', '5');
+INSERT INTO `sis_login` VALUES ('800870458', '5d7845ac6ee7cfffafc5fe5f35cf666d', '5');
+INSERT INTO `sis_login` VALUES ('205830110', '5d7845ac6ee7cfffafc5fe5f35cf666d', '5');
+INSERT INTO `sis_login` VALUES ('107010122', '5d7845ac6ee7cfffafc5fe5f35cf666d', '5');
+INSERT INTO `sis_login` VALUES ('701810347', '5d7845ac6ee7cfffafc5fe5f35cf666d', '5');
 
 -- ----------------------------
 -- Table structure for `sis_user`
@@ -952,8 +974,30 @@ CREATE TABLE `sis_user` (
 -- ----------------------------
 -- Records of sis_user
 -- ----------------------------
-INSERT INTO `sis_user` VALUES ('112170040', 'AARON CASTILLO ALPIZAR', 'acastil@una.cr', '83419199', 'M');
-INSERT INTO `sis_user` VALUES ('rrodrigo123', 'Rodrigo', 'rodrigo@una.cr', '88888888', 'M');
+
+-- Administrador
+INSERT INTO `sis_user` VALUES ('205610158', upper('Oscar Chaves Barrantes'), 'oscar.chaves.barrantes@una.cr', '25626370', 'T');
+-- Gestor Academico
+INSERT INTO `sis_user` VALUES ('111710169', upper('Miguel Arturo Corrales Ureña'), 'miguel.corrales.urena@una.cr', '25626364', 'T');
+INSERT INTO `sis_user` VALUES ('800810596', upper('Yamileth Hernandez Cano'), 'yamileth.hernandez.cano@una.ac.cr', '25626367', 'T');
+-- Comision
+INSERT INTO `sis_user` VALUES ('110600492', upper('Maikol Guzmán Alán'), 'maikol.guzman.alan@una.cr', NULL, NULL);
+INSERT INTO `sis_user` VALUES ('503230754', upper('Eddier López López'), 'eddier.lopez.lopez@una.ac.cr', NULL, NULL);
+INSERT INTO `sis_user` VALUES ('503020651', upper('Carlos Luis Chanto Espinoza'), 'carlos.chanto.espinoza@una.ac.cr', '83429147', 'M');
+-- Estudiantes
+INSERT INTO `sis_user` VALUES ('206580363', upper('Miguel Díaz Gutiérrez'), 'miguel.diaz.gutierrez@est.una.ac.cr', '84484757', 'M');
+INSERT INTO `sis_user` VALUES ('503550224', upper('Miguel Ángel Rodríguez Arias'), 'miguel.rodriguez.arias@est.una.ac.cr', '84281699', 'M');
+INSERT INTO `sis_user` VALUES ('504410118', upper('Carlos Daniel López Chévez'), 'carlos.lopez.chevez@est.una.ac.cr', NULL, NULL);
+INSERT INTO `sis_user` VALUES ('504430777', upper('Jose Domingo Molina Salas'), 'jose.molina.salas@est.una.ac.cr', NULL, NULL);
+INSERT INTO `sis_user` VALUES ('118440202', upper('Larissa Segura Arguello'), 'larissa.segura.arguello@est.una.ac.cr', NULL, NULL);
+INSERT INTO `sis_user` VALUES ('402290345', upper('Esteban Espinoza Fallas'), 'eef251195@gmail.com', NULL, NULL);
+INSERT INTO `sis_user` VALUES ('116440018', upper('Marco Antonio Murillo Sánchez'), 'mmurillo532@gmail.com', NULL, NULL);
+-- Asesor externo
+INSERT INTO `sis_user` VALUES ('105710421', upper('Georges Alfaro Salazar'), 'georges.alfaro.salazar@una.cr', NULL, NULL);
+INSERT INTO `sis_user` VALUES ('800870458', upper('Darinka Grbic Grbic'), 'darinka.grbic.grbic@una.cr', '88373584', 'M');
+INSERT INTO `sis_user` VALUES ('205830110', upper('Katty Vásquez Ávila'), 'katty.vasquez.avila@una.cr', '88198417', 'M');
+INSERT INTO `sis_user` VALUES ('107010122', upper('Guiselle Víquez Jiménez'), 'guiselle.viquez@gmail.com', '83263459', 'M');
+INSERT INTO `sis_user` VALUES ('701810347', upper('Jonathan  Manrique Cordero  Duarte'), 'jcordero1987@gmail.com', '88595127', 'M');
 
 -- ----------------------------
 -- Table structure for `sis_mod`
