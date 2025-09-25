@@ -1,4 +1,8 @@
 <?php
+/**
+ * Para el funcionamiento correcto del login es necesario que esté activo el servidor SQL, porque sin este no va a funcionar.
+ */
+
 // =============================
 // INICIALIZACIÓN Y CONFIGURACIÓN
 // =============================
@@ -15,7 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 include(dirname(__FILE__) . "/../../lib/mysession/mySession.class.php");
 include(dirname(__FILE__) . "/../../lib/mysession/mySession.conf.php");
 include(dirname(__FILE__) . "/../../lib/AuthLdap/class.AuthLdap.php");
-include("../../inc/db/db.php");
+// Manejar excepción de conexión a la base de datos
+try {
+    include("../../inc/db/db.php");
+} catch (Throwable $e) {
+    sendError(7); // Código: error en base de datos
+}
 include("../../config.inc");
 
 // =============================

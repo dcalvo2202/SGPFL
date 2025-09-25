@@ -195,7 +195,7 @@ function Do_Login(){
                 }else if(response.trim() == "7"){
                         Swal.fire({
                             icon: 'error',
-                            title: '<span style="font-size:1.3em;">Error de Base de Datos</span>',
+                            title: '<span style="font-size:1.3em;">Error de base de datos</span>',
                             html: '<span style="font-size:1.2em;">Por favor comunicarse con el administrador.</span>',
                             confirmButtonText: 'Aceptar',
                             customClass: {
