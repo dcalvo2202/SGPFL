@@ -4,5 +4,8 @@
     },
     "scripts": {
         "test": "phpunit --colors=always --testdox"
+    },
+    "require": {
+        "php-webdriver/webdriver": "^1.1"
     }
 }

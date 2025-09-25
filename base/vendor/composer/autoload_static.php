@@ -16,6 +16,10 @@ class ComposerStaticInit82dc742f68db531670624e21bb81e7a1
         array (
             'PhpParser\\' => 10,
         ),
+        'F' => 
+        array (
+            'Facebook\\WebDriver\\' => 19,
+        ),
         'D' => 
         array (
             'DeepCopy\\' => 9,
@@ -26,6 +30,10 @@ class ComposerStaticInit82dc742f68db531670624e21bb81e7a1
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'Facebook\\WebDriver\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-webdriver/webdriver/lib',
         ),
         'DeepCopy\\' => 
         array (
