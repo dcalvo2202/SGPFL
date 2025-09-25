@@ -15,12 +15,12 @@ $result = mysqli_query($id_con, $sql);
 while ($result && $row = mysqli_fetch_assoc($result)) { $estudiantes[] = $row; }
 
 $comites = [];
-$sql_comite = "SELECT Id AS id, integrantes FROM comite"; // OJO: columna es 'Id' en BD
+$sql_comite = "SELECT Id AS id, integrantes FROM comite"; // verifica que 'integrantes' exista en tu tabla
 $result_comite = mysqli_query($id_con, $sql_comite);
 while ($result_comite && $row = mysqli_fetch_assoc($result_comite)) { $comites[] = $row; }
 
 $categorias = []; 
-$sql_categorias = "SELECT idCategoria, nombre, categoria FROM categorias"; // verifica que 'nombre' exista en tu tabla
+$sql_categorias = "SELECT idCategoria, nombre, categoria FROM categorias"; 
 $result_categorias = mysqli_query($id_con, $sql_categorias);
 while ($result_categorias && $row = mysqli_fetch_assoc($result_categorias)) { $categorias[] = $row; }
 
@@ -153,6 +153,7 @@ $fecha_actual = date('Y-m-d');
 
   <div class="ribbon"></div>
 
+
   <div style="width:80%;margin:0 auto 30px;">
     <?php if ($mensaje) echo $mensaje; ?>
   </div>
@@ -184,7 +185,6 @@ $fecha_actual = date('Y-m-d');
         </option>
       <?php endforeach; ?>
     </select>
-
 
     <label for="Categora">Categoría:</label>
    <select id="categoria" name="categoria" required>
@@ -238,5 +238,8 @@ $fecha_actual = date('Y-m-d');
       box.style.display = 'flex';
     });
   </script>
+  
 </body>
+
 </html>
+
