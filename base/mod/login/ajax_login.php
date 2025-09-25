@@ -269,7 +269,7 @@ if ($out == 0) {
     // Si no existe, sincronizar el usuario en ambas tablas
     if (!$sqlout1 || count($sqlout1) == 0) {
         // Mapear grupo LDAP a rol interno
-        $rol_ldap = isset($rol_ldap) ? $rol_ldap : 'Estudiantes';
+        $rol_ldap = isset($rol_ldap) ? $rol_ldap : 'Estudiante'; // Valor por defecto si no se obtuvo del LDAP
         $rol_interno = mapearGrupoALRol($rol_ldap);
 
         // Insertar en sis_login con pass en md5
