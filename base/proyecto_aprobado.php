@@ -1,113 +1,44 @@
 <?php
+session_start();
 require_once 'inc/db/db.php';
 
+// Generar identificador (una vez por carga) y guardarlo en sesión
+if (empty($_SESSION['identificador_preview'])) {
+  $_SESSION['identificador_preview'] = 'UNA-TFG-' . str_pad((string)rand(0,9999), 4, '0', STR_PAD_LEFT) . '-' . date('Y');
+}
+$identificador_preview = $_SESSION['identificador_preview'];
 
+// Carga de combos
 $estudiantes = [];
 $sql = "SELECT id, nombre FROM sis_user";
 $result = mysqli_query($id_con, $sql);
-if ($result) {
-    while ($row = mysqli_fetch_assoc($result)) {
-        $estudiantes[] = $row;
-    }
-}
-
+while ($result && $row = mysqli_fetch_assoc($result)) { $estudiantes[] = $row; }
 
 $comites = [];
-$sql_comite = "SELECT id, integrantes FROM comite";
+$sql_comite = "SELECT Id AS id, integrantes FROM comite"; // OJO: columna es 'Id' en BD
 $result_comite = mysqli_query($id_con, $sql_comite);
-if ($result_comite) {
-    while ($row = mysqli_fetch_assoc($result_comite)) {
-        $comites[] = $row;
-    }
-}
+while ($result_comite && $row = mysqli_fetch_assoc($result_comite)) { $comites[] = $row; }
 
-$categorias = [];
-$sql_categorias = "SELECT idCategoria, nombre, categoria FROM categorias";
+$categorias = []; 
+$sql_categorias = "SELECT idCategoria, nombre, categoria FROM categorias"; // verifica que 'nombre' exista en tu tabla
 $result_categorias = mysqli_query($id_con, $sql_categorias);
-if ($result_categorias) {
-    while ($row = mysqli_fetch_assoc($result_categorias)) {
-        $categorias[] = $row;
-    }
-}
+while ($result_categorias && $row = mysqli_fetch_assoc($result_categorias)) { $categorias[] = $row; }
 
-
+// Mensajes
 $mensaje = '';
+if (isset($_GET['ok']))  $mensaje = '<div style="color:green;">exitoso</div>';
+if (isset($_GET['err'])) $mensaje = '<div style="color:red;">fallido Intente nuevamente</div>';
 
 // fecha actual
 $fecha_actual = date('Y-m-d');
-
-// formulario
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Recoge los datos del formulario
-    $nombre = trim($_POST['nombre'] ?? '');
-    $estudiante = trim($_POST['estudiante'] ?? '');
-    $comite = trim($_POST['comite'] ?? '');
-    $categoria = trim($_POST['categoria'] ?? '');
-    // La fecha y hora actual para guardar en la base de datos
-    $fecha_aprobacion = date('Y-m-d H:i:s');
-    $documento = $_FILES['documento'] ?? null;
-
-    // Genera el identificador
-    $identificador = 'UNA-TFG-' . str_pad(rand(0,9999), 4, '0', STR_PAD_LEFT) . '-' . date('Y');
-
-    // El campo aprobado lo puedes poner como 1 (aprobado) o 0 (no aprobado)
-    $aprobado = 1;
-
-    // Validación básica
-    if ($nombre === '' || $estudiante === '' || $comite === '' || $categoria === '' || !$documento || $documento['error'] !== UPLOAD_ERR_OK) {
-        $mensaje = '<div style="color:red;">Todos los campos y el documento son obligatorios.</div>';
-    } else {
-        // Lee el contenido del archivo como BLOB
-        $documento_blob = file_get_contents($documento['tmp_name']);
-
-        // Inserta el registro en la base de datos
-        $sql = "INSERT INTO proyecto_aprobado 
-            (nombre, estudiante_id, comite_id, categoria_id, documento, aprobado, identificador, fecha_creacion)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        $stmt = mysqli_prepare($id_con, $sql);
-        mysqli_stmt_bind_param(
-            $stmt,
-            "siiisbss",
-            $nombre,
-            $estudiante,
-            $comite,
-            $categoria,
-            $documento_blob,
-            $aprobado,
-            $identificador,
-            $fecha_aprobacion
-        );
-        $result = mysqli_stmt_execute($stmt);
-
-        if ($result) {
-            $mensaje = '<div style="color:green;">Proyecto aprobado guardado correctamente.</div>';
-        } else {
-            $mensaje = '<div style="color:red;">Error al guardar el proyecto aprobado.</div>';
-        }
-        mysqli_stmt_close($stmt);
-    }
-}
-
-// Después de recibir el formulario
-$estudiante_id = $_POST['estudiante'] ?? '';
-$datos_estudiante = null;
-
-if ($estudiante_id !== '') {
-    $sql = "SELECT * FROM sis_user WHERE id = ?";
-    $stmt = mysqli_prepare($id_con, $sql);
-    mysqli_stmt_bind_param($stmt, "i", $estudiante_id);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-    $datos_estudiante = mysqli_fetch_assoc($result);
-    // Ahora $datos_estudiante tiene todos los datos del estudiante seleccionado
-}
-?><!doctype html>
+?>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Colores en Bruto</title>
-<style>
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Registrar proyecto aprobado</title>
+  <style>
   :root {
     --white: #fcfdfd;
     --navy-dark: #092567;
@@ -226,7 +157,13 @@ if ($estudiante_id !== '') {
     <?php if ($mensaje) echo $mensaje; ?>
   </div>
 
-  <form action="panel_ctfg.php" method="post" enctype="multipart/form-data">
+  <form action="mod/admin/users/tfg_aprobado_update.php" method="post" enctype="multipart/form-data">
+    <!-- Panel de identificador solo lectura -->
+    <label>Código identificador (solo lectura):</label>
+    <input type="text" value="<?php echo htmlspecialchars($identificador_preview); ?>" readonly>
+    <!-- Campo oculto opcional (el servidor usará el de sesión igualmente) -->
+    <input type="hidden" name="identificador" value="<?php echo htmlspecialchars($identificador_preview); ?>">
+
     <label for="nombre">Nombre del proyecto:</label>
     <input type="text" id="nombre" name="nombre" required>
 
@@ -279,16 +216,8 @@ if ($estudiante_id !== '') {
   </form>
 
   <script>
-    // Iconos base64 para mostrar miniatura según tipo de archivo
-    const icons = {
-
-      pdf: 'data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjYmQxMDE2IiB2aWV3Qm94PSIwIDAgMzIgMzIiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iI2ZmZmZmZiIvPjxwYXRoIGQ9Ik0yNCAyMEgyMFYyNEgyNFYyMFpNMjQgMTZIMjBWMThIMjRWMThaIiBmaWxsPSIjYmQxMDE2Ii8+PC9zdmc+',
-    
-      doc: 'data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDkyNTY3IiB2aWV3Qm94PSIwIDAgMzIgMzIiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iI2ZmZmZmZiIvPjxwYXRoIGQ9Ik0yNCAyMEgyMFYyNEgyNFYyMFpNMjQgMTZIMjBWMThIMjRWMThaIiBmaWxsPSIjMDkyNTY3Ii8+PC9zdmc+',
-    
-      xls: 'data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMGU0ZDkzIiB2aWV3Qm94PSIwIDAgMzIgMzIiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iI2ZmZmZmZiIvPjxwYXRoIGQ9Ik0yNCAyMEgyMFYyNEgyNFYyMFpNMjQgMTZIMjBWMThIMjRWMThaIiBmaWxsPSIjMGU0ZDkzIi8+PC9zdmc+'
-    
-    };
+    // Icono único de aceptación
+    const ICON_URL = 'https://www.pngfind.com/pngs/m/56-561014_doble-check-azul-png-check-de-whatsapp-transparent.png';
 
     // Mostrar el input file al hacer click en el label
     document.querySelector('.btn-tfg').onclick = function(e) {
@@ -296,22 +225,17 @@ if ($estudiante_id !== '') {
       document.getElementById('documento').click();
     };
 
-    // Mostrar miniatura al seleccionar archivo
+    // Mostrar miniatura al seleccionar archivo (siempre el mismo ícono)
     document.getElementById('documento').addEventListener('change', function(e) {
       const file = e.target.files[0];
+      const box  = document.getElementById('previewBox');
       if (!file) {
-        document.getElementById('previewBox').style.display = 'none';
+        box.style.display = 'none';
         return;
       }
-      const ext = file.name.split('.').pop().toLowerCase();
-      let icon = icons.pdf; // Default
-      if (['doc', 'docx'].includes(ext)) icon = icons.doc;
-      else if (['xls', 'xlsx'].includes(ext)) icon = icons.xls;
-      else if (ext === 'pdf') icon = icons.pdf;
-
-      document.getElementById('previewIcon').src = icon;
+      document.getElementById('previewIcon').src = ICON_URL;
       document.getElementById('previewName').textContent = file.name;
-      document.getElementById('previewBox').style.display = 'flex';
+      box.style.display = 'flex';
     });
   </script>
 </body>
