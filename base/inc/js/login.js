@@ -133,8 +133,8 @@ function Do_Login(){
 
                 //Tuvo éxito el ingreso, entonces redirecciona.
                 if(response.trim() == "0"){
-                    window.location=document.getElementById("cds_domain_locate").value+"main.php";
-                    //window.location=document.getElementById("cds_domain_locate").value+"dashboard.php";
+                    //window.location=document.getElementById("cds_domain_locate").value+"main.php";
+                    window.location=document.getElementById("cds_domain_locate").value+"dashboard.php";
                 }
                 // Sino tuvo éxito, muestra el error correspondiente.
                 else if ( response.trim()== "1" || response.trim() == "2"){
