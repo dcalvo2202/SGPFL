@@ -1,5 +1,11 @@
 {
     "require-dev": {
-        "codeception/codeception": "^1.1"
+        "phpunit/phpunit": "^12.3"
+    },
+    "scripts": {
+        "test": "phpunit --colors=always --testdox"
+    },
+    "require": {
+        "php-webdriver/webdriver": "^1.1"
     }
 }

@@ -23,6 +23,7 @@ $res = seleccion($sql);
     </div>
     <div class="col-lg-5 col-md-5 col-sm-8 col-xs-12">
         <form method="post" action="">
+            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($mySessionController->getCsrfToken()) ?>">
             <input type="hidden" id="id_mod" name="id_mod" value="<?= $id_mod ?>"/>
             <div class="form-group">
                 <label for="name_mod"><?= $vocab["symbol_name"] ?> </label>

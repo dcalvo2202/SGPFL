@@ -35,6 +35,7 @@ function check_modulo($mod, $rol) {
         <p><?= $vocab["rols_title_desc"] ?></p>
     </div>
     <form method="post" action="">
+    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($mySessionController->getCsrfToken()) ?>">
         <div class="row">
             <div class="col-lg-5 col-md-5 col-sm-8 col-xs-12">
                 <input type="hidden" id="id_roll" name="id_roll" value="<?= $id_roll ?>"/>

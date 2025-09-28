@@ -1,7 +1,12 @@
 <?php
 include("mod/login/check.php");
+include("config.inc");
 $vocab = $mySessionController->getVar("vocab");
+
 ?>
+<head>
+    <link rel="icon" type="image/webp" href="<?= $favicon_url ?>">
+</head>
 <div style="padding-left: 25px;">
     <h2><?= $vocab["home_title"] ?></h2>
     <p> <?= $vocab['home_title_desc'] . " " . $mySessionController->getVar("page_title"); ?></p>
