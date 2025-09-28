@@ -36,8 +36,7 @@ if ($conn->connect_error) {
             if (strpos($s, 'revisión') !== false || strpos($s, 'revision') !== false || strpos($s, 'pendiente') !== false) $badge_color = 'bg-info';
             
             // Construcción de la URL de descarga usando $base_url si está disponible.
-            $base = isset($base_url) && $base_url !== '' ? rtrim($base_url, '/') : '';
-            $download_url = $base . '/mod/admin/users/tfg_download.php?id=' . (int)$row['id'];
+            $download_url = 'mod/admin/users/tfg_download.php?id=' . (int)$row['id'];
             
             // Manejo seguro de la fecha de creación en caso de que sea nula.
             $created = $row['created_at'] ?? null;

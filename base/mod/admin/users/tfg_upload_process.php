@@ -14,7 +14,7 @@ $conn = new mysqli($db_host, $usuario, $clave, $db);
 if ($conn->connect_error) die("Conexión fallida: " . $conn->connect_error);
 
 // COMENTAR O ELIMINAR ESTA LÍNEA EN PRODUCCIÓN.
-$user_id = $_SESSION['id'] ?? '112170040';
+$user_id = $_SESSION['id'] ?? 'estudiante001';
 
 // --- Lectura de Archivo ---
 $tmp_path = $_FILES['document']['tmp_name'];
