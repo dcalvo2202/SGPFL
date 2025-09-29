@@ -15,13 +15,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
     </head>
     <body>
-        <?php
-        session_start();
-        if (!isset($_SESSION['id_roll']) || (int)$_SESSION['id_roll'] !== 3) {
-            header('Location: login.php');
-            exit;
-        }
-        ?>
+      
         <div className="page-container">
             <h1 className="mb-4">Comision</h1>
             <main className="flex-grow-1 container py-4">

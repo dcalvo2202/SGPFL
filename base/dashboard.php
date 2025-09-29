@@ -11,19 +11,23 @@
     }
 
     switch ($rol) {
-        case 1: // Estudiante
-            include 'panel_estudiante.php';
-            break;
-        case 2: // CTFG
-            include 'panel_ctfg.php';
-            break;
-        case 3: // Subdirección
+        case 1: // Administrador
             include 'panel_subdireccion.php';
             break;
-        case 4: // Asesor Externo
+        case 2: // Gestor Académico
+            include 'panel_subdireccion.php';
+            break;
+        case 3: // CTFG
+            include 'panel_ctfg.php';
+            break;
+        case 4: // Estudiante
+            include 'panel_estudiante.php';
+            break;
+        case 5: // Asesor Externo
             include 'panel_asesor.php';
             break;
         default:
             echo "Rol no reconocido.";
     }
+
 ?>
