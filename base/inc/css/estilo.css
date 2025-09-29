@@ -1,75 +1,73 @@
-body { 
-    background: url(../../img/fondo_global.png) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+/**
+ * ESTILOS OFICIALES UNA/ESCINF
+ * Proyecto SGPFL 2025-07
+ */
+
+
+:root {
+    /* Paleta de colores oficial UNA según estándares */
+    --rojo-una: #CD1719;
+    --azul-una: #034991;
+    --gris-una: #A7A7A9;
+    --blanco-una: #FFFFFF;
+    --negro-una: #000000;
+    
+    /* Tipografías oficiales UNA */
+    --font-titulos: 'Goudy Old Style', serif;
+    --font-parrafos: 'Frutiger', 'Arial', sans-serif;
+    
+    /* Tamaños responsive oficiales */
+    --h1-size: 2.25rem;
+    --h2-size: 1.75rem;
+    --p-size: 1rem;
+    
+    /* Espaciados estándar */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
 }
 
-.img_fix_full{
-    width: 100%;
-}
-/*
-Permite utilizar FontAwesome con &#xHHHH ej &#xf030; se usa cuando no se puede usar el tag < i > ver http://fontawesome.io/cheatsheet/ 
-*/
-.fa-fa {
-    font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+/* === RESET Y BASE === */
+* {
+    box-sizing: border-box;
 }
 
-.dropdown-submenu {
-    position:relative;
-}
-.dropdown-submenu>.dropdown-menu {
-    top:0;
-    left:100%;
-    margin-top:-6px;
-    margin-left:-1px;
-    -webkit-border-radius:0 6px 6px 6px;
-    -moz-border-radius:0 6px 6px 6px;
-    border-radius:0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-    display:block;
-}
-.dropdown-submenu>a:after {
-    display:block;
-    content:" ";
-    float:right;
-    width:0;
-    height:0;
-    border-color:transparent;
-    border-style:solid;
-    border-width:5px 0 5px 5px;
-    border-left-color:#cccccc;
-    margin-top:5px;
-    margin-right:-10px;
-}
-.dropdown-submenu:hover>a:after {
-    border-left-color:#ffffff;
-}
-.dropdown-submenu.pull-left {
-    float:none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-    left:-100%;
-    margin-left:10px;
-    -webkit-border-radius:6px 0 6px 6px;
-    -moz-border-radius:6px 0 6px 6px;
-    border-radius:6px 0 6px 6px;
+body {
+    font-family: var(--font-parrafos);
+    background-color: var(--blanco-una);
+    color: var(--negro-una);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
-.navbar-inverse .navbar-brand {
-    color: #FFFFFF;
+/* === TIPOGRAFÍA OFICIAL UNA === */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-titulos);
+    color: var(--rojo-una);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
 }
 
-.navbar-inverse {
-    background-image: linear-gradient(to bottom, #DB4646 0px, #B50000 100%);
+h1 { font-size: var(--h1-size); }
+h2 { font-size: var(--h2-size); }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+
+p {
+    font-size: var(--p-size);
+    font-family: var(--font-parrafos);
+    max-width: 80ch; /* Máximo 80 caracteres por línea */
+    margin-bottom: var(--spacing-md);
 }
 
-.navbar-inverse .navbar-nav > li > a {
-    color: #FFFFFF;
-}
+/* === COMPONENTES UNA === */
 
+<<<<<<< HEAD
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .open > a {
     background-image: linear-gradient(to bottom, #c93a3a 0px, #840000 100%);
 }
@@ -87,73 +85,78 @@ Permite utilizar FontAwesome con &#xHHHH ej &#xf030; se usa cuando no se puede u
 
 .form-inline .fecha2{
     display: inline-block;
+=======
+/* Logo oficial UNA */
+.logo-una {
+>>>>>>> HU-002
     width: 50px;
-}
-
-.form-inline .fecha4{
-    display: inline-block;
-    width: 75px;
-}
-
-.checkbox_efect label:after, 
-.radio_efect label:after {
-    content: '';
-    display: table;
-    clear: both;
-}
-
-.checkbox_efect .cr,
-.radio_efect .cr {
-    position: relative;
-    display: inline-block;
-    border: 1px solid #a9a9a9;
-    border-radius: .25em;
-    width: 1.3em;
-    height: 1.3em;
-    float: left;
-    margin-right: .5em;
-}
-
-.radio_efect .cr {
+    height: 50px;
+    background: var(--blanco-una);
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rojo-una);
+    font-weight: bold;
+    font-size: 0.8rem;
+    font-family: var(--font-titulos);
+    border: 2px solid var(--rojo-una);
 }
 
-.checkbox_efect .cr .cr-icon,
-.radio_efect .cr .cr-icon {
-    position: absolute;
-    font-size: .8em;
-    line-height: 0;
-    top: 50%;
-    left: 20%;
+/* Navbar oficial UNA */
+.navbar-una {
+    background: linear-gradient(135deg, var(--rojo-una) 0%, var(--azul-una) 100%);
+    border-bottom: 3px solid var(--gris-una);
+    min-height: 70px;
+    padding: var(--spacing-md) 0;
 }
 
-.radio_efect .cr .cr-icon {
-    margin-left: 0.04em;
+.navbar-una .navbar-brand {
+    color: var(--blanco-una) !important;
+    font-family: var(--font-titulos);
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 
-.checkbox_efect label input[type="checkbox"],
-.radio_efect label input[type="radio"] {
-    display: none;
+.navbar-una .nav-link {
+    color: var(--blanco-una) !important;
+    font-family: var(--font-parrafos);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: var(--spacing-sm) var(--spacing-md);
 }
 
-.checkbox_efect label input[type="checkbox"] + .cr > .cr-icon,
-.radio_efect label input[type="radio"] + .cr > .cr-icon {
-    transform: scale(3) rotateZ(-20deg);
-    opacity: 0;
-    transition: all .3s ease-in;
+.navbar-una .nav-link:hover {
+    color: var(--gris-una) !important;
+    transform: translateY(-2px);
 }
 
-.checkbox_efect label input[type="checkbox"]:checked + .cr > .cr-icon,
-.radio_efect label input[type="radio"]:checked + .cr > .cr-icon {
-    transform: scale(1) rotateZ(0deg);
-    opacity: 1;
+/* Botones oficiales UNA */
+.btn-una-primary {
+    background: var(--rojo-una);
+    border: 2px solid var(--rojo-una);
+    color: var(--blanco-una);
+    font-family: var(--font-parrafos);
+    font-weight: 500;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
 }
 
-.checkbox_efect label input[type="checkbox"]:disabled + .cr,
-.radio_efect label input[type="radio"]:disabled + .cr {
-    opacity: .5;
+.btn-una-primary:hover,
+.btn-una-primary:focus {
+    background: var(--azul-una);
+    border-color: var(--azul-una);
+    color: var(--blanco-una);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(3, 73, 145, 0.3);
+    text-decoration: none;
 }
 
+<<<<<<< HEAD
 .login-card {
     background: #fff;
     border-radius: 1rem;
@@ -227,32 +230,339 @@ Permite utilizar FontAwesome con &#xHHHH ej &#xf030; se usa cuando no se puede u
         height: 70px;
         display: block;
     }
+=======
+.btn-una-secondary {
+    background: var(--gris-una);
+    border: 2px solid var(--gris-una);
+    color: var(--negro-una);
+    font-family: var(--font-parrafos);
+    font-weight: 500;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+>>>>>>> HU-002
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-    #fix_valing_log{
-        width: 100%;
-        height: 70px;
-        display: block;
-    }
+.btn-una-secondary:hover,
+.btn-una-secondary:focus {
+    background: var(--azul-una);
+    border-color: var(--azul-una);
+    color: var(--blanco-una);
+    text-decoration: none;
 }
 
+/* Cards oficiales UNA */
+.card-una {
+    background: var(--blanco-una);
+    border: 2px solid var(--gris-una);
+    border-radius: 12px;
+    padding: var(--spacing-lg);
+    box-shadow: 0 4px 12px rgba(167, 167, 169, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card-una:hover {
+    border-color: var(--azul-una);
+    box-shadow: 0 8px 24px rgba(3, 73, 145, 0.2);
+    transform: translateY(-4px);
+}
+
+.card-una-header {
+    background: linear-gradient(135deg, var(--azul-una) 0%, var(--rojo-una) 100%);
+    color: var(--blanco-una);
+    padding: var(--spacing-md);
+    margin: calc(-1 * var(--spacing-lg)) calc(-1 * var(--spacing-lg)) var(--spacing-lg) calc(-1 * var(--spacing-lg));
+    border-radius: 10px 10px 0 0;
+}
+
+/* Formularios oficiales UNA */
+.form-una {
+    background: var(--blanco-una);
+    border: 2px solid var(--gris-una);
+    border-radius: 12px;
+    padding: var(--spacing-xl);
+}
+
+.form-group-una {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-label-una {
+    color: var(--azul-una);
+    font-family: var(--font-parrafos);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    display: block;
+}
+
+.form-control-una {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid var(--gris-una);
+    border-radius: 8px;
+    font-family: var(--font-parrafos);
+    font-size: var(--p-size);
+    transition: all 0.3s ease;
+    background: var(--blanco-una);
+    color: var(--negro-una);
+}
+
+.form-control-una:focus {
+    outline: none;
+    border-color: var(--azul-una);
+    box-shadow: 0 0 0 3px rgba(3, 73, 145, 0.1);
+}
+
+.form-control-una:invalid {
+    border-color: var(--rojo-una);
+}
+
+/* Tablas oficiales UNA */
+.table-una {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--blanco-una);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(167, 167, 169, 0.1);
+}
+
+.table-una thead {
+    background: linear-gradient(135deg, var(--azul-una) 0%, var(--rojo-una) 100%);
+    color: var(--blanco-una);
+}
+
+.table-una th,
+.table-una td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--gris-una);
+    font-family: var(--font-parrafos);
+}
+
+.table-una tbody tr:hover {
+    background: rgba(167, 167, 169, 0.1);
+}
+
+/* Alertas oficiales UNA */
+.alert-una {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-parrafos);
+    border-left: 4px solid;
+}
+
+.alert-una-success {
+    background: rgba(3, 73, 145, 0.1);
+    color: var(--azul-una);
+    border-left-color: var(--azul-una);
+}
+
+.alert-una-warning {
+    background: rgba(205, 23, 25, 0.1);
+    color: var(--rojo-una);
+    border-left-color: var(--rojo-una);
+}
+
+.alert-una-info {
+    background: rgba(167, 167, 169, 0.1);
+    color: var(--negro-una);
+    border-left-color: var(--gris-una);
+}
+
+/* Badges oficiales UNA */
+.badge-una {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-family: var(--font-parrafos);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-una-primary {
+    background: var(--rojo-una);
+    color: var(--blanco-una);
+}
+
+.badge-una-secondary {
+    background: var(--azul-una);
+    color: var(--blanco-una);
+}
+
+.badge-una-neutral {
+    background: var(--gris-una);
+    color: var(--negro-una);
+}
+
+/* Footer oficial UNA */
+.footer-una {
+    background: var(--negro-una);
+    color: var(--blanco-una);
+    padding: var(--spacing-xl) 0;
+    margin-top: 4rem;
+    border-top: 4px solid var(--rojo-una);
+    text-align: center;
+}
+
+.footer-una p {
+    margin: 0;
+    font-family: var(--font-parrafos);
+    line-height: 1.5;
+    max-width: 80ch;
+    margin: 0 auto;
+}
+
+/* === COMPONENTES ESPECÍFICOS SGPFL === */
+
+/* Dashboard cards */
+.dashboard-card {
+    background: var(--blanco-una);
+    border: 2px solid var(--gris-una);
+    border-radius: 12px;
+    padding: var(--spacing-lg);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(3, 73, 145, 0.1);
+    height: 100%;
+}
+
+.dashboard-card:hover {
+    border-color: var(--azul-una);
+    box-shadow: 0 8px 24px rgba(3, 73, 145, 0.2);
+    transform: translateY(-4px);
+}
+
+/* Tarjetas de estadísticas */
+.stat-card {
+    background: linear-gradient(135deg, var(--azul-una) 0%, var(--rojo-una) 100%);
+    color: var(--blanco-una);
+    border-radius: 12px;
+    padding: var(--spacing-xl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card h3 {
+    color: var(--blanco-una);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.stat-card p {
+    color: var(--blanco-una);
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* DataTables personalizado UNA */
+.dataTables_wrapper {
+    font-family: var(--font-parrafos);
+}
+
+.dataTables_wrapper .dataTables_length select,
+.dataTables_wrapper .dataTables_filter input {
+    border: 2px solid var(--gris-una);
+    border-radius: 6px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-family: var(--font-parrafos);
+}
+
+.dataTables_wrapper .dataTables_length select:focus,
+.dataTables_wrapper .dataTables_filter input:focus {
+    border-color: var(--azul-una);
+    outline: none;
+}
+
+/* === RESPONSIVE DESIGN === */
+
+/* Tablet */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    #fix_valing_log{
+    .navbar-una {
+        min-height: 60px;
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .logo-una {
+        width: 45px;
+        height: 45px;
+    }
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+}
+
+/* Móvil */
+@media only screen and (max-width: 767px) {
+    .navbar-una {
+        min-height: 50px;
+        padding: var(--spacing-xs) 0;
+    }
+    
+    .logo-una {
+        width: 40px;
+        height: 40px;
+        font-size: 0.7rem;
+    }
+    
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.25rem; }
+    
+    .card-una,
+    .form-una {
+        padding: var(--spacing-md);
+    }
+    
+    .btn-una-primary,
+    .btn-una-secondary {
         width: 100%;
-        height: 70px;
-        display: block;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .stat-card h3 {
+        font-size: 2rem;
     }
 }
 
-@media only screen and  (max-width: 767px) {
-    #fix_valing_log{
-        width: 100%;
-        height: 70px;
-        display: none;
+/* === ACCESIBILIDAD === */
+
+/* Contrastes validados 4.5:1 según estándares UNA */
+.high-contrast-text {
+    color: var(--negro-una);
+    background: var(--blanco-una);
+}
+
+.high-contrast-bg {
+    background: var(--negro-una);
+    color: var(--blanco-una);
+}
+
+/* Focus visible para navegación con teclado */
+.btn-una-primary:focus,
+.btn-una-secondary:focus,
+.form-control-una:focus,
+.nav-link:focus {
+    outline: 3px solid var(--azul-una);
+    outline-offset: 2px;
+}
+
+/* Reducir movimiento para usuarios con preferencias de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
 
+<<<<<<< HEAD
 @media (min-width: 600px) {
     .login-container {
         margin-top: 4rem;
@@ -265,3 +575,31 @@ Permite utilizar FontAwesome con &#xHHHH ej &#xf030; se usa cuando no se puede u
         margin-bottom: 5rem;
     }
 }
+=======
+/* === UTILIDADES === */
+
+/* Clases de espaciado UNA */
+.mb-una-xs { margin-bottom: var(--spacing-xs); }
+.mb-una-sm { margin-bottom: var(--spacing-sm); }
+.mb-una-md { margin-bottom: var(--spacing-md); }
+.mb-una-lg { margin-bottom: var(--spacing-lg); }
+.mb-una-xl { margin-bottom: var(--spacing-xl); }
+
+.mt-una-xs { margin-top: var(--spacing-xs); }
+.mt-una-sm { margin-top: var(--spacing-sm); }
+.mt-una-md { margin-top: var(--spacing-md); }
+.mt-una-lg { margin-top: var(--spacing-lg); }
+.mt-una-xl { margin-top: var(--spacing-xl); }
+
+/* Colores de texto UNA */
+.text-rojo-una { color: var(--rojo-una); }
+.text-azul-una { color: var(--azul-una); }
+.text-gris-una { color: var(--gris-una); }
+
+/* Fondos UNA */
+.bg-rojo-una { background-color: var(--rojo-una); }
+.bg-azul-una { background-color: var(--azul-una); }
+.bg-gris-una { background-color: var(--gris-una); }
+
+/* === FIN ESTILOS UNA === */
+>>>>>>> HU-002

@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 // Cargar configuración para rutas portables
 $cfg = __DIR__ . '/../../../inc/db/bdcommon.inc';
 $panel_href = "../../../panel_subir_propuesta_tfg.php"; // Ruta relativa por defecto
@@ -14,10 +15,34 @@ if (is_file($cfg)) {
         $form_action = $base . '/mod/admin/users/tfg_upload_process.php'; 
     }
 }
+=======
+// Configuración portable de rutas
+$base_path = realpath(__DIR__ . '/../../../');
+$relative_base = '../../../';
+
+// Incluir archivos necesarios con rutas relativas
+include_once($base_path . '/inc/db/bdcommon.inc');
+
+// Obtener tipos de proyecto (temporalmente hardcoded)
+$project_types = [
+    ['id' => 1, 'type_name' => 'Proyecto Individual', 'max_members' => 1],
+    ['id' => 2, 'type_name' => 'Proyecto en Pareja', 'max_members' => 2],
+    ['id' => 3, 'type_name' => 'Proyecto Grupal Pequeño', 'max_members' => 3],
+    ['id' => 4, 'type_name' => 'Proyecto Grupal Grande', 'max_members' => 4]
+];
+
+// URLs portables
+$panel_href = $relative_base . "panel_estudiante.php";
+$form_action = "tfg_upload_process.php";
+
+// Usuario actual (temporal para desarrollo)
+$current_user_id = '112170040';
+>>>>>>> HU-002
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8" />
     <title>Subir Propuesta de TFG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -208,6 +233,260 @@ if (is_file($cfg)) {
             });
 
         })();
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Propuesta TFG - SGPFL</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="<?= $relative_base ?>inc/css/estilo.css">
+    <link rel="stylesheet" href="<?= $relative_base ?>inc/css/tfg_upload.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        .section-header h3 {
+            color: white;
+        }
+    </style>
+    </head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-una">
+        <div class="container">
+            <div class="logo-una">UNA</div>
+            <a class="navbar-brand" href="<?= htmlspecialchars($panel_href) ?>">
+                <i class="bi bi-mortarboard-fill"></i> SGPFL - ESCINF
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-main-menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="nav-main-menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= htmlspecialchars($panel_href) ?>">
+                            <i class="bi bi-house-fill"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <i class="bi bi-file-earmark-plus-fill"></i> Nueva Propuesta TFG
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container tfg-upload-container">
+        <div class="row mb-4">
+            <div class="col-12">
+                <h1><i class="bi bi-file-earmark-plus-fill"></i> Nueva Propuesta de TFG</h1>
+                <p class="lead text-muted">Complete la información de su propuesta y forme su grupo de trabajo</p>
+            </div>
+        </div>
+
+        <form id="tfgGroupForm" action="<?= htmlspecialchars($form_action) ?>" method="POST" enctype="multipart/form-data">
+            
+            <div class="section-card">
+                <div class="section-header">
+                    <h3><i class="bi bi-file-text-fill"></i> Información de la Propuesta TFG</h3>
+                </div>
+                
+                <div class="section-body">
+                    <div class="form-group-tfg">
+                        <label for="inp-title" class="form-label-tfg">
+                            <i class="bi bi-card-heading"></i> Título de la Propuesta *
+                        </label>
+                        <input type="text" 
+                               class="form-control-tfg" 
+                               id="inp-title" 
+                               name="title" 
+                               maxlength="255" 
+                               required
+                               placeholder="Ingrese el título único de su propuesta TFG">
+                        <small class="text-muted">Este título debe ser único en el sistema (10-255 caracteres)</small>
+                    </div>
+
+                    <div class="form-group-tfg">
+                        <label for="inp-disciplines" class="form-label-tfg">
+                            <i class="bi bi-tags-fill"></i> Disciplinas *
+                        </label>
+                        <input type="text" 
+                               class="form-control-tfg" 
+                               id="inp-disciplines" 
+                               name="disciplines" 
+                               required 
+                               placeholder="Ej.: Informática, Matemáticas, Ingeniería">
+                        <small class="text-muted">Ingrese al menos dos disciplinas separadas por coma</small>
+                    </div>
+
+                    <div class="form-group-tfg">
+                        <label for="inp-document" class="form-label-tfg">
+                            <i class="bi bi-file-pdf-fill"></i> Documento de la Propuesta *
+                        </label>
+                        <input type="file" 
+                               class="form-control-tfg" 
+                               id="inp-document" 
+                               name="document" 
+                               accept=".pdf,.docx" 
+                               required>
+                        <small class="text-muted">Formatos permitidos: PDF, DOCX | Tamaño máximo: 10 MB</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <div class="section-header">
+                    <h3><i class="bi bi-people-fill"></i> Formación del Grupo de Trabajo</h3>
+                </div>
+                
+                <div class="section-body">
+                    <div class="form-group-tfg">
+                        <label for="sel-project-type" class="form-label-tfg">
+                            <i class="bi bi-diagram-2-fill"></i> Tipo de Proyecto *
+                        </label>
+                        <select class="form-control-tfg" id="sel-project-type" name="project_type_id" required>
+                            <option value="">Seleccione el tipo de proyecto</option>
+                            <?php foreach ($project_types as $type): ?>
+                                <option value="<?= $type['id'] ?>" data-max-members="<?= $type['max_members'] ?>">
+                                    <?= htmlspecialchars($type['type_name']) ?> 
+                                    (Máximo <?= $type['max_members'] ?> miembros)
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
+                    <div class="form-group-tfg">
+                        <label for="txt-project-description" class="form-label-tfg">
+                            <i class="bi bi-text-paragraph"></i> Descripción del Proyecto *
+                        </label>
+                        <textarea class="form-control-tfg" 
+                                  id="txt-project-description" 
+                                  name="project_description" 
+                                  rows="4" 
+                                  maxlength="500" 
+                                  required
+                                  placeholder="Describa brevemente el alcance y objetivos del proyecto grupal (mínimo 20 caracteres)"></textarea>
+                    </div>
+
+                    <div class="form-group-tfg">
+                        <label class="form-label-tfg">
+                            <i class="bi bi-star-fill"></i> Líder del Proyecto
+                        </label>
+                        <div class="alert-tfg alert-tfg-info">
+                            <i class="bi bi-info-circle"></i>
+                            <div>
+                                <strong>Usted será automáticamente el líder de este proyecto</strong><br>
+                                <small>ID de usuario: <?= htmlspecialchars($current_user_id) ?></small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group-tfg">
+                        <label for="inp-search-members" class="form-label-tfg">
+                            <i class="bi bi-person-plus-fill"></i> Agregar Miembros al Grupo (Opcional)
+                        </label>
+                        <div style="display: flex; gap: 0;">
+                            <input type="text" 
+                                   class="form-control-tfg" 
+                                   id="inp-search-members" 
+                                   placeholder="Buscar por nombre, email o ID de estudiante"
+                                   style="border-radius: 6px 0 0 6px; flex: 1;">
+                            <button type="button" class="btn-tfg btn-tfg-secondary" id="btn-search-members" style="border-radius: 0 6px 6px 0;">
+                                <i class="bi bi-search"></i> Buscar
+                            </button>
+                        </div>
+                        <small class="text-muted">Puede agregar miembros ahora o después desde el panel de proyectos</small>
+                    </div>
+
+                    <div id="div-search-results" style="display: none;"></div>
+
+                    <div class="form-group-tfg">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h6><i class="bi bi-people"></i> Miembros del Grupo:</h6>
+                            <small class="text-muted">Total: <span id="member-count">1/1</span></small>
+                        </div>
+                        <div id="list-selected-members">
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <div class="section-header">
+                    <h3><i class="bi bi-check-circle-fill"></i> Confirmación y Envío</h3>
+                </div>
+                
+                <div class="section-body">
+                    <div class="alert-tfg alert-tfg-info">
+                        <i class="bi bi-info-circle-fill"></i>
+                        <div>
+                            <strong>Al enviar esta propuesta:</strong>
+                            <ul style="margin: 8px 0 0 16px;">
+                                <li>Su propuesta TFG quedará con estado "Pendiente de Revisión"</li>
+                                <li>Se creará automáticamente el proyecto grupal asociado</li>
+                                <li>Usted será registrado como líder del proyecto</li>
+                                <li>Los miembros seleccionados serán agregados al grupo</li>
+                                <li>Podrá gestionar el proyecto desde el panel principal</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="form-group-tfg">
+                        <div style="display: flex; align-items: flex-start; gap: 12px;">
+                            <input type="checkbox" id="chk-terms" name="accept_terms" required style="margin-top: 4px;">
+                            <label for="chk-terms" style="cursor: pointer;">
+                                Acepto los términos y condiciones del Sistema de Gestión de TFG y autorizo la creación del proyecto grupal asociado *
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 24px;">
+                        <a href="<?= htmlspecialchars($panel_href) ?>" class="btn-tfg btn-tfg-secondary">
+                            <i class="bi bi-x-circle"></i> Cancelar
+                        </a>
+                        <button type="submit" class="btn-tfg btn-tfg-primary">
+                            <i class="bi bi-send-fill"></i> Enviar Propuesta y Crear Grupo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <footer class="footer-una">
+        <div class="container">
+            <p>
+                Copyright © 2025. Todos los derechos reservados. 
+                USTDS-Escuela de Informática-UNA<br>
+                Contacto: escinf@una.ac.cr | Tel: +506 2562-4000 ext. 2200
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= $relative_base ?>inc/js/tfg_upload.js"></script>
+    
+    <script>
+        // Debug para verificar que todo esté funcionando
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Página cargada completamente');
+            console.log('TfgManager disponible:', !!window.tfgManager);
+            console.log('SweetAlert disponible:', typeof Swal !== 'undefined');
+            
+            // Verificar formulario
+            const form = document.getElementById('tfgGroupForm');
+            console.log('Formulario encontrado:', !!form);
+            if (form) {
+                console.log('Action del formulario:', form.action);
+                console.log('Method del formulario:', form.method);
+            }
+        });
+>>>>>>> HU-002
     </script>
 </body>
 </html>

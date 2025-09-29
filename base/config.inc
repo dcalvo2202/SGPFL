@@ -9,8 +9,16 @@
  *  por ejemplo: "/sistema/", "/lib/sistema/"
  */
 
+<<<<<<< HEAD
 $cds_domain = "https://localhost";
 $cds_locate = "/base/"; 
+=======
+$cds_domain = "http://localhost";
+$cds_locate = "/SGPFL/Sistema-Gestor-de-Proyectos-Finales-de-Licenciatura/base/"; 
+
+// Variable necesaria para mySession (PDO)
+$DBMS = 'mysql';
+>>>>>>> HU-002
 
 $ldap_status = 1;
 /*$ldap_server[0] = "10.0.2.53";*/
@@ -32,9 +40,15 @@ $favicon_url = "./img/logo.webp";
 
 $page_cant = 10;
 
+<<<<<<< HEAD
 $page_title = "SGPFL";
 
 $footer_title= "Sistema Gestor de Proyectos Finales de Licenciatura<br/>SGPFL";
+=======
+$page_title = "SGPFL - Sistema Gestor de Proyectos Finales de Licenciatura";
+
+$footer_title= "Sistema Gestor de Proyectos Finales de Licenciatura<br/>Universidad Nacional";
+>>>>>>> HU-002
 
 $act1 = 1; //Ver
 $act2 = 2; //Listar

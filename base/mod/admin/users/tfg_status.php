@@ -15,7 +15,11 @@ if ($conn->connect_error) {
 } else {
     // Si la sesión no está definida, se usa un ID de prueba.
     // COMENTAR O ELIMINAR ESTA LÍNEA EN PRODUCCIÓN.
+<<<<<<< HEAD
     $user_id = $_SESSION['id'] ?? 'estudiante001'; 
+=======
+    $user_id = $_SESSION['id'] ?? '112170040'; 
+>>>>>>> HU-002
 
     $sql = "SELECT id, title, status, created_at FROM tfg_proposals WHERE user_id = ? ORDER BY created_at DESC LIMIT 1";
     $stmt = $conn->prepare($sql);
@@ -36,7 +40,12 @@ if ($conn->connect_error) {
             if (strpos($s, 'revisión') !== false || strpos($s, 'revision') !== false || strpos($s, 'pendiente') !== false) $badge_color = 'bg-info';
             
             // Construcción de la URL de descarga usando $base_url si está disponible.
+<<<<<<< HEAD
             $download_url = 'mod/admin/users/tfg_download.php?id=' . (int)$row['id'];
+=======
+            $base = isset($base_url) && $base_url !== '' ? rtrim($base_url, '/') : '';
+            $download_url = $base . '/mod/admin/users/tfg_download.php?id=' . (int)$row['id'];
+>>>>>>> HU-002
             
             // Manejo seguro de la fecha de creación en caso de que sea nula.
             $created = $row['created_at'] ?? null;
