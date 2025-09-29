@@ -10,7 +10,10 @@
  */
 
 $cds_domain = "http://localhost";
-$cds_locate = "/base/"; 
+$cds_locate = "/SGPFL/Sistema-Gestor-de-Proyectos-Finales-de-Licenciatura/base/"; 
+
+// Variable necesaria para mySession (PDO)
+$DBMS = 'mysql';
 
 $ldap_status = 1;
 $ldap_server[0] = "10.0.2.53";
@@ -25,9 +28,9 @@ $ldap_dn = "dc=una,dc=ac,dc=cr";
 
 $page_cant = 10;
 
-$page_title = "BASE";
+$page_title = "SGPFL - Sistema Gestor de Proyectos Finales de Licenciatura";
 
-$footer_title= "Sistema BASE para la creacion de otros sistemas<br/>USTDS";
+$footer_title= "Sistema Gestor de Proyectos Finales de Licenciatura<br/>Universidad Nacional";
 
 $act1 = 1; //Ver
 $act2 = 2; //Listar
