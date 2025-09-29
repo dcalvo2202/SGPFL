@@ -1215,6 +1215,52 @@ CREATE TABLE proyecto_aprobado (
 
 
 -- ----------------------------
+-- Table structure for `categorias`
+-- ----------------------------
+
+CREATE TABLE `categorias` (
+  `idCategoria` int(20) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `categoria` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+INSERT INTO `categorias` (`idCategoria`, `nombre`, `categoria`) VALUES
+(1, 'categoria1', 0),
+(2, 'categoria 2', 1);
+
+
+-- ----------------------------
+-- Table structure for `comite`
+-- ----------------------------
+
+CREATE TABLE `comite` (
+  `Id` int(11) NOT NULL,
+  `integrantes` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `comite` (`Id`, `integrantes`) VALUES
+(1, 4),
+(2, 8),
+(3, 12);
+
+-- ----------------------------
+-- Table structure for `categorias
+-- ----------------------------
+
+
+CREATE TABLE `categorias` (
+  `idCategoria` int(20) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `categoria` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `categorias` (`idCategoria`, `nombre`, `categoria`) VALUES
+(1, 'categoria1', 0),
+(2, 'categoria 2', 1);
+
+
+-- ----------------------------
 -- Records of sis_sessions_vars
 -- ----------------------------
 INSERT INTO `sis_sessions_vars` VALUES ('ðœ¨ÇªZ³VB!üÆ8þ®¨', 'Ï\rµ3\"¥¿¶AfÅˆ\në €…öÈ`zñ,)T6', '1zzz333888lll111ttiiiimmmnnnfffp');
