@@ -28,7 +28,7 @@
 <script src="inc/js/user.js" type="text/javascript"></script>
 
 <!-- Bootstrap + Font-Awesome + Estilo -->
-<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>  
 <link href="lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
 <script src="lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="lib/bootstrap/js/bootstrap-filestyle.min.js" type="text/javascript"></script>

@@ -1194,6 +1194,72 @@ CREATE TABLE `sis_sessions_vars` (
   CONSTRAINT `sis_sessions_vars_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `sis_sessions` (`sid`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+-- ----------------------------
+-- Table structure for `proyecto_aprobado`
+-- ----------------------------
+CREATE TABLE proyecto_aprobado (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(255) NOT NULL,
+  estudiante_id varchar(50) NOT NULL,
+  comite_id INT NOT NULL,
+  categoria_id INT NOT NULL,
+  documento LONGBLOB,
+  aprobado BOOLEAN DEFAULT 0,
+  identificador VARCHAR(30) NOT NULL,
+  fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (estudiante_id) REFERENCES sis_user(id),
+  FOREIGN KEY (comite_id) REFERENCES comite(id),
+  FOREIGN KEY (categoria_id) REFERENCES categorias(idCategoria)
+);
+
+
+-- ----------------------------
+-- Table structure for `categorias`
+-- ----------------------------
+
+CREATE TABLE `categorias` (
+  `idCategoria` int(20) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `categoria` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+INSERT INTO `categorias` (`idCategoria`, `nombre`, `categoria`) VALUES
+(1, 'categoria1', 0),
+(2, 'categoria 2', 1);
+
+
+-- ----------------------------
+-- Table structure for `comite`
+-- ----------------------------
+
+CREATE TABLE `comite` (
+  `Id` int(11) NOT NULL,
+  `integrantes` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `comite` (`Id`, `integrantes`) VALUES
+(1, 4),
+(2, 8),
+(3, 12);
+
+-- ----------------------------
+-- Table structure for `categorias
+-- ----------------------------
+
+
+CREATE TABLE `categorias` (
+  `idCategoria` int(20) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `categoria` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `categorias` (`idCategoria`, `nombre`, `categoria`) VALUES
+(1, 'categoria1', 0),
+(2, 'categoria 2', 1);
+
+
 -- ----------------------------
 -- Records of sis_sessions_vars
 -- ----------------------------
