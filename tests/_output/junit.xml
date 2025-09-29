@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="AjaxLoginIntegrationTest" file="C:\xampp\htdocs\base\tests\integration\AjaxLoginIntegrationTest.php" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="0.039472">
+    <testcase name="testAjaxLoginFlow" file="C:\xampp\htdocs\base\tests\integration\AjaxLoginIntegrationTest.php" line="27" class="AjaxLoginIntegrationTest" classname="AjaxLoginIntegrationTest" assertions="3" time="0.039472"/>
+  </testsuite>
+</testsuites>

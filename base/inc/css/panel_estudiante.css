@@ -1,0 +1,323 @@
+/*
+ * Estilos específicos para el panel estudiantil
+ * Versión consolidada y optimizada
+ * Proyecto SGPFL - UNA/ESCINF - 2025
+*/
+
+/* --- Estructura Principal y Contenedores --- */
+
+.dashboard-container {
+    padding: 40px 20px;
+    min-height: calc(100vh - 200px); /* Conservado para mantener el footer abajo */
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+}
+
+.dashboard-header h1 {
+    color: #2c3e50; /* Tono oscuro más profesional */
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.dashboard-header .lead {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #6c757d; /* Asumiendo var(--gris-una) como este valor, puedes ajustarlo */
+}
+
+.section-title {
+    color: #CD1719; /* Rojo UNA */
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #f0f0f0;
+}
+
+/* --- Barra de Navegación (Navbar) --- */
+
+.navbar-una {
+    background: linear-gradient(135deg, #034991, #023366) !important; /* Azul UNA oficial */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.logo-una {
+    background: white;
+    color: #034991;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    margin-right: 15px;
+}
+
+/* --- Tarjetas de Acciones Rápidas --- */
+
+.quick-actions-section {
+    margin-bottom: 50px;
+}
+
+.quick-actions-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.quick-action-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 2px solid #e9ecef;
+}
+
+.quick-action-card:hover {
+    border-color: #034991;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    color: #034991;
+    text-decoration: none;
+}
+
+.quick-action-card i {
+    font-size: 48px;
+    color: #034991;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.quick-action-card:hover i {
+    transform: scale(1.1);
+}
+
+.quick-action-card h5 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+/* --- Sección de Actividad Reciente --- */
+
+.activity-section {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.activity-card {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.07);
+    transition: all 0.3s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.activity-card .card-header {
+    padding: 0;
+}
+
+.activity-card .card-header h3 {
+    color: #034991; /* Coherencia con colores institucionales */
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+}
+
+.activity-card .card-subtitle {
+    color: #6c757d;
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.activity-card .project-title {
+    color: #2c3e50;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 15px 0;
+    line-height: 1.4;
+}
+
+.activity-card .project-description {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.activity-card .members-info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #034991; /* Coherencia con colores institucionales */
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.activity-card .members-info strong {
+    color: #034991;
+}
+
+.status-date-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.date-info {
+    color: #6c757d;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ETIQUETAS DE ESTADO DINÁMICAS (Status Badges) */
+.status-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-pending { background-color: #ffc107; color: #333; }
+.status-approved { background-color: #28a745; color: white; }
+.status-rejected { background-color: #dc3545; color: white; }
+.status-correction { background-color: #17a2b8; color: white; }
+.status-default { background-color: #6c757d; color: white; }
+
+/* BOTONES DE ACCIÓN (Descargar, Ver Proyecto) */
+.btn-action {
+    color: white;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+}
+
+.btn-action:hover {
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-download {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+}
+.btn-view {
+    background: linear-gradient(135deg, #034991, #023366);
+}
+
+
+/* --- Estado Vacío (Empty State) --- */
+
+.empty-state {
+    text-align: center;
+    padding: 60px 30px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 2px dashed #dee2e6;
+}
+
+.empty-state h3 {
+    color: #034991;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.empty-state p {
+    color: #6c757d;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.empty-state .btn-primary {
+    background: linear-gradient(135deg, #034991, #023366);
+    color: white;
+    padding: 12px 22px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.empty-state .btn-primary:hover {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(3, 73, 145, 0.3);
+}
+
+/* --- Pie de Página (Footer) --- */
+
+.footer-una {
+    background: #2c3e50;
+    color: white;
+    padding: 30px 0;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- Diseño Responsivo (Responsive) --- */
+@media (max-width: 768px) {
+    .status-date-row {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+    
+    .activity-card {
+        padding: 20px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    .quick-actions-grid {
+        /* Se ajusta con flexbox, esta regla puede ser opcional o ajustada */
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .dashboard-header h1 {
+        font-size: 1.75rem;
+    }
+}
