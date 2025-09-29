@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 } else {
     // Si la sesión no está definida, se usa un ID de prueba.
     // COMENTAR O ELIMINAR ESTA LÍNEA EN PRODUCCIÓN.
-    $user_id = $_SESSION['id'] ?? '112170040'; 
+    $user_id = $_SESSION['id'] ?? 'estudiante001'; 
 
     $sql = "SELECT id, title, status, created_at FROM tfg_proposals WHERE user_id = ? ORDER BY created_at DESC LIMIT 1";
     $stmt = $conn->prepare($sql);

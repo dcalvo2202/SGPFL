@@ -10,8 +10,8 @@ if ($conn->connect_error) {
     die("Error de conexión con el servicio.");
 }
 
-// COMENTAR O ELIMINAR ESTA LÍNEA EN PRODUCCIÓN.
-$user_id = $_SESSION['id'] ?? '112170040'; 
+// COMENTAR O ELIMINAR ESTA LÍNEA EN PRODuCCIÓN.
+$user_id = $_SESSION['id'] ?? 'estudiante001'; 
 
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 if ($id <= 0) {
