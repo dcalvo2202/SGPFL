@@ -1,0 +1,6 @@
+dn: uid=rrodrigo123,ou=People,dc=una,dc=ac,dc=cr
+objectClass: inetOrgPerson
+uid: rrodrigo123
+sn: Rojas
+cn: Rodrigo Rojas
+userPassword: secret123
