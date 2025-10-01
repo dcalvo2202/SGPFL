@@ -33,7 +33,7 @@
         <div class="page-container flex-grow-1">
             <h3 class="mb-4 text-center">Bienvenido, Estudiante de Licenciatura</h3>
             <header class="d-flex justify-content-end gap-3 p-3">
-                <a href="logout.php" class="btn btn-outline-dark">Logout</a>
+                <a href="/base/mod/login/logout.php" class="btn btn-outline-dark">Logout</a>
                 <a href="/" class="btn btn-outline-dark">Fechas importantes</a>
                 <a href="/" class="btn btn-outline-dark">Enviar documentos</a>
                 <a href="index.php" class="btn btn-outline-dark">Inicio</a>
