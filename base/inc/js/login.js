@@ -161,7 +161,7 @@ function Do_Login(){
                         allowOutsideClick: false,
                         width: '450px'
                     }).then(function() {
-                        window.location = document.getElementById("cds_domain_locate").value + "tfg_upload.php";
+                        window.location = document.getElementById("cds_domain_locate").value + "Panel_SubirTFG.php";
                     });
                 }
                 // Sino tuvo éxito, muestra el error correspondiente.

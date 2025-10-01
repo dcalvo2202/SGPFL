@@ -27,6 +27,11 @@ try {
 }
 include(dirname(__FILE__) . "/../../config.inc");
 
+// DEBUG: Verificar qué valor tiene cds_domain después de incluir config.inc
+error_log("AJAX_LOGIN - Después de incluir config.inc:");
+error_log("AJAX_LOGIN - cds_domain: " . ($cds_domain ?? 'UNDEFINED'));
+error_log("AJAX_LOGIN - cds_locate: " . ($cds_locate ?? 'UNDEFINED'));
+
 // =============================
 // FUNCIONES AUXILIARES
 // =============================
@@ -122,6 +127,11 @@ if ($out == 0) {
     $mySessionController->save("rol", $id_roll);
     $mySessionController->save("cds_domain", $cds_domain);
     $mySessionController->save("cds_locate", $cds_locate);
+    
+    // DEBUG: Verificar qué se guardó en la sesión (BD Login)
+    error_log("AJAX_LOGIN [BD] - GUARDANDO: cds_domain=" . $cds_domain . ", cds_locate=" . $cds_locate);
+    error_log("AJAX_LOGIN [BD] - LEYENDO: " . $mySessionController->getVar("cds_domain") . $mySessionController->getVar("cds_locate"));
+    
     $mySessionController->save("page_cant", $page_cant);
     $mySessionController->save("page_title", $page_title);
     $mySessionController->save("footer_title", $footer_title);
@@ -326,6 +336,11 @@ if ($out == 0) {
     $mySessionController->save("rol", $id_roll);
     $mySessionController->save("cds_domain", $cds_domain);
     $mySessionController->save("cds_locate", $cds_locate);
+    
+    // DEBUG: Verificar qué se guardó en la sesión (LDAP Login)
+    error_log("AJAX_LOGIN [LDAP] - GUARDANDO: cds_domain=" . $cds_domain . ", cds_locate=" . $cds_locate);
+    error_log("AJAX_LOGIN [LDAP] - LEYENDO: " . $mySessionController->getVar("cds_domain") . $mySessionController->getVar("cds_locate"));
+    
     $mySessionController->save("page_cant", $page_cant);
     $mySessionController->save("page_title", $page_title);
     $mySessionController->save("footer_title", $footer_title);

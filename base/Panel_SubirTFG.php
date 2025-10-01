@@ -6,7 +6,24 @@ include("mod/login/check.php");
 $current_user_id = $mySessionController->getVar("usuario");
 $current_user_name = $mySessionController->getVar("nombre");
 $current_user_rol = $mySessionController->getVar("rol");
-$base_url = $mySessionController->getVar("cds_domain") . $mySessionController->getVar("cds_locate");
+
+// Construir base_url desde sesión o usar fallback
+$cds_domain = $mySessionController->getVar("cds_domain");
+$cds_locate = $mySessionController->getVar("cds_locate");
+
+// DEBUG: Ver exactamente qué valores tiene la sesión
+error_log("Panel_SubirTFG - LEYENDO DE SESIÓN:");
+error_log("Panel_SubirTFG - cds_domain desde sesión: '" . ($cds_domain ?? 'NULL') . "'");
+error_log("Panel_SubirTFG - cds_locate desde sesión: '" . ($cds_locate ?? 'NULL') . "'");
+
+if (!empty($cds_domain) && !empty($cds_locate)) {
+    $base_url = $cds_domain . $cds_locate;
+    error_log("Panel_SubirTFG - Usando valores de sesión: " . $base_url);
+} else {
+    // Fallback: usar ruta absoluta completa
+    $base_url = 'http://localhost/SGPFL/Sistema-Gestor-de-Proyectos-Finales-de-Licenciatura/base/';
+    error_log("Panel_SubirTFG - USANDO FALLBACK: " . $base_url);
+}
 
 // Verificar que sea estudiante (rol 4 según la base de datos)
 if ($current_user_rol != 4) {
@@ -16,6 +33,8 @@ if ($current_user_rol != 4) {
 
 // Log de debug
 error_log("Panel TFG - Usuario: $current_user_id ($current_user_name), Rol: $current_user_rol");
+error_log("Panel TFG - base_url: $base_url");
+error_log("Panel TFG - cds_domain: " . ($cds_domain ?? 'VACIO') . ", cds_locate: " . ($cds_locate ?? 'VACIO'));
 
 
 // INCLUIR ARCHIVOS NECESARIOS
@@ -69,6 +88,8 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel Estudiante - SGPFL UNA</title>
+    
+    <!-- DEBUG: base_url = <?= htmlspecialchars($base_url) ?> -->
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -272,8 +293,11 @@ try {
                         error_log("Error en panel estudiante: " . $e->getMessage());
                         echo '<div class="alert-una alert-una-warning">
                                 <i class="bi bi-exclamation-triangle"></i>
-                                Error al cargar la actividad reciente. Intenta recargar la página.
+                                Error al cargar la actividad reciente: ' . htmlspecialchars($e->getMessage()) . '
                                 <br><small>Usuario actual: ' . htmlspecialchars($current_user_id) . '</small>
+                                <br><small>DB Config: Host=' . htmlspecialchars($db_host ?? 'NO DEFINIDO') . 
+                                ', User=' . htmlspecialchars($usuario ?? 'NO DEFINIDO') . 
+                                ', DB=' . htmlspecialchars($db ?? 'NO DEFINIDO') . '</small>
                               </div>';
                     }
                     ?>

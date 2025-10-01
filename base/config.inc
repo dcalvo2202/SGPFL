@@ -9,7 +9,7 @@
  *  por ejemplo: "/sistema/", "/lib/sistema/"
  */
 
-$cds_domain = "http://localhost/SGPFL/";
+$cds_domain = "http://localhost/SGPFL/Sistema-Gestor-de-Proyectos-Finales-de-Licenciatura/";
 $cds_locate = "base/"; 
 
 $ldap_status = 1;

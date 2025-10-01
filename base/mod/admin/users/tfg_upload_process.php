@@ -273,16 +273,35 @@ try {
     // Log de éxito
     error_log("TFG creado exitosamente - Usuario: $user_id, TFG ID: $tfg_id, Proyecto ID: $project_id");
 
-    // Respuesta exitosa
-    respond_json(true, 'Propuesta TFG creada exitosamente', [
-        'tfg_id' => $tfg_id,
-        'project_id' => $project_id,
-        'title' => $title,
-        'user_authenticated' => true,
-        'user_id' => $user_id,
-        'user_name' => $user_name,
-        'file_uploaded' => !empty($pdf_path)
-    ]);
+    // Mostrar popup de éxito y redirigir a panel_estudiante.php
+    $target = '../../panel_estudiante.php';
+    if (isset($base_url) && $base_url !== '') {
+        $target = rtrim($base_url, '/') . '/panel_estudiante.php';
+    }
+    ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: '¡Propuesta enviada correctamente!',
+            text: 'Su propuesta TFG ha sido enviada y está pendiente de revisión.',
+            confirmButtonText: 'Continuar',
+            confirmButtonColor: '#034991',
+            allowOutsideClick: false
+        }).then(function() {
+            window.location.href = '<?php echo $target; ?>';
+        });
+    </script>
+</body>
+</html>
+    <?php
+    exit;
 
 } catch (Exception $e) {
     if (isset($conn)) {
@@ -290,6 +309,6 @@ try {
         $conn->close();
     }
     error_log("Excepción en TFG upload: " . $e->getMessage());
-    respond_json(false, 'Error interno del servidor: ' . $e->getMessage());
+    die("Error: " . $e->getMessage());
 }
 ?>
