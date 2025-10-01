@@ -12,16 +12,16 @@
 
     switch ($rol) {
         case 1: // Administrador
-            include 'panel_admin.php';
+             include 'panel_subdireccion.php';
             break;
         case 2: // Gestor Académico
-            include 'panel_gestor.php';
+            include 'panel_subdireccion.php';
             break;
         case 3: // CTFG (Comisión TFG)
             include 'panel_ctfg.php';
             break;
         case 4: // Estudiante
-            include 'Panel_SubirTFG.php';
+            include 'panel_estudiante.php';
             break;
         case 5: // Asesor Externo
             include 'panel_asesor.php';
