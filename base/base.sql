@@ -1217,15 +1217,18 @@ INSERT INTO `categorias` (`idCategoria`, `nombre`, `categoria`) VALUES
 -- ----------------------------
 
 CREATE TABLE `comite` (
-  `Id` int(11) NOT NULL,
-  `integrantes` int(11) NOT NULL,
-  PRIMARY KEY (Id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-INSERT INTO `comite` (`Id`, `integrantes`) VALUES
-(1, 4),
-(2, 8),
-(3, 12);
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `tutor` varchar(50) NOT NULL,
+  `asesor_1` varchar(50) NOT NULL,
+  `asesor_2` varchar(50) NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `idx_tutor` (`tutor`),
+  KEY `idx_asesor_1` (`asesor_1`),
+  KEY `idx_asesor_2` (`asesor_2`),
+  CONSTRAINT `fk_comite_asesor1` FOREIGN KEY (`asesor_1`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_comite_asesor2` FOREIGN KEY (`asesor_2`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_comite_tutor` FOREIGN KEY (`tutor`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- ----------------------------
 -- Table structure for `proyecto_aprobado`
