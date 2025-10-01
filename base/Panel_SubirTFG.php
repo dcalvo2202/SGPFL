@@ -86,7 +86,7 @@ try {
 
 <body class="d-flex flex-column min-vh-100">
 
-    <header class="navbar-una">
+    <header class="navbar-una" style="background: linear-gradient(135deg, #CD1719, #A01215) !important;">
         <div class="container-fluid px-4">
             <div class="header-left d-flex align-items-center">
                 <img src="<?= $base_url ?>img/logo.webp" alt="Logo UNA" class="logo-una">
@@ -129,7 +129,7 @@ try {
             <?php endif; ?>
             
             <div class="dashboard-header text-center">
-                <h1>Sistema Integrado de Gestión de TFG y Proyectos Grupales</h1>
+                <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">Sistema Integrado de Gestión de TFG y Proyectos Grupales</h1>
                 <p class="lead text-center">Bienvenido, <?= htmlspecialchars($current_user_name) ?></p>
                 <small class="text-muted">Usuario autenticado: <?= htmlspecialchars($current_user_id) ?></small>
             </div>
