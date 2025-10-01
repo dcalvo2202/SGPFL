@@ -274,10 +274,8 @@ try {
     error_log("TFG creado exitosamente - Usuario: $user_id, TFG ID: $tfg_id, Proyecto ID: $project_id");
 
     // Mostrar popup de éxito y redirigir a panel_estudiante.php
-    $target = '../../panel_estudiante.php';
-    if (isset($base_url) && $base_url !== '') {
-        $target = rtrim($base_url, '/') . '/panel_estudiante.php';
-    }
+    // Usar ruta absoluta correcta
+    $target = '/SGPFL/Sistema-Gestor-de-Proyectos-Finales-de-Licenciatura/base/panel_estudiante.php';
     ?>
 <!DOCTYPE html>
 <html>
@@ -293,7 +291,9 @@ try {
             text: 'Su propuesta TFG ha sido enviada y está pendiente de revisión.',
             confirmButtonText: 'Continuar',
             confirmButtonColor: '#034991',
-            allowOutsideClick: false
+            allowOutsideClick: false,
+            timer: 3000,
+            timerProgressBar: true
         }).then(function() {
             window.location.href = '<?php echo $target; ?>';
         });
