@@ -1000,6 +1000,7 @@ INSERT INTO `sis_user` VALUES ('107010122', upper('Guiselle Víquez Jiménez'), 
 INSERT INTO `sis_user` VALUES ('701810347', upper('Jonathan  Manrique Cordero  Duarte'), 'jcordero1987@gmail.com', '88595127', 'M');
 
 -- ----------------------------
+
 -- Table structure for `sis_mod`
 -- ----------------------------
 DROP TABLE IF EXISTS `sis_mod`;
@@ -1198,20 +1199,21 @@ CREATE TABLE `sis_sessions_vars` (
 -- ----------------------------
 -- Table structure for `proyecto_aprobado`
 -- ----------------------------
-CREATE TABLE proyecto_aprobado (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(255) NOT NULL,
-  estudiante_id varchar(50) NOT NULL,
-  comite_id INT NOT NULL,
-  categoria_id INT NOT NULL,
-  documento LONGBLOB,
-  aprobado BOOLEAN DEFAULT 0,
-  identificador VARCHAR(30) NOT NULL,
-  fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (estudiante_id) REFERENCES sis_user(id),
-  FOREIGN KEY (comite_id) REFERENCES comite(id),
-  FOREIGN KEY (categoria_id) REFERENCES categorias(idCategoria)
-);
+CREATE TABLE `proyecto_aprobado` (
+  `id_aprobado` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(150) NOT NULL,
+  `estudiante_id` varchar(50) NOT NULL,
+  `comite_id` int(11) NOT NULL,
+  `documento` longblob NOT NULL,
+  `aprobado` tinyint(1) NOT NULL DEFAULT 1,
+  `identificador` varchar(50) NOT NULL,
+  `fecha_creacion` datetime NOT NULL,
+  PRIMARY KEY (`id_aprobado`),
+  UNIQUE KEY `uq_identificador` (`identificador`),
+  KEY `idx_estudiante_id` (`estudiante_id`),
+  KEY `idx_comite_id` (`comite_id`),
+  CONSTRAINT `fk_proy_estudiante` FOREIGN KEY (`estudiante_id`) REFERENCES `sis_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
 
 
 -- ----------------------------
@@ -1235,14 +1237,18 @@ INSERT INTO `categorias` (`idCategoria`, `nombre`, `categoria`) VALUES
 -- ----------------------------
 
 CREATE TABLE `comite` (
-  `Id` int(11) NOT NULL,
-  `integrantes` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-INSERT INTO `comite` (`Id`, `integrantes`) VALUES
-(1, 4),
-(2, 8),
-(3, 12);
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `tutor` varchar(50) NOT NULL,
+  `asesor_1` varchar(50) NOT NULL,
+  `asesor_2` varchar(50) NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `idx_tutor` (`tutor`),
+  KEY `idx_asesor_1` (`asesor_1`),
+  KEY `idx_asesor_2` (`asesor_2`),
+  CONSTRAINT `fk_comite_asesor1` FOREIGN KEY (`asesor_1`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_comite_asesor2` FOREIGN KEY (`asesor_2`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_comite_tutor` FOREIGN KEY (`tutor`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
 
 -- ----------------------------
 -- Table structure for `categorias

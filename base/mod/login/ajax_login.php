@@ -33,9 +33,11 @@ include(dirname(__FILE__) . "/../../config.inc");
 
 // Función para destruir sesión y eliminar cookie si login falla
 function destroySessionAndCookie() {
+    // Eliminar cookie
     if (isset($_COOKIE['base_sis'])) {
         setcookie('base_sis', '', time() - 3600, '/');
     }
+    // Destruir sesión estándar de PHP
     if (session_status() === PHP_SESSION_ACTIVE) {
         session_destroy();
     }
@@ -82,10 +84,26 @@ $user_name = "";
 // Verificar si ya hay sesión activa para este usuario ---
 $mySessionController = mySession::getIstance($_MYSESSION_CONF);
 $usuario_sesion = $mySessionController->getVar('usuario');
+// Si hay sesión activa y el usuario es el mismo, retornar éxito sin reloguear
 if (!empty($usuario_sesion) && $usuario_sesion === $user) {
     // Ya hay sesión activa para este usuario, retornar éxito sin reloguear
     echo 0;
     exit();
+}
+// Si hay sesión activa y el usuario es diferente, destruir la sesión anterior
+if (!empty($usuario_sesion) && $usuario_sesion !== $user) {
+    // Logout automático igual al archivo logout.php
+    $mySessionController->delete("SessionArray");
+    $mySessionController->destroy($_MYSESSION_CONF['SID']);
+    // Eliminar la cookie manualmente
+    if (isset($_COOKIE[$_MYSESSION_CONF['SESSION_VAR_NAME']])) {
+        setcookie($_MYSESSION_CONF['SESSION_VAR_NAME'], '', time() - 3600, '/');
+        unset($_COOKIE[$_MYSESSION_CONF['SESSION_VAR_NAME']]);
+    }
+    // Opcional: puedes regenerar el ID de sesión aquí si lo deseas
+    if (function_exists('session_regenerate_id')) {
+        session_regenerate_id(true);
+    }
 }
 
 // =============================

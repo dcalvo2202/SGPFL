@@ -1,69 +1,71 @@
 <?php
 session_start();
-require_once __DIR__ . '/../../../inc/db/db.php';
-require_once __DIR__ . '/tfg_aprobado_upload.php';
+require_once '../../../inc/db/db.php';
 
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-
-function generarIdentificador(): string {
-    return 'UNA-TFG-' . str_pad((string)rand(0,9999), 4, '0', STR_PAD_LEFT) . '-' . date('Y');
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
 
-try {
-    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-        throw new Exception('Method Not Allowed', 405);
-    }
+$nombre        = trim($_POST['nombre'] ?? '');
+$estudiante_id = trim($_POST['estudiante'] ?? '');
+$comite_id     = (int)($_POST['comite'] ?? 0);
+$fecha_raw     = $_POST['fecha_aprobacion'] ?? '';
+$identificador = $_SESSION['identificador_preview'] ?? ($_POST['identificador'] ?? '');
+$aprobado      = 1;
 
-    $nombre        = trim($_POST['nombre'] ?? '');
-    $estudiante_id = trim($_POST['estudiante'] ?? '');
-    $comite_id     = (int)($_POST['comite'] ?? 0);
-    $categoria_id  = (int)($_POST['categoria'] ?? 0);
-
-    if ($nombre === '' || $estudiante_id === '' || $comite_id <= 0 || $categoria_id <= 0 ||
-        empty($_FILES['documento']) || $_FILES['documento']['error'] !== UPLOAD_ERR_OK) {
-        throw new Exception('Validación fallida');
-    }
-
-    // Tomar el identificador que vio el usuario (desde la sesión)
-    $identificador = $_SESSION['identificador_preview'] ?? generarIdentificador();
-
-    $dataBase = [
-        'nombre'         => $nombre,
-        'estudiante_id'  => $estudiante_id,
-        'comite_id'      => $comite_id,
-        'categoria_id'   => $categoria_id,
-        'aprobado'       => 1,
-        'identificador'  => $identificador,
-        'fecha_creacion' => date('Y-m-d H:i:s'),
-    ];
-
-    // Intentar hasta 3 veces si hay duplicado de identificador
-    $ok = false;
-    for ($i = 0; $i < 3; $i++) {
-        try {
-            $ok = guardarProyectoAprobado($id_con, $dataBase, $_FILES['documento']['tmp_name']);
-            if ($ok) break;
-        } catch (mysqli_sql_exception $e) {
-            if ($e->getCode() == 1062) {
-                // Duplicado: regenerar y reintentar
-                $dataBase['identificador'] = generarIdentificador();
-                continue;
-            }
-            throw $e; // Otro error
-        }
-    }
-
-    if (!$ok) {
-        throw new Exception('Inserción fallida');
-    }
-
-    // Consumir el identificador usado
-    unset($_SESSION['identificador_preview']);
-
-    header('Location: /SGPFL/base/proyecto_aprobado.php?ok=1');
-    exit;
-
-} catch (Throwable $e) {
-    header('Location: /SGPFL/base/proyecto_aprobado.php?err=1');
-    exit;
+if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $fecha_raw)) {
+    header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
+if ($nombre === '' || $estudiante_id === '' || !$comite_id) {
+    header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
+}
+if (!isset($_FILES['documento']) || $_FILES['documento']['error'] !== UPLOAD_ERR_OK) {
+    header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
+}
+
+$fecha_creacion = $fecha_raw . ' 00:00:00';
+$documento_blob = file_get_contents($_FILES['documento']['tmp_name']);
+
+$sql = "INSERT INTO proyecto_aprobados
+        (nombre, estudiante_id, comite_id, documento, aprobado, identificador, fecha_creacion)
+        VALUES (?,?,?,?,?,?,?)";
+
+$stmt = mysqli_prepare($id_con, $sql);
+if (!$stmt) {
+    header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
+}
+
+mysqli_stmt_bind_param(
+    $stmt,
+    "ssibiss",
+    $nombre,
+    $estudiante_id,
+    $comite_id,
+    $documento_blob,
+    $aprobado,
+    $identificador,
+    $fecha_creacion
+);
+
+$ok = mysqli_stmt_execute($stmt);
+mysqli_stmt_close($stmt);
+
+unset($_SESSION['identificador_preview']);
+
+if ($ok) {
+    header('Location: ../../../proyecto_aprobado.php?ok=1'); 
+} else {
+    header('Location: ../../../proyecto_aprobado.php?err=1'); 
+}
+exit;
+
+$q = "SELECT c.Id,
+            t.nombre  AS tutor_nombre,
+            a1.nombre AS asesor1_nombre,
+            a2.nombre AS asesor2_nombre
+      FROM comite c
+      JOIN sis_user t  ON t.id  = c.tutor
+      JOIN sis_user a1 ON a1.id = c.asesor_1
+      JOIN sis_user a2 ON a2.id = c.asesor_2
+      ORDER BY c.Id";
+$res = mysqli_query($id_con, $q);

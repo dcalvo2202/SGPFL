@@ -57,9 +57,9 @@ $usuario = $usuario_sesion ?? 'Estudiante';
         <div class="page-container flex-grow-1">
             <h3 class="mb-4 text-center">Bienvenido, <?= htmlspecialchars($usuario) ?></h3>
             <header class="d-flex justify-content-end gap-3 p-3">
-                <a href="logout.php" class="btn btn-outline-dark">Logout</a>
-                <a href="#" class="btn btn-outline-dark">Fechas importantes</a>
-                <a href="#" class="btn btn-outline-dark">Enviar documentos</a>
+                <a href="/base/mod/login/logout.php" class="btn btn-outline-dark">Logout</a>
+                <a href="/" class="btn btn-outline-dark">Fechas importantes</a>
+                <a href="/" class="btn btn-outline-dark">Enviar documentos</a>
                 <a href="index.php" class="btn btn-outline-dark">Inicio</a>
             </header>
             <main class="flex-grow-1 container py-4">
@@ -102,18 +102,6 @@ $usuario = $usuario_sesion ?? 'Estudiante';
         </div>
         <footer class="bg-dark text-white text-center p-3 mt-auto">
             <small><?= nl2br($footer_title) ?></small>
-        </footer>
-    </body>
-</html>
-
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Notificaciones:</label>
-                    <div class="alert alert-primary"><?= $notificacion ?></div>
-                </div>
-            </main>
-        </div>
-        <footer class="bg-dark text-white py-4 text-center">
-            <p class="text-center small"><?= nl2br($footer_title) ?></p>
         </footer>
     </body>
 </html>

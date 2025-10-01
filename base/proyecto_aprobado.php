@@ -8,28 +8,38 @@ if (empty($_SESSION['identificador_preview'])) {
 }
 $identificador_preview = $_SESSION['identificador_preview'];
 
-// Carga de combos
+// Carga de combos (ELIMINAMOS categorías)
 $estudiantes = [];
-$sql = "SELECT id, nombre FROM sis_user";
+// Solo usuarios cuyo rol (id_roll) = 4 (Estudiante)
+$sql = "SELECT u.id, u.nombre
+        FROM sis_user u
+        INNER JOIN sis_login l ON l.id = u.id
+        WHERE l.id_roll = 4
+        ORDER BY u.nombre";
 $result = mysqli_query($id_con, $sql);
-while ($result && $row = mysqli_fetch_assoc($result)) { $estudiantes[] = $row; }
+while ($result && $row = mysqli_fetch_assoc($result)) {
+    $estudiantes[] = $row;
+}
 
 $comites = [];
-$sql_comite = "SELECT Id AS id, integrantes FROM comite"; // verifica que 'integrantes' exista en tu tabla
+$sql_comite = "SELECT c.Id,
+                      t.nombre  AS tutor_nombre,
+                      a1.nombre AS asesor1_nombre,
+                      a2.nombre AS asesor2_nombre
+                FROM comite c
+                JOIN sis_user t  ON t.id  = c.tutor
+                JOIN sis_user a1 ON a1.id = c.asesor_1
+                JOIN sis_user a2 ON a2.id = c.asesor_2
+                ORDER BY c.Id";
 $result_comite = mysqli_query($id_con, $sql_comite);
 while ($result_comite && $row = mysqli_fetch_assoc($result_comite)) { $comites[] = $row; }
 
-$categorias = []; 
-$sql_categorias = "SELECT idCategoria, nombre, categoria FROM categorias"; 
-$result_categorias = mysqli_query($id_con, $sql_categorias);
-while ($result_categorias && $row = mysqli_fetch_assoc($result_categorias)) { $categorias[] = $row; }
-
-// Mensajes
+// Eliminado:
+// $categorias = []; ...
 $mensaje = '';
 if (isset($_GET['ok']))  $mensaje = '<div style="color:green;">exitoso</div>';
 if (isset($_GET['err'])) $mensaje = '<div style="color:red;">fallido Intente nuevamente</div>';
 
-// fecha actual
 $fecha_actual = date('Y-m-d');
 ?>
 <!doctype html>
@@ -177,27 +187,16 @@ $fecha_actual = date('Y-m-d');
     </select>
 
     <label for="comite">Comité asesor:</label>
-    <select id="comite" name="comite" required>
+    <select name="comite" id="comite" required>
       <option value="">Selecciona un comité</option>
-      <?php foreach ($comites as $com) : ?>
-        <option value="<?php echo $com['id']; ?>">
-          Comité #<?php echo $com['id']; ?> (Integrantes: <?php echo $com['integrantes']; ?>)
+      <?php while($r = mysqli_fetch_assoc($result_comite)): ?>
+        <option value="<?php echo $r['Id']; ?>">
+          Comité #<?php echo $r['Id']; ?> - T: <?php echo htmlspecialchars($r['tutor_nombre']); ?> / A1: <?php echo htmlspecialchars($r['asesor1_nombre']); ?> / A2: <?php echo htmlspecialchars($r['asesor2_nombre']); ?>
         </option>
-      <?php endforeach; ?>
+      <?php endwhile; ?>
     </select>
 
-    <label for="Categora">Categoría:</label>
-   <select id="categoria" name="categoria" required>
-  <option value="">Selecciona una categoría</option>
-  <?php foreach ($categorias as $cat) : ?>
-    <option value="<?php echo $cat['idCategoria']; ?>">
-      <?php
-        $tipo = ($cat['categoria'] == 1) ? 'multi' : 'inter';
-        echo htmlspecialchars($cat['nombre'] . ' (' . $tipo . ')');
-      ?>
-    </option>
-  <?php endforeach; ?>
-</select>
+    <!-- Eliminado bloque de Categoría -->
 
     <label for="documento">Documento (Word, PDF, Excel):</label>
     <label for="documento" class="btn-tfg">Subir documento</label>
@@ -210,7 +209,8 @@ $fecha_actual = date('Y-m-d');
     </div>
 
     <label for="fecha_aprobacion">Fecha de aprobación:</label>
-    <input type="date" id="fecha_aprobacion" name="fecha_aprobacion" value="<?php echo $fecha_actual; ?>" readonly>
+    <input type="date" id="fecha_aprobacion" name="fecha_aprobacion" value="<?php echo $fecha_actual; ?>" required>
+    <small style="color:#555;">Seleccione la fecha exacta de aprobación.</small>
 
     <button type="submit">Registrar proyecto</button>
   </form>
@@ -238,8 +238,6 @@ $fecha_actual = date('Y-m-d');
       box.style.display = 'flex';
     });
   </script>
-  
 </body>
-
 </html>
 
