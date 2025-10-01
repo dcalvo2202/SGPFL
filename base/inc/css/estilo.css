@@ -14,11 +14,12 @@
     /* Tipografías oficiales UNA */
     --font-titulos: 'Goudy Old Style', serif;
     --font-parrafos: 'Frutiger', 'Arial', sans-serif;
+    --font-opcional: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     
     /* Tamaños responsive oficiales */
-    --h1-size: 2.25rem;
-    --h2-size: 1.75rem;
-    --p-size: 1rem;
+    --h1-size: 3rem;
+    --h2-size: 2.5rem;
+    --p-size: 1.5rem;
     
     /* Espaciados estándar */
     --spacing-xs: 0.25rem;
@@ -33,8 +34,12 @@
     box-sizing: border-box;
 }
 
+button{
+    font-family: var(--font-opcional);
+}
+
 body {
-    font-family: var(--font-parrafos);
+    font-family: var(--font-titulos);
     background-color: var(--blanco-una);
     color: var(--negro-una);
     line-height: 1.6;
@@ -224,6 +229,10 @@ p {
     height: auto;
 }
 
+.img_fix_full{
+    width: 100%;
+}
+
 /* Espaciado extra entre usuario y contraseña en login */
 .login-card .form-group:first-of-type {
     margin-top: 1.5rem !important;
@@ -235,25 +244,6 @@ p {
     margin-bottom: 2rem !important;
 }
 
-@media (min-width: 400px) {
-    .login-card {
-        max-width: 32rem;
-    }
-}
-
-@media (min-width: 600px) {
-    .login-card {
-        max-width: 38rem;
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    #fix_valing_log {
-        width: 100%;
-        height: 70px;
-        display: block;
-    }
-}
 
 /* Cards oficiales UNA */
 .card-una {
@@ -421,6 +411,16 @@ p {
 
 /* === COMPONENTES ESPECÍFICOS SGPFL === */
 
+/* Espaciado extra entre usuario y contraseña en login */
+.login-card .form-group:first-of-type {
+    margin-top: 1.5rem !important;
+    margin-bottom: 2.5rem !important;
+}
+.login-card .form-group + .form-group {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+}
+
 /* Dashboard cards */
 .dashboard-card {
     background: var(--blanco-una);
@@ -481,6 +481,39 @@ p {
 }
 
 /* === RESPONSIVE DESIGN === */
+
+@media (min-width: 600px) {
+    .login-container {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+}
+@media (min-width: 900px) {
+    .login-container {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+}
+
+@media (min-width: 400px) {
+    .login-card {
+        max-width: 32rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .login-card {
+        max-width: 38rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #fix_valing_log {
+        width: 100%;
+        height: 70px;
+        display: block;
+    }
+}
 
 /* Tablet */
 @media only screen and (min-width: 768px) and (max-width: 991px) {

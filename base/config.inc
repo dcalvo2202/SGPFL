@@ -9,7 +9,7 @@
  *  por ejemplo: "/sistema/", "/lib/sistema/"
  */
 
-$cds_domain = "http://localhost/SGPFL/Sistema-Gestor-de-Proyectos-Finales-de-Licenciatura/";
+$cds_domain = "http://localhost/";
 $cds_locate = "base/"; 
 
 $ldap_status = 1;
@@ -32,9 +32,9 @@ $favicon_url = "./img/logo.webp";
 
 $page_cant = 10;
 
-$page_title = "BASE";
+$page_title = "SGPFL";
 
-$footer_title= "Sistema BASE para la creacion de otros sistemas<br/>USTDS";
+$footer_title= "Sistema Gestor de Proyectos Finales de Licenciatura<br/>Escuela de Informática, Universidad Nacional";
 
 $act1 = 1; //Ver
 $act2 = 2; //Listar
