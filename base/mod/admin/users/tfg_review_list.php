@@ -34,7 +34,8 @@ $result = $conn->query($sql);
                 <td><?php echo date('d/m/Y H:i', strtotime($row['created_at'])); ?></td>
                 <td>
                     <div class="btn-group">
-                        <a href="mod/admin/users/tfg_download.php?id=<?php echo $row['id']; ?>" 
+                        <?php $download_url = (isset($base_url) ? $base_url : '') . 'mod/admin/users/tfg_download.php?id=' . $row['id']; ?>
+                        <a href="<?= htmlspecialchars($download_url) ?>" 
                            class="btn btn-info btn-sm">
                             <i class="fa fa-download"></i> Descargar
                         </a>

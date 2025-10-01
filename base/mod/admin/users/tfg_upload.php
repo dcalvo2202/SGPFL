@@ -1,7 +1,14 @@
 <?php
+// VERIFICAR AUTENTICACIÓN
+include("../../login/check.php");
+
+// Obtener base_url de la sesión (configurado durante el login)
+$cds_domain = $mySessionController->getVar("cds_domain");
+$cds_locate = $mySessionController->getVar("cds_locate");
+$base_url = $cds_domain . $cds_locate;
+
 // Configuración portable de rutas
 $base_path = realpath(__DIR__ . '/../../../');
-$relative_base = '../../../';
 
 // Incluir archivos necesarios con rutas relativas
 include_once($base_path . '/inc/db/bdcommon.inc');
@@ -14,12 +21,20 @@ $project_types = [
     ['id' => 4, 'type_name' => 'Proyecto Grupal Grande', 'max_members' => 4]
 ];
 
-// URLs portables
-$panel_href = $relative_base . "panel_estudiante.php";
-$form_action = "tfg_upload_process.php";
+// OBTENER USUARIO REAL AUTENTICADO
+$current_user_id = $mySessionController->getVar("usuario");
+$current_user_name = $mySessionController->getVar("nombre");
+$current_user_rol = $mySessionController->getVar("rol");
 
-// Usuario actual (temporal para desarrollo)
-$current_user_id = '112170040';
+// Verificar que sea estudiante (rol 4)
+if ($current_user_rol != 4) {
+    header('Location: ' . $base_url . 'dashboard.php');
+    exit;
+}
+
+// URLs portables
+$panel_href = $base_url . "panel_estudiante.php";
+$form_action = "tfg_upload_process.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -31,8 +46,8 @@ $current_user_id = '112170040';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
-    <link rel="stylesheet" href="<?= $relative_base ?>inc/css/estilo.css">
-    <link rel="stylesheet" href="<?= $relative_base ?>inc/css/tfg_upload.css">
+    <link rel="stylesheet" href="<?= $base_url ?>inc/css/estilo.css">
+    <link rel="stylesheet" href="<?= $base_url ?>inc/css/tfg_upload.css">
     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -259,7 +274,7 @@ $current_user_id = '112170040';
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= $relative_base ?>inc/js/tfg_upload.js"></script>
+    <script src="<?= $base_url ?>inc/js/tfg_upload.js"></script>
     
     <script>
         // Debug para verificar que todo esté funcionando

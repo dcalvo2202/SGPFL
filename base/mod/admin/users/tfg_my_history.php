@@ -65,8 +65,11 @@ if ($result && $result->num_rows > 0) {
                 </td>
                 <td>' . ($row['reviewer_name'] ? htmlspecialchars($row['reviewer_name']) : 'Sistema') . '</td>
                 <td>' . htmlspecialchars($row['comments'] ?? 'Sin comentarios') . '</td>
-                <td>
-                    <a href="mod/admin/users/tfg_download.php?version=' . $row['id'] . '" 
+                <td>';
+        
+        $dl_url = (isset($base_url) ? $base_url : '') . 'mod/admin/users/tfg_download.php?version=' . $row['id'];
+        
+        echo '    <a href="' . htmlspecialchars($dl_url) . '" 
                        class="btn btn-sm btn-outline-primary" target="_blank">
                         <i class="bi bi-download"></i> Descargar
                     </a>

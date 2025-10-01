@@ -10,6 +10,11 @@ $mySessionController = mySession::getIstance($_MYSESSION_CONF);
 $usuario_sesion = $mySessionController->getVar('usuario');
 $rol_sesion = $mySessionController->getVar('rol');
 
+// Obtener base_url de la sesión
+$cds_domain = $mySessionController->getVar('cds_domain');
+$cds_locate = $mySessionController->getVar('cds_locate');
+$base_url = $cds_domain . $cds_locate;
+
 if (empty($usuario_sesion) || $rol_sesion != 4) {
     header('Location: index.php');
     exit();
@@ -50,17 +55,17 @@ $usuario = $usuario_sesion ?? 'Estudiante';
     </head>
     <body class="d-flex flex-column min-vh-100">
         <!-- JQuery -->
-        <script src="lib/jquery-3.1.0.min.js"></script>
+        <script src="<?= $base_url ?>lib/jquery-3.1.0.min.js"></script>
         <!-- SweetAlert2 -->
-        <script src="lib/sweetalert2/sweetalert2-v11-23-0.js"></script>
+        <script src="<?= $base_url ?>lib/sweetalert2/sweetalert2-v11-23-0.js"></script>
         
         <div class="page-container flex-grow-1">
             <h3 class="mb-4 text-center">Bienvenido, <?= htmlspecialchars($usuario) ?></h3>
             <header class="d-flex justify-content-end gap-3 p-3">
-                <a href="/base/mod/login/logout.php" class="btn btn-outline-dark">Logout</a>
-                <a href="/" class="btn btn-outline-dark">Fechas importantes</a>
-                <a href="/" class="btn btn-outline-dark">Enviar documentos</a>
-                <a href="index.php" class="btn btn-outline-dark">Inicio</a>
+                <a href="<?= $base_url ?>mod/login/logout.php" class="btn btn-outline-dark">Logout</a>
+                <a href="<?= $base_url ?>" class="btn btn-outline-dark">Fechas importantes</a>
+                <a href="<?= $base_url ?>" class="btn btn-outline-dark">Enviar documentos</a>
+                <a href="<?= $base_url ?>index.php" class="btn btn-outline-dark">Inicio</a>
             </header>
             <main class="flex-grow-1 container py-4">
                 <div class="row">
@@ -91,7 +96,7 @@ $usuario = $usuario_sesion ?? 'Estudiante';
                                 </div>
 
                                 <div class="text-center mt-4">
-                                    <a href="tfg_upload.php" class="btn btn-primary btn-lg me-2">Editar Propuesta TFG</a>
+                                    <a href="<?= $base_url ?>Panel_SubirTFG.php" class="btn btn-primary btn-lg me-2">Editar Propuesta TFG</a>
                                     <a href="#" class="btn btn-secondary btn-lg">Ver Progreso</a>
                                 </div>
                             </div>
