@@ -1,4 +1,6 @@
 <?php
+// filepath: c:\xampp\htdocs\SGPFL\base\mod\admin\users\tfg_status.php
+
 // tfg_status.php
 
 // Asegura que una sesión esté iniciada sin crear una nueva si ya existe.
@@ -13,13 +15,9 @@ $conn = new mysqli($db_host, $usuario, $clave, $db);
 if ($conn->connect_error) {
     echo '<div class="alert alert-danger">Error de conexión con la base de datos.</div>';
 } else {
-    // Si la sesión no está definida, se usa un ID de prueba.
+    // USAR SOLO UNA DEFINICIÓN DE user_id
     // COMENTAR O ELIMINAR ESTA LÍNEA EN PRODUCCIÓN.
-<<<<<<< HEAD
-    $user_id = $_SESSION['id'] ?? 'estudiante001'; 
-=======
-    $user_id = $_SESSION['id'] ?? '112170040'; 
->>>>>>> HU-002
+    $user_id = $_SESSION['id'] ?? '112170040'; // Usar ID consistente con otros archivos
 
     $sql = "SELECT id, title, status, created_at FROM tfg_proposals WHERE user_id = ? ORDER BY created_at DESC LIMIT 1";
     $stmt = $conn->prepare($sql);
@@ -40,12 +38,8 @@ if ($conn->connect_error) {
             if (strpos($s, 'revisión') !== false || strpos($s, 'revision') !== false || strpos($s, 'pendiente') !== false) $badge_color = 'bg-info';
             
             // Construcción de la URL de descarga usando $base_url si está disponible.
-<<<<<<< HEAD
-            $download_url = 'mod/admin/users/tfg_download.php?id=' . (int)$row['id'];
-=======
             $base = isset($base_url) && $base_url !== '' ? rtrim($base_url, '/') : '';
             $download_url = $base . '/mod/admin/users/tfg_download.php?id=' . (int)$row['id'];
->>>>>>> HU-002
             
             // Manejo seguro de la fecha de creación en caso de que sea nula.
             $created = $row['created_at'] ?? null;

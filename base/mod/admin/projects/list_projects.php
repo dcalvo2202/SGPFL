@@ -5,22 +5,26 @@
  * Siguiendo estándares oficiales UNA
  */
 
-if (session_status() !== PHP_SESSION_ACTIVE) {
-    session_start();
-}
+// VERIFICAR AUTENTICACIÓN USANDO EL SISTEMA ESTÁNDAR
+include("../../login/check.php");
 
+// Incluir archivos necesarios
 include_once(__DIR__ . "/../../../inc/db/bdcommon.inc");
+include_once(__DIR__ . "/../../../inc/db/db.php");
 include_once("ProjectGroup.php");
 
-// COMENTAR ESTAS LÍNEAS TEMPORALMENTE:
-// include("../../login/check.php");
-// $vocab = $mySessionController->getVar("vocab");
-// $user_rol = $mySessionController->getVar("rol");
-// $base_url = $mySessionController->getVar("cds_domain") . $mySessionController->getVar("cds_locate");
+// Obtener variables de sesión
+$vocab = $mySessionController->getVar("vocab");
+$user_rol = $mySessionController->getVar("rol");
+$current_user_id = $mySessionController->getVar("usuario");
+$current_user_name = $mySessionController->getVar("nombre");
+$base_url = $mySessionController->getVar("cds_domain") . $mySessionController->getVar("cds_locate");
 
-// VARIABLES TEMPORALES PARA PRUEBAS (snake_case según estándares UNA):
-$base_url = "/SGPFL/Sistema-Gestor-de-Proyectos-Finales-de-Licenciatura/base/";
-$current_user_id = '112170040'; // Usuario temporal para pruebas
+// Verificar permisos: Solo estudiantes (rol 4) pueden ver sus proyectos
+if ($user_rol != 4) {
+    header('Location: ../../../dashboard.php');
+    exit;
+}
 
 // Obtener proyectos del usuario usando método estándar UNA
 $projects = ProjectGroup::get_projects_by_user($current_user_id);

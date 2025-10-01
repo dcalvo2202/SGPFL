@@ -5,22 +5,27 @@
  * Siguiendo estándares oficiales UNA
  */
 
-if (session_status() !== PHP_SESSION_ACTIVE) {
-    session_start();
-}
+// VERIFICAR AUTENTICACIÓN USANDO EL SISTEMA ESTÁNDAR
+include("../../login/check.php");
 
+// Incluir archivos necesarios
 include_once(__DIR__ . "/../../../inc/db/bdcommon.inc");
+include_once(__DIR__ . "/../../../inc/db/db.php");
+include_once(__DIR__ . "/../../../inc/student_functions.php");
 include_once("ProjectGroup.php");
 
-// COMENTAR ESTAS LÍNEAS TEMPORALMENTE:
-// include("../../login/check.php");
-// $vocab = $mySessionController->getVar("vocab");
-// $user_rol = $mySessionController->getVar("rol");
-// $base_url = $mySessionController->getVar("cds_domain") . $mySessionController->getVar("cds_locate");
+// Obtener variables de sesión
+$vocab = $mySessionController->getVar("vocab");
+$user_rol = $mySessionController->getVar("rol");
+$current_user_id = $mySessionController->getVar("usuario");
+$current_user_name = $mySessionController->getVar("nombre");
+$base_url = $mySessionController->getVar("cds_domain") . $mySessionController->getVar("cds_locate");
 
-// VARIABLES TEMPORALES PARA PRUEBAS (snake_case según estándares UNA):
-$base_url = "/SGPFL/Sistema-Gestor-de-Proyectos-Finales-de-Licenciatura/base/";
-$current_user_id = '112170040'; // Usuario temporal para pruebas
+// Verificar permisos: Solo estudiantes (rol 4) pueden crear grupos
+if ($user_rol != 4) {
+    header('Location: ../../../dashboard.php');
+    exit;
+}
 
 $message = '';
 $error = '';
@@ -150,6 +155,87 @@ $project_types = ProjectGroup::get_project_types();
                 <?= htmlspecialchars($error) ?>
             </div>
         <?php endif; ?>
+
+        <!-- Información de estudiantes disponibles -->
+        <?php 
+        try {
+            $total_students = countStudents();
+            $available_students = getAllStudents();
+        } catch (Exception $e) {
+            $total_students = 0;
+            $available_students = [];
+        }
+        ?>
+        
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card-una-info">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="mb-1">
+                                <i class="bi bi-people-fill text-primary"></i>
+                                Estudiantes Disponibles
+                            </h6>
+                            <p class="mb-0 text-muted">
+                                Total: <?= $total_students ?> estudiantes registrados
+                            </p>
+                        </div>
+                        <button type="button" class="btn-una-outline" data-bs-toggle="collapse" data-bs-target="#div-all-students">
+                            <i class="bi bi-list-ul"></i> Ver Lista
+                        </button>
+                    </div>
+                    
+                    <!-- Lista colapsable de todos los estudiantes -->
+                    <div class="collapse mt-3" id="div-all-students">
+                        <hr>
+                        <div class="row">
+                            <?php if (!empty($available_students)): ?>
+                                <div class="col-12">
+                                    <div style="max-height: 300px; overflow-y: auto;">
+                                        <div class="row g-2">
+                                            <?php foreach (array_slice($available_students, 0, 20) as $student): ?>
+                                                <div class="col-md-6">
+                                                    <div class="border rounded p-2 bg-light">
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <strong class="text-primary"><?= htmlspecialchars($student['nombre']) ?></strong><br>
+                                                                <small class="text-muted">
+                                                                    <?= htmlspecialchars($student['id']) ?> | <?= htmlspecialchars($student['email']) ?>
+                                                                </small>
+                                                            </div>
+                                                            <button type="button" 
+                                                                    class="btn btn-sm btn-outline-primary" 
+                                                                    onclick="quickAddMember('<?= $student['id'] ?>', '<?= htmlspecialchars($student['nombre']) ?>', '<?= htmlspecialchars($student['email']) ?>')">
+                                                                <i class="bi bi-plus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                        <?php if (count($available_students) > 20): ?>
+                                            <div class="text-center mt-2">
+                                                <small class="text-muted">
+                                                    Mostrando primeros 20 de <?= count($available_students) ?> estudiantes. 
+                                                    Use la búsqueda para encontrar estudiantes específicos.
+                                                </small>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            <?php else: ?>
+                                <div class="col-12">
+                                    <p class="text-warning">
+                                        <i class="bi bi-exclamation-triangle"></i>
+                                        No hay estudiantes registrados en el sistema.
+                                    </p>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Formulario de registro con estilos UNA -->
         <div class="row justify-content-center">
@@ -305,14 +391,26 @@ $project_types = ProjectGroup::get_project_types();
                     return;
                 }
                 
-                // Aquí harías la petición AJAX para buscar usuarios
-                // Por ahora simulamos resultados
-                const mockResults = [
-                    {id: '112170041', nombre: 'Juan Pérez', email: 'juan.perez@est.una.ac.cr'},
-                    {id: '112170042', nombre: 'María González', email: 'maria.gonzalez@est.una.ac.cr'}
-                ];
+                // Mostrar indicador de carga
+                searchResults.innerHTML = '<div class="text-center"><i class="bi bi-spinner-border"></i> Buscando...</div>';
+                searchResults.style.display = 'block';
                 
-                displaySearchResults(mockResults);
+                // Petición AJAX real usando nuestras funciones de estudiantes
+                const formData = new FormData();
+                formData.append('search_term', searchTerm);
+                
+                fetch('ajax_search_students.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(users => {
+                    displaySearchResults(users);
+                })
+                .catch(error => {
+                    console.error('Error en búsqueda:', error);
+                    searchResults.innerHTML = '<div class="alert alert-danger">Error al buscar usuarios</div>';
+                });
             }
             
             // Mostrar resultados de búsqueda
@@ -366,6 +464,33 @@ $project_types = ProjectGroup::get_project_types();
                 updateMembersDisplay();
                 searchResults.style.display = 'none';
                 searchInput.value = '';
+            };
+
+            // Función rápida para agregar desde la lista completa
+            window.quickAddMember = function(userId, userName, userEmail) {
+                // Verificar si ya está seleccionado
+                const isAlreadySelected = selectedMembers.some(m => m.id === userId);
+                if (isAlreadySelected) {
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Ya seleccionado',
+                        text: `${userName} ya está en el grupo`,
+                        confirmButtonColor: '#007bff'
+                    });
+                    return;
+                }
+                
+                // Usar la misma lógica de addMember
+                addMember(userId, userName, userEmail);
+                
+                // Mostrar confirmación
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Agregado',
+                    text: `${userName} fue agregado al grupo`,
+                    timer: 1500,
+                    showConfirmButton: false
+                });
             };
             
             // Remover miembro del grupo

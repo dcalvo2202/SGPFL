@@ -3,8 +3,7 @@
  * Proyecto SGPFL 2025-07
  */
 
-
-:root {
+ :root {
     /* Paleta de colores oficial UNA según estándares */
     --rojo-una: #CD1719;
     --azul-una: #034991;
@@ -67,28 +66,8 @@ p {
 
 /* === COMPONENTES UNA === */
 
-<<<<<<< HEAD
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .open > a {
-    background-image: linear-gradient(to bottom, #c93a3a 0px, #840000 100%);
-}
-
-.puntero{
-    cursor: pointer;
-}
-
-
-.table_fix_nav{
-    width:140px; 
-    margin-left: auto; 
-    margin-right: auto;
-}
-
-.form-inline .fecha2{
-    display: inline-block;
-=======
 /* Logo oficial UNA */
 .logo-una {
->>>>>>> HU-002
     width: 50px;
     height: 50px;
     background: var(--blanco-una);
@@ -101,6 +80,26 @@ p {
     font-size: 0.8rem;
     font-family: var(--font-titulos);
     border: 2px solid var(--rojo-una);
+}
+
+/* Estilos adicionales navbar */
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .open > a {
+    background-image: linear-gradient(to bottom, #c93a3a 0px, #840000 100%);
+}
+
+.puntero {
+    cursor: pointer;
+}
+
+.table_fix_nav {
+    width: 140px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.form-inline .fecha2 {
+    display: inline-block;
 }
 
 /* Navbar oficial UNA */
@@ -156,12 +155,34 @@ p {
     text-decoration: none;
 }
 
-<<<<<<< HEAD
+.btn-una-secondary {
+    background: var(--gris-una);
+    border: 2px solid var(--gris-una);
+    color: var(--negro-una);
+    font-family: var(--font-parrafos);
+    font-weight: 500;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-una-secondary:hover,
+.btn-una-secondary:focus {
+    background: var(--azul-una);
+    border-color: var(--azul-una);
+    color: var(--blanco-una);
+    text-decoration: none;
+}
+
+/* Estilos de login */
 .login-card {
     background: #fff;
     border-radius: 1rem;
     box-shadow: 0 0.25rem 2rem rgba(0,0,0,0.12);
-    padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+    padding: 2.5rem;
     max-width: 120vw;
     width: 100%;
     min-width: 300px;
@@ -191,6 +212,7 @@ p {
     margin-bottom: 0.5rem;
     align-self: center;
 }
+
 .login-img {
     display: block;
     margin-left: auto;
@@ -207,51 +229,30 @@ p {
     margin-top: 1.5rem !important;
     margin-bottom: 2.5rem !important;
 }
+
 .login-card .form-group + .form-group {
     margin-top: 2rem !important;
     margin-bottom: 2rem !important;
 }
 
 @media (min-width: 400px) {
-  .login-card {
-    max-width: 32rem;
-  }
+    .login-card {
+        max-width: 32rem;
+    }
 }
+
 @media (min-width: 600px) {
-  .login-card {
-    max-width: 38rem;
-  }
+    .login-card {
+        max-width: 38rem;
+    }
 }
 
-
-@media only screen and (min-width: 1200px){
-    #fix_valing_log{
+@media only screen and (min-width: 1200px) {
+    #fix_valing_log {
         width: 100%;
         height: 70px;
         display: block;
     }
-=======
-.btn-una-secondary {
-    background: var(--gris-una);
-    border: 2px solid var(--gris-una);
-    color: var(--negro-una);
-    font-family: var(--font-parrafos);
-    font-weight: 500;
-    padding: var(--spacing-sm) var(--spacing-lg);
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
->>>>>>> HU-002
-}
-
-.btn-una-secondary:hover,
-.btn-una-secondary:focus {
-    background: var(--azul-una);
-    border-color: var(--azul-una);
-    color: var(--blanco-una);
-    text-decoration: none;
 }
 
 /* Cards oficiales UNA */
@@ -562,20 +563,21 @@ p {
     }
 }
 
-<<<<<<< HEAD
+/* Media queries adicionales para login */
 @media (min-width: 600px) {
     .login-container {
         margin-top: 4rem;
         margin-bottom: 4rem;
     }
 }
+
 @media (min-width: 900px) {
     .login-container {
         margin-top: 5rem;
         margin-bottom: 5rem;
     }
 }
-=======
+
 /* === UTILIDADES === */
 
 /* Clases de espaciado UNA */
@@ -602,4 +604,3 @@ p {
 .bg-gris-una { background-color: var(--gris-una); }
 
 /* === FIN ESTILOS UNA === */
->>>>>>> HU-002

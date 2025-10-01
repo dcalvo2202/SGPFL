@@ -18,7 +18,7 @@ class TfgUploadManager {
                 return basePath;
             }
         }
-        return '/SGPFL/Sistema-Gestor-de-Proyectos-Finales-de-Licenciatura/base';
+        return '/SGPFL/base';
     }
     
     initializeEventListeners() {

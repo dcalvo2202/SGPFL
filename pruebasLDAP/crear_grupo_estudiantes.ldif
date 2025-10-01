@@ -1,4 +1,0 @@
-dn: cn=Estudiantes,ou=Groups,dc=una,dc=ac,dc=cr
-objectClass: groupOfNames
-cn: Estudiantes
-member: uid=prueba1,ou=People,dc=una,dc=ac,dc=cr

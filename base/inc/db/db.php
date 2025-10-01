@@ -1,17 +1,15 @@
 <?php
 /**
+ * Protección contra inclusión múltiple
  */
+if (!defined('DB_FUNCTIONS_LOADED')) {
+    define('DB_FUNCTIONS_LOADED', true);
+
 require 'bdcommon.inc';
 $id_con = mysqli_connect($db_host, $usuario, $clave, $db);
 mysqli_set_charset($id_con, "utf8");
 
-<<<<<<< HEAD
-/* Ejecuta SELECT y retorna un arrreglo con los resultados
- * @param string $sql sentencia SQL
- * @return arreglo $a 
-=======
 /** Ejecuta SELECT y retorna un arrreglo con los resultados
->>>>>>> HU-002
  */
 function seleccion($sql) {
     require 'bdcommon.inc';
@@ -25,17 +23,8 @@ function seleccion($sql) {
     mysqli_close($id_con); 
     return $a; 
 }
-<<<<<<< HEAD
-/* Retorna en un arreglo de un solo row con la respuesta de mysql de una 
- * transacion es decir 0 si todo se ejecuto bien, otro valor dependiendo del
- * error.
- * 
- * @param string $sql Sentencia SQL
- * @return arreglo $resultado un arreglo de posicion unica con el resultado de mysql
-=======
 
 /** Retorna en un arreglo de un solo row con la respuesta de mysql de una 
->>>>>>> HU-002
  */
 function transaccion($sql) {
     require 'bdcommon.inc';
@@ -254,4 +243,6 @@ function transaccion_multiple($queries) {
         ];
     }
 }
+
+} // Fin de la protección contra inclusión múltiple
 ?>

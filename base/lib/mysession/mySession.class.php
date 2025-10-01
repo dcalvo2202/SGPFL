@@ -26,6 +26,10 @@
  *          <i>An example of how using this class over writing the default php method</i>
  *
  */
+
+// Protección contra declaración múltiple
+if (!class_exists('mySession')) {
+
 class mySession
 {
     /**
@@ -1263,3 +1267,5 @@ class mySession
         trigger_error("Clonig not allowed");
     }
 }
+
+} // Fin de la protección contra declaración múltiple

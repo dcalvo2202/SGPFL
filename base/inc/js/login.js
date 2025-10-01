@@ -133,8 +133,36 @@ function Do_Login(){
 
                 //Tuvo éxito el ingreso, entonces redirecciona.
                 if(response.trim() == "0"){
-                    //window.location=document.getElementById("cds_domain_locate").value+"main.php";
                     window.location=document.getElementById("cds_domain_locate").value+"dashboard.php";
+                }
+                // Estudiante con propuesta TFG - Redirigir al panel estudiante
+                else if(response.trim() == "estudiante_con_tfg"){
+                    window.location=document.getElementById("cds_domain_locate").value+"panel_estudiante.php";
+                }
+                // Estudiante sin propuesta TFG - Redirigir al formulario
+                else if(response.trim() == "estudiante_sin_tfg"){
+                    Swal.fire({
+                        icon: 'info',
+                        title: '¡Bienvenido Estudiante!',
+                        html: `
+                            <div style="text-align: left; padding: 20px;">
+                                <p style="font-size: 16px; margin-bottom: 15px;">
+                                    <i class="bi bi-info-circle-fill" style="color: #17a2b8; margin-right: 8px;"></i>
+                                    Para continuar, necesita registrar su propuesta de Trabajo Final de Graduación.
+                                </p>
+                                <p style="color: #6c757d; font-style: italic;">
+                                    <i class="bi bi-arrow-right-circle" style="margin-right: 5px;"></i>
+                                    Será redirigido al formulario de registro de propuesta TFG.
+                                </p>
+                            </div>
+                        `,
+                        confirmButtonText: 'Continuar al Formulario TFG',
+                        confirmButtonColor: '#003366',
+                        allowOutsideClick: false,
+                        width: '450px'
+                    }).then(function() {
+                        window.location = document.getElementById("cds_domain_locate").value + "tfg_upload.php";
+                    });
                 }
                 // Sino tuvo éxito, muestra el error correspondiente.
                 else if ( response.trim()== "1" || response.trim() == "2"){

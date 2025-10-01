@@ -1,424 +1,295 @@
 <?php
-<<<<<<< HEAD
-if (session_status() !== PHP_SESSION_ACTIVE) {
-    session_start();
-}
-include __DIR__ . '/../../../inc/db/bdcommon.inc';
 
-// --- Validación de Entrada (simplificada para el ejemplo) ---
-$title = trim($_POST['title'] ?? '');
-$disciplines = trim($_POST['disciplines'] ?? '');
-if ($title === '' || $disciplines === '') die("Datos incompletos.");
-if (!isset($_FILES['document']) || $_FILES['document']['error'] !== UPLOAD_ERR_OK) die("Error al subir el archivo.");
-
-$conn = new mysqli($db_host, $usuario, $clave, $db);
-if ($conn->connect_error) die("Conexión fallida: " . $conn->connect_error);
-
-// COMENTAR O ELIMINAR ESTA LÍNEA EN PRODUCCIÓN.
-$user_id = $_SESSION['id'] ?? 'estudiante001';
-
-// --- Lectura de Archivo ---
-$tmp_path = $_FILES['document']['tmp_name'];
-$fileContent = file_get_contents($tmp_path);
-if ($fileContent === false) die("No se pudo leer el archivo temporal.");
-$file_name = basename($_FILES['document']['name']);
-$mime_type = mime_content_type($tmp_path);
-$file_size = (int)$_FILES['document']['size'];
-
-/*
-// --- Inserción Segura en la Base de Datos ---
-$sql = "INSERT INTO tfg_proposals (user_id, title, disciplines, document, file_name, mime_type, file_size, status)
-        VALUES (?, ?, ?, ?, ?, ?, ?, 'Pendiente de Revisión')";
-        
-$stmt = $conn->prepare($sql);
-// Parche aplicado: Verificar que la preparación fue exitosa.
-if (!$stmt) {
-    $err = $conn->error;
-    $conn->close();
-    die("Error al preparar la inserción: " . $err);
-}
-
-$null = NULL; // Variable para bind_param
-$stmt->bind_param("sssbssi", $user_id, $title, $disciplines, $null, $file_name, $mime_type, $file_size);
-$stmt->send_long_data(3, $fileContent);
-
-if ($stmt->execute()) {
-    $stmt->close();
-    $conn->close();
-
-    $target = '../../../panel_estudiante.php'; // Fallback
-    if (isset($base_url) && $base_url !== '') {
-        $target = rtrim($base_url, '/') . '/panel_estudiante.php';
-    }
-    echo '<script>alert("¡Propuesta enviada correctamente!"); window.location.href = "'.$target.'";</script>';
-    exit;
-} else {
-    $err = $stmt->error;
-    $stmt->close();
-    $conn->close();
-    die("Error al guardar la propuesta: " . $err);
-}
-*/
-try {
-    // Iniciar transacción
-    $conn->begin_transaction();
-
-    // 1. Insertar en tfg_proposals
-    $sql = "INSERT INTO tfg_proposals (user_id, title, disciplines, document, file_name, mime_type, file_size, status)
-            VALUES (?, ?, ?, ?, ?, ?, ?, 'Pendiente de Revisión')";
-    
-    $stmt = $conn->prepare($sql);
-    if (!$stmt) {
-        throw new Exception("Error al preparar la inserción: " . $conn->error);
-    }
-
-    $null = NULL;
-    $stmt->bind_param("sssbssi", $user_id, $title, $disciplines, $null, $file_name, $mime_type, $file_size);
-    $stmt->send_long_data(3, $fileContent);
-    
-    if (!$stmt->execute()) {
-        throw new Exception("Error al guardar la propuesta: " . $stmt->error);
-    }
-
-    $proposal_id = $conn->insert_id;
-    $stmt->close();
-
-    // 2. Insertar en tfg_proposal_history
-    $sql = "INSERT INTO tfg_proposal_history (proposal_id, document, file_name, mime_type, file_size, status)
-            VALUES (?, ?, ?, ?, ?, 'Pendiente de Revisión')";
-    
-    $stmt = $conn->prepare($sql);
-    if (!$stmt) {
-        throw new Exception("Error al preparar el historial: " . $conn->error);
-    }
-
-    $stmt->bind_param("ibssi", $proposal_id, $null, $file_name, $mime_type, $file_size);
-    $stmt->send_long_data(1, $fileContent);
-    
-    if (!$stmt->execute()) {
-        throw new Exception("Error al guardar el historial: " . $stmt->error);
-    }
-
-    // Confirmar transacción
-    $conn->commit();
-
-    // Redireccionar
-    $target = '../../../panel_subir_propuesta_tfg.php'; // Fallback
-    if (isset($base_url) && $base_url !== '') {
-        $target = rtrim($base_url, '/') . '/panel_subir_propuesta_tfg.php';
-    }
-    echo '<script>alert("¡Propuesta enviada correctamente!"); window.location.href = "'.$target.'";</script>';
-    exit;
-
-} catch (Exception $e) {
-    $conn->rollback();
-    die("Error: " . $e->getMessage());
-} finally {
-    if (isset($stmt)) $stmt->close();
-    $conn->close();
-}
-=======
 // Activar reporte de errores para debug
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('max_execution_time', 300);
 ini_set('memory_limit', '256M');
 
-// Log de debug
-error_log("=== INICIO PROCESAMIENTO TFG ===");
-error_log("POST: " . print_r($_POST, true));
-error_log("FILES: " . print_r($_FILES, true));
+// VERIFICAR AUTENTICACIÓN ANTES QUE NADA
+include("../../login/check.php");
 
-if (session_status() !== PHP_SESSION_ACTIVE) {
-    session_start();
+// OBTENER DATOS REALES DEL USUARIO AUTENTICADO
+$user_id = $mySessionController->getVar("usuario");
+$user_name = $mySessionController->getVar("nombre"); 
+$user_rol = $mySessionController->getVar("rol");
+
+// Incluir configuración BD DESPUÉS del check para evitar sobrescritura de variables
+include_once(__DIR__ . '/../../../inc/db/bdcommon.inc');
+
+// Log de debug con usuario real
+error_log("=== TFG Upload - Usuario Real ===");
+error_log("Usuario ID: " . $user_id);
+error_log("Nombre: " . $user_name);
+error_log("Rol: " . $user_rol);
+
+// Verificar que sea estudiante (rol 4 según tu BD)
+if ($user_rol != 4) {
+    respond_json(false, 'Solo estudiantes pueden crear propuestas TFG');
 }
 
-// Rutas
-$base_path = realpath(__DIR__ . '/../../../');
-include $base_path . '/inc/db/bdcommon.inc';
-
-// Usuario actual
-$user_id = $_SESSION['id'] ?? '112170040';
-error_log("Usuario actual: $user_id");
-
-// Validar método POST
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    die("Método no permitido");
+// Verificar autenticación completa
+if (!$user_id || !$user_name) {
+    respond_json(false, 'Usuario no autenticado correctamente');
 }
 
-// Obtener datos del formulario
-$title = trim($_POST['title'] ?? '');
-$disciplines = trim($_POST['disciplines'] ?? '');
-$project_type_id = (int)($_POST['project_type_id'] ?? 0);
-$project_description = trim($_POST['project_description'] ?? '');
-$accept_terms = isset($_POST['accept_terms']);
+// Configurar respuesta JSON
+header('Content-Type: application/json; charset=utf-8');
 
-error_log("Datos recibidos - Title: '$title', Type: $project_type_id, Accept: " . ($accept_terms ? 'SI' : 'NO'));
-
-// Función para mostrar error
-function showErrorAndReturn($message) {
-    error_log("ERROR: $message");
-    ?>
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    </head>
-    <body>
-        <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: '<?= addslashes($message) ?>',
-                confirmButtonColor: '#CD1719'
-            }).then(() => {
-                window.history.back();
-            });
-        </script>
-    </body>
-    </html>
-    <?php
+// Función para responder con JSON
+function respond_json($success, $message, $data = null) {
+    echo json_encode([
+        'success' => $success,
+        'message' => $message,
+        'data' => $data
+    ], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
-// Función para redireccionar con éxito
-function redirectWithSuccess() {
-    error_log("=== PROCESAMIENTO EXITOSO ===");
-    ?>
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    </head>
-    <body>
-        <script>
-            Swal.fire({
-                icon: 'success',
-                title: '¡Éxito!',
-                text: 'Propuesta TFG enviada y grupo creado exitosamente',
-                confirmButtonColor: '#034991',
-                timer: 2000,
-                timerProgressBar: true,
-                allowOutsideClick: false
-            }).then(() => {
-                window.location.href = '../../../panel_estudiante.php?success=tfg_created';
-            });
-        </script>
-    </body>
-    </html>
-    <?php
-    exit;
-}
-
-// Validaciones básicas
-if (empty($title)) {
-    showErrorAndReturn("El título es obligatorio");
-}
-
-if (empty($disciplines)) {
-    showErrorAndReturn("Las disciplinas son obligatorias");
-}
-
-if (!$project_type_id) {
-    showErrorAndReturn("Debe seleccionar un tipo de proyecto");
-}
-
-if (empty($project_description)) {
-    showErrorAndReturn("La descripción es obligatoria");
-}
-
-if (!$accept_terms) {
-    showErrorAndReturn("Debe aceptar los términos y condiciones");
-}
-
-// Validar archivo
-if (!isset($_FILES['document']) || $_FILES['document']['error'] !== UPLOAD_ERR_OK) {
-    $error_code = $_FILES['document']['error'] ?? 'desconocido';
-    showErrorAndReturn("Error al subir el archivo. Código: $error_code");
-}
-
-$file_info = $_FILES['document'];
-$file_name = basename($file_info['name']);
-$file_size = $file_info['size'];
-$tmp_path = $file_info['tmp_name'];
-
-// Validar tipo de archivo
-$finfo = finfo_open(FILEINFO_MIME_TYPE);
-$mime_type = finfo_file($finfo, $tmp_path);
-finfo_close($finfo);
-
-$allowed_types = ['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-if (!in_array($mime_type, $allowed_types)) {
-    showErrorAndReturn("Solo se permiten archivos PDF y DOCX. Tipo detectado: $mime_type");
-}
-
-// Validar tamaño
-$max_size = 10 * 1024 * 1024; // 10MB
-if ($file_size > $max_size) {
-    showErrorAndReturn("El archivo es muy grande. Máximo 10MB.");
-}
-
-// Leer contenido del archivo
-$document_content = file_get_contents($tmp_path);
-if ($document_content === false) {
-    showErrorAndReturn("No se pudo leer el archivo");
-}
-
-error_log("Archivo procesado - Name: $file_name, Size: $file_size, MIME: $mime_type");
-
-// Conexión a BD
 try {
-    $conn = new mysqli($db_host, $usuario, $clave, $db);
-    if ($conn->connect_error) {
-        throw new Exception("Error de conexión: " . $conn->connect_error);
+    // Verificar método de petición
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        respond_json(false, 'Método no permitido');
     }
-    $conn->set_charset("utf8");
-    error_log("Conexión a BD exitosa");
-} catch (Exception $e) {
-    showErrorAndReturn("Error de base de datos: " . $e->getMessage());
-}
 
-// Verificar que el usuario actual existe
-$check_user_sql = "SELECT id FROM sis_user WHERE id = ?";
-$check_stmt = $conn->prepare($check_user_sql);
-$check_stmt->bind_param("s", $user_id);
-$check_stmt->execute();
-$user_result = $check_stmt->get_result();
-
-if ($user_result->num_rows === 0) {
-    $check_stmt->close();
-    $conn->close();
-    showErrorAndReturn("Su usuario no existe en la base de datos. ID: $user_id");
-}
-$check_stmt->close();
-
-// Procesar miembros
-$members_data = [
-    ['user_id' => $user_id, 'role' => 'Líder']
-];
-
-if (isset($_POST['members']) && is_array($_POST['members'])) {
-    foreach ($_POST['members'] as $member_id) {
-        $member_id = trim($member_id);
-        if (!empty($member_id) && $member_id !== $user_id) {
-            // Verificar que el miembro existe
-            $member_check_sql = "SELECT id FROM sis_user WHERE id = ?";
-            $member_stmt = $conn->prepare($member_check_sql);
-            $member_stmt->bind_param("s", $member_id);
-            $member_stmt->execute();
-            $member_result = $member_stmt->get_result();
-            
-            if ($member_result->num_rows === 0) {
-                $member_stmt->close();
-                $conn->close();
-                showErrorAndReturn("El usuario $member_id no existe en la base de datos");
-            }
-            $member_stmt->close();
-            
-            $members_data[] = ['user_id' => $member_id, 'role' => 'Miembro'];
+    // DEBUG: Mostrar todos los datos POST que están llegando
+    error_log("=== DEBUG POST DATA ===");
+    error_log("Raw POST: " . print_r($_POST, true));
+    foreach ($_POST as $key => $value) {
+        if (is_array($value)) {
+            error_log("Campo '$key': ARRAY (" . count($value) . " elementos)");
+        } else {
+            error_log("Campo '$key': '" . $value . "' (length: " . strlen($value) . ")");
         }
     }
-}
 
-error_log("Miembros a insertar: " . count($members_data));
+    // Validar datos requeridos - permitir tanto 'description' como 'project_description'
+    $required_fields = ['title', 'project_type_id'];
+    foreach ($required_fields as $field) {
+        $value = $_POST[$field] ?? '';
+        $trimmed = trim($value);
+        error_log("Validando campo '$field': isset=" . (isset($_POST[$field]) ? 'SI' : 'NO') . ", valor='" . $value . "', trimmed='" . $trimmed . "', empty=" . (empty($trimmed) ? 'SI' : 'NO'));
+        
+        if (!isset($_POST[$field]) || trim($_POST[$field]) === '') {
+            respond_json(false, "El campo '$field' es requerido");
+        }
+    }
 
-// INICIAR TRANSACCIÓN
-$conn->begin_transaction();
+    // Validar descripción (puede ser 'description' o 'project_description')
+    $description_value = '';
+    if (isset($_POST['description']) && trim($_POST['description']) !== '') {
+        $description_value = trim($_POST['description']);
+    } elseif (isset($_POST['project_description']) && trim($_POST['project_description']) !== '') {
+        $description_value = trim($_POST['project_description']);
+    }
+    
+    if (empty($description_value)) {
+        respond_json(false, "El campo de descripción (description o project_description) es requerido");
+    }
 
-// ===== INICIO DE LA SECCIÓN ACTUALIZADA =====
-try {
-    // 1. INSERTAR PROPUESTA TFG
-    $tfg_sql = "INSERT INTO tfg_proposals (user_id, title, disciplines, project_description, document, file_name, mime_type, file_size, status) 
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'Pendiente de Revisión')";
+    error_log("Descripción encontrada: '" . $description_value . "' (length: " . strlen($description_value) . ")");
+
+    // Obtener y validar datos del formulario
+    $title = trim($_POST['title']);
+    $description = $description_value; // Usar la descripción ya validada
+    $project_type_id = intval($_POST['project_type_id']);
+    $keywords = trim($_POST['keywords'] ?? '');
+    $project_description = trim($_POST['project_description'] ?? $description);
+
+    // Validaciones básicas
+    if (strlen($title) < 5) {
+        respond_json(false, 'El título debe tener al menos 5 caracteres');
+    }
+
+    if (strlen($description) < 20) {
+        respond_json(false, 'La descripción debe tener al menos 20 caracteres');
+    }
+
+    if ($project_type_id <= 0) {
+        respond_json(false, 'Debe seleccionar un tipo de proyecto válido');
+    }
+
+    // Validar archivo PDF (opcional)
+    $pdf_path = null;
+    if (isset($_FILES['proposal_file']) && $_FILES['proposal_file']['error'] === UPLOAD_ERR_OK) {
+        $file = $_FILES['proposal_file'];
+        
+        // Validar tipo de archivo
+        if ($file['type'] !== 'application/pdf') {
+            respond_json(false, 'Solo se permiten archivos PDF');
+        }
+        
+        // Validar tamaño (máximo 10MB)
+        if ($file['size'] > 10 * 1024 * 1024) {
+            respond_json(false, 'El archivo no puede exceder 10MB');
+        }
+        
+        // Crear directorio de uploads si no existe
+        $upload_dir = __DIR__ . '/../../../uploads/tfg_proposals/';
+        if (!is_dir($upload_dir)) {
+            mkdir($upload_dir, 0755, true);
+        }
+        
+        // Generar nombre único para el archivo
+        $file_extension = pathinfo($file['name'], PATHINFO_EXTENSION);
+        $unique_filename = $user_id . '_' . date('Y-m-d_H-i-s') . '_' . uniqid() . '.' . $file_extension;
+        $pdf_path = $upload_dir . $unique_filename;
+        
+        // Mover archivo
+        if (!move_uploaded_file($file['tmp_name'], $pdf_path)) {
+            respond_json(false, 'Error al guardar el archivo PDF');
+        }
+        
+        // Guardar solo la ruta relativa en la BD
+        $pdf_path = 'uploads/tfg_proposals/' . $unique_filename;
+    }
+
+    // Conectar a la base de datos - RECARGAR variables para evitar conflictos
+    // Guardar variables de usuario antes de recargar configuración BD
+    $saved_user_id = $user_id;
+    $saved_user_name = $user_name;
+    $saved_user_rol = $user_rol;
+    
+    // Recargar configuración de BD para asegurar variables correctas
+    include(__DIR__ . '/../../../inc/db/bdcommon.inc');
+    
+    // Restaurar variables de usuario
+    $user_id = $saved_user_id;
+    $user_name = $saved_user_name;
+    $user_rol = $saved_user_rol;
+    
+    error_log("Variables BD después de recarga: host=$db_host, usuario=$usuario, clave=" . (empty($clave) ? 'VACIA' : 'SET') . ", db=$db");
+    error_log("Variables usuario: user_id=$user_id, user_name=$user_name, user_rol=$user_rol");
+    
+    $conn = new mysqli($db_host, $usuario, $clave, $db);
+    if ($conn->connect_error) {
+        error_log("Error de conexión: " . $conn->connect_error);
+        respond_json(false, 'Error de conexión a la base de datos: ' . $conn->connect_error);
+    }
+
+    $conn->set_charset("utf8");
+    $conn->autocommit(false);
+
+    // 1. Insertar propuesta TFG con estructura correcta de la tabla
+    // La tabla real tiene: id, user_id, title, disciplines, project_description, document, file_name, mime_type, file_size, status, admin_comments, reviewed_by, reviewed_at, created_at, updated_at
+    
+    // Preparar datos para la inserción
+    $disciplines = $_POST['disciplines'] ?? 'Sin especificar';
+    $document_data = null;
+    $file_name = '';
+    $mime_type = '';
+    $file_size = 0;
+    
+    // Si hay archivo PDF, leerlo como BLOB
+    if (isset($_FILES['proposal_file']) && $_FILES['proposal_file']['error'] === UPLOAD_ERR_OK) {
+        $document_data = file_get_contents($_FILES['proposal_file']['tmp_name']);
+        $file_name = $_FILES['proposal_file']['name'];
+        $mime_type = $_FILES['proposal_file']['type'];
+        $file_size = $_FILES['proposal_file']['size'];
+    }
+    
+    $tfg_sql = "INSERT INTO tfg_proposals (user_id, title, disciplines, project_description, document, file_name, mime_type, file_size, status, created_at, updated_at) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'Pendiente de Revisión', NOW(), NOW())";
     
     $tfg_stmt = $conn->prepare($tfg_sql);
     if (!$tfg_stmt) {
-        throw new Exception("Error preparando TFG: " . $conn->error);
+        $conn->rollback();
+        error_log("Error preparando query TFG: " . $conn->error);
+        respond_json(false, 'Error interno del servidor (TFG)');
     }
-    
-    $tfg_stmt->bind_param("sssssssi", $user_id, $title, $disciplines, $project_description, $document_content, $file_name, $mime_type, $file_size);
+
+    $tfg_stmt->bind_param("sssssssi", $user_id, $title, $disciplines, $description, $document_data, $file_name, $mime_type, $file_size);
     
     if (!$tfg_stmt->execute()) {
-        throw new Exception("Error insertando TFG: " . $tfg_stmt->error);
+        $conn->rollback();
+        error_log("Error ejecutando TFG: " . $tfg_stmt->error);
+        respond_json(false, 'Error al guardar la propuesta TFG');
     }
-    
+
     $tfg_id = $conn->insert_id;
     $tfg_stmt->close();
-    
-    error_log("TFG insertado con ID: $tfg_id");
-    
-    // 2. INSERTAR PROYECTO REGISTRADO (SIN project_title NI description)
-    $project_sql = "INSERT INTO registered_projects (tfg_proposal_id, project_type_id, status) 
-                    VALUES (?, ?, 'Registrado')";
+
+    // 2. Crear proyecto asociado con estructura correcta
+    // registered_projects tiene: id, tfg_proposal_id, project_type_id, status, start_date, end_date, final_grade, supervisor_id, created_at, updated_at
+    $project_sql = "INSERT INTO registered_projects (tfg_proposal_id, project_type_id, status, created_at, updated_at) 
+                    VALUES (?, ?, 'Registrado', NOW(), NOW())";
     
     $project_stmt = $conn->prepare($project_sql);
     if (!$project_stmt) {
-        throw new Exception("Error preparando proyecto: " . $conn->error);
+        $conn->rollback();
+        error_log("Error preparando query proyecto: " . $conn->error);
+        respond_json(false, 'Error interno del servidor (Proyecto)');
     }
-    
-    // SOLO dos parámetros: tfg_proposal_id y project_type_id
+
     $project_stmt->bind_param("ii", $tfg_id, $project_type_id);
     
     if (!$project_stmt->execute()) {
-        throw new Exception("Error insertando proyecto: " . $project_stmt->error);
+        $conn->rollback();
+        error_log("Error ejecutando proyecto: " . $project_stmt->error);
+        respond_json(false, 'Error al crear el proyecto asociado');
     }
-    
+
     $project_id = $conn->insert_id;
     $project_stmt->close();
+
+    // 3. Agregar al usuario autenticado como líder del proyecto
+    $member_sql = "INSERT INTO project_members (project_id, user_id, role, joined_at) 
+                  VALUES (?, ?, 'Líder', NOW())";
     
-    error_log("Proyecto registrado con ID: $project_id");
-    
-    // 3. INSERTAR MIEMBROS DEL PROYECTO (sin cambios)
-    $member_sql = "INSERT INTO project_members (project_id, user_id, role) VALUES (?, ?, ?)";
     $member_stmt = $conn->prepare($member_sql);
-    
-    if (!$member_stmt) {
-        throw new Exception("Error preparando miembros: " . $conn->error);
+    if ($member_stmt) {
+        $member_stmt->bind_param("is", $project_id, $user_id);
+        $member_stmt->execute();
+        $member_stmt->close();
     }
-    
-    foreach ($members_data as $member) {
-        $member_stmt->bind_param("iss", $project_id, $member['user_id'], $member['role']);
-        
-        if (!$member_stmt->execute()) {
-            throw new Exception("Error insertando miembro " . $member['user_id'] . ": " . $member_stmt->error);
+
+    // 4. Agregar miembros adicionales del grupo (si los hay)
+    if (!empty($_POST['group_members'])) {
+        $members = json_decode($_POST['group_members'], true);
+        if (is_array($members)) {
+            $additional_member_sql = "INSERT INTO project_members (project_id, user_id, role, joined_at) 
+                                    VALUES (?, ?, 'Miembro', NOW())";
+            
+            $additional_member_stmt = $conn->prepare($additional_member_sql);
+            if ($additional_member_stmt) {
+                foreach ($members as $member) {
+                    if (!empty($member['user_id']) && $member['user_id'] !== $user_id) {
+                        $additional_member_stmt->bind_param("is", $project_id, $member['user_id']);
+                        
+                        if (!$additional_member_stmt->execute()) {
+                            error_log("Error agregando miembro: " . $additional_member_stmt->error);
+                        }
+                    }
+                }
+                $additional_member_stmt->close();
+            }
         }
-        
-        error_log("Miembro insertado: " . $member['user_id'] . " como " . $member['role']);
     }
-    
-    $member_stmt->close();
-    
-    // 4. INSERTAR EN HISTORIAL (opcional)
-    $history_sql = "INSERT INTO project_history (project_id, user_id, action_type, new_value, comments) 
-                    VALUES (?, ?, 'Creado', ?, 'Proyecto creado desde formulario TFG')";
-    
-    $history_stmt = $conn->prepare($history_sql);
-    if ($history_stmt) {
-        $action_value = "Proyecto '$title' creado con " . count($members_data) . " miembros";
-        $history_stmt->bind_param("iss", $project_id, $user_id, $action_value);
-        $history_stmt->execute();
-        $history_stmt->close();
-        error_log("Historial registrado para proyecto ID: $project_id");
-    }
-    
-    // CONFIRMAR TRANSACCIÓN
+
+    // Confirmar transacción
     $conn->commit();
     $conn->close();
-    
-    error_log("=== TRANSACCIÓN COMPLETADA EXITOSAMENTE ===");
-    error_log("TFG ID: $tfg_id, Proyecto ID: $project_id, Miembros: " . count($members_data));
-    
-    // Redireccionar con éxito
-    redirectWithSuccess();
-    
-} catch (Exception $e) {
-    // REVERTIR TRANSACCIÓN EN CASO DE ERROR
-    $conn->rollback();
-    $conn->close();
-    
-    error_log("ERROR EN TRANSACCIÓN: " . $e->getMessage());
-    showErrorAndReturn("Error al procesar la propuesta: " . $e->getMessage());
-}
 
->>>>>>> HU-002
+    // Log de éxito
+    error_log("TFG creado exitosamente - Usuario: $user_id, TFG ID: $tfg_id, Proyecto ID: $project_id");
+
+    // Respuesta exitosa
+    respond_json(true, 'Propuesta TFG creada exitosamente', [
+        'tfg_id' => $tfg_id,
+        'project_id' => $project_id,
+        'title' => $title,
+        'user_authenticated' => true,
+        'user_id' => $user_id,
+        'user_name' => $user_name,
+        'file_uploaded' => !empty($pdf_path)
+    ]);
+
+} catch (Exception $e) {
+    if (isset($conn)) {
+        $conn->rollback();
+        $conn->close();
+    }
+    error_log("Excepción en TFG upload: " . $e->getMessage());
+    respond_json(false, 'Error interno del servidor: ' . $e->getMessage());
+}
 ?>

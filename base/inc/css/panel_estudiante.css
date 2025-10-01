@@ -41,18 +41,120 @@
 
 /* --- Barra de Navegación (Navbar) --- */
 
+/* --- Barra de Navegación (Navbar) --- */
+
 .navbar-una {
-    background: linear-gradient(135deg, #034991, #023366) !important; /* Azul UNA oficial */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, #034991, #023366) !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    min-height: 80px;
+}
+
+.navbar-una .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-left {
+    flex: 1;
+}
+
+.header-right {
+    flex: 0 0 auto;
+    min-width: 280px;
 }
 
 .logo-una {
+    height: 50px;
+    width: auto;
     background: white;
-    color: #034991;
-    padding: 8px 12px;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.header-text h5 {
+    font-size: 1.1rem;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.header-text small {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+}
+
+.user-info i {
+    color: #ffffff;
+}
+
+.user-info span {
+    font-size: 0.95rem;
+}
+
+.user-details {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.user-details small {
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.navbar-una .btn-outline-light {
+    border: 1.5px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 4px 12px;
+    font-size: 0.85rem;
     border-radius: 6px;
-    font-weight: 700;
-    margin-right: 15px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.navbar-una .btn-outline-light:hover {
+    background-color: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.6);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.text-blanco-una {
+    color: white !important;
+}
+
+/* Responsividad para el header */
+@media (max-width: 768px) {
+    .navbar-una .container-fluid {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .header-left, .header-right {
+        flex: none;
+        width: 100%;
+    }
+    
+    .header-right {
+        min-width: auto;
+    }
+    
+    .user-details {
+        justify-content: center;
+    }
 }
 
 /* --- Tarjetas de Acciones Rápidas --- */
