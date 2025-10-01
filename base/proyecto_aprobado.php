@@ -8,9 +8,8 @@ if (empty($_SESSION['identificador_preview'])) {
 }
 $identificador_preview = $_SESSION['identificador_preview'];
 
-// Carga de combos (ELIMINAMOS categorías)
+// Cargar estudiantes (rol = 4)
 $estudiantes = [];
-// Solo usuarios cuyo rol (id_roll) = 4 (Estudiante)
 $sql = "SELECT u.id, u.nombre
         FROM sis_user u
         INNER JOIN sis_login l ON l.id = u.id
@@ -21,6 +20,7 @@ while ($result && $row = mysqli_fetch_assoc($result)) {
     $estudiantes[] = $row;
 }
 
+// Cargar comités (nuevo modelo con tutor / asesores)
 $comites = [];
 $sql_comite = "SELECT c.Id,
                       t.nombre  AS tutor_nombre,
@@ -34,8 +34,18 @@ $sql_comite = "SELECT c.Id,
 $result_comite = mysqli_query($id_con, $sql_comite);
 while ($result_comite && $row = mysqli_fetch_assoc($result_comite)) { $comites[] = $row; }
 
-// Eliminado:
-// $categorias = []; ...
+// NUEVO: cargar títulos de propuestas (tfg_proposals)
+// Evitar duplicar las que ya están en proyecto_aprobado (opcional)
+$propuestas = [];
+$sql_prop = "SELECT p.title
+             FROM tfg_proposals p
+             WHERE NOT EXISTS (
+               SELECT 1 FROM proyecto_aprobado pa WHERE pa.nombre = p.title
+             )
+             ORDER BY p.title";
+$res_prop = mysqli_query($id_con, $sql_prop);
+while ($res_prop && $r = mysqli_fetch_assoc($res_prop)) { $propuestas[] = $r; }
+
 $mensaje = '';
 if (isset($_GET['ok']))  $mensaje = '<div style="color:green;">exitoso</div>';
 if (isset($_GET['err'])) $mensaje = '<div style="color:red;">fallido Intente nuevamente</div>';
@@ -175,8 +185,18 @@ $fecha_actual = date('Y-m-d');
     <!-- Campo oculto opcional (el servidor usará el de sesión igualmente) -->
     <input type="hidden" name="identificador" value="<?php echo htmlspecialchars($identificador_preview); ?>">
 
-    <label for="nombre">Nombre del proyecto:</label>
-    <input type="text" id="nombre" name="nombre" required>
+    <label for="nombre">Nombre del proyecto (desde propuestas):</label>
+    <select id="nombre" name="nombre" required>
+      <option value="">Seleccione un título</option>
+      <?php foreach ($propuestas as $p): ?>
+        <option value="<?php echo htmlspecialchars($p['title']); ?>">
+          <?php echo htmlspecialchars($p['title']); ?>
+        </option>
+      <?php endforeach; ?>
+    </select>
+    <?php if (empty($propuestas)): ?>
+      <small style="color:#b00;">No hay propuestas disponibles (todas ya registradas o ninguna cargada).</small>
+    <?php endif; ?>
 
     <label for="estudiante">Estudiante:</label>
     <select id="estudiante" name="estudiante" required>
@@ -189,14 +209,12 @@ $fecha_actual = date('Y-m-d');
     <label for="comite">Comité asesor:</label>
     <select name="comite" id="comite" required>
       <option value="">Selecciona un comité</option>
-      <?php while($r = mysqli_fetch_assoc($result_comite)): ?>
+      <?php foreach ($comites as $r): ?>
         <option value="<?php echo $r['Id']; ?>">
           Comité #<?php echo $r['Id']; ?> - T: <?php echo htmlspecialchars($r['tutor_nombre']); ?> / A1: <?php echo htmlspecialchars($r['asesor1_nombre']); ?> / A2: <?php echo htmlspecialchars($r['asesor2_nombre']); ?>
         </option>
-      <?php endwhile; ?>
+      <?php endforeach; ?>
     </select>
-
-    <!-- Eliminado bloque de Categoría -->
 
     <label for="documento">Documento (Word, PDF, Excel):</label>
     <label for="documento" class="btn-tfg">Subir documento</label>

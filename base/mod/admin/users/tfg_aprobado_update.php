@@ -7,6 +7,16 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 $nombre        = trim($_POST['nombre'] ?? '');
+// Opcional: validar que exista realmente en tfg_proposals
+$valida = mysqli_prepare($id_con, "SELECT 1 FROM tfg_proposals WHERE title = ?");
+mysqli_stmt_bind_param($valida, "s", $nombre);
+mysqli_stmt_execute($valida);
+$existe = mysqli_stmt_get_result($valida);
+if (!$existe || mysqli_num_rows($existe) === 0) {
+    header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
+}
+mysqli_stmt_close($valida);
+
 $estudiante_id = trim($_POST['estudiante'] ?? '');
 $comite_id     = (int)($_POST['comite'] ?? 0);
 $fecha_raw     = $_POST['fecha_aprobacion'] ?? '';
@@ -58,14 +68,3 @@ if ($ok) {
     header('Location: ../../../proyecto_aprobado.php?err=1'); 
 }
 exit;
-
-$q = "SELECT c.Id,
-            t.nombre  AS tutor_nombre,
-            a1.nombre AS asesor1_nombre,
-            a2.nombre AS asesor2_nombre
-      FROM comite c
-      JOIN sis_user t  ON t.id  = c.tutor
-      JOIN sis_user a1 ON a1.id = c.asesor_1
-      JOIN sis_user a2 ON a2.id = c.asesor_2
-      ORDER BY c.Id";
-$res = mysqli_query($id_con, $q);
