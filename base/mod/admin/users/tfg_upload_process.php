@@ -1,8 +1,11 @@
 <?php
+// Iniciar output buffering para capturar cualquier salida
+ob_start();
 
-// Activar reporte de errores para debug
+// Configuración de errores
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
 ini_set('max_execution_time', 300);
 ini_set('memory_limit', '256M');
 
@@ -16,12 +19,6 @@ $user_rol = $mySessionController->getVar("rol");
 
 // Incluir configuración BD DESPUÉS del check para evitar sobrescritura de variables
 include_once(__DIR__ . '/../../../inc/db/bdcommon.inc');
-
-// Log de debug con usuario real
-error_log("=== TFG Upload - Usuario Real ===");
-error_log("Usuario ID: " . $user_id);
-error_log("Nombre: " . $user_name);
-error_log("Rol: " . $user_rol);
 
 // Verificar que sea estudiante (rol 4 según tu BD)
 if ($user_rol != 4) {
@@ -52,30 +49,15 @@ try {
         respond_json(false, 'Método no permitido');
     }
 
-    // DEBUG: Mostrar todos los datos POST que están llegando
-    error_log("=== DEBUG POST DATA ===");
-    error_log("Raw POST: " . print_r($_POST, true));
-    foreach ($_POST as $key => $value) {
-        if (is_array($value)) {
-            error_log("Campo '$key': ARRAY (" . count($value) . " elementos)");
-        } else {
-            error_log("Campo '$key': '" . $value . "' (length: " . strlen($value) . ")");
-        }
-    }
-
-    // Validar datos requeridos - permitir tanto 'description' como 'project_description'
+    // Validar datos requeridos
     $required_fields = ['title', 'project_type_id'];
     foreach ($required_fields as $field) {
-        $value = $_POST[$field] ?? '';
-        $trimmed = trim($value);
-        error_log("Validando campo '$field': isset=" . (isset($_POST[$field]) ? 'SI' : 'NO') . ", valor='" . $value . "', trimmed='" . $trimmed . "', empty=" . (empty($trimmed) ? 'SI' : 'NO'));
-        
         if (!isset($_POST[$field]) || trim($_POST[$field]) === '') {
             respond_json(false, "El campo '$field' es requerido");
         }
     }
 
-    // Validar descripción (puede ser 'description' o 'project_description')
+    // Validar descripción
     $description_value = '';
     if (isset($_POST['description']) && trim($_POST['description']) !== '') {
         $description_value = trim($_POST['description']);
@@ -84,10 +66,8 @@ try {
     }
     
     if (empty($description_value)) {
-        respond_json(false, "El campo de descripción (description o project_description) es requerido");
+        respond_json(false, "La descripción del proyecto es requerida");
     }
-
-    error_log("Descripción encontrada: '" . $description_value . "' (length: " . strlen($description_value) . ")");
 
     // Obtener y validar datos del formulario
     $title = trim($_POST['title']);
@@ -158,12 +138,8 @@ try {
     $user_name = $saved_user_name;
     $user_rol = $saved_user_rol;
     
-    error_log("Variables BD después de recarga: host=$db_host, usuario=$usuario, clave=" . (empty($clave) ? 'VACIA' : 'SET') . ", db=$db");
-    error_log("Variables usuario: user_id=$user_id, user_name=$user_name, user_rol=$user_rol");
-    
     $conn = new mysqli($db_host, $usuario, $clave, $db);
     if ($conn->connect_error) {
-        error_log("Error de conexión: " . $conn->connect_error);
         respond_json(false, 'Error de conexión a la base de datos: ' . $conn->connect_error);
     }
 
@@ -194,7 +170,6 @@ try {
     $tfg_stmt = $conn->prepare($tfg_sql);
     if (!$tfg_stmt) {
         $conn->rollback();
-        error_log("Error preparando query TFG: " . $conn->error);
         respond_json(false, 'Error interno del servidor (TFG)');
     }
 
@@ -202,7 +177,6 @@ try {
     
     if (!$tfg_stmt->execute()) {
         $conn->rollback();
-        error_log("Error ejecutando TFG: " . $tfg_stmt->error);
         respond_json(false, 'Error al guardar la propuesta TFG');
     }
 
@@ -217,7 +191,6 @@ try {
     $project_stmt = $conn->prepare($project_sql);
     if (!$project_stmt) {
         $conn->rollback();
-        error_log("Error preparando query proyecto: " . $conn->error);
         respond_json(false, 'Error interno del servidor (Proyecto)');
     }
 
@@ -225,7 +198,6 @@ try {
     
     if (!$project_stmt->execute()) {
         $conn->rollback();
-        error_log("Error ejecutando proyecto: " . $project_stmt->error);
         respond_json(false, 'Error al crear el proyecto asociado');
     }
 
@@ -257,7 +229,8 @@ try {
                         $additional_member_stmt->bind_param("is", $project_id, $member['user_id']);
                         
                         if (!$additional_member_stmt->execute()) {
-                            error_log("Error agregando miembro: " . $additional_member_stmt->error);
+                            $conn->rollback();
+                            respond_json(false, 'Error al agregar miembro adicional');
                         }
                     }
                 }
@@ -270,37 +243,104 @@ try {
     $conn->commit();
     $conn->close();
 
-    // Log de éxito
-    error_log("TFG creado exitosamente - Usuario: $user_id, TFG ID: $tfg_id, Proyecto ID: $project_id");
-
-    // Mostrar popup de éxito y redirigir a panel_estudiante.php
-    // Usar ruta absoluta correcta
-    $target = '/SGPFL/Sistema-Gestor-de-Proyectos-Finales-de-Licenciatura/base/panel_estudiante.php';
+    // Limpiar todos los niveles de output buffering
+    while (ob_get_level() > 0) {
+        ob_end_clean();
+    }
+    
+    // Obtener ruta base desde configuración para redirigir
+    require_once(__DIR__ . '/../../../config.inc');
+    $redirect_url = $cds_domain . $cds_locate . 'panel_estudiante.php';
+    
+    header('Content-Type: text/html; charset=UTF-8');
     ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Enviada</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .loader {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #fff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .swal2-border-radius {
+            border-radius: 20px !important;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
+        }
+        .swal2-confirm-btn {
+            padding: 12px 30px !important;
+            font-size: 1rem !important;
+            border-radius: 10px !important;
+            font-weight: 600 !important;
+        }
+    </style>
 </head>
 <body>
+    <div class="loader"></div>
     <script>
         Swal.fire({
             icon: 'success',
-            title: '¡Propuesta enviada correctamente!',
-            text: 'Su propuesta TFG ha sido enviada y está pendiente de revisión.',
-            confirmButtonText: 'Continuar',
+            title: '<strong style="color: #034991;">¡Propuesta Enviada Exitosamente!</strong>',
+            html: `
+                <div style="text-align: center; padding: 20px;">
+                    <i class="bi bi-check-circle-fill" style="font-size: 3rem; color: #28a745;"></i>
+                    <p style="font-size: 1.1rem; margin-top: 15px; color: #333;">
+                        Su propuesta de Trabajo Final de Graduación ha sido registrada correctamente.
+                    </p>
+                    <p style="font-size: 0.95rem; color: #666; margin-top: 10px;">
+                        <i class="bi bi-info-circle"></i> 
+                        El estado de su propuesta es: <strong>Pendiente de Revisión</strong>
+                    </p>
+                    <p style="font-size: 0.9rem; color: #999; margin-top: 15px;">
+                        Será redirigido a su panel en unos segundos...
+                    </p>
+                </div>
+            `,
+            confirmButtonText: '<i class="bi bi-arrow-right-circle"></i> Ir al Panel',
             confirmButtonColor: '#034991',
             allowOutsideClick: false,
-            timer: 3000,
-            timerProgressBar: true
+            allowEscapeKey: false,
+            timer: 4000,
+            timerProgressBar: true,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            },
+            customClass: {
+                popup: 'swal2-border-radius',
+                confirmButton: 'swal2-confirm-btn'
+            }
         }).then(function() {
-            window.location.href = '<?php echo $target; ?>';
+            window.location.href = '<?php echo $redirect_url; ?>';
         });
     </script>
 </body>
 </html>
-    <?php
+<?php
     exit;
 
 } catch (Exception $e) {
@@ -308,7 +348,6 @@ try {
         $conn->rollback();
         $conn->close();
     }
-    error_log("Excepción en TFG upload: " . $e->getMessage());
-    die("Error: " . $e->getMessage());
+    respond_json(false, 'Error: ' . $e->getMessage());
 }
 ?>
