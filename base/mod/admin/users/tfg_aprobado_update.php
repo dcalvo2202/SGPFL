@@ -1,69 +1,66 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../../inc/db/db.php';
-require_once __DIR__ . '/tfg_aprobado_upload.php';
 
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: ../../../proyecto_aprobado.php?err=1');
+    exit;
+}
 
-function generarIdentificador(): string {
-    return 'UNA-TFG-' . str_pad((string)rand(0,9999), 4, '0', STR_PAD_LEFT) . '-' . date('Y');
+$nombre        = trim($_POST['nombre'] ?? '');
+$estudiante_id = trim($_POST['estudiante'] ?? '');
+$comite_id     = (int)($_POST['comite'] ?? 0);
+$categoria_id  = (int)($_POST['categoria'] ?? 0);
+$identificador = $_SESSION['identificador_preview'] ?? ($_POST['identificador'] ?? '');
+$fecha_raw     = $_POST['fecha_aprobacion'] ?? '';
+$aprobado      = 1; // o 0 si quieres marcar luego
+
+// Validar fecha (formato YYYY-MM-DD)
+if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $fecha_raw)) {
+    $fecha_aprobacion = $fecha_raw . ' 00:00:00';
+} else {
+    header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
+}
+
+// Validar archivo
+if (!isset($_FILES['documento']) || $_FILES['documento']['error'] !== UPLOAD_ERR_OK) {
+    header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
+}
+
+$doc_tmp  = $_FILES['documento']['tmp_name'];
+$documento_blob = file_get_contents($doc_tmp);
+
+// Validaciones mínimas
+if ($nombre === '' || $estudiante_id === '' || !$comite_id || !$categoria_id) {
+    header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
 
 try {
-    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-        throw new Exception('Method Not Allowed', 405);
-    }
+    $pdo = new PDO("mysql:host=localhost;dbname=base_db;charset=utf8mb4","root","");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $nombre        = trim($_POST['nombre'] ?? '');
-    $estudiante_id = trim($_POST['estudiante'] ?? '');
-    $comite_id     = (int)($_POST['comite'] ?? 0);
-    $categoria_id  = (int)($_POST['categoria'] ?? 0);
+    $stmt = $pdo->prepare("
+      INSERT INTO proyecto_aprobados
+      (nombre, estudiante_id, comite_id, categoria_id, documento, aprobado, identificador, fecha_creacion)
+      VALUES (:n,:e,:c,:cat,:doc,:ap,:id,:f)
+    ");
+    $stmt->bindValue(':n',  $nombre);
+    $stmt->bindValue(':e',  $estudiante_id);
+    $stmt->bindValue(':c',  $comite_id, PDO::PARAM_INT);
+    $stmt->bindValue(':cat', $categoria_id, PDO::PARAM_INT);
+    $stmt->bindValue(':doc', $documento_blob, PDO::PARAM_LOB);
+    $stmt->bindValue(':ap',  $aprobado, PDO::PARAM_INT);
+    $stmt->bindValue(':id',  $identificador);
+    $stmt->bindValue(':f',   $fecha_aprobacion);
 
-    if ($nombre === '' || $estudiante_id === '' || $comite_id <= 0 || $categoria_id <= 0 ||
-        empty($_FILES['documento']) || $_FILES['documento']['error'] !== UPLOAD_ERR_OK) {
-        throw new Exception('Validación fallida');
-    }
+    $stmt->execute();
 
-    // Tomar el identificador que vio el usuario (desde la sesión)
-    $identificador = $_SESSION['identificador_preview'] ?? generarIdentificador();
-
-    $dataBase = [
-        'nombre'         => $nombre,
-        'estudiante_id'  => $estudiante_id,
-        'comite_id'      => $comite_id,
-        'categoria_id'   => $categoria_id,
-        'aprobado'       => 1,
-        'identificador'  => $identificador,
-        'fecha_creacion' => date('Y-m-d H:i:s'),
-    ];
-
-    // Intentar hasta 3 veces si hay duplicado de identificador
-    $ok = false;
-    for ($i = 0; $i < 3; $i++) {
-        try {
-            $ok = guardarProyectoAprobado($id_con, $dataBase, $_FILES['documento']['tmp_name']);
-            if ($ok) break;
-        } catch (mysqli_sql_exception $e) {
-            if ($e->getCode() == 1062) {
-                // Duplicado: regenerar y reintentar
-                $dataBase['identificador'] = generarIdentificador();
-                continue;
-            }
-            throw $e; // Otro error
-        }
-    }
-
-    if (!$ok) {
-        throw new Exception('Inserción fallida');
-    }
-
-    // Consumir el identificador usado
     unset($_SESSION['identificador_preview']);
-
-    header('Location: /SGPFL/base/proyecto_aprobado.php?ok=1');
+    header('Location: ../../../proyecto_aprobado.php?ok=1');
     exit;
 
-} catch (Throwable $e) {
-    header('Location: /SGPFL/base/proyecto_aprobado.php?err=1');
+} catch (PDOException $e) {
+    error_log($e->getMessage());
+    header('Location: ../../../proyecto_aprobado.php?err=1');
     exit;
 }

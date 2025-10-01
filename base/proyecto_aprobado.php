@@ -210,7 +210,13 @@ $fecha_actual = date('Y-m-d');
     </div>
 
     <label for="fecha_aprobacion">Fecha de aprobación:</label>
-    <input type="date" id="fecha_aprobacion" name="fecha_aprobacion" value="<?php echo $fecha_actual; ?>" readonly>
+    <!-- Antes: readonly con la fecha actual. Ahora el usuario puede elegirla -->
+    <input type="date"
+           id="fecha_aprobacion"
+           name="fecha_aprobacion"
+           value="<?php echo $fecha_actual; ?>"
+           required>
+    <small style="color:#555;">Seleccione la fecha exacta de aprobación.</small>
 
     <button type="submit">Registrar proyecto</button>
   </form>
@@ -238,8 +244,6 @@ $fecha_actual = date('Y-m-d');
       box.style.display = 'flex';
     });
   </script>
-  
 </body>
-
 </html>
 

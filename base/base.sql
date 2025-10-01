@@ -1198,20 +1198,25 @@ CREATE TABLE `sis_sessions_vars` (
 -- ----------------------------
 -- Table structure for `proyecto_aprobado`
 -- ----------------------------
-CREATE TABLE proyecto_aprobado (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(255) NOT NULL,
-  estudiante_id varchar(50) NOT NULL,
-  comite_id INT NOT NULL,
-  categoria_id INT NOT NULL,
-  documento LONGBLOB,
-  aprobado BOOLEAN DEFAULT 0,
-  identificador VARCHAR(30) NOT NULL,
-  fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (estudiante_id) REFERENCES sis_user(id),
-  FOREIGN KEY (comite_id) REFERENCES comite(id),
-  FOREIGN KEY (categoria_id) REFERENCES categorias(idCategoria)
-);
+CREATE TABLE `proyecto_aprobado` (
+  `id_aprobado` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(150) NOT NULL,
+  `estudiante_id` varchar(50) NOT NULL,
+  `comite_id` int(11) NOT NULL,
+  `categoria_id` int(20) NOT NULL,
+  `documento` longblob NOT NULL,
+  `aprobado` tinyint(1) NOT NULL DEFAULT 1,
+  `identificador` varchar(50) NOT NULL,
+  `fecha_creacion` datetime NOT NULL,
+  PRIMARY KEY (`id_aprobado`),
+  UNIQUE KEY `uq_identificador` (`identificador`),
+  KEY `idx_estudiante_id` (`estudiante_id`),
+  KEY `idx_comite_id` (`comite_id`),
+  KEY `idx_categoria_id` (`categoria_id`),
+  CONSTRAINT `fk_proy_categoria` FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`idCategoria`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_proy_comite` FOREIGN KEY (`comite_id`) REFERENCES `comite` (`Id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_proy_estudiante` FOREIGN KEY (`estudiante_id`) REFERENCES `sis_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
 
 
 -- ----------------------------
