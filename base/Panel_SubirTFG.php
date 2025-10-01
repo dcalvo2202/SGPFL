@@ -1,6 +1,8 @@
 <?php
 // VERIFICAR AUTENTICACIÓN USANDO EL SISTEMA ESTÁNDAR
 include("mod/login/check.php");
+include('includes.php');
+include('lang/lang.es');
 
 // Obtener variables de sesión
 $current_user_id = $mySessionController->getVar("usuario");
@@ -17,8 +19,6 @@ if ($current_user_rol != 4) {
     header('Location: dashboard.php');
     exit;
 }
-
-
 
 // INCLUIR ARCHIVOS NECESARIOS
 include_once(__DIR__ . "/inc/db/bdcommon.inc");

@@ -36,5 +36,7 @@
 <script src="lib/calendar/calendar.js" type="text/javascript"></script>
 <link href="lib/calendar/calendar.css" rel="stylesheet" type="text/css"/>
 <link href="inc/css/estilo.css" rel="stylesheet" type="text/css"/>
+<link href="inc/css/panel_estudiante.css" rel="stylesheet" type="text/css"/>
+<link href="inc/css/tfg_upload.css" rel="stylesheet" type="text/css"/>
 
 <?php require_once 'config.inc';?>
