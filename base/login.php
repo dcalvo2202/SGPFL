@@ -12,7 +12,7 @@
     <link rel="icon" type="image/webp" href="<?= $favicon_url ?>">
     </head>
 
-    <body>
+    <body class="fondo-una">
         <!-- Valores Ocultos -->
         <input type="hidden" id="cds_domain_locate" value="<?php echo $cds_domain . $cds_locate; ?>"/>
         <!-- --------------- -->
@@ -73,7 +73,7 @@
             </div>
         </div>
         <footer class="footer">
-            <div class="container">
+            <div class="container-footer">
                 <p class="text-muted text-center"><?= $footer_title ?></p>
             </div>
         </footer>

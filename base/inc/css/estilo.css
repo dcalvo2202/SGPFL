@@ -18,7 +18,7 @@
     
     /* Tamaños responsive oficiales */
     --h1-size: 3rem;
-    --h2-size: 2.5rem;
+    --h2-size: 2.75rem;
     --p-size: 1.5rem;
     
     /* Espaciados estándar */
@@ -70,6 +70,15 @@ p {
 }
 
 /* === COMPONENTES UNA === */
+
+/* Imagen de fondo */
+.fondo-una{
+    background: url(../../img/fondo_global.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
 /* Logo oficial UNA */
 .logo-una {
@@ -198,6 +207,13 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.container-footer{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .login-container {
