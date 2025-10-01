@@ -21,11 +21,11 @@ include(dirname(__FILE__) . "/../../lib/mysession/mySession.conf.php");
 include(dirname(__FILE__) . "/../../lib/AuthLdap/class.AuthLdap.php");
 // Manejar excepción de conexión a la base de datos
 try {
-    include("../../inc/db/db.php");
+    include(dirname(__FILE__) . "/../../inc/db/db.php");
 } catch (Throwable $e) {
     sendError(7); // Código: error en base de datos
 }
-include("../../config.inc");
+include(dirname(__FILE__) . "/../../config.inc");
 
 // =============================
 // FUNCIONES AUXILIARES
@@ -144,6 +144,23 @@ if ($out == 0) {
     $mySessionController->save("page_title", $page_title);
     $mySessionController->save("footer_title", $footer_title);
     $mySessionController->save('vocab', $vocab);
+
+    // === LÓGICA ESPECIAL PARA ESTUDIANTES (ROL 4) ===
+    if ($id_roll == 4) {
+        // Verificar si el estudiante ya tiene una propuesta TFG
+        $tfg_check_sql = "SELECT COUNT(*) as tfg_count FROM tfg_proposals WHERE user_id = '" . $user . "'";
+        $tfg_result = seleccion($tfg_check_sql);
+        
+        if ($tfg_result !== false && $tfg_result[0]['tfg_count'] == 0) {
+            // Estudiante SIN propuesta TFG - Redirigir al formulario
+            echo "estudiante_sin_tfg";
+            exit();
+        } else {
+            // Estudiante CON propuesta - Redirigir a panel estudiante
+            echo "estudiante_con_tfg";
+            exit();
+        }
+    }
 
     echo $out; // 0 todo bien
     exit();
@@ -331,6 +348,25 @@ if ($out == 0) {
     $mySessionController->save("page_title", $page_title);
     $mySessionController->save("footer_title", $footer_title);
     $mySessionController->save('vocab', $vocab);
+
+    // === LÓGICA ESPECIAL PARA ESTUDIANTES LDAP (ROL 4) ===
+    if ($id_roll == 4) {
+        // Verificar si el estudiante ya tiene una propuesta TFG
+        $tfg_check_sql = "SELECT COUNT(*) as tfg_count FROM tfg_proposals WHERE user_id = '" . $user . "'";
+        $tfg_result = seleccion($tfg_check_sql);
+        
+        if ($tfg_result !== false && $tfg_result[0]['tfg_count'] == 0) {
+            // Estudiante SIN propuesta TFG - Redirigir al formulario
+            echo "estudiante_sin_tfg";
+            exit();
+        } else {
+            // Estudiante CON propuesta - Redirigir a panel estudiante
+            echo "estudiante_con_tfg";
+            exit();
+        }
+    }
+
+    echo 0; // Login LDAP exitoso
 }
 else{
     // Si falla el login, enviar error

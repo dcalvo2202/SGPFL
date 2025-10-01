@@ -1,0 +1,190 @@
+/* Estilos específicos para formulario TFG integrado */
+.tfg-upload-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.section-header {
+    background: linear-gradient(135deg, #034991 0%, #1e5aa8 100%);
+    color: white;
+    padding: 20px;
+    margin: 0;
+}
+
+.section-header h3 {
+    margin: 0;
+    font-weight: 500;
+}
+
+.section-body {
+    padding: 24px;
+}
+
+.form-group-tfg {
+    margin-bottom: 20px;
+}
+
+.form-label-tfg {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-control-tfg {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e1e8ed;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.form-control-tfg:focus {
+    outline: none;
+    border-color: #034991;
+    box-shadow: 0 0 0 3px rgba(3, 73, 145, 0.1);
+}
+
+.member-card {
+    border: 1px solid #e1e8ed;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.member-card:hover {
+    border-color: #034991;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.search-results {
+    background: white;
+    border: 1px solid #e1e8ed;
+    border-radius: 6px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.search-result-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f8f9fa;
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.search-result-item:hover {
+    background-color: #f8f9fa;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.btn-tfg {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-tfg-primary {
+    background: #034991;
+    color: white;
+}
+
+.btn-tfg-primary:hover {
+    background: #023366;
+    transform: translateY(-1px);
+}
+
+.btn-tfg-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-tfg-secondary:hover {
+    background: #545b62;
+}
+
+.btn-tfg-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.alert-tfg {
+    padding: 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.alert-tfg-info {
+    background: #e3f2fd;
+    border-left: 4px solid #2196f3;
+    color: #0d47a1;
+}
+
+.alert-tfg-warning {
+    background: #fff3e0;
+    border-left: 4px solid #ff9800;
+    color: #e65100;
+}
+
+.character-counter {
+    font-size: 12px;
+    color: #6c757d;
+    text-align: right;
+    margin-top: 4px;
+}
+
+.file-preview {
+    background: #f8f9fa;
+    border: 1px solid #e1e8ed;
+    border-radius: 6px;
+    padding: 12px;
+    margin-top: 8px;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .tfg-upload-container {
+        padding: 10px;
+    }
+    
+    .section-body {
+        padding: 16px;
+    }
+    
+    .member-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}

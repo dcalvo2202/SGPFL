@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Otros/applications.html
 Otros/bitnami.css
 Otros/favicon.ico
@@ -343,3 +344,48 @@ Otros/xampp/.modell
 Otros/xampp/.modell-usb
 Otros/xampp/.version
 base/.phpunit.result.cache
+=======
+# Archivos de configuración sensibles
+config.inc
+inc/db/bdcommon.inc
+*.conf
+
+# Archivos de logs y debug
+*.log
+debug_*.php
+simulate_*.php
+
+# Archivos temporales de PHP
+*.tmp
+*.cache
+
+# Directorio de uploads (opcional - decide si quieres versionar archivos subidos)
+uploads/tfg/*
+!uploads/tfg/.gitkeep
+
+# Archivos de sesión temporales
+lib/mysession/log_*.txt
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# IDE y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Composer (opcional - normalmente se versiona composer.lock)
+# vendor/
+
+# Archivos de testing
+tests/_output/*
+!tests/_output/.gitkeep
+
+# Archivos de desarrollo temporal
+test_*.php
+check_*.php
+setup_*.php
+github-reconnect-guide.md
+>>>>>>> HU-002
