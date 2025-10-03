@@ -25,15 +25,3 @@ function guardarProyectoAprobado(mysqli $conn, array $data, string $tmpPath): bo
     mysqli_stmt_close($stmt);
     return $ok;
 }
-
-$q = "SELECT c.Id,
-            t.nombre  AS tutor_nombre,
-            a1.nombre AS asesor1_nombre,
-            a2.nombre AS asesor2_nombre
-      FROM comite c
-      JOIN sis_user t  ON t.id  = c.tutor
-      JOIN sis_user a1 ON a1.id = c.asesor_1
-      JOIN sis_user a2 ON a2.id = c.asesor_2
-      ORDER BY c.Id";
-$res = mysqli_query($id_con, $q);
-?>
