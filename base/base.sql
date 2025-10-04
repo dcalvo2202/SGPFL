@@ -922,7 +922,7 @@ CREATE TABLE `sis_log` (
 DROP TABLE IF EXISTS `sis_login`;
 CREATE TABLE `sis_login` (
   `id` varchar(50) NOT NULL,
-  `pass` varchar(50) NOT NULL,
+  `pass` varchar(255) NOT NULL,
   `id_roll` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_roll_user` (`id_roll`),

@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 include(dirname(__FILE__) . "/../../lib/mysession/mySession.class.php");
 include(dirname(__FILE__) . "/../../lib/mysession/mySession.conf.php");
 include(dirname(__FILE__) . "/../../lib/AuthLdap/class.AuthLdap.php");
+include(dirname(__FILE__) . "/../../lang/lang.es");
 // Manejar excepción de conexión a la base de datos
 try {
     include(dirname(__FILE__) . "/../../inc/db/db.php");
@@ -161,9 +162,39 @@ if (!empty($usuario_sesion) && $usuario_sesion !== $user) {
 // =============================
 
 // 1. Verificar si el usuario existe en la base de datos local
-$sql = "SELECT checklogin('" . $user . "','" . md5($pass) . "') as li_out;";
+// Autenticación local con migración de hash(MD5 a password_hash->Versión actual de hashing)
+$sql = "SELECT pass, id_roll FROM sis_login WHERE id = '" . $user . "'";
 $sqlout = seleccion($sql);
-$out = $sqlout[0]['li_out']; // 2 si el usuario no existe en la tabla de usuarios
+
+if (!$sqlout || count($sqlout) == 0) {
+    $out = 2; // Usuario no existe en la tabla de usuarios
+} else {
+    $hash_bd = $sqlout[0]['pass'];
+    $id_roll = $sqlout[0]['id_roll'];
+
+    // Detectar si es MD5 (32 caracteres hexadecimales) para migrar a password_hash()
+    if (preg_match('/^[a-f0-9]{32}$/', $hash_bd)) {
+        // Verificar con MD5
+        if (md5($pass) === $hash_bd) {
+            // Actualizar a password_hash()
+            $new_hash = password_hash($pass, PASSWORD_DEFAULT);
+            $sql_update = "UPDATE sis_login SET pass = '$new_hash' WHERE id = '$user'";
+            $update1 = ejecutar_query($sql_update);
+            if ($update1 === false) {
+                sendError(7); // Código: error en update a la base de datos
+            }
+            // Login exitoso
+            $out = 0;
+        }
+    } else {
+        // Verificar con password_verify()
+        if (password_verify($pass, $hash_bd)) {
+            // Login exitoso
+            $out = 0;
+        }
+    }
+}
+
 if ($out == 0) {
     // Regenerar el ID de sesión para prevenir session fixation
     $mySessionController = mySession::getIstance($_MYSESSION_CONF);
@@ -343,8 +374,8 @@ if ($out == 0) {
         $rol_interno = mapearGrupoALRol($rol_ldap);
 
         // Insertar en sis_login con pass en md5
-        $pass_md5 = md5($pass);
-        $sql_insert_login = "INSERT INTO sis_login (id, pass, id_roll) VALUES ('" . $user . "', '" . $pass_md5 . "', '" . $rol_interno . "');";
+        $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
+        $sql_insert_login = "INSERT INTO sis_login (id, pass, id_roll) VALUES ('" . $user . "', '" . $pass_hash . "', '" . $rol_interno . "');";
         if (transaccion($sql_insert_login) === false) {
             sendError(7); // Código: error en base de datos
         }
