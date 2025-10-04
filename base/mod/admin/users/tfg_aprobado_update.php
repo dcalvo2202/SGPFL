@@ -18,7 +18,6 @@ if (!$existe || mysqli_num_rows($existe) === 0) {
 }
 mysqli_stmt_close($valida);
 
-$estudiante_id = trim($_POST['estudiante'] ?? '');
 $comite_id     = (int)($_POST['comite'] ?? 0);
 $fecha_raw     = $_POST['fecha_aprobacion'] ?? '';
 $identificador = $_SESSION['identificador_preview'] ?? ($_POST['identificador'] ?? '');
@@ -27,7 +26,7 @@ $aprobado      = 1;
 if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $fecha_raw)) {
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
-if ($nombre === '' || $estudiante_id === '' || !$comite_id) {
+if ($nombre === '' || !$comite_id) {
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
 if (!isset($_FILES['documento']) || $_FILES['documento']['error'] !== UPLOAD_ERR_OK) {
@@ -47,41 +46,57 @@ $dt = DateTime::createFromFormat('Y-m-d H:i:s', $fecha_creacion);
 $dt->modify('+1 year');
 $fecha_finalizacion = $dt->format('Y-m-d H:i:s');
 
-$sql = "INSERT INTO proyecto_aprobado
-        (nombre, estudiante_id, comite_id, documento, aprobado, identificador, fecha_creacion, fecha_finalizacion)
-        VALUES (?,?,?,?,?,?,?,?)";
-
-$stmt = mysqli_prepare($id_con, $sql);
-if (!$stmt) {
-    $_SESSION['last_sql_error'] = mysqli_error($id_con);
+$estudiantes = isset($_POST['estudiantes']) ? array_filter((array)$_POST['estudiantes']) : [];
+$unique = array_unique($estudiantes);
+if (count($unique) < 1 || count($unique) > 8) {
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
 
-// Tipos: nombre(s) estudiante(s) comite(i) documento(s) aprobado(i) identificador(s) fecha_creacion(s) fecha_finalizacion(s)
-mysqli_stmt_bind_param(
-    $stmt,
-    "ssisisss",
-    $nombre,
-    $estudiante_id,
-    $comite_id,
-    $documento_blob,
-    $aprobado,
-    $identificador,
-    $fecha_creacion,
-    $fecha_finalizacion
-);
+mysqli_begin_transaction($id_con);
 
-$ok = mysqli_stmt_execute($stmt);
-if (!$ok) {
-    $_SESSION['last_sql_error'] = mysqli_stmt_error($stmt);
+try {
+    $sql = "INSERT INTO proyecto_aprobado
+            (nombre, comite_id, documento, aprobado, identificador, fecha_creacion, fecha_finalizacion)
+            VALUES (?,?,?,?,?,?,?)";
+    $stmt = mysqli_prepare($id_con, $sql);
+    if (!$stmt) { throw new Exception(mysqli_error($id_con)); }
+    mysqli_stmt_bind_param(
+        $stmt,
+        "sisbsss",
+        $nombre,
+        $comite_id,
+        $documento_blob,
+        $aprobado,
+        $identificador,
+        $fecha_creacion,
+        $fecha_finalizacion
+    );
+    if (!mysqli_stmt_execute($stmt)) {
+        throw new Exception(mysqli_stmt_error($stmt));
+    }
+    $projectId = mysqli_insert_id($id_con);
+    mysqli_stmt_close($stmt);
+
+    // Insertar estudiantes
+    $stmt2 = mysqli_prepare(
+        $id_con,
+        "INSERT INTO proyecto_aprobado_estudiantes (id_aprobado, estudiante_id) VALUES (?,?)"
+    );
+    if (!$stmt2) { throw new Exception(mysqli_error($id_con)); }
+
+    foreach ($unique as $eid) {
+        mysqli_stmt_bind_param($stmt2, "is", $projectId, $eid);
+        if (!mysqli_stmt_execute($stmt2)) {
+            throw new Exception(mysqli_stmt_error($stmt2));
+        }
+    }
+    mysqli_stmt_close($stmt2);
+
+    mysqli_commit($id_con);
+    unset($_SESSION['identificador_preview']);
+    header('Location: ../../../proyecto_aprobado.php?ok=1'); exit;
+} catch (Exception $ex) {
+    mysqli_rollback($id_con);
+    $_SESSION['last_sql_error'] = $ex->getMessage();
+    header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
-mysqli_stmt_close($stmt);
-
-unset($_SESSION['identificador_preview']);
-
-if ($ok) {
-    header('Location: ../../../proyecto_aprobado.php?ok=1');
-} else {
-    header('Location: ../../../proyecto_aprobado.php?err=1');
-}
-exit;
