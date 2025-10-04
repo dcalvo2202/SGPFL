@@ -71,6 +71,16 @@ function finalizarLoginExitoso($mySessionController, $user, $id_roll, $nombre_fi
     exit();
 }
 
+function regenerarIdSesion($_MYSESSION_CONF) {
+      // Regenerar el ID de sesión para prevenir session fixation
+    $mySessionController = mySession::getIstance($_MYSESSION_CONF);
+    if (method_exists($mySessionController, 'regenerateId')) {
+        $mySessionController->regenerateId();
+    } elseif (function_exists('session_regenerate_id')) {
+        session_regenerate_id(true);
+    }
+}
+
 // Función para destruir sesión y eliminar cookie si login falla
 function destroySessionAndCookie() {
     // Eliminar cookie
@@ -197,15 +207,7 @@ if (!$sqlout || count($sqlout) == 0) {
 
 if ($out == 0) {
     // Regenerar el ID de sesión para prevenir session fixation
-    $mySessionController = mySession::getIstance($_MYSESSION_CONF);
-    if (method_exists($mySessionController, 'regenerateId')) {
-        $mySessionController->regenerateId();
-    } elseif (function_exists('session_regenerate_id')) {
-        session_regenerate_id(true);
-    }
-
-    // Obtener vocabulario para la sesión
-    require __DIR__ . '/../../lang/lang.es';
+    regenerarIdSesion($_MYSESSION_CONF);
 
     // Obtener nombre y rol usando JOIN
     $sql1 = "SELECT l.id_roll, u.nombre FROM sis_login l LEFT JOIN sis_user u ON l.id = u.id WHERE l.id='" . $user . "';";
@@ -349,15 +351,7 @@ else if ($ldap_status == 1) {
 if ($out == 0) {
 
     // Regenerar el ID de sesión para prevenir session fixation
-    $mySessionController = mySession::getIstance($_MYSESSION_CONF);
-    if (method_exists($mySessionController, 'regenerateId')) {
-        $mySessionController->regenerateId();
-    } elseif (function_exists('session_regenerate_id')) {
-        session_regenerate_id(true);
-    }
-
-    // Obtener vocabulario para la sesión
-    require __DIR__ . '/../../lang/lang.es';
+    regenerarIdSesion($_MYSESSION_CONF);
 
     // --- Lógica para usuarios LDAP: crear si no existe y mapear rol ---
     // Obtener nombre y rol usando JOIN
