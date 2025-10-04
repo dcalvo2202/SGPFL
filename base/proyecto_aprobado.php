@@ -174,8 +174,18 @@ $fecha_actual = date('Y-m-d');
   <div class="ribbon"></div>
 
 
-  <div style="width:80%;margin:0 auto 30px;">
+  <div style="width:80%;margin:0 auto 10px;">
     <?php if ($mensaje) echo $mensaje; ?>
+  </div>
+  <div style="width:80%;margin:0 auto 10px;">
+    <?php
+      if (!empty($_SESSION['last_sql_error'])) {
+        echo '<pre style="background:#fee;border:1px solid #e99;padding:8px;color:#900;font-size:12px;">'
+             . htmlspecialchars($_SESSION['last_sql_error'])
+             . '</pre>';
+        unset($_SESSION['last_sql_error']);
+      }
+    ?>
   </div>
 
   <form action="mod/admin/users/tfg_aprobado_update.php" method="post" enctype="multipart/form-data">
@@ -230,6 +240,16 @@ $fecha_actual = date('Y-m-d');
     <input type="date" id="fecha_aprobacion" name="fecha_aprobacion" value="<?php echo $fecha_actual; ?>" required>
     <small style="color:#555;">Seleccione la fecha exacta de aprobación.</small>
 
+    <!-- Panel de visualización: Fecha de expiración (1 año después) -->
+    <label>Fecha de expiración:</label>
+    <div id="expPanel" style="padding:10px;border:1px solid #ccc;border-radius:6px;background:#f5f8fc;font-size:0.95rem;color:#092567;">
+      <strong id="fecha_expiracion">
+        <?php echo date('Y-m-d', strtotime($fecha_actual . ' +1 year')); ?>
+      </strong>
+      <span style="display:block;font-size:11px;color:#555;margin-top:4px;">(Generada automáticamente +1 año)</span>
+    </div>
+    <input type="hidden" id="fecha_expiracion_hidden" name="fecha_expiracion" value="<?php echo date('Y-m-d', strtotime($fecha_actual . ' +1 year')); ?>">
+
     <button type="submit">Registrar proyecto</button>
   </form>
 
@@ -255,6 +275,26 @@ $fecha_actual = date('Y-m-d');
       document.getElementById('previewName').textContent = file.name;
       box.style.display = 'flex';
     });
+
+    function recalcularExpiracion() {
+      const f = document.getElementById('fecha_aprobacion').value;
+      if (!f) return;
+      const parts = f.split('-');
+      if (parts.length !== 3) return;
+      const d = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
+      d.setFullYear(d.getFullYear() + 1);
+      // Ajuste si resulta inválido (ej: 29 Feb)
+      if (isNaN(d.getTime())) return;
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2,'0');
+      const dd = String(d.getDate()).padStart(2,'0');
+      const exp = `${yyyy}-${mm}-${dd}`;
+      document.getElementById('fecha_expiracion').textContent = exp;
+      document.getElementById('fecha_expiracion_hidden').value = exp;
+    }
+    document.getElementById('fecha_aprobacion').addEventListener('change', recalcularExpiracion);
+    // Inicial
+    recalcularExpiracion();
   </script>
 </body>
 </html>
