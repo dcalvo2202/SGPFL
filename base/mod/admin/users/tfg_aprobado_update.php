@@ -6,13 +6,14 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
 
-$nombre        = trim($_POST['nombre'] ?? '');
+$nombre = trim($_POST['nombre'] ?? '');
 // Opcional: validar que exista realmente en tfg_proposals
 $valida = mysqli_prepare($id_con, "SELECT 1 FROM tfg_proposals WHERE title = ?");
 mysqli_stmt_bind_param($valida, "s", $nombre);
 mysqli_stmt_execute($valida);
 $existe = mysqli_stmt_get_result($valida);
 if (!$existe || mysqli_num_rows($existe) === 0) {
+    mysqli_stmt_close($valida);
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
 mysqli_stmt_close($valida);
@@ -33,38 +34,54 @@ if (!isset($_FILES['documento']) || $_FILES['documento']['error'] !== UPLOAD_ERR
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
 
-$fecha_creacion = $fecha_raw . ' 00:00:00';
+// Leer archivo
 $documento_blob = file_get_contents($_FILES['documento']['tmp_name']);
 
-$sql = "INSERT INTO proyecto_aprobados
-        (nombre, estudiante_id, comite_id, documento, aprobado, identificador, fecha_creacion)
-        VALUES (?,?,?,?,?,?,?)";
-
-$stmt = mysqli_prepare($id_con, $sql);
-if (!$stmt) {
+// Validaciones opcionales
+if ($_FILES['documento']['size'] > 10*1024*1024) { // 10MB
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
 
+$fecha_creacion = $fecha_raw . ' 00:00:00';
+$dt = DateTime::createFromFormat('Y-m-d H:i:s', $fecha_creacion);
+$dt->modify('+1 year');
+$fecha_finalizacion = $dt->format('Y-m-d H:i:s');
+
+$sql = "INSERT INTO proyecto_aprobado
+        (nombre, estudiante_id, comite_id, documento, aprobado, identificador, fecha_creacion, fecha_finalizacion)
+        VALUES (?,?,?,?,?,?,?,?)";
+
+$stmt = mysqli_prepare($id_con, $sql);
+if (!$stmt) {
+    $_SESSION['last_sql_error'] = mysqli_error($id_con);
+    header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
+}
+
+// Tipos: nombre(s) estudiante(s) comite(i) documento(s) aprobado(i) identificador(s) fecha_creacion(s) fecha_finalizacion(s)
 mysqli_stmt_bind_param(
     $stmt,
-    "ssibiss",
+    "ssisisss",
     $nombre,
     $estudiante_id,
     $comite_id,
     $documento_blob,
     $aprobado,
     $identificador,
-    $fecha_creacion
+    $fecha_creacion,
+    $fecha_finalizacion
 );
 
 $ok = mysqli_stmt_execute($stmt);
+if (!$ok) {
+    $_SESSION['last_sql_error'] = mysqli_stmt_error($stmt);
+}
 mysqli_stmt_close($stmt);
 
 unset($_SESSION['identificador_preview']);
 
 if ($ok) {
-    header('Location: ../../../proyecto_aprobado.php?ok=1'); 
+    header('Location: ../../../proyecto_aprobado.php?ok=1');
 } else {
-    header('Location: ../../../proyecto_aprobado.php?err=1'); 
+    header('Location: ../../../proyecto_aprobado.php?err=1');
 }
 exit;
