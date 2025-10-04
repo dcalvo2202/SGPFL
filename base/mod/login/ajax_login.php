@@ -31,6 +31,45 @@ include(dirname(__FILE__) . "/../../config.inc");
 // FUNCIONES AUXILIARES
 // =============================
 
+// Función para verificar si un estudiante tiene propuesta TFG
+function verificarEstudiante($user){
+        // Verificar si el estudiante ya tiene una propuesta TFG
+        $tfg_check_sql = "SELECT COUNT(*) as tfg_count FROM tfg_proposals WHERE user_id = '" . $user . "'";
+        $tfg_result = seleccion($tfg_check_sql);
+        
+        if ($tfg_result !== false && $tfg_result[0]['tfg_count'] == 0) {
+            // Estudiante SIN propuesta TFG - Redirigir al formulario
+            echo "estudiante_sin_tfg";
+            exit();
+        } else {
+            // Estudiante CON propuesta - Redirigir a panel estudiante
+            echo "estudiante_con_tfg";
+            exit();
+        }
+}
+
+// Función para crear sesión y guardar variables luego de login exitoso
+function finalizarLoginExitoso($mySessionController, $user, $id_roll, $nombre_final, $cds_domain, $cds_locate, $page_cant, $page_title, $footer_title, $vocab) {
+    $mySessionController->save("usuario", $user);
+    $mySessionController->save("nombre", $nombre_final);
+    $mySessionController->save("rol", $id_roll);
+    $mySessionController->save("cds_domain", $cds_domain);
+    $mySessionController->save("cds_locate", $cds_locate);
+    $mySessionController->save("page_cant", $page_cant);
+    $mySessionController->save("page_title", $page_title);
+    $mySessionController->save("footer_title", $footer_title);
+    $mySessionController->save('vocab', $vocab);
+
+    // === LÓGICA ESPECIAL PARA ESTUDIANTES LDAP (ROL 4) ===
+    if ($id_roll == 4) {
+        // Verificar si el estudiante ya tiene una propuesta TFG
+        verificarEstudiante($user);
+    }
+
+    echo 0; // Login LDAP exitoso
+    exit();
+}
+
 // Función para destruir sesión y eliminar cookie si login falla
 function destroySessionAndCookie() {
     // Eliminar cookie
@@ -95,17 +134,17 @@ if (!empty($usuario_sesion) && $usuario_sesion === $user) {
 if (!empty($usuario_sesion) && $usuario_sesion !== $user) {
     // --- Inicio de la lógica de logout ---
 
-    // 1. Destruir la sesión activa usando el mecanismo de PHP.
-    //    Esto llamará automáticamente al método 'destroy' de mySession.
+    // Destruir la sesión activa usando el mecanismo de PHP.
+    // Esto llamará automáticamente al método 'destroy' de mySession.
     session_destroy();
 
-    // 2. Eliminar la cookie de sesión del navegador.
+    // Eliminar la cookie de sesión del navegador.
     if (isset($_COOKIE[$_MYSESSION_CONF['SESSION_VAR_NAME']])) {
         setcookie($_MYSESSION_CONF['SESSION_VAR_NAME'], '', time() - 3600, '/');
         unset($_COOKIE[$_MYSESSION_CONF['SESSION_VAR_NAME']]);
     }
 
-    // 3. Forzar la obtención de una nueva instancia de sesión.
+    // Forzar la obtención de una nueva instancia de sesión.
     $reflector = new ReflectionClass('mySession');
     $instanceProperty = $reflector->getProperty('instance');
     $instanceProperty->setAccessible(true);
@@ -124,9 +163,9 @@ if (!empty($usuario_sesion) && $usuario_sesion !== $user) {
 // 1. Verificar si el usuario existe en la base de datos local
 $sql = "SELECT checklogin('" . $user . "','" . md5($pass) . "') as li_out;";
 $sqlout = seleccion($sql);
-$out = $sqlout[0]['li_out']; //2 si el susuario no existe en la tabla de usuarios
+$out = $sqlout[0]['li_out']; // 2 si el usuario no existe en la tabla de usuarios
 if ($out == 0) {
-      // Regenerar el ID de sesión para prevenir session fixation
+    // Regenerar el ID de sesión para prevenir session fixation
     $mySessionController = mySession::getIstance($_MYSESSION_CONF);
     if (method_exists($mySessionController, 'regenerateId')) {
         $mySessionController->regenerateId();
@@ -134,8 +173,9 @@ if ($out == 0) {
         session_regenerate_id(true);
     }
 
+    // Obtener vocabulario para la sesión
     require __DIR__ . '/../../lang/lang.es';
-    // --- Lógica para usuarios LDAP: crear si no existe y mapear rol ---
+
     // Obtener nombre y rol usando JOIN
     $sql1 = "SELECT l.id_roll, u.nombre FROM sis_login l LEFT JOIN sis_user u ON l.id = u.id WHERE l.id='" . $user . "';";
     $sqlout1 = seleccion($sql1);
@@ -146,35 +186,9 @@ if ($out == 0) {
     $id_roll = $sqlout1[0]['id_roll'];
     $nombre_final = $sqlout1[0]['nombre'];
 
-    $mySessionController->save("usuario", $user);
-    $mySessionController->save("nombre", $nombre_final);
-    $mySessionController->save("rol", $id_roll);
-    $mySessionController->save("cds_domain", $cds_domain);
-    $mySessionController->save("cds_locate", $cds_locate);
-    $mySessionController->save("page_cant", $page_cant);
-    $mySessionController->save("page_title", $page_title);
-    $mySessionController->save("footer_title", $footer_title);
-    $mySessionController->save('vocab', $vocab);
+    // Guardar los datos en sesión y retornar éxito
+    finalizarLoginExitoso($mySessionController, $user, $id_roll, $nombre_final, $cds_domain, $cds_locate, $page_cant, $page_title, $footer_title, $vocab);
 
-    // === LÓGICA ESPECIAL PARA ESTUDIANTES (ROL 4) ===
-    if ($id_roll == 4) {
-        // Verificar si el estudiante ya tiene una propuesta TFG
-        $tfg_check_sql = "SELECT COUNT(*) as tfg_count FROM tfg_proposals WHERE user_id = '" . $user . "'";
-        $tfg_result = seleccion($tfg_check_sql);
-        
-        if ($tfg_result !== false && $tfg_result[0]['tfg_count'] == 0) {
-            // Estudiante SIN propuesta TFG - Redirigir al formulario
-            echo "estudiante_sin_tfg";
-            exit();
-        } else {
-            // Estudiante CON propuesta - Redirigir a panel estudiante
-            echo "estudiante_con_tfg";
-            exit();
-        }
-    }
-
-    echo $out; // 0 todo bien
-    exit();
 }
 
 // =============================
@@ -311,6 +325,7 @@ if ($out == 0) {
         session_regenerate_id(true);
     }
 
+    // Obtener vocabulario para la sesión
     require __DIR__ . '/../../lang/lang.es';
 
     // --- Lógica para usuarios LDAP: crear si no existe y mapear rol ---
@@ -350,34 +365,9 @@ if ($out == 0) {
         $id_roll = $sqlout1[0]['id_roll'];
         $nombre_final = $sqlout1[0]['nombre'];
     }
-    $mySessionController->save("usuario", $user);
-    $mySessionController->save("nombre", $nombre_final);
-    $mySessionController->save("rol", $id_roll);
-    $mySessionController->save("cds_domain", $cds_domain);
-    $mySessionController->save("cds_locate", $cds_locate);
-    $mySessionController->save("page_cant", $page_cant);
-    $mySessionController->save("page_title", $page_title);
-    $mySessionController->save("footer_title", $footer_title);
-    $mySessionController->save('vocab', $vocab);
 
-    // === LÓGICA ESPECIAL PARA ESTUDIANTES LDAP (ROL 4) ===
-    if ($id_roll == 4) {
-        // Verificar si el estudiante ya tiene una propuesta TFG
-        $tfg_check_sql = "SELECT COUNT(*) as tfg_count FROM tfg_proposals WHERE user_id = '" . $user . "'";
-        $tfg_result = seleccion($tfg_check_sql);
-        
-        if ($tfg_result !== false && $tfg_result[0]['tfg_count'] == 0) {
-            // Estudiante SIN propuesta TFG - Redirigir al formulario
-            echo "estudiante_sin_tfg";
-            exit();
-        } else {
-            // Estudiante CON propuesta - Redirigir a panel estudiante
-            echo "estudiante_con_tfg";
-            exit();
-        }
-    }
-
-    echo 0; // Login LDAP exitoso
+    // Guardar los datos en sesión y retornar éxito
+    finalizarLoginExitoso($mySessionController, $user, $id_roll, $nombre_final, $cds_domain, $cds_locate, $page_cant, $page_title, $footer_title, $vocab);
 }
 else{
     // Si falla el login, enviar error
