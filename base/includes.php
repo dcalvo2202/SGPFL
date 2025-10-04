@@ -1,7 +1,7 @@
 <!-- JQuery -->
 <script src="lib/jquery-3.1.0.min.js" type="text/javascript"></script>
 <!-- SweetAlert2 -->
-<script src="lib/sweetalert2/sweetalert2-v11-23-0.js"></script>
+<script src="lib/sweetalert2/sweetalert2-v11-23-0.js" type="text/javascript"></script>
 <!-- JQuery Alerts-->
 <link href="lib/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css"/>
 <script src="lib/jquery-alerts/jquery.alerts.js" type="text/javascript"></script>
