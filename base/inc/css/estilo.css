@@ -245,6 +245,11 @@ p {
     height: auto;
 }
 
+/* Oculta el icono de mostrar contraseña nativo de Edge */
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
 .img_fix_full{
     width: 100%;
 }

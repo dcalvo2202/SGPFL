@@ -90,20 +90,31 @@ if (!empty($usuario_sesion) && $usuario_sesion === $user) {
     echo 0;
     exit();
 }
+
 // Si hay sesión activa y el usuario es diferente, destruir la sesión anterior
 if (!empty($usuario_sesion) && $usuario_sesion !== $user) {
-    // Logout automático igual al archivo logout.php
-    $mySessionController->delete("SessionArray");
-    $mySessionController->destroy($_MYSESSION_CONF['SID']);
-    // Eliminar la cookie manualmente
+    // --- Inicio de la lógica de logout ---
+
+    // 1. Destruir la sesión activa usando el mecanismo de PHP.
+    //    Esto llamará automáticamente al método 'destroy' de mySession.
+    session_destroy();
+
+    // 2. Eliminar la cookie de sesión del navegador.
     if (isset($_COOKIE[$_MYSESSION_CONF['SESSION_VAR_NAME']])) {
         setcookie($_MYSESSION_CONF['SESSION_VAR_NAME'], '', time() - 3600, '/');
         unset($_COOKIE[$_MYSESSION_CONF['SESSION_VAR_NAME']]);
     }
-    // Opcional: puedes regenerar el ID de sesión aquí si lo deseas
-    if (function_exists('session_regenerate_id')) {
-        session_regenerate_id(true);
-    }
+
+    // 3. Forzar la obtención de una nueva instancia de sesión.
+    $reflector = new ReflectionClass('mySession');
+    $instanceProperty = $reflector->getProperty('instance');
+    $instanceProperty->setAccessible(true);
+    $instanceProperty->setValue(null, null);
+    $instanceProperty->setAccessible(false);
+
+    $mySessionController = mySession::getIstance($_MYSESSION_CONF);
+
+    // --- Fin de la lógica de logout ---
 }
 
 // =============================
