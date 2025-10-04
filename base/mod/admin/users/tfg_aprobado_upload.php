@@ -1,7 +1,6 @@
 <?php
 function guardarProyectoAprobado(mysqli $conn, array $data, string $tmpPath): bool {
 
-    // Tabla real: proyecto_aprobado (sin 's') y SIN columna categoria_id
     $sql = "INSERT INTO proyecto_aprobado
         (nombre, estudiante_id, comite_id, documento, aprobado, identificador, fecha_creacion, fecha_finalizacion)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
