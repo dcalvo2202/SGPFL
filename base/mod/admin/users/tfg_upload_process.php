@@ -20,14 +20,14 @@ $user_rol = $mySessionController->getVar("rol");
 // Incluir configuración BD DESPUÉS del check para evitar sobrescritura de variables
 include_once(__DIR__ . '/../../../inc/db/bdcommon.inc');
 
+// Verificar autenticación básica (solo requiere user_id)
+if (!$user_id) {
+    respond_json(false, 'Usuario no autenticado correctamente');
+}
+
 // Verificar que sea estudiante (rol 4 según tu BD)
 if ($user_rol != 4) {
     respond_json(false, 'Solo estudiantes pueden crear propuestas TFG');
-}
-
-// Verificar autenticación completa
-if (!$user_id || !$user_name) {
-    respond_json(false, 'Usuario no autenticado correctamente');
 }
 
 // Configurar respuesta JSON
@@ -91,12 +91,12 @@ try {
 
     // Validar archivo PDF (opcional)
     $pdf_path = null;
-    if (isset($_FILES['proposal_file']) && $_FILES['proposal_file']['error'] === UPLOAD_ERR_OK) {
-        $file = $_FILES['proposal_file'];
+    if (isset($_FILES['document']) && $_FILES['document']['error'] === UPLOAD_ERR_OK) {
+        $file = $_FILES['document'];
         
         // Validar tipo de archivo
-        if ($file['type'] !== 'application/pdf') {
-            respond_json(false, 'Solo se permiten archivos PDF');
+        if ($file['type'] !== 'application/pdf' && $file['type'] !== 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+            respond_json(false, 'Solo se permiten archivos PDF o DOCX');
         }
         
         // Validar tamaño (máximo 10MB)
@@ -155,13 +155,20 @@ try {
     $file_name = '';
     $mime_type = '';
     $file_size = 0;
+    $null_blob = null; // Variable auxiliar para bind_param
     
     // Si hay archivo PDF, leerlo como BLOB
-    if (isset($_FILES['proposal_file']) && $_FILES['proposal_file']['error'] === UPLOAD_ERR_OK) {
-        $document_data = file_get_contents($_FILES['proposal_file']['tmp_name']);
-        $file_name = $_FILES['proposal_file']['name'];
-        $mime_type = $_FILES['proposal_file']['type'];
-        $file_size = $_FILES['proposal_file']['size'];
+    if (isset($_FILES['document']) && $_FILES['document']['error'] === UPLOAD_ERR_OK) {
+        // Leer el archivo DESDE LA RUTA DONDE SE MOVIÓ (no desde tmp_name)
+        if ($pdf_path && file_exists(__DIR__ . '/../../../' . $pdf_path)) {
+            $document_data = file_get_contents(__DIR__ . '/../../../' . $pdf_path);
+        } else {
+            $document_data = null;
+        }
+        
+        $file_name = $_FILES['document']['name'];
+        $mime_type = $_FILES['document']['type'];
+        $file_size = $_FILES['document']['size'];
     }
     
     $tfg_sql = "INSERT INTO tfg_proposals (user_id, title, disciplines, project_description, document, file_name, mime_type, file_size, status, created_at, updated_at) 
@@ -170,14 +177,22 @@ try {
     $tfg_stmt = $conn->prepare($tfg_sql);
     if (!$tfg_stmt) {
         $conn->rollback();
-        respond_json(false, 'Error interno del servidor (TFG)');
+        respond_json(false, 'Error interno del servidor (TFG): ' . $conn->error);
     }
 
-    $tfg_stmt->bind_param("sssssssi", $user_id, $title, $disciplines, $description, $document_data, $file_name, $mime_type, $file_size);
+    // IMPORTANTE: Para BLOB, primero bind_param con NULL, luego send_long_data
+    $tfg_stmt->bind_param("ssssbssi", $user_id, $title, $disciplines, $description, $null_blob, $file_name, $mime_type, $file_size);
+    
+    // Enviar el BLOB por separado si existe
+    if ($document_data !== null && strlen($document_data) > 0) {
+        $tfg_stmt->send_long_data(4, $document_data); // 4 es la posición del BLOB (empieza en 0)
+    } else {
+        error_log("TFG Upload - ADVERTENCIA: document_data está vacío o NULL");
+    }
     
     if (!$tfg_stmt->execute()) {
         $conn->rollback();
-        respond_json(false, 'Error al guardar la propuesta TFG');
+        respond_json(false, 'Error al guardar la propuesta TFG: ' . $tfg_stmt->error);
     }
 
     $tfg_id = $conn->insert_id;
