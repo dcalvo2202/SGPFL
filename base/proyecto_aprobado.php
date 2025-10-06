@@ -64,6 +64,10 @@ $fecha_actual = date('Y-m-d');
     --navy-mid: #0e4d93;
     --sky: #aacef5;
     --red: #bd1016;
+    /* Nuevas tonalidades rojas para el header */
+    --red-mid: #a80f10;
+    --red-dark: #8f0b0b;
+    --red-light: #f4c4c4;
   }
   body {
     margin: 0;
@@ -74,7 +78,8 @@ $fecha_actual = date('Y-m-d');
   /* Header azul */
   .hero {
     height: 220px;
-    background: linear-gradient(180deg, var(--navy-dark), #0b2b61 60%);
+    /* Antes azul -> ahora rojos */
+    background: linear-gradient(180deg, var(--red), var(--red-dark) 60%);
     position: relative;
   }
   .hero svg {
@@ -83,25 +88,7 @@ $fecha_actual = date('Y-m-d');
     width: 100%;
     height: 70%;
   }
-  /* Franja roja */
-  .ribbon {
-    background: linear-gradient(90deg, var(--red), #a80f10 80%);
-    height: 70px;
-    margin: 40px auto;
-    width: 80%;
-    position: relative;
-  }
-  .ribbon::after {
-    content: "";
-    position: absolute;
-    right: -38px;
-    top: 0;
-    width: 60px;
-    height: 100%;
-    transform: skewX(-30deg);
-    background: linear-gradient(90deg, #a80f10, #8f0b0b);
-    clip-path: polygon(0 0, 100% 50%, 0 100%);
-  }
+  
   /* Formulario */
   form {
     width: 80%;
@@ -156,6 +143,19 @@ $fecha_actual = date('Y-m-d');
     background-color: #155a92;
   }
 
+  .hero svg polygon:nth-of-type(1){
+    /* Azul -> rojo medio */
+    fill: var(--red-mid); opacity:0.95;
+  }
+  .hero svg polygon:nth-of-type(2){
+    /* Azul oscuro -> rojo oscuro */
+    fill: var(--red-dark); opacity:0.85;
+  }
+  .hero svg polygon:nth-of-type(3){
+    /* Cielo azul translúcido -> rojo claro translúcido */
+    fill: var(--red-light); opacity:0.18;
+  }
+
 </style>
 </head>
 <body>
@@ -170,11 +170,16 @@ $fecha_actual = date('Y-m-d');
     </svg>
   </header>
 
-  <div class="ribbon"></div>
+  <!-- Ribbon eliminado -->
 
+  <!-- Ajuste de margen superior tras eliminar la cinta -->
+  <div style="height:35px;"></div>
 
-  <div style="width:80%;margin:0 auto 30px;">
+  <div style="width:80%;margin:0 auto 30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
     <?php if ($mensaje) echo $mensaje; ?>
+    <a href="panel_ctfg.php" style="text-decoration:none;">
+      <button type="button" style="background:#555;margin:0;">Regresar al panel comité</button>
+    </a>
   </div>
 
   <form action="mod/admin/users/tfg_aprobado_update.php" method="post" enctype="multipart/form-data">
@@ -256,6 +261,9 @@ $fecha_actual = date('Y-m-d');
     </div>
 
     <button type="submit">Registrar proyecto</button>
+    <a href="panel_ctfg.php" style="text-align:center;text-decoration:none;">
+      <button type="button" style="width:100%;background:#6c757d;">Regresar al panel comité</button>
+    </a>
   </form>
 
   <script>

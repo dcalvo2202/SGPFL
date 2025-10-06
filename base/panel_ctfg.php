@@ -10,14 +10,15 @@
         ?>
     </head>
     <body>
-        <div className="page-container">
-            <h1 className="mb-4">Comision</h1>
-            <main className="flex-grow-1 container py-4">
+        <div class="page-container">
+            <h1 class="mb-4">Comision</h1>
+            <main class="flex-grow-1 container py-4">
                 <a href="index.php">Inicio</a>
                 <a href="/">Envio documentos</a>
+                <a href="proyecto_aprobado.php">Aprobar Proyecto</a>
                 <a href="/base/mod/login/logout.php">Logout</a>
             </main>
-            <footer className="bg-dark text-white py-4 text-center">
+            <footer class="bg-dark text-white py-4 text-center">
                 <p class="text-muted text-center"><?= $footer_title ?></p>
             </footer>
         </div>
