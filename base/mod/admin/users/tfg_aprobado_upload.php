@@ -1,36 +1,28 @@
 <?php
-function guardarProyectoAprobado(mysqli $conn, array $data, string $tmpPath): bool {
+function guardarProyectoAprobadoSP(mysqli $conn, array $data, string $tmpPath): bool {
+    $ests = array_unique($data['estudiantes'] ?? []);
+    if (count($ests) < 1 || count($ests) > 8) return false;
+    $blob = file_get_contents($tmpPath);
+    $fecha_aprob = substr($data['fecha_creacion'], 0, 10); // YYYY-MM-DD
+    $jsonEst = json_encode(array_values($ests), JSON_UNESCAPED_UNICODE);
 
-    $sql = "INSERT INTO proyecto_aprobado
-        (nombre, estudiante_id, comite_id, documento, aprobado, identificador, fecha_creacion, fecha_finalizacion)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-
+    $sql = "CALL registrar_proyecto_aprobado(?,?,?,?,?,?,?)";
     $stmt = mysqli_prepare($conn, $sql);
     if (!$stmt) return false;
-
-    $blob = file_get_contents($tmpPath);
-
-    // Calcular +1 año
-    $fecha_creacion = $data['fecha_creacion'];
-    $dt = DateTime::createFromFormat('Y-m-d H:i:s', $fecha_creacion);
-    $dt->modify('+1 year');
-    $fecha_finalizacion = $dt->format('Y-m-d H:i:s');
-
-    // nombre (s), estudiante_id (s), comite_id (i), documento (s), aprobado (i), identificador (s), fecha_creacion (s)
     mysqli_stmt_bind_param(
         $stmt,
-        "ssisisss",
+        "sibsiss",
         $data['nombre'],
-        $data['estudiante_id'],
         $data['comite_id'],
         $blob,
         $data['aprobado'],
         $data['identificador'],
-        $fecha_creacion,
-        $fecha_finalizacion
+        $fecha_aprob,
+        $jsonEst
     );
-
     $ok = mysqli_stmt_execute($stmt);
+    // Consumir posibles result sets del CALL
+    while (mysqli_more_results($conn) && mysqli_next_result($conn)) { /* limpiar */ }
     mysqli_stmt_close($stmt);
     return $ok;
 }
