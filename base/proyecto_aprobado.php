@@ -2,13 +2,13 @@
 session_start();
 require_once 'inc/db/db.php';
 
-// Generar identificador (una vez por carga) y guardarlo en sesión
+// Generar Identificador unico 
 if (empty($_SESSION['identificador_preview'])) {
   $_SESSION['identificador_preview'] = 'UNA-TFG-' . str_pad((string)rand(0,9999), 4, '0', STR_PAD_LEFT) . '-' . date('Y');
 }
 $identificador_preview = $_SESSION['identificador_preview'];
 
-// Cargar estudiantes (rol = 4)
+//Contenedor de solo estudiantes
 $estudiantes = [];
 $sql = "SELECT u.id, u.nombre
         FROM sis_user u
@@ -20,7 +20,7 @@ while ($result && $row = mysqli_fetch_assoc($result)) {
     $estudiantes[] = $row;
 }
 
-// Cargar comités (nuevo modelo con tutor / asesores)
+// Contenedor de comités
 $comites = [];
 $sql_comite = "SELECT c.Id,
                       t.nombre  AS tutor_nombre,
@@ -34,8 +34,7 @@ $sql_comite = "SELECT c.Id,
 $result_comite = mysqli_query($id_con, $sql_comite);
 while ($result_comite && $row = mysqli_fetch_assoc($result_comite)) { $comites[] = $row; }
 
-// NUEVO: cargar títulos de propuestas (tfg_proposals)
-// Evitar duplicar las que ya están en proyecto_aprobado (opcional)
+// Contenedor de nombres de propuestas no asignadas
 $propuestas = [];
 $sql_prop = "SELECT p.title
              FROM tfg_proposals p
