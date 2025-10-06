@@ -250,6 +250,12 @@ $fecha_actual = date('Y-m-d');
     <input type="date" id="fecha_aprobacion" name="fecha_aprobacion" value="<?php echo $fecha_actual; ?>" required>
     <small style="color:#555;">Seleccione la fecha exacta de aprobación.</small>
 
+    <!-- Solo visual: fecha final (+1 año) -->
+    <label>Fecha finalizacion:</label>
+    <div id="fecha_finalizacion_view" style="padding:8px;border:1px solid #ccc;border-radius:4px;background:#f5f7fa;color:#092567;font-size:.95rem;">
+      <!-- se llena vía JS -->
+    </div>
+
     <button type="submit">Registrar proyecto</button>
   </form>
 
@@ -275,6 +281,22 @@ $fecha_actual = date('Y-m-d');
       document.getElementById('previewName').textContent = file.name;
       box.style.display = 'flex';
     });
+
+    // Mostrar fecha final (+1 año) solo en front-end
+    function calcularFechaFinal() {
+      const f = document.getElementById('fecha_aprobacion').value;
+      const box = document.getElementById('fecha_finalizacion_view');
+      if (!f) { box.textContent = '—'; return; }
+      const dt = new Date(f + 'T00:00:00');
+      dt.setFullYear(dt.getFullYear() + 1);
+      // Formato DD/mm/yyyy
+      const dd = String(dt.getDate()).padStart(2,'0');
+      const mm = String(dt.getMonth() + 1).padStart(2,'0');
+      const yyyy = dt.getFullYear();
+      box.textContent = `${dd}/${mm}/${yyyy}`;
+    }
+    document.getElementById('fecha_aprobacion').addEventListener('change', calcularFechaFinal);
+    calcularFechaFinal();
 
     // Contador de estudiantes seleccionados
     (function(){
