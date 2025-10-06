@@ -16,6 +16,7 @@
                 <a href="index.php">Inicio</a>
                 <a href="/">Envio documentos</a>
                 <a href="proyecto_aprobado.php">Aprobar Proyecto</a>
+                <a href="historial_proyecto.php">Proyectos</a>
                 <a href="/base/mod/login/logout.php">Logout</a>
             </main>
             <footer class="bg-dark text-white py-4 text-center">
