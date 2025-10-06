@@ -42,7 +42,7 @@
                         <label for="pass" class="fw-bold"><?= $vocab["login_pass"] ?></label>
                         <div class="input-group">
                             <span class="input-group-addon bg-white"><i class="fa fa-lock"></i></span>
-                            <input id="pass" name="pass" type="password" class="form-control form-control-lg" placeholder="<?= $vocab["login_pass_desc"] ?>" onkeypress="onEnterLogin(event);">
+                            <input id="pass" name="pass" type="password" class="form-control form-control-lg" placeholder="<?= $vocab["login_pass_desc"] ?>" onkeypress="onEnterLogin(event);" autocomplete="new-password">
                             <span class="input-group-addon puntero bg-white" onclick="togglePassword()">
                                 <i class="fa fa-eye" id="togglePasswordIcon" style="opacity:0.5;transition:opacity 0.2s;"></i>
                             </span>

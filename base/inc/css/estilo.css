@@ -245,6 +245,11 @@ p {
     height: auto;
 }
 
+/* Oculta el icono de mostrar contraseña nativo de Edge */
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
 .img_fix_full{
     width: 100%;
 }
@@ -543,8 +548,8 @@ p {
         height: 45px;
     }
     
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.5rem; }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2rem; }
 }
 
 /* Móvil */
@@ -560,8 +565,8 @@ p {
         font-size: 0.7rem;
     }
     
-    h1 { font-size: 1.75rem; }
-    h2 { font-size: 1.25rem; }
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 2rem; }
     
     .card-una,
     .form-una {

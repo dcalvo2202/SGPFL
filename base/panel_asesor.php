@@ -8,11 +8,6 @@
         include('includes.php');
         include('lang/lang.es');
         ?>
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-..." crossorigin="anonymous">
-
-        <!-- Bootstrap JS Bundle (incluye Popper) -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
     </head>
     <body>
         <div className="page-container">
