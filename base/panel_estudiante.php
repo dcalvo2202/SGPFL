@@ -65,6 +65,7 @@ $usuario = $usuario_sesion ?? 'Estudiante';
                 <a href="<?= $base_url ?>mod/login/logout.php" class="btn btn-outline-dark">Logout</a>
                 <a href="<?= $base_url ?>" class="btn btn-outline-dark">Fechas importantes</a>
                 <a href="<?= $base_url ?>" class="btn btn-outline-dark">Enviar documentos</a>
+                <a href="<?= $base_url ?>historial_documentos.php" class="btn btn-outline-dark">Historial de documentos</a>
                 <a href="<?= $base_url ?>index.php" class="btn btn-outline-dark">Inicio</a>
             </header>
             <main class="flex-grow-1 container py-4">
