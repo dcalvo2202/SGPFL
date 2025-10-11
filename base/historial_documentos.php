@@ -96,7 +96,7 @@ try {
     <link href="<?= htmlspecialchars($base_url . 'inc/css/panel_estudiante.css') ?>" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 fondo-una">
     <header class="navbar-una" style="background: linear-gradient(135deg, #CD1719, #A01215) !important;">
         <div class="container-fluid px-4">
             <div class="header-left d-flex align-items-center">
@@ -122,8 +122,8 @@ try {
     </header>
     <main class="flex-fill">
         <div class="container my-4">
-            <a href="panel_estudiante.php" class="btn btn-outline-secondary mb-3">
-                <i class="bi bi-arrow-left"></i> Volver
+            <a href="panel_estudiante.php" class="btn btn-outline-light bg-gray text-dark border-black mb-3">
+                <i class="bi bi-arrow-left"></i> Regresar
             </a>
             <h1 class="text-center mb-4" style="color: #b00; font-size: 2.5rem;">Historial de documentos</h1>
             <div class="table-responsive">
