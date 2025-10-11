@@ -1,10 +1,24 @@
 <?php
-if (session_status() !== PHP_SESSION_ACTIVE) {
-    session_start();
-}
+// Incluir el sistema de sesión personalizado
+include_once __DIR__ . '/../../../lib/mysession/mySession.class.php';
+include_once __DIR__ . '/../../../lib/mysession/mySession.conf.php';
+
+// Iniciar el controlador de sesión
+$mySessionController = mySession::getIstance($_MYSESSION_CONF);
+$reviewer_id = $mySessionController->getVar("usuario");
+$user_rol = $mySessionController->getVar("rol");
+
+// Incluir la configuración de la base de datos
 include __DIR__ . '/../../../inc/db/bdcommon.inc';
 
 header('Content-Type: application/json');
+
+// --- Validación de seguridad ---
+// Solo Administradores (rol 1) y Gestores Académicos (rol 2) pueden revisar
+if (!$reviewer_id || !in_array($user_rol, [1, 2])) {
+    echo json_encode(['success' => false, 'message' => 'Acceso no autorizado.']);
+    exit;
+}
 
 if (!isset($_POST['id']) || !isset($_POST['status'])) {
     echo json_encode(['success' => false, 'message' => 'Datos incompletos']);
@@ -30,14 +44,18 @@ try {
     $result = $stmt->get_result();
     $proposal = $result->fetch_assoc();
 
+    if (!$proposal) {
+        throw new Exception("No se encontró la propuesta especificada.");
+    }
+
     // 2. Insert into history
     $sql = "INSERT INTO tfg_proposal_history 
             (proposal_id, document, file_name, mime_type, file_size, status, reviewed_by, comments) 
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     
     $stmt = $conn->prepare($sql);
-    $reviewer_id = $_SESSION['id'] ?? 'estudiante001'; // Update with actual reviewer ID
-
+    
+    // Usar el ID del revisor obtenido de la sesión
     $stmt->bind_param("ibssisss", 
         $_POST['id'], 
         $proposal['document'], 
@@ -45,7 +63,7 @@ try {
         $proposal['mime_type'],
         $proposal['file_size'],
         $_POST['status'],
-        $reviewer_id,
+        $reviewer_id, // <-- CAMBIO CLAVE: ID real del revisor
         $_POST['comments']
     );
     $stmt->send_long_data(1, $proposal['document']);

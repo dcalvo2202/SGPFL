@@ -181,7 +181,8 @@ try {
     }
 
     // IMPORTANTE: Para BLOB, primero bind_param con NULL, luego send_long_data
-    $tfg_stmt->bind_param("ssssbssi", $user_id, $title, $disciplines, $description, $null_blob, $file_name, $mime_type, $file_size);
+    // Usar el nombre de archivo único generado, no el original
+    $tfg_stmt->bind_param("ssssbssi", $user_id, $title, $disciplines, $description, $null_blob, $unique_filename, $mime_type, $file_size);
     
     // Enviar el BLOB por separado si existe
     if ($document_data !== null && strlen($document_data) > 0) {
@@ -197,6 +198,25 @@ try {
 
     $tfg_id = $conn->insert_id;
     $tfg_stmt->close();
+
+    // 1.5. Insertar la versión inicial en el historial
+    $history_sql = "INSERT INTO tfg_proposal_history (proposal_id, document, file_name, mime_type, file_size, status, reviewed_by, comments, created_at) 
+                    VALUES (?, ?, ?, ?, ?, 'Pendiente de Revisión', ?, 'Versión inicial subida por el estudiante', NOW())";
+    $history_stmt = $conn->prepare($history_sql);
+    if ($history_stmt) {
+        $history_stmt->bind_param("ibssis", $tfg_id, $null_blob, $unique_filename, $mime_type, $file_size, $user_id);
+         // Enviar el BLOB por separado si existe, igual que en la inserción principal
+        if ($document_data !== null && strlen($document_data) > 0) {
+            $history_stmt->send_long_data(1, $document_data); // El índice 1 corresponde al segundo '?' (document)
+        }
+        
+        if (!$history_stmt->execute()) {
+            throw new Exception("Error al insertar en historial: " . $history_stmt->error);
+        }
+        $history_stmt->close();
+    } else {
+        throw new Exception("Error al preparar la consulta de historial: " . $conn->error);
+    }
 
     // 2. Crear proyecto asociado con estructura correcta
     // registered_projects tiene: id, tfg_proposal_id, project_type_id, status, start_date, end_date, final_grade, supervisor_id, created_at, updated_at
