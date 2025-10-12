@@ -122,9 +122,6 @@ try {
     </header>
     <main class="flex-fill">
         <div class="container my-4">
-            <a href="panel_estudiante.php" class="btn btn-outline-light bg-gray text-dark border-black mb-3">
-                <i class="bi bi-arrow-left"></i> Regresar
-            </a>
             <h1 class="text-center mb-4" style="color: #b00; font-size: 2.5rem;">Historial de documentos</h1>
             <div class="table-responsive">
                 <table class="table table-bordered align-middle text-center">
@@ -159,6 +156,11 @@ try {
                         <?php endif; ?>
                     </tbody>
                 </table>
+            </div>
+            <div class="text-center mt-4">
+                <a href="panel_estudiante.php" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left-circle"></i> Volver al Panel Principal
+                </a>
             </div>
         </div>
     </main>
