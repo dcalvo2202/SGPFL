@@ -2097,7 +2097,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `checklogin`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` FUNCTION `checklogin`(`p_id` varchar(50),`p_pass` varchar(50)) RETURNS int(1)
+CREATE DEFINER=`root`@`localhost` FUNCTION `checklogin`(`p_id` varchar(50),`p_pass` varchar(255)) RETURNS int(1)
 BEGIN
 	DECLARE
 		li_out int(1);
