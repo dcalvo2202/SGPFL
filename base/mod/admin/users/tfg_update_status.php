@@ -70,8 +70,18 @@ try {
     $stmt->execute();
 
     // 3. Update main table
+    $main_table_status = '';
+    if ($_POST['status'] === 'Cumple requisitos') {
+        $main_table_status = 'Cumple requisitos';
+    } else if ($_POST['status'] === 'No cumple requisitos') {
+        $main_table_status = 'No cumple requisitos';
+    } else {
+        // Fallback for any other status that might be used
+        $main_table_status = $_POST['status'];
+    }
+
     $stmt = $conn->prepare("UPDATE tfg_proposals SET status = ? WHERE id = ?");
-    $stmt->bind_param("si", $_POST['status'], $_POST['id']);
+    $stmt->bind_param("si", $main_table_status, $_POST['id']);
     $stmt->execute();
 
     // 4. Send email notification
