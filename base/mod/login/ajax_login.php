@@ -195,12 +195,16 @@ if (!$sqlout || count($sqlout) == 0) {
             }
             // Login exitoso
             $out = 0;
+        } else {
+            $out = 1; // Contraseña incorrecta
         }
     } else {
         // Verificar con password_verify()
         if (password_verify($pass, $hash_bd)) {
             // Login exitoso
             $out = 0;
+        } else {
+            $out = 1; // Contraseña incorrecta
         }
     }
 }
