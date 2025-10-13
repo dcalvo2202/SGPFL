@@ -34,12 +34,16 @@ if ($conn->connect_error) {
 try {
     $conn->begin_transaction();
 
+    $proposal_id = $_POST['id'];
+    $review_status = $_POST['status'];
+    $comments = isset($_POST['comments']) ? $_POST['comments'] : '';
+
     // 1. Get current proposal data
     $stmt = $conn->prepare("SELECT p.document, p.file_name, p.mime_type, p.file_size, p.title, u.email, u.nombre 
                        FROM tfg_proposals p 
                        JOIN sis_user u ON p.user_id = u.id 
                        WHERE p.id = ?");
-    $stmt->bind_param("i", $_POST['id']);
+    $stmt->bind_param("i", $proposal_id);
     $stmt->execute();
     $result = $stmt->get_result();
     $proposal = $result->fetch_assoc();
@@ -57,41 +61,44 @@ try {
     
     // Usar el ID del revisor obtenido de la sesión
     $stmt->bind_param("ibssisss", 
-        $_POST['id'], 
+        $proposal_id, 
         $proposal['document'], 
         $proposal['file_name'],
         $proposal['mime_type'],
         $proposal['file_size'],
-        $_POST['status'],
+        $review_status,
         $reviewer_id, // <-- CAMBIO CLAVE: ID real del revisor
-        $_POST['comments']
+        $comments
     );
     $stmt->send_long_data(1, $proposal['document']);
     $stmt->execute();
 
     // 3. Update main table
     $main_table_status = '';
-    if ($_POST['status'] === 'Cumple requisitos') {
-        $main_table_status = 'Cumple requisitos';
-    } else if ($_POST['status'] === 'No cumple requisitos') {
-        $main_table_status = 'No cumple requisitos';
+    if ($review_status === 'Cumple Requisitos') {
+        $main_table_status = 'Cumple Requisitos';
+    } else if ($review_status === 'No Cumple Requisitos') {
+        $main_table_status = 'No Cumple Requisitos';
     } else {
         // Fallback for any other status that might be used
-        $main_table_status = $_POST['status'];
+        $main_table_status = $review_status;
     }
 
-    $stmt = $conn->prepare("UPDATE tfg_proposals SET status = ? WHERE id = ?");
-    $stmt->bind_param("si", $main_table_status, $_POST['id']);
-    $stmt->execute();
+    $sql_update = "UPDATE tfg_proposals 
+                   SET status = ?, reviewed_by = ?, reviewed_at = NOW(), admin_comments = ? 
+                   WHERE id = ?";
+    $stmt_update = $conn->prepare($sql_update);
+    $stmt_update->bind_param("sssi", $main_table_status, $reviewer_id, $comments, $proposal_id);
+    $stmt_update->execute();
 
     // 4. Send email notification
     $to = $proposal['email'];
     $subject = "Actualización de estado - Propuesta TFG";
     $message = "Estimado/a " . $proposal['nombre'] . ",\n\n";
     $message .= "Su propuesta de TFG \"" . $proposal['title'] . "\" ha sido revisada.\n\n";
-    $message .= "Nuevo estado: " . $_POST['status'] . "\n";
-    if (!empty($_POST['comments'])) {
-        $message .= "Comentarios: " . $_POST['comments'] . "\n";
+    $message .= "Nuevo estado: " . $main_table_status . "\n";
+    if (!empty($comments)) {
+        $message .= "Comentarios: " . $comments . "\n";
     }
     $message .= "\nPuede revisar su propuesta en el panel de estudiante.\n\n";
     $message .= "Saludos,\nEscuela de Informática - UNA";
@@ -109,11 +116,15 @@ try {
     }
 
     $conn->commit();
-    echo json_encode(['success' => true, 'message' => 'Estado actualizado ' . $email_status]);
+    echo json_encode(['success' => true, 'message' => 'Estado actualizado correctamente ' . $email_status]);
 
 } catch (Exception $e) {
     $conn->rollback();
-    echo json_encode(['success' => false, 'message' => $e->getMessage()]);
+    error_log("Error en tfg_update_status.php: " . $e->getMessage());
+    echo json_encode(['success' => false, 'message' => 'Ocurrió un error en el servidor: ' . $e->getMessage()]);
 } finally {
+    if (isset($stmt)) $stmt->close();
+    if (isset($stmt_history)) $stmt_history->close();
+    if (isset($stmt_update)) $stmt_update->close();
     $conn->close();
 }
