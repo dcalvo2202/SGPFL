@@ -114,9 +114,18 @@ try {
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>mod/admin/users/tfg_upload_final_document.php'">
+                            <div class="card-icon">
+                                <i class="bi bi-file-earmark-check-fill"></i>
+                            </div>
+                            <h5>Subir Documento Final</h5>
+                            <p>Subir versión final del TFG para revisión</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
                         <div class="quick-action-card" onclick="location.href='<?= $base_url ?>historial_documentos.php'">
                             <div class="card-icon">
-                                <i class="bi bi-file-earmark-plus-fill"></i>
+                                <i class="bi bi-clock-history"></i>
                             </div>
                             <h5>Historial de documentos</h5>
                             <p>Ver documentos subidos al sistema</p>

@@ -2337,3 +2337,96 @@ INSERT INTO project_types (type_name, max_members, description) VALUES
 ('Redes y Seguridad', 2, 'Proyectos de seguridad informática, redes y sistemas distribuidos'),
 ('Inteligencia Artificial', 3, 'Proyectos relacionados con machine learning, IA y análisis de datos'),
 ('Desarrollo Web', 3, 'Proyectos específicos de desarrollo web y tecnologías relacionadas');
+
+-- ============================================
+-- TABLAS PARA DOCUMENTOS FINALES DE TFG (HU-014)
+-- ============================================
+
+-- ----------------------------
+-- Table structure for `tfg_files`
+-- Almacena los archivos (BLOB) separados para mejor rendimiento
+-- ----------------------------
+DROP TABLE IF EXISTS `tfg_files`;
+CREATE TABLE `tfg_files` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `file_name` varchar(255) NOT NULL,
+  `mime_type` varchar(100) NOT NULL,
+  `file_size` bigint(20) NOT NULL,
+  `file_data` longblob NOT NULL,
+  `storage_path` varchar(500) DEFAULT NULL,
+  `uploaded_by` varchar(50) NOT NULL,
+  `upload_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_upload_date` (`upload_date`),
+  KEY `fk_tfg_files_user` (`uploaded_by`),
+  CONSTRAINT `fk_tfg_files_user` FOREIGN KEY (`uploaded_by`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Table structure for `tfg_final_documents`
+-- Almacena la metadata de los documentos finales de TFG
+-- NOTA: La validación de estructura (capítulos, formato APA, firma del tutor) 
+--       es MANUAL por la CTFG, no se almacena en el sistema
+-- ----------------------------
+DROP TABLE IF EXISTS `tfg_final_documents`;
+CREATE TABLE `tfg_final_documents` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `proposal_id` int(11) NOT NULL,
+  `file_id` int(11) NOT NULL,
+  `status` enum('Pendiente de Revision','En Revision','Aprobado','Rechazado') DEFAULT 'Pendiente de Revision',
+  `project_status` enum('Vigente','Prorroga Activa','Vencido') NOT NULL,
+  `submitted_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `submitted_by` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_proposal_final` (`proposal_id`),
+  KEY `idx_status` (`status`),
+  KEY `idx_submitted_at` (`submitted_at`),
+  KEY `fk_tfg_final_file` (`file_id`),
+  KEY `fk_tfg_final_submitter` (`submitted_by`),
+  CONSTRAINT `fk_tfg_final_proposal` FOREIGN KEY (`proposal_id`) REFERENCES `tfg_proposals` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_tfg_final_file` FOREIGN KEY (`file_id`) REFERENCES `tfg_files` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `fk_tfg_final_submitter` FOREIGN KEY (`submitted_by`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- ----------------------------
+-- Table structure for `tfg_project_timeline`
+-- Almacena las fechas y estado del proyecto según Art. 73 RGPEA
+-- ----------------------------
+DROP TABLE IF EXISTS `tfg_project_timeline`;
+CREATE TABLE `tfg_project_timeline` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `proposal_id` int(11) NOT NULL,
+  `approval_date` date NOT NULL,
+  `original_deadline` date NOT NULL COMMENT '1 año (12 meses) desde aprobación',
+  `status` enum('Vigente','Prorroga Activa','Vencido') NOT NULL DEFAULT 'Vigente',
+  `days_remaining` int(11) DEFAULT NULL,
+  `last_updated` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_proposal_timeline` (`proposal_id`),
+  KEY `idx_status` (`status`),
+  CONSTRAINT `fk_tfg_timeline_proposal` FOREIGN KEY (`proposal_id`) REFERENCES `tfg_proposals` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Table structure for `tfg_notifications`
+-- Almacena las notificaciones para la CTFG
+-- ----------------------------
+DROP TABLE IF EXISTS `tfg_notifications`;
+CREATE TABLE `tfg_notifications` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `notification_type` enum('Documento Final Subido') NOT NULL,
+  `proposal_id` int(11) NOT NULL,
+  `sender_id` varchar(50) NOT NULL,
+  `recipient_role_id` int(11) NOT NULL COMMENT '3 = CTFG',
+  `message` text NOT NULL,
+  `status` enum('Pendiente','Enviada') DEFAULT 'Pendiente',
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_status` (`status`),
+  KEY `idx_recipient` (`recipient_role_id`,`status`),
+  KEY `fk_tfg_notif_proposal` (`proposal_id`),
+  KEY `fk_tfg_notif_sender` (`sender_id`),
+  CONSTRAINT `fk_tfg_notif_proposal` FOREIGN KEY (`proposal_id`) REFERENCES `tfg_proposals` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_tfg_notif_sender` FOREIGN KEY (`sender_id`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_tfg_notif_role` FOREIGN KEY (`recipient_role_id`) REFERENCES `sis_rolls` (`id_roll`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
