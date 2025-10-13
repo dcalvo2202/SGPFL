@@ -208,7 +208,6 @@ if (!$sqlout || count($sqlout) == 0) {
         }
     }
 }
-
 if ($out == 0) {
     // Regenerar el ID de sesión para prevenir session fixation
     regenerarIdSesion($_MYSESSION_CONF);
