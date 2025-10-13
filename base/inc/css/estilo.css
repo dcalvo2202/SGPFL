@@ -57,10 +57,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 { font-size: var(--h1-size); }
 h2 { font-size: var(--h2-size); }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1.125rem; }
-h6 { font-size: 1rem; }
 
 p {
     font-size: var(--p-size);
@@ -82,8 +78,8 @@ p {
 
 /* Logo oficial UNA */
 .logo-una {
-    width: 50px;
-    height: 50px;
+    width: 6rem !important;
+    height: 6rem !important;
     background: var(--blanco-una);
     border-radius: 50%;
     display: flex;
@@ -265,6 +261,25 @@ input[type="password"]::-ms-reveal {
     margin-bottom: 2rem !important;
 }
 
+/* Diferenciación visual para las filas de versiones */
+.version-table {
+    border-left: 4px solid #0d6efd; /* Borde azul a la izquierda */
+    margin-top: 0.5rem;
+}
+
+.version-table thead th {
+    background-color: #e9f0ff; /* Fondo azul muy claro para el encabezado */
+    color: #0d6efd;
+    font-size: 1.25rem;
+}
+
+.version-table tbody tr {
+    background-color: #fafcff; /* Fondo ligeramente diferente */
+}
+
+.version-table tbody tr:hover {
+    background-color: #f0f7ff; /* Color al pasar el ratón */
+}
 
 /* Cards oficiales UNA */
 .card-una {
