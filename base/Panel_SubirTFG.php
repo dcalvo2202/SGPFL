@@ -93,7 +93,7 @@ try {
             
             <div class="dashboard-header text-center">
                 <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">Sistema Integrado de Gestión de TFG y Proyectos Grupales</h1>
-                <p class="lead text-center">Bienvenido, <?= htmlspecialchars($current_user_name) ?></p>
+                <p class="lead text-center">Bienvenido/a, <?= htmlspecialchars($current_user_name) ?></p>
                 <small class="text-muted">Usuario autenticado: <?= htmlspecialchars($current_user_id) ?></small>
             </div>
 
@@ -113,7 +113,17 @@ try {
                             <p>Crear propuesta y formar grupo</p>
                         </div>
                     </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>historial_documentos.php'">
+                            <div class="card-icon">
+                                <i class="bi bi-file-earmark-plus-fill"></i>
+                            </div>
+                            <h5>Historial de documentos</h5>
+                            <p>Ver documentos subidos al sistema</p>
+                        </div>
+                    </div>
                 </div>
+
             </div>
 
             <div class="recent-activity-section">

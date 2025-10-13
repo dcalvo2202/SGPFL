@@ -38,7 +38,7 @@ try {
     error_log("Error obteniendo project_id: " . $e->getMessage());
 }
 
-// Validar que el proyecto pertenezca al estudiante autenticado
+/* Validar que el proyecto pertenezca al estudiante autenticado
 $es_propietario = false;
 try {
     $conn = new mysqli($db_host, $usuario, $clave, $db);
@@ -61,7 +61,7 @@ try {
     error_log("Error validando propietario: " . $e->getMessage());
     header('Location: dashboard.php');
     exit;
-}
+}*/
 
 // Consultar el documento de la propuesta TFG asociada al usuario autenticado y su proyecto
 $propuesta_tfg = null;
@@ -132,7 +132,7 @@ try {
                 </table>
             </div>
             <div class="text-center mt-4">
-                <a href="panel_estudiante.php" class="btn btn-secondary">
+                <a href="Panel_SubirTFG.php" class="btn btn-secondary">
                     <i class="bi bi-arrow-left-circle"></i> Volver al Panel Principal
                 </a>
             </div>
