@@ -90,7 +90,9 @@ try {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Historial de documentos - SGPFL UNA</title>
+    <title><?= $page_title ?></title>
+    <!-- Logo de la escuela -->
+    <link rel="icon" type="image/webp" href="<?= $favicon_url ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= htmlspecialchars($base_url . 'inc/css/estilo.css') ?>" rel="stylesheet">
     <link href="<?= htmlspecialchars($base_url . 'inc/css/panel_estudiante.css') ?>" rel="stylesheet">
@@ -112,7 +114,7 @@ try {
                     <span class="ms-2 fw-semibold"><?= htmlspecialchars($current_user_name) ?></span>
                 </div>
                 <div class="user-details">
-                    <small class="text-light opacity-75">ID: <?= htmlspecialchars($current_user_id) ?></small>
+                    <span class="text-light opacity-75">ID: <?= htmlspecialchars($current_user_id) ?></span>
                     <a href="mod/login/logout.php" class="btn btn-outline-light btn-sm ms-3">
                         <i class="bi bi-box-arrow-right"></i> Salir
                     </a>
@@ -164,19 +166,11 @@ try {
             </div>
         </div>
     </main>
+  <!-- =============================== FOOTER =============================== -->
     <footer class="footer-una mt-auto">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2025 Universidad Nacional de Costa Rica</p>
-                    <small class="text-muted">Escuela de Informática - Proyecto SGPFL v3.0</small>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <small class="text-muted">
-                        Usuario: <?= htmlspecialchars($current_user_name) ?> (<?= htmlspecialchars($current_user_id) ?>)
-                    </small>
-                </div>
-            </div>
+            <p class="mb-1">&copy; <?= date('Y') ?> Universidad Nacional de Costa Rica</p>
+            <small>Escuela de Informática - Proyecto SGPFL v3.0</small>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
