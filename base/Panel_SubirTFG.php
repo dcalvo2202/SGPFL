@@ -67,48 +67,11 @@ try {
 ?>
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Estudiante - SGPFL UNA</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Estilos personalizados -->
-    <link href="<?= htmlspecialchars($base_url . 'inc/css/estilo.css') ?>" rel="stylesheet">
-    <link href="<?= htmlspecialchars($base_url . 'inc/css/panel_estudiante.css') ?>" rel="stylesheet">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
-    
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</head>
-
+<!-- =============================== HEAD =============================== -->
+<?php include 'head.php'; ?>
 <body class="d-flex flex-column min-vh-100">
 
-    <header class="navbar-una" style="background: linear-gradient(135deg, #CD1719, #A01215) !important;">
-        <div class="container-fluid px-4">
-            <div class="header-left d-flex align-items-center">
-                <img src="<?= $base_url ?>img/logo.webp" alt="Logo UNA" class="logo-una">
-                <div class="header-text ms-3">
-                    <h5 class="mb-0 text-white fw-bold">Universidad Nacional de Costa Rica</h5>
-                    <small class="text-light opacity-85">Escuela de Informática</small>
-                </div>
-            </div>
-            <div class="header-right text-end">
-                <div class="user-info text-white mb-2">
-                    <i class="bi bi-person-circle fs-5"></i>
-                    <span class="ms-2 fw-semibold"><?= htmlspecialchars($current_user_name) ?></span>
-                </div>
-                <div class="user-details">
-                    <small class="text-light opacity-75">ID: <?= htmlspecialchars($current_user_id) ?></small>
-                    <a href="mod/login/logout.php" class="btn btn-outline-light btn-sm ms-3">
-                        <i class="bi bi-box-arrow-right"></i> Salir
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
+    <?php include 'header.php'; ?>
 
     <main class="flex-fill">
         <div class="container my-4">
@@ -284,21 +247,7 @@ try {
         </div>
     </main>
 
-    <footer class="footer-una mt-auto">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2025 Universidad Nacional de Costa Rica</p>
-                    <small class="text-muted">Escuela de Informática - Proyecto SGPFL v3.0</small>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <small class="text-muted">
-                        Usuario: <?= htmlspecialchars($current_user_name) ?> (<?= htmlspecialchars($current_user_id) ?>)
-                    </small>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include 'footer.php'; ?>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
