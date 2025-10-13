@@ -51,10 +51,10 @@ $result = $conn->query($sql);
                         <a href="<?= htmlspecialchars($download_url) ?>" class="btn btn-sm btn-outline-primary" title="Descargar Propuesta">
                             <i class="bi bi-download"></i> Descargar
                         </a>
-                        <button class="btn btn-sm btn-outline-success" onclick="updateStatus(<?= $row['id']; ?>, 'Cumple requisitos')">
+                        <button class="btn btn-sm btn-outline-success" onclick="updateStatus(<?= $row['id']; ?>, 'Cumple Requisitos')">
                             <i class="bi bi-check-circle"></i> Cumple Requisitos
                         </button>
-                        <button class="btn btn-sm btn-outline-danger" onclick="updateStatus(<?= $row['id']; ?>, 'No cumple requisitos')">
+                        <button class="btn btn-sm btn-outline-danger" onclick="updateStatus(<?= $row['id']; ?>, 'No Cumple Requisitos')">
                             <i class="bi bi-x-circle"></i> No Cumple Requisitos
                         </button>
                     </div>
@@ -176,7 +176,7 @@ function showCustomAlert(title, message, isSuccess) {
 // --- Main Function to Open Comment Modal ---
 function updateStatus(id, status) {
     currentProposal = { id, status };
-    const actionText = status === 'Cumple requisitos' ? 'marcar como "Cumple Requisitos"' : 'marcar como "No Cumple Requisitos"';
+    const actionText = status === 'Cumple Requisitos' ? 'marcar como "Cumple Requisitos"' : 'marcar como "No Cumple Requisitos"';
     
     modalText.textContent = `¿Desea ${actionText} esta propuesta?`;
     modalComments.value = '';
@@ -192,8 +192,8 @@ modalCancel.addEventListener('click', () => {
 
 modalConfirm.addEventListener('click', () => {
     const comments = modalComments.value;
-    
-    if (currentProposal.status === 'No cumple requisitos' && comments.trim() === '') {
+
+    if (currentProposal.status === 'No Cumple Requisitos' && comments.trim() === '') {
         modalError.style.display = 'block';
         return;
     }
