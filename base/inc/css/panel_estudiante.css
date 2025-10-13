@@ -59,7 +59,7 @@
 }
 
 .header-text h5 {
-    font-size: 2em !important;
+    font-size: 1.7em !important;
     margin: 0;
     letter-spacing: 0.5px;
 }
@@ -81,7 +81,7 @@
 }
 
 .user-info span, i {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .user-details {
