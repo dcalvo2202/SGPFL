@@ -162,6 +162,28 @@ function saveFinalDocument($proposal_id, $file_data, $user_id, $project_status) 
             ];
         }
         
+        // =============================== LÍMITE DE VERSIONES POR DOCUMENTO ===============================
+        $document_type = 'Documento Final TFG'; // O el tipo que corresponda según tu lógica
+        $stmt = $conn->prepare("SELECT id FROM tfg_files WHERE uploaded_by = ? AND document_type = ? ORDER BY upload_date ASC");
+        $stmt->bind_param("ss", $user_id, $document_type);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $version_ids = [];
+        while ($row = $result->fetch_assoc()) {
+            $version_ids[] = $row['id'];
+        }
+        $stmt->close();
+
+        // Si ya hay 5 versiones, eliminar la más antigua
+        if (count($version_ids) >= 5) {
+            $oldest_id = $version_ids[0];
+            $stmt = $conn->prepare("DELETE FROM tfg_files WHERE id = ?");
+            $stmt->bind_param("i", $oldest_id);
+            $stmt->execute();
+            $stmt->close();
+        }
+
         // 2. Insertar en tfg_files
         $sql_file = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by) 
                      VALUES (?, ?, ?, ?, NULL, ?)";
@@ -221,6 +243,10 @@ function saveFinalDocument($proposal_id, $file_data, $user_id, $project_status) 
         $conn->commit();
         $conn->close();
         
+        // =============================== NOTIFICACIÓN ===============================
+        // Llama al archivo de notificación estudiante, secretaria (ajusta la ruta si es necesario)
+        // include_once(__DIR__ . '/../../mod/admin/users/tfg_update_document.php');
+
         return [
             'success' => true,
             'message' => 'Documento guardado exitosamente',

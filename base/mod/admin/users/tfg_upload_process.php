@@ -1,4 +1,6 @@
 <?php
+// =============================== INICIALIZACIÓN Y CONFIGURACIÓN ===============================
+
 // Iniciar output buffering para capturar cualquier salida
 ob_start();
 
@@ -8,6 +10,8 @@ ini_set('display_errors', 0);
 ini_set('log_errors', 1);
 ini_set('max_execution_time', 300);
 ini_set('memory_limit', '256M');
+
+// =============================== AUTENTICACIÓN Y SESIÓN ===============================
 
 // VERIFICAR AUTENTICACIÓN ANTES QUE NADA
 include("../../login/check.php");
@@ -199,7 +203,30 @@ try {
     $tfg_id = $conn->insert_id;
     $tfg_stmt->close();
 
-    // 1.5. Insertar la versión inicial en el historial
+    // =============================== INSERCIÓN EN HISTORIAL DE VERSIONES ===============================
+
+    // Contar cuántas versiones existen para esta propuesta
+    $stmt = $conn->prepare("SELECT id FROM tfg_proposal_history WHERE proposal_id = ? ORDER BY created_at ASC");
+    $stmt->bind_param("i", $tfg_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $version_ids = [];
+    while ($row = $result->fetch_assoc()) {
+        $version_ids[] = $row['id'];
+    }
+    $stmt->close();
+
+    // Si ya hay 5 versiones, eliminar la más antigua
+    if (count($version_ids) >= 5) {
+        $oldest_id = $version_ids[0];
+        $stmt = $conn->prepare("DELETE FROM tfg_proposal_history WHERE id = ?");
+        $stmt->bind_param("i", $oldest_id);
+        $stmt->execute();
+        $stmt->close();
+    }
+
+    // Insertar la versión inicial en el historial
     $history_sql = "INSERT INTO tfg_proposal_history (proposal_id, document, file_name, mime_type, file_size, status, reviewed_by, comments, created_at) 
                     VALUES (?, ?, ?, ?, ?, 'Pendiente de Revisión', ?, 'Versión inicial subida por el estudiante', NOW())";
     $history_stmt = $conn->prepare($history_sql);
@@ -217,6 +244,8 @@ try {
     } else {
         throw new Exception("Error al preparar la consulta de historial: " . $conn->error);
     }
+
+    // =============================== CREACIÓN DE PROYECTO Y MIEMBROS ===============================
 
     // 2. Crear proyecto asociado con estructura correcta
     // registered_projects tiene: id, tfg_proposal_id, project_type_id, status, start_date, end_date, final_grade, supervisor_id, created_at, updated_at
@@ -274,7 +303,7 @@ try {
         }
     }
 
-    // Confirmar transacción
+    // =============================== CONFIRMAR TRANSACCIÓN ===============================
     $conn->commit();
     $conn->close();
 
@@ -282,7 +311,13 @@ try {
     while (ob_get_level() > 0) {
         ob_end_clean();
     }
+
+    // =============================== NOTIFICACIONES ===============================
     
+    // Enviar notificación al estudiante y a la secretaría académica
+    //include __DIR__ . '/tfg_update_document.php';
+
+
     // Obtener ruta base desde configuración para redirigir
     require_once(__DIR__ . '/../../../config.inc');
     $redirect_url = $cds_domain . $cds_locate . 'panel_estudiante.php';
