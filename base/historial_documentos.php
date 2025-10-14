@@ -272,13 +272,13 @@ try {
                             <?php $collapseId = 'versionesCollapse_' . $i; ?>
                             <!-- Fila principal -->
                             <tr>
-                                <td><?= htmlspecialchars($doc['tipo']) ?>: <?= htmlspecialchars($doc['title'] ?? $doc['file_name']) ?></td>
-                                <td><?= date('d/m/Y', strtotime($doc['created_at'])) ?></td>
-                                <td><?= htmlspecialchars($doc['status']) ?></td>
-                                <td>
+                                <td data-label="Documento"><?= htmlspecialchars($doc['tipo']) ?>: <?= htmlspecialchars($doc['title'] ?? $doc['file_name']) ?></td>
+                                <td data-label="Fecha"><?= date('d/m/Y', strtotime($doc['created_at'])) ?></td>
+                                <td data-label="Estado"><?= htmlspecialchars($doc['status']) ?></td>
+                                <td data-label="Versión">
                                     <?php if (($doc['tipo'] === 'Propuesta TFG' && !empty($propuestas_vers)) || 
                                             ($doc['tipo'] === 'Documento Final TFG' && !empty($versiones_docs_finales[$doc['document_type']]))): ?>
-                                        <button class="btn btn-outline-primary btn-link" type="button"
+                                        <button class="btn btn-link-una" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#<?= $collapseId ?>"
                                             aria-expanded="false" aria-controls="<?= $collapseId ?>">
                                             Versiones
@@ -289,15 +289,18 @@ try {
                                         -
                                     <?php endif; ?>
                                 </td>
-                                <td><?= number_format($doc['file_size'] / (1024 * 1024), 2) ?> MB</td>
-                                <td>
+                                <td data-label="Tamaño"><?= number_format($doc['file_size'] / (1024 * 1024), 2) ?> MB</td>
+                                <td data-label="Formato">
                                     <?php
                                     $parts = explode('/', $doc['mime_type']);
                                     echo isset($parts[1]) ? strtoupper($parts[1]) : strtoupper($doc['mime_type']);
                                     ?>
                                 </td>
-                                <td>
-                                    <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . ($doc['id']) ?>" class="btn btn-link">Descargar</a>
+                                <td data-label="Acción">
+                                    <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $version['id'] ?>" class="btn-link-una">
+                                        <i class="bi bi-download me-1"></i>
+                                        <span>Descargar</span>
+                                    </a>    
                                 </td>
                             </tr>
                             
@@ -322,19 +325,22 @@ try {
                                                 <tbody>
                                                     <?php foreach ($propuestas_vers as $version): ?>
                                                     <tr>
-                                                        <td><?= htmlspecialchars($doc['tipo']) ?>: <?= htmlspecialchars($version['title']) ?></td>
-                                                        <td><?= date('d/m/Y', strtotime($version['created_at'])) ?></td>
-                                                        <td><?= htmlspecialchars($version['status']) ?></td>
-                                                        <td><?= number_format($version['version'], 1) ?></td>
-                                                        <td><?= number_format($version['file_size'] / (1024 * 1024), 2) ?> MB</td>
-                                                        <td>
+                                                        <td data-label="Documento"><?= htmlspecialchars($doc['tipo']) ?>: <?= htmlspecialchars($version['title']) ?></td>
+                                                        <td data-label="Fecha"><?= date('d/m/Y', strtotime($version['created_at'])) ?></td>
+                                                        <td data-label="Estado"><?= htmlspecialchars($version['status']) ?></td>
+                                                        <td data-label="Versión"><?= number_format($version['version'], 1) ?></td>
+                                                        <td data-label="Tamaño"><?= number_format($version['file_size'] / (1024 * 1024), 2) ?> MB</td>
+                                                        <td data-label="Formato">
                                                             <?php
                                                             $parts = explode('/', $version['mime_type']);
                                                             echo isset($parts[1]) ? strtoupper($parts[1]) : strtoupper($version['mime_type']);
                                                             ?>
                                                         </td>
-                                                        <td>
-                                                            <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $version['id'] ?>" class="btn btn-link btn-link">Descargar</a>
+                                                        <td data-label="Acción">
+                                                            <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $version['id'] ?>" class="btn-link-una">
+                                                                <i class="bi bi-download me-1"></i>
+                                                                <span>Descargar</span>
+                                                            </a>    
                                                         </td>
                                                     </tr>
                                                     <?php endforeach; ?>
@@ -364,19 +370,22 @@ try {
                                                 <tbody>
                                                     <?php foreach ($versiones_docs_finales[$doc['document_type']] as $version): ?>
                                                     <tr>
-                                                        <td><?= htmlspecialchars($doc['tipo']) ?>: <?= htmlspecialchars($version['file_name']) ?></td>
-                                                        <td><?= date('d/m/Y', strtotime($version['created_at'])) ?></td>
-                                                        <td><?= htmlspecialchars($version['status']) ?></td>
-                                                        <td><?= number_format($version['version'], 1) ?></td>
-                                                        <td><?= number_format($version['file_size'] / (1024 * 1024), 2) ?> MB</td>
-                                                        <td>
+                                                        <td data-label="Documento"><?= htmlspecialchars($doc['tipo']) ?>: <?= htmlspecialchars($version['file_name']) ?></td>
+                                                        <td data-label="Fecha"><?= date('d/m/Y', strtotime($version['created_at'])) ?></td>
+                                                        <td data-label="Estado"><?= htmlspecialchars($version['status']) ?></td>
+                                                        <td data-label="Versión"><?= number_format($version['version'], 1) ?></td>
+                                                        <td data-label="Tamaño"><?= number_format($version['file_size'] / (1024 * 1024), 2) ?> MB</td>
+                                                        <td data-label="Formato">
                                                             <?php
                                                             $parts = explode('/', $version['mime_type']);
                                                             echo isset($parts[1]) ? strtoupper($parts[1]) : strtoupper($version['mime_type']);
                                                             ?>
                                                         </td>
-                                                        <td>
-                                                            <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $version['id'] ?>" class="btn btn-link btn-link">Descargar</a>
+                                                        <td data-label="Acción">
+                                                            <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $version['id'] ?>" class="btn-link-una">
+                                                                <i class="bi bi-download me-1"></i>
+                                                                <span>Descargar</span>
+                                                            </a>
                                                         </td>
                                                     </tr>
                                                     <?php endforeach; ?>

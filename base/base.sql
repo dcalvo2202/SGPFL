@@ -2356,7 +2356,7 @@ CREATE TABLE `tfg_files` (
   `storage_path` varchar(500) DEFAULT NULL,
   `uploaded_by` varchar(50) NOT NULL,
   `upload_date` datetime DEFAULT CURRENT_TIMESTAMP,
-  `version` INT NOT NULL AUTO_INCREMENT,
+  `version` FLOAT NOT NULL DEFAULT 1,
   `document_type` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_upload_date` (`upload_date`),
