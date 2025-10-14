@@ -21,7 +21,7 @@
             include 'panel_ctfg.php';
             break;
         case 4: // Estudiante
-            include 'panel_estudiante.php';
+            include 'Panel_SubirTFG.php';
             break;
         case 5: // Asesor Externo
             include 'panel_asesor.php';

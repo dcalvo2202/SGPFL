@@ -1,10 +1,13 @@
 <?php
+// =============================== INICIALIZACIÓN Y SEGURIDAD ===============================
+
+// Incluir archivos de configuración y utilidades
 include("mod/login/check.php");
 include('includes.php');
 include('lang/lang.es');
 include('inc/db/db.php');
 
-// Obtener variables de sesión
+// Obtener variables de sesión del usuario autenticado
 $current_user_id = $mySessionController->getVar("usuario");
 $current_user_name = $mySessionController->getVar("nombre");
 $current_user_rol = $mySessionController->getVar("rol");
@@ -12,11 +15,13 @@ $cds_domain = $mySessionController->getVar("cds_domain");
 $cds_locate = $mySessionController->getVar("cds_locate");
 $base_url = $cds_domain . $cds_locate;
 
-// Restringir acceso solo a estudiantes
+// Restringir acceso solo a estudiantes (rol 4)
 if ($current_user_rol != 4) {
     header('Location: dashboard.php');
     exit;
 }
+
+// =============================== OBTENER ID DE PROYECTO ===============================
 
 // Buscar el project_id asociado al usuario autenticado
 $project_id = 0;
@@ -38,9 +43,11 @@ try {
     error_log("Error obteniendo project_id: " . $e->getMessage());
 }
 
+// =============================== OBTENER DOCUMENTOS PRINCIPALES ===============================
+// Array para almacenar los documentos y sus versiones
 $documentos = [];
 
-// Agregar la propuesta TFG
+// --- Propuesta TFG principal ---
 try {
     $conn = new mysqli($db_host, $usuario, $clave, $db);
     $conn->set_charset("utf8");
@@ -54,7 +61,7 @@ try {
     $stmt->execute();
     $result = $stmt->get_result();
     if ($row = $result->fetch_assoc()) {
-        $row['tipo'] = 'Propuesta TFG'; // Agregar un campo para identificar el tipo
+        $row['tipo'] = 'Propuesta TFG'; // Identificador de tipo de documento
         $documentos[] = $row;
     }
     $stmt->close();
@@ -63,10 +70,12 @@ try {
     error_log("Error obteniendo propuesta TFG: " . $e->getMessage());
 }
 
-// Extrae el ID de la propuesta principal (la que ya está en documentos)
+// Guardar el ID de la propuesta principal para excluirla de las versiones
 $propuesta_principal_id = $documentos[0]['id'] ?? 0;
 
-// Versiones de propuestas TFG (excluyendo la principal)
+// =============================== OBTENER VERSIONES DE PROPUESTA TFG ===============================
+
+// Versiones históricas de la propuesta TFG (excluyendo la principal)
 $propuestas_vers = [];
 try {
     $conn = new mysqli($db_host, $usuario, $clave, $db);
@@ -87,9 +96,9 @@ try {
     $stmt->execute();
     $result = $stmt->get_result();
     
-    $version = 1; // Iniciar contador de versión
+    $version = 1; // Contador de versión
     while ($row = $result->fetch_assoc()) {
-        $row['version_num'] = $version++; // Agregar número de versión
+        $row['version'] = $version++; // Asignar número de versión
         $propuestas_vers[] = $row;
     }
     $stmt->close();
@@ -98,7 +107,9 @@ try {
     error_log("Error obteniendo versiones de propuestas: " . $e->getMessage());
 }
 
-// Obtener documento final de TFG
+// =============================== OBTENER DOCUMENTO FINAL DE TFG ===============================
+
+// Documento final de TFG (último entregado)
 try {
     $conn = new mysqli($db_host, $usuario, $clave, $db);
     $conn->set_charset("utf8");
@@ -129,7 +140,7 @@ try {
         ];
         $documentos[] = $doc;
         
-        // Guardar el id del documento final para buscar sus versiones
+        // Guardar info para buscar versiones de este documento final
         $doc_final_ids[$row['document_type']] = [
             'file_id' => $row['file_id'],
             'document_type' => $row['document_type']
@@ -140,7 +151,8 @@ try {
     error_log("Error obteniendo documentos finales: " . $e->getMessage());
 }
 
-// Obtener versiones de documentos finales
+// =============================== OBTENER VERSIONES DE DOCUMENTO FINAL DE TFG ===============================
+// Array para almacenar versiones de documentos finales
 $versiones_docs_finales = [];
 if (!empty($doc_final_ids)) {
     try {
@@ -189,7 +201,9 @@ if (!empty($doc_final_ids)) {
     }
 }
 
-// Obtener otros documentos (que no son ni propuestas TFG ni documentos finales)
+// =============================== OBTENER OTROS DOCUMENTOS DEL USUARIO ===============================
+
+// Otros archivos subidos por el usuario (no propuestas ni documentos finales)
 try {
     $conn = new mysqli($db_host, $usuario, $clave, $db);
     $conn->set_charset("utf8");
@@ -213,11 +227,11 @@ try {
             'file_name' => $row['file_name'],
             'mime_type' => $row['mime_type'],
             'file_size' => $row['file_size'],
-            'status' => 'Subido', // Estado genérico para estos archivos
+            'status' => 'Subido', // Estado genérico
             'created_at' => $row['upload_date'],
             'tipo' => $row['document_type'],
             'document_type' => $row['document_type'],
-            'version' => $row['version'] // Incluir el número de versión del archivo
+            'version' => $row['version']
         ];
         $documentos[] = $doc;
     }
@@ -270,7 +284,7 @@ try {
                                             Versiones
                                         </button>
                                     <?php elseif (isset($doc['version'])): ?>
-                                        <?= htmlspecialchars($doc['version']) ?>
+                                        <?= number_format($doc['version'], 1) ?>
                                     <?php else: ?>
                                         -
                                     <?php endif; ?>
@@ -311,7 +325,7 @@ try {
                                                         <td><?= htmlspecialchars($doc['tipo']) ?>: <?= htmlspecialchars($version['title']) ?></td>
                                                         <td><?= date('d/m/Y', strtotime($version['created_at'])) ?></td>
                                                         <td><?= htmlspecialchars($version['status']) ?></td>
-                                                        <td><?= $version['version_num'] ?></td>
+                                                        <td><?= number_format($version['version'], 1) ?></td>
                                                         <td><?= number_format($version['file_size'] / (1024 * 1024), 2) ?> MB</td>
                                                         <td>
                                                             <?php
@@ -353,7 +367,7 @@ try {
                                                         <td><?= htmlspecialchars($doc['tipo']) ?>: <?= htmlspecialchars($version['file_name']) ?></td>
                                                         <td><?= date('d/m/Y', strtotime($version['created_at'])) ?></td>
                                                         <td><?= htmlspecialchars($version['status']) ?></td>
-                                                        <td><?= htmlspecialchars($version['version']) ?></td>
+                                                        <td><?= number_format($version['version'], 1) ?></td>
                                                         <td><?= number_format($version['file_size'] / (1024 * 1024), 2) ?> MB</td>
                                                         <td>
                                                             <?php
