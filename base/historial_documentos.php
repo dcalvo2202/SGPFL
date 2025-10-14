@@ -297,7 +297,7 @@ try {
                                     ?>
                                 </td>
                                 <td data-label="Acción">
-                                    <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $version['id'] ?>" class="btn-link-una">
+                                    <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $doc['id'] ?>" class="btn-link-una">
                                         <i class="bi bi-download me-1"></i>
                                         <span>Descargar</span>
                                     </a>    
