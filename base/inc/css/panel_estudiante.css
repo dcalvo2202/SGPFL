@@ -59,13 +59,13 @@
 }
 
 .header-text h5 {
-    font-size: 1.7em !important;
+    font-size: 1.6em !important;
     margin: 0;
     letter-spacing: 0.5px;
 }
 
 .header-text small {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 500;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .user-info span, i {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .user-details {
@@ -92,7 +92,7 @@
 }
 
 .user-details span {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     white-space: nowrap;
 }
 
@@ -100,7 +100,7 @@
     border: 1.5px solid rgba(255,255,255,0.3);
     color: white;
     padding: 4px 12px;
-    font-size: 1.75rem;
+    font-size: 1.55rem;
     border-radius: 6px;
     transition: all 0.3s ease;
     font-weight: 500;

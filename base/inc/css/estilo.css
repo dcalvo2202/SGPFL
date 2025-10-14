@@ -89,7 +89,7 @@ p {
     font-weight: bold;
     font-size: 0.8rem;
     font-family: var(--font-opcional);
-    border: 2px solid var(--rojo-una);
+    border: 2px solid var(--gris-una);
 }
 
 /* Estilos adicionales navbar */
@@ -116,7 +116,7 @@ p {
 .navbar-una {
     background: linear-gradient(135deg, var(--rojo-una) 0%, var(--azul-una) 100%);
     border-bottom: 3px solid var(--gris-una);
-    min-height: 70px;
+    min-height: 10rem;
     padding: var(--spacing-md) 0;
 }
 
@@ -443,6 +443,10 @@ input[type="password"]::-ms-reveal {
     line-height: 1.5;
     max-width: 80ch;
     margin: 0 auto;
+}
+
+.footer-una small{
+    font-size: 1.2rem;
 }
 
 /* === COMPONENTES ESPECÍFICOS SGPFL === */
