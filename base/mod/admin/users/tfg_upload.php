@@ -13,12 +13,11 @@ $base_path = realpath(__DIR__ . '/../../../');
 // Incluir archivos necesarios con rutas relativas
 include_once($base_path . '/inc/db/bdcommon.inc');
 
-// Obtener tipos de proyecto (temporalmente hardcoded)
+// Obtener tipos de proyecto
 $project_types = [
-    ['id' => 1, 'type_name' => 'Proyecto Individual', 'max_members' => 1],
-    ['id' => 2, 'type_name' => 'Proyecto en Pareja', 'max_members' => 2],
-    ['id' => 3, 'type_name' => 'Proyecto Grupal Pequeño', 'max_members' => 3],
-    ['id' => 4, 'type_name' => 'Proyecto Grupal Grande', 'max_members' => 4]
+    ['id' => 1, 'type_name' => 'Individual', 'max_members' => 1],
+    ['id' => 2, 'type_name' => 'Por Parejas', 'max_members' => 2],
+    ['id' => 3, 'type_name' => 'Seminario', 'max_members' => 5]
 ];
 
 // OBTENER USUARIO REAL AUTENTICADO
@@ -43,58 +42,84 @@ $form_action = "tfg_upload_process.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nueva Propuesta TFG - SGPFL</title>
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     
     <link rel="stylesheet" href="<?= $base_url ?>inc/css/estilo.css">
+    <link rel="stylesheet" href="<?= $base_url ?>inc/css/panel_estudiante.css">
     <link rel="stylesheet" href="<?= $base_url ?>inc/css/tfg_upload.css">
     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
-        .section-header h3 {
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #034991, #023670);
             color: white;
+            padding: 1.5rem;
+        }
+        .section-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white !important;
+        }
+        .section-body {
+            padding: 2rem;
         }
     </style>
-    </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-una">
-        <div class="container">
-            <div class="logo-una">UNA</div>
-            <a class="navbar-brand" href="<?= htmlspecialchars($panel_href) ?>">
-                <i class="bi bi-mortarboard-fill"></i> SGPFL - ESCINF
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-main-menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="nav-main-menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= htmlspecialchars($panel_href) ?>">
-                            <i class="bi bi-house-fill"></i> Dashboard
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">
-                            <i class="bi bi-file-earmark-plus-fill"></i> Nueva Propuesta TFG
-                        </a>
-                    </li>
-                </ul>
+</head>
+<body class="fondo-una d-flex flex-column min-vh-100">
+
+    <!-- =============================== HEADER =============================== -->
+    <header class="navbar-una" style="background: linear-gradient(135deg, #CD1719, #A01215) !important; padding: 1.25rem 0;">
+        <div class="container-fluid px-4">
+            <div class="header-left d-flex align-items-center">
+                <img src="<?= htmlspecialchars($base_url) ?>img/logo.webp" alt="Logo UNA" class="logo-una" style="height: 70px;">
+                <div class="header-text ms-3">
+                    <h5 class="mb-0 text-white fw-bold">Universidad Nacional de Costa Rica</h5>
+                    <small class="text-light opacity-85">Escuela de Informática</small>
+                </div>
+            </div>
+            <div class="header-right text-end">
+                <div class="user-info text-white mb-2">
+                    <i class="bi bi-person-circle fs-5"></i>
+                    <span class="ms-2 fw-semibold"><?= htmlspecialchars($current_user_name) ?></span>
+                </div>
+                <div class="user-details">
+                    <small class="text-light opacity-75">ID: <?= htmlspecialchars($current_user_id) ?></small>
+                    <a href="<?= htmlspecialchars($base_url) ?>Panel_SubirTFG.php" class="btn btn-outline-light btn-sm ms-2" style="font-size: 0.85rem; padding: 0.4rem 0.85rem;">
+                        <i class="bi bi-arrow-left"></i> Volver
+                    </a>
+                    <a href="<?= htmlspecialchars($base_url) ?>mod/login/logout.php" class="btn btn-outline-light btn-sm ms-2" style="font-size: 0.85rem; padding: 0.4rem 0.85rem;">
+                        <i class="bi bi-box-arrow-right"></i> Salir
+                    </a>
+                </div>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <div class="container tfg-upload-container">
-        <div class="row mb-4">
-            <div class="col-12">
-                <h1><i class="bi bi-file-earmark-plus-fill"></i> Nueva Propuesta de TFG</h1>
+    <!-- =============================== CONTENIDO PRINCIPAL =============================== -->
+    <main class="flex-fill">
+        <div class="container my-5">
+            
+            <div class="dashboard-header text-center mb-4">
+                <h1 style="font-size: 2.5rem; font-weight: 700;">
+                    <i class="bi bi-file-earmark-plus-fill"></i> Nueva Propuesta de TFG
+                </h1>
                 <p class="lead text-muted">Complete la información de su propuesta y forme su grupo de trabajo</p>
             </div>
-        </div>
 
-        <form id="tfgGroupForm" action="<?= htmlspecialchars($form_action) ?>" method="POST" enctype="multipart/form-data">
+            <form id="tfgGroupForm" action="<?= htmlspecialchars($form_action) ?>" method="POST" enctype="multipart/form-data">
             
             <div class="section-card">
                 <div class="section-header">
@@ -114,19 +139,6 @@ $form_action = "tfg_upload_process.php";
                                required
                                placeholder="Ingrese el título único de su propuesta TFG">
                         <small class="text-muted">Este título debe ser único en el sistema (10-255 caracteres)</small>
-                    </div>
-
-                    <div class="form-group-tfg">
-                        <label for="inp-disciplines" class="form-label-tfg">
-                            <i class="bi bi-tags-fill"></i> Disciplinas *
-                        </label>
-                        <input type="text" 
-                               class="form-control-tfg" 
-                               id="inp-disciplines" 
-                               name="disciplines" 
-                               required 
-                               placeholder="Ej.: Informática, Matemáticas, Ingeniería">
-                        <small class="text-muted">Ingrese al menos dos disciplinas separadas por coma</small>
                     </div>
 
                     <div class="form-group-tfg">
@@ -261,36 +273,20 @@ $form_action = "tfg_upload_process.php";
                 </div>
             </div>
         </form>
-    </div>
 
-    <footer class="footer-una">
+        </div>
+    </main>
+
+    <!-- =============================== FOOTER =============================== -->
+    <footer class="footer-una mt-auto">
         <div class="container">
-            <p>
-                Copyright © 2025. Todos los derechos reservados. 
-                USTDS-Escuela de Informática-UNA<br>
-                Contacto: escinf@una.ac.cr | Tel: +506 2562-4000 ext. 2200
-            </p>
+            <p class="mb-1">&copy; <?= date('Y') ?> Universidad Nacional de Costa Rica</p>
+            <small>Escuela de Informática - Proyecto SGPFL v3.0</small>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?= $base_url ?>inc/js/tfg_upload.js"></script>
     
-    <script>
-        // Debug para verificar que todo esté funcionando
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Página cargada completamente');
-            console.log('TfgManager disponible:', !!window.tfgManager);
-            console.log('SweetAlert disponible:', typeof Swal !== 'undefined');
-            
-            // Verificar formulario
-            const form = document.getElementById('tfgGroupForm');
-            console.log('Formulario encontrado:', !!form);
-            if (form) {
-                console.log('Action del formulario:', form.action);
-                console.log('Method del formulario:', form.method);
-            }
-        });
-    </script>
 </body>
 </html>

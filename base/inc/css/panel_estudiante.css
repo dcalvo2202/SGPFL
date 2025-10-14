@@ -59,13 +59,13 @@
 }
 
 .header-text h5 {
-    font-size: 1.6em !important;
+    font-size: 1.35rem !important;
     margin: 0;
     letter-spacing: 0.5px;
 }
 
 .header-text small {
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 
@@ -73,15 +73,17 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .user-info i {
     color: #ffffff;
+    font-size: 1.3rem;
 }
 
-.user-info span, i {
-    font-size: 1.2rem;
+.user-info span {
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .user-details {
@@ -91,16 +93,16 @@
     gap: 10px;
 }
 
-.user-details span {
-    font-size: 1.4rem;
+.user-details small {
+    font-size: 0.95rem;
     white-space: nowrap;
 }
 
 .navbar-una .btn-outline-light {
     border: 1.5px solid rgba(255,255,255,0.3);
     color: white;
-    padding: 4px 12px;
-    font-size: 1.55rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
     border-radius: 6px;
     transition: all 0.3s ease;
     font-weight: 500;

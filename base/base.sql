@@ -2245,7 +2245,7 @@ CREATE TABLE tfg_proposals (
     user_id VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
     title VARCHAR(255) NOT NULL,
     disciplines VARCHAR(255) NOT NULL,
-    project_description TEXT NOT NULL,
+    project_description TEXT NULL,
     document LONGBLOB NULL,
     file_name VARCHAR(255) NOT NULL DEFAULT '',
     mime_type VARCHAR(100) NOT NULL DEFAULT '',
