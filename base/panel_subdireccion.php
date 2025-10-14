@@ -21,8 +21,8 @@ $base_url = $mySessionController->getVar("cds_domain") . $mySessionController->g
 // 3. CONTROL DE ACCESO POR ROL
 // Se verifica que el usuario tenga el rol de 'Gestor Académico' (ID 2).
 // Si no lo tiene, se le redirige al panel principal para evitar accesos no autorizados.
-if ($current_user_rol != 2) {
-    header('Location: dashboard.php');
+if ($current_user_rol != 2 && $current_user_rol != 1) {
+    header('Location: login.php');
     exit; // Detiene la ejecución del script para asegurar que no se muestre nada más.
 }
 ?>
