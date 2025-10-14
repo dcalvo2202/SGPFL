@@ -2356,11 +2356,13 @@ CREATE TABLE `tfg_files` (
   `storage_path` varchar(500) DEFAULT NULL,
   `uploaded_by` varchar(50) NOT NULL,
   `upload_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `version` INT NOT NULL DEFAULT '1',
+  `document_type` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_upload_date` (`upload_date`),
   KEY `fk_tfg_files_user` (`uploaded_by`),
   CONSTRAINT `fk_tfg_files_user` FOREIGN KEY (`uploaded_by`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- ----------------------------
 -- Table structure for `tfg_final_documents`
@@ -2429,4 +2431,4 @@ CREATE TABLE `tfg_notifications` (
   CONSTRAINT `fk_tfg_notif_proposal` FOREIGN KEY (`proposal_id`) REFERENCES `tfg_proposals` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_tfg_notif_sender` FOREIGN KEY (`sender_id`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_tfg_notif_role` FOREIGN KEY (`recipient_role_id`) REFERENCES `sis_rolls` (`id_roll`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
