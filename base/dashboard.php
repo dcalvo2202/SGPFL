@@ -2,9 +2,16 @@
     include(dirname(__FILE__) . "/lib/mysession/mySession.class.php");
     include(dirname(__FILE__) . "/lib/mysession/mySession.conf.php");
 
+    // Redirigir a logout si la configuración de sesión está definida para evitar conflictos
+    if (isset($_MYSESSION_CONF)) {
+        header("Location: logout.php");
+        exit();
+    }
+
     $mySessionController = mySession::getIstance($_MYSESSION_CONF);
     $rol = $mySessionController->getVar("rol");
 
+    // Redirigir al login si no hay rol definido
     if (!$rol) {
         header("Location: login.php");
         exit();
