@@ -195,16 +195,19 @@ if (!$sqlout || count($sqlout) == 0) {
             }
             // Login exitoso
             $out = 0;
+        } else {
+            $out = 1; // Contraseña incorrecta
         }
     } else {
         // Verificar con password_verify()
         if (password_verify($pass, $hash_bd)) {
             // Login exitoso
             $out = 0;
+        } else {
+            $out = 1; // Contraseña incorrecta
         }
     }
 }
-
 if ($out == 0) {
     // Regenerar el ID de sesión para prevenir session fixation
     regenerarIdSesion($_MYSESSION_CONF);

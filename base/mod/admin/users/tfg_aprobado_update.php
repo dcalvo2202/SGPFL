@@ -21,12 +21,16 @@ mysqli_stmt_close($valida);
 $comite_id     = (int)($_POST['comite'] ?? 0);
 $fecha_raw     = $_POST['fecha_aprobacion'] ?? '';
 $identificador = $_SESSION['identificador_preview'] ?? ($_POST['identificador'] ?? '');
-$aprobado      = 1;
+// Nuevo: leer y validar estado aprobado (1,2,3)
+$aprobado      = isset($_POST['aprobado']) ? (int)$_POST['aprobado'] : 0;
 
 if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $fecha_raw)) {
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
 if ($nombre === '' || !$comite_id) {
+    header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
+}
+if (!in_array($aprobado, [1,2,3], true)) {
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
 if (!isset($_FILES['documento']) || $_FILES['documento']['error'] !== UPLOAD_ERR_OK) {
@@ -62,7 +66,7 @@ try {
     if (!$stmt) { throw new Exception(mysqli_error($id_con)); }
     mysqli_stmt_bind_param(
         $stmt,
-        "sisbsss",
+        "sisisss",
         $nombre,
         $comite_id,
         $documento_blob,

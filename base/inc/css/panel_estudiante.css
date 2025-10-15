@@ -41,15 +41,6 @@
 
 /* --- Barra de Navegación (Navbar) --- */
 
-/* --- Barra de Navegación (Navbar) --- */
-
-.navbar-una {
-    background: linear-gradient(135deg, #034991, #023366) !important;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    padding: 1rem 0;
-    min-height: 80px;
-}
-
 .navbar-una .container-fluid {
     display: flex;
     justify-content: space-between;
@@ -67,23 +58,14 @@
     min-width: 280px;
 }
 
-.logo-una {
-    height: 50px;
-    width: auto;
-    background: white;
-    padding: 5px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
 .header-text h5 {
-    font-size: 1.1rem;
+    font-size: 1.6rem !important;
     margin: 0;
     letter-spacing: 0.5px;
 }
 
 .header-text small {
-    font-size: 0.85rem;
+    font-size: 1.4rem;
     font-weight: 500;
 }
 
@@ -91,15 +73,17 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .user-info i {
     color: #ffffff;
+    font-size: 1.3rem;
 }
 
 .user-info span {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .user-details {
@@ -110,15 +94,15 @@
 }
 
 .user-details small {
-    font-size: 0.8rem;
+    font-size: 1.4rem;
     white-space: nowrap;
 }
 
 .navbar-una .btn-outline-light {
     border: 1.5px solid rgba(255,255,255,0.3);
     color: white;
-    padding: 4px 12px;
-    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.55rem;
     border-radius: 6px;
     transition: all 0.3s ease;
     font-weight: 500;

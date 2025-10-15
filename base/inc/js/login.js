@@ -137,7 +137,7 @@ function Do_Login(){
                 }
                 // Estudiante con propuesta TFG - Redirigir al panel estudiante
                 else if(response.trim() == "estudiante_con_tfg"){
-                    window.location=document.getElementById("cds_domain_locate").value+"panel_estudiante.php";
+                    window.location=document.getElementById("cds_domain_locate").value+"Panel_SubirTFG.php";
                 }
                 // Estudiante sin propuesta TFG - Redirigir al formulario
                 else if(response.trim() == "estudiante_sin_tfg"){

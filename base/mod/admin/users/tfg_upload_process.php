@@ -1,4 +1,6 @@
 <?php
+// =============================== INICIALIZACIÓN Y CONFIGURACIÓN ===============================
+
 // Iniciar output buffering para capturar cualquier salida
 ob_start();
 
@@ -8,6 +10,8 @@ ini_set('display_errors', 0);
 ini_set('log_errors', 1);
 ini_set('max_execution_time', 300);
 ini_set('memory_limit', '256M');
+
+// =============================== AUTENTICACIÓN Y SESIÓN ===============================
 
 // VERIFICAR AUTENTICACIÓN ANTES QUE NADA
 include("../../login/check.php");
@@ -181,7 +185,8 @@ try {
     }
 
     // IMPORTANTE: Para BLOB, primero bind_param con NULL, luego send_long_data
-    $tfg_stmt->bind_param("ssssbssi", $user_id, $title, $disciplines, $description, $null_blob, $file_name, $mime_type, $file_size);
+    // Usar el nombre de archivo único generado, no el original
+    $tfg_stmt->bind_param("ssssbssi", $user_id, $title, $disciplines, $description, $null_blob, $unique_filename, $mime_type, $file_size);
     
     // Enviar el BLOB por separado si existe
     if ($document_data !== null && strlen($document_data) > 0) {
@@ -197,6 +202,53 @@ try {
 
     $tfg_id = $conn->insert_id;
     $tfg_stmt->close();
+
+    // =============================== INSERCIÓN EN HISTORIAL DE VERSIONES ===============================
+
+    //include_once(__DIR__ . '/../../../inc/tfg_proposal_functions.php');
+    //limitarVersionesYAgregarHistorial($conn, $tfg_id, $user_id, $unique_filename, $mime_type, $file_size, $document_data, $null_blob);
+
+    /* Contar cuántas versiones existen para esta propuesta
+    $stmt = $conn->prepare("SELECT id FROM tfg_proposal_history WHERE proposal_id = ? ORDER BY created_at ASC");
+    $stmt->bind_param("i", $tfg_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $version_ids = [];
+    while ($row = $result->fetch_assoc()) {
+        $version_ids[] = $row['id'];
+    }
+    $stmt->close();
+
+    // Si ya hay 5 versiones, eliminar la más antigua
+    if (count($version_ids) >= 5) {
+        $oldest_id = $version_ids[0];
+        $stmt = $conn->prepare("DELETE FROM tfg_proposal_history WHERE id = ?");
+        $stmt->bind_param("i", $oldest_id);
+        $stmt->execute();
+        $stmt->close();
+    }*/
+
+    // Insertar la versión inicial en el historial
+    $history_sql = "INSERT INTO tfg_proposal_history (proposal_id, document, file_name, mime_type, file_size, status, reviewed_by, comments, created_at) 
+                    VALUES (?, ?, ?, ?, ?, 'Pendiente de Revisión', ?, 'Versión inicial subida por el estudiante', NOW())";
+    $history_stmt = $conn->prepare($history_sql);
+    if ($history_stmt) {
+        $history_stmt->bind_param("ibssis", $tfg_id, $null_blob, $unique_filename, $mime_type, $file_size, $user_id);
+         // Enviar el BLOB por separado si existe, igual que en la inserción principal
+        if ($document_data !== null && strlen($document_data) > 0) {
+            $history_stmt->send_long_data(1, $document_data); // El índice 1 corresponde al segundo '?' (document)
+        }
+        
+        if (!$history_stmt->execute()) {
+            throw new Exception("Error al insertar en historial: " . $history_stmt->error);
+        }
+        $history_stmt->close();
+    } else {
+        throw new Exception("Error al preparar la consulta de historial: " . $conn->error);
+    }
+    
+    // =============================== CREACIÓN DE PROYECTO Y MIEMBROS ===============================
 
     // 2. Crear proyecto asociado con estructura correcta
     // registered_projects tiene: id, tfg_proposal_id, project_type_id, status, start_date, end_date, final_grade, supervisor_id, created_at, updated_at
@@ -254,7 +306,7 @@ try {
         }
     }
 
-    // Confirmar transacción
+    // =============================== CONFIRMAR TRANSACCIÓN ===============================
     $conn->commit();
     $conn->close();
 
@@ -262,7 +314,13 @@ try {
     while (ob_get_level() > 0) {
         ob_end_clean();
     }
+
+    // =============================== NOTIFICACIONES ===============================
     
+    // Enviar notificación al estudiante y a la secretaría académica
+    include __DIR__ . '/tfg_update_document.php';
+
+
     // Obtener ruta base desde configuración para redirigir
     require_once(__DIR__ . '/../../../config.inc');
     $redirect_url = $cds_domain . $cds_locate . 'panel_estudiante.php';
