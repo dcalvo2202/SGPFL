@@ -7,6 +7,9 @@ $cds_domain = $mySessionController->getVar("cds_domain");
 $cds_locate = $mySessionController->getVar("cds_locate");
 $base_url = $cds_domain . $cds_locate;
 
+// Configuración portable de rutas
+$base_path = realpath(__DIR__ . '/../../../');
+
 // OBTENER USUARIO REAL AUTENTICADO
 $current_user_id = $mySessionController->getVar("usuario");
 $current_user_name = $mySessionController->getVar("nombre");
@@ -27,107 +30,29 @@ $upload_check = canUploadFinalDocument($current_user_id);
 // URLs portables
 $panel_href = $base_url . "Panel_SubirTFG.php";
 $form_action = "tfg_upload_final_process.php";
+
+// Definir CSS adicionales para este formulario
+$additional_css = ['inc/css/tfg_upload.css'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subir Documento Final - SGPFL</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="<?= $base_url ?>inc/css/estilo.css">
-    <link rel="stylesheet" href="<?= $base_url ?>inc/css/panel_estudiante.css">
-    
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-        .status-vigente {
-            background-color: #d1e7dd;
-            color: #0f5132;
-            border: 1px solid #badbcc;
-        }
-        .status-prorroga {
-            background-color: #fff3cd;
-            color: #997404;
-            border: 1px solid #ffecb5;
-        }
-        .status-vencido {
-            background-color: #f8d7da;
-            color: #842029;
-            border: 1px solid #f5c2c7;
-        }
-        .section-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            overflow: hidden;
-            margin-bottom: 1.5rem;
-        }
-        .section-header {
-            background: linear-gradient(135deg, #034991, #023670);
-            color: white;
-            padding: 1.5rem;
-        }
-        .section-header h3 {
-            margin: 0;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white !important;
-        }
-        .section-body {
-            padding: 2rem;
-        }
-        .form-label.required::after {
-            content: " *";
-            color: #CD1719;
-        }
-    </style>
-</head>
-<body class="fondo-una d-flex flex-column min-vh-100">
-
+<!-- =============================== HEAD =============================== -->
+<?php include $base_path . '/head.php'; ?>
+<style>
+/* Forzar color blanco en headers azules - debe cargarse después de todos los CSS */
+.section-card .section-header *,
+.section-card .section-header h1,
+.section-card .section-header h2,
+.section-card .section-header h3,
+.section-card .section-header h4,
+.section-card .section-header h5,
+.section-card .section-header h6 {
+    color: white !important;
+}
+</style>
+<body class="d-flex flex-column min-vh-100 fondo-una">
     <!-- =============================== HEADER =============================== -->
-    <header class="navbar-una" style="background: linear-gradient(135deg, #CD1719, #A01215) !important; padding: 1.25rem 0;">
-        <div class="container-fluid px-4">
-            <div class="header-left d-flex align-items-center">
-                <img src="<?= htmlspecialchars($base_url) ?>img/logo.webp" alt="Logo UNA" class="logo-una" style="height: 70px;">
-                <div class="header-text ms-3">
-                    <h5 class="mb-0 text-white fw-bold">Universidad Nacional de Costa Rica</h5>
-                    <small class="text-light opacity-85">Escuela de Informática</small>
-                </div>
-            </div>
-            <div class="header-right text-end">
-                <div class="user-info text-white mb-2">
-                    <i class="bi bi-person-circle fs-5"></i>
-                    <span class="ms-2 fw-semibold"><?= htmlspecialchars($current_user_name) ?></span>
-                </div>
-                <div class="user-details">
-                    <small class="text-light opacity-75">ID: <?= htmlspecialchars($current_user_id) ?></small>
-                    <a href="<?= htmlspecialchars($base_url) ?>Panel_SubirTFG.php" class="btn btn-outline-light btn-sm ms-2" style="font-size: 0.85rem; padding: 0.4rem 0.85rem;">
-                        <i class="bi bi-arrow-left"></i> Volver
-                    </a>
-                    <a href="<?= htmlspecialchars($base_url) ?>mod/login/logout.php" class="btn btn-outline-light btn-sm ms-2" style="font-size: 0.85rem; padding: 0.4rem 0.85rem;">
-                        <i class="bi bi-box-arrow-right"></i> Salir
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
-
+    <?php include $base_path . '/header.php'; ?>
     <!-- =============================== CONTENIDO PRINCIPAL =============================== -->
     <main class="flex-fill">
         <div class="container my-5">
@@ -252,14 +177,8 @@ $form_action = "tfg_upload_final_process.php";
     </main>
 
     <!-- =============================== FOOTER =============================== -->
-    <footer class="footer-una mt-auto">
-        <div class="container">
-            <p class="mb-1">&copy; <?= date('Y') ?> Universidad Nacional de Costa Rica</p>
-            <small>Escuela de Informática - Proyecto SGPFL v3.0</small>
-        </div>
-    </footer>
+    <?php include $base_path . '/footer.php'; ?>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Mostrar información del archivo seleccionado
         document.getElementById('document').addEventListener('change', function(e) {
@@ -393,5 +312,7 @@ $form_action = "tfg_upload_final_process.php";
             });
         });
     </script>
+    <!-- =============================== FOOTER =============================== -->
+    <?php include $base_path . '/footer.php'; ?>
 </body>
 </html>

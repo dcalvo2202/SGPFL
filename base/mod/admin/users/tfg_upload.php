@@ -32,81 +32,31 @@ if ($current_user_rol != 4) {
 }
 
 // URLs portables
-$panel_href = $base_url . "panel_estudiante.php";
+$panel_href = $base_url . "Panel_SubirTFG.php";
 $form_action = "tfg_upload_process.php";
+
+// Definir CSS adicionales para este formulario
+$additional_css = ['inc/css/tfg_upload.css'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nueva Propuesta TFG - SGPFL</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="<?= $base_url ?>inc/css/estilo.css">
-    <link rel="stylesheet" href="<?= $base_url ?>inc/css/panel_estudiante.css">
-    <link rel="stylesheet" href="<?= $base_url ?>inc/css/tfg_upload.css">
-    
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .section-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            overflow: hidden;
-            margin-bottom: 1.5rem;
-        }
-        .section-header {
-            background: linear-gradient(135deg, #034991, #023670);
-            color: white;
-            padding: 1.5rem;
-        }
-        .section-header h3 {
-            margin: 0;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white !important;
-        }
-        .section-body {
-            padding: 2rem;
-        }
-    </style>
-</head>
-<body class="fondo-una d-flex flex-column min-vh-100">
-
+<!-- =============================== HEAD =============================== -->
+<?php include $base_path . '/head.php'; ?>
+<style>
+/* Forzar color blanco en headers azules - debe cargarse después de todos los CSS */
+.section-card .section-header *,
+.section-card .section-header h1,
+.section-card .section-header h2,
+.section-card .section-header h3,
+.section-card .section-header h4,
+.section-card .section-header h5,
+.section-card .section-header h6 {
+    color: white !important;
+}
+</style>
+<body class="d-flex flex-column min-vh-100 fondo-una">
     <!-- =============================== HEADER =============================== -->
-    <header class="navbar-una" style="background: linear-gradient(135deg, #CD1719, #A01215) !important; padding: 1.25rem 0;">
-        <div class="container-fluid px-4">
-            <div class="header-left d-flex align-items-center">
-                <img src="<?= htmlspecialchars($base_url) ?>img/logo.webp" alt="Logo UNA" class="logo-una" style="height: 70px;">
-                <div class="header-text ms-3">
-                    <h5 class="mb-0 text-white fw-bold">Universidad Nacional de Costa Rica</h5>
-                    <small class="text-light opacity-85">Escuela de Informática</small>
-                </div>
-            </div>
-            <div class="header-right text-end">
-                <div class="user-info text-white mb-2">
-                    <i class="bi bi-person-circle fs-5"></i>
-                    <span class="ms-2 fw-semibold"><?= htmlspecialchars($current_user_name) ?></span>
-                </div>
-                <div class="user-details">
-                    <small class="text-light opacity-75">ID: <?= htmlspecialchars($current_user_id) ?></small>
-                    <a href="<?= htmlspecialchars($base_url) ?>Panel_SubirTFG.php" class="btn btn-outline-light btn-sm ms-2" style="font-size: 0.85rem; padding: 0.4rem 0.85rem;">
-                        <i class="bi bi-arrow-left"></i> Volver
-                    </a>
-                    <a href="<?= htmlspecialchars($base_url) ?>mod/login/logout.php" class="btn btn-outline-light btn-sm ms-2" style="font-size: 0.85rem; padding: 0.4rem 0.85rem;">
-                        <i class="bi bi-box-arrow-right"></i> Salir
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
+    <?php include $base_path . '/header.php'; ?>
 
     <!-- =============================== CONTENIDO PRINCIPAL =============================== -->
     <main class="flex-fill">
@@ -276,17 +226,8 @@ $form_action = "tfg_upload_process.php";
 
         </div>
     </main>
-
     <!-- =============================== FOOTER =============================== -->
-    <footer class="footer-una mt-auto">
-        <div class="container">
-            <p class="mb-1">&copy; <?= date('Y') ?> Universidad Nacional de Costa Rica</p>
-            <small>Escuela de Informática - Proyecto SGPFL v3.0</small>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <?php include $base_path . '/footer.php'; ?>
     <script src="<?= $base_url ?>inc/js/tfg_upload.js"></script>
-    
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php 
 include("mod/login/check.php");
-include('includes.php');
+// includes.php comentado porque causa problemas con rutas relativas en subdirectorios
+// include('includes.php');
 include('lang/lang.es');
 
 // Obtener variables de sesión
@@ -28,7 +29,10 @@ $base_url = $cds_domain . $cds_locate;
             </div>
             <div class="user-details">
                 <span class="text-light opacity-75">ID: <?= htmlspecialchars($current_user_id) ?></span>
-                <a href="mod/login/logout.php" class="btn btn-outline-light btn-sm ms-3">
+                <button onclick="window.history.back()" class="btn btn-outline-light btn-sm ms-3" title="Volver a la página anterior">
+                    <i class="bi bi-arrow-left"></i> Volver
+                </button>
+                <a href="mod/login/logout.php" class="btn btn-outline-light btn-sm ms-2">
                     <i class="bi bi-box-arrow-right"></i> Salir
                 </a>
             </div>

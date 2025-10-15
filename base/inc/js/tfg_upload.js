@@ -439,7 +439,8 @@ class TfgUploadManager {
     
     validateForm() {
         const title = document.getElementById('inp-title').value.trim();
-        const disciplines = document.getElementById('inp-disciplines').value.trim();
+        const disciplinesElement = document.getElementById('inp-disciplines');
+        const disciplines = disciplinesElement ? disciplinesElement.value.trim() : ''; // Opcional
         const projectType = document.getElementById('sel-project-type').value;
         const projectDescription = document.getElementById('txt-project-description').value.trim();
         // ===== INICIO DE CAMBIOS SOLICITADOS =====
@@ -464,9 +465,7 @@ class TfgUploadManager {
             errors.push("El título debe ser válido (10-255 caracteres)");
         }
         
-        if (!disciplines) {
-            errors.push("Las disciplinas son obligatorias");
-        }
+        // Disciplinas es opcional - validación removida
         
         if (!projectType) {
             errors.push("Debe seleccionar un tipo de proyecto");
