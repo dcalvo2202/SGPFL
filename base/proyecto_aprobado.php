@@ -240,6 +240,16 @@ $fecha_actual = date('Y-m-d');
       <?php endforeach; ?>
     </select>
 
+    <!-- Nuevo: Estado de aprobación -->
+    <label for="aprobado">Estado de aprobación:</label>
+    <select id="aprobado" name="aprobado" required>
+      <option value="">Seleccione estado</option>
+      <option value="1">Aprobado</option>
+      <option value="2">Sin aprobar</option>
+      <option value="3">Esperando correcciones</option>
+    </select>
+    <small style="color:#555;">Se enviará como tinyint (1–3) a la base de datos.</small>
+
     <label for="documento">Documento (Word, PDF, Excel):</label>
     <label for="documento" class="btn-tfg">Subir documento</label>
     <input type="file" id="documento" name="documento" accept=".pdf,.doc,.docx,.xls,.xlsx" required hidden>
