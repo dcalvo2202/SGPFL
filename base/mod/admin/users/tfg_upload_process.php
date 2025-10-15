@@ -315,7 +315,7 @@ try {
     // =============================== NOTIFICACIONES ===============================
     
     // Enviar notificación al estudiante y a la secretaría académica
-    //include __DIR__ . '/tfg_update_document.php';
+    include __DIR__ . '/tfg_update_document.php';
 
 
     // Obtener ruta base desde configuración para redirigir
