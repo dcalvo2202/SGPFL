@@ -125,6 +125,40 @@ function canUploadFinalDocument($user_id) {
     }
 }
 
+
+/**
+ * Limita a 5 versiones por documento final en tfg_files para un usuario y tipo de documento.
+ * Elimina la versión más antigua si ya existen 5 o más.
+ *
+ * @param mysqli $conn Conexión activa a la base de datos
+ * @param string $user_id ID del usuario que sube el documento
+ * @param string $document_type Tipo de documento (ej: 'Documento Final TFG')
+ * @return void
+ * @throws Exception Si ocurre un error en la base de datos
+ */
+function limitarVersionesTFGFiles($conn, $user_id, $document_type) {
+    // Obtener todas las versiones existentes para este usuario y tipo de documento
+    $stmt = $conn->prepare("SELECT id FROM tfg_files WHERE uploaded_by = ? AND document_type = ? ORDER BY upload_date ASC");
+    $stmt->bind_param("ss", $user_id, $document_type);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $version_ids = [];
+    while ($row = $result->fetch_assoc()) {
+        $version_ids[] = $row['id'];
+    }
+    $stmt->close();
+
+    // Si ya hay 5 versiones, eliminar la más antigua
+    if (count($version_ids) >= 5) {
+        $oldest_id = $version_ids[0];
+        $stmt = $conn->prepare("DELETE FROM tfg_files WHERE id = ?");
+        $stmt->bind_param("i", $oldest_id);
+        $stmt->execute();
+        $stmt->close();
+    }
+}
+
 /**
  * Guarda el documento final en la base de datos
  * Sin validar estructura (validación manual por CTFG)
@@ -183,6 +217,7 @@ function saveFinalDocument($proposal_id, $file_data, $user_id, $project_status) 
             $stmt->execute();
             $stmt->close();
         }
+        //limitarVersionesTFGFiles($conn, $user_id, $document_type);
 
         // 2. Insertar en tfg_files
         $sql_file = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by) 

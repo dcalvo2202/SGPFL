@@ -1,57 +1,55 @@
 <?php
+// filepath: c:\xampp\htdocs\base\tests\unit\TFGVersionLimitTest.php
 use PHPUnit\Framework\TestCase;
+
+require_once __DIR__ . '/../../inc/tfg_final_functions.php'; // Ajusta la ruta si es necesario
 
 class TFGVersionLimitTest extends TestCase
 {
     public function testLimiteVersionesTFGFiles()
     {
-        // Mock de la conexión y statements
-        $mockConn = $this->getMockBuilder(stdClass::class)
-            ->addMethods(['prepare'])
-            ->getMock();
+        $mockConn = $this->createMock(mysqli::class);
 
-        $mockStmtSelect = $this->getMockBuilder(stdClass::class)
-            ->addMethods(['bind_param', 'execute', 'get_result', 'close'])
-            ->getMock();
+        $mockStmtSelect = $this->createMock(mysqli_stmt::class);
+        $mockStmtDelete = $this->createMock(mysqli_stmt::class);
 
-        $mockStmtDelete = $this->getMockBuilder(stdClass::class)
-            ->addMethods(['bind_param', 'execute', 'close'])
-            ->getMock();
+        $mockResult = $this->createMock(mysqli_result::class);
 
         // Simular 5 versiones existentes
-        $mockResult = $this->getMockBuilder(stdClass::class)
-            ->addMethods(['fetch_assoc'])
-            ->getMock();
-
         $mockResult->expects($this->exactly(6))
             ->method('fetch_assoc')
             ->willReturnOnConsecutiveCalls(
                 ['id' => 1], ['id' => 2], ['id' => 3], ['id' => 4], ['id' => 5], null
             );
 
-        // Simular prepare para SELECT y DELETE
         $mockConn->expects($this->exactly(2))
             ->method('prepare')
-            ->withConsecutive(
-                [$this->stringContains('SELECT id FROM tfg_files')],
-                [$this->stringContains('DELETE FROM tfg_files')]
-            )
-            ->willReturnOnConsecutiveCalls($mockStmtSelect, $mockStmtDelete);
+            ->willReturnCallback(function($sql) use ($mockStmtSelect, $mockStmtDelete) {
+                if (strpos($sql, 'SELECT id FROM tfg_files') !== false) {
+                    return $mockStmtSelect;
+                }
+                if (strpos($sql, 'DELETE FROM tfg_files') !== false) {
+                    return $mockStmtDelete;
+                }
+                return null;
+            });
 
-        // Simular flujo de SELECT
-        $mockStmtSelect->expects($this->once())->method('bind_param');
+        $mockStmtSelect->expects($this->once())->method('bind_param')->with('ss', 'user123', 'Documento Final TFG');
         $mockStmtSelect->expects($this->once())->method('execute');
         $mockStmtSelect->expects($this->once())->method('get_result')->willReturn($mockResult);
         $mockStmtSelect->expects($this->once())->method('close');
 
-        // Simular flujo de DELETE
         $mockStmtDelete->expects($this->once())->method('bind_param')->with('i', 1);
         $mockStmtDelete->expects($this->once())->method('execute');
         $mockStmtDelete->expects($this->once())->method('close');
 
-        // Ejecutar lógica a testear (simplificada)
-        // ...aquí iría tu función, pero para test solo ejecutamos el flujo simulado...
-        // Si el código real está en una función, aquí la llamarías pasando $mockConn
-        $this->assertTrue(true); // Si no hay excepción, pasa el test
+        // Llama a la función real con los mocks y datos de prueba
+        limitarVersionesTFGFiles(
+            $mockConn,
+            'user123', // $user_id
+            'Documento Final TFG' // $document_type
+        );
+
+        $this->assertTrue(true);
     }
 }
