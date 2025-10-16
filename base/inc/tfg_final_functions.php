@@ -197,38 +197,41 @@ function saveFinalDocument($proposal_id, $file_data, $user_id, $project_status) 
         }
         
         // =============================== LÍMITE DE VERSIONES POR DOCUMENTO ===============================
-        $document_type = 'Documento Final TFG'; // O el tipo que corresponda según tu lógica
-        $stmt = $conn->prepare("SELECT id FROM tfg_files WHERE uploaded_by = ? AND document_type = ? ORDER BY upload_date ASC");
-        $stmt->bind_param("ss", $user_id, $document_type);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        $document_type = 'Documento Final TFG';
 
-        $version_ids = [];
-        while ($row = $result->fetch_assoc()) {
-            $version_ids[] = $row['id'];
-        }
-        $stmt->close();
+        // Eliminar versiones antiguas si hay más de 5
+        limitarVersionesTFGFiles($conn, $user_id, $document_type);
 
-        // Si ya hay 5 versiones, eliminar la más antigua
-        if (count($version_ids) >= 5) {
-            $oldest_id = $version_ids[0];
-            $stmt = $conn->prepare("DELETE FROM tfg_files WHERE id = ?");
-            $stmt->bind_param("i", $oldest_id);
-            $stmt->execute();
-            $stmt->close();
+        // Obtener la última versión para este usuario y tipo de documento
+        $sql_version = "SELECT MAX(version) AS max_version 
+                        FROM tfg_files 
+                        WHERE uploaded_by = ? 
+                        AND document_type = ?";
+
+        $stmt_version = $conn->prepare($sql_version);
+        $stmt_version->bind_param("ss", $user_id, $document_type);
+        $stmt_version->execute();
+        $result_version = $stmt_version->get_result();
+        $row_version = $result_version->fetch_assoc();
+        $next_version = 1; // Valor por defecto si no hay versiones previas
+
+        if ($row_version['max_version']) {
+            $next_version = $row_version['max_version'] + 1;
         }
-        //limitarVersionesTFGFiles($conn, $user_id, $document_type);
+        $stmt_version->close();
 
         // 2. Insertar en tfg_files
-        $sql_file = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by) 
-                     VALUES (?, ?, ?, ?, NULL, ?)";
+        $sql_file = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by, version, document_type) 
+                    VALUES (?, ?, ?, ?, NULL, ?, ?, ?)";
         $stmt_file = $conn->prepare($sql_file);
-        $stmt_file->bind_param("ssibs", 
+        $stmt_file->bind_param("ssibsds", 
             $file_data['name'], 
             $file_data['type'], 
             $file_data['size'], 
             $file_content,
-            $user_id
+            $user_id,
+            $next_version,
+            $document_type
         );
         
         // Enviar el BLOB

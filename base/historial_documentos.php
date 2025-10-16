@@ -21,6 +21,36 @@ if ($current_user_rol != 4) {
     exit;
 }
 
+function formatoLegible($mime_type) {
+    // Normalizar a minúsculas para comparaciones más fáciles
+    $mime = strtolower($mime_type);
+    
+    // Extraer la parte después del slash si existe
+    $parts = explode('/', $mime);
+    $mime = isset($parts[1]) ? $parts[1] : $mime;
+    
+    // Mapeo de tipos comunes
+    $tipos = [
+        'pdf' => 'PDF',
+        'vnd.openxmlformats-officedocument.wordprocessingml.document' => 'DOCX',
+        'vnd.openxmlformats-officedocument.spreadsheetml.sheet' => 'XLSX',
+        'vnd.openxmlformats-officedocument.presentationml.presentation' => 'PPTX',
+        'msword' => 'DOC',
+        'vnd.ms-excel' => 'XLS',
+        'vnd.ms-powerpoint' => 'PPT',
+        'plain' => 'TXT',
+        'jpeg' => 'JPEG',
+        'png' => 'PNG',
+        'gif' => 'GIF',
+        'zip' => 'ZIP',
+        'x-rar-compressed' => 'RAR',
+        'x-zip-compressed' => 'ZIP'
+    ];
+    
+    // Comprobar si existe en el mapeo, o devolver formato original en mayúsculas
+    return isset($tipos[$mime]) ? $tipos[$mime] : strtoupper($mime);
+}
+
 // =============================== OBTENER ID DE PROYECTO ===============================
 
 // Buscar el project_id asociado al usuario autenticado
@@ -107,6 +137,7 @@ try {
     error_log("Error obteniendo versiones de propuestas: " . $e->getMessage());
 }
 
+var_dump($propuestas_vers);
 // =============================== OBTENER DOCUMENTO FINAL DE TFG ===============================
 
 // Documento final de TFG (último entregado)
@@ -114,7 +145,7 @@ try {
     $conn = new mysqli($db_host, $usuario, $clave, $db);
     $conn->set_charset("utf8");
     $sql = "SELECT fd.id as doc_id, fd.proposal_id, fd.status, fd.project_status, fd.submitted_at,
-                   f.id as file_id, f.file_name, f.mime_type, f.file_size, f.version, f.document_type, f.upload_date
+                   f.id as file_id, tp.title, f.file_name, f.mime_type, f.file_size, f.version, f.document_type, f.upload_date
             FROM tfg_final_documents fd
             INNER JOIN tfg_files f ON fd.file_id = f.id
             INNER JOIN tfg_proposals tp ON fd.proposal_id = tp.id
@@ -129,7 +160,7 @@ try {
     while ($row = $result->fetch_assoc()) {
         $doc = [
             'id' => $row['file_id'],
-            'title' => $row['file_name'],
+            'title' => $row['title'],
             'file_name' => $row['file_name'],
             'mime_type' => $row['mime_type'],
             'file_size' => $row['file_size'],
@@ -161,9 +192,10 @@ if (!empty($doc_final_ids)) {
             $conn->set_charset("utf8");
             
             // Obtener todas las versiones del mismo tipo de documento excepto la actual
-            $sql = "SELECT f.id, f.file_name, f.mime_type, f.file_size, f.version, f.document_type, f.upload_date, f.uploaded_by, fd.status
+            $sql = "SELECT f.id, tp.title, f.file_name, f.mime_type, f.file_size, f.version, f.document_type, f.upload_date, f.uploaded_by, fd.status, fd.proposal_id
                     FROM tfg_files f
                     LEFT JOIN tfg_final_documents fd ON f.id = fd.file_id
+                    INNER JOIN tfg_proposals tp ON fd.proposal_id = tp.id
                     WHERE f.document_type = ? 
                     AND f.uploaded_by = ?
                     AND f.id != ?
@@ -179,6 +211,7 @@ if (!empty($doc_final_ids)) {
             while ($row = $result->fetch_assoc()) {
                 $versions[] = [
                     'id' => $row['id'],
+                    'title' => $row['title'],
                     'file_name' => $row['file_name'],
                     'mime_type' => $row['mime_type'],
                     'file_size' => $row['file_size'],
@@ -290,12 +323,7 @@ try {
                                     <?php endif; ?>
                                 </td>
                                 <td data-label="Tamaño"><?= number_format($doc['file_size'] / (1024 * 1024), 2) ?> MB</td>
-                                <td data-label="Formato">
-                                    <?php
-                                    $parts = explode('/', $doc['mime_type']);
-                                    echo isset($parts[1]) ? strtoupper($parts[1]) : strtoupper($doc['mime_type']);
-                                    ?>
-                                </td>
+                                <td data-label="Formato"><?= formatoLegible($doc['mime_type']) ?></td>
                                 <td data-label="Acción">
                                     <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $doc['id'] ?>" class="btn-link-una">
                                         <i class="bi bi-download me-1"></i>
@@ -330,12 +358,7 @@ try {
                                                         <td data-label="Estado"><?= htmlspecialchars($version['status']) ?></td>
                                                         <td data-label="Versión"><?= number_format($version['version'], 1) ?></td>
                                                         <td data-label="Tamaño"><?= number_format($version['file_size'] / (1024 * 1024), 2) ?> MB</td>
-                                                        <td data-label="Formato">
-                                                            <?php
-                                                            $parts = explode('/', $version['mime_type']);
-                                                            echo isset($parts[1]) ? strtoupper($parts[1]) : strtoupper($version['mime_type']);
-                                                            ?>
-                                                        </td>
+                                                        <td data-label="Formato"><?= formatoLegible($version['mime_type']) ?></td>
                                                         <td data-label="Acción">
                                                             <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $version['id'] ?>" class="btn-link-una">
                                                                 <i class="bi bi-download me-1"></i>
@@ -370,17 +393,12 @@ try {
                                                 <tbody>
                                                     <?php foreach ($versiones_docs_finales[$doc['document_type']] as $version): ?>
                                                     <tr>
-                                                        <td data-label="Documento"><?= htmlspecialchars($doc['tipo']) ?>: <?= htmlspecialchars($version['file_name']) ?></td>
+                                                        <td data-label="Documento"><?= htmlspecialchars($doc['tipo']) ?>: <?= htmlspecialchars($version['title']) ?></td>
                                                         <td data-label="Fecha"><?= date('d/m/Y', strtotime($version['created_at'])) ?></td>
                                                         <td data-label="Estado"><?= htmlspecialchars($version['status']) ?></td>
                                                         <td data-label="Versión"><?= number_format($version['version'], 1) ?></td>
                                                         <td data-label="Tamaño"><?= number_format($version['file_size'] / (1024 * 1024), 2) ?> MB</td>
-                                                        <td data-label="Formato">
-                                                            <?php
-                                                            $parts = explode('/', $version['mime_type']);
-                                                            echo isset($parts[1]) ? strtoupper($parts[1]) : strtoupper($version['mime_type']);
-                                                            ?>
-                                                        </td>
+                                                        <td data-label="Formato"><?= formatoLegible($version['mime_type']) ?></td>
                                                         <td data-label="Acción">
                                                             <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $version['id'] ?>" class="btn-link-una">
                                                                 <i class="bi bi-download me-1"></i>
