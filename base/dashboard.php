@@ -2,24 +2,27 @@
     include(dirname(__FILE__) . "/lib/mysession/mySession.class.php");
     include(dirname(__FILE__) . "/lib/mysession/mySession.conf.php");
 
-    // Redirigir a logout si la configuración de sesión está definida para evitar conflictos
-    if (isset($_MYSESSION_CONF)) {
-        header("Location: logout.php");
-        exit();
-    }
-
     $mySessionController = mySession::getIstance($_MYSESSION_CONF);
     $rol = $mySessionController->getVar("rol");
 
+    // Redirigir al logout si la sesión es invalida 
+    //(Sin esto es cuando sale el error: Fatal error: Unable to load session. in C:\xampp\htdocs\base\lib\mysession\mySession.class.php on line 644)
+    // Pero si se habilita deja de funcionar el botón de inicio en el encabezado.
+    /*if (isset($_MYSESSION_CONF)) {
+        header("Location: logout.php");
+        exit();
+    }
+    */
+
     // Redirigir al login si no hay rol definido
     if (!$rol) {
-        header("Location: login.php");
+        header("Location: logout.php");
         exit();
     }
 
     switch ($rol) {
         case 1: // Administrador
-             include 'panel_subdireccion.php';
+            include 'main.php';
             break;
         case 2: // Gestor Académico
             include 'panel_subdireccion.php';

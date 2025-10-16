@@ -50,114 +50,33 @@ if (isset($_GET['ok']))  $mensaje = '<div style="color:green;">exitoso</div>';
 if (isset($_GET['err'])) $mensaje = '<div style="color:red;">fallido Intente nuevamente</div>';
 
 $fecha_actual = date('Y-m-d');
+
+// Configura el head estandarizado
+$page_title = 'Registrar proyecto aprobado';
+$inlineStyles = <<<'CSS'
+:root {
+  --white:#fcfdfd; --navy-dark:#092567; --navy-mid:#0e4d93; --sky:#aacef5;
+  --red:#bd1016; --red-mid:#a80f10; --red-dark:#8f0b0b; --red-light:#f4c4c4;
+}
+body{margin:0;min-height:100vh;background:var(--white);font-family:sans-serif;}
+.hero{height:220px;background:linear-gradient(180deg,var(--red),var(--red-dark) 60%);position:relative;}
+.hero svg{position:absolute;bottom:0;width:100%;height:70%;}
+form{width:80%;max-width:500px;margin:0 auto 60px;display:flex;flex-direction:column;gap:15px;background:#fff;padding:30px 40px;border-radius:10px;box-shadow:0 2px 12px rgba(9,37,103,.08);}
+label{font-weight:bold;color:var(--navy-dark);}
+input,select,button{padding:8px;font-size:1rem;border-radius:4px;border:1px solid #ccc;}
+input[type="file"]{border:none;}
+button{background:var(--navy-mid);color:#fff;border:none;cursor:pointer;transition:background .3s;margin-top:10px;}
+button:hover{background:var(--navy-dark);}
+.btn-tfg{display:inline-block;background:#1e73be;color:#fff;padding:10px 18px;border-radius:6px;font-size:14px;font-family:Arial,sans-serif;cursor:pointer;text-align:center;box-shadow:0 2px 4px rgba(0,0,0,.2);transition:background-color .3s;}
+.btn-tfg:hover{background:#155a92;}
+.hero svg polygon:nth-of-type(1){fill:var(--red-mid);opacity:.95;}
+.hero svg polygon:nth-of-type(2){fill:var(--red-dark);opacity:.85;}
+.hero svg polygon:nth-of-type(3){fill:var(--red-light);opacity:.18;}
+CSS;
 ?>
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8"> 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Registrar proyecto aprobado</title>
-  <style>
-  :root {
-    --white: #fcfdfd;
-    --navy-dark: #092567;
-    --navy-mid: #0e4d93;
-    --sky: #aacef5;
-    --red: #bd1016;
-    /* Nuevas tonalidades rojas para el header */
-    --red-mid: #a80f10;
-    --red-dark: #8f0b0b;
-    --red-light: #f4c4c4;
-  }
-  body {
-    margin: 0;
-    min-height: 100vh;
-    background: var(--white);
-    font-family: sans-serif;
-  }
-  /* Header azul */
-  .hero {
-    height: 220px;
-    /* Antes azul -> ahora rojos */
-    background: linear-gradient(180deg, var(--red), var(--red-dark) 60%);
-    position: relative;
-  }
-  .hero svg {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 70%;
-  }
-  
-  /* Formulario */
-  form {
-    width: 80%;
-    max-width: 500px;
-    margin: 0 auto 60px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background: #fff;
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(9,37,103,0.08);
-  }
-  label {
-    font-weight: bold;
-    color: var(--navy-dark);
-  }
-  input, select, button {
-    padding: 8px;
-    font-size: 1rem;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  input[type="file"] {
-    border: none;
-  }
-  button {
-    background: var(--navy-mid);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background .3s;
-    margin-top: 10px;
-  }
-  button:hover {
-    background: var(--navy-dark);
-  }
-   .btn-tfg {
-    display: inline-block;
-    background-color: #1e73be;
-    color: #fff;
-    padding: 10px 18px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-family: Arial, sans-serif;
-    cursor: pointer;
-    text-align: center;
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
-    transition: background-color 0.3s;
-  }
-  .btn-tfg:hover {
-    background-color: #155a92;
-  }
-
-  .hero svg polygon:nth-of-type(1){
-    /* Azul -> rojo medio */
-    fill: var(--red-mid); opacity:0.95;
-  }
-  .hero svg polygon:nth-of-type(2){
-    /* Azul oscuro -> rojo oscuro */
-    fill: var(--red-dark); opacity:0.85;
-  }
-  .hero svg polygon:nth-of-type(3){
-    /* Cielo azul translúcido -> rojo claro translúcido */
-    fill: var(--red-light); opacity:0.18;
-  }
-
-</style>
-</head>
+<?php include __DIR__ . '/head.php'; ?>
 <body>
   <header class="hero">
     <svg viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
@@ -239,6 +158,16 @@ $fecha_actual = date('Y-m-d');
         </option>
       <?php endforeach; ?>
     </select>
+
+    <!-- Nuevo: Estado de aprobación -->
+    <label for="aprobado">Estado de aprobación:</label>
+    <select id="aprobado" name="aprobado" required>
+      <option value="">Seleccione estado</option>
+      <option value="1">Aprobado</option>
+      <option value="2">Sin aprobar</option>
+      <option value="3">Esperando correcciones</option>
+    </select>
+    <small style="color:#555;">Se enviará como tinyint (1–3) a la base de datos.</small>
 
     <label for="documento">Documento (Word, PDF, Excel):</label>
     <label for="documento" class="btn-tfg">Subir documento</label>

@@ -46,4 +46,7 @@ if (!isset($favicon_url)) {
 
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <?php if (!empty($extra_head)) echo $extra_head; ?>
+    <?php if (!empty($inlineStyles)) echo "<style>\n{$inlineStyles}\n</style>"; ?>
 </head>
