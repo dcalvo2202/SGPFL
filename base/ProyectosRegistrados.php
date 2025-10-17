@@ -151,7 +151,9 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
       <ul class="list-group">
         <?php foreach ($proyectos_aprobados as $p): ?>
           <?php list($lbl,$bdg) = estadoInfo((int)$p['aprobado']); ?>
-          <li class="list-group-item">
+          <li class="list-group-item"
+              data-proyecto-id="<?php echo (int)$p['id_aprobado']; ?>"
+              data-proyecto-nombre="<?php echo htmlspecialchars($p['nombre'], ENT_QUOTES, 'UTF-8'); ?>">
             <div class="d-flex justify-content-between align-items-start">
               <div>
                 <div class="fw-semibold"><?php echo htmlspecialchars($p['nombre']); ?></div>
@@ -163,7 +165,14 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
                   Fecha: <?php echo htmlspecialchars(substr($p['fecha_creacion'],0,10)); ?>
                 </small>
               </div>
-              <span class="badge bg-<?php echo $bdg; ?>"><?php echo $lbl; ?></span>
+              <div class="d-flex align-items-center gap-2">
+                <!-- Enlace directo (sin popup) -->
+                <a class="btn btn-sm btn-outline-info"
+                   href="NotasProyecto.php?id=<?php echo (int)$p['id_aprobado']; ?>&nombre=<?php echo rawurlencode($p['nombre']); ?>">
+                  <i class="bi bi-journal-text"></i> Notas
+                </a>
+                <span class="badge bg-<?php echo $bdg; ?>"><?php echo $lbl; ?></span>
+              </div>
             </div>
           </li>
         <?php endforeach; ?>
