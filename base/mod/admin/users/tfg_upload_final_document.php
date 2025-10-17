@@ -281,6 +281,11 @@ $additional_css = ['inc/css/tfg_upload.css'];
                         Swal.close();
                         
                         if (data.success) {
+
+                            // Notificar al estudiante y la secretaria
+                            fetch('send_tfg_mail.php', { method: 'POST' });
+
+                            // Mostrar éxito
                             Swal.fire({
                                 icon: 'success',
                                 title: '¡Documento subido!',
