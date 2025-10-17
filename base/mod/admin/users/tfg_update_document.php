@@ -16,6 +16,12 @@ try {
     // =============================== CONEXIÓN A BASE DE DATOS ===============================
     include __DIR__ . '/../../../inc/db/bdcommon.inc';
 
+    $conn = new mysqli($db_host, $usuario, $clave, $db);
+    if ($conn->connect_error) {
+        error_log('No se pudo crear la conexión a la base de datos: ' . $conn->connect_error);
+        exit;
+    }
+
     // =============================== OBTENER DATOS DEL USUARIO ===============================
     $stmt_user = $conn->prepare("SELECT u.email, u.nombre FROM sis_user u WHERE u.id = ?");
     $stmt_user->bind_param("s", $user_id);
@@ -33,7 +39,7 @@ try {
     $base_url = "https://localhost/base/";
     $historial_url = $base_url . "historial_documentos.php";
     $historial_url_secretaria = $base_url . "panel_subdireccion.php";
-    $secretaria_email = "secretaria@ejemplo.com";
+    $secretaria_email = "rodri100ro@gmail.com";
     $subject = "Nueva versión de documento de TFG subida";
 
     // Mensaje para el estudiante
@@ -54,23 +60,16 @@ try {
     $message_secretaria .= $historial_url_secretaria . "\n\n";
     $message_secretaria .= "Saludos,\nSistema SGPFL - UNA";
 
-    $headers = "From: calvoss2002@gmail.com\r\n";
-    $headers .= "Reply-To: calvoss2002@gmail.com\r\n";
+    $headers = "From: rodri100ro@gmail.com\r\n";
+    $headers .= "Reply-To: rodri100ro   @gmail.com\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-    $mail1 = mail($user_info['email'], $subject, $message_estudiante, $headers);
+    $mail1 = mail($secretaria_email, $subject, $message_estudiante, $headers);
     $mail2 = mail($secretaria_email, $subject, $message_secretaria, $headers);
 
-    if ($mail1 && $mail2) {
-        error_log("Notificación enviada a estudiante y secretaría.");
-        echo json_encode(['success' => true, 'message' => 'Notificaciones enviadas correctamente.']);
-    } else {
-        error_log("Error enviando notificación de actualización de documento.");
-        throw new Exception('Error enviando notificaciones.');
-    }
+    error_log("Notificación enviada a estudiante y secretaría.");
 } catch (Exception $e) {
-    error_log("Error en tfg_update_document.php: " . $e->getMessage());
-    echo json_encode(['success' => false, 'message' => 'Ocurrió un error: ' . $e->getMessage()]);
+    error_log("Error enviando notificación: " . $e->getMessage());
 } finally {
     if (isset($conn) && $conn) $conn->close();
 }

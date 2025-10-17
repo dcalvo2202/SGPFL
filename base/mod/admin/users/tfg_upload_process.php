@@ -295,15 +295,10 @@ try {
         ob_end_clean();
     }
 
-    // =============================== NOTIFICACIONES ===============================
-    
-    // Enviar notificación al estudiante y a la secretaría académica
-    //include __DIR__ . '/tfg_update_document.php';
-
 
     // Obtener ruta base desde configuración para redirigir
     require_once(__DIR__ . '/../../../config.inc');
-    $redirect_url = $cds_domain . $cds_locate . 'panel_estudiante.php';
+    $redirect_url = $cds_domain . $cds_locate . 'Panel_SubirTFG.php';
     
     header('Content-Type: text/html; charset=UTF-8');
     ?>
@@ -375,7 +370,7 @@ try {
             confirmButtonColor: '#034991',
             allowOutsideClick: false,
             allowEscapeKey: false,
-            timer: 4000,
+            timer: 7000,
             timerProgressBar: true,
             showClass: {
                 popup: 'animate__animated animate__fadeInDown'
@@ -388,6 +383,9 @@ try {
                 confirmButton: 'swal2-confirm-btn'
             }
         }).then(function() {
+            // Lanzar el fetch SIN esperar la respuesta para enviar los correos al estudiante y la secretaria.
+            fetch('send_tfg_mail.php', { method: 'POST' });
+            // Redirigir inmediatamente
             window.location.href = '<?php echo $redirect_url; ?>';
         });
     </script>
