@@ -2345,6 +2345,7 @@ INSERT INTO project_types (type_name, max_members, description) VALUES
 -- ----------------------------
 -- Table structure for `tfg_files`
 -- Almacena los archivos (BLOB) separados para mejor rendimiento
+-- Los document_type definidos son: 'Propuesta TFG', 'Documento Final TFG'. El resto de archivos pueden tener cualquier tipo.
 -- ----------------------------
 DROP TABLE IF EXISTS `tfg_files`;
 CREATE TABLE `tfg_files` (
