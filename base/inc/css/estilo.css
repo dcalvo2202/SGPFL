@@ -187,6 +187,11 @@ p {
     text-decoration: none;
 }
 
+.custom-collapse {
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
 /* Estilo para el enlace de descarga */
 .btn-link-una {
     display: flex;

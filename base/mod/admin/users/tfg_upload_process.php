@@ -208,7 +208,7 @@ try {
     //include_once(__DIR__ . '/../../../inc/tfg_proposal_functions.php');
     //limitarVersionesYAgregarHistorial($conn, $tfg_id, $user_id, $unique_filename, $mime_type, $file_size, $document_data, $null_blob);
 
-    /* Contar cuántas versiones existen para esta propuesta
+    //Contar cuántas versiones existen para esta propuesta
     $stmt = $conn->prepare("SELECT id FROM tfg_proposal_history WHERE proposal_id = ? ORDER BY created_at ASC");
     $stmt->bind_param("i", $tfg_id);
     $stmt->execute();
@@ -227,7 +227,7 @@ try {
         $stmt->bind_param("i", $oldest_id);
         $stmt->execute();
         $stmt->close();
-    }*/
+    }
 
     // Insertar la versión inicial en el historial
     $history_sql = "INSERT INTO tfg_proposal_history (proposal_id, document, file_name, mime_type, file_size, status, reviewed_by, comments, created_at) 

@@ -92,6 +92,7 @@ try {
     $result = $stmt->get_result();
     if ($row = $result->fetch_assoc()) {
         $row['tipo'] = 'Propuesta TFG'; // Identificador de tipo de documento
+        $row['version'] = 1; // Versión inicial
         $documentos[] = $row;
     }
     $stmt->close();
@@ -118,7 +119,7 @@ try {
         INNER JOIN tfg_proposals tp ON tph.proposal_id = tp.id
         WHERE tp.user_id = ?
         AND tph.id != ?  /* Excluir la propuesta principal */
-        ORDER BY tph.created_at ASC /* Orden de más antigua a más reciente */
+        ORDER BY tph.created_at DESC /* Orden de más antigua a más reciente */
         LIMIT 5";  
         
     $stmt = $conn->prepare($sql);
@@ -128,7 +129,6 @@ try {
     
     $version = 1; // Contador de versión
     while ($row = $result->fetch_assoc()) {
-        $row['version'] = $version++; // Asignar número de versión
         $propuestas_vers[] = $row;
     }
     $stmt->close();
@@ -137,7 +137,6 @@ try {
     error_log("Error obteniendo versiones de propuestas: " . $e->getMessage());
 }
 
-var_dump($propuestas_vers);
 // =============================== OBTENER DOCUMENTO FINAL DE TFG ===============================
 
 // Documento final de TFG (último entregado)
@@ -167,7 +166,8 @@ try {
             'status' => $row['status'],
             'created_at' => $row['submitted_at'],
             'tipo' => $row['document_type'],
-            'document_type' => $row['document_type']
+            'document_type' => $row['document_type'],
+            'version' => $row['version']
         ];
         $documentos[] = $doc;
         
@@ -264,7 +264,7 @@ try {
             'created_at' => $row['upload_date'],
             'tipo' => $row['document_type'],
             'document_type' => $row['document_type'],
-            'version' => $row['version']
+            'version' => $row['version'] ?? 1.0
         ];
         $documentos[] = $doc;
     }
@@ -311,9 +311,8 @@ try {
                                 <td data-label="Versión">
                                     <?php if (($doc['tipo'] === 'Propuesta TFG' && !empty($propuestas_vers)) || 
                                             ($doc['tipo'] === 'Documento Final TFG' && !empty($versiones_docs_finales[$doc['document_type']]))): ?>
-                                        <button class="btn btn-link-una" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#<?= $collapseId ?>"
-                                            aria-expanded="false" aria-controls="<?= $collapseId ?>">
+                                        <button class="btn btn-link-una toggle-collapse" type="button"
+                                        data-target="<?= $collapseId ?>">
                                             Versiones
                                         </button>
                                     <?php elseif (isset($doc['version'])): ?>
@@ -336,7 +335,7 @@ try {
                             <?php if ($doc['tipo'] === 'Propuesta TFG' && !empty($propuestas_vers)): ?>
                             <tr class="collapse-row">
                                 <td colspan="7" class="p-0">
-                                    <div class="collapse" id="<?= $collapseId ?>">
+                                    <div class="custom-collapse" id="<?= $collapseId ?>" style="display: none;">
                                         <div class="bg-light py-2 px-4">
                                             <table class="table table-bordered mb-0 version-table">
                                                 <thead class="table-light">
@@ -353,10 +352,10 @@ try {
                                                 <tbody>
                                                     <?php foreach ($propuestas_vers as $version): ?>
                                                     <tr>
-                                                        <td data-label="Documento"><?= htmlspecialchars($doc['tipo']) ?>: <?= htmlspecialchars($version['title']) ?></td>
+                                                        <td data-label="Documento"><?= htmlspecialchars($version['title']) ?></td>
                                                         <td data-label="Fecha"><?= date('d/m/Y', strtotime($version['created_at'])) ?></td>
                                                         <td data-label="Estado"><?= htmlspecialchars($version['status']) ?></td>
-                                                        <td data-label="Versión"><?= number_format($version['version'], 1) ?></td>
+                                                        <td data-label="Versión" class="text-center">-</td>
                                                         <td data-label="Tamaño"><?= number_format($version['file_size'] / (1024 * 1024), 2) ?> MB</td>
                                                         <td data-label="Formato"><?= formatoLegible($version['mime_type']) ?></td>
                                                         <td data-label="Acción">
@@ -376,7 +375,7 @@ try {
                             <?php elseif ($doc['tipo'] === 'Documento Final TFG' && !empty($versiones_docs_finales[$doc['document_type']])): ?>
                             <tr class="collapse-row">
                                 <td colspan="7" class="p-0">
-                                    <div class="collapse" id="<?= $collapseId ?>">
+                                    <div class="custom-collapse" id="<?= $collapseId ?>" style="display: none;">
                                         <div class="bg-light py-2 px-4">
                                             <table class="table table-bordered mb-0 version-table">
                                                 <thead class="table-light">
@@ -393,7 +392,7 @@ try {
                                                 <tbody>
                                                     <?php foreach ($versiones_docs_finales[$doc['document_type']] as $version): ?>
                                                     <tr>
-                                                        <td data-label="Documento"><?= htmlspecialchars($doc['tipo']) ?>: <?= htmlspecialchars($version['title']) ?></td>
+                                                        <td data-label="Documento"><?= htmlspecialchars($version['file_name']) ?></td>
                                                         <td data-label="Fecha"><?= date('d/m/Y', strtotime($version['created_at'])) ?></td>
                                                         <td data-label="Estado"><?= htmlspecialchars($version['status']) ?></td>
                                                         <td data-label="Versión"><?= number_format($version['version'], 1) ?></td>
@@ -433,5 +432,18 @@ try {
   <!-- =============================== FOOTER =============================== -->
     <?php include 'footer.php'; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.toggle-collapse').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var targetId = this.getAttribute('data-target');
+                var target = document.getElementById(targetId);
+                if (target) {
+                    target.style.display = (target.style.display === 'none' || target.style.display === '') ? 'block' : 'none';
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>

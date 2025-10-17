@@ -2380,7 +2380,6 @@ CREATE TABLE `tfg_final_documents` (
   `submitted_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `submitted_by` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `unique_proposal_final` (`proposal_id`),
   KEY `idx_status` (`status`),
   KEY `idx_submitted_at` (`submitted_at`),
   KEY `fk_tfg_final_file` (`file_id`),
