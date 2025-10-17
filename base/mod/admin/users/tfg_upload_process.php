@@ -205,30 +205,10 @@ try {
 
     // =============================== INSERCIÓN EN HISTORIAL DE VERSIONES ===============================
 
-    //include_once(__DIR__ . '/../../../inc/tfg_proposal_functions.php');
-    //limitarVersionesYAgregarHistorial($conn, $tfg_id, $user_id, $unique_filename, $mime_type, $file_size, $document_data, $null_blob);
-
-    //Contar cuántas versiones existen para esta propuesta
-    $stmt = $conn->prepare("SELECT id FROM tfg_proposal_history WHERE proposal_id = ? ORDER BY created_at ASC");
-    $stmt->bind_param("i", $tfg_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    $version_ids = [];
-    while ($row = $result->fetch_assoc()) {
-        $version_ids[] = $row['id'];
-    }
-    $stmt->close();
-
-    // Si ya hay 5 versiones, eliminar la más antigua
-    if (count($version_ids) >= 5) {
-        $oldest_id = $version_ids[0];
-        $stmt = $conn->prepare("DELETE FROM tfg_proposal_history WHERE id = ?");
-        $stmt->bind_param("i", $oldest_id);
-        $stmt->execute();
-        $stmt->close();
-    }
-
+    // Limitar versiones a 5 y eliminar la más antigua si es necesario
+    include_once(__DIR__ . '/../../../inc/tfg_proposal_functions.php');
+    limitarVersionesYAgregarHistorial($conn, $user_id);
+        
     // Insertar la versión inicial en el historial
     $history_sql = "INSERT INTO tfg_proposal_history (proposal_id, document, file_name, mime_type, file_size, status, reviewed_by, comments, created_at) 
                     VALUES (?, ?, ?, ?, ?, 'Pendiente de Revisión', ?, 'Versión inicial subida por el estudiante', NOW())";

@@ -137,25 +137,41 @@ function canUploadFinalDocument($user_id) {
  * @throws Exception Si ocurre un error en la base de datos
  */
 function limitarVersionesTFGFiles($conn, $user_id, $document_type) {
-    // Obtener todas las versiones existentes para este usuario y tipo de documento
-    $stmt = $conn->prepare("SELECT id FROM tfg_files WHERE uploaded_by = ? AND document_type = ? ORDER BY upload_date ASC");
-    $stmt->bind_param("ss", $user_id, $document_type);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    $version_ids = [];
-    while ($row = $result->fetch_assoc()) {
-        $version_ids[] = $row['id'];
-    }
-    $stmt->close();
-
-    // Si ya hay 5 versiones, eliminar la más antigua
-    if (count($version_ids) >= 5) {
-        $oldest_id = $version_ids[0];
-        $stmt = $conn->prepare("DELETE FROM tfg_files WHERE id = ?");
-        $stmt->bind_param("i", $oldest_id);
+    try {
+        // 1. Obtener todas las versiones existentes para este usuario y tipo de documento
+        // Obtener todas las versiones existentes para este usuario y tipo de documento
+        $stmt = $conn->prepare("SELECT id FROM tfg_files WHERE uploaded_by = ? AND document_type = ? ORDER BY upload_date ASC");
+        $stmt->bind_param("ss", $user_id, $document_type);
         $stmt->execute();
+        $result = $stmt->get_result();
+
+        $version_ids = [];
+        while ($row = $result->fetch_assoc()) {
+            $version_ids[] = $row['id'];
+        }
         $stmt->close();
+
+
+        // Si ya hay 5 versiones, eliminar la más antigua
+        if (count($version_ids)-1 >= 5) {
+
+            $oldest_id = $version_ids[0];
+            $stmt = $conn->prepare("DELETE FROM tfg_final_documents WHERE file_id = ?");
+            $stmt->bind_param("i", $oldest_id);
+            $stmt->execute();
+            $stmt->close();
+
+            $oldest_id = $version_ids[0];
+            $stmt = $conn->prepare("DELETE FROM tfg_files WHERE id = ?");
+            $stmt->bind_param("i", $oldest_id);
+            $stmt->execute();
+            $stmt->close();
+
+            $conn->commit();
+        }
+    } catch (Exception $e) {
+        error_log("Error al gestionar versiones: " . $e->getMessage());
+        $conn->rollback();
     }
 }
 

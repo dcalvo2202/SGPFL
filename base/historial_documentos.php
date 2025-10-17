@@ -82,9 +82,9 @@ try {
     $conn = new mysqli($db_host, $usuario, $clave, $db);
     $conn->set_charset("utf8");
     $sql = "SELECT tp.id, tp.title, tp.file_name, tp.mime_type, tp.file_size, tp.status, tp.created_at
-            FROM registered_projects rp
-            INNER JOIN tfg_proposals tp ON rp.tfg_proposal_id = tp.id
+            FROM tfg_proposals tp 
             WHERE tp.user_id = ?
+            ORDER BY tp.created_at DESC
             LIMIT 1";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $current_user_id);
@@ -103,7 +103,6 @@ try {
 
 // Guardar el ID de la propuesta principal para excluirla de las versiones
 $propuesta_principal_id = $documentos[0]['id'] ?? 0;
-
 // =============================== OBTENER VERSIONES DE PROPUESTA TFG ===============================
 
 // Versiones históricas de la propuesta TFG (excluyendo la principal)
@@ -113,17 +112,17 @@ try {
     $conn->set_charset("utf8");
     
     // Consulta para ordenar de más antigua a más reciente
-    $sql = "SELECT tph.id, tph.proposal_id, tph.file_name, tph.mime_type, tph.file_size, 
+    $sql = "SELECT tp.id id_pro,tph.id, tph.proposal_id, tph.file_name, tph.mime_type, tph.file_size, 
                    tph.status, tph.comments, tph.created_at, tp.title
         FROM tfg_proposal_history tph
         INNER JOIN tfg_proposals tp ON tph.proposal_id = tp.id
         WHERE tp.user_id = ?
-        AND tph.id != ?  /* Excluir la propuesta principal */
-        ORDER BY tph.created_at DESC /* Orden de más antigua a más reciente */
-        LIMIT 5";  
+        AND tph.id != ? AND tp.id != ?  /* Excluir la propuesta principal */
+        ORDER BY tp.created_at DESC /* Orden de más antigua a más reciente */
+        LIMIT 4";  
         
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("si", $current_user_id, $propuesta_principal_id);
+    $stmt->bind_param("sii", $current_user_id, $propuesta_principal_id, $propuesta_principal_id);
     $stmt->execute();
     $result = $stmt->get_result();
     
@@ -144,7 +143,7 @@ try {
     $conn = new mysqli($db_host, $usuario, $clave, $db);
     $conn->set_charset("utf8");
     $sql = "SELECT fd.id as doc_id, fd.proposal_id, fd.status, fd.project_status, fd.submitted_at,
-                   f.id as file_id, tp.title, f.file_name, f.mime_type, f.file_size, f.version, f.document_type, f.upload_date
+                   f.id as file_id, f.file_name, f.mime_type, f.file_size, f.version, f.document_type, f.upload_date
             FROM tfg_final_documents fd
             INNER JOIN tfg_files f ON fd.file_id = f.id
             INNER JOIN tfg_proposals tp ON fd.proposal_id = tp.id
@@ -159,7 +158,7 @@ try {
     while ($row = $result->fetch_assoc()) {
         $doc = [
             'id' => $row['file_id'],
-            'title' => $row['title'],
+            'title' => $row['file_name'],
             'file_name' => $row['file_name'],
             'mime_type' => $row['mime_type'],
             'file_size' => $row['file_size'],
@@ -192,15 +191,14 @@ if (!empty($doc_final_ids)) {
             $conn->set_charset("utf8");
             
             // Obtener todas las versiones del mismo tipo de documento excepto la actual
-            $sql = "SELECT f.id, tp.title, f.file_name, f.mime_type, f.file_size, f.version, f.document_type, f.upload_date, f.uploaded_by, fd.status, fd.proposal_id
+            $sql = "SELECT f.id, fd.project_status as status, f.file_name, f.mime_type, f.file_size, f.version, f.document_type, f.upload_date, f.uploaded_by, fd.status, fd.proposal_id
                     FROM tfg_files f
                     LEFT JOIN tfg_final_documents fd ON f.id = fd.file_id
-                    INNER JOIN tfg_proposals tp ON fd.proposal_id = tp.id
                     WHERE f.document_type = ? 
                     AND f.uploaded_by = ?
                     AND f.id != ?
                     ORDER BY f.upload_date DESC
-                    LIMIT 5"; // Limitamos a 5 versiones
+                    LIMIT 4"; // Limitamos a 5 versiones
                     
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("ssi", $doc_info['document_type'], $current_user_id, $doc_info['file_id']);
@@ -211,7 +209,7 @@ if (!empty($doc_final_ids)) {
             while ($row = $result->fetch_assoc()) {
                 $versions[] = [
                     'id' => $row['id'],
-                    'title' => $row['title'],
+                    'title' => $row['file_name'],
                     'file_name' => $row['file_name'],
                     'mime_type' => $row['mime_type'],
                     'file_size' => $row['file_size'],
@@ -260,7 +258,7 @@ try {
             'file_name' => $row['file_name'],
             'mime_type' => $row['mime_type'],
             'file_size' => $row['file_size'],
-            'status' => 'Subido', // Estado genérico
+            'status' => '-', // Estado genérico
             'created_at' => $row['upload_date'],
             'tipo' => $row['document_type'],
             'document_type' => $row['document_type'],
@@ -324,10 +322,17 @@ try {
                                 <td data-label="Tamaño"><?= number_format($doc['file_size'] / (1024 * 1024), 2) ?> MB</td>
                                 <td data-label="Formato"><?= formatoLegible($doc['mime_type']) ?></td>
                                 <td data-label="Acción">
-                                    <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $doc['id'] ?>" class="btn-link-una">
-                                        <i class="bi bi-download me-1"></i>
-                                        <span>Descargar</span>
-                                    </a>    
+                                    <?php if ($doc['tipo'] === 'Propuesta TFG' && !empty($propuestas_vers)): ?>  
+                                        <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $doc['id'] ?>" class="btn-link-una">
+                                            <i class="bi bi-download me-1"></i>
+                                            <span>Descargar</span>
+                                        </a>
+                                    <?php elseif ($doc['tipo'] === 'Documento Final TFG' || $doc['tipo'] !== 'Propuesta TFG'): ?>
+                                        <a href="<?= $base_url . 'mod/admin/users/tfg_download_file.php?id=' . $doc['id'] ?>" class="btn-link-una">
+                                            <i class="bi bi-download me-1"></i>
+                                            <span>Descargar</span>    
+                                        </a>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                             
@@ -359,7 +364,7 @@ try {
                                                         <td data-label="Tamaño"><?= number_format($version['file_size'] / (1024 * 1024), 2) ?> MB</td>
                                                         <td data-label="Formato"><?= formatoLegible($version['mime_type']) ?></td>
                                                         <td data-label="Acción">
-                                                            <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $version['id'] ?>" class="btn-link-una">
+                                                            <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $version['id_pro'] ?>" class="btn-link-una">
                                                                 <i class="bi bi-download me-1"></i>
                                                                 <span>Descargar</span>
                                                             </a>    
@@ -399,7 +404,7 @@ try {
                                                         <td data-label="Tamaño"><?= number_format($version['file_size'] / (1024 * 1024), 2) ?> MB</td>
                                                         <td data-label="Formato"><?= formatoLegible($version['mime_type']) ?></td>
                                                         <td data-label="Acción">
-                                                            <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $version['id'] ?>" class="btn-link-una">
+                                                            <a href="<?= $base_url . 'mod/admin/users/tfg_download_file.php?id=' . $version['id'] ?>" class="btn-link-una">
                                                                 <i class="bi bi-download me-1"></i>
                                                                 <span>Descargar</span>
                                                             </a>
