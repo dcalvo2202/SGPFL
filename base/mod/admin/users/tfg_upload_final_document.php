@@ -283,7 +283,13 @@ $additional_css = ['inc/css/tfg_upload.css'];
                         if (data.success) {
 
                             // Notificar al estudiante y la secretaria
-                            fetch('send_tfg_mail.php', { method: 'POST' });
+                            fetch('send_tfg_mail.php', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/x-www-form-urlencoded'
+                                },
+                                body: 'tipo=Documento Final TFG'
+                            });
 
                             // Mostrar éxito
                             Swal.fire({

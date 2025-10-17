@@ -383,8 +383,14 @@ try {
                 confirmButton: 'swal2-confirm-btn'
             }
         }).then(function() {
-            // Lanzar el fetch SIN esperar la respuesta para enviar los correos al estudiante y la secretaria.
-            fetch('send_tfg_mail.php', { method: 'POST' });
+            // Lanzar el fetch sin esperar la respuesta para enviar las notificaciones al estudiante y la secretaria.
+            fetch('send_tfg_mail.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'tipo=Propuesta TFG'
+            });
             // Redirigir inmediatamente
             window.location.href = '<?php echo $redirect_url; ?>';
         });

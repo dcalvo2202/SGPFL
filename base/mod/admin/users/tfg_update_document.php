@@ -3,6 +3,7 @@
 include_once __DIR__ . '/../../../lib/mysession/mySession.class.php';
 include_once __DIR__ . '/../../../lib/mysession/mySession.conf.php';
 include('lang/lang.es');
+date_default_timezone_set('America/Costa_Rica');
 
 try {
     $mySessionController = mySession::getIstance($_MYSESSION_CONF);
@@ -37,7 +38,8 @@ try {
     }
 
     // =============================== NOTIFICACIÓN POR CORREO ===============================
-    $tipo = $_POST['tipo'] ?? 'Propuesta TFG';
+    // Si no se envía el tipo, se asume 'Documento' que redirecciona al mensaje por defecto
+    $tipo = $_POST['tipo'] ?? 'Documento';
 
     $base_url = "https://localhost/base/";
     $historial_url = $base_url . "historial_documentos.php";
