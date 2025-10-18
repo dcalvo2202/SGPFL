@@ -2361,7 +2361,6 @@ CREATE TABLE `tfg_files` (
   `document_type` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`),
   INDEX idx_file_id (id),
-  INDEX idx_user_id (uploaded_by),
   KEY `idx_upload_date` (`upload_date`),
   KEY `fk_tfg_files_user` (`uploaded_by`),
   CONSTRAINT `fk_tfg_files_user` FOREIGN KEY (`uploaded_by`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
