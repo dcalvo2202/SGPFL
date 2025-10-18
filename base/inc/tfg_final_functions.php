@@ -297,9 +297,6 @@ function saveFinalDocument($proposal_id, $file_data, $user_id, $project_status) 
         $conn->commit();
         $conn->close();
         
-        // =============================== NOTIFICACIÓN ===============================
-        // Llama al archivo de notificación estudiante, secretaria (ajusta la ruta si es necesario)
-        //include_once(__DIR__ . '/../../mod/admin/users/tfg_update_document.php');
 
         return [
             'success' => true,

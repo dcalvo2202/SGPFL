@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 require_once 'inc/db/db.php';
 
 // Generar Identificador unico 
@@ -78,16 +78,8 @@ CSS;
 <html lang="es">
 <?php include __DIR__ . '/head.php'; ?>
 <body>
-  <header class="hero">
-    <svg viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
-      <polygon points="0,140 120,110 220,120 360,90 520,120 680,100 840,135 1000,110 1200,140 1200,200 0,200"
-               fill="#0e4d93" opacity="0.95"/>
-      <polygon points="0,160 100,140 260,150 420,130 620,150 820,140 1000,160 1200,150 1200,200 0,200"
-               fill="#0b3b75" opacity="0.85"/>
-      <polygon points="0,180 200,170 400,175 600,170 800,175 1000,180 1200,175 1200,200 0,200"
-               fill="#aacef5" opacity="0.12"/>
-    </svg>
-  </header>
+
+  <?php include __DIR__ . '/header.php'; ?>
 
   <!-- Ribbon eliminado -->
 
