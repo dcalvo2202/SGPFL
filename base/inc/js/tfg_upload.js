@@ -553,7 +553,8 @@ class TfgUploadManager {
     }
     
     getCurrentUserId() {
-        return '112170040';
+        // Obtener el ID del usuario actual desde la variable global definida en PHP
+        return window.CURRENT_USER_ID || '112170040';
     }
     
     escapeHtml(text) {

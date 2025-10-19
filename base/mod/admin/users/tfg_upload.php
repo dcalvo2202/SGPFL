@@ -42,6 +42,11 @@ $additional_css = ['inc/css/tfg_upload.css'];
 <html lang="es">
 <!-- =============================== HEAD =============================== -->
 <?php include $base_path . '/head.php'; ?>
+<script>
+    // Pasar datos del usuario actual a JavaScript
+    window.CURRENT_USER_ID = '<?= htmlspecialchars($current_user_id) ?>';
+    window.CURRENT_USER_NAME = '<?= htmlspecialchars($current_user_name) ?>';
+</script>
 <style>
 /* Forzar color blanco en headers azules - debe cargarse después de todos los CSS */
 .section-card .section-header *,

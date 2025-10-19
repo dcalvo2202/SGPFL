@@ -322,7 +322,7 @@ try {
                                 <td data-label="Tamaño"><?= number_format($doc['file_size'] / (1024 * 1024), 2) ?> MB</td>
                                 <td data-label="Formato"><?= formatoLegible($doc['mime_type']) ?></td>
                                 <td data-label="Acción">
-                                    <?php if ($doc['tipo'] === 'Propuesta TFG' && !empty($propuestas_vers)): ?>  
+                                    <?php if ($doc['tipo'] === 'Propuesta TFG'): ?>  
                                         <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $doc['id'] ?>" class="btn-link-una">
                                             <i class="bi bi-download me-1"></i>
                                             <span>Descargar</span>

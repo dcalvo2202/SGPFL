@@ -43,8 +43,23 @@ $act4 = 4; //Editar
 $act5 = 5; //Eliminar
 $act6 = 6; //Imprimir
 
+
+$mod1 = 1; // Acceso
+$mod2 = 2; // Busqueda
+$mod3 = 3; // Historial y auditoria
+$mod4 = 4; // Notificaciones
+$mod5 = 5; // Documentacion y versionado
+$mod6 = 6; // Gestion de proyectos
+$mod7 = 7; // Reportes y paneles
+$mod8 = 8; // Gestion academica
+
+/*
+
+Modulos anteriores.
+
 $mod1 = 1; // Administracion
 $mod2 = 2; // Modulos
 $mod3 = 3; // Usuarios
+*/
 
 ?>
