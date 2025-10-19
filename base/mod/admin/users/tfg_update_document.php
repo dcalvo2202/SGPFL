@@ -10,7 +10,7 @@ try {
     $user_id = $mySessionController->getVar("usuario");
     $user_rol = $mySessionController->getVar("rol");
 
-    if (!$user_id || $user_rol != 4) {
+    if (!$user_id || !in_array($user_rol, [3, 4])) {
         http_response_code(403);
         throw new Exception('Acceso no autorizado');
     }
@@ -46,16 +46,81 @@ try {
     $historial_url_secretaria = $base_url . "panel_subdireccion.php";
     
     //$estudiante_email = $user_info['email'];
-    $secretaria_email = "rodri100ro@gmail.com";
+    $secretaria_email = "calvoss2002@gmail.com";
     
     // Configuración del correo
-    $headers = "From: rodri100ro@gmail.com\r\n";
-    $headers .= "Reply-To: rodri100ro@gmail.com\r\n";
+    $headers = "From: calvoss2002@gmail.com\r\n";
+    $headers .= "Reply-To: calvoss2002@gmail.com\r\n";
     $headers  = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
+    // =============================== LÓGICA DE REVISIÓN CTFG (ROL 3) ===============================
+    if ($tipo === 'Documento Final TFG' && $user_rol == 3) {
+        $review_status = $_POST['status'] ?? 'No especificado';
+        $review_comments = !empty($_POST['comments']) ? $_POST['comments'] : 'No se proporcionaron comentarios.';
+
+        $subject = "Notificación de Revisión de Documento Final de TFG";
+
+        $message_estudiante = '
+        <html>
+        <head>
+        <meta charset="UTF-8">
+        <style>
+            body { font-family: Arial, sans-serif; color: #333; line-height: 1.6; }
+            .container { max-width: 600px; margin: 0 auto; padding: 15px; border: 1px solid #e0e0e0; border-radius: 8px; background-color: #fafafa; }
+            .footer { margin-top: 25px; padding-top: 15px; border-top: 1px solid #ccc; font-size: 13px; color: #555; }
+            .footer img { width: 120px; vertical-align: middle; margin-right: 10px; }
+            .footer td { vertical-align: top; }
+            .divider { border-left: 2px solid #999; width: 1px; }
+            a { color: #0056b3; text-decoration: none; }
+            a:hover { text-decoration: underline; }
+            .comments-box { background-color: #f0f0f0; border-left: 4px solid #0056b3; padding: 10px 15px; margin-top: 10px; }
+        </style>
+        </head>
+        <body>
+        <div class="container">
+            <p>Estimado/a estudiante,</p>
+
+            <p>Le informamos que la <strong>Comisión de Trabajos Finales de Graduación (CTFG)</strong> ha revisado su documento final.</p>
+
+            <p><strong>Detalles de la revisión:</strong></p>
+            <ul>
+                <li><strong>Fecha de revisión:</strong> ' . date("d/m/Y H:i") . '</li>
+                <li><strong>Resultado:</strong> <strong>' . htmlspecialchars($review_status) . '</strong></li>
+            </ul>
+
+            <p><strong>Comentarios de la comisión:</strong></p>
+            <div class="comments-box">
+                <p>' . nl2br(htmlspecialchars($review_comments)) . '</p>
+            </div>
+
+            <p>Puede consultar el historial de su TFG ingresando al sistema:</p>
+            <p><a href="' . htmlspecialchars($historial_url) . '">' . htmlspecialchars($historial_url) . '</a></p>
+
+            <div class="footer">
+            <table>
+                <tr>
+                <td><img src="http://www.escinf.una.ac.cr/templates/zt_zizia/images/logo.png" alt="Escuela de Informática"></td>
+                <td class="divider"></td>
+                <td>
+                    <strong>Escuela de Informática</strong><br>
+                    Tel: <strong>(506) 2562-6363</strong> &nbsp;·&nbsp; Fax: <strong>(506) 2562-6384</strong><br>
+                    <a href="mailto:escinf@una.cr">escinf@una.cr</a><br>
+                    Universidad Nacional · Campus Presbítero Benjamín Núñez<br>
+                    Heredia, Costa Rica
+                </td>
+                </tr>
+            </table>
+            <p style="margin-top:10px; font-size:12px; color:#777;">' . date("d/m/Y") . '</p>
+            </div>
+        </div>
+        </body>
+        </html>
+        ';
+    }
+
     // Estructura del mensaje para el documento final
-    if ($tipo === 'Documento Final TFG') {
+    else if ($tipo === 'Documento Final TFG') {
         $subject = "Confirmación de carga de Trabajo Final de Graduación en el SGPFL";
 
         $message_estudiante = '

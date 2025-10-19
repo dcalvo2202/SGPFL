@@ -440,8 +440,8 @@ function getFinalDocumentByProposal($proposal_id) {
         
         $sql = "SELECT fd.*, f.file_name, f.file_size, f.mime_type, u.nombre as submitted_by_name
                 FROM tfg_final_documents fd
-                INNER JOIN tfg_files f ON fd.file_id = f.id
-                INNER JOIN sis_user u ON fd.submitted_by = u.id
+                JOIN tfg_files f ON fd.file_id = f.id
+                JOIN sis_user u ON fd.submitted_by = u.id
                 WHERE fd.proposal_id = ?";
         
         $stmt = $conn->prepare($sql);
@@ -463,6 +463,51 @@ function getFinalDocumentByProposal($proposal_id) {
         error_log("Error en getFinalDocumentByProposal: " . $e->getMessage());
         return null;
     }
+}
+
+/**
+ * Obtiene la información necesaria para enviar un correo de notificación sobre la revisión de un documento final.
+ *
+ * @param int $document_id ID del registro en tfg_final_documents.
+ * @return array|null Un array con la información o null si no se encuentra.
+ */
+function getFinalDocumentInfoForEmail($document_id) {
+    require(__DIR__ . '/db/bdcommon.inc');
+    $conn = new mysqli($db_host, $usuario, $clave, $db);
+    if ($conn->connect_error) {
+        error_log("Error de conexión en getFinalDocumentInfoForEmail: " . $conn->connect_error);
+        return null;
+    }
+    $conn->set_charset("utf8");
+
+    $sql = "SELECT
+                u.id AS user_id,
+                u.nombre AS student_name,
+                u.email AS student_email,
+                p.title AS project_title,
+                d.status AS document_status,
+                d.review_comments AS review_comments
+            FROM tfg_final_documents d
+            JOIN tfg_proposals p ON d.proposal_id = p.id
+            JOIN sis_user u ON p.user_id = u.id
+            WHERE d.id = ?";
+
+    $stmt = $conn->prepare($sql);
+    if (!$stmt) {
+        error_log("Error al preparar la consulta en getFinalDocumentInfoForEmail: " . $conn->error);
+        $conn->close();
+        return null;
+    }
+    
+    $stmt->bind_param("i", $document_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $data = $result->fetch_assoc();
+    
+    $stmt->close();
+    $conn->close();
+    
+    return $data;
 }
 
 } // End of if (!defined('TFG_FINAL_FUNCTIONS_LOADED'))
