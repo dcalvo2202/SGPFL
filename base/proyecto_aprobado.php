@@ -34,14 +34,18 @@ $sql_comite = "SELECT c.Id,
 $result_comite = mysqli_query($id_con, $sql_comite);
 while ($result_comite && $row = mysqli_fetch_assoc($result_comite)) { $comites[] = $row; }
 
-// Contenedor de nombres de propuestas no asignadas
+// Contenedor de nombres de propuestas tomadas desde registered_projects
 $propuestas = [];
-$sql_prop = "SELECT p.title, p.user_id
-             FROM tfg_proposals p
+$sql_prop = "SELECT 
+               rp.id               AS registered_id,
+               rp.tfg_proposal_id  AS proposal_id,
+               tp.title
+             FROM registered_projects rp
+             JOIN tfg_proposals tp ON tp.id = rp.tfg_proposal_id
              WHERE NOT EXISTS (
-               SELECT 1 FROM proyecto_aprobado pa WHERE pa.nombre = p.title
+               SELECT 1 FROM proyecto_aprobado pa WHERE pa.nombre = tp.title
              )
-             ORDER BY p.title";
+             ORDER BY tp.title";
 $res_prop = mysqli_query($id_con, $sql_prop);
 while ($res_prop && $r = mysqli_fetch_assoc($res_prop)) { $propuestas[] = $r; }
 
@@ -106,32 +110,44 @@ CSS;
         <select id="nombre" name="nombre" required>
           <option value="">Seleccione un título</option>
           <?php foreach ($propuestas as $p): ?>
-            <option
-              value="<?php echo htmlspecialchars($p['title']); ?>"
-              data-user-id="<?php echo htmlspecialchars($p['user_id'] ?? ''); ?>"
-            >
+            <option 
+              value="<?php echo (int)$p['proposal_id']; ?>"
+              data-registered-id="<?php echo (int)$p['registered_id']; ?>">
               <?php echo htmlspecialchars($p['title']); ?>
             </option>
           <?php endforeach; ?>
         </select>
         <?php if (empty($propuestas)): ?>
-          <small style="color:#b00;">No hay propuestas disponibles (todas ya registradas o ninguna cargada).</small>
+          <small style="color:#b00;">No hay propuestas disponibles.</small>
         <?php endif; ?>
 
-        <!-- Estudiantes (checkbox) -->
-        <label for="estudiante">Estudiantes:</label>
-        <div id="authorInfo" style="font-size:12px;color:#555;margin-bottom:6px;">
-         
+        <!-- Estudiantes: ahora se llenan dinámicamente desde project_members -->
+        <div id="estudiantesSection" style="display:none;">
+          <label for="estudiante">Estudiantes:</label>
+          <div id="chkBoxWrap" style="max-height:240px;overflow:auto;border:1px solid #ccc;padding:8px;border-radius:6px;">
+            <!-- Se inyectan los checkboxes aquí -->
+          </div>
+          <div id="estCount" style="font-size:12px;color:#092567;margin-top:4px;">0 seleccionados</div>
         </div>
-        <div style="max-height:240px;overflow:auto;border:1px solid #ccc;padding:8px;border-radius:6px;" id="chkBoxWrap">
-          <?php foreach ($estudiantes as $est): ?>
-            <label style="display:block;font-size:13px;">
-              <input type="checkbox" name="estudiantes[]" value="<?php echo $est['id']; ?>"> 
-              <?php echo htmlspecialchars($est['nombre']); ?>
-            </label>
-          <?php endforeach; ?>
+
+        <!-- Panel Estudiante (tabla informativa) -->
+        <div id="panelEstudiante" class="card p-3 mt-3" style="display:none;">
+          <h5 class="mb-2">Panel Estudiante</h5>
+          <div class="table-responsive">
+            <table class="table table-striped table-sm align-middle mb-2">
+              <thead>
+                <tr>
+                  <th style="width:180px;">user_id</th>
+                  <th>Nombre</th>
+                </tr>
+              </thead>
+              <tbody id="panelEstudianteBody">
+                <!-- Filas dinámicas -->
+              </tbody>
+            </table>
+          </div>
+          <div id="panelEstudianteCount" class="text-muted" style="font-size:.9rem;"></div>
         </div>
-        <div id="estCount" style="font-size:12px;color:#092567;margin-top:4px;">0 seleccionados</div>
 
         <!-- Comité -->
         <label for="comite">Comité asesor:</label>
@@ -262,7 +278,11 @@ CSS;
       // Al cambiar la propuesta, buscar autor(es) y preseleccionar estudiantes relacionados
       const nombreSel = document.getElementById('nombre');
       const wrap      = document.getElementById('chkBoxWrap');
+      const section   = document.getElementById('estudiantesSection');
       const tipoSel   = document.getElementById('tipo_proyecto');
+      const panel     = document.getElementById('panelEstudiante');
+      const panelBody = document.getElementById('panelEstudianteBody');
+      const panelCount= document.getElementById('panelEstudianteCount');
 
       function maxAllowed(){
         const v = (tipoSel && tipoSel.value) || '';
@@ -271,57 +291,154 @@ CSS;
         return 8; // seminario u otros
       }
 
-      async function sincronizarEstudiantesPorPropuesta(){
-        if (!nombreSel || !wrap) return;
-        const title = nombreSel.value;
-        if (!title) return;
+      // Reemplaza toArraySafe por una normalización estricta
+      function toArrayStrict(v){
+        if (Array.isArray(v)) return v;                 // Array real
+        if (v && typeof v === 'object' && 'length' in v) return Array.from(v); // NodeList, jQuery, etc.
+        if (v && typeof v === 'object') return Object.values(v);               // {0:...,1:...}
+        return [];
+      }
+      function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
 
+      // Reemplaza toda la función por esta versión sin map/join
+      function renderMembers(list){
+        const arr = toArrayStrict(list);
+        let html = '';
+        for (let i = 0; i < arr.length; i++){
+          const m = arr[i] || {};
+          html += `<label style="display:block;font-size:13px;">
+            <input type="checkbox" name="estudiantes[]" value="${escapeHtml(m.id||'')}" checked>
+            ${escapeHtml(m.nombre||'')}
+          </label>`;
+        }
+        const el = document.getElementById('chkBoxWrap');
+        if (!el) return;
+        el.innerHTML = html || '<small style="color:#555;">Sin miembros registrados para esta propuesta.</small>';
+        el.dispatchEvent(new Event('change', { bubbles:true }));
+      }
+
+      // Reemplaza toda la función por esta versión sin map/join
+      function renderStudentPanel(list){
+        const arr = toArrayStrict(list);
+        const panel     = document.getElementById('panelEstudiante');
+        const panelBody = document.getElementById('panelEstudianteBody');
+        const panelCount= document.getElementById('panelEstudianteCount');
+        if (!panel || !panelBody || !panelCount) return;
+
+        if (!arr.length){
+          panelBody.innerHTML = '<tr><td colspan="2" class="text-muted">Sin estudiantes.</td></tr>';
+          panelCount.textContent = '0 estudiante(s) encontrado(s).';
+          panel.style.display = '';
+          return;
+        }
+        let rows = '';
+        for (let i = 0; i < arr.length; i++){
+          const m = arr[i] || {};
+          rows += `<tr><td><code>${escapeHtml(m.id||'')}</code></td><td>${escapeHtml(m.nombre||'')}</td></tr>`;
+        }
+        panelBody.innerHTML = rows;
+        panelCount.textContent = `${arr.length} estudiante(s) encontrado(s).`;
+        panel.style.display = '';
+      }
+
+      async function cargarMiembrosPorPropuesta(){
+        const nombreSel = document.getElementById('nombre');
+        const section   = document.getElementById('estudiantesSection');
+        const wrap      = document.getElementById('chkBoxWrap');
+        const tipoSel   = document.getElementById('tipo_proyecto');
+        const panel     = document.getElementById('panelEstudiante');
+        const panelBody = document.getElementById('panelEstudianteBody');
+        const panelCount= document.getElementById('panelEstudianteCount');
+
+        if (!nombreSel || !wrap) return;
+        const opt = nombreSel.options[nombreSel.selectedIndex];
+        const proposalId   = nombreSel.value;
+        const registeredId = opt ? (opt.dataset.registeredId || '') : '';
+        if (!proposalId && !registeredId) {
+          if (section) section.style.display = 'none';
+          wrap.innerHTML = '';
+          if (panel){ panel.style.display = 'none'; panelBody.innerHTML=''; panelCount.textContent=''; }
+          return;
+        }
+
+        // Construir body
+        const params = new URLSearchParams();
+        if (proposalId)   params.append('proposal_id', proposalId);
+        if (registeredId) params.append('registered_id', registeredId);
+        params.append('debug', '1');
+
+        // URL del endpoint
+        const url = new URL('mod/admin/users/project_members_by_proposal.php', window.location.href).toString();
+
+        let raw = '';
+        let data = null;
+
+        // 1) Solo la petición/red en este try
         try {
-          const resp = await fetch('mod/admin/users/tfg_proposal_author.php', {
+          const resp = await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: 'title=' + encodeURIComponent(title)
+            body: params.toString(),
+            credentials: 'same-origin'
           });
-          if (!resp.ok) return;
-          const data = await resp.json();
-          const ids = Array.isArray(data.user_ids) ? data.user_ids.map(String) : [];
+          raw = await resp.text();
+          try { data = JSON.parse(raw); } catch {_=>{}}
 
-          // Desmarcar todo primero
-          const allChecks = Array.from(wrap.querySelectorAll('input[type=checkbox]'));
-          allChecks.forEach(c => c.checked = false);
-
-          // Marcar coincidentes respetando el máximo permitido
-          const limite = maxAllowed();
-          let marcados = 0;
-
-          ids.forEach(id => {
-            if (marcados >= limite) return;
-            const chk = allChecks.find(c => String(c.value) === id);
-            if (chk) {
-              chk.checked = true;
-              marcados++;
-              const lab = chk.closest('label');
-              if (lab) { lab.style.background = '#fffbd6'; lab.style.outline = '1px dashed #b9a200';
-                setTimeout(() => { lab.style.background=''; lab.style.outline=''; }, 1200);
-              }
-            }
-          });
-
-          // Disparar evento para actualizar contador/validaciones visuales
-          wrap.dispatchEvent(new Event('change', { bubbles: true }));
+          if (!resp.ok || !data || (data._meta && data._meta.ok === false)) {
+            if (section) section.style.display = '';
+            wrap.innerHTML = '<small style="color:#b00;">Error: '+escapeHtml(data && data._meta && data._meta.msg ? data._meta.msg : ('HTTP '+resp.status))+'</small>'
+                           + (raw ? '<pre style="white-space:pre-wrap;margin:6px 0 0;color:#900;background:#fee;padding:6px;border-radius:4px;">'+escapeHtml(raw)+'</pre>' : '');
+            if (panel){ panel.style.display=''; panelBody.innerHTML='<tr><td colspan="2" class="text-danger">Error.</td></tr>'; panelCount.textContent=''; }
+            console.error('Endpoint error/JSON:', { url, status: resp.status, raw, data });
+            return;
+          }
         } catch (e) {
-          // Silencioso
+          if (section) section.style.display = '';
+          wrap.innerHTML = '<small style="color:#b00;">Error de red: '+escapeHtml(e && e.message)+'</small>';
+          if (panel){ panel.style.display=''; panelBody.innerHTML='<tr><td colspan="2" class="text-danger">Error de red.</td></tr>'; panelCount.textContent=''; }
+          console.error('Fetch error:', e);
+          return;
+        }
+
+        // 2) Render en bloque separado (si algo falla veremos el mensaje real)
+        try {
+          const members = toArrayStrict(data && data.members);
+          renderMembers(members);
+          renderStudentPanel(members);
+          if (section) section.style.display = '';
+
+          const limite = (function(){
+            const v = (tipoSel && tipoSel.value) || '';
+            if (v === 'tesis') return 2;
+            if (v === 'proyecto') return 3;
+            return 8;
+          })();
+
+          const wrapEl = document.getElementById('chkBoxWrap');
+          if (wrapEl){
+            const checks = Array.from(wrapEl.querySelectorAll('input[type=checkbox]'));
+            if (checks.filter(c => c.checked).length > limite){
+              checks.forEach((c, i) => { c.checked = i < limite; });
+              wrapEl.dispatchEvent(new Event('change', { bubbles:true }));
+              alert('Se ajustó la selección al máximo permitido: ' + limite);
+            }
+          }
+          console.info('Miembros recibidos:', data && data._meta, members);
+        } catch (e) {
+          if (section) section.style.display = '';
+          wrap.innerHTML = '<small style="color:#b00;">Error en render: '+escapeHtml(e && e.message)+'</small>';
+          if (panel){ panel.style.display=''; panelBody.innerHTML='<tr><td colspan="2" class="text-danger">Error de render.</td></tr>'; panelCount.textContent=''; }
+          console.error('Render error:', e, { raw, data });
         }
       }
 
       if (nombreSel) {
-        nombreSel.addEventListener('change', sincronizarEstudiantesPorPropuesta);
-        // Inicial si ya hay una opción seleccionada
-        if (nombreSel.value) sincronizarEstudiantesPorPropuesta();
+        if (nombreSel.value) { cargarMiembrosPorPropuesta(); } else { section.style.display = 'none'; if (panel) panel.style.display='none'; }
+        nombreSel.addEventListener('change', cargarMiembrosPorPropuesta);
       }
     });
 
-    // Contador de estudiantes seleccionados + límites por tipo
+    // Contador de estudiantes seleccionados + límites por tipo (se mantiene)
     (function(){
       const wrap      = document.getElementById('chkBoxWrap');
       const counter   = document.getElementById('estCount');
@@ -332,7 +449,7 @@ CSS;
       function update(){
         const n = wrap.querySelectorAll('input[type=checkbox]:checked').length;
         counter.textContent = n + ' seleccionados';
-        hint.textContent = 'Seleccione entre 1 y ' + maxAllowed() + '.';
+        if (hint) hint.textContent = 'Seleccione entre 1 y ' + maxAllowed() + '.';
       }
       wrap.addEventListener('change', function(e){
         if (e.target.type === 'checkbox'){
@@ -345,67 +462,19 @@ CSS;
           update();
         }
       });
-      tipoSel.addEventListener('change', function(){
-        const max = maxAllowed();
-        const checked = [...wrap.querySelectorAll('input[type=checkbox]:checked')];
-        if (checked.length > max){
-          checked.slice(max).forEach(c => c.checked = false);
-          alert('Se ajustó la selección al nuevo máximo: ' + max);
-        }
-        update();
-      });
-      document.querySelector('form').addEventListener('submit', function(e){
-        const n = wrap.querySelectorAll('input[type=checkbox]:checked').length;
-        const max = maxAllowed();
-        if (!tipoSel.value){
-          alert('Seleccione el tipo de trabajo.');
-          e.preventDefault(); return;
-        }
-        if (n < 1 || n > max){
-          alert('Debe seleccionar entre 1 y ' + max + ' estudiantes.');
-          e.preventDefault();
-        }
-      });
+      if (tipoSel) {
+        tipoSel.addEventListener('change', function(){
+          const max = maxAllowed();
+          const checked = [...wrap.querySelectorAll('input[type=checkbox]:checked')];
+          if (checked.length > max){
+            checked.slice(max).forEach(c => c.checked = false);
+            alert('Se ajustó la selección al nuevo máximo: ' + max);
+          }
+          update();
+        });
+      }
       update();
     })();
-
-    // Mostrar user_id del autor sugerido y preseleccionar su checkbox si existe
-    function updateAuthorFromProposal() {
-      const sel = document.getElementById('nombre');
-      const info = document.getElementById('authorInfo');
-      const wrap = document.getElementById('chkBoxWrap');
-      if (!sel || !info || !wrap) return;
-
-      const opt = sel.options[sel.selectedIndex] || null;
-      const uid = opt && opt.dataset ? (opt.dataset.userId || '') : '';
-
-      if (uid) {
-        const chk = wrap.querySelector('input[type=checkbox][value="' + uid + '"]');
-        if (chk) {
-          // preseleccionar y resaltar
-          chk.checked = true;
-          const lab = chk.closest('label');
-          if (lab) {
-            lab.style.background = '#fffbd6';
-            lab.style.outline = '1px dashed #b9a200';
-            lab.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            // limpiar resaltado después de un rato
-            setTimeout(() => { lab.style.background=''; lab.style.outline=''; }, 1500);
-          }
-          // Disparar change para actualizar contador/límites
-          chk.dispatchEvent(new Event('change', { bubbles: true }));
-        }
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // ...existing code...
-      const nombreSel = document.getElementById('nombre');
-      if (nombreSel) {
-        updateAuthorFromProposal();
-        nombreSel.addEventListener('change', updateAuthorFromProposal);
-      }
-    });
   </script>
 <?php if (ob_get_level()) { ob_end_flush(); } ?>
 </body>
