@@ -179,7 +179,7 @@ CSS;
         <!-- Enviado al backend -->
         <input type="hidden" id="fecha_finalizacion" name="fecha_finalizacion"
                value="<?php echo htmlspecialchars($fecha_finalizacion_ini); ?>" required>
-        
+
         <button type="submit">Registrar proyecto</button>
         <a href="panel_ctfg.php" class="btn btn-secondary mt-2">Regresar al panel comité</a>
       </form>
