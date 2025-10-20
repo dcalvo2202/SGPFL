@@ -290,17 +290,15 @@ CSS;
         if (v === 'proyecto') return 3;
         return 8; // seminario u otros
       }
-
-      // Reemplaza toArraySafe por una normalización estricta
+      
       function toArrayStrict(v){
-        if (Array.isArray(v)) return v;                 // Array real
-        if (v && typeof v === 'object' && 'length' in v) return Array.from(v); // NodeList, jQuery, etc.
-        if (v && typeof v === 'object') return Object.values(v);               // {0:...,1:...}
+        if (Array.isArray(v)) return v;               
+        if (v && typeof v === 'object' && 'length' in v) return Array.from(v); 
+        if (v && typeof v === 'object') return Object.values(v);              
         return [];
       }
       function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
 
-      // Reemplaza toda la función por esta versión sin map/join
       function renderMembers(list){
         const arr = toArrayStrict(list);
         let html = '';
