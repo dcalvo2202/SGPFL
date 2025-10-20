@@ -36,7 +36,7 @@ while ($result_comite && $row = mysqli_fetch_assoc($result_comite)) { $comites[]
 
 // Contenedor de nombres de propuestas no asignadas
 $propuestas = [];
-$sql_prop = "SELECT p.title
+$sql_prop = "SELECT p.title, p.user_id
              FROM tfg_proposals p
              WHERE NOT EXISTS (
                SELECT 1 FROM proyecto_aprobado pa WHERE pa.nombre = p.title
@@ -106,7 +106,10 @@ CSS;
         <select id="nombre" name="nombre" required>
           <option value="">Seleccione un título</option>
           <?php foreach ($propuestas as $p): ?>
-            <option value="<?php echo htmlspecialchars($p['title']); ?>">
+            <option
+              value="<?php echo htmlspecialchars($p['title']); ?>"
+              data-user-id="<?php echo htmlspecialchars($p['user_id'] ?? ''); ?>"
+            >
               <?php echo htmlspecialchars($p['title']); ?>
             </option>
           <?php endforeach; ?>
@@ -117,6 +120,9 @@ CSS;
 
         <!-- Estudiantes (checkbox) -->
         <label for="estudiante">Estudiantes:</label>
+        <div id="authorInfo" style="font-size:12px;color:#555;margin-bottom:6px;">
+         
+        </div>
         <div style="max-height:240px;overflow:auto;border:1px solid #ccc;padding:8px;border-radius:6px;" id="chkBoxWrap">
           <?php foreach ($estudiantes as $est): ?>
             <label style="display:block;font-size:13px;">
@@ -149,7 +155,7 @@ CSS;
         <small style="color:#555;">Se enviará como tinyint (1–3) a la base de datos.</small>
 
         <!-- Documento -->
-        <label for="documento">Documento (Word, PDF, Excel):</label>
+        <label for="documento">Documento (Word, PDF):</label>
         <label for="documento" class="btn-tfg">Subir documento</label>
         <input type="file" id="documento" name="documento" accept=".pdf,.doc,.docx,.xls,.xlsx" required hidden>
 
@@ -189,7 +195,7 @@ CSS;
 
   <script>
     // Icono único de aceptación
-    const ICON_URL = 'https://www.pngfind.com/pngs/m/56-561014_doble-check-azul-png-check-de-whatsapp-transparent.png';
+    const ICON_URL = 'https://w1.pngwing.com/pngs/341/112/png-transparent-green-grass-symbol-logo-dialog-box-accept-yellow-circle.png';
 
     // Mostrar el input file al hacer click en el label
     document.querySelector('.btn-tfg').onclick = function(e) {
@@ -248,9 +254,70 @@ CSS;
       calcularFechaFinal();              // inicial
 
       if (fa){
-        fa.addEventListener('input',  calcularFechaFinal);   // mientras se manipula
-        fa.addEventListener('change', calcularFechaFinal);   // al cerrar el selector
-        fa.addEventListener('blur',   calcularFechaFinal);   // por si pierde foco
+        fa.addEventListener('input',  calcularFechaFinal);
+        fa.addEventListener('change', calcularFechaFinal);
+        fa.addEventListener('blur',   calcularFechaFinal);
+      }
+
+      // Al cambiar la propuesta, buscar autor(es) y preseleccionar estudiantes relacionados
+      const nombreSel = document.getElementById('nombre');
+      const wrap      = document.getElementById('chkBoxWrap');
+      const tipoSel   = document.getElementById('tipo_proyecto');
+
+      function maxAllowed(){
+        const v = (tipoSel && tipoSel.value) || '';
+        if (v === 'tesis') return 2;
+        if (v === 'proyecto') return 3;
+        return 8; // seminario u otros
+      }
+
+      async function sincronizarEstudiantesPorPropuesta(){
+        if (!nombreSel || !wrap) return;
+        const title = nombreSel.value;
+        if (!title) return;
+
+        try {
+          const resp = await fetch('mod/admin/users/tfg_proposal_author.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'title=' + encodeURIComponent(title)
+          });
+          if (!resp.ok) return;
+          const data = await resp.json();
+          const ids = Array.isArray(data.user_ids) ? data.user_ids.map(String) : [];
+
+          // Desmarcar todo primero
+          const allChecks = Array.from(wrap.querySelectorAll('input[type=checkbox]'));
+          allChecks.forEach(c => c.checked = false);
+
+          // Marcar coincidentes respetando el máximo permitido
+          const limite = maxAllowed();
+          let marcados = 0;
+
+          ids.forEach(id => {
+            if (marcados >= limite) return;
+            const chk = allChecks.find(c => String(c.value) === id);
+            if (chk) {
+              chk.checked = true;
+              marcados++;
+              const lab = chk.closest('label');
+              if (lab) { lab.style.background = '#fffbd6'; lab.style.outline = '1px dashed #b9a200';
+                setTimeout(() => { lab.style.background=''; lab.style.outline=''; }, 1200);
+              }
+            }
+          });
+
+          // Disparar evento para actualizar contador/validaciones visuales
+          wrap.dispatchEvent(new Event('change', { bubbles: true }));
+        } catch (e) {
+          // Silencioso
+        }
+      }
+
+      if (nombreSel) {
+        nombreSel.addEventListener('change', sincronizarEstudiantesPorPropuesta);
+        // Inicial si ya hay una opción seleccionada
+        if (nombreSel.value) sincronizarEstudiantesPorPropuesta();
       }
     });
 
@@ -301,6 +368,44 @@ CSS;
       });
       update();
     })();
+
+    // Mostrar user_id del autor sugerido y preseleccionar su checkbox si existe
+    function updateAuthorFromProposal() {
+      const sel = document.getElementById('nombre');
+      const info = document.getElementById('authorInfo');
+      const wrap = document.getElementById('chkBoxWrap');
+      if (!sel || !info || !wrap) return;
+
+      const opt = sel.options[sel.selectedIndex] || null;
+      const uid = opt && opt.dataset ? (opt.dataset.userId || '') : '';
+
+      if (uid) {
+        const chk = wrap.querySelector('input[type=checkbox][value="' + uid + '"]');
+        if (chk) {
+          // preseleccionar y resaltar
+          chk.checked = true;
+          const lab = chk.closest('label');
+          if (lab) {
+            lab.style.background = '#fffbd6';
+            lab.style.outline = '1px dashed #b9a200';
+            lab.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // limpiar resaltado después de un rato
+            setTimeout(() => { lab.style.background=''; lab.style.outline=''; }, 1500);
+          }
+          // Disparar change para actualizar contador/límites
+          chk.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // ...existing code...
+      const nombreSel = document.getElementById('nombre');
+      if (nombreSel) {
+        updateAuthorFromProposal();
+        nombreSel.addEventListener('change', updateAuthorFromProposal);
+      }
+    });
   </script>
 <?php if (ob_get_level()) { ob_end_flush(); } ?>
 </body>
