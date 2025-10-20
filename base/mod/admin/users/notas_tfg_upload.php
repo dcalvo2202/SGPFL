@@ -35,5 +35,3 @@ if ($newId > 0) {
 
 http_response_code(500);
 echo json_encode(['ok'=>false,'msg'=>'Error al guardar']);
-
-const resp = await fetch('mod/admin/users/notas_tfg_update.php', { method: 'POST', body: fd });

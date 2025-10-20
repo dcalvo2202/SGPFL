@@ -1,5 +1,4 @@
 <?php
-
 require_once __DIR__ . '/inc/db/db.php';
 require_once __DIR__ . '/lib/mysession/mySession.conf.php';
 require_once __DIR__ . '/lib/mysession/mySession.class.php';
@@ -165,7 +164,7 @@ CSS;
         <input type="date" id="fecha_aprobacion" name="fecha_aprobacion" value="<?php echo $fecha_actual; ?>" required>
         <small style="color:#555;">Seleccione la fecha exacta de aprobación.</small>
 
-        <label for="fecha_finalizacion_view">Fecha finalización:</label>
+        <label for="fecha_finalizacion_view" class="mt-2">Fecha finalización:</label>
         <!-- Visible (solo lectura) con valor inicial desde PHP -->
         <input
           type="date"
@@ -180,7 +179,7 @@ CSS;
         <!-- Enviado al backend -->
         <input type="hidden" id="fecha_finalizacion" name="fecha_finalizacion"
                value="<?php echo htmlspecialchars($fecha_finalizacion_ini); ?>" required>
-
+        
         <button type="submit">Registrar proyecto</button>
         <a href="panel_ctfg.php" class="btn btn-secondary mt-2">Regresar al panel comité</a>
       </form>
@@ -208,38 +207,51 @@ CSS;
       box.style.display = 'flex';
     });
 
-    // Utilidades de fecha seguras
-    function toYMD(d){ const dd=String(d.getDate()).padStart(2,'0'); const mm=String(d.getMonth()+1).padStart(2,'0'); const yyyy=d.getFullYear(); return `${yyyy}-${mm}-${dd}`; }
-    function parseYMD(s){ // evita problemas de parsing con YYYY-MM-DD
+    // Utilidades de fecha robustas
+    function toYMD(d){
+      const dd = String(d.getDate()).padStart(2,'0');
+      const mm = String(d.getMonth()+1).padStart(2,'0');
+      const yyyy = d.getFullYear();
+      return `${yyyy}-${mm}-${dd}`;
+    }
+    function parseYMD(s){
       const parts = (s || '').split('-');
       if (parts.length !== 3) return null;
-      const y = parseInt(parts[0],10), m = parseInt(parts[1],10), d = parseInt(parts[2],10);
+      const y = Number(parts[0]), m = Number(parts[1]), d = Number(parts[2]);
       if (!y || !m || !d) return null;
-      return new Date(y, m-1, d);
+      return { y, m, d };
+    }
+    // Suma 1 año preservando el día; si no existe (p. ej. 29/02), usa el último día del mes
+    function addOneYearYMD(ymd){
+      const p = parseYMD(ymd);
+      if (!p) return '';
+      const targetYear = p.y + 1;
+      const daysInTargetMonth = new Date(targetYear, p.m, 0).getDate(); // día 0 => último del mes
+      const day = Math.min(p.d, daysInTargetMonth);
+      return toYMD(new Date(targetYear, p.m - 1, day));
     }
 
-    function calcularFechaFinal() {
+    function calcularFechaFinal(){
       const fa = document.getElementById('fecha_aprobacion');
       const finHidden = document.getElementById('fecha_finalizacion');
       const finView   = document.getElementById('fecha_finalizacion_view');
       if (!fa || !finHidden || !finView) return;
 
-      const f = fa.value;
-      if (!f) { finHidden.value = ''; finView.value = ''; return; }
-
-      const dt = parseYMD(f);
-      if (!dt || isNaN(dt)) { finHidden.value = ''; finView.value = ''; return; }
-
-      dt.setFullYear(dt.getFullYear() + 1);
-      const ymd = toYMD(dt);
-      finHidden.value = ymd;
-      finView.value   = ymd;
+      const ymd = addOneYearYMD(fa.value || '');
+      finHidden.value = ymd || '';
+      finView.value   = ymd || '';
     }
 
-    // Recalcula al cambiar aprobación y al cargar
     document.addEventListener('DOMContentLoaded', () => {
-      calcularFechaFinal();
-      document.getElementById('fecha_aprobacion')?.addEventListener('change', calcularFechaFinal);
+      const fa  = document.getElementById('fecha_aprobacion');
+
+      calcularFechaFinal();              // inicial
+
+      if (fa){
+        fa.addEventListener('input',  calcularFechaFinal);   // mientras se manipula
+        fa.addEventListener('change', calcularFechaFinal);   // al cerrar el selector
+        fa.addEventListener('blur',   calcularFechaFinal);   // por si pierde foco
+      }
     });
 
     // Contador de estudiantes seleccionados + límites por tipo
