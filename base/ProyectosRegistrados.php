@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require_once __DIR__ . '/inc/db/db.php';
 
 // Título y opciones para el head.php
@@ -102,84 +102,89 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
 <html lang="es">
 <?php include __DIR__ . '/head.php'; ?>
 <body class="fondo-una d-flex flex-column min-vh-100">
-  <main class="container">
-    <h1 class="page-title">
-      Proyectos <span class="badge bg-<?php echo $estadoBadge; ?>"><?php echo $estadoLabel; ?></span>
-    </h1>
+  <?php include 'header.php'; ?>
+  <main class="flex-fill">
+    <div class="container my-5">
+      <h1 class="page-title">
+        Proyectos <span class="badge bg-<?php echo $estadoBadge; ?>"><?php echo $estadoLabel; ?></span>
+      </h1>
 
-    <!-- Filtros -->
-    <form class="row g-2 mb-4" method="get" action="">
-      <div class="col-sm-6 col-md-4 col-lg-4">
-        <input type="search" class="form-control" name="q" placeholder="Buscar por nombre..."
-               value="<?php echo htmlspecialchars($q, ENT_QUOTES, 'UTF-8'); ?>" autocomplete="off">
-      </div>
-      <div class="col-sm-6 col-md-3 col-lg-2">
-        <select name="estado" class="form-select">
-          <option value="1" <?php echo $estado===1?'selected':''; ?>>Aprobado</option>
-          <option value="2" <?php echo $estado===2?'selected':''; ?>>Sin aprobar</option>
-          <option value="3" <?php echo $estado===3?'selected':''; ?>>Esperando correcciones</option>
-        </select>
-      </div>
-      <div class="col-sm-6 col-md-5 col-lg-4">
-        <select name="comite" class="form-select">
-          <option value="0">Todos los comités</option>
-          <?php foreach ($comites as $c): ?>
-            <option value="<?php echo (int)$c['Id']; ?>" <?php echo $comite_id===(int)$c['Id']?'selected':''; ?>>
-              Comité #<?php echo (int)$c['Id']; ?> — T: <?php echo htmlspecialchars($c['tutor_nombre']); ?> / A1: <?php echo htmlspecialchars($c['asesor1_nombre']); ?> / A2: <?php echo htmlspecialchars($c['asesor2_nombre']); ?>
-            </option>
+      <!-- Filtros -->
+      <form class="row g-2 mb-4" method="get" action="">
+        <div class="col-sm-6 col-md-4 col-lg-4">
+          <input type="search" class="form-control" name="q" placeholder="Buscar por nombre..."
+                 value="<?php echo htmlspecialchars($q, ENT_QUOTES, 'UTF-8'); ?>" autocomplete="off">
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <select name="estado" class="form-select">
+            <option value="1" <?php echo $estado===1?'selected':''; ?>>Aprobado</option>
+            <option value="2" <?php echo $estado===2?'selected':''; ?>>Sin aprobar</option>
+            <option value="3" <?php echo $estado===3?'selected':''; ?>>Esperando correcciones</option>
+          </select>
+        </div>
+        <div class="col-sm-6 col-md-5 col-lg-4">
+          <select name="comite" class="form-select">
+            <option value="0">Todos los comités</option>
+            <?php foreach ($comites as $c): ?>
+              <option value="<?php echo (int)$c['Id']; ?>" <?php echo $comite_id===(int)$c['Id']?'selected':''; ?>>
+                Comité #<?php echo (int)$c['Id']; ?> — T: <?php echo htmlspecialchars($c['tutor_nombre']); ?> / A1: <?php echo htmlspecialchars($c['asesor1_nombre']); ?> / A2: <?php echo htmlspecialchars($c['asesor2_nombre']); ?>
+              </option>
+            <?php endforeach; ?>
+          </select>
+        </div>
+        <div class="w-100 d-none d-md-block"></div>
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <input type="date" class="form-control" name="f_ini" value="<?php echo htmlspecialchars($f_ini); ?>" placeholder="Desde">
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <input type="date" class="form-control" name="f_fin" value="<?php echo htmlspecialchars($f_fin); ?>" placeholder="Hasta">
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i> Buscar</button>
+          <?php if ($q !== '' || $comite_id>0 || $f_ini!=='' || $f_fin!=='' || isset($_GET['estado'])): ?>
+            <a class="btn btn-outline-secondary" href="ProyectosRegistrados.php">Limpiar</a>
+          <?php endif; ?>
+        </div>
+      </form>
+
+      <?php if (empty($proyectos_aprobados)): ?>
+        <div class="alert alert-warning">No hay proyectos que coincidan con los filtros.</div>
+      <?php else: ?>
+        <ul class="list-group">
+          <?php foreach ($proyectos_aprobados as $p): ?>
+            <?php list($lbl,$bdg) = estadoInfo((int)$p['aprobado']); ?>
+            <li class="list-group-item"
+                data-proyecto-id="<?php echo (int)$p['id_aprobado']; ?>"
+                data-proyecto-nombre="<?php echo htmlspecialchars($p['nombre'], ENT_QUOTES, 'UTF-8'); ?>">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <div class="fw-semibold"><?php echo htmlspecialchars($p['nombre']); ?></div>
+                  <small class="text-muted">
+                    Comité #<?php echo (int)$p['comite_id']; ?> —
+                    T: <?php echo htmlspecialchars($p['tutor_nombre']); ?> /
+                    A1: <?php echo htmlspecialchars($p['asesor1_nombre']); ?> /
+                    A2: <?php echo htmlspecialchars($p['asesor2_nombre']); ?> ·
+                    Fecha: <?php echo htmlspecialchars(substr($p['fecha_creacion'],0,10)); ?>
+                  </small>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <!-- Enlace directo (sin popup) -->
+                  <a class="btn btn-sm btn-outline-info"
+                     href="NotasProyecto.php?id=<?php echo (int)$p['id_aprobado']; ?>&nombre=<?php echo rawurlencode($p['nombre']); ?>">
+                    <i class="bi bi-journal-text"></i> Notas
+                  </a>
+                  <span class="badge bg-<?php echo $bdg; ?>"><?php echo $lbl; ?></span>
+                </div>
+              </div>
+            </li>
           <?php endforeach; ?>
-        </select>
-      </div>
-      <div class="w-100 d-none d-md-block"></div>
-      <div class="col-sm-6 col-md-3 col-lg-2">
-        <input type="date" class="form-control" name="f_ini" value="<?php echo htmlspecialchars($f_ini); ?>" placeholder="Desde">
-      </div>
-      <div class="col-sm-6 col-md-3 col-lg-2">
-        <input type="date" class="form-control" name="f_fin" value="<?php echo htmlspecialchars($f_fin); ?>" placeholder="Hasta">
-      </div>
-      <div class="col-auto">
-        <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i> Buscar</button>
-        <?php if ($q !== '' || $comite_id>0 || $f_ini!=='' || $f_fin!=='' || isset($_GET['estado'])): ?>
-          <a class="btn btn-outline-secondary" href="ProyectosRegistrados.php">Limpiar</a>
-        <?php endif; ?>
-      </div>
-    </form>
-
-    <?php if (empty($proyectos_aprobados)): ?>
-      <div class="alert alert-warning">No hay proyectos que coincidan con los filtros.</div>
-    <?php else: ?>
-      <ul class="list-group">
-        <?php foreach ($proyectos_aprobados as $p): ?>
-          <?php list($lbl,$bdg) = estadoInfo((int)$p['aprobado']); ?>
-          <li class="list-group-item"
-              data-proyecto-id="<?php echo (int)$p['id_aprobado']; ?>"
-              data-proyecto-nombre="<?php echo htmlspecialchars($p['nombre'], ENT_QUOTES, 'UTF-8'); ?>">
-            <div class="d-flex justify-content-between align-items-start">
-              <div>
-                <div class="fw-semibold"><?php echo htmlspecialchars($p['nombre']); ?></div>
-                <small class="text-muted">
-                  Comité #<?php echo (int)$p['comite_id']; ?> —
-                  T: <?php echo htmlspecialchars($p['tutor_nombre']); ?> /
-                  A1: <?php echo htmlspecialchars($p['asesor1_nombre']); ?> /
-                  A2: <?php echo htmlspecialchars($p['asesor2_nombre']); ?> ·
-                  Fecha: <?php echo htmlspecialchars(substr($p['fecha_creacion'],0,10)); ?>
-                </small>
-              </div>
-              <div class="d-flex align-items-center gap-2">
-                <!-- Enlace directo (sin popup) -->
-                <a class="btn btn-sm btn-outline-info"
-                   href="NotasProyecto.php?id=<?php echo (int)$p['id_aprobado']; ?>&nombre=<?php echo rawurlencode($p['nombre']); ?>">
-                  <i class="bi bi-journal-text"></i> Notas
-                </a>
-                <span class="badge bg-<?php echo $bdg; ?>"><?php echo $lbl; ?></span>
-              </div>
-            </div>
-          </li>
-        <?php endforeach; ?>
-      </ul>
-    <?php endif; ?>
+        </ul>
+      <?php endif; ?>
+    </div>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+  <?php include 'footer.php'; ?>
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ </body>
+ </html>
