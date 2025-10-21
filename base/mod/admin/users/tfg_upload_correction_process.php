@@ -97,7 +97,7 @@ try {
     
     // 1. Verificar que el documento pertenece al estudiante y está rechazado
     $sql_verify = "SELECT fd.id, fd.proposal_id, fd.status, fd.file_id, fd.submitted_by,
-                          f.file_name, f.mime_type, f.file_size
+                          f.file_name, f.mime_type, f.file_size, f.version
                    FROM tfg_final_documents fd
                    INNER JOIN tfg_files f ON fd.file_id = f.id
                    WHERE fd.id = ? AND fd.submitted_by = ? AND fd.status = 'Rechazado'";
@@ -129,8 +129,8 @@ try {
         throw new Exception("Ha alcanzado el límite máximo de $max_corrections correcciones. Contacte a la CTFG.");
     }
     
-    // 3. Calcular la siguiente versión (basada en el conteo de correcciones + 1 para la versión inicial)
-    $next_version = $corrections_count + 2;  // +2 porque: versión 1 = original, versión 2+ = correcciones
+    // 3. Obtener la siguiente versión
+    $next_version = $doc_data['version'] + 1;
     
     // 4. Leer el archivo PDF
     $file_content = file_get_contents($file['tmp_name']);
@@ -138,22 +138,24 @@ try {
         throw new Exception("Error al leer el archivo PDF.");
     }
     
-    // 5. Insertar nueva versión en tfg_files (sin columnas version y document_type que no existen)
+    // 5. Insertar nueva versión en tfg_files
     $sql_file = "INSERT INTO tfg_files 
-                 (file_name, mime_type, file_size, file_data, storage_path, uploaded_by) 
-                 VALUES (?, ?, ?, ?, NULL, ?)";
+                 (file_name, mime_type, file_size, file_data, storage_path, uploaded_by, version, document_type) 
+                 VALUES (?, ?, ?, ?, NULL, ?, ?, 'Documento Final TFG')";
     
     $stmt_file = $conn->prepare($sql_file);
     if (!$stmt_file) throw new Exception("Error preparando inserción de archivo: " . $conn->error);
     
-    // Bind parameters: s=string, i=int, b=blob
+    // Bind parameters: s=string, i=int, b=blob, d=double (para version que es float)
     $null_blob = null;
-    $stmt_file->bind_param("ssibs", 
+    $stmt_file->bind_param("ssibsds", 
         $file['name'],
         $mime_type,
         $file['size'],
         $null_blob,
-        $current_user_id
+        $current_user_id,
+        $next_version,
+        'Documento Final TFG'
     );
     
     // Enviar el contenido del BLOB (índice 3 = 4º parámetro, basado en 0)
