@@ -54,37 +54,22 @@ try {
     error_log("Error al obtener documentos rechazados: " . $e->getMessage());
 }
 
-$footer_title = "Sistema Gestor de Proyectos Finales de Licenciatura\nEscuela de Informatica\nUniversidad Nacional de Costa Rica";
-$proxima_fecha   = "14/09/2025 – Entrega del capítulo 2";
-$tarea_pendiente = "Subir versión corregida del capítulo 2";
-$documento_enviado = "Avance 1 – Revisado con observaciones";
-$notificacion    = "[10/09/2025] Nueva fecha de entrega asignada";
+// ================== LÓGICA DEL PANEL ==================
+require_once 'PanelEstudianteLogic.php';
+$panel = new PanelEstudiante();
+
+// Obtención dinámica de datos
+$proxima_fecha      = $panel->getProximaFecha($usuario_sesion);
+$tarea_pendiente    = $panel->getTareaPendiente($usuario_sesion);
+$documento_enviado  = $panel->getDocumentoEnviado($usuario_sesion);
+$notificacion       = $panel->getNotificacion($usuario_sesion);
+//$rejected_documents = $panel->getDocumentosRechazados($usuario_sesion);
 
 $usuario = $usuario_sesion ?? 'Estudiante';
 ?>
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <title>Panel Estudiante - SGPFL</title>
-        <style>
-            body {
-                background-image: url('img/fondo_global.png');
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                font-family: Arial, sans-serif;
-                color: white;
-            }
-        </style>
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Bootstrap Icons -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
-        <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    </head>
+    <?php include('head.php'); ?>
     <body class="d-flex flex-column min-vh-100">
         <!-- JQuery -->
         <script src="<?= $base_url ?>lib/jquery-3.1.0.min.js"></script>
