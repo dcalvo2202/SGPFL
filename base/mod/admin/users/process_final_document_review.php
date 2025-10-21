@@ -132,6 +132,19 @@ try {
     }
     $stmt_update->close();
 
+    // 5. Insertar registro en tfg_document_reviews (HU-020)
+    // Guardar historial de revisión con observaciones
+    $review_type = 'Revision CTFG';
+    $stmt_review = $conn->prepare("INSERT INTO tfg_document_reviews 
+        (document_id, file_version, reviewer_id, review_type, status, observations, corrections_count) 
+        VALUES (?, ?, ?, ?, ?, ?, 0)");
+    if (!$stmt_review) throw new Exception("Error preparando inserción de revisión: " . $conn->error);
+    $stmt_review->bind_param("iissss", $document_id, $next_version, $reviewer_id, $review_type, $db_status, $comments);
+    if (!$stmt_review->execute()) {
+        throw new Exception("Error al guardar el historial de revisión: " . $stmt_review->error);
+    }
+    $stmt_review->close();
+
     // Si todo va bien, confirmar la transacción
     $conn->commit();
     
