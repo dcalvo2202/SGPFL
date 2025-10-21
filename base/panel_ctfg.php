@@ -1,54 +1,49 @@
+<?php
+// ================== VERIFICAR AUTENTICACIÓN ==================
+include("mod/login/check.php");
+include('includes.php');
+include('lang/lang.es');
+
+// ================== VARIABLES DE SESIÓN ==================
+$current_user_id   = $mySessionController->getVar("usuario");
+$current_user_name = $mySessionController->getVar("nombre");
+$current_user_rol  = $mySessionController->getVar("rol");
+
+// ================== URL BASE ==================
+$cds_domain = $mySessionController->getVar("cds_domain");
+$cds_locate = $mySessionController->getVar("cds_locate");
+$base_url   = $cds_domain . $cds_locate;
+
+// ================== CONTROL DE ACCESO ==================
+// Rol 3 = Comisión TFG (ajustar según tu base de datos)
+if ($current_user_rol != 3) {
+    header('Location: dashboard.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel CTFG - SGPFL UNA</title>
-    <?php
-        include('includes.php');
-        include('lang/lang.es');
-    ?>
-    
-    <!-- Bootstrap CSS y Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Estilos personalizados -->
-    <link href="inc/css/estilo.css" rel="stylesheet">
-    <link href="inc/css/panel_estudiante.css" rel="stylesheet">
-</head>
+<?php include('head.php'); ?>
 <body class="fondo-una d-flex flex-column min-vh-100">
-
-    <?php
-    // Obtener datos del usuario de sesión
-    include('lib/mysession/mySession.conf.php');
-    include('lib/mysession/mySession.class.php');
-    $mySessionController = mySession::getIstance($_MYSESSION_CONF);
-    $current_user_name = $mySessionController->getVar('nombre') ?? 'Usuario CTFG';
-    $current_user_id = $mySessionController->getVar('usuario') ?? '';
-    $base_url = $mySessionController->getVar('cds_domain') . $mySessionController->getVar('cds_locate');
-    ?>
-
     <!-- =============================== HEADER =============================== -->
     <?php include 'header.php'; ?> 
 
     <!-- =============================== CONTENIDO PRINCIPAL =============================== -->
     <main class="flex-fill">
         <div class="container my-5">
-            
             <div class="dashboard-header text-center mb-5">
-                <h1 style="font-size: 2.5rem; font-weight: 700;">Panel de la Comisión de TFG</h1>
+                <h1 style="font-size: 2.5rem; font-weight: 700;">Panel de la Comisión de Trabajos Finales de Graduación</h1>
                 <p class="lead">Bienvenido, <?= htmlspecialchars($current_user_name) ?>. Gestione las propuestas y documentos finales de TFG.</p>
             </div>
-
             <!-- Sección de Acciones Rápidas -->
             <div class="quick-actions-section">
                 <h2 class="section-title">
                     <i class="bi bi-lightning-fill text-rojo-una"></i>
                     Acciones Rápidas
                 </h2>
-                
                 <div class="row justify-content-center">
+                    <!-- Revisar Documentos Finales -->
                     <div class="col-md-6 col-lg-4">
                         <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_ctfg_review_final_documents.php'">
                             <div class="card-icon">
@@ -58,6 +53,7 @@
                             <p>Ver y gestionar documentos finales de TFG pendientes de revisión.</p>
                         </div>
                     </div>
+                    <!-- Aprobar Proyectos -->
                     <div class="col-md-6 col-lg-4">
                         <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>proyecto_aprobado.php'">
                             <div class="card-icon">
@@ -78,7 +74,6 @@
                     </div>
                 </div>
             </div>
-            
         </div>
     </main>
 
@@ -89,6 +84,8 @@
             <small>Escuela de Informática - Proyecto SGPFL v3.0</small>
         </div>
     </footer>
-
+     <!-- =============================== SCRIPTS =============================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
