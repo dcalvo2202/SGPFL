@@ -226,7 +226,6 @@ CSS;
       if(!fa||!finH||!finV) return; const ymd=addOneYearYMD(fa.value||''); finH.value=ymd||''; finV.value=ymd||'';
     }
 
-    // Normaliza a Array real (soporta NodeList/objetos tipo array)
     function toArr(v){
       if (Array.isArray(v)) return v;
       if (v && typeof v === 'object' && 'length' in v && typeof v.length === 'number') return Array.from(v);
@@ -236,7 +235,6 @@ CSS;
 
     function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
 
-    // Reemplaza: renderMembers (sin map/join)
     function renderMembers(list){
       const arr = toArr(list);
       const el = document.getElementById('chkBoxWrap');
@@ -261,7 +259,6 @@ CSS;
       if (counter) counter.textContent = n + ' seleccionados';
     }
 
-    // Reemplaza: renderStudentPanel (sin map/join)
     function renderStudentPanel(list){
       const arr = toArr(list);
       const panel = document.getElementById('panelEstudiante');
@@ -286,7 +283,6 @@ CSS;
       panel.style.display = '';
     }
 
-    // IDs del option seleccionado
     function getSelectedIds(){
       const sel = document.getElementById('nombre');
       const opt = sel && (sel.selectedOptions && sel.selectedOptions[0] || sel.options[sel.selectedIndex]) || null;
@@ -346,7 +342,6 @@ CSS;
         return;
       }
 
-      // Render separado: si falla, verás "Error en render" (no "Error de red")
       try {
         const members = toArr((data && data.members) || []);
         renderMembers(members);
