@@ -6,17 +6,42 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
 
-$nombre = trim($_POST['nombre'] ?? '');
-// Opcional: validar que exista realmente en tfg_proposals
-$valida = mysqli_prepare($id_con, "SELECT 1 FROM tfg_proposals WHERE title = ?");
-mysqli_stmt_bind_param($valida, "s", $nombre);
-mysqli_stmt_execute($valida);
-$existe = mysqli_stmt_get_result($valida);
-if (!$existe || mysqli_num_rows($existe) === 0) {
-    mysqli_stmt_close($valida);
+$nombre = trim($_POST['nombre'] ?? '');                 // puede venir como título
+$proposal_id = (int)($_POST['proposal_id'] ?? 0);       // id de tfg_proposals
+
+// Obtiene/valida el título real según lo recibido
+$nombre_title = '';
+if ($proposal_id > 0) {
+    $q = mysqli_prepare($id_con, "SELECT title FROM tfg_proposals WHERE id = ?");
+    mysqli_stmt_bind_param($q, "i", $proposal_id);
+    mysqli_stmt_execute($q);
+    $rs = mysqli_stmt_get_result($q);
+    if ($rs && ($row = mysqli_fetch_assoc($rs))) { $nombre_title = $row['title']; }
+    mysqli_stmt_close($q);
+} elseif ($nombre !== '') {
+    $q = mysqli_prepare($id_con, "SELECT title FROM tfg_proposals WHERE title = ?");
+    mysqli_stmt_bind_param($q, "s", $nombre);
+    mysqli_stmt_execute($q);
+    $rs = mysqli_stmt_get_result($q);
+    if ($rs && ($row = mysqli_fetch_assoc($rs))) { $nombre_title = $row['title']; }
+    mysqli_stmt_close($q);
+}
+
+// Si no hay título válido, error
+if ($nombre_title === '') {
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
-mysqli_stmt_close($valida);
+
+// Opcional: evita duplicados por nombre
+$dup = mysqli_prepare($id_con, "SELECT 1 FROM proyecto_aprobado WHERE nombre = ? LIMIT 1");
+mysqli_stmt_bind_param($dup, "s", $nombre_title);
+mysqli_stmt_execute($dup);
+$dupRs = mysqli_stmt_get_result($dup);
+if ($dupRs && mysqli_num_rows($dupRs) > 0) {
+    mysqli_stmt_close($dup);
+    header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
+}
+mysqli_stmt_close($dup);
 
 $comite_id     = (int)($_POST['comite'] ?? 0);
 $fecha_raw     = $_POST['fecha_aprobacion'] ?? '';
@@ -51,6 +76,26 @@ $dt->modify('+1 year');
 $fecha_finalizacion = $dt->format('Y-m-d H:i:s');
 
 $estudiantes = isset($_POST['estudiantes']) ? array_filter((array)$_POST['estudiantes']) : [];
+$registered_id = (int)($_POST['registered_id'] ?? 0);
+
+if (count($estudiantes) === 0 && $registered_id > 0) {
+    $qpm = mysqli_prepare(
+        $id_con,
+        "SELECT pm.user_id
+         FROM project_members pm
+         JOIN sis_login l ON l.id = pm.user_id
+         WHERE pm.project_id = ?
+           AND pm.status = 'Activo'
+           AND l.id_roll = 4"
+    );
+    if ($qpm) {
+        mysqli_stmt_bind_param($qpm, "i", $registered_id);
+        mysqli_stmt_execute($qpm);
+        $rs = mysqli_stmt_get_result($qpm);
+        while ($rs && ($r = mysqli_fetch_assoc($rs))) $estudiantes[] = $r['user_id'];
+        mysqli_stmt_close($qpm);
+    }
+}
 $unique = array_unique($estudiantes);
 if (count($unique) < 1 || count($unique) > 8) {
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
@@ -60,14 +105,15 @@ mysqli_begin_transaction($id_con);
 
 try {
     $sql = "INSERT INTO proyecto_aprobado
-            (nombre, comite_id, documento, aprobado, identificador, fecha_creacion, fecha_finalizacion)
-            VALUES (?,?,?,?,?,?,?)";
+            (nombre, proposal_id, comite_id, documento, aprobado, identificador, fecha_creacion, fecha_finalizacion)
+            VALUES (?,?,?,?,?,?,?,?)";
     $stmt = mysqli_prepare($id_con, $sql);
     if (!$stmt) { throw new Exception(mysqli_error($id_con)); }
     mysqli_stmt_bind_param(
         $stmt,
-        "sisisss",
-        $nombre,
+        "siisisss", // nombre(s), proposal_id(i), comite_id(i), documento(s), aprobado(i), identificador(s), fechas(s,s)
+        $nombre_title,
+        $proposal_id,
         $comite_id,
         $documento_blob,
         $aprobado,
