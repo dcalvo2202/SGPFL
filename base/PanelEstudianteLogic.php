@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/../base/inc/db/db.php";
+require_once __DIR__ . "/inc/db/db.php";
     class PanelEstudiante {
         private $conn;
 
