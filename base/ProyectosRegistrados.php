@@ -1,4 +1,7 @@
 <?php
+include("mod/login/check.php");
+include('includes.php');
+include('lang/lang.es');
 
 require_once __DIR__ . '/inc/db/db.php';
 
@@ -104,9 +107,16 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
   <?php include 'header.php'; ?>
   <main class="flex-fill">
     <div class="container my-5">
-      <h1 class="page-title">
-        Proyectos <span class="badge bg-<?php echo $estadoBadge; ?>"><?php echo $estadoLabel; ?></span>
-      </h1>
+
+      <div class="dashboard-header text-center mb-5">
+        <h1 style="font-size: 2.5rem; font-weight: 700;">Proyectos registrados</h1>
+        <p class="lead">Consulte y filtre proyectos aprobados, sin aprobar o en corrección.</p>
+      </div>
+
+      <!-- Estado seleccionado -->
+      <div class="mb-3">
+        <span class="badge bg-<?php echo $estadoBadge; ?>"><?php echo $estadoLabel; ?></span>
+      </div>
 
       <!-- Filtros -->
       <form class="row g-2 mb-4" method="get" action="">
@@ -149,6 +159,7 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
       <?php if (empty($proyectos_aprobados)): ?>
         <div class="alert alert-warning">No hay proyectos que coincidan con los filtros.</div>
       <?php else: ?>
+        <!-- Listado -->
         <ul class="list-group">
           <?php foreach ($proyectos_aprobados as $p): ?>
             <?php list($lbl,$bdg) = estadoInfo((int)$p['aprobado']); ?>
@@ -179,11 +190,17 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
           <?php endforeach; ?>
         </ul>
       <?php endif; ?>
+
+      <div class="text-center mt-4">
+        <a href="panel_ctfg.php" class="btn btn-secondary">
+          <i class="bi bi-arrow-left-circle"></i> Volver al Panel CTFG
+        </a>
+      </div>
     </div>
   </main>
 
   <?php include 'footer.php'; ?>
 
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
- </body>
- </html>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,4 +1,7 @@
 <?php
+include("mod/login/check.php");
+include('includes.php');
+include('lang/lang.es');
 
 require_once __DIR__ . '/inc/db/db.php';
 
@@ -44,8 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($next_id === null) {
             $flash_err = 'No se pudo generar el identificador de la nota.';
         } else {
-            // Usa el id de usuario de la sesión, sin forzar session_start()
-            $creado_por = (string)($_SESSION['id'] ?? $_SESSION['user_id'] ?? '');
+            // Usa el id de usuario desde mySession si está disponible
+            $creado_por = (string)($mySessionController->getVar('usuario') ?? $_SESSION['id'] ?? $_SESSION['user_id'] ?? '');
 
             $sqlIns = "INSERT INTO proyecto_notas (id_nota, proyecto_id, titulo, notas, creado_por)
                        VALUES (?, ?, ?, ?, ?)";
@@ -92,13 +95,12 @@ if ($stmt = mysqli_prepare($id_con, $sqlSel)) {
   <?php include 'header.php'; ?>
   <main class="flex-fill">
     <div class="container my-5">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1 class="page-title">
+
+      <div class="dashboard-header text-center mb-5">
+        <h1 style="font-size: 2.5rem; font-weight: 700;">
           Notas del proyecto<?php echo $proyecto_nombre !== '' ? ': ' . htmlspecialchars($proyecto_nombre, ENT_QUOTES, 'UTF-8') : ''; ?>
         </h1>
-        <a class="btn btn-outline-secondary" href="ProyectosRegistrados.php">
-          <i class="bi bi-arrow-left"></i> Volver
-        </a>
+        <p class="lead">Agregue nuevas notas y consulte el historial asociado al proyecto aprobado.</p>
       </div>
 
       <?php if ($flash_ok): ?>
@@ -136,7 +138,7 @@ if ($stmt = mysqli_prepare($id_con, $sqlSel)) {
           </div>
 
           <!-- Lista de títulos de notas previas -->
-          <div class="card">
+          <div class="card shadow-sm">
             <div class="card-header">
               <i class="bi bi-card-list"></i> Notas previas
             </div>
@@ -148,9 +150,7 @@ if ($stmt = mysqli_prepare($id_con, $sqlSel)) {
                   <?php foreach ($notas_previas as $n): ?>
                     <li class="list-group-item d-flex justify-content-between align-items-start">
                       <div>
-                        <div class="fw-semibold">
-                          <?php echo htmlspecialchars($n['titulo'], ENT_QUOTES, 'UTF-8'); ?>
-                        </div>
+                        <div class="fw-semibold"><?php echo htmlspecialchars($n['titulo'], ENT_QUOTES, 'UTF-8'); ?></div>
                         <small class="text-muted">
                           <?php
                             $f = $n['creado_en'] ?? '';
@@ -165,6 +165,12 @@ if ($stmt = mysqli_prepare($id_con, $sqlSel)) {
                 </ul>
               <?php endif; ?>
             </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <a href="ProyectosRegistrados.php" class="btn btn-secondary">
+              <i class="bi bi-arrow-left-circle"></i> Volver a Proyectos
+            </a>
           </div>
 
         </div>

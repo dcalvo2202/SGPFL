@@ -1,4 +1,8 @@
 <?php
+include("mod/login/check.php");
+include('includes.php');
+include('lang/lang.es');
+
 require_once __DIR__ . '/inc/db/db.php';
 require_once __DIR__ . '/lib/mysession/mySession.conf.php';
 require_once __DIR__ . '/lib/mysession/mySession.class.php';
@@ -81,128 +85,137 @@ CSS;
   <?php include 'header.php'; ?>
   <main class="flex-fill">
     <div class="container my-5">
-      <h1 class="page-title mb-3">Registrar proyecto aprobado</h1>
+
+      <div class="dashboard-header text-center mb-5">
+        <h1 style="font-size: 2.5rem; font-weight: 700;">Registrar proyecto aprobado</h1>
+        <p class="lead">Complete los datos para registrar un proyecto aprobado y asociarlo a su comité.</p>
+      </div>
 
       <?php if ($mensaje) echo $mensaje; ?>
 
-      <div class="mb-3">
-        <a href="panel_ctfg.php" class="btn btn-secondary">Regresar al panel comité</a>
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <form action="mod/admin/users/tfg_aprobado_update.php" method="post" enctype="multipart/form-data">
+            <!-- Identificador -->
+            <label>Código identificador (solo lectura):</label>
+            <input type="text" value="<?php echo htmlspecialchars($identificador_preview); ?>" readonly>
+            <input type="hidden" name="identificador" value="<?php echo htmlspecialchars($identificador_preview); ?>">
+
+            <!-- Tipo de trabajo -->
+            <label for="tipo_proyecto">Tipo de trabajo:</label>
+            <select id="tipo_proyecto" name="tipo_proyecto" required>
+              <option value="">Seleccione tipo</option>
+              <option value="tesis">Tesis (máx 2)</option>
+              <option value="proyecto">Proyecto de Graduación (máx 3)</option>
+              <option value="seminario">Seminario (máx 8)</option>
+            </select>
+            <small id="limitHint" style="color:#555;">Seleccione entre 1 y 8.</small>
+
+            <!-- Nombre desde propuestas -->
+            <label for="nombre">Nombre del proyecto (desde propuestas):</label>
+            <select id="nombre" name="nombre" required>
+              <option value="">Seleccione un título</option>
+              <?php foreach ($propuestas as $p): ?>
+                <option
+                  value="<?php echo htmlspecialchars($p['title']); ?>"
+                  data-proposal-id="<?php echo (int)$p['proposal_id']; ?>"
+                  data-registered-id="<?php echo (int)$p['registered_id']; ?>">
+                  <?php echo htmlspecialchars($p['title']); ?>
+                </option>
+              <?php endforeach; ?>
+            </select>
+            <input type="hidden" name="proposal_id" id="proposal_id" value="">
+            <input type="hidden" name="registered_id" id="registered_id" value="">
+
+            <!-- Estudiantes: ahora se llenan dinámicamente desde project_members -->
+            <div id="estudiantesSection" style="display:none;">
+              <label for="estudiante">Estudiantes:</label>
+              <div id="chkBoxWrap" style="max-height:240px;overflow:auto;border:1px solid #ccc;padding:8px;border-radius:6px;">
+                <!-- Se inyectan los checkboxes aquí -->
+              </div>
+              <div id="estCount" style="font-size:12px;color:#092567;margin-top:4px;">0 seleccionados</div>
+            </div>
+
+            <div id="panelEstudiante" class="card p-3 mt-3" style="display:none;">
+              <h5 class="mb-2">Panel Estudiante</h5>
+              <div class="table-responsive">
+                <table class="table table-striped table-sm align-middle mb-2">
+                  <thead>
+                    <tr>
+                      <th style="width:180px;">user_id</th>
+                      <th>Nombre</th>
+                    </tr>
+                  </thead>
+                  <tbody id="panelEstudianteBody">
+                  </tbody>
+                </table>
+              </div>
+              <div id="panelEstudianteCount" class="text-muted" style="font-size:.9rem;"></div>
+            </div>
+
+            <!-- Comité -->
+            <label for="comite">Comité asesor:</label>
+            <select name="comite" id="comite" required>
+              <option value="">Selecciona un comité</option>
+              <?php foreach ($comites as $r): ?>
+                <option value="<?php echo $r['Id']; ?>">
+                  Comité #<?php echo $r['Id']; ?> - T: <?php echo htmlspecialchars($r['tutor_nombre']); ?> / A1: <?php echo htmlspecialchars($r['asesor1_nombre']); ?> / A2: <?php echo htmlspecialchars($r['asesor2_nombre']); ?>
+                </option>
+              <?php endforeach; ?>
+            </select>
+
+            <!-- Estado aprobado -->
+            <label for="aprobado">Estado de aprobación:</label>
+            <select id="aprobado" name="aprobado" required>
+              <option value="">Seleccione estado</option>
+              <option value="1">Aprobado</option>
+              <option value="2">Sin aprobar</option>
+              <option value="3">Esperando correcciones</option>
+            </select>
+            <small style="color:#555;">Se enviará como tinyint (1–3) a la base de datos.</small>
+
+            <!-- Documento -->
+            <label for="documento">Documento (Word, PDF):</label>
+            <label for="documento" class="btn-tfg">Subir documento</label>
+            <input type="file" id="documento" name="documento" accept=".pdf,.doc,.docx,.xls,.xlsx" required hidden>
+
+            <!-- Miniatura del documento -->
+            <div id="previewBox" style="display:none;align-items:center;gap:10px;margin:10px 0;">
+              <img id="previewIcon" src="" alt="icono" style="width:40px;height:40px;">
+              <span id="previewName" style="font-size:0.95rem;color:#092567;"></span>
+            </div>
+
+            <!-- Fechas -->
+            <label for="fecha_aprobacion">Fecha de aprobación:</label>
+            <input type="date" id="fecha_aprobacion" name="fecha_aprobacion" value="<?php echo $fecha_actual; ?>" required>
+            <small style="color:#555;">Seleccione la fecha exacta de aprobación.</small>
+
+            <label for="fecha_finalizacion_view" class="mt-2">Fecha finalización:</label>
+            <!-- Visible (solo lectura) con valor inicial desde PHP -->
+            <input
+              type="date"
+              id="fecha_finalizacion_view"
+              class="form-control"
+              value="<?php echo htmlspecialchars($fecha_finalizacion_ini); ?>"
+              style="pointer-events:none;background:#f5f7fa;"
+              readonly
+              onfocus="this.blur()"
+              aria-readonly="true"
+            >
+            <!-- Enviado al backend -->
+            <input type="hidden" id="fecha_finalizacion" name="fecha_finalizacion"
+                   value="<?php echo htmlspecialchars($fecha_finalizacion_ini); ?>" required>
+
+            <button type="submit">Registrar proyecto</button>
+          </form>
+        </div>
       </div>
 
-      <form action="mod/admin/users/tfg_aprobado_update.php" method="post" enctype="multipart/form-data">
-        <!-- Identificador -->
-        <label>Código identificador (solo lectura):</label>
-        <input type="text" value="<?php echo htmlspecialchars($identificador_preview); ?>" readonly>
-        <input type="hidden" name="identificador" value="<?php echo htmlspecialchars($identificador_preview); ?>">
-
-        <!-- Tipo de trabajo -->
-        <label for="tipo_proyecto">Tipo de trabajo:</label>
-        <select id="tipo_proyecto" name="tipo_proyecto" required>
-          <option value="">Seleccione tipo</option>
-          <option value="tesis">Tesis (máx 2)</option>
-          <option value="proyecto">Proyecto de Graduación (máx 3)</option>
-          <option value="seminario">Seminario (máx 8)</option>
-        </select>
-        <small id="limitHint" style="color:#555;">Seleccione entre 1 y 8.</small>
-
-        <!-- Nombre desde propuestas -->
-        <label for="nombre">Nombre del proyecto (desde propuestas):</label>
-        <select id="nombre" name="nombre" required>
-          <option value="">Seleccione un título</option>
-          <?php foreach ($propuestas as $p): ?>
-            <option
-              value="<?php echo htmlspecialchars($p['title']); ?>"
-              data-proposal-id="<?php echo (int)$p['proposal_id']; ?>"
-              data-registered-id="<?php echo (int)$p['registered_id']; ?>">
-              <?php echo htmlspecialchars($p['title']); ?>
-            </option>
-          <?php endforeach; ?>
-        </select>
-        <input type="hidden" name="proposal_id" id="proposal_id" value="">
-        <input type="hidden" name="registered_id" id="registered_id" value="">
-
-        <!-- Estudiantes: ahora se llenan dinámicamente desde project_members -->
-        <div id="estudiantesSection" style="display:none;">
-          <label for="estudiante">Estudiantes:</label>
-          <div id="chkBoxWrap" style="max-height:240px;overflow:auto;border:1px solid #ccc;padding:8px;border-radius:6px;">
-            <!-- Se inyectan los checkboxes aquí -->
-          </div>
-          <div id="estCount" style="font-size:12px;color:#092567;margin-top:4px;">0 seleccionados</div>
-        </div>
-
-        <div id="panelEstudiante" class="card p-3 mt-3" style="display:none;">
-          <h5 class="mb-2">Panel Estudiante</h5>
-          <div class="table-responsive">
-            <table class="table table-striped table-sm align-middle mb-2">
-              <thead>
-                <tr>
-                  <th style="width:180px;">user_id</th>
-                  <th>Nombre</th>
-                </tr>
-              </thead>
-              <tbody id="panelEstudianteBody">
-              </tbody>
-            </table>
-          </div>
-          <div id="panelEstudianteCount" class="text-muted" style="font-size:.9rem;"></div>
-        </div>
-
-        <!-- Comité -->
-        <label for="comite">Comité asesor:</label>
-        <select name="comite" id="comite" required>
-          <option value="">Selecciona un comité</option>
-          <?php foreach ($comites as $r): ?>
-            <option value="<?php echo $r['Id']; ?>">
-              Comité #<?php echo $r['Id']; ?> - T: <?php echo htmlspecialchars($r['tutor_nombre']); ?> / A1: <?php echo htmlspecialchars($r['asesor1_nombre']); ?> / A2: <?php echo htmlspecialchars($r['asesor2_nombre']); ?>
-            </option>
-          <?php endforeach; ?>
-        </select>
-
-        <!-- Estado aprobado -->
-        <label for="aprobado">Estado de aprobación:</label>
-        <select id="aprobado" name="aprobado" required>
-          <option value="">Seleccione estado</option>
-          <option value="1">Aprobado</option>
-          <option value="2">Sin aprobar</option>
-          <option value="3">Esperando correcciones</option>
-        </select>
-        <small style="color:#555;">Se enviará como tinyint (1–3) a la base de datos.</small>
-
-        <!-- Documento -->
-        <label for="documento">Documento (Word, PDF):</label>
-        <label for="documento" class="btn-tfg">Subir documento</label>
-        <input type="file" id="documento" name="documento" accept=".pdf,.doc,.docx,.xls,.xlsx" required hidden>
-
-        <!-- Miniatura del documento -->
-        <div id="previewBox" style="display:none;align-items:center;gap:10px;margin:10px 0;">
-          <img id="previewIcon" src="" alt="icono" style="width:40px;height:40px;">
-          <span id="previewName" style="font-size:0.95rem;color:#092567;"></span>
-        </div>
-
-        <!-- Fechas -->
-        <label for="fecha_aprobacion">Fecha de aprobación:</label>
-        <input type="date" id="fecha_aprobacion" name="fecha_aprobacion" value="<?php echo $fecha_actual; ?>" required>
-        <small style="color:#555;">Seleccione la fecha exacta de aprobación.</small>
-
-        <label for="fecha_finalizacion_view" class="mt-2">Fecha finalización:</label>
-        <!-- Visible (solo lectura) con valor inicial desde PHP -->
-        <input
-          type="date"
-          id="fecha_finalizacion_view"
-          class="form-control"
-          value="<?php echo htmlspecialchars($fecha_finalizacion_ini); ?>"
-          style="pointer-events:none;background:#f5f7fa;"
-          readonly
-          onfocus="this.blur()"
-          aria-readonly="true"
-        >
-        <!-- Enviado al backend -->
-        <input type="hidden" id="fecha_finalizacion" name="fecha_finalizacion"
-               value="<?php echo htmlspecialchars($fecha_finalizacion_ini); ?>" required>
-
-        <button type="submit">Registrar proyecto</button>
-        <a href="panel_ctfg.php" class="btn btn-secondary mt-2">Regresar al panel comité</a>
-      </form>
+      <div class="text-center mt-4">
+        <a href="panel_ctfg.php" class="btn btn-secondary">
+          <i class="bi bi-arrow-left-circle"></i> Volver al Panel CTFG
+        </a>
+      </div>
     </div>
   </main>
   <?php include 'footer.php'; ?>
