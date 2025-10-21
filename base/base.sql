@@ -1257,7 +1257,7 @@ CREATE TABLE `proyecto_aprobado` (
   KEY `idx_proposal_id` (`proposal_id`),
   CONSTRAINT `fk_proy_comite` FOREIGN KEY (`comite_id`) REFERENCES `comite` (`Id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_proy_proposal` FOREIGN KEY (`proposal_id`) REFERENCES `tfg_proposals` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 
 -- ----------------------------
@@ -1271,7 +1271,7 @@ CREATE TABLE `proyecto_aprobado_estudiantes` (
   KEY `fk_pae_estudiante` (`estudiante_id`),
   CONSTRAINT `fk_pae_estudiante` FOREIGN KEY (`estudiante_id`) REFERENCES `sis_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_pae_proyecto` FOREIGN KEY (`id_aprobado`) REFERENCES `proyecto_aprobado` (`id_aprobado`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 
 -- ----------------------------
@@ -1285,7 +1285,7 @@ CREATE TABLE `proyecto_notas` (
   `notas` text NOT NULL,
   `creado_por` varchar(50) DEFAULT NULL,
   `creado_en` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 
 
