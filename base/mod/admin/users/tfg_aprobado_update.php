@@ -6,17 +6,42 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
 
-$nombre = trim($_POST['nombre'] ?? '');
-// Opcional: validar que exista realmente en tfg_proposals
-$valida = mysqli_prepare($id_con, "SELECT 1 FROM tfg_proposals WHERE title = ?");
-mysqli_stmt_bind_param($valida, "s", $nombre);
-mysqli_stmt_execute($valida);
-$existe = mysqli_stmt_get_result($valida);
-if (!$existe || mysqli_num_rows($existe) === 0) {
-    mysqli_stmt_close($valida);
+$nombre = trim($_POST['nombre'] ?? '');                 // puede venir como título
+$proposal_id = (int)($_POST['proposal_id'] ?? 0);       // id de tfg_proposals
+
+// Obtiene/valida el título real según lo recibido
+$nombre_title = '';
+if ($proposal_id > 0) {
+    $q = mysqli_prepare($id_con, "SELECT title FROM tfg_proposals WHERE id = ?");
+    mysqli_stmt_bind_param($q, "i", $proposal_id);
+    mysqli_stmt_execute($q);
+    $rs = mysqli_stmt_get_result($q);
+    if ($rs && ($row = mysqli_fetch_assoc($rs))) { $nombre_title = $row['title']; }
+    mysqli_stmt_close($q);
+} elseif ($nombre !== '') {
+    $q = mysqli_prepare($id_con, "SELECT title FROM tfg_proposals WHERE title = ?");
+    mysqli_stmt_bind_param($q, "s", $nombre);
+    mysqli_stmt_execute($q);
+    $rs = mysqli_stmt_get_result($q);
+    if ($rs && ($row = mysqli_fetch_assoc($rs))) { $nombre_title = $row['title']; }
+    mysqli_stmt_close($q);
+}
+
+// Si no hay título válido, error
+if ($nombre_title === '') {
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
-mysqli_stmt_close($valida);
+
+// Opcional: evita duplicados por nombre
+$dup = mysqli_prepare($id_con, "SELECT 1 FROM proyecto_aprobado WHERE nombre = ? LIMIT 1");
+mysqli_stmt_bind_param($dup, "s", $nombre_title);
+mysqli_stmt_execute($dup);
+$dupRs = mysqli_stmt_get_result($dup);
+if ($dupRs && mysqli_num_rows($dupRs) > 0) {
+    mysqli_stmt_close($dup);
+    header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
+}
+mysqli_stmt_close($dup);
 
 $comite_id     = (int)($_POST['comite'] ?? 0);
 $fecha_raw     = $_POST['fecha_aprobacion'] ?? '';
@@ -67,7 +92,7 @@ try {
     mysqli_stmt_bind_param(
         $stmt,
         "sisisss",
-        $nombre,
+        $nombre_title,                 // usar el título validado
         $comite_id,
         $documento_blob,
         $aprobado,

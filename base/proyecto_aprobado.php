@@ -54,10 +54,10 @@ if (isset($_GET['ok']))  $mensaje = '<div class="alert alert-success py-2 mb-3">
 if (isset($_GET['err'])) $mensaje = '<div class="alert alert-danger py-2 mb-3">Registro fallido. Intente nuevamente.</div>';
 
 $fecha_actual = date('Y-m-d');
-// Valor inicial de finalización (+1 año) calculado en servidor
+
 $fecha_finalizacion_ini = date('Y-m-d', strtotime($fecha_actual . ' +1 year'));
 
-// Head/estilos
+
 $page_title = 'Registrar proyecto aprobado';
 $inlineStyles = <<<'CSS'
 :root {
@@ -110,16 +110,16 @@ CSS;
         <select id="nombre" name="nombre" required>
           <option value="">Seleccione un título</option>
           <?php foreach ($propuestas as $p): ?>
-            <option 
-              value="<?php echo (int)$p['proposal_id']; ?>"
+            <option
+              value="<?php echo htmlspecialchars($p['title']); ?>"
+              data-proposal-id="<?php echo (int)$p['proposal_id']; ?>"
               data-registered-id="<?php echo (int)$p['registered_id']; ?>">
               <?php echo htmlspecialchars($p['title']); ?>
             </option>
           <?php endforeach; ?>
         </select>
-        <?php if (empty($propuestas)): ?>
-          <small style="color:#b00;">No hay propuestas disponibles.</small>
-        <?php endif; ?>
+        <input type="hidden" name="proposal_id" id="proposal_id" value="">
+        <input type="hidden" name="registered_id" id="registered_id" value="">
 
         <!-- Estudiantes: ahora se llenan dinámicamente desde project_members -->
         <div id="estudiantesSection" style="display:none;">
@@ -130,7 +130,6 @@ CSS;
           <div id="estCount" style="font-size:12px;color:#092567;margin-top:4px;">0 seleccionados</div>
         </div>
 
-        <!-- Panel Estudiante (tabla informativa) -->
         <div id="panelEstudiante" class="card p-3 mt-3" style="display:none;">
           <h5 class="mb-2">Panel Estudiante</h5>
           <div class="table-responsive">
@@ -142,7 +141,6 @@ CSS;
                 </tr>
               </thead>
               <tbody id="panelEstudianteBody">
-                <!-- Filas dinámicas -->
               </tbody>
             </table>
           </div>
@@ -210,271 +208,175 @@ CSS;
   <?php include 'footer.php'; ?>
 
   <script>
-    // Icono único de aceptación
     const ICON_URL = 'https://w1.pngwing.com/pngs/341/112/png-transparent-green-grass-symbol-logo-dialog-box-accept-yellow-circle.png';
-
-    // Mostrar el input file al hacer click en el label
-    document.querySelector('.btn-tfg').onclick = function(e) {
-      e.preventDefault();
-      document.getElementById('documento').click();
-    };
-
-    // Mostrar miniatura al seleccionar archivo (siempre el mismo ícono)
-    document.getElementById('documento').addEventListener('change', function(e) {
-      const file = e.target.files[0];
-      const box  = document.getElementById('previewBox');
+    document.querySelector('.btn-tfg').onclick = function(e){ e.preventDefault(); document.getElementById('documento').click(); };
+    document.getElementById('documento').addEventListener('change', function(e){
+      const file = e.target.files[0], box = document.getElementById('previewBox');
       if (!file) { box.style.display = 'none'; return; }
       document.getElementById('previewIcon').src = ICON_URL;
       document.getElementById('previewName').textContent = file.name;
       box.style.display = 'flex';
     });
 
-    // Utilidades de fecha robustas
-    function toYMD(d){
-      const dd = String(d.getDate()).padStart(2,'0');
-      const mm = String(d.getMonth()+1).padStart(2,'0');
-      const yyyy = d.getFullYear();
-      return `${yyyy}-${mm}-${dd}`;
-    }
-    function parseYMD(s){
-      const parts = (s || '').split('-');
-      if (parts.length !== 3) return null;
-      const y = Number(parts[0]), m = Number(parts[1]), d = Number(parts[2]);
-      if (!y || !m || !d) return null;
-      return { y, m, d };
-    }
-    // Suma 1 año preservando el día; si no existe (p. ej. 29/02), usa el último día del mes
-    function addOneYearYMD(ymd){
-      const p = parseYMD(ymd);
-      if (!p) return '';
-      const targetYear = p.y + 1;
-      const daysInTargetMonth = new Date(targetYear, p.m, 0).getDate(); // día 0 => último del mes
-      const day = Math.min(p.d, daysInTargetMonth);
-      return toYMD(new Date(targetYear, p.m - 1, day));
-    }
-
+    function toYMD(d){ const dd=String(d.getDate()).padStart(2,'0'), mm=String(d.getMonth()+1).padStart(2,'0'), yyyy=d.getFullYear(); return `${yyyy}-${mm}-${dd}`; }
+    function parseYMD(s){ const p=(s||'').split('-'); if (p.length!==3) return null; const y=+p[0],m=+p[1],d=+p[2]; if(!y||!m||!d)return null; return {y,m,d}; }
+    function addOneYearYMD(ymd){ const p=parseYMD(ymd); if(!p)return''; const ty=p.y+1, dim=new Date(ty,p.m,0).getDate(), day=Math.min(p.d,dim); return toYMD(new Date(ty,p.m-1,day)); }
     function calcularFechaFinal(){
-      const fa = document.getElementById('fecha_aprobacion');
-      const finHidden = document.getElementById('fecha_finalizacion');
-      const finView   = document.getElementById('fecha_finalizacion_view');
-      if (!fa || !finHidden || !finView) return;
-
-      const ymd = addOneYearYMD(fa.value || '');
-      finHidden.value = ymd || '';
-      finView.value   = ymd || '';
+      const fa=document.getElementById('fecha_aprobacion'), finH=document.getElementById('fecha_finalizacion'), finV=document.getElementById('fecha_finalizacion_view');
+      if(!fa||!finH||!finV) return; const ymd=addOneYearYMD(fa.value||''); finH.value=ymd||''; finV.value=ymd||'';
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const fa  = document.getElementById('fecha_aprobacion');
+    // Normaliza a Array real (soporta NodeList/objetos tipo array)
+    function toArr(v){
+      if (Array.isArray(v)) return v;
+      if (v && typeof v === 'object' && 'length' in v && typeof v.length === 'number') return Array.from(v);
+      if (v && typeof v === 'object') return Object.values(v);
+      return [];
+    }
 
-      calcularFechaFinal();              // inicial
+    function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
 
-      if (fa){
-        fa.addEventListener('input',  calcularFechaFinal);
-        fa.addEventListener('change', calcularFechaFinal);
-        fa.addEventListener('blur',   calcularFechaFinal);
-      }
+    // Reemplaza: renderMembers (sin map/join)
+    function renderMembers(list){
+      const arr = toArr(list);
+      const el = document.getElementById('chkBoxWrap');
+      if (!el) return;
 
-      // Al cambiar la propuesta, buscar autor(es) y preseleccionar estudiantes relacionados
-      const nombreSel = document.getElementById('nombre');
-      const wrap      = document.getElementById('chkBoxWrap');
-      const section   = document.getElementById('estudiantesSection');
-      const tipoSel   = document.getElementById('tipo_proyecto');
-      const panel     = document.getElementById('panelEstudiante');
-      const panelBody = document.getElementById('panelEstudianteBody');
-      const panelCount= document.getElementById('panelEstudianteCount');
-
-      function maxAllowed(){
-        const v = (tipoSel && tipoSel.value) || '';
-        if (v === 'tesis') return 2;
-        if (v === 'proyecto') return 3;
-        return 8; // seminario u otros
-      }
-      
-      function toArrayStrict(v){
-        if (Array.isArray(v)) return v;               
-        if (v && typeof v === 'object' && 'length' in v) return Array.from(v); 
-        if (v && typeof v === 'object') return Object.values(v);              
-        return [];
-      }
-      function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
-
-      function renderMembers(list){
-        const arr = toArrayStrict(list);
+      if (!arr.length){
+        el.innerHTML = '<small style="color:#555;">Sin miembros registrados para esta propuesta.</small>';
+      } else {
         let html = '';
-        for (let i = 0; i < arr.length; i++){
+        for (let i=0; i<arr.length; i++){
           const m = arr[i] || {};
           html += `<label style="display:block;font-size:13px;">
             <input type="checkbox" name="estudiantes[]" value="${escapeHtml(m.id||'')}" checked>
             ${escapeHtml(m.nombre||'')}
           </label>`;
         }
-        const el = document.getElementById('chkBoxWrap');
-        if (!el) return;
-        el.innerHTML = html || '<small style="color:#555;">Sin miembros registrados para esta propuesta.</small>';
-        el.dispatchEvent(new Event('change', { bubbles:true }));
+        el.innerHTML = html;
       }
 
-      // Reemplaza toda la función por esta versión sin map/join
-      function renderStudentPanel(list){
-        const arr = toArrayStrict(list);
-        const panel     = document.getElementById('panelEstudiante');
-        const panelBody = document.getElementById('panelEstudianteBody');
-        const panelCount= document.getElementById('panelEstudianteCount');
-        if (!panel || !panelBody || !panelCount) return;
+      const n = el.querySelectorAll('input[type=checkbox]:checked').length;
+      const counter = document.getElementById('estCount');
+      if (counter) counter.textContent = n + ' seleccionados';
+    }
 
-        if (!arr.length){
-          panelBody.innerHTML = '<tr><td colspan="2" class="text-muted">Sin estudiantes.</td></tr>';
-          panelCount.textContent = '0 estudiante(s) encontrado(s).';
-          panel.style.display = '';
-          return;
-        }
-        let rows = '';
-        for (let i = 0; i < arr.length; i++){
-          const m = arr[i] || {};
-          rows += `<tr><td><code>${escapeHtml(m.id||'')}</code></td><td>${escapeHtml(m.nombre||'')}</td></tr>`;
-        }
-        panelBody.innerHTML = rows;
-        panelCount.textContent = `${arr.length} estudiante(s) encontrado(s).`;
+    // Reemplaza: renderStudentPanel (sin map/join)
+    function renderStudentPanel(list){
+      const arr = toArr(list);
+      const panel = document.getElementById('panelEstudiante');
+      const panelBody = document.getElementById('panelEstudianteBody');
+      const panelCount = document.getElementById('panelEstudianteCount');
+      if (!panel || !panelBody || !panelCount) return;
+
+      if (!arr.length){
+        panelBody.innerHTML = '<tr><td colspan="2" class="text-muted">Sin estudiantes.</td></tr>';
+        panelCount.textContent = '0 estudiante(s) encontrado(s).';
         panel.style.display = '';
+        return;
       }
 
-      async function cargarMiembrosPorPropuesta(){
-        const nombreSel = document.getElementById('nombre');
-        const section   = document.getElementById('estudiantesSection');
-        const wrap      = document.getElementById('chkBoxWrap');
-        const tipoSel   = document.getElementById('tipo_proyecto');
-        const panel     = document.getElementById('panelEstudiante');
-        const panelBody = document.getElementById('panelEstudianteBody');
-        const panelCount= document.getElementById('panelEstudianteCount');
+      let rows = '';
+      for (let i=0; i<arr.length; i++){
+        const m = arr[i] || {};
+        rows += `<tr><td><code>${escapeHtml(m.id||'')}</code></td><td>${escapeHtml(m.nombre||'')}</td></tr>`;
+      }
+      panelBody.innerHTML = rows;
+      panelCount.textContent = `${arr.length} estudiante(s) encontrado(s).`;
+      panel.style.display = '';
+    }
 
-        if (!nombreSel || !wrap) return;
-        const opt = nombreSel.options[nombreSel.selectedIndex];
-        const proposalId   = nombreSel.value;
-        const registeredId = opt ? (opt.dataset.registeredId || '') : '';
-        if (!proposalId && !registeredId) {
-          if (section) section.style.display = 'none';
-          wrap.innerHTML = '';
-          if (panel){ panel.style.display = 'none'; panelBody.innerHTML=''; panelCount.textContent=''; }
-          return;
-        }
+    // IDs del option seleccionado
+    function getSelectedIds(){
+      const sel = document.getElementById('nombre');
+      const opt = sel && (sel.selectedOptions && sel.selectedOptions[0] || sel.options[sel.selectedIndex]) || null;
+      return {
+        pid: opt ? (opt.getAttribute('data-proposal-id')   || opt.dataset.proposalId   || '').trim() : '',
+        rid: opt ? (opt.getAttribute('data-registered-id') || opt.dataset.registeredId || '').trim() : ''
+      };
+    }
 
-        // Construir body
-        const params = new URLSearchParams();
-        if (proposalId)   params.append('proposal_id', proposalId);
-        if (registeredId) params.append('registered_id', registeredId);
-        params.append('debug', '1');
+    async function cargarMiembrosPorPropuesta(){
+      const section = document.getElementById('estudiantesSection');
+      const wrap    = document.getElementById('chkBoxWrap');
+      const panel   = document.getElementById('panelEstudiante');
+      const panelBody  = document.getElementById('panelEstudianteBody');
+      const panelCount = document.getElementById('panelEstudianteCount');
+      const tipoSel = document.getElementById('tipo_proyecto');
 
-        // URL del endpoint
-        const url = new URL('mod/admin/users/project_members_by_proposal.php', window.location.href).toString();
+      const ids = getSelectedIds();
+      const hidPid = document.getElementById('proposal_id');
+      const hidRid = document.getElementById('registered_id');
+      if (hidPid) hidPid.value = ids.pid;
+      if (hidRid) hidRid.value = ids.rid;
 
-        let raw = '';
-        let data = null;
-
-        // 1) Solo la petición/red en este try
-        try {
-          const resp = await fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: params.toString(),
-            credentials: 'same-origin'
-          });
-          raw = await resp.text();
-          try { data = JSON.parse(raw); } catch {_=>{}}
-
-          if (!resp.ok || !data || (data._meta && data._meta.ok === false)) {
-            if (section) section.style.display = '';
-            wrap.innerHTML = '<small style="color:#b00;">Error: '+escapeHtml(data && data._meta && data._meta.msg ? data._meta.msg : ('HTTP '+resp.status))+'</small>'
-                           + (raw ? '<pre style="white-space:pre-wrap;margin:6px 0 0;color:#900;background:#fee;padding:6px;border-radius:4px;">'+escapeHtml(raw)+'</pre>' : '');
-            if (panel){ panel.style.display=''; panelBody.innerHTML='<tr><td colspan="2" class="text-danger">Error.</td></tr>'; panelCount.textContent=''; }
-            console.error('Endpoint error/JSON:', { url, status: resp.status, raw, data });
-            return;
-          }
-        } catch (e) {
-          if (section) section.style.display = '';
-          wrap.innerHTML = '<small style="color:#b00;">Error de red: '+escapeHtml(e && e.message)+'</small>';
-          if (panel){ panel.style.display=''; panelBody.innerHTML='<tr><td colspan="2" class="text-danger">Error de red.</td></tr>'; panelCount.textContent=''; }
-          console.error('Fetch error:', e);
-          return;
-        }
-
-        // 2) Render en bloque separado (si algo falla veremos el mensaje real)
-        try {
-          const members = toArrayStrict(data && data.members);
-          renderMembers(members);
-          renderStudentPanel(members);
-          if (section) section.style.display = '';
-
-          const limite = (function(){
-            const v = (tipoSel && tipoSel.value) || '';
-            if (v === 'tesis') return 2;
-            if (v === 'proyecto') return 3;
-            return 8;
-          })();
-
-          const wrapEl = document.getElementById('chkBoxWrap');
-          if (wrapEl){
-            const checks = Array.from(wrapEl.querySelectorAll('input[type=checkbox]'));
-            if (checks.filter(c => c.checked).length > limite){
-              checks.forEach((c, i) => { c.checked = i < limite; });
-              wrapEl.dispatchEvent(new Event('change', { bubbles:true }));
-              alert('Se ajustó la selección al máximo permitido: ' + limite);
-            }
-          }
-          console.info('Miembros recibidos:', data && data._meta, members);
-        } catch (e) {
-          if (section) section.style.display = '';
-          wrap.innerHTML = '<small style="color:#b00;">Error en render: '+escapeHtml(e && e.message)+'</small>';
-          if (panel){ panel.style.display=''; panelBody.innerHTML='<tr><td colspan="2" class="text-danger">Error de render.</td></tr>'; panelCount.textContent=''; }
-          console.error('Render error:', e, { raw, data });
-        }
+      if (!ids.rid){
+        if (section) section.style.display = 'none';
+        if (wrap) wrap.innerHTML = '';
+        if (panel){ panel.style.display='none'; panelBody.innerHTML=''; panelCount.textContent=''; }
+        return;
       }
 
-      if (nombreSel) {
-        if (nombreSel.value) { cargarMiembrosPorPropuesta(); } else { section.style.display = 'none'; if (panel) panel.style.display='none'; }
-        nombreSel.addEventListener('change', cargarMiembrosPorPropuesta);
-      }
-    });
-
-    // Contador de estudiantes seleccionados + límites por tipo (se mantiene)
-    (function(){
-      const wrap      = document.getElementById('chkBoxWrap');
-      const counter   = document.getElementById('estCount');
-      const tipoSel   = document.getElementById('tipo_proyecto');
-      const hint      = document.getElementById('limitHint');
-      const limits    = { tesis:2, proyecto:3, seminario:8 };
-      function maxAllowed(){ return limits[tipoSel.value] || 8; }
-      function update(){
-        const n = wrap.querySelectorAll('input[type=checkbox]:checked').length;
-        counter.textContent = n + ' seleccionados';
-        if (hint) hint.textContent = 'Seleccione entre 1 y ' + maxAllowed() + '.';
-      }
-      wrap.addEventListener('change', function(e){
-        if (e.target.type === 'checkbox'){
-          const max = maxAllowed();
-          const checked = wrap.querySelectorAll('input[type=checkbox]:checked');
-          if (checked.length > max){
-            e.target.checked = false;
-            alert('Máximo permitido: ' + max);
-          }
-          update();
-        }
-      });
-      if (tipoSel) {
-        tipoSel.addEventListener('change', function(){
-          const max = maxAllowed();
-          const checked = [...wrap.querySelectorAll('input[type=checkbox]:checked')];
-          if (checked.length > max){
-            checked.slice(max).forEach(c => c.checked = false);
-            alert('Se ajustó la selección al nuevo máximo: ' + max);
-          }
-          update();
+      let data = null, raw = '';
+      try {
+        const resp = await fetch('mod/admin/users/project_members_by_proposal.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: 'registered_id=' + encodeURIComponent(ids.rid),
+          credentials: 'same-origin'
         });
+        raw = await resp.text();
+        try { data = JSON.parse(raw); } catch {}
+        if (!resp.ok || !data) {
+          if (section) section.style.display = '';
+          wrap.innerHTML = '<small style="color:#b00;">No se pudo cargar estudiantes (HTTP '+resp.status+').</small>';
+          if (panel){ panel.style.display=''; panelBody.innerHTML='<tr><td colspan="2" class="text-danger">Error.</td></tr>'; panelCount.textContent=''; }
+          console.error('Respuesta inválida:', {status: resp.status, raw});
+          return;
+        }
+      } catch (e) {
+        if (section) section.style.display = '';
+        wrap.innerHTML = '<small style="color:#b00;">Error de red.</small>';
+        if (panel){ panel.style.display=''; panelBody.innerHTML='<tr><td colspan="2" class="text-danger">Error.</td></tr>'; panelCount.textContent=''; }
+        console.error('Fetch error:', e);
+        return;
       }
-      update();
-    })();
+
+      // Render separado: si falla, verás "Error en render" (no "Error de red")
+      try {
+        const members = toArr((data && data.members) || []);
+        renderMembers(members);
+        renderStudentPanel(members);
+        if (section) section.style.display = '';
+
+        const wrapBox = document.getElementById('chkBoxWrap');
+        const tipoSel = document.getElementById('tipo_proyecto');
+        const max = (tipoSel && tipoSel.value === 'tesis') ? 2 :
+                    (tipoSel && tipoSel.value === 'proyecto') ? 3 : 8;
+        const checks = Array.from((wrapBox||document).querySelectorAll('input[type=checkbox]'));
+        if (checks.filter(c => c.checked).length > max){
+          checks.forEach((c, i) => c.checked = i < max);
+        }
+        console.info('Miembros:', members);
+      } catch (e) {
+        if (section) section.style.display = '';
+        wrap.innerHTML = '<small style="color:#b00;">Error en render: ' + escapeHtml(e && e.message) + '</small>';
+        if (panel){ panel.style.display=''; panelBody.innerHTML='<tr><td colspan="2" class="text-danger">Error.</td></tr>'; panelCount.textContent=''; }
+        console.error('Render error:', e, raw);
+      }
+    }
+
+    function initProyectoAprobado(){
+      calcularFechaFinal();
+      const sel = document.getElementById('nombre');
+      if (sel){
+        if (sel.selectedIndex > 0) cargarMiembrosPorPropuesta();
+        sel.addEventListener('change', cargarMiembrosPorPropuesta);
+      }
+    }
+
+    if (document.readyState !== 'loading') initProyectoAprobado();
+    else document.addEventListener('DOMContentLoaded', initProyectoAprobado);
   </script>
-<?php if (ob_get_level()) { ob_end_flush(); } ?>
 </body>
 </html>
-
