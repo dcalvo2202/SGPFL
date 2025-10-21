@@ -16,7 +16,6 @@ $comite_id = isset($_GET['comite']) ? (int)$_GET['comite'] : 0;
 $f_ini = trim($_GET['f_ini'] ?? '');
 $f_fin = trim($_GET['f_fin'] ?? '');
 
-// Validar fechas YYYY-MM-DD
 $validDate = fn($d) => $d !== '' && preg_match('/^\d{4}-\d{2}-\d{2}$/', $d);
 if (!$validDate($f_ini)) $f_ini = '';
 if (!$validDate($f_fin)) $f_fin = '';
