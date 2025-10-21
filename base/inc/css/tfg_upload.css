@@ -15,7 +15,7 @@
 
 .section-header {
     background: linear-gradient(135deg, #034991 0%, #1e5aa8 100%);
-    color: white;
+    color: white !important;
     padding: 20px;
     margin: 0;
 }
@@ -23,6 +23,24 @@
 .section-header h3 {
     margin: 0;
     font-weight: 500;
+    color: white !important;
+}
+
+.section-header h2,
+.section-header h4,
+.section-header p,
+.section-header span {
+    color: white !important;
+}
+
+/* Sobrescribir estilos globales de estilo.css para section-header */
+.section-card .section-header h1,
+.section-card .section-header h2,
+.section-card .section-header h3,
+.section-card .section-header h4,
+.section-card .section-header h5,
+.section-card .section-header h6 {
+    color: white !important;
 }
 
 .section-body {

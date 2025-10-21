@@ -1,5 +1,6 @@
 <?php 
-include('includes.php');
+// includes.php comentado porque causa problemas con rutas relativas en subdirectorios
+// include('includes.php');
 include('lang/lang.es');
 
 // Obtener variables de sesión

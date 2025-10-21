@@ -117,6 +117,49 @@ if ($current_user_rol != 3) {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #6c757d;
         }
+
+        .custom-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1060;
+        }
+
+        .custom-modal-content {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 0.5rem;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .custom-modal-content h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .custom-modal-actions {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .custom-modal-actions button {
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body class="fondo-una d-flex flex-column min-vh-100">
@@ -236,8 +279,14 @@ if ($current_user_rol != 3) {
                                            class="btn btn-sm btn-primary btn-download" 
                                            target="_blank"
                                            title="Descargar y revisar documento PDF">
-                                            <i class="bi bi-download me-1"></i> Descargar PDF
+                                            <i class="bi bi-download"></i>
                                         </a>
+                                        <button onclick="openReviewModal(<?= $row['id'] ?>, 'Aprobado para Defensa')" class="btn btn-sm btn-success" title="Aprobar para Defensa">
+                                            <i class="bi bi-check-circle"></i>
+                                        </button>
+                                        <button onclick="openReviewModal(<?= $row['id'] ?>, 'Correcciones Requeridas')" class="btn btn-sm btn-danger" title="Requerir Correcciones">
+                                            <i class="bi bi-x-circle"></i>
+                                        </button>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>
@@ -275,11 +324,6 @@ if ($current_user_rol != 3) {
             </div>
         </div>
     </main>
-                </a>
-            </div>
-            
-        </div>
-    </main>
 
     <!-- =============================== FOOTER =============================== -->
     <footer class="footer-una mt-auto">
@@ -288,6 +332,156 @@ if ($current_user_rol != 3) {
             <small>Escuela de Informática - Proyecto SGPFL v3.0</small>
         </div>
     </footer>
+
+    <!-- =============================== MODALS =============================== -->
+    <!-- Modal para Comentarios -->
+    <div id="commentModal" class="custom-modal-overlay" style="display:none;">
+        <div class="custom-modal-content">
+            <h4 id="modalTitle">Revisión de Documento Final</h4>
+            <p id="modalText"></p>
+            <textarea id="modalComments" class="form-control" placeholder="Escriba aquí sus observaciones..." rows="4"></textarea>
+            <small id="modalError" class="text-danger" style="display:none;">Los comentarios son obligatorios para esta acción.</small>
+            <div class="custom-modal-actions">
+                <button id="modalCancel" class="btn btn-secondary">Cancelar</button>
+                <button id="modalConfirm" class="btn btn-primary">Enviar Revisión</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Alerta -->
+    <div id="alertModal" class="custom-modal-overlay" style="display:none;">
+        <div class="custom-modal-content">
+            <h4 id="alertTitle"></h4>
+            <p id="alertMessage"></p>
+            <div class="custom-modal-actions">
+                <button id="alertOk" class="btn btn-primary">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =============================== SCRIPTS =============================== -->
+    <script>
+    // --- State and Elements ---
+    let currentReview = { document_id: null, status: null };
+
+    const commentModal = document.getElementById('commentModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalText = document.getElementById('modalText');
+    const modalComments = document.getElementById('modalComments');
+    const modalError = document.getElementById('modalError');
+    const modalConfirm = document.getElementById('modalConfirm');
+    const modalCancel = document.getElementById('modalCancel');
+
+    const alertModal = document.getElementById('alertModal');
+    const alertTitle = document.getElementById('alertTitle');
+    const alertMessage = document.getElementById('alertMessage');
+    const alertOk = document.getElementById('alertOk');
+
+    // --- Custom Alert Function ---
+    function showCustomAlert(title, message, isSuccess) {
+        alertTitle.textContent = title;
+        alertMessage.textContent = message;
+        alertModal.style.display = 'flex';
+        alertOk.onclick = () => {
+            alertModal.style.display = 'none';
+            if (isSuccess) {
+                location.reload();
+            }
+        };
+    }
+
+    // --- Main Function to Open Comment Modal ---
+    function openReviewModal(document_id, status) {
+        currentReview = { document_id, status };
+        const actionText = status === 'Aprobado para Defensa' ? 'Aprobar para Defensa' : 'Requerir Correcciones';
+        
+        modalText.textContent = `¿Desea ${actionText} este documento?`;
+        modalComments.value = '';
+        modalError.style.display = 'none';
+        commentModal.style.display = 'flex';
+        
+        if (status === 'Aprobado para Defensa') {
+            modalComments.placeholder = "Comentarios opcionales para la aprobación...";
+        } else {
+            modalComments.placeholder = "Escriba aquí las correcciones requeridas (obligatorio)...";
+        }
+        modalComments.focus();
+    }
+
+    // --- Event Listeners ---
+    modalCancel.addEventListener('click', () => {
+        commentModal.style.display = 'none';
+    });
+
+    modalConfirm.addEventListener('click', () => {
+        const comments = modalComments.value.trim();
+
+        if (currentReview.status === 'Correcciones Requeridas' && comments === '') {
+            modalError.style.display = 'block';
+            return;
+        }
+        
+        modalError.style.display = 'none';
+        commentModal.style.display = 'none';
+
+        // --- Step 1: Process review in DB ---
+        const dbBody = `document_id=${currentReview.document_id}&status=${encodeURIComponent(currentReview.status)}&comments=${encodeURIComponent(comments)}`;
+        
+        fetch('mod/admin/users/process_final_document_review.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: dbBody
+        })
+        .then(response => {
+            if (!response.ok) {
+                // Si la respuesta del servidor no es 2xx, intenta leer el JSON de error
+                return response.json().then(errorData => {
+                    throw new Error(errorData.message || 'Error en el servidor');
+                });
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                // --- Step 2: Send notification email ---
+                const emailBody = `status=${encodeURIComponent(data.status)}&comments=${encodeURIComponent(data.comments)}&tipo=Documento Final TFG`;
+
+                fetch('mod/admin/users/send_tfg_mail.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: emailBody
+                })
+                .then(emailResponse => emailResponse.json().catch(() => ({}))) // Evita error si la respuesta no es JSON
+                .then(emailData => {
+                    console.log('Respuesta del script de correo:', emailData);
+                    showCustomAlert('Operación Exitosa', data.message, true);
+                })
+                .catch(emailError => {
+                    console.error('Error al enviar el correo:', emailError);
+                    // Muestra éxito aunque el correo falle, porque la operación principal (BD) fue exitosa
+                    showCustomAlert('Operación Exitosa', `${data.message} (Pero hubo un problema al enviar la notificación por correo.)`, true);
+                });
+            } else {
+                // El script de BD devolvió success: false
+                throw new Error(data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error processing review:', error);
+            showCustomAlert('Error en la Operación', 'Ocurrió un error inesperado. Revise la consola para más detalles.', false);
+        });
+    });
+
+    // Close modal if clicking on the overlay
+    window.addEventListener('click', (event) => {
+        if (event.target == commentModal) {
+            commentModal.style.display = 'none';
+        }
+        if (event.target == alertModal) {
+            alertModal.style.display = 'none';
+        }
+    });
+    </script>
 
 </body>
 </html>

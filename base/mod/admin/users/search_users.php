@@ -24,17 +24,22 @@ try {
     }
     $conn->set_charset("utf8");
     
-    // Buscar usuarios en la base de datos
+    // Obtener el usuario actual del sistema de sesiones
+    include_once($base_path . '/lib/mysession/mySession.class.php');
+    $mySessionController = new MySession();
+    $current_user = $mySessionController->getVar("usuario");
+    
+    // Buscar SOLO ESTUDIANTES (rol = 4) en la base de datos
     $sql = "SELECT u.id, u.nombre, u.email 
             FROM sis_user u 
             INNER JOIN sis_login l ON u.id = l.id 
             WHERE (u.nombre LIKE ? OR u.email LIKE ? OR u.id LIKE ?)
+            AND l.rol = 4
             AND u.id != ?
             ORDER BY u.nombre 
             LIMIT 15";
     
     $search_pattern = "%$search_term%";
-    $current_user = $_SESSION['id'] ?? '112170040';
     
     $stmt = $conn->prepare($sql);
     if (!$stmt) {

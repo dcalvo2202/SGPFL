@@ -21,6 +21,36 @@ if ($current_user_rol != 4) {
     exit;
 }
 
+function formatoLegible($mime_type) {
+    // Normalizar a minúsculas para comparaciones más fáciles
+    $mime = strtolower($mime_type);
+    
+    // Extraer la parte después del slash si existe
+    $parts = explode('/', $mime);
+    $mime = isset($parts[1]) ? $parts[1] : $mime;
+    
+    // Mapeo de tipos comunes
+    $tipos = [
+        'pdf' => 'PDF',
+        'vnd.openxmlformats-officedocument.wordprocessingml.document' => 'DOCX',
+        'vnd.openxmlformats-officedocument.spreadsheetml.sheet' => 'XLSX',
+        'vnd.openxmlformats-officedocument.presentationml.presentation' => 'PPTX',
+        'msword' => 'DOC',
+        'vnd.ms-excel' => 'XLS',
+        'vnd.ms-powerpoint' => 'PPT',
+        'plain' => 'TXT',
+        'jpeg' => 'JPEG',
+        'png' => 'PNG',
+        'gif' => 'GIF',
+        'zip' => 'ZIP',
+        'x-rar-compressed' => 'RAR',
+        'x-zip-compressed' => 'ZIP'
+    ];
+    
+    // Comprobar si existe en el mapeo, o devolver formato original en mayúsculas
+    return isset($tipos[$mime]) ? $tipos[$mime] : strtoupper($mime);
+}
+
 // =============================== OBTENER ID DE PROYECTO ===============================
 
 // Buscar el project_id asociado al usuario autenticado
@@ -52,9 +82,9 @@ try {
     $conn = new mysqli($db_host, $usuario, $clave, $db);
     $conn->set_charset("utf8");
     $sql = "SELECT tp.id, tp.title, tp.file_name, tp.mime_type, tp.file_size, tp.status, tp.created_at
-            FROM registered_projects rp
-            INNER JOIN tfg_proposals tp ON rp.tfg_proposal_id = tp.id
+            FROM tfg_proposals tp 
             WHERE tp.user_id = ?
+            ORDER BY tp.created_at DESC
             LIMIT 1";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $current_user_id);
@@ -62,6 +92,7 @@ try {
     $result = $stmt->get_result();
     if ($row = $result->fetch_assoc()) {
         $row['tipo'] = 'Propuesta TFG'; // Identificador de tipo de documento
+        $row['version'] = 1; // Versión inicial
         $documentos[] = $row;
     }
     $stmt->close();
@@ -72,7 +103,6 @@ try {
 
 // Guardar el ID de la propuesta principal para excluirla de las versiones
 $propuesta_principal_id = $documentos[0]['id'] ?? 0;
-
 // =============================== OBTENER VERSIONES DE PROPUESTA TFG ===============================
 
 // Versiones históricas de la propuesta TFG (excluyendo la principal)
@@ -82,23 +112,22 @@ try {
     $conn->set_charset("utf8");
     
     // Consulta para ordenar de más antigua a más reciente
-    $sql = "SELECT tph.id, tph.proposal_id, tph.file_name, tph.mime_type, tph.file_size, 
+    $sql = "SELECT tp.id id_pro,tph.id, tph.proposal_id, tph.file_name, tph.mime_type, tph.file_size, 
                    tph.status, tph.comments, tph.created_at, tp.title
         FROM tfg_proposal_history tph
         INNER JOIN tfg_proposals tp ON tph.proposal_id = tp.id
         WHERE tp.user_id = ?
-        AND tph.id != ?  /* Excluir la propuesta principal */
-        ORDER BY tph.created_at ASC /* Orden de más antigua a más reciente */
-        LIMIT 5";  
+        AND tph.id != ? AND tp.id != ?  /* Excluir la propuesta principal */
+        ORDER BY tp.created_at DESC /* Orden de más antigua a más reciente */
+        LIMIT 4";  
         
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("si", $current_user_id, $propuesta_principal_id);
+    $stmt->bind_param("sii", $current_user_id, $propuesta_principal_id, $propuesta_principal_id);
     $stmt->execute();
     $result = $stmt->get_result();
     
     $version = 1; // Contador de versión
     while ($row = $result->fetch_assoc()) {
-        $row['version'] = $version++; // Asignar número de versión
         $propuestas_vers[] = $row;
     }
     $stmt->close();
@@ -136,7 +165,8 @@ try {
             'status' => $row['status'],
             'created_at' => $row['submitted_at'],
             'tipo' => $row['document_type'],
-            'document_type' => $row['document_type']
+            'document_type' => $row['document_type'],
+            'version' => $row['version']
         ];
         $documentos[] = $doc;
         
@@ -161,14 +191,14 @@ if (!empty($doc_final_ids)) {
             $conn->set_charset("utf8");
             
             // Obtener todas las versiones del mismo tipo de documento excepto la actual
-            $sql = "SELECT f.id, f.file_name, f.mime_type, f.file_size, f.version, f.document_type, f.upload_date, f.uploaded_by, fd.status
+            $sql = "SELECT f.id, fd.project_status as status, f.file_name, f.mime_type, f.file_size, f.version, f.document_type, f.upload_date, f.uploaded_by, fd.status, fd.proposal_id
                     FROM tfg_files f
                     LEFT JOIN tfg_final_documents fd ON f.id = fd.file_id
                     WHERE f.document_type = ? 
                     AND f.uploaded_by = ?
                     AND f.id != ?
                     ORDER BY f.upload_date DESC
-                    LIMIT 5"; // Limitamos a 5 versiones
+                    LIMIT 4"; // Limitamos a 5 versiones
                     
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("ssi", $doc_info['document_type'], $current_user_id, $doc_info['file_id']);
@@ -179,6 +209,7 @@ if (!empty($doc_final_ids)) {
             while ($row = $result->fetch_assoc()) {
                 $versions[] = [
                     'id' => $row['id'],
+                    'title' => $row['file_name'],
                     'file_name' => $row['file_name'],
                     'mime_type' => $row['mime_type'],
                     'file_size' => $row['file_size'],
@@ -227,11 +258,11 @@ try {
             'file_name' => $row['file_name'],
             'mime_type' => $row['mime_type'],
             'file_size' => $row['file_size'],
-            'status' => 'Subido', // Estado genérico
+            'status' => '-', // Estado genérico
             'created_at' => $row['upload_date'],
             'tipo' => $row['document_type'],
             'document_type' => $row['document_type'],
-            'version' => $row['version']
+            'version' => $row['version'] ?? 1.0
         ];
         $documentos[] = $doc;
     }
@@ -278,9 +309,8 @@ try {
                                 <td data-label="Versión">
                                     <?php if (($doc['tipo'] === 'Propuesta TFG' && !empty($propuestas_vers)) || 
                                             ($doc['tipo'] === 'Documento Final TFG' && !empty($versiones_docs_finales[$doc['document_type']]))): ?>
-                                        <button class="btn btn-link-una" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#<?= $collapseId ?>"
-                                            aria-expanded="false" aria-controls="<?= $collapseId ?>">
+                                        <button class="btn btn-link-una toggle-collapse" type="button"
+                                        data-target="<?= $collapseId ?>">
                                             Versiones
                                         </button>
                                     <?php elseif (isset($doc['version'])): ?>
@@ -290,17 +320,19 @@ try {
                                     <?php endif; ?>
                                 </td>
                                 <td data-label="Tamaño"><?= number_format($doc['file_size'] / (1024 * 1024), 2) ?> MB</td>
-                                <td data-label="Formato">
-                                    <?php
-                                    $parts = explode('/', $doc['mime_type']);
-                                    echo isset($parts[1]) ? strtoupper($parts[1]) : strtoupper($doc['mime_type']);
-                                    ?>
-                                </td>
+                                <td data-label="Formato"><?= formatoLegible($doc['mime_type']) ?></td>
                                 <td data-label="Acción">
-                                    <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $doc['id'] ?>" class="btn-link-una">
-                                        <i class="bi bi-download me-1"></i>
-                                        <span>Descargar</span>
-                                    </a>    
+                                    <?php if ($doc['tipo'] === 'Propuesta TFG'): ?>  
+                                        <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $doc['id'] ?>" class="btn-link-una">
+                                            <i class="bi bi-download me-1"></i>
+                                            <span>Descargar</span>
+                                        </a>
+                                    <?php elseif ($doc['tipo'] === 'Documento Final TFG' || $doc['tipo'] !== 'Propuesta TFG'): ?>
+                                        <a href="<?= $base_url . 'mod/admin/users/tfg_download_file.php?id=' . $doc['id'] ?>" class="btn-link-una">
+                                            <i class="bi bi-download me-1"></i>
+                                            <span>Descargar</span>    
+                                        </a>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                             
@@ -308,7 +340,7 @@ try {
                             <?php if ($doc['tipo'] === 'Propuesta TFG' && !empty($propuestas_vers)): ?>
                             <tr class="collapse-row">
                                 <td colspan="7" class="p-0">
-                                    <div class="collapse" id="<?= $collapseId ?>">
+                                    <div class="custom-collapse" id="<?= $collapseId ?>" style="display: none;">
                                         <div class="bg-light py-2 px-4">
                                             <table class="table table-bordered mb-0 version-table">
                                                 <thead class="table-light">
@@ -325,19 +357,14 @@ try {
                                                 <tbody>
                                                     <?php foreach ($propuestas_vers as $version): ?>
                                                     <tr>
-                                                        <td data-label="Documento"><?= htmlspecialchars($doc['tipo']) ?>: <?= htmlspecialchars($version['title']) ?></td>
+                                                        <td data-label="Documento"><?= htmlspecialchars($version['title']) ?></td>
                                                         <td data-label="Fecha"><?= date('d/m/Y', strtotime($version['created_at'])) ?></td>
                                                         <td data-label="Estado"><?= htmlspecialchars($version['status']) ?></td>
-                                                        <td data-label="Versión"><?= number_format($version['version'], 1) ?></td>
+                                                        <td data-label="Versión" class="text-center">-</td>
                                                         <td data-label="Tamaño"><?= number_format($version['file_size'] / (1024 * 1024), 2) ?> MB</td>
-                                                        <td data-label="Formato">
-                                                            <?php
-                                                            $parts = explode('/', $version['mime_type']);
-                                                            echo isset($parts[1]) ? strtoupper($parts[1]) : strtoupper($version['mime_type']);
-                                                            ?>
-                                                        </td>
+                                                        <td data-label="Formato"><?= formatoLegible($version['mime_type']) ?></td>
                                                         <td data-label="Acción">
-                                                            <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $version['id'] ?>" class="btn-link-una">
+                                                            <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $version['id_pro'] ?>" class="btn-link-una">
                                                                 <i class="bi bi-download me-1"></i>
                                                                 <span>Descargar</span>
                                                             </a>    
@@ -353,7 +380,7 @@ try {
                             <?php elseif ($doc['tipo'] === 'Documento Final TFG' && !empty($versiones_docs_finales[$doc['document_type']])): ?>
                             <tr class="collapse-row">
                                 <td colspan="7" class="p-0">
-                                    <div class="collapse" id="<?= $collapseId ?>">
+                                    <div class="custom-collapse" id="<?= $collapseId ?>" style="display: none;">
                                         <div class="bg-light py-2 px-4">
                                             <table class="table table-bordered mb-0 version-table">
                                                 <thead class="table-light">
@@ -370,19 +397,14 @@ try {
                                                 <tbody>
                                                     <?php foreach ($versiones_docs_finales[$doc['document_type']] as $version): ?>
                                                     <tr>
-                                                        <td data-label="Documento"><?= htmlspecialchars($doc['tipo']) ?>: <?= htmlspecialchars($version['file_name']) ?></td>
+                                                        <td data-label="Documento"><?= htmlspecialchars($version['file_name']) ?></td>
                                                         <td data-label="Fecha"><?= date('d/m/Y', strtotime($version['created_at'])) ?></td>
                                                         <td data-label="Estado"><?= htmlspecialchars($version['status']) ?></td>
                                                         <td data-label="Versión"><?= number_format($version['version'], 1) ?></td>
                                                         <td data-label="Tamaño"><?= number_format($version['file_size'] / (1024 * 1024), 2) ?> MB</td>
-                                                        <td data-label="Formato">
-                                                            <?php
-                                                            $parts = explode('/', $version['mime_type']);
-                                                            echo isset($parts[1]) ? strtoupper($parts[1]) : strtoupper($version['mime_type']);
-                                                            ?>
-                                                        </td>
+                                                        <td data-label="Formato"><?= formatoLegible($version['mime_type']) ?></td>
                                                         <td data-label="Acción">
-                                                            <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $version['id'] ?>" class="btn-link-una">
+                                                            <a href="<?= $base_url . 'mod/admin/users/tfg_download_file.php?id=' . $version['id'] ?>" class="btn-link-una">
                                                                 <i class="bi bi-download me-1"></i>
                                                                 <span>Descargar</span>
                                                             </a>
@@ -415,5 +437,18 @@ try {
   <!-- =============================== FOOTER =============================== -->
     <?php include 'footer.php'; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.toggle-collapse').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var targetId = this.getAttribute('data-target');
+                var target = document.getElementById(targetId);
+                if (target) {
+                    target.style.display = (target.style.display === 'none' || target.style.display === '') ? 'block' : 'none';
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>

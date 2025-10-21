@@ -59,18 +59,37 @@ function canUploadFinalDocument($user_id) {
         $stmt->close();
         
         // 2. Verificar si ya subió documento final
-        $sql_check = "SELECT id FROM tfg_final_documents WHERE proposal_id = ?";
+        // HU-020: Si el documento está rechazado, redirigir al estudiante a la página de correcciones
+        $sql_check = "SELECT id, status FROM tfg_final_documents WHERE proposal_id = ?";
         $stmt_check = $conn->prepare($sql_check);
         $stmt_check->bind_param("i", $proposal_id);
         $stmt_check->execute();
         $result_check = $stmt_check->get_result();
         
         if ($result_check->num_rows > 0) {
+            $doc_data = $result_check->fetch_assoc();
+            $document_id = $doc_data['id'];
+            $document_status = $doc_data['status'];
             $stmt_check->close();
+            
+            // Si está rechazado, el estudiante debe usar HU-020 (correcciones)
+            if ($document_status === 'Rechazado') {
+                $conn->close();
+                return [
+                    'can_upload' => false,
+                    'message' => 'Tu documento final fue rechazado por la CTFG.',
+                    'proposal_id' => $proposal_id,
+                    'project_status' => null,
+                    'document_id' => $document_id,
+                    'is_rejected' => true
+                ];
+            }
+            
+            // Si está en otro estado (Pendiente, Aprobado), bloquear subida
             $conn->close();
             return [
                 'can_upload' => false,
-                'message' => 'Ya has subido un documento final para esta propuesta.',
+                'message' => 'Ya has subido un documento final para esta propuesta. Estado actual: ' . $document_status,
                 'proposal_id' => $proposal_id,
                 'project_status' => null
             ];
@@ -137,25 +156,41 @@ function canUploadFinalDocument($user_id) {
  * @throws Exception Si ocurre un error en la base de datos
  */
 function limitarVersionesTFGFiles($conn, $user_id, $document_type) {
-    // Obtener todas las versiones existentes para este usuario y tipo de documento
-    $stmt = $conn->prepare("SELECT id FROM tfg_files WHERE uploaded_by = ? AND document_type = ? ORDER BY upload_date ASC");
-    $stmt->bind_param("ss", $user_id, $document_type);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    $version_ids = [];
-    while ($row = $result->fetch_assoc()) {
-        $version_ids[] = $row['id'];
-    }
-    $stmt->close();
-
-    // Si ya hay 5 versiones, eliminar la más antigua
-    if (count($version_ids) >= 5) {
-        $oldest_id = $version_ids[0];
-        $stmt = $conn->prepare("DELETE FROM tfg_files WHERE id = ?");
-        $stmt->bind_param("i", $oldest_id);
+    try {
+        // 1. Obtener todas las versiones existentes para este usuario y tipo de documento
+        // Obtener todas las versiones existentes para este usuario y tipo de documento
+        $stmt = $conn->prepare("SELECT id FROM tfg_files WHERE uploaded_by = ? AND document_type = ? ORDER BY upload_date ASC");
+        $stmt->bind_param("ss", $user_id, $document_type);
         $stmt->execute();
+        $result = $stmt->get_result();
+
+        $version_ids = [];
+        while ($row = $result->fetch_assoc()) {
+            $version_ids[] = $row['id'];
+        }
         $stmt->close();
+
+
+        // Si ya hay 5 versiones, eliminar la más antigua
+        if (count($version_ids)-1 >= 5) {
+
+            $oldest_id = $version_ids[0];
+            $stmt = $conn->prepare("DELETE FROM tfg_final_documents WHERE file_id = ?");
+            $stmt->bind_param("i", $oldest_id);
+            $stmt->execute();
+            $stmt->close();
+
+            $oldest_id = $version_ids[0];
+            $stmt = $conn->prepare("DELETE FROM tfg_files WHERE id = ?");
+            $stmt->bind_param("i", $oldest_id);
+            $stmt->execute();
+            $stmt->close();
+
+            $conn->commit();
+        }
+    } catch (Exception $e) {
+        error_log("Error al gestionar versiones: " . $e->getMessage());
+        $conn->rollback();
     }
 }
 
@@ -197,38 +232,41 @@ function saveFinalDocument($proposal_id, $file_data, $user_id, $project_status) 
         }
         
         // =============================== LÍMITE DE VERSIONES POR DOCUMENTO ===============================
-        $document_type = 'Documento Final TFG'; // O el tipo que corresponda según tu lógica
-        $stmt = $conn->prepare("SELECT id FROM tfg_files WHERE uploaded_by = ? AND document_type = ? ORDER BY upload_date ASC");
-        $stmt->bind_param("ss", $user_id, $document_type);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        $document_type = 'Documento Final TFG';
 
-        $version_ids = [];
-        while ($row = $result->fetch_assoc()) {
-            $version_ids[] = $row['id'];
-        }
-        $stmt->close();
+        // Eliminar versiones antiguas si hay más de 5
+        limitarVersionesTFGFiles($conn, $user_id, $document_type);
 
-        // Si ya hay 5 versiones, eliminar la más antigua
-        if (count($version_ids) >= 5) {
-            $oldest_id = $version_ids[0];
-            $stmt = $conn->prepare("DELETE FROM tfg_files WHERE id = ?");
-            $stmt->bind_param("i", $oldest_id);
-            $stmt->execute();
-            $stmt->close();
+        // Obtener la última versión para este usuario y tipo de documento
+        $sql_version = "SELECT MAX(version) AS max_version 
+                        FROM tfg_files 
+                        WHERE uploaded_by = ? 
+                        AND document_type = ?";
+
+        $stmt_version = $conn->prepare($sql_version);
+        $stmt_version->bind_param("ss", $user_id, $document_type);
+        $stmt_version->execute();
+        $result_version = $stmt_version->get_result();
+        $row_version = $result_version->fetch_assoc();
+        $next_version = 1; // Valor por defecto si no hay versiones previas
+
+        if ($row_version['max_version']) {
+            $next_version = $row_version['max_version'] + 1;
         }
-        //limitarVersionesTFGFiles($conn, $user_id, $document_type);
+        $stmt_version->close();
 
         // 2. Insertar en tfg_files
-        $sql_file = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by) 
-                     VALUES (?, ?, ?, ?, NULL, ?)";
+        $sql_file = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by, version, document_type) 
+                    VALUES (?, ?, ?, ?, NULL, ?, ?, ?)";
         $stmt_file = $conn->prepare($sql_file);
-        $stmt_file->bind_param("ssibs", 
+        $stmt_file->bind_param("ssibsds", 
             $file_data['name'], 
             $file_data['type'], 
             $file_data['size'], 
             $file_content,
-            $user_id
+            $user_id,
+            $next_version,
+            $document_type
         );
         
         // Enviar el BLOB
@@ -280,7 +318,7 @@ function saveFinalDocument($proposal_id, $file_data, $user_id, $project_status) 
         
         // =============================== NOTIFICACIÓN ===============================
         // Llama al archivo de notificación estudiante, secretaria (ajusta la ruta si es necesario)
-        include_once(__DIR__ . '/../../mod/admin/users/tfg_update_document.php');
+        //include_once(__DIR__ . '/../../mod/admin/users/tfg_update_document.php');
 
         return [
             'success' => true,
@@ -421,8 +459,8 @@ function getFinalDocumentByProposal($proposal_id) {
         
         $sql = "SELECT fd.*, f.file_name, f.file_size, f.mime_type, u.nombre as submitted_by_name
                 FROM tfg_final_documents fd
-                INNER JOIN tfg_files f ON fd.file_id = f.id
-                INNER JOIN sis_user u ON fd.submitted_by = u.id
+                JOIN tfg_files f ON fd.file_id = f.id
+                JOIN sis_user u ON fd.submitted_by = u.id
                 WHERE fd.proposal_id = ?";
         
         $stmt = $conn->prepare($sql);
@@ -444,6 +482,51 @@ function getFinalDocumentByProposal($proposal_id) {
         error_log("Error en getFinalDocumentByProposal: " . $e->getMessage());
         return null;
     }
+}
+
+/**
+ * Obtiene la información necesaria para enviar un correo de notificación sobre la revisión de un documento final.
+ *
+ * @param int $document_id ID del registro en tfg_final_documents.
+ * @return array|null Un array con la información o null si no se encuentra.
+ */
+function getFinalDocumentInfoForEmail($document_id) {
+    require(__DIR__ . '/db/bdcommon.inc');
+    $conn = new mysqli($db_host, $usuario, $clave, $db);
+    if ($conn->connect_error) {
+        error_log("Error de conexión en getFinalDocumentInfoForEmail: " . $conn->connect_error);
+        return null;
+    }
+    $conn->set_charset("utf8");
+
+    $sql = "SELECT
+                u.id AS user_id,
+                u.nombre AS student_name,
+                u.email AS student_email,
+                p.title AS project_title,
+                d.status AS document_status,
+                d.review_comments AS review_comments
+            FROM tfg_final_documents d
+            JOIN tfg_proposals p ON d.proposal_id = p.id
+            JOIN sis_user u ON p.user_id = u.id
+            WHERE d.id = ?";
+
+    $stmt = $conn->prepare($sql);
+    if (!$stmt) {
+        error_log("Error al preparar la consulta en getFinalDocumentInfoForEmail: " . $conn->error);
+        $conn->close();
+        return null;
+    }
+    
+    $stmt->bind_param("i", $document_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $data = $result->fetch_assoc();
+    
+    $stmt->close();
+    $conn->close();
+    
+    return $data;
 }
 
 } // End of if (!defined('TFG_FINAL_FUNCTIONS_LOADED'))

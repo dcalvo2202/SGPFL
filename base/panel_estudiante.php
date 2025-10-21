@@ -24,35 +24,52 @@ if (empty($usuario_sesion) || $rol_sesion != 4) {
 include('inc/db/db.php');
 include('lang/lang.es');
 
-$footer_title = "Sistema Gestor de Proyectos Finales de Licenciatura\nEscuela de Informatica\nUniversidad Nacional de Costa Rica";
-$proxima_fecha   = "14/09/2025 – Entrega del capítulo 2";
-$tarea_pendiente = "Subir versión corregida del capítulo 2";
-$documento_enviado = "Avance 1 – Revisado con observaciones";
-$notificacion    = "[10/09/2025] Nueva fecha de entrega asignada";
+// HU-020: Verificar si el estudiante tiene documentos finales rechazados
+$rejected_documents = [];
+try {
+    $conn = new mysqli($db_host, $usuario, $clave, $db);
+    if (!$conn->connect_error) {
+        $conn->set_charset("utf8");
+        
+        $sql = "SELECT fd.id, fd.status, tp.title, 
+                       (SELECT COUNT(*) FROM tfg_document_reviews 
+                        WHERE document_id = fd.id AND review_type = 'Correccion Estudiante') as corrections_count
+                FROM tfg_final_documents fd
+                INNER JOIN tfg_proposals tp ON fd.proposal_id = tp.id
+                WHERE fd.submitted_by = ? AND fd.status = 'Rechazado'";
+        
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $usuario_sesion);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        while ($row = $result->fetch_assoc()) {
+            $rejected_documents[] = $row;
+        }
+        
+        $stmt->close();
+        $conn->close();
+    }
+} catch (Exception $e) {
+    error_log("Error al obtener documentos rechazados: " . $e->getMessage());
+}
+
+// ================== LÓGICA DEL PANEL ==================
+require_once 'PanelEstudianteLogic.php';
+$panel = new PanelEstudiante();
+
+// Obtención dinámica de datos
+$proxima_fecha      = $panel->getProximaFecha($usuario_sesion);
+$tarea_pendiente    = $panel->getTareaPendiente($usuario_sesion);
+$documento_enviado  = $panel->getDocumentoEnviado($usuario_sesion);
+$notificacion       = $panel->getNotificacion($usuario_sesion);
+//$rejected_documents = $panel->getDocumentosRechazados($usuario_sesion);
 
 $usuario = $usuario_sesion ?? 'Estudiante';
 ?>
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <title>Panel Estudiante - SGPFL</title>
-        <style>
-            body {
-                background-image: url('img/fondo_global.png');
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                font-family: Arial, sans-serif;
-                color: white;
-            }
-        </style>
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    </head>
+    <?php include('head.php'); ?>
     <body class="d-flex flex-column min-vh-100">
         <!-- JQuery -->
         <script src="<?= $base_url ?>lib/jquery-3.1.0.min.js"></script>
@@ -95,6 +112,27 @@ $usuario = $usuario_sesion ?? 'Estudiante';
                                     <label class="form-label fw-bold">Notificaciones:</label>
                                     <div class="alert alert-primary"><?= $notificacion ?></div>
                                 </div>
+
+                                <?php if (!empty($rejected_documents)): ?>
+                                <!-- HU-020: Sección de correcciones requeridas -->
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold text-danger">
+                                        <i class="bi bi-exclamation-triangle-fill"></i> Correcciones Requeridas:
+                                    </label>
+                                    <?php foreach ($rejected_documents as $doc): ?>
+                                    <div class="alert alert-danger">
+                                        <h6 class="alert-heading">Documento: <?= htmlspecialchars($doc['title']) ?></h6>
+                                        <p class="mb-2">El CTFG ha solicitado correcciones en su documento final.</p>
+                                        <p class="mb-2"><strong>Correcciones enviadas:</strong> <?= $doc['corrections_count'] ?> / 3</p>
+                                        <hr>
+                                        <a href="<?= $base_url ?>mod/admin/users/tfg_upload_correction.php?id=<?= $doc['id'] ?>" 
+                                           class="btn btn-warning btn-sm">
+                                            <i class="bi bi-file-earmark-arrow-up-fill"></i> Subir Corrección
+                                        </a>
+                                    </div>
+                                    <?php endforeach; ?>
+                                </div>
+                                <?php endif; ?>
 
                                 <div class="text-center mt-4">
                                     <a href="<?= $base_url ?>Panel_SubirTFG.php" class="btn btn-primary btn-lg me-2">Editar Propuesta TFG</a>
