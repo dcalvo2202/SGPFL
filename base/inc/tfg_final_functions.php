@@ -232,25 +232,44 @@ function saveFinalDocument($proposal_id, $file_data, $user_id, $project_status) 
         }
         
         // =============================== LÍMITE DE VERSIONES POR DOCUMENTO ===============================
-        // NOTA: Las columnas version y document_type no existen en la tabla tfg_files actual
-        // Se omite la gestión de versiones antiguas por ahora
-        
-        // 2. Insertar en tfg_files (sin columnas version y document_type)
-        $sql_file = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by) 
-                    VALUES (?, ?, ?, ?, NULL, ?)";
+        $document_type = 'Documento Final TFG';
+
+        // Eliminar versiones antiguas si hay más de 5
+        limitarVersionesTFGFiles($conn, $user_id, $document_type);
+
+        // Obtener la última versión para este usuario y tipo de documento
+        $sql_version = "SELECT MAX(version) AS max_version 
+                        FROM tfg_files 
+                        WHERE uploaded_by = ? 
+                        AND document_type = ?";
+
+        $stmt_version = $conn->prepare($sql_version);
+        $stmt_version->bind_param("ss", $user_id, $document_type);
+        $stmt_version->execute();
+        $result_version = $stmt_version->get_result();
+        $row_version = $result_version->fetch_assoc();
+        $next_version = 1; // Valor por defecto si no hay versiones previas
+
+        if ($row_version['max_version']) {
+            $next_version = $row_version['max_version'] + 1;
+        }
+        $stmt_version->close();
+
+        // 2. Insertar en tfg_files
+        $sql_file = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by, version, document_type) 
+                    VALUES (?, ?, ?, ?, NULL, ?, ?, ?)";
         $stmt_file = $conn->prepare($sql_file);
-        
-        // Preparar para envío de BLOB
-        $null_blob = null;
-        $stmt_file->bind_param("ssibs", 
+        $stmt_file->bind_param("ssibsds", 
             $file_data['name'], 
             $file_data['type'], 
             $file_data['size'], 
-            $null_blob,
-            $user_id
+            $file_content,
+            $user_id,
+            $next_version,
+            $document_type
         );
         
-        // Enviar el BLOB (índice 3 = 4º parámetro)
+        // Enviar el BLOB
         $stmt_file->send_long_data(3, $file_content);
         
         if (!$stmt_file->execute()) {
@@ -297,6 +316,9 @@ function saveFinalDocument($proposal_id, $file_data, $user_id, $project_status) 
         $conn->commit();
         $conn->close();
         
+        // =============================== NOTIFICACIÓN ===============================
+        // Llama al archivo de notificación estudiante, secretaria (ajusta la ruta si es necesario)
+        //include_once(__DIR__ . '/../../mod/admin/users/tfg_update_document.php');
 
         return [
             'success' => true,
