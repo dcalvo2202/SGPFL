@@ -76,6 +76,26 @@ $dt->modify('+1 year');
 $fecha_finalizacion = $dt->format('Y-m-d H:i:s');
 
 $estudiantes = isset($_POST['estudiantes']) ? array_filter((array)$_POST['estudiantes']) : [];
+$registered_id = (int)($_POST['registered_id'] ?? 0);
+
+if (count($estudiantes) === 0 && $registered_id > 0) {
+    $qpm = mysqli_prepare(
+        $id_con,
+        "SELECT pm.user_id
+         FROM project_members pm
+         JOIN sis_login l ON l.id = pm.user_id
+         WHERE pm.project_id = ?
+           AND pm.status = 'Activo'
+           AND l.id_roll = 4"
+    );
+    if ($qpm) {
+        mysqli_stmt_bind_param($qpm, "i", $registered_id);
+        mysqli_stmt_execute($qpm);
+        $rs = mysqli_stmt_get_result($qpm);
+        while ($rs && ($r = mysqli_fetch_assoc($rs))) $estudiantes[] = $r['user_id'];
+        mysqli_stmt_close($qpm);
+    }
+}
 $unique = array_unique($estudiantes);
 if (count($unique) < 1 || count($unique) > 8) {
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
@@ -85,14 +105,15 @@ mysqli_begin_transaction($id_con);
 
 try {
     $sql = "INSERT INTO proyecto_aprobado
-            (nombre, comite_id, documento, aprobado, identificador, fecha_creacion, fecha_finalizacion)
-            VALUES (?,?,?,?,?,?,?)";
+            (nombre, proposal_id, comite_id, documento, aprobado, identificador, fecha_creacion, fecha_finalizacion)
+            VALUES (?,?,?,?,?,?,?,?)";
     $stmt = mysqli_prepare($id_con, $sql);
     if (!$stmt) { throw new Exception(mysqli_error($id_con)); }
     mysqli_stmt_bind_param(
         $stmt,
-        "sisisss",
-        $nombre_title,                 // usar el título validado
+        "siisisss", // nombre(s), proposal_id(i), comite_id(i), documento(s), aprobado(i), identificador(s), fechas(s,s)
+        $nombre_title,
+        $proposal_id,
         $comite_id,
         $documento_blob,
         $aprobado,

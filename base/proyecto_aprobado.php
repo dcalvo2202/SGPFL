@@ -310,7 +310,7 @@ CSS;
       if (hidPid) hidPid.value = ids.pid;
       if (hidRid) hidRid.value = ids.rid;
 
-      if (!ids.rid){
+      if (!ids.rid && !ids.pid){
         if (section) section.style.display = 'none';
         if (wrap) wrap.innerHTML = '';
         if (panel){ panel.style.display='none'; panelBody.innerHTML=''; panelCount.textContent=''; }
@@ -319,17 +319,21 @@ CSS;
 
       let data = null, raw = '';
       try {
+        const body = 'registered_id=' + encodeURIComponent(ids.rid || '') +
+                     '&proposal_id='  + encodeURIComponent(ids.pid || '');
         const resp = await fetch('mod/admin/users/project_members_by_proposal.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: 'registered_id=' + encodeURIComponent(ids.rid),
+          body,
           credentials: 'same-origin'
         });
         raw = await resp.text();
         try { data = JSON.parse(raw); } catch {}
-        if (!resp.ok || !data) {
+        if (!data) data = {};
+        if (!resp.ok) {
+          const msg = (data && data.error) ? (' ' + data.error) : '';
           if (section) section.style.display = '';
-          wrap.innerHTML = '<small style="color:#b00;">No se pudo cargar estudiantes (HTTP '+resp.status+').</small>';
+          wrap.innerHTML = '<small style="color:#b00;">No se pudo cargar estudiantes (HTTP '+resp.status+').'+escapeHtml(msg)+'</small>';
           if (panel){ panel.style.display=''; panelBody.innerHTML='<tr><td colspan="2" class="text-danger">Error.</td></tr>'; panelCount.textContent=''; }
           console.error('Respuesta inválida:', {status: resp.status, raw});
           return;

@@ -11,11 +11,11 @@ function guardarProyectoAprobadoSP(mysqli $conn, array $data, string $tmpPath): 
     if (!$stmt) return false;
     mysqli_stmt_bind_param(
         $stmt,
-        "sibsiss",
+        "sibisss", // nombre(s), comite_id(i), documento(b), aprobado(i), identificador(s), fecha(s), estudiantes_json(s)
         $data['nombre'],
-        $data['comite_id'],
+        (int)$data['comite_id'],
         $blob,
-        $data['aprobado'],
+        (int)$data['aprobado'],
         $data['identificador'],
         $fecha_aprob,
         $jsonEst
