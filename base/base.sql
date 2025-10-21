@@ -2433,3 +2433,28 @@ CREATE TABLE `tfg_notifications` (
   CONSTRAINT `fk_tfg_notif_sender` FOREIGN KEY (`sender_id`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_tfg_notif_role` FOREIGN KEY (`recipient_role_id`) REFERENCES `sis_rolls` (`id_roll`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- ----------------------------
+-- Table structure for `tfg_document_reviews`
+-- Almacena el historial de revisiones y observaciones de documentos finales (HU-020)
+-- Permite rastrear todas las correcciones solicitadas y enviadas
+-- ----------------------------
+DROP TABLE IF EXISTS `tfg_document_reviews`;
+CREATE TABLE `tfg_document_reviews` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `document_id` int(11) NOT NULL COMMENT 'FK a tfg_final_documents',
+  `file_version` int(11) NOT NULL COMMENT 'Versión del archivo revisada',
+  `reviewer_id` varchar(50) DEFAULT NULL COMMENT 'ID del revisor (CTFG) o NULL si es respuesta del estudiante',
+  `review_type` enum('Revision CTFG','Correccion Estudiante') NOT NULL,
+  `review_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `status` enum('Aprobado','Rechazado','Pendiente de Revision') NOT NULL,
+  `observations` text DEFAULT NULL COMMENT 'Observaciones/correcciones del CTFG',
+  `corrections_summary` text DEFAULT NULL COMMENT 'Resumen de cambios del estudiante (max 500 palabras)',
+  `corrections_count` int(11) DEFAULT 0 COMMENT 'Número de iteración de corrección',
+  PRIMARY KEY (`id`),
+  KEY `idx_document_id` (`document_id`),
+  KEY `idx_review_date` (`review_date`),
+  KEY `fk_review_reviewer` (`reviewer_id`),
+  CONSTRAINT `fk_review_document` FOREIGN KEY (`document_id`) REFERENCES `tfg_final_documents` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_review_reviewer` FOREIGN KEY (`reviewer_id`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;

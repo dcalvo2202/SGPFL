@@ -66,13 +66,30 @@ $additional_css = ['inc/css/tfg_upload.css'];
 
             <?php if (!$upload_check['can_upload']): ?>
                 <!-- Mostrar mensaje de error si no puede subir -->
-                <div class="alert alert-danger" role="alert">
-                    <h5><i class="bi bi-x-circle-fill"></i> No puedes subir el documento final</h5>
-                    <p class="mb-3"><?= htmlspecialchars($upload_check['message']) ?></p>
-                    <a href="<?= htmlspecialchars($panel_href) ?>" class="btn btn-primary">
-                        <i class="bi bi-arrow-left"></i> Volver al Panel
-                    </a>
-                </div>
+                <?php if (isset($upload_check['is_rejected']) && $upload_check['is_rejected']): ?>
+                    <!-- Caso especial: Documento rechazado - Redirigir a HU-020 -->
+                    <div class="alert alert-danger" role="alert">
+                        <h5><i class="bi bi-exclamation-triangle-fill"></i> Documento Final Rechazado</h5>
+                        <p class="mb-3"><?= htmlspecialchars($upload_check['message']) ?></p>
+                        <div class="d-flex gap-2">
+                            <a href="<?= $base_url ?>mod/admin/users/tfg_upload_correction.php?id=<?= $upload_check['document_id'] ?>" class="btn btn-warning">
+                                <i class="bi bi-file-earmark-arrow-up-fill"></i> Subir Correcciones (HU-020)
+                            </a>
+                            <a href="<?= htmlspecialchars($panel_href) ?>" class="btn btn-secondary">
+                                <i class="bi bi-arrow-left"></i> Volver al Panel
+                            </a>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <!-- Otros casos de bloqueo -->
+                    <div class="alert alert-danger" role="alert">
+                        <h5><i class="bi bi-x-circle-fill"></i> No puedes subir el documento final</h5>
+                        <p class="mb-3"><?= htmlspecialchars($upload_check['message']) ?></p>
+                        <a href="<?= htmlspecialchars($panel_href) ?>" class="btn btn-primary">
+                            <i class="bi bi-arrow-left"></i> Volver al Panel
+                        </a>
+                    </div>
+                <?php endif; ?>
             <?php else: ?>
                 <!-- Información del estado del proyecto -->
                 <div class="alert alert-info mb-4" role="alert">
@@ -179,6 +196,7 @@ $additional_css = ['inc/css/tfg_upload.css'];
     <!-- =============================== FOOTER =============================== -->
     <?php include $base_path . '/footer.php'; ?>
 
+    <?php if ($upload_check['can_upload']): ?>
     <script>
         // Mostrar información del archivo seleccionado
         document.getElementById('document').addEventListener('change', function(e) {
@@ -323,7 +341,6 @@ $additional_css = ['inc/css/tfg_upload.css'];
             });
         });
     </script>
-    <!-- =============================== FOOTER =============================== -->
-    <?php include $base_path . '/footer.php'; ?>
+    <?php endif; ?>
 </body>
 </html>
