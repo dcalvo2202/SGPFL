@@ -1,68 +1,69 @@
 <?php
 require_once __DIR__ . "/inc/db/db.php";
 class PanelCTFG {
-    public function getRevisionesPendientes() {
-        try{
-            $sql = "SELECT descripcion FROM revisiones_ctfg WHERE estado = 'pendiente'";
-            $resultado = seleccion($sql);
+    private $conn;
 
-            $revisiones = [];
-            if (!empty($resultado)) {
-                foreach ($resultado as $row) {
-                    $revisiones[] = $row["descripcion"];
-                }
-            }
-            return $revisiones;
-        } catch(Exception $e){
-            return [
-                "Aprobación de propuesta – Estudiante: Laura Sánchez",
-                "Revisión final de TFG – Estudiante: Pedro Gómez"
-            ];
+    public function __construct() {
+        global $db_host, $usuario, $clave, $db;
+        $this->conn = new mysqli($db_host, $usuario, $clave, $db);
+        if ($this->conn->connect_error) {
+            throw new Exception("Error de conexión: " . $this->conn->connect_error);
         }
+        $this->conn->set_charset("utf8");
+    }
+    
+    public function getRevisionesPendientes() {
+        $sql = "SELECT title, user_id 
+                FROM tfg_proposals 
+                WHERE status = 'Pendiente' OR status = 'En revisión'
+                ORDER BY created_at DESC";
+        $result = $this->conn->query($sql);
+
+        $revisiones = [];
+        while ($row = $result->fetch_assoc()) {
+            $revisiones[] = "Revisión pendiente de: " . htmlspecialchars($row["title"]);
+        }
+        return $revisiones ?: ["No hay revisiones pendientes."];
     }
     public function getAsignacionesPendientes() {
-        try{
-            $sql = "SELECT descripcion FROM asignaciones_ctfg WHERE estado = 'pendiente'";
-            $resultado = seleccion($sql);
+        $sql = "SELECT title 
+                FROM tfg_proposals 
+                WHERE commission_assigned IS NULL AND status = 'Pendiente'";
+        $result = $this->conn->query($sql);
 
-            $asignaciones = [];
-            if (!empty($resultado)) {
-                foreach ($resultado as $row) {
-                    $asignaciones[] = $row["descripcion"];
-                }
-            }
-            return $asignaciones;
-        } catch(Exception $e){
-            return [
-                "Asignar asesor externo – Estudiante: María López",
-                "Designar tribunal evaluador – Estudiante: Carlos Fernández"
-            ];
+        $asignaciones = [];
+        while ($row = $result->fetch_assoc()) {
+            $asignaciones[] = "Asignar comisión para: " . htmlspecialchars($row["title"]);
         }
+        return $asignaciones ?: ["No hay asignaciones pendientes."];
     }
     public function getProximaReunion() {
-        try{
-            $sql = "SELECT fecha FROM reuniones_ctfg ORDER BY fecha ASC LIMIT 1";
-            $resultado = seleccion($sql);
+        $sql = "SELECT fecha, tema 
+                FROM tfg_commission_meetings 
+                WHERE fecha >= CURDATE() 
+                ORDER BY fecha ASC LIMIT 1";
+        $result = $this->conn->query($sql);
 
-            if (!empty($resultado)) {
-                return $resultado[0]["fecha"];
-            }
-            return "No hay reuniones próximas";
-        } catch(Exception $e){
-            return "25/09/2025 – Sesión ordinaria de la Comisión TFG";
+        if ($row = $result->fetch_assoc()) {
+            return date("d/m/Y", strtotime($row["fecha"])) . " – " . $row["tema"];
         }
+        return "No hay reuniones programadas.";
     }
     public function getAvisos() {
-        try{
-            $sql = "SELECT texto FROM avisos_ctfg ORDER BY fecha DESC LIMIT 1";
-            $resultado = seleccion($sql);
+         $sql = "SELECT mensaje, fecha 
+                FROM tfg_announcements 
+                ORDER BY fecha DESC LIMIT 1";
+        $result = $this->conn->query($sql);
 
-            if (!empty($resultado)) {
-                return $resultado[0]["texto"];
-            }
-            return "No hay avisos registrados";
-        } catch(Exception $e){
-            return "Se deben resolver todas las propuestas pendientes antes del cierre de actas (30/09/2025).";
+        if ($row = $result->fetch_assoc()) {
+            return "[" . date("d/m/Y", strtotime($row["fecha"])) . "] " . $row["mensaje"];
+        }
+        return "No hay avisos recientes.";
+    }
+
+    public function __destruct() {
+        if ($this->conn) {
+            $this->conn->close();
         }
     }
 }
