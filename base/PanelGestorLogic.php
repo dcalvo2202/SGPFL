@@ -1,96 +1,89 @@
 <?php
 require_once __DIR__ . "/inc/db/db.php";
 class PanelGestor {
-    public function getRevisionesPendientes() {
-        try{
-            $sql = "SELECT descripcion FROM revisiones_ctfg WHERE estado = 'pendiente'";
-            $resultado = seleccion($sql);
+    private $conn;
 
-            $revisiones = [];
-            if (!empty($resultado)) {
-                foreach ($resultado as $row) {
-                    $revisiones[] = $row["descripcion"];
-                }
-            }
-            return $revisiones;
-        } catch(Exception $e){
-            return [
-                "Aprobación de propuesta – Estudiante: Laura Sánchez",
-                "Revisión final de TFG – Estudiante: Pedro Gómez"
-            ];
+    public function __construct() {
+        global $db_host, $usuario, $clave, $db;
+        $this->conn = new mysqli($db_host, $usuario, $clave, $db);
+        if ($this->conn->connect_error) {
+            throw new Exception("Error de conexión: " . $this->conn->connect_error);
         }
+        $this->conn->set_charset("utf8");
+    }
+    
+    public function getRevisionesPendientes() {
+        $sql = "SELECT title 
+                FROM tfg_proposals 
+                WHERE status IN ('Pendiente', 'En revisión')
+                ORDER BY created_at DESC";
+        $result = $this->conn->query($sql);
+
+        $revisiones = [];
+        while ($row = $result->fetch_assoc()) {
+            $revisiones[] = "Revisión pendiente: " . htmlspecialchars($row["title"]);
+        }
+        return $revisiones ?: ["No hay revisiones pendientes."];
     }
     public function getAsignacionesPendientes() {
-        try{
-            $sql = "SELECT descripcion FROM asignaciones_ctfg WHERE estado = 'pendiente'";
-            $resultado = seleccion($sql);
+        $sql = "SELECT title 
+                FROM tfg_proposals 
+                WHERE gestor_asignado IS NULL 
+                AND status = 'Pendiente'";
+        $result = $this->conn->query($sql);
 
-            $asignaciones = [];
-            if (!empty($resultado)) {
-                foreach ($resultado as $row) {
-                    $asignaciones[] = $row["descripcion"];
-                }
-            }
-            return $asignaciones;
-        } catch(Exception $e){
-            return [
-                "Asignar asesor externo – Estudiante: María López",
-                "Designar tribunal evaluador – Estudiante: Carlos Fernández"
-            ];
+        $asignaciones = [];
+        while ($row = $result->fetch_assoc()) {
+            $asignaciones[] = "Falta asignar evaluador a: " . htmlspecialchars($row["title"]);
         }
+        return $asignaciones ?: ["No hay asignaciones pendientes."];
     }
     public function getProximaReunion() {
-        try{
-            $sql = "SELECT fecha FROM reuniones_ctfg ORDER BY fecha ASC LIMIT 1";
-            $resultado = seleccion($sql);
+        $sql = "SELECT fecha, tema 
+                FROM tfg_commission_meetings 
+                WHERE fecha >= CURDATE() 
+                ORDER BY fecha ASC LIMIT 1";
+        $result = $this->conn->query($sql);
 
-            if (!empty($resultado)) {
-                return $resultado[0]["fecha"];
-            }
-            return "No hay reuniones próximas";
-        } catch(Exception $e){
-            return "25/09/2025 – Sesión ordinaria de la Comisión TFG";
+        if ($row = $result->fetch_assoc()) {
+            return date("d/m/Y", strtotime($row["fecha"])) . " – " . $row["tema"];
         }
+        return "No hay reuniones programadas.";
     }
     public function getAvisos() {
-        try{
-            $sql = "SELECT texto FROM avisos_ctfg ORDER BY fecha DESC LIMIT 1";
-            $resultado = seleccion($sql);
+        $sql = "SELECT mensaje, fecha 
+                FROM tfg_announcements 
+                ORDER BY fecha DESC LIMIT 1";
+        $result = $this->conn->query($sql);
 
-            if (!empty($resultado)) {
-                return $resultado[0]["texto"];
-            }
-            return "No hay avisos registrados";
-        } catch(Exception $e){
-            return "Se deben resolver todas las propuestas pendientes antes del cierre de actas (30/09/2025).";
+        if ($row = $result->fetch_assoc()) {
+            return "[" . date("d/m/Y", strtotime($row["fecha"])) . "] " . $row["mensaje"];
         }
+        return "No hay avisos recientes.";
     }
     public function getCalificaciones() {
-        try {
-            $sql = "SELECT c.id, e.nombre as estudiante, p.titulo as proyecto, c.nota 
-                    FROM calificaciones c
-                    JOIN estudiantes e ON c.estudiante_id = e.id
-                    JOIN proyectos p ON c.proyecto_id = p.id";
-            $resultado = seleccion($sql);
+        $sql = "SELECT e.id, u.nombre AS estudiante, p.title AS proyecto, e.nota
+                FROM tfg_evaluations e
+                JOIN usuarios u ON e.estudiante_id = u.id
+                JOIN tfg_proposals p ON e.proyecto_id = p.id
+                ORDER BY e.nota DESC";
+        $result = $this->conn->query($sql);
 
-            $calificaciones = [];
-            if (!empty($resultado)) {
-                foreach ($resultado as $row) {
-                    $calificaciones[] = [
-                        "id"        => $row["id"],
-                        "estudiante"=> $row["estudiante"],
-                        "proyecto"  => $row["proyecto"],
-                        "nota"      => $row["nota"]
-                    ];
-                }
-            }
-            return $calificaciones;
-        } catch (Exception $e) {
-            return [
-                ["id" => 1, "estudiante" => "Ana Pérez", "proyecto" => "Sistema de Gestión Académica", "nota" => 85],
-                ["id" => 2, "estudiante" => "Juan Ramírez", "proyecto" => "Plataforma E-learning", "nota" => 90],
-                ["id" => 3, "estudiante" => "María López", "proyecto" => "Sistema de Inventario", "nota" => 78]
+        $calificaciones = [];
+        while ($row = $result->fetch_assoc()) {
+            $calificaciones[] = [
+                "id" => $row["id"],
+                "estudiante" => $row["estudiante"],
+                "proyecto" => $row["proyecto"],
+                "nota" => $row["nota"]
             ];
+        }
+        return $calificaciones ?: [];
+    }
+
+    public function __destruct() {
+        if ($this->conn) {
+            $this->conn->close();
         }
     }
 }
