@@ -1,4 +1,7 @@
 <?php
+// Iniciar buffer de salida para capturar cualquier output no deseado
+ob_start();
+
 // VERIFICAR AUTENTICACIÓN
 include("../../login/check.php");
 
@@ -9,6 +12,7 @@ try {
     $current_user_rol = $mySessionController->getVar("rol");
 
     if (!$current_user_id) {
+        ob_end_clean(); // Limpiar buffer antes de enviar headers
         http_response_code(401);
         throw new Exception("Usuario no autenticado.");
     }
@@ -18,6 +22,7 @@ try {
     // Conectar a la base de datos
     $conn = new mysqli($db_host, $usuario, $clave, $db);
     if ($conn->connect_error) {
+        ob_end_clean();
         http_response_code(500);
         throw new Exception("Error de conexión: " . $conn->connect_error);
     }
@@ -25,6 +30,7 @@ try {
     // Validar ID del archivo
     $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
     if ($id <= 0) {
+        ob_end_clean();
         http_response_code(400);
         throw new Exception("Solicitud inválida. ID no proporcionado.");
     }
@@ -33,6 +39,7 @@ try {
     $sql = "SELECT id, uploaded_by, file_name, mime_type, file_size, file_data FROM tfg_files WHERE id = ?";
     $stmt = $conn->prepare($sql);
     if (!$stmt) {
+        ob_end_clean();
         http_response_code(500);
         throw new Exception("Error en la consulta.");
     }
@@ -41,33 +48,27 @@ try {
     $result = $stmt->get_result();
 
     if ($result->num_rows === 0) {
+        ob_end_clean();
         http_response_code(404);
         throw new Exception("Archivo no encontrado.");
     }
 
     $row = $result->fetch_assoc();
     $stmt->close();
-
-    /* VERIFICAR PERMISOS DE ACCESO
-    $can_download = false;
-    if ($row['uploaded_by'] === $current_user_id) {
-        $can_download = true;
-    } elseif ($current_user_rol == 1 || $current_user_rol == 2) {
-        $can_download = true;
-    } elseif ($current_user_rol == 3) {
-        $can_download = true;
-    }
-
-    if (!$can_download) {
-        http_response_code(403);
-        throw new Exception("No tienes permisos para descargar este archivo.");
-    }*/
-
     $conn->close();
 
     if (empty($row['file_data'])) {
+        ob_end_clean();
         http_response_code(404);
         throw new Exception("El archivo no existe en la base de datos.");
+    }
+
+    // LIMPIAR TODO EL BUFFER ANTES DE ENVIAR HEADERS
+    ob_end_clean();
+    
+    // Limpiar cualquier salida previa
+    if (ob_get_level()) {
+        ob_end_clean();
     }
 
     // Configurar headers para descarga
@@ -75,15 +76,20 @@ try {
     header('Content-Length: ' . (int)$row['file_size']);
     header('Content-Disposition: attachment; filename="' . basename(str_replace('"', '', $row['file_name'])) . '"');
     header('Cache-Control: no-cache, must-revalidate');
-    // header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
-    header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');
+    header('Pragma: public');
+    header('Expires: 0');
 
     // Enviar el contenido del archivo BLOB
     echo $row['file_data'];
     exit;
 
 } catch (Exception $e) {
-    // Puedes personalizar el mensaje de error aquí
+    // Limpiar buffer en caso de error
+    if (ob_get_level()) {
+        ob_end_clean();
+    }
+    
+    http_response_code(500);
     echo "Error: " . htmlspecialchars($e->getMessage());
     exit;
 }
