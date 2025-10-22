@@ -572,10 +572,10 @@ try {
     // Enviar correos
 
     // Para el estudiante
-    $mail1 = mail($secretaria_email, $subject, $message_estudiante, $headers);
+    //$mail1 = mail($secretaria_email, $subject, $message_estudiante, $headers);
     
     // Para la secretaría
-    $mail2 = mail($secretaria_email, $subject, $message_secretaria, $headers);
+    //$mail2 = mail($secretaria_email, $subject, $message_secretaria, $headers);
 
     error_log("Notificación enviada a estudiante y secretaría.");
 } catch (Exception $e) {

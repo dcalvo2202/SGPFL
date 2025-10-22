@@ -172,7 +172,7 @@ function limitarVersionesTFGFiles($conn, $user_id, $document_type) {
 
 
         // Si ya hay 5 versiones, eliminar la más antigua
-        if (count($version_ids)-1 >= 5) {
+        if (count($version_ids) >= 5) {
 
             $oldest_id = $version_ids[0];
             $stmt = $conn->prepare("DELETE FROM tfg_final_documents WHERE file_id = ?");

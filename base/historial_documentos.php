@@ -117,12 +117,12 @@ try {
         FROM tfg_proposal_history tph
         INNER JOIN tfg_proposals tp ON tph.proposal_id = tp.id
         WHERE tp.user_id = ?
-        AND tph.id != ? AND tp.id != ?  /* Excluir la propuesta principal */
+        AND tp.id != ?  /* Excluir la propuesta principal */
         ORDER BY tp.created_at DESC /* Orden de más antigua a más reciente */
-        LIMIT 4";  
+        LIMIT 4"; // Limitamos a 5 versiones
         
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sii", $current_user_id, $propuesta_principal_id, $propuesta_principal_id);
+    $stmt->bind_param("si", $current_user_id, $propuesta_principal_id);
     $stmt->execute();
     $result = $stmt->get_result();
     
