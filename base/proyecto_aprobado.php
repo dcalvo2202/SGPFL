@@ -172,7 +172,7 @@ CSS;
               <option value="2">Sin aprobar</option>
               <option value="3">Esperando correcciones</option>
             </select>
-            <small style="color:#555;">Se enviará como tinyint (1–3) a la base de datos.</small>
+            
 
             <!-- Documento -->
             <label for="documento">Documento (Word, PDF):</label>
