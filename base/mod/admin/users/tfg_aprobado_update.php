@@ -2,6 +2,27 @@
 session_start();
 require_once '../../../inc/db/db.php';
 
+// Add: helpers to validate/generate unique identificador
+function pa_ident_exists(mysqli $db, string $ident): bool {
+    $stmt = mysqli_prepare($db, "SELECT 1 FROM proyecto_aprobado WHERE identificador = ? LIMIT 1");
+    if (!$stmt) return false;
+    mysqli_stmt_bind_param($stmt, "s", $ident);
+    mysqli_stmt_execute($stmt);
+    $rs = mysqli_stmt_get_result($stmt);
+    $exists = $rs && mysqli_fetch_row($rs);
+    mysqli_stmt_close($stmt);
+    return (bool)$exists;
+}
+
+function pa_generar_ident_unico(mysqli $db): string {
+    for ($i = 0; $i < 30; $i++) {
+        $ident = 'UNA-TFG-' . str_pad((string)random_int(0, 9999), 4, '0', STR_PAD_LEFT) . '-' . date('Y');
+        if (!pa_ident_exists($db, $ident)) return $ident;
+    }
+    // Fallback (extremely unlikely to be needed)
+    return 'UNA-TFG-' . strtoupper(bin2hex(random_bytes(2))) . '-' . date('Y');
+}
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
@@ -46,6 +67,13 @@ mysqli_stmt_close($dup);
 $comite_id     = (int)($_POST['comite'] ?? 0);
 $fecha_raw     = $_POST['fecha_aprobacion'] ?? '';
 $identificador = $_SESSION['identificador_preview'] ?? ($_POST['identificador'] ?? '');
+// Ensure a fresh, unique identificador (prevents reuse from old tabs/back button)
+if ($identificador === '' || pa_ident_exists($id_con, $identificador)) {
+    $identificador = pa_generar_ident_unico($id_con);
+}
+// Keep session in sync (optional)
+$_SESSION['identificador_preview'] = $identificador;
+
 // Nuevo: leer y validar estado aprobado (1,2,3)
 $aprobado      = isset($_POST['aprobado']) ? (int)$_POST['aprobado'] : 0;
 

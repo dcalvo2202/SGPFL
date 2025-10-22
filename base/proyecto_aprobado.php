@@ -8,9 +8,34 @@ require_once __DIR__ . '/lib/mysession/mySession.conf.php';
 require_once __DIR__ . '/lib/mysession/mySession.class.php';
 $mySessionController = mySession::getIstance($_MYSESSION_CONF);
 
+// Helper: validar/generar identificador único contra DB
+function pa_ident_exists(mysqli $db, string $ident): bool {
+  if ($ident === '') return false;
+  $stmt = mysqli_prepare($db, "SELECT 1 FROM proyecto_aprobado WHERE identificador = ? LIMIT 1");
+  if (!$stmt) return false;
+  mysqli_stmt_bind_param($stmt, "s", $ident);
+  mysqli_stmt_execute($stmt);
+  $rs = mysqli_stmt_get_result($stmt);
+  $exists = $rs && mysqli_fetch_row($rs);
+  mysqli_stmt_close($stmt);
+  return (bool)$exists;
+}
+function pa_generar_ident_unico(mysqli $db): string {
+  for ($i=0; $i<30; $i++) {
+    $ident = 'UNA-TFG-' . str_pad((string)random_int(0,9999), 4, '0', STR_PAD_LEFT) . '-' . date('Y');
+    if (!pa_ident_exists($db, $ident)) return $ident;
+  }
+  return 'UNA-TFG-' . strtoupper(bin2hex(random_bytes(2))) . '-' . date('Y');
+}
+
 // Generar Identificador unico 
-if (empty($_SESSION['identificador_preview'])) {
-  $_SESSION['identificador_preview'] = 'UNA-TFG-' . str_pad((string)rand(0,9999), 4, '0', STR_PAD_LEFT) . '-' . date('Y');
+if (!isset($_SESSION['identificador_preview'])) {
+  $_SESSION['identificador_preview'] = pa_generar_ident_unico($id_con);
+} else {
+  // Si el actual ya fue usado en DB (p.ej., después de guardar + volver atrás), regenerar
+  if (pa_ident_exists($id_con, $_SESSION['identificador_preview'])) {
+    $_SESSION['identificador_preview'] = pa_generar_ident_unico($id_con);
+  }
 }
 $identificador_preview = $_SESSION['identificador_preview'];
 
