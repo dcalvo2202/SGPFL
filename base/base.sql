@@ -2270,6 +2270,8 @@ CREATE TABLE tfg_proposals (
     CONSTRAINT fk_tfg_proposals_user FOREIGN KEY (user_id) REFERENCES sis_user(id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+
+
 -- ----------------------------
 -- TABLA 3: PROYECTOS REGISTRADOS
 -- ----------------------------
