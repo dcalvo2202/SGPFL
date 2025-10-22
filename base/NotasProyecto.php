@@ -76,7 +76,7 @@ $flash_ok = isset($_GET['ok']) && $_GET['ok'] == '1';
 
 // Cargar lista de notas previas (solo títulos)
 $notas_previas = [];
-$sqlSel = "SELECT id_nota, titulo, creado_por, creado_en
+$sqlSel = "SELECT id_nota, titulo, notas, creado_por, creado_en
            FROM proyecto_notas
            WHERE proyecto_id = ?
            ORDER BY creado_en DESC, id_nota DESC";
@@ -137,6 +137,17 @@ if ($stmt = mysqli_prepare($id_con, $sqlSel)) {
             </div>
           </div>
 
+          <!-- Visor de nota seleccionada -->
+          <div id="notaViewer" class="card shadow-sm mb-4" style="display:none;">
+            <div class="card-header bg-light">
+              <strong id="notaViewerTitulo"></strong>
+            </div>
+            <div class="card-body">
+              <div id="notaViewerTexto" style="white-space:pre-wrap;"></div>
+              <div id="notaViewerMeta" class="text-muted small mt-2"></div>
+            </div>
+          </div>
+
           <!-- Lista de títulos de notas previas -->
           <div class="card shadow-sm">
             <div class="card-header">
@@ -146,9 +157,16 @@ if ($stmt = mysqli_prepare($id_con, $sqlSel)) {
               <?php if (empty($notas_previas)): ?>
                 <div class="p-3 text-muted">No hay notas registradas para este proyecto.</div>
               <?php else: ?>
-                <ul class="list-group list-group-flush">
+                <ul id="notasPreviasList" class="list-group list-group-flush">
                   <?php foreach ($notas_previas as $n): ?>
-                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <li
+                      class="list-group-item d-flex justify-content-between align-items-start"
+                      data-titulo="<?php echo htmlspecialchars($n['titulo'], ENT_QUOTES, 'UTF-8'); ?>"
+                      data-creado="<?php echo htmlspecialchars($n['creado_en'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
+                      data-autor="<?php echo htmlspecialchars($n['creado_por'] ?? '-', ENT_QUOTES, 'UTF-8'); ?>"
+                      role="button"
+                      tabindex="0"
+                    >
                       <div>
                         <div class="fw-semibold"><?php echo htmlspecialchars($n['titulo'], ENT_QUOTES, 'UTF-8'); ?></div>
                         <small class="text-muted">
@@ -160,6 +178,9 @@ if ($stmt = mysqli_prepare($id_con, $sqlSel)) {
                         </small>
                       </div>
                       <span class="badge bg-light text-dark">#<?php echo (int)$n['id_nota']; ?></span>
+
+                      <!-- Contenido completo oculto para el visor -->
+                      <div class="note-content d-none"><?php echo htmlspecialchars($n['notas'] ?? '', ENT_QUOTES, 'UTF-8'); ?></div>
                     </li>
                   <?php endforeach; ?>
                 </ul>
@@ -179,5 +200,45 @@ if ($stmt = mysqli_prepare($id_con, $sqlSel)) {
   </main>
   <?php include 'footer.php'; ?>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function(){
+      const list = document.getElementById('notasPreviasList');
+      const viewer = document.getElementById('notaViewer');
+      const vTitle = document.getElementById('notaViewerTitulo');
+      const vText = document.getElementById('notaViewerTexto');
+      const vMeta = document.getElementById('notaViewerMeta');
+      if (!list || !viewer) return;
+
+      function showFromItem(li){
+        const titulo = li.getAttribute('data-titulo') || '';
+        const creado = li.getAttribute('data-creado') || '';
+        const autor  = li.getAttribute('data-autor') || '';
+        const contentEl = li.querySelector('.note-content');
+        const texto = contentEl ? contentEl.textContent : '';
+        vTitle.textContent = titulo;
+        vText.textContent = texto;
+        vMeta.textContent = (creado || autor) ? `Creado: ${creado} · Por: ${autor}` : '';
+        viewer.style.display = '';
+        list.querySelectorAll('.list-group-item').forEach(el => el.classList.remove('active'));
+        li.classList.add('active');
+      }
+
+      list.addEventListener('click', (e) => {
+        const li = e.target.closest('.list-group-item');
+        if (li) showFromItem(li);
+      });
+
+      list.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          const li = e.target.closest('.list-group-item');
+          if (li) { e.preventDefault(); showFromItem(li); }
+        }
+      });
+
+      // Mostrar la primera al cargar (opcional)
+      const first = list.querySelector('.list-group-item');
+      if (first) showFromItem(first);
+    })();
+  </script>
 </body>
 </html>
