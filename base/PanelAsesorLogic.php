@@ -2,49 +2,73 @@
 require_once __DIR__ . "/inc/db/db.php";
 
 class PanelAsesor {
-    public function getRevisionesPendientes() {
-        try{
-            $sql = "SELECT descripcion FROM revisiones WHERE estado = 'pendiente'";
-            $resultado = seleccion($sql);
+    private $conn;
 
-            $revisiones = [];
-            if (!empty($resultado)) {
-                foreach ($resultado as $row) {
-                    $revisiones[] = $row["descripcion"];
-                }
-            }
-            return $revisiones;
-        } catch(Exception $e){
-            return [
-                "Revisión del Capítulo 1 – Estudiante: Ana Pérez",
-                "Evaluación de Propuesta – Estudiante: Juan Ramírez"
-            ];
+    public function __construct() {
+        global $db_host, $usuario, $clave, $db;
+        $this->conn = new mysqli($db_host, $usuario, $clave, $db);
+        if ($this->conn->connect_error) {
+            throw new Exception("Error de conexión: " . $this->conn->connect_error);
         }
+        $this->conn->set_charset("utf8");
     }
-    public function getProximaReunion() {
-        try{
-            $sql = "SELECT fecha FROM reuniones ORDER BY fecha ASC LIMIT 1";
-            $resultado = seleccion($sql);
-
-            if (!empty($resultado)) {
-                return $resultado[0]["fecha"];
-            }
-            return "No hay reuniones próximas";
-        } catch(Exception $e){
-            return "20/09/2025 – Sesión de Comité Asesor";
+    
+    public function getRevisionesPendientes($asesor_id = null) {
+        $sql = "SELECT dr.id, p.title, dr.review_type, dr.status
+                FROM tfg_document_reviews dr
+                INNER JOIN tfg_final_documents fd ON dr.document_id = fd.id
+                INNER JOIN tfg_proposals p ON fd.proposal_id = p.id
+                WHERE dr.status = 'Pendiente'";
+        if ($asesor_id) {
+            $sql .= " AND dr.asesor_id = " . intval($asesor_id);
         }
-    }
-    public function getObservaciones() {
-        try{
-            $sql = "SELECT texto FROM observaciones ORDER BY fecha DESC LIMIT 1";
-            $resultado = seleccion($sql);
 
-            if (!empty($resultado)) {
-                return $resultado[0]["texto"];
-            }
-            return "No hay observaciones registradas";
-        } catch(Exception $e){
-            return "Recordatorio: entregar retroalimentación en un máximo de 7 días.";
+        $sql .= " ORDER BY dr.id DESC";
+        $result = $this->conn->query($sql);
+        $revisiones = [];
+
+        while ($row = $result->fetch_assoc()) {
+            $revisiones[] = "Revisión de " . htmlspecialchars($row["review_type"]) . " – Proyecto: " . htmlspecialchars($row["title"]);
+        }
+
+        return $revisiones ?: ["No hay revisiones pendientes."];
+    }
+    public function getProximaReunion($asesor_id = null) {
+        $sql = "SELECT fecha, tema 
+                FROM tfg_meetings 
+                WHERE fecha >= CURDATE()";
+        if ($asesor_id) {
+            $sql .= " AND asesor_id = " . intval($asesor_id);
+        }
+
+        $sql .= " ORDER BY fecha ASC LIMIT 1";
+        $result = $this->conn->query($sql);
+        
+        if ($row = $result->fetch_assoc()) {
+            return date("d/m/Y", strtotime($row["fecha"])) . " – " . $row["tema"];
+        }
+        return "No hay reuniones próximas.";
+    }
+    public function getObservaciones($asesor_id = null) {
+        $sql = "SELECT texto, fecha 
+                FROM tfg_observaciones";
+
+        if ($asesor_id) {
+            $sql .= " WHERE asesor_id = " . intval($asesor_id);
+        }
+
+        $sql .= " ORDER BY fecha DESC LIMIT 1";
+        $result = $this->conn->query($sql);
+        
+        if ($row = $result->fetch_assoc()) {
+            return "[" . date("d/m/Y", strtotime($row["fecha"])) . "] " . $row["texto"];
+        }
+        return "No hay observaciones registradas.";
+    }
+
+    public function __destruct() {
+        if ($this->conn) {
+            $this->conn->close();
         }
     }
 }
