@@ -14,7 +14,11 @@ CSS;
 
 // Filtros (GET ?q=&estado=&comite=&f_ini=&f_fin=)
 $q = trim($_GET['q'] ?? '');
-$estado = isset($_GET['estado']) && in_array((int)$_GET['estado'], [1,2,3], true) ? (int)$_GET['estado'] : 1;
+// Estado: 0 = sin filtro (Todos)
+$estado = (isset($_GET['estado']) && $_GET['estado'] !== '' && in_array((int)$_GET['estado'], [1,2,3], true))
+  ? (int)$_GET['estado']
+  : 0;
+
 $comite_id = isset($_GET['comite']) ? (int)$_GET['comite'] : 0;
 $f_ini = trim($_GET['f_ini'] ?? '');
 $f_fin = trim($_GET['f_fin'] ?? '');
@@ -46,6 +50,7 @@ function estadoInfo(int $v): array {
         case 1: return ['Aprobado', 'success'];
         case 2: return ['Sin aprobar', 'secondary'];
         case 3: return ['Esperando correcciones', 'warning'];
+        case 0: return ['Todos', 'info']; // sin filtro
         default: return ['Desconocido', 'light'];
     }
 }
@@ -61,12 +66,17 @@ $sql = "SELECT p.id_aprobado, p.nombre, p.aprobado, p.fecha_creacion, p.comite_i
         LEFT JOIN comite c ON c.Id = p.comite_id
         LEFT JOIN sis_user t  ON t.id  = c.tutor
         LEFT JOIN sis_user a1 ON a1.id = c.asesor_1
-        LEFT JOIN sis_user a2 ON a2.id = c.asesor_2
-        WHERE ";
-$conds  = ["p.aprobado = ?"];
-$types  = "i";
-$params = [$estado];
+        LEFT JOIN sis_user a2 ON a2.id = c.asesor_2";
+$conds  = [];
+$types  = "";
+$params = [];
 
+// Agregar condiciones solo si hay filtros
+if ($estado > 0) {
+    $conds[] = "p.aprobado = ?";
+    $types  .= "i";
+    $params[] = $estado;
+}
 if ($q !== '') {
     $conds[] = "p.nombre LIKE ?";
     $types  .= "s";
@@ -87,13 +97,19 @@ if ($f_fin !== '') {
     $types  .= "s";
     $params[] = $f_fin;
 }
-$sql .= implode(' AND ', $conds) . " ORDER BY p.fecha_creacion DESC, p.id_aprobado DESC";
+
+// WHERE solo si hay condiciones
+if (!empty($conds)) {
+    $sql .= " WHERE " . implode(' AND ', $conds);
+}
+$sql .= " ORDER BY p.fecha_creacion DESC, p.id_aprobado DESC";
 
 if ($stmt = mysqli_prepare($id_con, $sql)) {
-    // bind dinámico
-    $bind = [$stmt, $types];
-    foreach ($params as $k => $v) { $bind[] = &$params[$k]; }
-    call_user_func_array('mysqli_stmt_bind_param', $bind);
+    if (!empty($params)) {
+        $bind = [$stmt, $types];
+        foreach ($params as $k => $v) { $bind[] = &$params[$k]; }
+        call_user_func_array('mysqli_stmt_bind_param', $bind);
+    }
     mysqli_stmt_execute($stmt);
     $res = mysqli_stmt_get_result($stmt);
     while ($res && $row = mysqli_fetch_assoc($res)) $proyectos_aprobados[] = $row;
@@ -126,6 +142,7 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
         </div>
         <div class="col-sm-6 col-md-3 col-lg-2">
           <select name="estado" class="form-select">
+            <option value=""  <?php echo $estado===0?'selected':''; ?>>Todos</option>
             <option value="1" <?php echo $estado===1?'selected':''; ?>>Aprobado</option>
             <option value="2" <?php echo $estado===2?'selected':''; ?>>Sin aprobar</option>
             <option value="3" <?php echo $estado===3?'selected':''; ?>>Esperando correcciones</option>
