@@ -1284,9 +1284,10 @@ CREATE TABLE `proyecto_notas` (
   `titulo` varchar(200) NOT NULL,
   `notas` text NOT NULL,
   `creado_por` varchar(50) DEFAULT NULL,
-  `creado_en` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
+  `creado_en` timestamp NOT NULL DEFAULT current_timestamp(),
+  KEY `proyecto_id` (`proyecto_id`),
+  CONSTRAINT `proyecto_notas_ibfk_1` FOREIGN KEY (`proyecto_id`) REFERENCES `proyecto_aprobado` (`id_aprobado`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
 
 
 
