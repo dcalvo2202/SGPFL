@@ -21,13 +21,14 @@ if ($current_user_rol != 3) {
     exit;
 }
 
-require_once 'PanelCTFGLogic.php';
+/*require_once 'PanelCTFGLogic.php';
 $panel = new PanelCTFG();
 
 $revisiones_ctfg = $panel->getRevisionesPendientes();
 $asignaciones_pendientes = $panel->getAsignacionesPendientes();
 $reuniones_ctfg = $panel->getProximaReunion();
 $avisos_generales = $panel->getAvisos();
+*/
 ?>
 
 <!DOCTYPE html>

@@ -106,7 +106,7 @@ try {
     }
 
     // 5. Send email notification
-    $to = $proposal['email'];
+    $to = "calvoss2002@gmail.com";//$proposal['email'];
     $subject = "Actualización de estado - Propuesta TFG";
     $message = "Estimado/a " . $proposal['nombre'] . ",\n\n";
     $message .= "Su propuesta de TFG \"" . $proposal['title'] . "\" ha sido revisada.\n\n";
