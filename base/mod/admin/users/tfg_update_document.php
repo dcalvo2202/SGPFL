@@ -46,11 +46,11 @@ try {
     $historial_url_secretaria = $base_url . "panel_subdireccion.php";
     
     //$estudiante_email = $user_info['email'];
-    $secretaria_email = "calvoss2002@gmail.com";
+    $secretaria_email = "rodri100ro@gmail.com";
     
     // Configuración del correo
-    $headers = "From: calvoss2002@gmail.com\r\n";
-    $headers .= "Reply-To: calvoss2002@gmail.com\r\n";
+    $headers = "From: rodri100ro@gmail.com\r\n";
+    $headers .= "Reply-To: rodri100ro@gmail.com\r\n";
     $headers  = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
