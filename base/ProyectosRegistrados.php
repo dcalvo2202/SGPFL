@@ -129,7 +129,7 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
         <p class="lead">Consulte y filtre proyectos aprobados, sin aprobar o en corrección.</p>
       </div>
 
-      <!-- Estado seleccionado -->
+      <!-- Estado seleccionado --><<<<<<<<<<<<<<<<
       <div class="mb-3">
         <span class="badge bg-<?php echo $estadoBadge; ?>"><?php echo $estadoLabel; ?></span>
       </div>

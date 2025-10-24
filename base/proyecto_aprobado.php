@@ -84,7 +84,6 @@ $fecha_actual = date('Y-m-d');
 
 $fecha_finalizacion_ini = date('Y-m-d', strtotime($fecha_actual . ' +1 year'));
 
-
 $page_title = 'Registrar proyecto aprobado';
 $inlineStyles = <<<'CSS'
 :root {
@@ -402,7 +401,6 @@ CSS;
 
     function initProyectoAprobado(){
       calcularFechaFinal();
-      // Actualizar finalización al seleccionar/cambiar la fecha de aprobación
       const fa = document.getElementById('fecha_aprobacion');
       if (fa) {
         fa.addEventListener('change', calcularFechaFinal);
