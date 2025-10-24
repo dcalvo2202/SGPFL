@@ -39,7 +39,6 @@ if (!isset($_SESSION['identificador_preview'])) {
 }
 $identificador_preview = $_SESSION['identificador_preview'];
 
-//Contenedor de solo estudiantes
 $estudiantes = [];
 $sql = "SELECT u.id, u.nombre
         FROM sis_user u
@@ -49,7 +48,6 @@ $sql = "SELECT u.id, u.nombre
 $result = mysqli_query($id_con, $sql);
 while ($result && $row = mysqli_fetch_assoc($result)) { $estudiantes[] = $row; }
 
-// Contenedor de comités
 $comites = [];
 $sql_comite = "SELECT c.Id,
                       t.nombre  AS tutor_nombre,
@@ -152,7 +150,6 @@ CSS;
             <input type="hidden" name="proposal_id" id="proposal_id" value="">
             <input type="hidden" name="registered_id" id="registered_id" value="">
 
-            <!-- Estudiantes: ahora se llenan dinámicamente desde project_members -->
             <div id="estudiantesSection" style="display:none;">
               <label for="estudiante">Estudiantes:</label>
               <div id="chkBoxWrap" style="max-height:240px;overflow:auto;border:1px solid #ccc;padding:8px;border-radius:6px;">
