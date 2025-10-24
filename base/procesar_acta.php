@@ -1,5 +1,9 @@
 <?php
 require('fpdf186/fpdf.php');
+require 'vendor/autoload.php'; // Necesario para PhpSpreadsheet
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 // Datos recibidos
 $nombre        = $_POST['nombre'];
