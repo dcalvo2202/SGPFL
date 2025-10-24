@@ -15,7 +15,7 @@ CSS;
 // Filtros (GET ?q=&estado=&comite=&f_ini=&f_fin=)
 $q = trim($_GET['q'] ?? '');
 // Estado: 0 = sin filtro (Todos)
-$estado = (isset($_GET['estado']) && $_GET['estado'] !== '' && in_array((int)$_GET['estado'], [1,2,3], true))
+$estado = (isset($_GET['estado']) && $_GET['estado'] !== '' && in_array((int)$_GET['estado'], [1,2,3,4], true))
   ? (int)$_GET['estado']
   : 0;
 
@@ -48,9 +48,10 @@ if ($resCom = mysqli_query($id_con, $sqlCom)) {
 function estadoInfo(int $v): array {
     switch ($v) {
         case 1: return ['Aprobado', 'success'];
-        case 2: return ['Sin aprobar', 'secondary'];
-        case 3: return ['Esperando correcciones', 'warning'];
-        case 0: return ['Todos', 'info']; // sin filtro
+        case 2: return ['Prorrogado', 'primary'];
+        case 3: return ['Vencido', 'danger'];
+        case 4: return ['Cancelado', 'secondary'];
+        case 0: return ['Todos', 'info'];
         default: return ['Desconocido', 'light'];
     }
 }
@@ -129,7 +130,7 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
         <p class="lead">Consulte y filtre proyectos aprobados, sin aprobar o en corrección.</p>
       </div>
 
-      <!-- Estado seleccionado --><<<<<<<<<<<<<<<<
+      <!-- Estado seleccionado -->
       <div class="mb-3">
         <span class="badge bg-<?php echo $estadoBadge; ?>"><?php echo $estadoLabel; ?></span>
       </div>
@@ -144,8 +145,9 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
           <select name="estado" class="form-select">
             <option value=""  <?php echo $estado===0?'selected':''; ?>>Todos</option>
             <option value="1" <?php echo $estado===1?'selected':''; ?>>Aprobado</option>
-            <option value="2" <?php echo $estado===2?'selected':''; ?>>Sin aprobar</option>
-            <option value="3" <?php echo $estado===3?'selected':''; ?>>Esperando correcciones</option>
+            <option value="2" <?php echo $estado===2?'selected':''; ?>>Prorrogado</option>
+            <option value="3" <?php echo $estado===3?'selected':''; ?>>Vencido</option>
+            <option value="4" <?php echo $estado===4?'selected':''; ?>>Cancelado</option>
           </select>
         </div>
         <div class="col-sm-6 col-md-5 col-lg-4">

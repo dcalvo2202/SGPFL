@@ -74,7 +74,7 @@ if ($identificador === '' || pa_ident_exists($id_con, $identificador)) {
 // Keep session in sync (optional)
 $_SESSION['identificador_preview'] = $identificador;
 
-// Nuevo: leer y validar estado aprobado (1,2,3)
+// Nuevo: leer y validar estado aprobado (1..4)
 $aprobado      = isset($_POST['aprobado']) ? (int)$_POST['aprobado'] : 0;
 
 if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $fecha_raw)) {
@@ -83,7 +83,7 @@ if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $fecha_raw)) {
 if ($nombre === '' || !$comite_id) {
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
-if (!in_array($aprobado, [1,2,3], true)) {
+if (!in_array($aprobado, [1,2,3,4], true)) {
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
 if (!isset($_FILES['documento']) || $_FILES['documento']['error'] !== UPLOAD_ERR_OK) {

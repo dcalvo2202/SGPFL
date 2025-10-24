@@ -186,12 +186,13 @@ CSS;
             </select>
 
             <!-- Estado aprobado -->
-            <label for="aprobado">Estado de aprobación:</label>
+            <label for="aprobado">Estado:</label>
             <select id="aprobado" name="aprobado" required>
               <option value="">Seleccione estado</option>
               <option value="1">Aprobado</option>
-              <option value="2">Sin aprobar</option>
-              <option value="3">Esperando correcciones</option>
+              <option value="2">Prorrogado</option>
+              <option value="3">Vencido</option>
+              <option value="4">Cancelado</option>
             </select>
             
 
