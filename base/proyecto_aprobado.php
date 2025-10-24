@@ -402,6 +402,13 @@ CSS;
 
     function initProyectoAprobado(){
       calcularFechaFinal();
+      // Actualizar finalización al seleccionar/cambiar la fecha de aprobación
+      const fa = document.getElementById('fecha_aprobacion');
+      if (fa) {
+        fa.addEventListener('change', calcularFechaFinal);
+        fa.addEventListener('input', calcularFechaFinal);
+      }
+
       const sel = document.getElementById('nombre');
       if (sel){
         if (sel.selectedIndex > 0) cargarMiembrosPorPropuesta();
