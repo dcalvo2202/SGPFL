@@ -93,7 +93,7 @@ try {
             <?php endif; ?>
             
             <div class="dashboard-header text-center mb-5">
-                <h1 style="font-size: 2.5rem; font-weight: 700;">Sistema Integrado de Gestión de TFG y Proyectos Grupales</h1>
+                <h1>Sistema Integrado de Gestión de TFG y Proyectos Grupales</h1>
                 <p class="lead">Bienvenido/a, <?= htmlspecialchars($current_user_name) ?></p>
             </div>
 

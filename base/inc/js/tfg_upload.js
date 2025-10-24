@@ -6,6 +6,7 @@ class TfgUploadManager {
         this.baseUrl = this.getBaseUrl();
         
         this.initializeEventListeners();
+        this.loadInitialMaxMembers();
         this.updateMembersDisplay();
     }
     
@@ -19,6 +20,15 @@ class TfgUploadManager {
             }
         }
         return '/SGPFL/base';
+    }
+    
+    loadInitialMaxMembers() {
+        const projectTypeSelect = document.getElementById('sel-project-type');
+        if (projectTypeSelect && projectTypeSelect.selectedIndex >= 0) {
+            const selectedOption = projectTypeSelect.options[projectTypeSelect.selectedIndex];
+            this.maxMembers = parseInt(selectedOption.getAttribute('data-max-members')) || 1;
+            console.log('Max members inicializado:', this.maxMembers);
+        }
     }
     
     initializeEventListeners() {
@@ -97,6 +107,11 @@ class TfgUploadManager {
     handleSearchInput(event) {
         const searchTerm = event.target.value.trim();
         
+        // No permitir búsqueda si está deshabilitado
+        if (event.target.disabled) {
+            return;
+        }
+        
         if (this.searchTimeout) {
             clearTimeout(this.searchTimeout);
         }
@@ -111,6 +126,13 @@ class TfgUploadManager {
     }
     
     async searchUsers(searchTerm) {
+        // No permitir búsqueda si se alcanzó el máximo
+        const totalMembers = this.selectedMembers.length + 1;
+        if (totalMembers >= this.maxMembers) {
+            this.hideSearchResults();
+            return;
+        }
+        
         if (searchTerm.length < 2) {
             this.hideSearchResults();
             return;
@@ -170,7 +192,7 @@ class TfgUploadManager {
                 if (!isAlreadySelected && !isCurrentUser) {
                     html += `
                         <div class="search-result-item">
-                            <div>
+                            <div class="search-result-content">
                                 <strong>${this.escapeHtml(user.nombre)}</strong>
                                 <small class="text-muted">
                                     <i class="bi bi-envelope"></i> ${this.escapeHtml(user.email)} | 
@@ -221,6 +243,8 @@ class TfgUploadManager {
     updateMembersDisplay() {
         const membersList = document.getElementById('list-selected-members');
         const currentUserId = this.getCurrentUserId();
+        const searchInput = document.getElementById('inp-search-members');
+        const searchButton = document.getElementById('btn-search-members');
         
         if (!membersList) return;
         
@@ -261,6 +285,55 @@ class TfgUploadManager {
         if (memberCountElement) {
             memberCountElement.textContent = `${totalMembers}/${this.maxMembers}`;
         }
+        
+        // Deshabilitar búsqueda si se alcanzó el máximo
+        const isMaxReached = totalMembers >= this.maxMembers;
+        console.log('Estado de búsqueda:', {
+            totalMembers: totalMembers,
+            maxMembers: this.maxMembers,
+            isMaxReached: isMaxReached
+        });
+        
+        if (searchInput) {
+            if (isMaxReached) {
+                // Deshabilitar completamente el input
+                searchInput.disabled = true;
+                searchInput.readOnly = true;
+                searchInput.value = '';
+                searchInput.placeholder = 'Límite de miembros alcanzado';
+                searchInput.style.backgroundColor = '#e9ecef';
+                searchInput.style.cursor = 'not-allowed';
+                this.hideSearchResults();
+                
+                // Agregar event listener para prevenir cualquier interacción
+                searchInput.addEventListener('keydown', this.preventInput);
+                searchInput.addEventListener('keypress', this.preventInput);
+                searchInput.addEventListener('keyup', this.preventInput);
+                searchInput.addEventListener('input', this.preventInput);
+            } else {
+                // Habilitar el input
+                searchInput.disabled = false;
+                searchInput.readOnly = false;
+                searchInput.placeholder = 'Buscar por nombre, email o cédula...';
+                searchInput.style.backgroundColor = '';
+                searchInput.style.cursor = '';
+                
+                // Remover event listeners de prevención
+                searchInput.removeEventListener('keydown', this.preventInput);
+                searchInput.removeEventListener('keypress', this.preventInput);
+                searchInput.removeEventListener('keyup', this.preventInput);
+                searchInput.removeEventListener('input', this.preventInput);
+            }
+        }
+        if (searchButton) {
+            searchButton.disabled = isMaxReached;
+        }
+    }
+    
+    preventInput(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
     }
     
     hideSearchResults() {

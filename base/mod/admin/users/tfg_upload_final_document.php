@@ -58,7 +58,7 @@ $additional_css = ['inc/css/tfg_upload.css'];
         <div class="container my-5">
             
             <div class="dashboard-header text-center mb-4">
-                <h1 style="font-size: 2.5rem; font-weight: 700;">
+                <h1>
                     <i class="bi bi-file-earmark-check-fill"></i> Subir Documento Final del TFG
                 </h1>
                 <p class="lead text-muted">Versión final del TFG para revisión previa a la defensa pública</p>
