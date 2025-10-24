@@ -32,7 +32,7 @@ function pa_generar_ident_unico(mysqli $db): string {
 if (!isset($_SESSION['identificador_preview'])) {
   $_SESSION['identificador_preview'] = pa_generar_ident_unico($id_con);
 } else {
-  // Si el actual ya fue usado en DB (p.ej., después de guardar + volver atrás), regenerar
+
   if (pa_ident_exists($id_con, $_SESSION['identificador_preview'])) {
     $_SESSION['identificador_preview'] = pa_generar_ident_unico($id_con);
   }
@@ -61,7 +61,6 @@ $sql_comite = "SELECT c.Id,
 $result_comite = mysqli_query($id_con, $sql_comite);
 while ($result_comite && $row = mysqli_fetch_assoc($result_comite)) { $comites[] = $row; }
 
-// Contenedor de nombres de propuestas tomadas desde registered_projects
 $propuestas = [];
 $sql_prop = "SELECT 
                rp.id               AS registered_id,
@@ -86,18 +85,18 @@ $fecha_finalizacion_ini = date('Y-m-d', strtotime($fecha_actual . ' +1 year'));
 
 $page_title = 'Registrar proyecto aprobado';
 $inlineStyles = <<<'CSS'
-:root {
-  --white:#fcfdfd; --navy-dark:#092567; --navy-mid:#0e4d93; --sky:#aacef5;
-  --red:#bd1016; --red-mid:#a80f10; --red-dark:#8f0b0b; --red-light:#f4c4c4;
-}
-form{width:100%;max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:15px;background:#fff;padding:30px 40px;border-radius:10px;box-shadow:0 2px 12px rgba(9,37,103,.08);}
-label{font-weight:bold;color:var(--navy-dark);}
-input,select,button{padding:8px;font-size:1rem;border-radius:4px;border:1px solid #ccc;}
-input[type="file"]{border:none;}
-button{background:var(--navy-mid);color:#fff;border:none;cursor:pointer;transition:background .3s;margin-top:10px;}
-button:hover{background:var(--navy-dark);}
-.btn-tfg{display:inline-block;background:#1e73be;color:#fff;padding:10px 18px;border-radius:6px;font-size:14px;font-family:Arial,sans-serif;cursor:pointer;text-align:center;box-shadow:0 2px 4px rgba(0,0,0,0.2);transition:background-color .3s;}
+/* Estilos unificados (UNA) */
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;}
+.dashboard-header h1{font-size:2.5rem;font-weight:700;color:#034991;margin-bottom:.5rem;}
+.dashboard-header .lead{color:#6c757d;}
+.form-card{background:#fff;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.08);}
+.form-card .card-header{background:#f8f9fa;font-weight:600;color:#034991;}
+.form-card .card-body{padding:24px;}
+label{font-weight:600;color:#092567;}
+.btn-tfg{display:inline-flex;align-items:center;gap:.5rem;background:#1e73be;color:#fff;padding:10px 16px;border-radius:6px;border:none;cursor:pointer;}
 .btn-tfg:hover{background:#155a92;}
+#previewBox img{width:40px;height:40px;}
+.small-hint{color:#6c757d;font-size:.9rem;}
 CSS;
 ?>
 <!doctype html>
@@ -115,46 +114,53 @@ CSS;
 
       <?php if ($mensaje) echo $mensaje; ?>
 
-      <div class="card shadow-sm">
+      <div class="card form-card shadow-sm">
+        <div class="card-header">Registro de proyecto aprobado</div>
         <div class="card-body">
           <form action="mod/admin/users/tfg_aprobado_update.php" method="post" enctype="multipart/form-data">
             <!-- Identificador -->
-            <label>Código identificador (solo lectura):</label>
-            <input type="text" value="<?php echo htmlspecialchars($identificador_preview); ?>" readonly>
-            <input type="hidden" name="identificador" value="<?php echo htmlspecialchars($identificador_preview); ?>">
+            <div class="mb-3">
+              <label>Código identificador (solo lectura):</label>
+              <input type="text" class="form-control" value="<?php echo htmlspecialchars($identificador_preview); ?>" readonly>
+              <input type="hidden" name="identificador" value="<?php echo htmlspecialchars($identificador_preview); ?>">
+            </div>
 
             <!-- Tipo de trabajo -->
-            <label for="tipo_proyecto">Tipo de trabajo:</label>
-            <select id="tipo_proyecto" name="tipo_proyecto" required>
-              <option value="">Seleccione tipo</option>
-              <option value="tesis">Tesis (máx 2)</option>
-              <option value="proyecto">Proyecto de Graduación (máx 3)</option>
-              <option value="seminario">Seminario (máx 8)</option>
-            </select>
-            <small id="limitHint" style="color:#555;">Seleccione entre 1 y 8.</small>
+            <div class="mb-3">
+              <label for="tipo_proyecto">Tipo de trabajo:</label>
+              <select id="tipo_proyecto" name="tipo_proyecto" class="form-select" required>
+                <option value="">Seleccione tipo</option>
+                <option value="tesis">Tesis (máx 2)</option>
+                <option value="proyecto">Proyecto de Graduación (máx 3)</option>
+                <option value="seminario">Seminario (máx 8)</option>
+              </select>
+              <small id="limitHint" class="small-hint">Seleccione entre 1 y 8.</small>
+            </div>
 
             <!-- Nombre desde propuestas -->
-            <label for="nombre">Nombre del proyecto (desde propuestas):</label>
-            <select id="nombre" name="nombre" required>
-              <option value="">Seleccione un título</option>
-              <?php foreach ($propuestas as $p): ?>
-                <option
-                  value="<?php echo htmlspecialchars($p['title']); ?>"
-                  data-proposal-id="<?php echo (int)$p['proposal_id']; ?>"
-                  data-registered-id="<?php echo (int)$p['registered_id']; ?>">
-                  <?php echo htmlspecialchars($p['title']); ?>
-                </option>
-              <?php endforeach; ?>
-            </select>
-            <input type="hidden" name="proposal_id" id="proposal_id" value="">
-            <input type="hidden" name="registered_id" id="registered_id" value="">
+            <div class="mb-3">
+              <label for="nombre">Nombre del proyecto (desde propuestas):</label>
+              <select id="nombre" name="nombre" class="form-select" required>
+                <option value="">Seleccione un título</option>
+                <?php foreach ($propuestas as $p): ?>
+                  <option
+                    value="<?php echo htmlspecialchars($p['title']); ?>"
+                    data-proposal-id="<?php echo (int)$p['proposal_id']; ?>"
+                    data-registered-id="<?php echo (int)$p['registered_id']; ?>">
+                    <?php echo htmlspecialchars($p['title']); ?>
+                  </option>
+                <?php endforeach; ?>
+              </select>
+              <input type="hidden" name="proposal_id" id="proposal_id" value="">
+              <input type="hidden" name="registered_id" id="registered_id" value="">
+            </div>
 
-            <div id="estudiantesSection" style="display:none;">
+            <div id="estudiantesSection" class="mb-3" style="display:none;">
               <label for="estudiante">Estudiantes:</label>
               <div id="chkBoxWrap" style="max-height:240px;overflow:auto;border:1px solid #ccc;padding:8px;border-radius:6px;">
                 <!-- Se inyectan los checkboxes aquí -->
               </div>
-              <div id="estCount" style="font-size:12px;color:#092567;margin-top:4px;">0 seleccionados</div>
+              <div id="estCount" class="small-hint mt-1">0 seleccionados</div>
             </div>
 
             <div id="panelEstudiante" class="card p-3 mt-3" style="display:none;">
@@ -175,60 +181,70 @@ CSS;
             </div>
 
             <!-- Comité -->
-            <label for="comite">Comité asesor:</label>
-            <select name="comite" id="comite" required>
-              <option value="">Selecciona un comité</option>
-              <?php foreach ($comites as $r): ?>
-                <option value="<?php echo $r['Id']; ?>">
-                  Comité #<?php echo $r['Id']; ?> - T: <?php echo htmlspecialchars($r['tutor_nombre']); ?> / A1: <?php echo htmlspecialchars($r['asesor1_nombre']); ?> / A2: <?php echo htmlspecialchars($r['asesor2_nombre']); ?>
-                </option>
-              <?php endforeach; ?>
-            </select>
+            <div class="mb-3">
+              <label for="comite">Comité asesor:</label>
+              <select name="comite" id="comite" class="form-select" required>
+                <option value="">Selecciona un comité</option>
+                <?php foreach ($comites as $r): ?>
+                  <option value="<?php echo $r['Id']; ?>">
+                    Comité #<?php echo $r['Id']; ?> - T: <?php echo htmlspecialchars($r['tutor_nombre']); ?> / A1: <?php echo htmlspecialchars($r['asesor1_nombre']); ?> / A2: <?php echo htmlspecialchars($r['asesor2_nombre']); ?>
+                  </option>
+                <?php endforeach; ?>
+              </select>
+            </div>
 
             <!-- Estado aprobado -->
-            <label for="aprobado">Estado:</label>
-            <select id="aprobado" name="aprobado" required>
-              <option value="">Seleccione estado</option>
-              <option value="1">Aprobado</option>
-              <option value="2">Prorrogado</option>
-              <option value="3">Vencido</option>
-              <option value="4">Cancelado</option>
-            </select>
-            
+            <div class="mb-3">
+              <label for="aprobado">Estado:</label>
+              <select id="aprobado" name="aprobado" class="form-select" required>
+                <option value="">Seleccione estado</option>
+                <option value="1">Aprobado</option>
+                <option value="2">Prorrogado</option>
+                <option value="3">Vencido</option>
+                <option value="4">Cancelado</option>
+              </select>
+            </div>
 
             <!-- Documento -->
-            <label for="documento">Documento (Word, PDF):</label>
-            <label for="documento" class="btn-tfg">Subir documento</label>
-            <input type="file" id="documento" name="documento" accept=".pdf,.doc,.docx,.xls,.xlsx" required hidden>
-
-            <!-- Miniatura del documento -->
-            <div id="previewBox" style="display:none;align-items:center;gap:10px;margin:10px 0;">
-              <img id="previewIcon" src="" alt="icono" style="width:40px;height:40px;">
-              <span id="previewName" style="font-size:0.95rem;color:#092567;"></span>
+            <div class="mb-3">
+              <label for="documento">Documento (Word, PDF):</label><br>
+              <label for="documento" class="btn-tfg"><i class="bi bi-upload"></i> Subir documento</label>
+              <input type="file" id="documento" name="documento" accept=".pdf,.doc,.docx,.xls,.xlsx" required hidden>
+              <div id="previewBox" class="d-flex align-items-center gap-2 mt-2" style="display:none;">
+                <img id="previewIcon" alt="Archivo seleccionado" hidden>
+                <span id="previewName" style="font-size:0.95rem;color:#092567;"></span>
+              </div>
             </div>
 
             <!-- Fechas -->
-            <label for="fecha_aprobacion">Fecha de aprobación:</label>
-            <input type="date" id="fecha_aprobacion" name="fecha_aprobacion" value="<?php echo $fecha_actual; ?>" required>
-            <small style="color:#555;">Seleccione la fecha exacta de aprobación.</small>
+            <div class="mb-3">
+              <label for="fecha_aprobacion">Fecha de aprobación:</label>
+              <input type="date" id="fecha_aprobacion" name="fecha_aprobacion" class="form-control" value="<?php echo $fecha_actual; ?>" required>
+              <small class="small-hint">Seleccione la fecha exacta de aprobación.</small>
+            </div>
 
-            <label for="fecha_finalizacion_view" class="mt-2">Fecha finalización:</label>
-            <!-- Visible (solo lectura) con valor inicial desde PHP -->
-            <input
-              type="date"
-              id="fecha_finalizacion_view"
-              class="form-control"
-              value="<?php echo htmlspecialchars($fecha_finalizacion_ini); ?>"
-              style="pointer-events:none;background:#f5f7fa;"
-              readonly
-              onfocus="this.blur()"
-              aria-readonly="true"
-            >
-            <!-- Enviado al backend -->
-            <input type="hidden" id="fecha_finalizacion" name="fecha_finalizacion"
-                   value="<?php echo htmlspecialchars($fecha_finalizacion_ini); ?>" required>
+            <div class="mb-3">
+              <label for="fecha_finalizacion_view" class="mt-2">Fecha finalización:</label>
+              <input
+                type="date"
+                id="fecha_finalizacion_view"
+                class="form-control"
+                value="<?php echo htmlspecialchars($fecha_finalizacion_ini); ?>"
+                style="pointer-events:none;background:#f5f7fa;"
+                readonly
+                onfocus="this.blur()"
+                aria-readonly="true"
+              >
+              <!-- Enviado al backend -->
+              <input type="hidden" id="fecha_finalizacion" name="fecha_finalizacion"
+                    value="<?php echo htmlspecialchars($fecha_finalizacion_ini); ?>" required>
+            </div>
 
-            <button type="submit">Registrar proyecto</button>
+            <div class="mt-3">
+              <button type="submit" class="btn btn-primary">
+                <i class="bi bi-save"></i> Registrar proyecto
+              </button>
+            </div>
           </form>
         </div>
       </div>
@@ -243,15 +259,43 @@ CSS;
   <?php include 'footer.php'; ?>
 
   <script>
+    // Usa el icono solo cuando haya archivo
     const ICON_URL = 'https://w1.pngwing.com/pngs/341/112/png-transparent-green-grass-symbol-logo-dialog-box-accept-yellow-circle.png';
-    document.querySelector('.btn-tfg').onclick = function(e){ e.preventDefault(); document.getElementById('documento').click(); };
+
+    // Helper para ocultar el preview cuando no hay archivo
+    function hidePreview() {
+      const box = document.getElementById('previewBox');
+      const img = document.getElementById('previewIcon');
+      const name = document.getElementById('previewName');
+      if (img) { img.removeAttribute('src'); img.hidden = true; }
+      if (name) name.textContent = '';
+      if (box) box.style.display = 'none';
+    }
+
+    document.querySelector('.btn-tfg').onclick = function(e){
+      e.preventDefault();
+      document.getElementById('documento').click();
+    };
+
     document.getElementById('documento').addEventListener('change', function(e){
-      const file = e.target.files[0], box = document.getElementById('previewBox');
-      if (!file) { box.style.display = 'none'; return; }
-      document.getElementById('previewIcon').src = ICON_URL;
-      document.getElementById('previewName').textContent = file.name;
-      box.style.display = 'flex';
+      const file = e.target.files && e.target.files[0];
+      const box  = document.getElementById('previewBox');
+      const img  = document.getElementById('previewIcon');
+      const name = document.getElementById('previewName');
+
+      if (!file) { hidePreview(); return; }
+
+      if (img) {
+        img.src = ICON_URL;    // podrías cambiarlo por un icono según extensión
+        img.hidden = false;
+      }
+      if (name) name.textContent = file.name;
+      if (box) box.style.display = 'flex';
     });
+
+    // Al cargar, asegúrate de que no se vea nada si no hay archivo
+    if (document.readyState !== 'loading') hidePreview();
+    else document.addEventListener('DOMContentLoaded', hidePreview);
 
     function toYMD(d){ const dd=String(d.getDate()).padStart(2,'0'), mm=String(d.getMonth()+1).padStart(2,'0'), yyyy=d.getFullYear(); return `${yyyy}-${mm}-${dd}`; }
     function parseYMD(s){ const p=(s||'').split('-'); if (p.length!==3) return null; const y=+p[0],m=+p[1],d=+p[2]; if(!y||!m||!d)return null; return {y,m,d}; }

@@ -8,8 +8,29 @@ require_once __DIR__ . '/inc/db/db.php';
 // Título y opciones para el head.php
 $page_title   = 'Proyectos registrados';
 $inlineStyles = <<<'CSS'
+/* Estilos unificados (UNA) */
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 main { padding: 24px 0; }
-.page-title { font-weight: 700; color: #092567; margin-bottom: 14px; }
+.dashboard-header h1 { font-size: 2.5rem; font-weight: 700; color: #034991; margin-bottom: .5rem; }
+.dashboard-header .lead { color: #6c757d; }
+
+/* Card/table estilo panel_ctfg_review_final_documents */
+.document-table { background:#fff; border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,.1); overflow:hidden; }
+.table thead th { font-weight:600; font-size:.95rem; color:#034991; border-bottom:2px solid #dee2e6; }
+.table tbody td { vertical-align:middle; }
+
+/* Adaptación para listas (list-group) dentro de document-table */
+.document-table .list-group { border-radius:0; }
+.document-table .list-group-item { border:0; border-bottom:1px solid #dee2e6; }
+.document-table .list-group-item:last-child { border-bottom:0; }
+.document-table .fw-semibold { color:#034991; }
+
+/* Badges/empty state */
+.status-badge { padding:.35rem .75rem; border-radius:6px; font-size:.875rem; font-weight:600; }
+.empty-state { padding: 2.5rem 1.25rem; text-align:center; }
+.empty-state i { font-size: 3rem; color: #28a745; margin-bottom: 1rem; }
+.empty-state h3 { color:#034991; font-weight:700; }
+.empty-state p { color:#6c757d; }
 CSS;
 
 // Filtros (GET ?q=&estado=&comite=&f_ini=&f_fin=)
@@ -127,7 +148,7 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
 
       <div class="dashboard-header text-center mb-5">
         <h1 style="font-size: 2.5rem; font-weight: 700;">Proyectos registrados</h1>
-        <p class="lead">Consulte y filtre proyectos aprobados, sin aprobar o en corrección.</p>
+        <p class="lead">Consulte y filtre proyectos Aprobados, Prorrogados, Vencidos o Cancelados.</p>
       </div>
 
       <!-- Estado seleccionado -->
@@ -176,38 +197,49 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
       </form>
 
       <?php if (empty($proyectos_aprobados)): ?>
-        <div class="alert alert-warning">No hay proyectos que coincidan con los filtros.</div>
+        <div class="card document-table">
+          <div class="card-body">
+            <div class="empty-state">
+              <i class="bi bi-check2-circle"></i>
+              <h3>Sin resultados</h3>
+              <p class="mb-0">No hay proyectos que coincidan con los filtros actuales.</p>
+            </div>
+          </div>
+        </div>
       <?php else: ?>
-        <!-- Listado -->
-        <ul class="list-group">
-          <?php foreach ($proyectos_aprobados as $p): ?>
-            <?php list($lbl,$bdg) = estadoInfo((int)$p['aprobado']); ?>
-            <li class="list-group-item"
-                data-proyecto-id="<?php echo (int)$p['id_aprobado']; ?>"
-                data-proyecto-nombre="<?php echo htmlspecialchars($p['nombre'], ENT_QUOTES, 'UTF-8'); ?>">
-              <div class="d-flex justify-content-between align-items-start">
-                <div>
-                  <div class="fw-semibold"><?php echo htmlspecialchars($p['nombre']); ?></div>
-                  <small class="text-muted">
-                    Comité #<?php echo (int)$p['comite_id']; ?> —
-                    T: <?php echo htmlspecialchars($p['tutor_nombre']); ?> /
-                    A1: <?php echo htmlspecialchars($p['asesor1_nombre']); ?> /
-                    A2: <?php echo htmlspecialchars($p['asesor2_nombre']); ?> ·
-                    Fecha: <?php echo htmlspecialchars(substr($p['fecha_creacion'],0,10)); ?>
-                  </small>
-                </div>
-                <div class="d-flex align-items-center gap-2">
-                  <!-- Enlace directo (sin popup) -->
-                  <a class="btn btn-sm btn-outline-info"
-                     href="NotasProyecto.php?id=<?php echo (int)$p['id_aprobado']; ?>&nombre=<?php echo rawurlencode($p['nombre']); ?>">
-                    <i class="bi bi-journal-text"></i> Notas
-                  </a>
-                  <span class="badge bg-<?php echo $bdg; ?>"><?php echo $lbl; ?></span>
-                </div>
-              </div>
-            </li>
-          <?php endforeach; ?>
-        </ul>
+        <!-- Listado estandarizado en card -->
+        <div class="card document-table">
+          <div class="card-body p-0">
+            <ul class="list-group list-group-flush">
+              <?php foreach ($proyectos_aprobados as $p): ?>
+                <?php list($lbl,$bdg) = estadoInfo((int)$p['aprobado']); ?>
+                <li class="list-group-item"
+                    data-proyecto-id="<?php echo (int)$p['id_aprobado']; ?>"
+                    data-proyecto-nombre="<?php echo htmlspecialchars($p['nombre'], ENT_QUOTES, 'UTF-8'); ?>">
+                  <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                      <div class="fw-semibold"><?php echo htmlspecialchars($p['nombre']); ?></div>
+                      <small class="text-muted">
+                        Comité #<?php echo (int)$p['comite_id']; ?> —
+                        T: <?php echo htmlspecialchars($p['tutor_nombre']); ?> /
+                        A1: <?php echo htmlspecialchars($p['asesor1_nombre']); ?> /
+                        A2: <?php echo htmlspecialchars($p['asesor2_nombre']); ?> ·
+                        Fecha: <?php echo htmlspecialchars(substr($p['fecha_creacion'],0,10)); ?>
+                      </small>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                      <a class="btn btn-sm btn-outline-info"
+                         href="NotasProyecto.php?id=<?php echo (int)$p['id_aprobado']; ?>&nombre=<?php echo rawurlencode($p['nombre']); ?>">
+                        <i class="bi bi-journal-text"></i> Notas
+                      </a>
+                      <span class="badge bg-<?php echo $bdg; ?>"><?php echo $lbl; ?></span>
+                    </div>
+                  </div>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+        </div>
       <?php endif; ?>
 
       <div class="text-center mt-4">
