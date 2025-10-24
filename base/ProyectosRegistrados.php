@@ -21,9 +21,14 @@ main { padding: 24px 0; }
 
 /* Adaptación para listas (list-group) dentro de document-table */
 .document-table .list-group { border-radius:0; }
-.document-table .list-group-item { border:0; border-bottom:1px solid #dee2e6; }
+.document-table .list-group-item { border:0; border-bottom:1px solid #dee2e6; padding:12px 16px; min-height:58px; }
 .document-table .list-group-item:last-child { border-bottom:0; }
 .document-table .fw-semibold { color:#034991; }
+
+/* Alineación fija de acciones (Notas + estado) */
+.list-row { display:flex; align-items:center; gap:12px; width:100%; }
+.list-row .content { flex: 1 1 auto; min-width:0; }
+.item-actions { margin-left:auto; display:flex; gap:8px; align-items:center; white-space:nowrap; flex-shrink:0; align-self:flex-start; }
 
 /* Badges/empty state */
 .status-badge { padding:.35rem .75rem; border-radius:6px; font-size:.875rem; font-weight:600; }
@@ -31,6 +36,12 @@ main { padding: 24px 0; }
 .empty-state i { font-size: 3rem; color: #28a745; margin-bottom: 1rem; }
 .empty-state h3 { color:#034991; font-weight:700; }
 .empty-state p { color:#6c757d; }
+
+/* Responsive: pila acciones bajo el texto en pantallas pequeñas */
+@media (max-width: 576px) {
+  .list-row { grid-template-columns: 1fr; }
+  .item-actions { margin-top:8px; }
+}
 CSS;
 
 // Filtros (GET ?q=&estado=&comite=&f_ini=&f_fin=)
@@ -216,8 +227,8 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
                 <li class="list-group-item"
                     data-proyecto-id="<?php echo (int)$p['id_aprobado']; ?>"
                     data-proyecto-nombre="<?php echo htmlspecialchars($p['nombre'], ENT_QUOTES, 'UTF-8'); ?>">
-                  <div class="d-flex justify-content-between align-items-start">
-                    <div>
+                  <div class="list-row">
+                    <div class="content">
                       <div class="fw-semibold"><?php echo htmlspecialchars($p['nombre']); ?></div>
                       <small class="text-muted">
                         Comité #<?php echo (int)$p['comite_id']; ?> —
@@ -227,7 +238,7 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
                         Fecha: <?php echo htmlspecialchars(substr($p['fecha_creacion'],0,10)); ?>
                       </small>
                     </div>
-                    <div class="d-flex align-items-center gap-2">
+                    <div class="item-actions">
                       <a class="btn btn-sm btn-outline-info"
                          href="NotasProyecto.php?id=<?php echo (int)$p['id_aprobado']; ?>&nombre=<?php echo rawurlencode($p['nombre']); ?>">
                         <i class="bi bi-journal-text"></i> Notas
