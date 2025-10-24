@@ -13,12 +13,42 @@ $base_path = realpath(__DIR__ . '/../../../');
 // Incluir archivos necesarios con rutas relativas
 include_once($base_path . '/inc/db/bdcommon.inc');
 
-// Obtener tipos de proyecto
-$project_types = [
-    ['id' => 1, 'type_name' => 'Individual', 'max_members' => 1],
-    ['id' => 2, 'type_name' => 'Por Parejas', 'max_members' => 2],
-    ['id' => 3, 'type_name' => 'Seminario', 'max_members' => 5]
-];
+// Obtener tipos de proyecto desde la base de datos
+try {
+    // Usar las variables de bdcommon.inc para la conexión
+    $conn_tipos = new mysqli($db_host, $usuario, $clave, $db);
+    if ($conn_tipos->connect_error) {
+        throw new Exception("Error de conexión: " . $conn_tipos->connect_error);
+    }
+    $conn_tipos->set_charset("utf8");
+    
+    // Solo mostrar los 3 tipos principales (Tesis, Proyecto de Graduación, Seminario)
+    $result = $conn_tipos->query("SELECT id, type_name, max_members FROM project_types WHERE id IN (1, 2, 3) AND active = 1 ORDER BY id");
+    $project_types = [];
+    
+    if ($result && $result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $project_types[] = $row;
+        }
+    } else {
+        // Fallback si no hay datos en BD
+        $project_types = [
+            ['id' => 1, 'type_name' => 'Tesis', 'max_members' => 2],
+            ['id' => 2, 'type_name' => 'Proyecto de Graduación', 'max_members' => 3],
+            ['id' => 3, 'type_name' => 'Seminario', 'max_members' => 8]
+        ];
+    }
+    
+    $conn_tipos->close();
+} catch (Exception $e) {
+    error_log("Error al cargar tipos de proyecto: " . $e->getMessage());
+    // Fallback en caso de error
+    $project_types = [
+        ['id' => 1, 'type_name' => 'Tesis', 'max_members' => 2],
+        ['id' => 2, 'type_name' => 'Proyecto de Graduación', 'max_members' => 3],
+        ['id' => 3, 'type_name' => 'Seminario', 'max_members' => 8]
+    ];
+}
 
 // OBTENER USUARIO REAL AUTENTICADO
 $current_user_id = $mySessionController->getVar("usuario");
@@ -234,5 +264,97 @@ $additional_css = ['inc/css/tfg_upload.css'];
     <!-- =============================== FOOTER =============================== -->
     <?php include $base_path . '/footer.php'; ?>
     <script src="<?= $base_url ?>inc/js/tfg_upload.js"></script>
+    <script>
+    // Traducir input file a español manteniendo el estilo original
+    document.addEventListener('DOMContentLoaded', function() {
+        const fileInput = document.getElementById('inp-document');
+        if (fileInput) {
+            // Guardar el input original para mantener su funcionalidad
+            const originalInput = fileInput;
+            
+            // Crear contenedor con el estilo de casilla
+            const customFileInput = document.createElement('div');
+            customFileInput.className = 'custom-file-input-wrapper';
+            customFileInput.style.cssText = `
+                width: 100%;
+                padding: 12px;
+                border: 2px solid #e1e8ed;
+                border-radius: 6px;
+                background: white;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                cursor: pointer;
+                transition: border-color 0.3s ease;
+                min-height: 48px;
+            `;
+            
+            // Crear botón interno
+            const selectButton = document.createElement('span');
+            selectButton.style.cssText = `
+                background: #034991;
+                color: white;
+                padding: 8px 16px;
+                border-radius: 4px;
+                font-weight: 500;
+                font-size: 14px;
+                cursor: pointer;
+                user-select: none;
+                flex-shrink: 0;
+            `;
+            selectButton.textContent = 'Elegir archivo';
+            
+            // Crear texto del nombre del archivo
+            const fileNameDisplay = document.createElement('span');
+            fileNameDisplay.id = 'file-name-display';
+            fileNameDisplay.style.cssText = `
+                color: #6c757d;
+                font-size: 14px;
+                flex: 1;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            `;
+            fileNameDisplay.textContent = 'Ningún archivo seleccionado';
+            
+            // Ensamblar el componente
+            customFileInput.appendChild(selectButton);
+            customFileInput.appendChild(fileNameDisplay);
+            
+            // Reemplazar el input original con el personalizado
+            originalInput.style.display = 'none';
+            originalInput.parentNode.insertBefore(customFileInput, originalInput);
+            
+            // Efectos hover
+            customFileInput.addEventListener('mouseenter', function() {
+                this.style.borderColor = '#034991';
+                selectButton.style.background = '#023366';
+            });
+            
+            customFileInput.addEventListener('mouseleave', function() {
+                this.style.borderColor = '#e1e8ed';
+                selectButton.style.background = '#034991';
+            });
+            
+            // Evento click para abrir selector
+            customFileInput.addEventListener('click', function() {
+                originalInput.click();
+            });
+            
+            // Actualizar texto cuando se selecciona archivo
+            originalInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    const fileName = this.files[0].name;
+                    const fileSize = (this.files[0].size / (1024 * 1024)).toFixed(2);
+                    fileNameDisplay.textContent = `${fileName} (${fileSize} MB)`;
+                    fileNameDisplay.style.color = '#2c3e50';
+                } else {
+                    fileNameDisplay.textContent = 'Ningún archivo seleccionado';
+                    fileNameDisplay.style.color = '#6c757d';
+                }
+            });
+        }
+    });
+    </script>
 </body>
 </html>

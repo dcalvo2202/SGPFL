@@ -161,7 +161,7 @@ class TfgUploadManager {
                 </div>
             `;
         } else {
-            let html = '<div class="search-results"><h6 style="padding: 12px 16px; margin: 0; background: #f8f9fa; border-bottom: 1px solid #e1e8ed;">Estudiantes encontrados:</h6>';
+            let html = '<div class="search-results"><h6><i class="bi bi-people-fill"></i> Estudiantes encontrados:</h6>';
             
             users.forEach(user => {
                 const isAlreadySelected = this.selectedMembers.some(m => m.id === user.id);
@@ -171,11 +171,14 @@ class TfgUploadManager {
                     html += `
                         <div class="search-result-item">
                             <div>
-                                <strong>${this.escapeHtml(user.nombre)}</strong><br>
-                                <small class="text-muted">${this.escapeHtml(user.email)} | ID: ${this.escapeHtml(user.id)}</small>
+                                <strong>${this.escapeHtml(user.nombre)}</strong>
+                                <small class="text-muted">
+                                    <i class="bi bi-envelope"></i> ${this.escapeHtml(user.email)} | 
+                                    <i class="bi bi-person-badge"></i> ID: ${this.escapeHtml(user.id)}
+                                </small>
                             </div>
                             <button type="button" class="btn-tfg btn-tfg-secondary btn-tfg-sm" onclick="window.tfgManager.addMember('${user.id}', '${this.escapeHtml(user.nombre)}', '${this.escapeHtml(user.email)}')">
-                                <i class="bi bi-plus"></i> Agregar
+                                <i class="bi bi-plus-circle"></i> Agregar
                             </button>
                         </div>
                     `;

@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application/json');
+header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
@@ -13,8 +13,22 @@ include $base_path . '/inc/db/bdcommon.inc';
 $search_term = $_GET['term'] ?? '';
 
 if (strlen($search_term) < 2) {
-    echo json_encode([]);
+    echo json_encode([], JSON_UNESCAPED_UNICODE);
     exit;
+}
+
+// Función para formatear nombres a Title Case
+function formatearNombre($nombre) {
+    // Convertir a minúsculas primero
+    $nombre = mb_strtolower($nombre, 'UTF-8');
+    
+    // Convertir primera letra de cada palabra a mayúscula
+    $palabras = explode(' ', $nombre);
+    $palabrasFormateadas = array_map(function($palabra) {
+        return mb_convert_case($palabra, MB_CASE_TITLE, 'UTF-8');
+    }, $palabras);
+    
+    return implode(' ', $palabrasFormateadas);
 }
 
 try {
@@ -28,10 +42,13 @@ try {
     $current_user = isset($_SESSION['usuario']) ? $_SESSION['usuario'] : '';
     
     // Buscar SOLO ESTUDIANTES (id_roll = 4) en la base de datos
+    // Búsqueda que ignora acentos y mayúsculas
     $sql = "SELECT u.id, u.nombre, u.email 
             FROM sis_user u 
             INNER JOIN sis_login l ON u.id = l.id 
-            WHERE (u.nombre LIKE ? OR u.email LIKE ? OR u.id LIKE ?)
+            WHERE (u.nombre LIKE ? 
+                   OR u.email LIKE ? 
+                   OR u.id LIKE ?)
             AND l.id_roll = 4
             AND u.id != ?
             ORDER BY u.nombre 
@@ -53,7 +70,7 @@ try {
     while ($row = $result->fetch_assoc()) {
         $users[] = [
             'id' => $row['id'],
-            'nombre' => $row['nombre'],
+            'nombre' => formatearNombre($row['nombre']),
             'email' => $row['email'] ?? 'sin-email@una.ac.cr'
         ];
     }
@@ -61,10 +78,10 @@ try {
     $stmt->close();
     $conn->close();
     
-    echo json_encode($users);
+    echo json_encode($users, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     
 } catch (Exception $e) {
     error_log("Error en búsqueda de usuarios: " . $e->getMessage());
-    echo json_encode(['error' => $e->getMessage()]);
+    echo json_encode(['error' => $e->getMessage()], JSON_UNESCAPED_UNICODE);
 }
 ?>

@@ -2339,13 +2339,9 @@ CREATE TABLE project_history (
 -- DATOS INICIALES: TIPOS DE PROYECTO
 -- ----------------------------
 INSERT INTO project_types (type_name, max_members, description) VALUES
-('Desarrollo de Software', 3, 'Proyectos orientados al desarrollo de aplicaciones web, móviles o de escritorio'),
-('Investigación', 2, 'Proyectos de investigación teórica o aplicada en ciencias de la computación'),
-('Análisis de Sistemas', 2, 'Proyectos de análisis y diseño de sistemas de información'),
-('Base de Datos', 2, 'Proyectos relacionados con diseño, optimización y gestión de bases de datos'),
-('Redes y Seguridad', 2, 'Proyectos de seguridad informática, redes y sistemas distribuidos'),
-('Inteligencia Artificial', 3, 'Proyectos relacionados con machine learning, IA y análisis de datos'),
-('Desarrollo Web', 3, 'Proyectos específicos de desarrollo web y tecnologías relacionadas');
+('Tesis', 2, 'Trabajo individual o en parejas'),
+('Proyecto de Graduación', 3, 'Proyecto grupal de hasta 3 integrantes'),
+('Seminario', 8, 'Trabajo grupal de hasta 8 integrantes');
 
 -- ============================================
 -- TABLAS PARA DOCUMENTOS FINALES DE TFG (HU-014)
