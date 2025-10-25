@@ -1,4 +1,4 @@
-<?php
+<?php   
 // Normaliza $base_url si no viene definido por la página
 if (!isset($base_url) || !$base_url) {
     $cds_domain = isset($mySessionController) ? ($mySessionController->getVar("cds_domain") ?? '') : '';

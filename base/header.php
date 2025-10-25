@@ -1,8 +1,15 @@
 <?php 
 include("mod/login/check.php");
 // includes.php comentado porque causa problemas con rutas relativas en subdirectorios
-include('includes.php');
+require_once('includes.php');
 include('lang/lang.es');
+
+// Normaliza $base_url si no viene definido por la página
+if (!isset($base_url) || !$base_url) {
+    $cds_domain = isset($mySessionController) ? ($mySessionController->getVar("cds_domain") ?? '') : '';
+    $cds_locate = isset($mySessionController) ? ($mySessionController->getVar("cds_locate") ?? '/base/') : '/base/';
+    $base_url = rtrim($cds_domain, '/') . '/' . trim($cds_locate, '/') . '/';
+}
 
 // Obtener variables de sesión
 $current_user_id = $mySessionController->getVar("usuario");
@@ -33,7 +40,10 @@ $base_url = $cds_domain . $cds_locate;
                     <a href="<?= htmlspecialchars($base_url) ?>dashboard.php" class="btn btn-outline-light btn-sm ms-2" style="font-size: 1.05rem; padding: 0.55rem 1.1rem;">
                         <i class="bi bi-house-fill"></i> Inicio
                     </a>
-                    <a href="<?= htmlspecialchars($base_url) ?>mod/login/logout.php" class="btn btn-outline-light btn-sm ms-2" style="font-size: 1.05rem; padding: 0.55rem 1.1rem;">
+                    <a href="<?= htmlspecialchars($base_url) ?>mod/login/logout.php" 
+                       class="btn btn-outline-light btn-sm ms-2" 
+                       style="font-size: 1.05rem; padding: 0.55rem 1.1rem;"
+                       onclick="return confirmarCierreSesion(event, '<?= htmlspecialchars($base_url) ?>')">
                         <i class="bi bi-box-arrow-right"></i> Salir
                     </a>
                 </div>

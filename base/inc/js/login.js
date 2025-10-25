@@ -32,6 +32,10 @@ swal2CustomStyle.innerHTML = `
     border-radius: 0.5rem !important;
     margin-top: 0 !important;
 }
+.swal2-cancel {
+    background-color: #6c757d !important;
+    color: #fff !important;
+}
 `;
 document.head.appendChild(swal2CustomStyle);
 
@@ -249,4 +253,34 @@ function Do_Login(){
         if (loginBtn) loginBtn.disabled = false;
     }
     page.innerHTML="";
+}
+
+/**
+ * Confirma con el usuario antes de cerrar sesión
+ * @param {Event} event - Evento del click
+ * @param {string} baseUrl - URL base de la aplicación
+ * @returns {boolean} false para prevenir navegación por defecto
+ */
+function confirmarCierreSesion(event, baseUrl) {
+    event.preventDefault();
+    
+    Swal.fire({
+        title: '¿Cerrar sesión?',
+        html: '¿Está seguro que desea salir del sistema?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Aceptar',
+        cancelButtonText: 'Cancelar',
+        reverseButtons: true,
+        customClass: {
+            confirmButton: 'swal2-ok-btn-lg',
+            cancelButton: 'swal2-ok-btn-lg'
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = baseUrl + 'mod/login/logout.php';
+        }
+    });
+    
+    return false;
 }

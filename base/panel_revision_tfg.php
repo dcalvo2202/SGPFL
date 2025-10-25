@@ -3,7 +3,6 @@
 include("mod/login/check.php");
 
 // 1. INCLUIR ARCHIVOS NECESARIOS
-include('includes.php');
 include('lang/lang.es');
 
 // 2. OBTENER VARIABLES DE SESIÓN

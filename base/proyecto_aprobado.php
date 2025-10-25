@@ -1,6 +1,5 @@
 <?php
 include("mod/login/check.php");
-include('includes.php');
 include('lang/lang.es');
 
 require_once __DIR__ . '/inc/db/db.php';
