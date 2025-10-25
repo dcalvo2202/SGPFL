@@ -1288,7 +1288,7 @@ CREATE TABLE `proyecto_notas` (
   `etapa_proyecto` varchar(100) DEFAULT NULL,
   KEY `proyecto_id` (`proyecto_id`),
   CONSTRAINT `proyecto_notas_ibfk_1` FOREIGN KEY (`proyecto_id`) REFERENCES `proyecto_aprobado` (`id_aprobado`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 
 
