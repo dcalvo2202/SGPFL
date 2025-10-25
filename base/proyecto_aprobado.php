@@ -95,7 +95,8 @@ label{font-weight:600;color:#092567;}
 .btn-tfg{display:inline-flex;align-items:center;gap:.5rem;background:#1e73be;color:#fff;padding:10px 16px;border-radius:6px;border:none;cursor:pointer;}
 .btn-tfg:hover{background:#155a92;}
 #previewBox img{width:40px;height:40px;}
-.small-hint{color:#6c757d;font-size:.9rem;}
+.small-hint{color:#6c757d;font-size:1.3rem;}
+.form-select{font-size:1.5rem;}
 CSS;
 ?>
 <!doctype html>
@@ -211,7 +212,7 @@ CSS;
               <input type="file" id="documento" name="documento" accept=".pdf,.doc,.docx,.xls,.xlsx" required hidden>
               <div id="previewBox" class="d-flex align-items-center gap-2 mt-2" style="display:none;">
                 <img id="previewIcon" alt="Archivo seleccionado" hidden>
-                <span id="previewName" style="font-size:0.95rem;color:#092567;"></span>
+                <span id="previewName" style="font-size:1.3rem;color:#092567;"></span>
               </div>
             </div>
 
