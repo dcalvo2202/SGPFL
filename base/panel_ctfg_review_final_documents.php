@@ -184,7 +184,10 @@ if ($current_user_rol != 3) {
                     <a href="<?= htmlspecialchars($base_url) ?>dashboard.php" class="btn btn-outline-light btn-sm ms-2" style="font-size: 1.05rem; padding: 0.55rem 1.1rem;">
                         <i class="bi bi-house-fill"></i> Inicio
                     </a>
-                     <a href="<?= htmlspecialchars($base_url) ?>mod/login/logout.php" class="btn btn-outline-light btn-sm ms-2" style="font-size: 1.05rem; padding: 0.55rem 1.1rem;">
+                    <a href="<?= htmlspecialchars($base_url) ?>mod/login/logout.php" 
+                       class="btn btn-outline-light btn-sm ms-2" 
+                       style="font-size: 1.05rem; padding: 0.55rem 1.1rem;"
+                       onclick="return confirmarCierreSesion(event, '<?= htmlspecialchars($base_url) ?>')">
                         <i class="bi bi-box-arrow-right"></i> Salir
                     </a>
                 </div>
@@ -482,6 +485,8 @@ if ($current_user_rol != 3) {
         }
     });
     </script>
+
+    <script src="<?= $base_url ?>inc/js/login.js" type="text/javascript"></script>
 
 </body>
 </html>
