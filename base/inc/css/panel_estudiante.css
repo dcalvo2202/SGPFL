@@ -19,20 +19,20 @@
 
 .dashboard-header h1 {
     color: #2c3e50; /* Tono oscuro más profesional */
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 700;
 }
 
 .dashboard-header .lead {
     max-width: 800px;
     margin: 0 auto;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     color: #6c757d; /* Asumiendo var(--gris-una) como este valor, puedes ajustarlo */
 }
 
 .section-title {
     color: #CD1719; /* Rojo UNA */
-    font-size: 28px;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 30px;
     padding-bottom: 10px;
