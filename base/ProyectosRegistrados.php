@@ -44,7 +44,7 @@ main { padding: 24px 0; }
 }
 CSS;
 
-// Filtros (GET ?q=&estado=&comite=&f_ini=&f_fin=)
+// Filtros (GET ?q=&estado=&comite=&f_ini=&f_fin=&prof=)
 $q = trim($_GET['q'] ?? '');
 // Estado: 0 = sin filtro (Todos)
 $estado = (isset($_GET['estado']) && $_GET['estado'] !== '' && in_array((int)$_GET['estado'], [1,2,3,4], true))
@@ -54,6 +54,9 @@ $estado = (isset($_GET['estado']) && $_GET['estado'] !== '' && in_array((int)$_G
 $comite_id = isset($_GET['comite']) ? (int)$_GET['comite'] : 0;
 $f_ini = trim($_GET['f_ini'] ?? '');
 $f_fin = trim($_GET['f_fin'] ?? '');
+
+// Nuevo: filtro por miembro del comité (ID o nombre)
+$prof = trim($_GET['prof'] ?? '');
 
 $validDate = fn($d) => $d !== '' && preg_match('/^\d{4}-\d{2}-\d{2}$/', $d);
 if (!$validDate($f_ini)) $f_ini = '';
@@ -131,6 +134,25 @@ if ($f_fin !== '') {
     $params[] = $f_fin;
 }
 
+// Nuevo: condición por profesor (coincide en tutor/asesores por ID o por nombre)
+if ($prof !== '') {
+    if (preg_match('/^\d+$/', $prof)) {
+        $pid = (int)$prof;
+        $conds[] = "(c.tutor = ? OR c.asesor_1 = ? OR c.asesor_2 = ?)";
+        $types  .= "iii";
+        $params[] = $pid;
+        $params[] = $pid;
+        $params[] = $pid;
+    } else {
+        $like = "%{$prof}%";
+        $conds[] = "(t.nombre LIKE ? OR a1.nombre LIKE ? OR a2.nombre LIKE ?)";
+        $types  .= "sss";
+        $params[] = $like;
+        $params[] = $like;
+        $params[] = $like;
+    }
+}
+
 // WHERE solo si hay condiciones
 if (!empty($conds)) {
     $sql .= " WHERE " . implode(' AND ', $conds);
@@ -192,6 +214,13 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
             <?php endforeach; ?>
           </select>
         </div>
+
+        <!-- Nuevo: filtro por miembro del comité (visible para todos) -->
+        <div class="col-sm-6 col-md-4 col-lg-4">
+          <input type="text" class="form-control" name="prof" placeholder="Miembro del comité (ID o nombre)"
+                 value="<?php echo htmlspecialchars($prof, ENT_QUOTES, 'UTF-8'); ?>" autocomplete="off">
+        </div>
+
         <div class="w-100 d-none d-md-block"></div>
         <div class="col-sm-6 col-md-3 col-lg-2">
           <input type="date" class="form-control" name="f_ini" value="<?php echo htmlspecialchars($f_ini); ?>" placeholder="Desde">
@@ -201,7 +230,7 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
         </div>
         <div class="col-auto">
           <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i> Buscar</button>
-          <?php if ($q !== '' || $comite_id>0 || $f_ini!=='' || $f_fin!=='' || isset($_GET['estado'])): ?>
+          <?php if ($q !== '' || $comite_id>0 || $f_ini!=='' || $f_fin!=='' || isset($_GET['estado']) || $prof!==''): ?>
             <a class="btn btn-outline-secondary" href="ProyectosRegistrados.php">Limpiar</a>
           <?php endif; ?>
         </div>
