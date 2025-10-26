@@ -26,9 +26,13 @@ if (!is_dir($dir)) {
     // Logo UNA
     $pdf->Image('img/Logo-UNA-Rojo_FondoTransparente.png',10,10,30);
 
+    // Ajustar margen superior
+    $pdf->SetY(45);
+
     // Título
     $pdf->SetFont('Arial','B',16);
     $pdf->Cell(0,40,utf8_decode('Acta de Proyecto Final de Graduación de Licenciatura'),0,1,'C');
+    $pdf->Ln(10);
 
     // Contenido
     $pdf->SetFont('Arial','',12);
