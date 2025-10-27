@@ -110,18 +110,31 @@ try {
     }
     $stmt_update->close();
 
+    // 4. Obtener el contador actual de correcciones para este documento
+    $sql_count = "SELECT COUNT(*) as count FROM tfg_document_reviews 
+                  WHERE document_id = ? AND review_type = 'Revision CTFG'";
+    $stmt_count = $conn->prepare($sql_count);
+    if (!$stmt_count) throw new Exception("Error preparando consulta de conteo: " . $conn->error);
+    $stmt_count->bind_param("i", $document_id);
+    $stmt_count->execute();
+    $result_count = $stmt_count->get_result()->fetch_assoc();
+    $corrections_count = $result_count['count'] ?? 0;
+    $stmt_count->close();
+
     // 5. Insertar registro en tfg_document_reviews (HU-020)
-    // Guardar historial de revisión con observaciones
-    // $review_type = 'Revision CTFG';
-    // $stmt_review = $conn->prepare("INSERT INTO tfg_document_reviews 
-    //     (document_id, file_version, reviewer_id, review_type, status, observations, corrections_count) 
-    //     VALUES (?, ?, ?, ?, ?, ?, 0)");
-    // if (!$stmt_review) throw new Exception("Error preparando inserción de revisión: " . $conn->error);
-    // $stmt_review->bind_param("iissss", $document_id, $next_version, $reviewer_id, $review_type, $db_status, $comments);
-    // if (!$stmt_review->execute()) {
-    //     throw new Exception("Error al guardar el historial de revisión: " . $stmt_review->error);
-    // }
-    // $stmt_review->close();
+    // Guardar historial de revisión con observaciones del CTFG
+    $review_type = 'Revision CTFG';
+    $new_corrections_count = $corrections_count + 1;
+    
+    $stmt_review = $conn->prepare("INSERT INTO tfg_document_reviews 
+        (document_id, file_version, reviewer_id, review_type, status, corrections_summary, corrections_count) 
+        VALUES (?, ?, ?, ?, ?, ?, ?)");
+    if (!$stmt_review) throw new Exception("Error preparando inserción de revisión: " . $conn->error);
+    $stmt_review->bind_param("iissssi", $document_id, $next_version, $reviewer_id, $review_type, $db_status, $comments, $new_corrections_count);
+    if (!$stmt_review->execute()) {
+        throw new Exception("Error al guardar el historial de revisión: " . $stmt_review->error);
+    }
+    $stmt_review->close();
 
     // Si todo va bien, confirmar la transacción
     $conn->commit();
