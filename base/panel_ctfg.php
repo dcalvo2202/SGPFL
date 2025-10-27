@@ -81,6 +81,15 @@ $avisos_generales = $panel->getAvisos();
                             <p>Buscar y consultar proyectos aprobados, sin aprobar o en corrección.</p>
                         </div>
                     </div>
+                    <!-- div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>listar_actas.php'">
+                            <div class="card-icon">
+                                <i class="bi bi-list-task"></i>
+                            </div>
+                            <h5>Listar Actas</h5>
+                            <p>Buscar y consultar actas de reuniones de la comisión.</p>
+                        </div>
+                    </div -->
                 </div>
             </div>
         </div>
