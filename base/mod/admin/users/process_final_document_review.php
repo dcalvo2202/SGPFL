@@ -101,29 +101,7 @@ try {
     $next_version = ($result_version['max_version'] ?? 0) + 1;
     $stmt_version->close();
 
-    // 3. Insertar la nueva versión en tfg_files
-    // $sql_new_file = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by, version, document_type) 
-    //                  VALUES (?, ?, ?, ?, NULL, ?, ?, 'Documento Final TFG')";
-    // $stmt_new_file = $conn->prepare($sql_new_file);
-    // if (!$stmt_new_file) throw new Exception("Error preparando la inserción del nuevo archivo: " . $conn->error);
-    
-    // $null_data = null;
-    // $stmt_new_file->bind_param("ssibsi", 
-    //     $current_doc['file_name'], 
-    //     $current_doc['mime_type'], 
-    //     $current_doc['file_size'], 
-    //     $null_data,
-    //     $current_doc['submitted_by'], 
-    //     $next_version
-    // );
-    // $stmt_new_file->send_long_data(3, $current_doc['file_data']);
-    // if (!$stmt_new_file->execute()) {
-    //     throw new Exception("Error al crear la nueva versión del archivo: " . $stmt_new_file->error);
-    // }
-    // $new_file_id = $conn->insert_id;
-    // $stmt_new_file->close();
-
-    // 4. Actualizar tfg_final_documents para apuntar a la nueva versión y cambiar el estado
+    // 3. Actualizar tfg_final_documents para apuntar a la nueva versión y cambiar el estado
     $stmt_update = $conn->prepare("UPDATE tfg_final_documents SET status = ? WHERE id = ?");
     if (!$stmt_update) throw new Exception("Error preparando la actualización del documento: " . $conn->error);
     $stmt_update->bind_param("si", $db_status, $document_id);
