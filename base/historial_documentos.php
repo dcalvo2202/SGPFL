@@ -3,7 +3,6 @@
 
 // Incluir archivos de configuración y utilidades
 include("mod/login/check.php");
-include('includes.php');
 include('lang/lang.es');
 include('inc/db/db.php');
 

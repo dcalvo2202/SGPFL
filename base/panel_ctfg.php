@@ -1,7 +1,6 @@
 <?php
 // ================== VERIFICAR AUTENTICACIÓN ==================
 include("mod/login/check.php");
-include('includes.php');
 include('lang/lang.es');
 
 // ================== VARIABLES DE SESIÓN ==================
@@ -71,16 +70,7 @@ $avisos_generales = $panel->getAvisos();
                             <h5>Aprobar Proyectos</h5>
                             <p>Gestionar y aprobar proyectos de TFG.</p>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>index.php'">
-                            <div class="card-icon">
-                                <i class="bi bi-house-fill"></i>
-                            </div>
-                            <h5>Inicio</h5>
-                            <p>Volver al panel principal del sistema.</p>
-                        </div>
-                    </div>
+                    </div>  
                     <!-- Nuevo panel: Proyectos Registrados -->
                     <div class="col-md-6 col-lg-4">
                         <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>ProyectosRegistrados.php'">
@@ -105,6 +95,5 @@ $avisos_generales = $panel->getAvisos();
     </footer>
      <!-- =============================== SCRIPTS =============================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

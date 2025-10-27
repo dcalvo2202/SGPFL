@@ -184,7 +184,10 @@ if ($current_user_rol != 3) {
                     <a href="<?= htmlspecialchars($base_url) ?>dashboard.php" class="btn btn-outline-light btn-sm ms-2" style="font-size: 1.05rem; padding: 0.55rem 1.1rem;">
                         <i class="bi bi-house-fill"></i> Inicio
                     </a>
-                     <a href="<?= htmlspecialchars($base_url) ?>mod/login/logout.php" class="btn btn-outline-light btn-sm ms-2" style="font-size: 1.05rem; padding: 0.55rem 1.1rem;">
+                    <a href="<?= htmlspecialchars($base_url) ?>mod/login/logout.php" 
+                       class="btn btn-outline-light btn-sm ms-2" 
+                       style="font-size: 1.05rem; padding: 0.55rem 1.1rem;"
+                       onclick="return confirmarCierreSesion(event, '<?= htmlspecialchars($base_url) ?>')">
                         <i class="bi bi-box-arrow-right"></i> Salir
                     </a>
                 </div>
@@ -241,11 +244,11 @@ if ($current_user_rol != 3) {
                             <thead class="table-light">
                                 <tr>
                                     <th>Estudiante</th>
-                                    <th>Título de la Propuesta</th>
+                                    <th>Título del Documento</th>
                                     <th>Fecha de Subida</th>
                                     <th>Estado del Proyecto</th>
                                     <th>Estado</th>
-                                    <th class="text-center">Acciones</th>
+                                    <th class="text-center" style="width: 420px;">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -274,19 +277,51 @@ if ($current_user_rol != 3) {
                                         </span>
                                     </td>
                                     <td class="text-center">
+                                        <div class="btn-group" role="group">
                                         <?php $download_url = $base_url . 'mod/admin/users/tfg_final_download.php?id=' . $row['id']; ?>
                                         <a href="<?= htmlspecialchars($download_url) ?>" 
-                                           class="btn btn-sm btn-primary btn-download" 
+                                           class="btn btn-sm btn-primary text-white"
                                            target="_blank"
                                            title="Descargar y revisar documento PDF">
-                                            <i class="bi bi-download"></i>
+                                           <style>
+                                               .btn-primary {
+                                                   background-color: #007bff;
+                                                   border-color: #007bff;
+                                               }
+                                               .btn-primary:hover {
+                                                   background-color: #0056b3;
+                                                   border-color: #0056b3;
+                                               }
+                                            </style>
+                                            <i class="bi bi-download me-1"></i><span> Descargar y revisar documento PDF</span>
                                         </a>
                                         <button onclick="openReviewModal(<?= $row['id'] ?>, 'Aprobado para Defensa')" class="btn btn-sm btn-success" title="Aprobar para Defensa">
-                                            <i class="bi bi-check-circle"></i>
+                                            <style>
+                                                .btn-success {
+                                                    background-color: #28a745;
+                                                    border-color: #28a745;
+                                                }
+                                                .btn-success:hover {
+                                                    background-color: #1e7e34;
+                                                    border-color: #1e7e34;
+                                                }
+                                            </style>
+                                            <i class="bi bi-check-circle"></i><span> Aprobar para Defensa</span>
                                         </button>
-                                        <button onclick="openReviewModal(<?= $row['id'] ?>, 'Correcciones Requeridas')" class="btn btn-sm btn-danger" title="Requerir Correcciones">
-                                            <i class="bi bi-x-circle"></i>
+                                        <button onclick="openReviewModal(<?= $row['id'] ?>, 'Correcciones Requeridas')" class="btn btn-sm btn-danger" title="Correcciones Requeridas">
+                                            <style>
+                                                .btn-danger {
+                                                    background-color: #dc3545;
+                                                    border-color: #dc3545;
+                                                }
+                                                .btn-danger:hover {
+                                                    background-color: #bd2130;
+                                                    border-color: #bd2130;
+                                                }
+                                            </style>
+                                            <i class="bi bi-x-circle"></i><span> Correcciones Requeridas</span>
                                         </button>
+                                        </div>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>
@@ -393,9 +428,9 @@ if ($current_user_rol != 3) {
     // --- Main Function to Open Comment Modal ---
     function openReviewModal(document_id, status) {
         currentReview = { document_id, status };
-        const actionText = status === 'Aprobado para Defensa' ? 'Aprobar para Defensa' : 'Requerir Correcciones';
+        const actionText = status === 'Aprobado para Defensa' ? 'Aprobar para Defensa' : 'Correcciones Requeridas';
         
-        modalText.textContent = `¿Desea ${actionText} este documento?`;
+        // modalText.textContent = `¿Desea ${actionText} este documento?`;
         modalComments.value = '';
         modalError.style.display = 'none';
         commentModal.style.display = 'flex';
@@ -482,6 +517,8 @@ if ($current_user_rol != 3) {
         }
     });
     </script>
+
+    <script src="<?= $base_url ?>inc/js/login.js" type="text/javascript"></script>
 
 </body>
 </html>

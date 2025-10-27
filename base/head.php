@@ -1,15 +1,18 @@
 <?php
 // includes.php comentado porque causa problemas con rutas relativas en subdirectorios
 // include('includes.php');
+include('config.inc');
 include('lang/lang.es');
 
-// Definir variables si no existen
-if (!isset($page_title)) {
-    $page_title = 'SGPFL - Sistema de Gestión';
+// Verificar y definir $base_url si no está definido
+if (!isset($base_url) || !$base_url) {
+    $cds_domain = isset($mySessionController) ? ($mySessionController->getVar("cds_domain") ?? '') : '';
+    $cds_locate = isset($mySessionController) ? ($mySessionController->getVar("cds_locate") ?? '/base/') : '/base/';
+    $base_url = rtrim($cds_domain, '/') . '/' . trim($cds_locate, '/') . '/';
 }
-if (!isset($favicon_url)) {
-    $favicon_url = $base_url . 'img/logo-una.webp';
-}
+
+$favicon_url = $base_url . "img/logo.webp";
+
 ?>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

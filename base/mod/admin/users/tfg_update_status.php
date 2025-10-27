@@ -52,28 +52,7 @@ try {
         throw new Exception("No se encontró la propuesta especificada.");
     }
 
-    // 2. Insert into history
-    $sql = "INSERT INTO tfg_proposal_history 
-            (proposal_id, document, file_name, mime_type, file_size, status, reviewed_by, comments) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    
-    $stmt = $conn->prepare($sql);
-    
-    // Usar el ID del revisor obtenido de la sesión
-    $stmt->bind_param("ibssisss", 
-        $proposal_id, 
-        $proposal['document'], 
-        $proposal['file_name'],
-        $proposal['mime_type'],
-        $proposal['file_size'],
-        $review_status,
-        $reviewer_id, // <-- CAMBIO CLAVE: ID real del revisor
-        $comments
-    );
-    $stmt->send_long_data(1, $proposal['document']);
-    $stmt->execute();
-
-    // 3. Update main table
+    // 2. Update main table
     $main_table_status = '';
     if ($review_status === 'Cumple Requisitos') {
         $main_table_status = 'Aprobado';  // Cambio: "Cumple Requisitos" → "Aprobado"
@@ -91,7 +70,7 @@ try {
     $stmt_update->bind_param("sssi", $main_table_status, $reviewer_id, $comments, $proposal_id);
     $stmt_update->execute();
 
-    // 4. Si la propuesta fue APROBADA, crear automáticamente el timeline del proyecto
+    // 3. Si la propuesta fue APROBADA, crear automáticamente el timeline del proyecto
     if ($main_table_status === 'Aprobado') {
         // Calcular deadline: 1 año (12 meses) desde la fecha de aprobación
         $sql_timeline = "INSERT INTO tfg_project_timeline 
@@ -105,7 +84,7 @@ try {
         error_log("Timeline creado automáticamente para propuesta ID: " . $proposal_id);
     }
 
-    // 5. Send email notification
+    // 4. Send email notification
     $to = "calvoss2002@gmail.com";//$proposal['email'];
     $subject = "Actualización de estado - Propuesta TFG";
     $message = "Estimado/a " . $proposal['nombre'] . ",\n\n";

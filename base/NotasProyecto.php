@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $titulo = trim($_POST['titulo'] ?? '');
     $notas  = trim($_POST['notas'] ?? '');
     $pid    = (int)($_POST['proyecto_id'] ?? 0);
+    $etapa  = trim($_POST['etapa_proyecto'] ?? ''); // NUEVO
 
     if ($pid !== $proyecto_id) {
         $flash_err = 'Proyecto inválido.';
@@ -50,10 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Usa el id de usuario desde mySession si está disponible
             $creado_por = (string)($mySessionController->getVar('usuario') ?? $_SESSION['id'] ?? $_SESSION['user_id'] ?? '');
 
-            $sqlIns = "INSERT INTO proyecto_notas (id_nota, proyecto_id, titulo, notas, creado_por)
-                       VALUES (?, ?, ?, ?, ?)";
+            $sqlIns = "INSERT INTO proyecto_notas (id_nota, proyecto_id, titulo, notas, creado_por, etapa_proyecto)
+                       VALUES (?, ?, ?, ?, ?, NULLIF(?, ''))"; // guarda NULL si viene vacío
             if ($stmt = mysqli_prepare($id_con, $sqlIns)) {
-                mysqli_stmt_bind_param($stmt, 'iisss', $next_id, $proyecto_id, $titulo, $notas, $creado_por);
+                mysqli_stmt_bind_param($stmt, 'iissss', $next_id, $proyecto_id, $titulo, $notas, $creado_por, $etapa);
                 $ok = mysqli_stmt_execute($stmt);
                 $err = mysqli_stmt_error($stmt);
                 mysqli_stmt_close($stmt);
@@ -76,7 +77,7 @@ $flash_ok = isset($_GET['ok']) && $_GET['ok'] == '1';
 
 // Cargar lista de notas previas (solo títulos)
 $notas_previas = [];
-$sqlSel = "SELECT id_nota, titulo, notas, creado_por, creado_en
+$sqlSel = "SELECT id_nota, titulo, notas, creado_por, creado_en, etapa_proyecto
            FROM proyecto_notas
            WHERE proyecto_id = ?
            ORDER BY creado_en DESC, id_nota DESC";
@@ -124,6 +125,11 @@ if ($stmt = mysqli_prepare($id_con, $sqlSel)) {
                   <input type="text" name="titulo" class="form-control" maxlength="200" required>
                 </div>
                 <div class="mb-3">
+                  <label class="form-label">Etapa de proyecto</label> <!-- NUEVO -->
+                  <input type="text" name="etapa_proyecto" class="form-control" maxlength="100"
+                         placeholder="p. ej., Anteproyecto, Borrador final, Defensa">
+                </div>
+                <div class="mb-3">
                   <label class="form-label">Notas</label>
                   <textarea name="notas" class="form-control" rows="6" required></textarea>
                 </div>
@@ -143,6 +149,7 @@ if ($stmt = mysqli_prepare($id_con, $sqlSel)) {
               <strong id="notaViewerTitulo"></strong>
             </div>
             <div class="card-body">
+              <div id="notaViewerEtapa" class="mb-2 text-primary fw-semibold" style="display:none;"></div> <!-- NUEVO -->
               <div id="notaViewerTexto" style="white-space:pre-wrap;"></div>
               <div id="notaViewerMeta" class="text-muted small mt-2"></div>
             </div>
@@ -164,6 +171,7 @@ if ($stmt = mysqli_prepare($id_con, $sqlSel)) {
                       data-titulo="<?php echo htmlspecialchars($n['titulo'], ENT_QUOTES, 'UTF-8'); ?>"
                       data-creado="<?php echo htmlspecialchars($n['creado_en'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
                       data-autor="<?php echo htmlspecialchars($n['creado_por'] ?? '-', ENT_QUOTES, 'UTF-8'); ?>"
+                      data-etapa="<?php echo htmlspecialchars($n['etapa_proyecto'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
                       role="button"
                       tabindex="0"
                     >
@@ -205,19 +213,28 @@ if ($stmt = mysqli_prepare($id_con, $sqlSel)) {
       const list = document.getElementById('notasPreviasList');
       const viewer = document.getElementById('notaViewer');
       const vTitle = document.getElementById('notaViewerTitulo');
-      const vText = document.getElementById('notaViewerTexto');
-      const vMeta = document.getElementById('notaViewerMeta');
+      const vText  = document.getElementById('notaViewerTexto');
+      const vMeta  = document.getElementById('notaViewerMeta');
+      const vStage = document.getElementById('notaViewerEtapa'); // NUEVO
       if (!list || !viewer) return;
 
       function showFromItem(li){
         const titulo = li.getAttribute('data-titulo') || '';
         const creado = li.getAttribute('data-creado') || '';
         const autor  = li.getAttribute('data-autor') || '';
+        const etapa  = li.getAttribute('data-etapa') || '';
         const contentEl = li.querySelector('.note-content');
         const texto = contentEl ? contentEl.textContent : '';
         vTitle.textContent = titulo;
         vText.textContent = texto;
         vMeta.textContent = (creado || autor) ? `Creado: ${creado} · Por: ${autor}` : '';
+        if (etapa) {
+          vStage.textContent = `Etapa: ${etapa}`;
+          vStage.style.display = '';
+        } else {
+          vStage.textContent = '';
+          vStage.style.display = 'none';
+        }
         viewer.style.display = '';
         list.querySelectorAll('.list-group-item').forEach(el => el.classList.remove('active'));
         li.classList.add('active');
