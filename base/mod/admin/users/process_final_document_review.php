@@ -102,31 +102,31 @@ try {
     $stmt_version->close();
 
     // 3. Insertar la nueva versión en tfg_files
-    $sql_new_file = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by, version, document_type) 
-                     VALUES (?, ?, ?, ?, NULL, ?, ?, 'Documento Final TFG')";
-    $stmt_new_file = $conn->prepare($sql_new_file);
-    if (!$stmt_new_file) throw new Exception("Error preparando la inserción del nuevo archivo: " . $conn->error);
+    // $sql_new_file = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by, version, document_type) 
+    //                  VALUES (?, ?, ?, ?, NULL, ?, ?, 'Documento Final TFG')";
+    // $stmt_new_file = $conn->prepare($sql_new_file);
+    // if (!$stmt_new_file) throw new Exception("Error preparando la inserción del nuevo archivo: " . $conn->error);
     
-    $null_data = null;
-    $stmt_new_file->bind_param("ssibsi", 
-        $current_doc['file_name'], 
-        $current_doc['mime_type'], 
-        $current_doc['file_size'], 
-        $null_data,
-        $current_doc['submitted_by'], 
-        $next_version
-    );
-    $stmt_new_file->send_long_data(3, $current_doc['file_data']);
-    if (!$stmt_new_file->execute()) {
-        throw new Exception("Error al crear la nueva versión del archivo: " . $stmt_new_file->error);
-    }
-    $new_file_id = $conn->insert_id;
-    $stmt_new_file->close();
+    // $null_data = null;
+    // $stmt_new_file->bind_param("ssibsi", 
+    //     $current_doc['file_name'], 
+    //     $current_doc['mime_type'], 
+    //     $current_doc['file_size'], 
+    //     $null_data,
+    //     $current_doc['submitted_by'], 
+    //     $next_version
+    // );
+    // $stmt_new_file->send_long_data(3, $current_doc['file_data']);
+    // if (!$stmt_new_file->execute()) {
+    //     throw new Exception("Error al crear la nueva versión del archivo: " . $stmt_new_file->error);
+    // }
+    // $new_file_id = $conn->insert_id;
+    // $stmt_new_file->close();
 
     // 4. Actualizar tfg_final_documents para apuntar a la nueva versión y cambiar el estado
-    $stmt_update = $conn->prepare("UPDATE tfg_final_documents SET status = ?, file_id = ? WHERE id = ?");
+    $stmt_update = $conn->prepare("UPDATE tfg_final_documents SET status = ? WHERE id = ?");
     if (!$stmt_update) throw new Exception("Error preparando la actualización del documento: " . $conn->error);
-    $stmt_update->bind_param("sii", $db_status, $new_file_id, $document_id);
+    $stmt_update->bind_param("si", $db_status, $document_id);
     if (!$stmt_update->execute()) {
         throw new Exception("Error al actualizar el documento final: " . $stmt_update->error);
     }
@@ -134,16 +134,16 @@ try {
 
     // 5. Insertar registro en tfg_document_reviews (HU-020)
     // Guardar historial de revisión con observaciones
-    $review_type = 'Revision CTFG';
-    $stmt_review = $conn->prepare("INSERT INTO tfg_document_reviews 
-        (document_id, file_version, reviewer_id, review_type, status, observations, corrections_count) 
-        VALUES (?, ?, ?, ?, ?, ?, 0)");
-    if (!$stmt_review) throw new Exception("Error preparando inserción de revisión: " . $conn->error);
-    $stmt_review->bind_param("iissss", $document_id, $next_version, $reviewer_id, $review_type, $db_status, $comments);
-    if (!$stmt_review->execute()) {
-        throw new Exception("Error al guardar el historial de revisión: " . $stmt_review->error);
-    }
-    $stmt_review->close();
+    // $review_type = 'Revision CTFG';
+    // $stmt_review = $conn->prepare("INSERT INTO tfg_document_reviews 
+    //     (document_id, file_version, reviewer_id, review_type, status, observations, corrections_count) 
+    //     VALUES (?, ?, ?, ?, ?, ?, 0)");
+    // if (!$stmt_review) throw new Exception("Error preparando inserción de revisión: " . $conn->error);
+    // $stmt_review->bind_param("iissss", $document_id, $next_version, $reviewer_id, $review_type, $db_status, $comments);
+    // if (!$stmt_review->execute()) {
+    //     throw new Exception("Error al guardar el historial de revisión: " . $stmt_review->error);
+    // }
+    // $stmt_review->close();
 
     // Si todo va bien, confirmar la transacción
     $conn->commit();
@@ -154,7 +154,7 @@ try {
     
     echo json_encode([
         'success' => true, 
-        'message' => 'El estado del documento ha sido actualizado y se ha creado una nueva versión.',
+        'message' => 'El estado del documento ha sido actualizado.',
         'document_id' => $document_id,
         'status' => $new_status, // Devolver el estado del frontend para el correo
         'comments' => $comments

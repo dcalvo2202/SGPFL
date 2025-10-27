@@ -52,26 +52,26 @@ try {
         throw new Exception("No se encontró la propuesta especificada.");
     }
 
-    // 2. Insert into history
-    $sql = "INSERT INTO tfg_proposal_history 
-            (proposal_id, document, file_name, mime_type, file_size, status, reviewed_by, comments) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    // // 2. Insert into history
+    // $sql = "INSERT INTO tfg_proposal_history 
+    //         (proposal_id, document, file_name, mime_type, file_size, status, reviewed_by, comments) 
+    //         VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     
-    $stmt = $conn->prepare($sql);
+    // $stmt = $conn->prepare($sql);
     
     // Usar el ID del revisor obtenido de la sesión
-    $stmt->bind_param("ibssisss", 
-        $proposal_id, 
-        $proposal['document'], 
-        $proposal['file_name'],
-        $proposal['mime_type'],
-        $proposal['file_size'],
-        $review_status,
-        $reviewer_id, // <-- CAMBIO CLAVE: ID real del revisor
-        $comments
-    );
-    $stmt->send_long_data(1, $proposal['document']);
-    $stmt->execute();
+    // $stmt->bind_param("ibssisss", 
+    //     $proposal_id, 
+    //     $proposal['document'], 
+    //     $proposal['file_name'],
+    //     $proposal['mime_type'],
+    //     $proposal['file_size'],
+    //     $review_status,
+    //     $reviewer_id, // <-- CAMBIO CLAVE: ID real del revisor
+    //     $comments
+    // );
+    // $stmt->send_long_data(1, $proposal['document']);
+    // $stmt->execute();
 
     // 3. Update main table
     $main_table_status = '';

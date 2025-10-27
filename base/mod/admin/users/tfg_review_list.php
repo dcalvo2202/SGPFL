@@ -33,7 +33,7 @@ $result = $conn->query($sql);
                 <th>Estudiante</th>
                 <th>Título de la Propuesta</th>
                 <th>Fecha de Envío</th>
-                <th class="text-center">Acciones</th>
+                <th class="text-center" style="width: 420px;">Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -48,13 +48,13 @@ $result = $conn->query($sql);
                 <td class="text-center">
                     <div class="btn-group" role="group">
                         <?php $download_url = $base_url . 'mod/admin/users/tfg_download.php?id=' . $row['id']; ?>
-                        <a href="<?= htmlspecialchars($download_url) ?>" class="btn btn-sm btn-outline-primary" title="Descargar Propuesta">
+                        <a href="<?= htmlspecialchars($download_url) ?>" class="btn btn-sm btn-primary text-white" title="Descargar Propuesta">
                             <i class="bi bi-download"></i> Descargar
                         </a>
-                        <button class="btn btn-sm btn-outline-success" onclick="updateStatus(<?= $row['id']; ?>, 'Cumple Requisitos')">
+                        <button class="btn btn-sm btn-success" onclick="updateStatus(<?= $row['id']; ?>, 'Cumple Requisitos')">
                             <i class="bi bi-check-circle"></i> Cumple Requisitos
                         </button>
-                        <button class="btn btn-sm btn-outline-danger" onclick="updateStatus(<?= $row['id']; ?>, 'No Cumple Requisitos')">
+                        <button class="btn btn-sm btn-danger" onclick="updateStatus(<?= $row['id']; ?>, 'No Cumple Requisitos')">
                             <i class="bi bi-x-circle"></i> No Cumple Requisitos
                         </button>
                     </div>
@@ -65,9 +65,9 @@ $result = $conn->query($sql);
     </table>
 </div>
 <?php else: ?>
-<div class="alert alert-success text-center">
-    <i class="bi bi-check2-circle fs-3"></i>
-    <h4 class="alert-heading mt-2">¡Todo al día!</h4>
+<div class="empty-state text-center">
+    <i class="bi bi-check2-circle"></i>
+    <h3>¡Todo al día!</h3>
     <p class="mb-0">No hay propuestas pendientes de revisión en este momento.</p>
 </div>
 <?php endif; ?>
@@ -140,6 +140,16 @@ $result = $conn->query($sql);
 
 .custom-modal-actions button {
     margin-left: 10px;
+}
+.empty-state {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    color: #28a745;
+    margin-bottom: 1.5rem;
 }
 </style>
 
