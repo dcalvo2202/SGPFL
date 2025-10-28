@@ -1,6 +1,5 @@
 <?php
 include("mod/login/check.php");
-include('includes.php');
 include('lang/lang.es');
 // Variables de sesión
 $current_user_name = $mySessionController->getVar("nombre");
@@ -77,6 +76,11 @@ $footer_title = "Sistema Gestor de Proyectos Finales de Licenciatura\nEscuela de
             <div class="text-center mt-4">
                 <a href="<?= $base_url ?>generar_acta.php" class="btn btn-danger btn-lg">
                     <i class="bi bi-plus-circle-fill"></i> Generar nueva acta
+                </a>
+            </div>
+            <div class="text-center mt-4">
+                <a href="panel_ctfg.php" class="btn btn-secondary">
+                <i class="bi bi-arrow-left-circle"></i> Volver al Panel CTFG
                 </a>
             </div>
         </div>
