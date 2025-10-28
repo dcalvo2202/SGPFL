@@ -2396,6 +2396,31 @@ CREATE TABLE `tfg_final_documents` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- ----------------------------
+-- Table structure for `tfg_document_reviews`
+-- Almacena el historial de revisiones de documentos finales TFG (HU-020)
+-- Incluye tanto revisiones del CTFG como correcciones del estudiante
+-- ----------------------------
+DROP TABLE IF EXISTS `tfg_document_reviews`;
+CREATE TABLE `tfg_document_reviews` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `document_id` int(11) NOT NULL COMMENT 'FK a tfg_final_documents',
+  `file_version` int(11) NOT NULL COMMENT 'Versión del archivo revisado',
+  `reviewer_id` varchar(50) DEFAULT NULL COMMENT 'ID del revisor (CTFG), NULL si es corrección del estudiante',
+  `review_type` enum('Revision CTFG','Correccion Estudiante') NOT NULL COMMENT 'Tipo de revisión',
+  `status` enum('Aprobado','Rechazado','Pendiente de Revision') NOT NULL COMMENT 'Estado de la revisión',
+  `corrections_summary` text DEFAULT NULL COMMENT 'Resumen de correcciones solicitadas o realizadas',
+  `corrections_count` int(11) DEFAULT 0 COMMENT 'Contador de ciclos de corrección',
+  `reviewed_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha de la revisión',
+  PRIMARY KEY (`id`),
+  KEY `idx_document_id` (`document_id`),
+  KEY `idx_reviewer_id` (`reviewer_id`),
+  KEY `idx_review_type` (`review_type`),
+  KEY `idx_reviewed_at` (`reviewed_at`),
+  CONSTRAINT `fk_review_document` FOREIGN KEY (`document_id`) REFERENCES `tfg_final_documents` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_review_reviewer` FOREIGN KEY (`reviewer_id`) REFERENCES `sis_user` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- ----------------------------
 -- Table structure for `tfg_project_timeline`
 -- Almacena las fechas y estado del proyecto según Art. 73 RGPEA
 -- ----------------------------
