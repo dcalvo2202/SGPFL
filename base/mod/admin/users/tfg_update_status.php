@@ -96,7 +96,7 @@ try {
     
     // Agregar información del timeline si fue aprobada
     if ($main_table_status === 'Aprobado') {
-        $message .= "\n¡Felicitaciones! Su propuesta ha sido aprobada.\n";
+        $message .= "\n¡Su propuesta ha sido aprobada!\n";
         $message .= "A partir de hoy, tiene 12 meses (1 año) para completar su TFG.\n";
         $message .= "Fecha límite: " . date('d/m/Y', strtotime('+12 months')) . "\n";
         $message .= "\nPuede subir su documento final desde el panel de estudiante.\n";
