@@ -1,4 +1,4 @@
-## Introducción
+# Introducción
 
 Este documento describe la configuración técnica y los parámetros esenciales del sistema **SGPFL (Sistema Gestor de Proyectos Finales de Licenciatura)**. Su objetivo es servir como guía de referencia para nuevos administradores o personal de soporte que requieran comprender, mantener o desplegar el sistema en diferentes entornos.
 
@@ -435,3 +435,85 @@ El resultado debe incluir:
 ```
 supportedLDAPVersion: 3
 ```
+## 1. Instalación y despliegue
+
+Este apartado describe los pasos necesarios para instalar y poner en funcionamiento el sistema SGPFL en un entorno local o productivo.
+
+### 1.1 Requisitos previos
+
+* Servidor web: Apache o Nginx
+* PHP >= 7.4 con extensiones: `ldap`, `mysqli`, `mbstring`, `gd`, `zip`
+* MySQL o MariaDB >= 5.7
+* Acceso a un servidor LDAP v3 (puede ser OpenLDAP o Active Directory)
+* Acceso a un servidor SMTP para el envío de correos institucionales
+
+### 1.2 Pasos de instalación
+
+1. Copiar los archivos del proyecto en la ruta deseada del servidor web.
+2. Configurar las variables de entorno en:
+
+   * `config.inc` → dominio, ubicación del sistema, LDAP, módulos y acciones
+   * `dbcommon.inc` → conexión a la base de datos
+3. Crear la base de datos e importar el esquema inicial:
+
+   ```bash
+   mysql -u usuario -p base_db < base_inicial.sql
+   ```
+4. Configurar LDAP y verificar la conexión según lo definido en `config.inc`.
+5. Configurar envío de correos electrónicos mediante `php.ini` y `sendmail.ini`.
+6. Reiniciar el servidor web para aplicar cambios.
+7. Acceder al sistema desde un navegador para verificar que todas las funcionalidades estén operativas.
+
+---
+
+## 2. Estructura del proyecto
+
+Se recomienda que los administradores se familiaricen con la estructura de carpetas y archivos principales:
+
+```
+/inc         → Archivos de configuración y librerías generales
+/inc/db      → Archivos de conexión a la base de datos
+/mod     → Módulos funcionales del sistema
+/uploads     → Archivos cargados por los usuarios
+/img         → Recursos gráficos como favicon, logos, íconos
+```
+
+* Las modificaciones en módulos o rutas deben reflejarse en los archivos de configuración y, si corresponde, en la base de datos.
+* Mantener una copia de seguridad de los archivos de configuración críticos (`config.inc`, `dbcommon.inc`, `sendmail.ini`) antes de cualquier cambio.
+
+---
+
+## 3. Mantenimiento y respaldo
+
+### 3.1 Copia de seguridad de la base de datos
+
+Se recomienda realizar respaldos periódicos de la base de datos. Por ejemplo:
+
+```bash
+mysqldump -u usuario -p base_db > respaldo_base_db.sql
+```
+
+### 3.2 Copia de seguridad de archivos críticos
+
+* `config.inc`
+* `dbcommon.inc`
+* `sendmail.ini`
+* `/uploads` (archivos subidos por usuarios)
+
+### 3.3 Actualizaciones y cambios
+
+* Antes de actualizar el sistema, respaldar tanto la base de datos como los archivos de configuración.
+* Verificar compatibilidad de módulos y permisos si se agregan nuevas funcionalidades.
+* Confirmar que los servicios LDAP y de correo continúan funcionando tras cualquier actualización.
+
+---
+
+## 4. Solución de problemas comunes
+
+| Problema                         | Posible causa                                          | Solución sugerida                                       |
+| -------------------------------- | ------------------------------------------------------ | ------------------------------------------------------- |
+| Error de conexión LDAP           | Versión o puerto incorrecto                            | Verificar configuración LDAPv3 y puerto en `config.inc` |
+| No se envían correos             | Configuración de `sendmail.ini` o `php.ini` incorrecta | Revisar credenciales y remitente en `sendmail.ini`      |
+| No carga la base de datos        | Credenciales incorrectas o base no creada              | Revisar `dbcommon.inc` y existencia de la base          |
+| Listados incompletos o sin datos | `$page_cant` demasiado bajo                            | Ajustar valor en `config.inc`                           |
+| Accesos denegados en módulos     | Usuario no asignado al rol correcto                    | Revisar LDAP y tabla `sis_rolls`                        |
