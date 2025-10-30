@@ -61,8 +61,8 @@ if (!in_array($current_user_rol, [2, 3])) {
                             <button type="submit" class="btn btn-success btn-lg">
                                 <i class="bi bi-file-earmark-pdf-fill"></i> Generar Acta en PDF
                             </button>
-                            <a href="listar_actas.php" class="btn btn-secondary btn-lg ms-3">
-                                <i class="bi bi-arrow-left-circle"></i> Volver al listado
+                            <a href="dashboard.php" class="btn btn-secondary btn-lg ms-3">
+                                <i class="bi bi-arrow-left-circle"></i> Volver al panel principal
                             </a>
                         </div>
                     </form>

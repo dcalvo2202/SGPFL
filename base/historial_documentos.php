@@ -14,8 +14,8 @@ $cds_domain = $mySessionController->getVar("cds_domain");
 $cds_locate = $mySessionController->getVar("cds_locate");
 $base_url = $cds_domain . $cds_locate;
 
-// Restringir acceso solo a estudiantes (rol 4)
-if ($current_user_rol != 4) {
+// Restringir acceso solo a estudiantes, asesor (rol 4, 5) o admin (rol 1)
+if ($current_user_rol != 4 && $current_user_rol != 5 && $current_user_rol != 1) {
     header('Location: dashboard.php');
     exit;
 }

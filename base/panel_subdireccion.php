@@ -76,7 +76,38 @@ if ($current_user_rol != 2 && $current_user_rol != 1) {
                             <p>Ver y gestionar las propuestas de TFG pendientes de aprobación.</p>
                         </div>
                     </div>
+                    <!-- Aprobar Proyectos -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>proyecto_aprobado.php'">
+                            <div class="card-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <h5>Aprobar Proyectos</h5>
+                            <p>Gestionar y aprobar proyectos de TFG.</p>
+                        </div>
+                    </div> 
+                    <!-- Revisar Documentos Finales -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_ctfg_review_final_documents.php'">
+                            <div class="card-icon">
+                                <i class="bi bi-file-earmark-check-fill"></i>
+                            </div>
+                            <h5>Revisar Documentos Finales</h5>
+                            <p>Ver y gestionar documentos finales de TFG pendientes de revisión.</p>
+                        </div>
+                    </div>
+                    <!-- Proyectos Registrados -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>ProyectosRegistrados.php'">
+                            <div class="card-icon">
+                                <i class="bi bi-list-task"></i>
+                            </div>
+                            <h5>Proyectos Registrados</h5>
+                            <p>Buscar y consultar proyectos aprobados, sin aprobar o en corrección.</p>
+                        </div>
+                    </div>
                 </div>
+                
             </div>
             <!-- =============================== GESTIÓN DE ACTAS =============================== -->
             <div class="quick-actions-section mt-5">

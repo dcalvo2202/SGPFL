@@ -51,7 +51,7 @@
                     </div>
 
                     <div class="text-center mt-2">
-                        <a href="https://www.dtic.una.ac.cr/index.php/plataf-servicios/recuperacion-contrasenas" target="_blank" class="btn btn-link w-100 mt-2" tabindex="-1">
+                        <a href="https://recuperacion.una.ac.cr/" target="_blank" class="btn btn-link w-100 mt-2" tabindex="-1">
                         ¿Olvidó su nombre de usuario o contraseña?
                         </a>   
                     </div>

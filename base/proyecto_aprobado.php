@@ -7,6 +7,18 @@ require_once __DIR__ . '/lib/mysession/mySession.conf.php';
 require_once __DIR__ . '/lib/mysession/mySession.class.php';
 $mySessionController = mySession::getIstance($_MYSESSION_CONF);
 
+// 2. OBTENER VARIABLES DE SESIÓN
+$current_user_id = $mySessionController->getVar("usuario");
+$current_user_name = $mySessionController->getVar("nombre");
+$current_user_rol = $mySessionController->getVar("rol");
+$base_url = $mySessionController->getVar("cds_domain") . $mySessionController->getVar("cds_locate");
+
+// 3. CONTROL DE ACCESO POR ROL (Solo CTFG, Gestor academico, admin - rol 1, 2,3)
+if ($current_user_rol != 2 && $current_user_rol != 1 && $current_user_rol != 3) {
+    header('Location: dashboard.php');
+    exit;
+}
+
 // Helper: validar/generar identificador único contra DB
 function pa_ident_exists(mysqli $db, string $ident): bool {
   if ($ident === '') return false;

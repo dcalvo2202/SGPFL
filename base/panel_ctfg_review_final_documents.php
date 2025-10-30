@@ -13,8 +13,8 @@ $current_user_name = $mySessionController->getVar("nombre");
 $current_user_rol = $mySessionController->getVar("rol");
 $base_url = $mySessionController->getVar("cds_domain") . $mySessionController->getVar("cds_locate");
 
-// 3. CONTROL DE ACCESO POR ROL (Solo CTFG - rol 3)
-if ($current_user_rol != 3) {
+// 3. CONTROL DE ACCESO POR ROL (Solo CTFG, Gestor academico, admin - rol 1, 2,3)
+if ($current_user_rol != 3 && $current_user_rol != 2 && $current_user_rol != 1) {
     header('Location: dashboard.php');
     exit;
 }
