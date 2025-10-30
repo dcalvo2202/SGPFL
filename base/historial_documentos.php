@@ -6,6 +6,10 @@ include("mod/login/check.php");
 include('lang/lang.es');
 include('inc/db/db.php');
 
+require_once __DIR__ . '/lib/mysession/mySession.conf.php';
+require_once __DIR__ . '/lib/mysession/mySession.class.php';
+$mySessionController = mySession::getIstance($_MYSESSION_CONF);
+
 // Obtener variables de sesión del usuario autenticado
 $current_user_id = $mySessionController->getVar("usuario");
 $current_user_name = $mySessionController->getVar("nombre");

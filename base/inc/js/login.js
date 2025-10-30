@@ -120,139 +120,157 @@ function Do_Login(){
         //Obtener variables
         var user = document.getElementById('user').value;
         var pass = document.getElementById('pass').value;
+        // Base desde hidden en login.php (por ejemplo: http://localhost/base/)
+        var base = document.getElementById("cds_domain_locate").value;
         //Preparacion  llamada AJAX
         var ajax=NuevoAjax();
-        var _values_send ='user='+user+'&pass='+pass;
+        var _values_send ='user='+encodeURIComponent(user)+'&pass='+encodeURIComponent(pass);
         var _URL_="mod/login/ajax_login.php?";
         //AJAX Insercion
         ajax.open("POST",_URL_,true);
         ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        //ajax.setRequestHeader("Content-length", _values_send.length);
-        //ajax.setRequestHeader("Connection", "close");
         ajax.send(_values_send);
-        ajax.onreadystatechange = function() {//Call a function when the state changes.
-            if(ajax.readyState == 4 && ajax.status == 200) {
-                var response = ajax.responseText;
-                console.log("Respuesta del backend:", response);
+        ajax.onreadystatechange = function() {
+            if(ajax.readyState == 4) {
+                if (ajax.status == 200) {
+                    var respRaw = ajax.responseText || '';
+                    var response = respRaw.trim();
+                    console.log("Respuesta del backend:", response);
 
-                //Tuvo éxito el ingreso, entonces redirecciona.
-                if(response.trim() == "0"){
-                    window.location=document.getElementById("cds_domain_locate").value+"dashboard.php";
-                }
-                // Estudiante con propuesta TFG - Redirigir al panel estudiante
-                else if(response.trim() == "estudiante_con_tfg"){
-                    window.location=document.getElementById("cds_domain_locate").value+"Panel_SubirTFG.php";
-                }
-                // Estudiante sin propuesta TFG - Redirigir al formulario
-                else if(response.trim() == "estudiante_sin_tfg"){
-                    Swal.fire({
-                        icon: 'info',
-                        title: '¡Bienvenido Estudiante!',
-                        html: `
-                            <div style="text-align: left; padding: 20px;">
-                                <p style="font-size: 16px; margin-bottom: 15px;">
-                                    <i class="bi bi-info-circle-fill" style="color: #17a2b8; margin-right: 8px;"></i>
-                                    Para continuar, necesita registrar su propuesta de Trabajo Final de Graduación.
-                                </p>
-                                <p style="color: #6c757d; font-style: italic;">
-                                    <i class="bi bi-arrow-right-circle" style="margin-right: 5px;"></i>
-                                    Será redirigido al formulario de registro de propuesta TFG.
-                                </p>
-                            </div>
-                        `,
-                        confirmButtonText: 'Continuar al Formulario TFG',
-                        confirmButtonColor: '#003366',
-                        allowOutsideClick: false,
-                        width: '450px'
-                    }).then(function() {
-                        window.location = document.getElementById("cds_domain_locate").value + "Panel_SubirTFG.php";
-                    });
-                }
-                // Sino tuvo éxito, muestra el error correspondiente.
-                else if ( response.trim()== "1" || response.trim() == "2"){
+                    // Lee return_to de la URL del login
+                    var params = new URLSearchParams(window.location.search);
+                    var returnTo = params.get('return_to');
+
+                    // Helper para redirigir respetando return_to
+                    function redirectAfterLogin() {
+                        if (returnTo) {
+                            if (/^https?:\/\//i.test(returnTo)) {
+                                window.location = returnTo;
+                            } else if (returnTo.startsWith('/')) {
+                                window.location = window.location.origin + returnTo;
+                            } else {
+                                window.location = base + returnTo.replace(/^\//, '');
+                            }
+                        } else {
+                            window.location = base + 'dashboard.php';
+                        }
+                    }
+
+                    if(response === "0"){
+                        redirectAfterLogin();
+                        return;
+                    }
+                    else if(response === "estudiante_con_tfg"){
+                        window.location = base + "Panel_SubirTFG.php";
+                        return;
+                    }
+                    else if(response === "estudiante_sin_tfg"){
+                        Swal.fire({
+                            icon: 'info',
+                            title: '¡Bienvenido Estudiante!',
+                            html: `
+                                <div style="text-align: left; padding: 100px;">
+                                    <p style="font-size: 16px; margin-bottom: 15px;">
+                                        <i class="bi bi-info-circle-fill" style="color: #17a2b8; margin-right: 8px;"></i>
+                                        Para continuar, necesita registrar su propuesta de Trabajo Final de Graduación.
+                                    </p>
+                                    <p style="color: #6c757d; font-style: italic;">
+                                        <i class="bi bi-arrow-right-circle" style="margin-right: 5px;"></i>
+                                        Será redirigido al formulario de registro de propuesta TFG.
+                                    </p>
+                                </div>
+                            `,
+                            confirmButtonText: 'Continuar al Formulario TFG',
+                            confirmButtonColor: '#003366',
+                            allowOutsideClick: false,
+                            width: '450px'
+                        }).then(function() {
+                            window.location = base + "Panel_SubirTFG.php";
+                        });
+                        page.innerHTML="";
+                        if (loginBtn) loginBtn.disabled = false;
+                        return;
+                    }
+                    else if (response === "1" || response === "2"){
                         Swal.fire({
                             icon: 'error',
                             title: '<span style="font-size:1.3em;">Este usuario no existe</span>',
                             html: '<span style="font-size:1.3em;">Por favor comunicarse con el administrador.</span>',
                             confirmButtonText: 'Aceptar',
-                            customClass: {
-                                confirmButton: 'swal2-ok-btn-lg'
-                            }
+                            customClass: { confirmButton: 'swal2-ok-btn-lg' }
                         });
-                    page.innerHTML="";
-                }else if(response.trim() == "3"){
+                        page.innerHTML="";
+                    } else if(response === "3"){
                         Swal.fire({
                             icon: 'error',
                             title: '<span style="font-size:1.3em;">Error del Servidor</span>',
                             html: '<span style="font-size:1.3em;">Por favor comunicarse con el administrador.</span>',
                             confirmButtonText: 'Aceptar',
-                            customClass: {
-                                confirmButton: 'swal2-ok-btn-lg'
-                            }
+                            customClass: { confirmButton: 'swal2-ok-btn-lg' }
                         });
-                    page.innerHTML="";
-                }else if(response.trim() == "4"){
+                        page.innerHTML="";
+                    } else if(response === "4"){
                         Swal.fire({
                             icon: 'error',
                             title: '<span style="font-size:1.3em;">Cuenta deshabilitada</span>',
                             html: '<span style="font-size:1.3em;">Por favor comunicarse con el administrador.</span>',
                             confirmButtonText: 'Aceptar',
-                            customClass: {
-                                confirmButton: 'swal2-ok-btn-lg'
-                            }
+                            customClass: { confirmButton: 'swal2-ok-btn-lg' }
                         });
-                    page.innerHTML="";
-                }else if(response.trim() == "5"){
+                        page.innerHTML="";
+                    } else if(response === "5"){
                         Swal.fire({
                             icon: 'error',
                             title: '<span style="font-size:1.3em;">Acceso denegado</span>',
                             html: '<span style="font-size:1.2em;">El usuario no pertenece a un grupo autorizado.<br>Por favor comunicarse con el administrador.</span>',
                             confirmButtonText: 'Aceptar',
-                            customClass: {
-                                confirmButton: 'swal2-ok-btn-lg'
-                            }
+                            customClass: { confirmButton: 'swal2-ok-btn-lg' }
                         });
-                    page.innerHTML="";
-                }else if(response.trim() == "6"){
+                        page.innerHTML="";
+                    } else if(response === "6"){
                         Swal.fire({
                             icon: 'error',
                             title: '<span style="font-size:1.3em;">Datos inválidos</span>',
                             html: '<span style="font-size:1.2em;">Por favor verifique su usuario y contraseña.</span>',
                             confirmButtonText: 'Aceptar',
-                            customClass: {
-                                confirmButton: 'swal2-ok-btn-lg'
-                            }
+                            customClass: { confirmButton: 'swal2-ok-btn-lg' }
                         });
-                    page.innerHTML="";
-                }else if(response.trim() == "7"){
+                        page.innerHTML="";
+                    } else if(response === "7"){
                         Swal.fire({
                             icon: 'error',
                             title: '<span style="font-size:1.3em;">Error de base de datos</span>',
                             html: '<span style="font-size:1.2em;">Por favor comunicarse con el administrador.</span>',
                             confirmButtonText: 'Aceptar',
-                            customClass: {
-                                confirmButton: 'swal2-ok-btn-lg'
-                            }
+                            customClass: { confirmButton: 'swal2-ok-btn-lg' }
                         });
-                    page.innerHTML="";
-                }else{
+                        page.innerHTML="";
+                    } else {
                         Swal.fire({
                             icon: 'error',
                             title: '<span style="font-size:1.3em;">Error</span>',
                             html: '<span style="font-size:1.3em;">Sucedió un error inesperado</span>',
                             confirmButtonText: 'Aceptar',
-                            customClass: {
-                                confirmButton: 'swal2-ok-btn-lg'
-                            }
+                            customClass: { confirmButton: 'swal2-ok-btn-lg' }
                         });
+                    }
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: '<span style="font-size:1.3em;">Error de red</span>',
+                        html: '<span style="font-size:1.3em;">No se pudo contactar el servidor.</span>',
+                        confirmButtonText: 'Aceptar',
+                        customClass: { confirmButton: 'swal2-ok-btn-lg' }
+                    });
                 }
                 if (loginBtn) loginBtn.disabled = false;
+                page.innerHTML="";
             }
         }
     } else {
         if (loginBtn) loginBtn.disabled = false;
+        page.innerHTML="";
     }
-    page.innerHTML="";
 }
 
 /**

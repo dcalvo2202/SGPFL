@@ -61,6 +61,9 @@ function finalizarLoginExitoso($mySessionController, $user, $id_roll, $nombre_fi
     $mySessionController->save("footer_title", $footer_title);
     $mySessionController->save('vocab', $vocab);
 
+    // IMPORTANTE: Asegurar que el nuevo ID de sesión se envíe al cliente
+    session_write_close(); // Fuerza escritura de sesión en BD
+
     // === LÓGICA ESPECIAL PARA ESTUDIANTES LDAP (ROL 4) ===
     if ($id_roll == 4) {
         // Verificar si el estudiante ya tiene una propuesta TFG
@@ -72,7 +75,6 @@ function finalizarLoginExitoso($mySessionController, $user, $id_roll, $nombre_fi
 }
 
 function regenerarIdSesion($_MYSESSION_CONF) {
-      // Regenerar el ID de sesión para prevenir session fixation
     $mySessionController = mySession::getIstance($_MYSESSION_CONF);
     if (method_exists($mySessionController, 'regenerateId')) {
         $mySessionController->regenerateId();

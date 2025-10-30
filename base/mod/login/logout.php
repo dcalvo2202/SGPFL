@@ -17,5 +17,6 @@ if (isset($t1) && isset($t2)) {
 $location = $domain . $locate;
 $mySessionController->delete("SessionArray");
 $mySessionController->destroy($_MYSESSION_CONF['SID']);
-header('Location:' . $location);
+unset($_SESSION['return_url']); // Limpiar la URL de retorno
+header('Location: ' . $location);
 ?>

@@ -4,7 +4,17 @@
     <?php
         include('includes.php');
         include('lang/lang.es');
+        require_once __DIR__ . '/config.inc';
+        require_once __DIR__ . '/config.inc';
+        require_once __DIR__ . '/lib/mysession/mySession.conf.php';
+        // Si existe una cookie de sesión previa, la limpiamos para evitar conflictos
+        if (isset($_COOKIE[$_MYSESSION_CONF['SID']])) {
+            setcookie($_MYSESSION_CONF['SID'], '', time()-3600, '/base/'); // usa mismo path que en conf
+        }
     ?>
+    <script>
+    window.BASE_URL = '<?php echo rtrim($cds_domain, '/') . '/' . trim($cds_locate, '/') . '/'; ?>';
+    </script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title><?= $page_title ?></title>
@@ -15,6 +25,7 @@
     <body class="fondo-una">
         <!-- Valores Ocultos -->
         <input type="hidden" id="cds_domain_locate" value="<?php echo $cds_domain . $cds_locate; ?>"/>
+        <input type="hidden" name="return_url" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
         <!-- --------------- -->
     
         <div class="login-container">
@@ -28,7 +39,6 @@
                     <h2 class="mb-1" style="font-weight:700;"><?= $vocab["login_title"] ?></h2>
                     <p class="text-muted mb-3"><?= $vocab["login_title_desc"] ?></p>
                 </div>
-                <div id="loading_container"></div>
                 <form method="post" action="mod/login/ajax_login.php" onsubmit="Do_Login(); return false;">
                     <div class="form-group">
                         <label for="user" class="fw-bold"><?= $vocab["login_user"] ?> </label>
@@ -55,7 +65,7 @@
                         ¿Olvidó su nombre de usuario o contraseña?
                         </a>   
                     </div>
-                    
+                    <div id="loading_container"></div>
                     <button id="saveForm" class="btn btn-danger btn-lg login-btn" type="submit" name="submit">
                         <?= $vocab["login_but_start"] ?>
                     </button>
@@ -68,7 +78,7 @@
                         <!-- Implementar la vista registro.php -->
                     </div>
                 </form>
-        
+
                 <img src="img/bottom.png" alt="" class="login-img" />
             </div>
         </div>
