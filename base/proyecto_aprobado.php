@@ -263,7 +263,7 @@ CSS;
 
       <div class="text-center mt-4">
         <a href="panel_ctfg.php" class="btn btn-secondary">
-          <i class="bi bi-arrow-left-circle"></i> Volver al Panel CTFG
+          <i class="bi bi-arrow-left-circle"></i> Volver al panel principal
         </a>
       </div>
     </div>

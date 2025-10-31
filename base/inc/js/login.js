@@ -169,7 +169,7 @@ function Do_Login(){
                             icon: 'info',
                             title: '¡Bienvenido Estudiante!',
                             html: `
-                                <div style="text-align: left; padding: 100px;">
+                                <div style="text-align: left; padding: 25px;">
                                     <p style="font-size: 16px; margin-bottom: 15px;">
                                         <i class="bi bi-info-circle-fill" style="color: #17a2b8; margin-right: 8px;"></i>
                                         Para continuar, necesita registrar su propuesta de Trabajo Final de Graduación.
@@ -185,7 +185,7 @@ function Do_Login(){
                             allowOutsideClick: false,
                             width: '450px'
                         }).then(function() {
-                            window.location = base + "Panel_SubirTFG.php";
+                            window.location = base + "mod/admin/users/tfg_upload.php";
                         });
                         page.innerHTML="";
                         if (loginBtn) loginBtn.disabled = false;
