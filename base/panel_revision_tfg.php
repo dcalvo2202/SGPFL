@@ -3,7 +3,10 @@
 include("mod/login/check.php");
 
 // 1. INCLUIR ARCHIVOS NECESARIOS
+include('includes.php');
 include('lang/lang.es');
+
+//panel_revision_tfg.php
 
 // 2. OBTENER VARIABLES DE SESIÓN
 $current_user_id = $mySessionController->getVar("usuario");
@@ -12,7 +15,7 @@ $current_user_rol = $mySessionController->getVar("rol");
 $base_url = $mySessionController->getVar("cds_domain") . $mySessionController->getVar("cds_locate");
 
 // 3. CONTROL DE ACCESO POR ROL (Solo Gestor Académico - rol 2)
-if ($current_user_rol != 2 && $current_user_rol != 1) {
+if ($current_user_rol != 2) {
     header('Location: dashboard.php');
     exit;
 }
