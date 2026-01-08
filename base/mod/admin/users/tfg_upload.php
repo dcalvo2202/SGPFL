@@ -61,6 +61,42 @@ if ($current_user_rol != 4) {
     exit;
 }
 
+// Verificar estado de propuestas existentes del estudiante
+$can_submit_proposal = true;
+$blocked_message = '';
+$existing_proposal_status = null;
+
+try {
+    $conn_check = new mysqli($db_host, $usuario, $clave, $db);
+    if (!$conn_check->connect_error) {
+        $conn_check->set_charset("utf8");
+        
+        // Buscar la propuesta más reciente del estudiante
+        $sql_check = "SELECT id, status, title FROM tfg_proposals WHERE user_id = ? ORDER BY created_at DESC LIMIT 1";
+        $stmt_check = $conn_check->prepare($sql_check);
+        $stmt_check->bind_param("s", $current_user_id);
+        $stmt_check->execute();
+        $result_check = $stmt_check->get_result();
+        
+        if ($result_check->num_rows > 0) {
+            $proposal_data = $result_check->fetch_assoc();
+            $existing_proposal_status = $proposal_data['status'];
+            
+            // Si está en revisión o pendiente, bloquear nueva subida
+            if (in_array($existing_proposal_status, ['Pendiente de Revisión', 'En Revisión', 'Cumple requisitos', 'Aprobado'])) {
+                $can_submit_proposal = false;
+                $blocked_message = 'Ya tienes una propuesta en estado "' . htmlspecialchars($existing_proposal_status) . '". No puedes subir otra propuesta hasta que sea rechazada o finalizada.';
+            }
+            // Si está rechazada, puede subir otra (no bloquear)
+        }
+        
+        $stmt_check->close();
+        $conn_check->close();
+    }
+} catch (Exception $e) {
+    error_log("Error al verificar estado de propuesta: " . $e->getMessage());
+}
+
 // URLs portables
 $panel_href = $base_url . "Panel_SubirTFG.php";
 $form_action = "tfg_upload_process.php";
@@ -104,6 +140,16 @@ $additional_css = ['inc/css/tfg_upload.css'];
                 <p class="lead text-muted">Complete la información de su propuesta y forme su grupo de trabajo</p>
             </div>
 
+            <?php if (!$can_submit_proposal): ?>
+            <!-- Mensaje de bloqueo si ya tiene propuesta en revisión -->
+            <div class="alert alert-warning" role="alert">
+                <h5><i class="bi bi-exclamation-triangle-fill"></i> No puedes subir una nueva propuesta</h5>
+                <p class="mb-3"><?= $blocked_message ?></p>
+                <a href="<?= htmlspecialchars($panel_href) ?>" class="btn btn-primary">
+                    <i class="bi bi-arrow-left"></i> Volver al Panel
+                </a>
+            </div>
+            <?php else: ?>
             <form id="tfgGroupForm" action="<?= htmlspecialchars($form_action) ?>" method="POST" enctype="multipart/form-data">
             
             <div class="section-card">
@@ -128,15 +174,17 @@ $additional_css = ['inc/css/tfg_upload.css'];
 
                     <div class="form-group-tfg">
                         <label for="inp-document" class="form-label-tfg">
-                            <i class="bi bi-file-pdf-fill"></i> Documento de la Propuesta *
+                            <i class="bi bi-file-pdf-fill"></i> Documentos de la Propuesta *
                         </label>
                         <input type="file" 
                                class="form-control-tfg" 
                                id="inp-document" 
-                               name="document" 
+                               name="documents[]" 
                                accept=".pdf,.docx" 
+                               multiple
                                required>
-                        <small class="text-muted">Formatos permitidos: PDF, DOCX | Tamaño máximo: 10 MB</small>
+                        <small class="text-muted">Formatos permitidos: PDF, DOCX | Tamaño máximo: 10 MB por archivo | Puede seleccionar múltiples archivos</small>
+                        <div id="files-list" class="mt-2"></div>
                     </div>
                 </div>
             </div>
@@ -258,17 +306,24 @@ $additional_css = ['inc/css/tfg_upload.css'];
                 </div>
             </div>
         </form>
+        <?php endif; ?>
 
         </div>
     </main>
     <!-- =============================== FOOTER =============================== -->
     <?php include $base_path . '/footer.php'; ?>
-    <script src="<?= $base_url ?>inc/js/tfg_upload.js"></script>
+    <script src="<?= $base_url ?>inc/js/tfg_upload.js?v=<?= time() ?>"></script>
+    <?php if ($can_submit_proposal): ?>
     <script>
-    // Traducir input file a español manteniendo el estilo original
+    // Traducir input file a español y manejar múltiples archivos con acumulación
     document.addEventListener('DOMContentLoaded', function() {
         const fileInput = document.getElementById('inp-document');
+        const filesList = document.getElementById('files-list');
+        
         if (fileInput) {
+            // Array para almacenar todos los archivos acumulados
+            let accumulatedFiles = [];
+            
             // Guardar el input original para mantener su funcionalidad
             const originalInput = fileInput;
             
@@ -302,7 +357,7 @@ $additional_css = ['inc/css/tfg_upload.css'];
                 user-select: none;
                 flex-shrink: 0;
             `;
-            selectButton.textContent = 'Elegir archivo';
+            selectButton.textContent = 'Seleccionar archivos';
             
             // Crear texto del nombre del archivo
             const fileNameDisplay = document.createElement('span');
@@ -315,7 +370,7 @@ $additional_css = ['inc/css/tfg_upload.css'];
                 text-overflow: ellipsis;
                 white-space: nowrap;
             `;
-            fileNameDisplay.textContent = 'Ningún archivo seleccionado';
+            fileNameDisplay.textContent = 'Puede seleccionar varios archivos';
             
             // Ensamblar el componente
             customFileInput.appendChild(selectButton);
@@ -337,24 +392,196 @@ $additional_css = ['inc/css/tfg_upload.css'];
             });
             
             // Evento click para abrir selector
-            customFileInput.addEventListener('click', function() {
+            customFileInput.addEventListener('click', function(e) {
+                e.stopPropagation();
                 originalInput.click();
             });
             
-            // Actualizar texto cuando se selecciona archivo
-            originalInput.addEventListener('change', function() {
-                if (this.files.length > 0) {
-                    const fileName = this.files[0].name;
-                    const fileSize = (this.files[0].size / (1024 * 1024)).toFixed(2);
-                    fileNameDisplay.textContent = `${fileName} (${fileSize} MB)`;
-                    fileNameDisplay.style.color = '#2c3e50';
-                } else {
+            // Función para actualizar la visualización de archivos
+            function updateFilesDisplay() {
+                filesList.innerHTML = '';
+                
+                if (accumulatedFiles.length === 0) {
                     fileNameDisplay.textContent = 'Ningún archivo seleccionado';
                     fileNameDisplay.style.color = '#6c757d';
+                    return;
+                }
+                
+                // Calcular tamaño total de forma segura
+                let totalSize = 0;
+                accumulatedFiles.forEach(file => {
+                    if (file && typeof file.size === 'number') {
+                        totalSize += file.size;
+                    }
+                });
+                
+                // Actualizar texto del display
+                if (accumulatedFiles.length === 1) {
+                    const fileName = accumulatedFiles[0].name || 'Archivo';
+                    const fileSize = ((accumulatedFiles[0].size || 0) / (1024 * 1024)).toFixed(2);
+                    fileNameDisplay.textContent = `${fileName} (${fileSize} MB)`;
+                } else {
+                    const totalSizeMB = (totalSize / (1024 * 1024)).toFixed(2);
+                    fileNameDisplay.textContent = `${accumulatedFiles.length} archivos seleccionados (${totalSizeMB} MB en total)`;
+                }
+                fileNameDisplay.style.color = '#2c3e50';
+                
+                // Crear contenedor de archivos con estilo de grid
+                const filesContainer = document.createElement('div');
+                filesContainer.style.cssText = `
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    margin-top: 8px;
+                `;
+                
+                accumulatedFiles.forEach((file, index) => {
+                    const fileSize = (file && typeof file.size === 'number') ? file.size : 0;
+                    const size = (fileSize / (1024 * 1024)).toFixed(2);
+                    const fileName = (file && file.name) ? file.name : 'Archivo';
+                    
+                    const fileItem = document.createElement('div');
+                    fileItem.style.cssText = `
+                        display: inline-flex;
+                        align-items: center;
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                        color: white;
+                        padding: 8px 12px;
+                        border-radius: 20px;
+                        font-size: 13px;
+                        gap: 8px;
+                        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                        transition: transform 0.2s, box-shadow 0.2s;
+                    `;
+                    
+                    // Icono de archivo
+                    const fileIcon = document.createElement('i');
+                    fileIcon.className = fileName.endsWith('.pdf') ? 'bi bi-file-earmark-pdf-fill' : 'bi bi-file-earmark-word-fill';
+                    fileIcon.style.fontSize = '16px';
+                    
+                    // Nombre y tamaño del archivo
+                    const fileInfo = document.createElement('span');
+                    fileInfo.style.cssText = `
+                        max-width: 150px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    `;
+                    fileInfo.textContent = `${fileName} (${size} MB)`;
+                    fileInfo.title = fileName; // Tooltip con nombre completo
+                    
+                    // Botón X para eliminar
+                    const removeBtn = document.createElement('button');
+                    removeBtn.type = 'button';
+                    removeBtn.innerHTML = '&times;';
+                    removeBtn.style.cssText = `
+                        background: rgba(255,255,255,0.3);
+                        border: none;
+                        color: white;
+                        width: 22px;
+                        height: 22px;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        font-size: 16px;
+                        font-weight: bold;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0;
+                        line-height: 1;
+                        transition: background 0.2s, transform 0.2s;
+                    `;
+                    removeBtn.title = 'Eliminar archivo';
+                    
+                    // Efectos hover para el botón X
+                    removeBtn.addEventListener('mouseenter', function() {
+                        this.style.background = 'rgba(255,0,0,0.7)';
+                        this.style.transform = 'scale(1.1)';
+                    });
+                    removeBtn.addEventListener('mouseleave', function() {
+                        this.style.background = 'rgba(255,255,255,0.3)';
+                        this.style.transform = 'scale(1)';
+                    });
+                    
+                    // Evento para eliminar archivo
+                    removeBtn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        accumulatedFiles.splice(index, 1);
+                        updateFilesDisplay();
+                        syncFilesToInput();
+                    });
+                    
+                    // Hover effect para el item completo
+                    fileItem.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-2px)';
+                        this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+                    });
+                    fileItem.addEventListener('mouseleave', function() {
+                        this.style.transform = 'translateY(0)';
+                        this.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+                    });
+                    
+                    fileItem.appendChild(fileIcon);
+                    fileItem.appendChild(fileInfo);
+                    fileItem.appendChild(removeBtn);
+                    filesContainer.appendChild(fileItem);
+                });
+                
+                filesList.appendChild(filesContainer);
+            }
+            
+            // Función para sincronizar archivos al input (usando DataTransfer)
+            function syncFilesToInput() {
+                try {
+                    const dataTransfer = new DataTransfer();
+                    accumulatedFiles.forEach(file => {
+                        dataTransfer.items.add(file);
+                    });
+                    originalInput.files = dataTransfer.files;
+                } catch (e) {
+                    console.error('Error sincronizando archivos:', e);
+                }
+            }
+            
+            // Actualizar cuando se seleccionan archivos (acumular, no reemplazar)
+            originalInput.addEventListener('change', function(e) {
+                // Obtener los archivos recién seleccionados directamente del evento
+                const newFiles = Array.from(e.target.files || []);
+                
+                if (newFiles.length > 0) {
+                    // Filtrar archivos que ya existen por nombre y solo agregar los nuevos
+                    newFiles.forEach(newFile => {
+                        // Verificar que el archivo tenga propiedades válidas
+                        if (newFile && newFile.name && typeof newFile.size === 'number' && newFile.size > 0) {
+                            // Verificar si ya existe un archivo con el mismo nombre
+                            const exists = accumulatedFiles.some(f => f.name === newFile.name);
+                            if (!exists) {
+                                accumulatedFiles.push(newFile);
+                            }
+                        }
+                    });
+                    
+                    // Calcular tamaño total
+                    let totalSize = 0;
+                    accumulatedFiles.forEach(file => {
+                        if (file && typeof file.size === 'number') {
+                            totalSize += file.size;
+                        }
+                    });
+                    
+                    // Validar tamaño total (máximo 10 MB para todos los archivos)
+                    if (totalSize > 10 * 1024 * 1024) {
+                        alert('El tamaño total de los archivos excede 10 MB. Por favor, elimine algunos archivos.');
+                    }
+                    
+                    // Actualizar display y sincronizar
+                    updateFilesDisplay();
+                    syncFilesToInput();
                 }
             });
         }
     });
     </script>
+    <?php endif; ?>
 </body>
 </html>

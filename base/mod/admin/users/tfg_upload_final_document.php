@@ -141,23 +141,54 @@ $additional_css = ['inc/css/tfg_upload.css'];
                             
                             <div class="mb-4">
                                 <label for="document" class="form-label required">
-                                    <i class="bi bi-file-earmark-pdf"></i> Documento en formato PDF
+                                    <i class="bi bi-file-earmark-pdf"></i> Documentos en formato PDF
                                 </label>
                                 <input type="file" 
                                        class="form-control form-control-lg" 
                                        id="document" 
-                                       name="document" 
+                                       name="documents[]" 
                                        accept="application/pdf"
-                                       required>
+                                       multiple
+                                       required
+                                       style="display: none;">
+                                <div id="customFileInput" class="custom-file-input-wrapper" style="
+                                    width: 100%;
+                                    padding: 12px;
+                                    border: 2px solid #e1e8ed;
+                                    border-radius: 6px;
+                                    background: white;
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 12px;
+                                    cursor: pointer;
+                                    transition: border-color 0.3s ease;
+                                    min-height: 48px;
+                                ">
+                                    <span id="selectButton" style="
+                                        background: #CD1719;
+                                        color: white;
+                                        padding: 8px 16px;
+                                        border-radius: 4px;
+                                        font-weight: 500;
+                                        font-size: 14px;
+                                        cursor: pointer;
+                                        user-select: none;
+                                        flex-shrink: 0;
+                                    ">Seleccionar archivos</span>
+                                    <span id="fileNameDisplay" style="
+                                        color: #6c757d;
+                                        font-size: 14px;
+                                        flex: 1;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        white-space: nowrap;
+                                    ">Puede seleccionar varios archivos PDF</span>
+                                </div>
                                 <div class="form-text">
                                     <i class="bi bi-info-circle"></i> 
-                                    Tamaño máximo: <strong>20 MB</strong>. Solo archivos PDF.
+                                    Tamaño máximo: <strong>20 MB por archivo</strong>. Solo archivos PDF. Puede seleccionar múltiples archivos.
                                 </div>
-                                <div id="fileInfo" class="mt-2 text-muted" style="display:none;">
-                                    <i class="bi bi-file-earmark-pdf-fill text-danger"></i> 
-                                    <span id="fileName"></span> 
-                                    (<span id="fileSize"></span>)
-                                </div>
+                                <div id="filesList" class="mt-2"></div>
                             </div>
 
                             <div class="mb-3">
@@ -198,42 +229,30 @@ $additional_css = ['inc/css/tfg_upload.css'];
 
     <?php if ($upload_check['can_upload']): ?>
     <script>
-        // Mostrar información del archivo seleccionado
-        document.getElementById('document').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const fileInfo = document.getElementById('fileInfo');
-                const fileName = document.getElementById('fileName');
-                const fileSize = document.getElementById('fileSize');
-                
-                fileName.textContent = file.name;
-                fileSize.textContent = formatFileSize(file.size);
-                fileInfo.style.display = 'block';
-                
-                // Validar tamaño (20MB = 20,971,520 bytes)
-                if (file.size > 20 * 1024 * 1024) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Archivo muy grande',
-                        text: 'El archivo excede el tamaño máximo de 20 MB',
-                        confirmButtonColor: '#CD1719'
-                    });
-                    e.target.value = '';
-                    fileInfo.style.display = 'none';
-                }
-                
-                // Validar tipo
-                if (file.type !== 'application/pdf') {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Tipo de archivo no válido',
-                        text: 'Solo se permiten archivos PDF',
-                        confirmButtonColor: '#CD1719'
-                    });
-                    e.target.value = '';
-                    fileInfo.style.display = 'none';
-                }
-            }
+        // Array para almacenar todos los archivos acumulados
+        let accumulatedFiles = [];
+        
+        const fileInput = document.getElementById('document');
+        const customFileInput = document.getElementById('customFileInput');
+        const selectButton = document.getElementById('selectButton');
+        const fileNameDisplay = document.getElementById('fileNameDisplay');
+        const filesList = document.getElementById('filesList');
+        
+        // Efectos hover para el input personalizado
+        customFileInput.addEventListener('mouseenter', function() {
+            this.style.borderColor = '#CD1719';
+            selectButton.style.background = '#a81315';
+        });
+        
+        customFileInput.addEventListener('mouseleave', function() {
+            this.style.borderColor = '#e1e8ed';
+            selectButton.style.background = '#CD1719';
+        });
+        
+        // Click para abrir selector de archivos
+        customFileInput.addEventListener('click', function(e) {
+            e.stopPropagation();
+            fileInput.click();
         });
         
         function formatFileSize(bytes) {
@@ -244,28 +263,232 @@ $additional_css = ['inc/css/tfg_upload.css'];
             return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
         }
         
+        // Función para actualizar la visualización de archivos
+        function updateFilesDisplay() {
+            filesList.innerHTML = '';
+            
+            if (accumulatedFiles.length === 0) {
+                fileNameDisplay.textContent = 'Puede seleccionar varios archivos PDF';
+                fileNameDisplay.style.color = '#6c757d';
+                return;
+            }
+            
+            // Calcular tamaño total de forma segura
+            let totalSize = 0;
+            accumulatedFiles.forEach(file => {
+                if (file && typeof file.size === 'number') {
+                    totalSize += file.size;
+                }
+            });
+            
+            // Actualizar texto del display
+            if (accumulatedFiles.length === 1) {
+                const fileName = accumulatedFiles[0].name || 'Archivo';
+                const fileSize = (accumulatedFiles[0] && typeof accumulatedFiles[0].size === 'number') ? accumulatedFiles[0].size : 0;
+                fileNameDisplay.textContent = `${fileName} (${formatFileSize(fileSize)})`;
+            } else {
+                fileNameDisplay.textContent = `${accumulatedFiles.length} archivos seleccionados (${formatFileSize(totalSize)} en total)`;
+            }
+            fileNameDisplay.style.color = '#2c3e50';
+            
+            // Crear contenedor de archivos con estilo de grid
+            const filesContainer = document.createElement('div');
+            filesContainer.style.cssText = `
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-top: 8px;
+            `;
+            
+            accumulatedFiles.forEach((file, index) => {
+                const fileSize = (file && typeof file.size === 'number') ? file.size : 0;
+                const size = formatFileSize(fileSize);
+                const fileName = (file && file.name) ? file.name : 'Archivo';
+                
+                const fileItem = document.createElement('div');
+                fileItem.style.cssText = `
+                    display: inline-flex;
+                    align-items: center;
+                    background: linear-gradient(135deg, #CD1719 0%, #8B0000 100%);
+                    color: white;
+                    padding: 8px 12px;
+                    border-radius: 20px;
+                    font-size: 13px;
+                    gap: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    transition: transform 0.2s, box-shadow 0.2s;
+                `;
+                
+                // Icono de archivo PDF
+                const fileIcon = document.createElement('i');
+                fileIcon.className = 'bi bi-file-earmark-pdf-fill';
+                fileIcon.style.fontSize = '16px';
+                
+                // Nombre y tamaño del archivo
+                const fileInfoSpan = document.createElement('span');
+                fileInfoSpan.style.cssText = `
+                    max-width: 150px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                `;
+                fileInfoSpan.textContent = `${fileName} (${size})`;
+                fileInfoSpan.title = fileName; // Tooltip con nombre completo
+                
+                // Botón X para eliminar
+                const removeBtn = document.createElement('button');
+                removeBtn.type = 'button';
+                removeBtn.innerHTML = '&times;';
+                removeBtn.style.cssText = `
+                    background: rgba(255,255,255,0.3);
+                    border: none;
+                    color: white;
+                    width: 22px;
+                    height: 22px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    font-size: 16px;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0;
+                    line-height: 1;
+                    transition: background 0.2s, transform 0.2s;
+                `;
+                removeBtn.title = 'Eliminar archivo';
+                
+                // Efectos hover para el botón X
+                removeBtn.addEventListener('mouseenter', function() {
+                    this.style.background = 'rgba(0,0,0,0.5)';
+                    this.style.transform = 'scale(1.1)';
+                });
+                removeBtn.addEventListener('mouseleave', function() {
+                    this.style.background = 'rgba(255,255,255,0.3)';
+                    this.style.transform = 'scale(1)';
+                });
+                
+                // Evento para eliminar archivo
+                removeBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    accumulatedFiles.splice(index, 1);
+                    updateFilesDisplay();
+                    syncFilesToInput();
+                });
+                
+                // Hover effect para el item completo
+                fileItem.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+                });
+                fileItem.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+                });
+                
+                fileItem.appendChild(fileIcon);
+                fileItem.appendChild(fileInfoSpan);
+                fileItem.appendChild(removeBtn);
+                filesContainer.appendChild(fileItem);
+            });
+            
+            filesList.appendChild(filesContainer);
+        }
+        
+        // Función para sincronizar archivos al input (usando DataTransfer)
+        function syncFilesToInput() {
+            try {
+                const dataTransfer = new DataTransfer();
+                accumulatedFiles.forEach(file => {
+                    dataTransfer.items.add(file);
+                });
+                fileInput.files = dataTransfer.files;
+            } catch (e) {
+                console.error('Error sincronizando archivos:', e);
+            }
+        }
+        
+        // Mostrar información de los archivos seleccionados (múltiples con acumulación)
+        fileInput.addEventListener('change', function(e) {
+            // Obtener los archivos recién seleccionados directamente del evento
+            const newFiles = Array.from(e.target.files || []);
+            
+            if (newFiles.length > 0) {
+                let hasError = false;
+                
+                // Validar cada archivo nuevo
+                for (let i = 0; i < newFiles.length; i++) {
+                    const file = newFiles[i];
+                    
+                    // Verificar que el archivo tenga propiedades válidas
+                    if (!file || !file.name || typeof file.size !== 'number' || file.size === 0) {
+                        continue;
+                    }
+                    
+                    // Validar tamaño individual (20MB)
+                    if (file.size > 20 * 1024 * 1024) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Archivo muy grande',
+                            text: `El archivo "${file.name}" excede el tamaño máximo de 20 MB`,
+                            confirmButtonColor: '#CD1719'
+                        });
+                        hasError = true;
+                        break;
+                    }
+                    
+                    // Validar tipo
+                    if (file.type !== 'application/pdf') {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Tipo de archivo no válido',
+                            text: `El archivo "${file.name}" no es un PDF válido`,
+                            confirmButtonColor: '#CD1719'
+                        });
+                        hasError = true;
+                        break;
+                    }
+                    
+                    // Verificar si ya existe un archivo con el mismo nombre
+                    const exists = accumulatedFiles.some(f => f.name === file.name);
+                    if (!exists) {
+                        accumulatedFiles.push(file);
+                    }
+                }
+                
+                if (hasError) {
+                    return;
+                }
+                
+                // Actualizar display y sincronizar
+                updateFilesDisplay();
+                syncFilesToInput();
+            }
+        });
+        
         // Manejo del formulario
         document.getElementById('tfgFinalForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Validar que se haya seleccionado un archivo
-            const fileInput = document.getElementById('document');
-            if (!fileInput.files || fileInput.files.length === 0) {
+            // Validar que se haya seleccionado al menos un archivo
+            if (accumulatedFiles.length === 0) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Archivo requerido',
-                    text: 'Debes seleccionar un archivo PDF',
+                    text: 'Debes seleccionar al menos un archivo PDF',
                     confirmButtonColor: '#CD1719'
                 });
                 return;
             }
             
+            const filesCount = accumulatedFiles.length;
+            
             // Confirmar subida
             Swal.fire({
-                title: '¿Subir documento final?',
+                title: '¿Subir documento(s) final(es)?',
                 html: `
-                    <p>Estás a punto de subir el documento final de tu TFG.</p>
-                    <p><strong>Una vez subido, será enviado a la CTFG para revisión.</strong></p>
+                    <p>Estás a punto de subir <strong>${filesCount} documento(s)</strong> final(es) de tu TFG.</p>
+                    <p><strong>Una vez subido(s), será(n) enviado(s) a la CTFG para revisión.</strong></p>
                     <p>La CTFG verificará manualmente que el documento cumple con todos los requisitos de la Tabla 4.</p>
                 `,
                 icon: 'question',
