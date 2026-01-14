@@ -21,8 +21,9 @@ $user_id = $mySessionController->getVar("usuario");
 $user_name = $mySessionController->getVar("nombre"); 
 $user_rol = $mySessionController->getVar("rol");
 
-// Incluir configuración BD DESPUÉS del check para evitar sobrescritura de variables
+// Incluir configuración BD y funciones helper
 include_once(__DIR__ . '/../../../inc/db/bdcommon.inc');
+include_once(__DIR__ . '/../../../inc/upload_helpers.php');
 
 // Verificar autenticación básica (solo requiere user_id)
 if (!$user_id) {
@@ -36,16 +37,6 @@ if ($user_rol != 4) {
 
 // Configurar respuesta JSON
 header('Content-Type: application/json; charset=utf-8');
-
-// Función para responder con JSON
-function respond_json($success, $message, $data = null) {
-    echo json_encode([
-        'success' => $success,
-        'message' => $message,
-        'data' => $data
-    ], JSON_UNESCAPED_UNICODE);
-    exit;
-}
 
 try {
     // Verificar método de petición
@@ -93,39 +84,57 @@ try {
         respond_json(false, 'Debe seleccionar un tipo de proyecto válido');
     }
 
-    // Validar archivo PDF (opcional)
-    $pdf_path = null;
-    if (isset($_FILES['document']) && $_FILES['document']['error'] === UPLOAD_ERR_OK) {
-        $file = $_FILES['document'];
+    // Validar archivos PDF/DOCX (múltiples archivos)
+    $uploaded_files = [];
+    $total_file_size = 0;
+    $combined_document_data = '';
+    $first_file_name = '';
+    $first_mime_type = '';
+    
+    // Crear directorio de uploads una sola vez
+    $upload_dir = ensureUploadDirectory(__DIR__ . '/../../../uploads/tfg_proposals/');
+    
+    // Verificar si hay archivos subidos (nuevo formato con múltiples archivos)
+    if (isset($_FILES['documents']) && is_array($_FILES['documents']['name'])) {
+        $files_count = count($_FILES['documents']['name']);
         
-        // Validar tipo de archivo
-        if ($file['type'] !== 'application/pdf' && $file['type'] !== 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
-            respond_json(false, 'Solo se permiten archivos PDF o DOCX');
+        for ($i = 0; $i < $files_count; $i++) {
+            if ($_FILES['documents']['error'][$i] === UPLOAD_ERR_OK) {
+                // Procesar archivo usando función helper
+                $file_info = [
+                    'name' => $_FILES['documents']['name'][$i],
+                    'type' => $_FILES['documents']['type'][$i],
+                    'size' => $_FILES['documents']['size'][$i],
+                    'tmp_name' => $_FILES['documents']['tmp_name'][$i]
+                ];
+                
+                $processed_file = processProposalFile($file_info, $upload_dir, $user_id, $i);
+                $uploaded_files[] = $processed_file;
+                $total_file_size += $processed_file['size'];
+                
+                // Usar el primer archivo como documento principal
+                if ($i === 0) {
+                    $first_file_name = $processed_file['unique_name'];
+                    $first_mime_type = $processed_file['type'];
+                    $combined_document_data = $processed_file['content'];
+                }
+            }
         }
         
-        // Validar tamaño (máximo 10MB)
-        if ($file['size'] > 10 * 1024 * 1024) {
-            respond_json(false, 'El archivo no puede exceder 10MB');
+        // Validar tamaño total (máximo 10MB)
+        if ($total_file_size > 10 * 1024 * 1024) {
+            respond_json(false, 'El tamaño total de los archivos excede 10MB');
         }
+    }
+    // Compatibilidad con formato antiguo (un solo archivo)
+    elseif (isset($_FILES['document']) && $_FILES['document']['error'] === UPLOAD_ERR_OK) {
+        $processed_file = processProposalFile($_FILES['document'], $upload_dir, $user_id);
+        $uploaded_files[] = $processed_file;
         
-        // Crear directorio de uploads si no existe
-        $upload_dir = __DIR__ . '/../../../uploads/tfg_proposals/';
-        if (!is_dir($upload_dir)) {
-            mkdir($upload_dir, 0755, true);
-        }
-        
-        // Generar nombre único para el archivo
-        $file_extension = pathinfo($file['name'], PATHINFO_EXTENSION);
-        $unique_filename = $user_id . '_' . date('Y-m-d_H-i-s') . '_' . uniqid() . '.' . $file_extension;
-        $pdf_path = $upload_dir . $unique_filename;
-        
-        // Mover archivo
-        if (!move_uploaded_file($file['tmp_name'], $pdf_path)) {
-            respond_json(false, 'Error al guardar el archivo PDF');
-        }
-        
-        // Guardar solo la ruta relativa en la BD
-        $pdf_path = 'uploads/tfg_proposals/' . $unique_filename;
+        $first_file_name = $processed_file['unique_name'];
+        $first_mime_type = $processed_file['type'];
+        $total_file_size = $processed_file['size'];
+        $combined_document_data = $processed_file['content'];
     }
 
     // Conectar a la base de datos - RECARGAR variables para evitar conflictos
@@ -155,25 +164,13 @@ try {
     
     // Preparar datos para la inserción
     $disciplines = $_POST['disciplines'] ?? 'Sin especificar';
-    $document_data = null;
-    $file_name = '';
-    $mime_type = '';
-    $file_size = 0;
     $null_blob = null; // Variable auxiliar para bind_param
     
-    // Si hay archivo PDF, leerlo como BLOB
-    if (isset($_FILES['document']) && $_FILES['document']['error'] === UPLOAD_ERR_OK) {
-        // Leer el archivo DESDE LA RUTA DONDE SE MOVIÓ (no desde tmp_name)
-        if ($pdf_path && file_exists(__DIR__ . '/../../../' . $pdf_path)) {
-            $document_data = file_get_contents(__DIR__ . '/../../../' . $pdf_path);
-        } else {
-            $document_data = null;
-        }
-        
-        $file_name = $_FILES['document']['name'];
-        $mime_type = $_FILES['document']['type'];
-        $file_size = $_FILES['document']['size'];
-    }
+    // Usar datos del primer archivo subido (o valores vacíos si no hay archivos)
+    $document_data = !empty($combined_document_data) ? $combined_document_data : null;
+    $file_name = !empty($first_file_name) ? $first_file_name : '';
+    $mime_type = !empty($first_mime_type) ? $first_mime_type : '';
+    $file_size = $total_file_size;
     
     $tfg_sql = "INSERT INTO tfg_proposals (user_id, title, disciplines, project_description, document, file_name, mime_type, file_size, status, created_at, updated_at) 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'Pendiente de Revisión', NOW(), NOW())";
@@ -186,7 +183,7 @@ try {
 
     // IMPORTANTE: Para BLOB, primero bind_param con NULL, luego send_long_data
     // Usar el nombre de archivo único generado, no el original
-    $tfg_stmt->bind_param("ssssbssi", $user_id, $title, $disciplines, $description, $null_blob, $unique_filename, $mime_type, $file_size);
+    $tfg_stmt->bind_param("ssssbssi", $user_id, $title, $disciplines, $description, $null_blob, $file_name, $mime_type, $file_size);
     
     // Enviar el BLOB por separado si existe
     if ($document_data !== null && strlen($document_data) > 0) {
@@ -202,6 +199,12 @@ try {
 
     $tfg_id = $conn->insert_id;
     $tfg_stmt->close();
+    
+    // =============================== INSERTAR ARCHIVOS ADICIONALES ===============================
+    // Si hay múltiples archivos, guardarlos en tfg_files vinculados a esta propuesta
+    if (count($uploaded_files) > 1) {
+        saveAdditionalFiles($conn, $uploaded_files, $user_id, 'Propuesta TFG Anexo');
+    }
 
     // =============================== INSERCIÓN EN HISTORIAL DE VERSIONES ===============================
 
@@ -214,7 +217,7 @@ try {
                     VALUES (?, ?, ?, ?, ?, 'Pendiente de Revisión', ?, 'Versión inicial subida por el estudiante', NOW())";
     $history_stmt = $conn->prepare($history_sql);
     if ($history_stmt) {
-        $history_stmt->bind_param("ibssis", $tfg_id, $null_blob, $unique_filename, $mime_type, $file_size, $user_id);
+        $history_stmt->bind_param("ibssis", $tfg_id, $null_blob, $file_name, $mime_type, $file_size, $user_id);
          // Enviar el BLOB por separado si existe, igual que en la inserción principal
         if ($document_data !== null && strlen($document_data) > 0) {
             $history_stmt->send_long_data(1, $document_data); // El índice 1 corresponde al segundo '?' (document)

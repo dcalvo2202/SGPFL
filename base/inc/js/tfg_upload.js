@@ -78,9 +78,11 @@ class TfgUploadManager {
             descriptionTextarea.addEventListener('input', (e) => this.updateCharacterCounter(e.target));
         }
         
-        if (documentInput) {
-            documentInput.addEventListener('change', (e) => this.handleFileSelection(e));
-        }
+        // El manejo de archivos ahora se hace en el código inline del PHP
+        // para soportar acumulación de archivos con botón de eliminar
+        // if (documentInput) {
+        //     documentInput.addEventListener('change', (e) => this.handleFileSelection(e));
+        // }
         
         if (form) {
             form.addEventListener('submit', (e) => this.handleFormSubmit(e));
@@ -382,25 +384,41 @@ class TfgUploadManager {
     }
     
     handleFileSelection(event) {
-        const file = event.target.files[0];
+        const files = event.target.files;
         const previewContainer = document.getElementById('file-preview');
         
-        if (!file) {
+        if (!files || files.length === 0) {
             if (previewContainer) previewContainer.style.display = 'none';
             return;
         }
         
-        const maxSize = 10 * 1024 * 1024; // 10MB
+        const maxTotalSize = 10 * 1024 * 1024; // 10MB total
+        const maxFileSize = 10 * 1024 * 1024; // 10MB por archivo
         const allowedTypes = ['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
         
-        if (file.size > maxSize) {
-            this.showFieldError('inp-document', 'El archivo supera el tamaño máximo de 10 MB');
-            event.target.value = '';
-            return;
+        let totalSize = 0;
+        
+        // Validar cada archivo
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            totalSize += file.size;
+            
+            if (file.size > maxFileSize) {
+                this.showFieldError('inp-document', `El archivo "${file.name}" supera el tamaño máximo de 10 MB`);
+                event.target.value = '';
+                return;
+            }
+            
+            if (!allowedTypes.includes(file.type)) {
+                this.showFieldError('inp-document', `El archivo "${file.name}" no es un PDF o DOCX válido`);
+                event.target.value = '';
+                return;
+            }
         }
         
-        if (!allowedTypes.includes(file.type)) {
-            this.showFieldError('inp-document', 'Solo se permiten archivos PDF y DOCX');
+        // Validar tamaño total
+        if (totalSize > maxTotalSize) {
+            this.showFieldError('inp-document', 'El tamaño total de los archivos excede 10 MB');
             event.target.value = '';
             return;
         }
@@ -414,17 +432,38 @@ class TfgUploadManager {
             event.target.parentNode.appendChild(preview);
         }
         
-        const sizeInMB = (file.size / (1024 * 1024)).toFixed(2);
         const preview = document.getElementById('file-preview');
-        preview.innerHTML = `
-            <div style="display: flex; align-items: center; gap: 12px;">
-                <i class="bi bi-file-earmark-text text-primary" style="font-size: 1.5em;"></i>
-                <div>
-                    <strong>${this.escapeHtml(file.name)}</strong><br>
-                    <small class="text-muted">Tamaño: ${sizeInMB} MB | Tipo: ${file.type.split('/')[1].toUpperCase()}</small>
+        const totalSizeInMB = (totalSize / (1024 * 1024)).toFixed(2);
+        
+        if (files.length === 1) {
+            const file = files[0];
+            const sizeInMB = (file.size / (1024 * 1024)).toFixed(2);
+            preview.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <i class="bi bi-file-earmark-text text-primary" style="font-size: 1.5em;"></i>
+                    <div>
+                        <strong>${this.escapeHtml(file.name)}</strong><br>
+                        <small class="text-muted">Tamaño: ${sizeInMB} MB | Tipo: ${file.type.split('/')[1].toUpperCase()}</small>
+                    </div>
                 </div>
-            </div>
-        `;
+            `;
+        } else {
+            let filesHtml = `<div style="margin-bottom: 8px;"><strong>${files.length} archivos seleccionados</strong> (Total: ${totalSizeInMB} MB)</div>`;
+            filesHtml += '<div style="display: flex; flex-wrap: wrap; gap: 8px;">';
+            
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const sizeInMB = (file.size / (1024 * 1024)).toFixed(2);
+                filesHtml += `
+                    <div class="badge bg-secondary" style="display: flex; align-items: center; gap: 4px; padding: 6px 10px;">
+                        <i class="bi bi-file-earmark"></i>
+                        ${this.escapeHtml(file.name)} (${sizeInMB} MB)
+                    </div>
+                `;
+            }
+            filesHtml += '</div>';
+            preview.innerHTML = filesHtml;
+        }
         preview.style.display = 'block';
     }
     
