@@ -82,7 +82,7 @@
                 <img src="img/bottom.png" alt="" class="login-img" />
             </div>
         </div>
-        <footer class="footer">
+        <footer class="footer mt-auto">
             <div class="container-footer">
                 <p class="text-muted text-center"><?= $footer_title ?></p>
             </div>
