@@ -40,16 +40,17 @@ try {
     <link href="<?= htmlspecialchars($base_url . 'inc/css/estilo.css') ?>" rel="stylesheet">
     <link href="<?= htmlspecialchars($base_url . 'inc/css/panel_estudiante.css') ?>" rel="stylesheet">
     <link href="<?= htmlspecialchars($base_url . 'inc/css/tfg_upload.css') ?>" rel="stylesheet">
+    <link href="<?= htmlspecialchars($base_url . 'inc/css/registro.css') ?>" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="d-flex flex-column min-vh-100 fondo-una">
 
 <!-- =============================== HEADER =============================== -->
-<header class="navbar-una" style="background: linear-gradient(135deg, #CD1719, #A01215) !important; padding: 1.25rem 0;">
+<header class="navbar-una registro-navbar">
     <div class="container-fluid px-4">
         <div class="header-left d-flex align-items-center">
-            <img src="<?= htmlspecialchars($base_url) ?>img/logo.webp" alt="Logo UNA" class="logo-una" style="height: 70px;">
+            <img src="<?= htmlspecialchars($base_url) ?>img/logo.webp" alt="Logo UNA" class="logo-una">
             <div class="header-text ms-3">
                 <h5 class="mb-0 text-white fw-bold">Universidad Nacional de Costa Rica</h5>
                  <small class="text-light opacity-85">Escuela de Informática</small>
@@ -60,8 +61,7 @@ try {
             <div class="user-details">
            
                 <a href="login.php" 
-                   class="btn btn-outline-light btn-sm ms-2" 
-                   style="font-size: 1.25rem; padding: 0.55rem 1.1rem;">
+                   class="btn btn-outline-light btn-sm ms-2 registro-back-btn">
                         <i class="bi bi-arrow-left"></i> Regresar a iniciar sesión
                 </a>
             </div>
@@ -202,7 +202,7 @@ try {
 
                     <div class="text-center mt-4">
 
-                        <div style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 24px; font-size: 16px;">
+                        <div class="registro-actions">
                         <a href="login.php" class="btn-tfg btn-tfg-secondary">
                             <i class="bi bi-x-circle"></i> Cancelar
                         </a>
@@ -314,43 +314,15 @@ try {
 
             const customFileInput = document.createElement('div');
             customFileInput.className = 'custom-file-input-wrapper';
-            customFileInput.style.cssText = `
-                width: 100%;
-                padding: 12px;
-                border: 2px solid #e1e8ed;
-                border-radius: 6px;
-                background: white;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                cursor: pointer;
-                transition: border-color 0.3s ease;
-                min-height: 48px;
-            `;
+            customFileInput.setAttribute('role', 'button');
+            customFileInput.tabIndex = 0;
 
             const selectButton = document.createElement('span');
-            selectButton.style.cssText = `
-                background: #034991;
-                color: white;
-                padding: 8px 16px;
-                border-radius: 4px;
-                font-weight: 500;
-                font-size: 14px;
-                cursor: pointer;
-                user-select: none;
-                flex-shrink: 0;
-            `;
+            selectButton.className = 'custom-file-select-btn';
             selectButton.textContent = buttonText;
 
             const fileNameDisplay = document.createElement('span');
-            fileNameDisplay.style.cssText = `
-                color: #6c757d;
-                font-size: 14px;
-                flex: 1;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            `;
+            fileNameDisplay.className = 'custom-file-name';
             fileNameDisplay.textContent = emptyText;
 
             customFileInput.appendChild(selectButton);
@@ -372,19 +344,17 @@ try {
             input.parentNode.insertBefore(customFileInput, input);
             input.parentNode.insertBefore(errorText, input.nextSibling);
 
-            customFileInput.addEventListener('mouseenter', function () {
-                this.style.borderColor = '#034991';
-                selectButton.style.background = '#023366';
-            });
-
-            customFileInput.addEventListener('mouseleave', function () {
-                this.style.borderColor = '#e1e8ed';
-                selectButton.style.background = '#034991';
-            });
-
             customFileInput.addEventListener('click', function (e) {
                 e.stopPropagation();
                 input.click();
+            });
+
+            customFileInput.addEventListener('keydown', function (e) {
+                // Accesibilidad: Enter/Espacio abren el selector
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    input.click();
+                }
             });
 
             function updateDisplay() {
