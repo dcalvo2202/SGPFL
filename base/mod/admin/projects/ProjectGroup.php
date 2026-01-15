@@ -1,5 +1,7 @@
 <?php
 include_once(__DIR__ . "/../../../inc/db/db.php");
+include_once(__DIR__ . "/../../../inc/constants.php");
+include_once(__DIR__ . "/../../../inc/archive_functions.php");
 
 /**
  * Clase para gestión de proyectos grupales
@@ -196,20 +198,27 @@ class ProjectGroup {
     
     /**
      * Actualizar estado de proyecto
+     * NOTA: El archivado automático (HU-027) se ejecuta en tfg_update_status.php
+     * cuando se aprueba la propuesta en el panel de revisión.
+     * 
      * @param int $project_id ID del proyecto
      * @param string $status Nuevo estado
      * @return array Resultado de la operación
      */
     public static function update_project_status($project_id, $status) {
-        $valid_statuses = ['Borrador', 'Registrado', 'Aprobado', 'Rechazado'];
+        // Usar constantes si están definidas, sino usar array hardcoded para compatibilidad
+        $valid_statuses = defined('PROJECT_VALID_STATUSES') ? PROJECT_VALID_STATUSES : 
+            ['Borrador', 'Registrado', 'Aprobado', 'Rechazado', 'Vigente', 'Prórroga Activa', 'Concluido', 'Cancelado'];
+        
         if (!in_array($status, $valid_statuses)) {
             return ['success' => false, 'message' => 'Estado no válido'];
         }
         
-        $status = addslashes($status);
+        $status_escaped = addslashes($status);
         $project_id = (int)$project_id;
         
-        $sql = "UPDATE registered_projects SET status = '$status', updated_at = NOW() WHERE id = $project_id";
+        // Actualización de estado
+        $sql = "UPDATE registered_projects SET status = '$status_escaped', updated_at = NOW() WHERE id = $project_id";
         $result = transaccion($sql);
         
         if ($result && !empty($result)) {

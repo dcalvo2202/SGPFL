@@ -421,8 +421,20 @@ $additional_css = ['inc/css/tfg_upload.css'];
                     const file = newFiles[i];
                     
                     // Verificar que el archivo tenga propiedades válidas
-                    if (!file || !file.name || typeof file.size !== 'number' || file.size === 0) {
+                    if (!file || !file.name || typeof file.size !== 'number') {
                         continue;
+                    }
+                    
+                    // Verificar que el archivo no esté vacío (0 bytes)
+                    if (file.size === 0) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Archivo vacío',
+                            text: `El archivo "${file.name}" está vacío (0 bytes) y no puede ser subido`,
+                            confirmButtonColor: '#CD1719'
+                        });
+                        hasError = true;
+                        break;
                     }
                     
                     // Validar tamaño individual (20MB)

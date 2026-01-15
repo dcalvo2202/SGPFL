@@ -94,7 +94,7 @@ if (!isset($_FILES['documento']) || $_FILES['documento']['error'] !== UPLOAD_ERR
 $documento_blob = file_get_contents($_FILES['documento']['tmp_name']);
 
 // Validaciones opcionales
-if ($_FILES['documento']['size'] > 10*1024*1024) { // 10MB
+if ($_FILES['documento']['size'] > 8*1024*1024) { // 8MB
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
 

@@ -2503,3 +2503,136 @@ CREATE TABLE `external_advisor_profile_requests` (
   KEY `fk_external_advisor_request_reviewer` (`reviewed_by`),
   CONSTRAINT `fk_external_advisor_request_reviewer` FOREIGN KEY (`reviewed_by`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- ----------------------------
+-- HU-027: SISTEMA DE ARCHIVO HISTÓRICO
+-- Tablas para archivar proyectos concluidos o cancelados
+-- Cumple con Art. 68 RGPEA - Conservación de registros para auditoría
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `tfg_proposals_archive`
+-- Almacena propuestas TFG archivadas con documentos comprimidos (GZIP)
+-- ----------------------------
+DROP TABLE IF EXISTS `tfg_proposals_archive`;
+CREATE TABLE `tfg_proposals_archive` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `original_proposal_id` int(11) NOT NULL COMMENT 'ID original de la propuesta antes de archivar',
+  `user_id` varchar(50) NOT NULL COMMENT 'ID del estudiante propietario',
+  `title` varchar(255) NOT NULL COMMENT 'Título del TFG',
+  `disciplines` varchar(255) DEFAULT NULL COMMENT 'Disciplinas del proyecto',
+  `project_description` text DEFAULT NULL COMMENT 'Descripción del proyecto',
+  `document` longblob DEFAULT NULL COMMENT 'Documento principal comprimido (GZIP)',
+  `file_name` varchar(255) DEFAULT NULL COMMENT 'Nombre original del archivo',
+  `mime_type` varchar(100) DEFAULT NULL COMMENT 'Tipo MIME del documento',
+  `file_size` int(11) DEFAULT NULL COMMENT 'Tamaño original en bytes',
+  `compressed_size` int(11) DEFAULT NULL COMMENT 'Tamaño comprimido en bytes',
+  `is_compressed` tinyint(1) DEFAULT 1 COMMENT '1 si el documento está comprimido',
+  `original_status` varchar(50) DEFAULT NULL COMMENT 'Estado que tenía la propuesta antes de archivar',
+  `archive_reason` enum('Concluido','Cancelado') NOT NULL COMMENT 'Razón del archivado',
+  `admin_comments` text DEFAULT NULL COMMENT 'Comentarios del revisor',
+  `reviewed_by` varchar(50) DEFAULT NULL COMMENT 'ID del último revisor',
+  `reviewed_at` datetime DEFAULT NULL COMMENT 'Fecha de última revisión',
+  `original_created_at` datetime DEFAULT NULL COMMENT 'Fecha de creación original',
+  `original_updated_at` datetime DEFAULT NULL COMMENT 'Fecha de última actualización original',
+  `archived_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha de archivado',
+  `archived_by` varchar(50) DEFAULT NULL COMMENT 'Usuario que archivó (NULL si automático)',
+  PRIMARY KEY (`id`),
+  KEY `idx_original_proposal` (`original_proposal_id`),
+  KEY `idx_user_id` (`user_id`),
+  KEY `idx_archive_reason` (`archive_reason`),
+  KEY `idx_archived_at` (`archived_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Table structure for `registered_projects_archive`
+-- Almacena proyectos registrados archivados
+-- ----------------------------
+DROP TABLE IF EXISTS `registered_projects_archive`;
+CREATE TABLE `registered_projects_archive` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `original_project_id` int(11) NOT NULL COMMENT 'ID original del proyecto',
+  `original_proposal_id` int(11) NOT NULL COMMENT 'ID de la propuesta asociada',
+  `project_type_id` int(11) DEFAULT NULL COMMENT 'Tipo de proyecto',
+  `project_type_name` varchar(100) DEFAULT NULL COMMENT 'Nombre del tipo (snapshot)',
+  `original_status` varchar(50) DEFAULT NULL COMMENT 'Estado antes de archivar',
+  `archive_reason` enum('Concluido','Cancelado') NOT NULL,
+  `start_date` date DEFAULT NULL COMMENT 'Fecha de inicio del proyecto',
+  `end_date` date DEFAULT NULL COMMENT 'Fecha de finalización',
+  `final_grade` decimal(5,2) DEFAULT NULL COMMENT 'Calificación final (si aplica)',
+  `supervisor_id` varchar(50) DEFAULT NULL COMMENT 'ID del supervisor',
+  `supervisor_name` varchar(255) DEFAULT NULL COMMENT 'Nombre del supervisor (snapshot)',
+  `original_created_at` datetime DEFAULT NULL,
+  `original_updated_at` datetime DEFAULT NULL,
+  `archived_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_original_project` (`original_project_id`),
+  KEY `idx_original_proposal` (`original_proposal_id`),
+  KEY `idx_archive_reason` (`archive_reason`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Table structure for `project_members_archive`
+-- Almacena miembros de proyectos archivados (snapshot)
+-- ----------------------------
+DROP TABLE IF EXISTS `project_members_archive`;
+CREATE TABLE `project_members_archive` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `original_member_id` int(11) NOT NULL COMMENT 'ID original del registro de miembro',
+  `original_project_id` int(11) NOT NULL COMMENT 'ID original del proyecto',
+  `user_id` varchar(50) NOT NULL COMMENT 'ID del miembro',
+  `user_name` varchar(255) DEFAULT NULL COMMENT 'Nombre completo (snapshot)',
+  `role` varchar(50) DEFAULT NULL COMMENT 'Rol en el proyecto (Líder, Miembro)',
+  `member_status` varchar(50) DEFAULT NULL COMMENT 'Estado del miembro',
+  `joined_at` datetime DEFAULT NULL COMMENT 'Fecha de incorporación',
+  `left_at` datetime DEFAULT NULL COMMENT 'Fecha de salida (si aplica)',
+  `archived_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_original_project` (`original_project_id`),
+  KEY `idx_user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Table structure for `tfg_files_archive`
+-- Almacena archivos adicionales archivados y comprimidos
+-- ----------------------------
+DROP TABLE IF EXISTS `tfg_files_archive`;
+CREATE TABLE `tfg_files_archive` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `original_file_id` int(11) NOT NULL COMMENT 'ID original del archivo',
+  `original_proposal_id` int(11) NOT NULL COMMENT 'ID de la propuesta asociada',
+  `file_name` varchar(255) NOT NULL COMMENT 'Nombre original del archivo',
+  `mime_type` varchar(100) DEFAULT NULL,
+  `original_size` int(11) DEFAULT NULL COMMENT 'Tamaño original en bytes',
+  `compressed_size` int(11) DEFAULT NULL COMMENT 'Tamaño comprimido',
+  `file_data` longblob DEFAULT NULL COMMENT 'Contenido comprimido (GZIP)',
+  `is_compressed` tinyint(1) DEFAULT 1,
+  `document_type` varchar(100) DEFAULT NULL COMMENT 'Tipo de documento',
+  `uploaded_by` varchar(50) DEFAULT NULL,
+  `original_created_at` datetime DEFAULT NULL,
+  `archived_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_original_file` (`original_file_id`),
+  KEY `idx_original_proposal` (`original_proposal_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Table structure for `archive_audit_log`
+-- Registra todos los accesos al archivo histórico (Art. 68 RGPEA)
+-- ----------------------------
+DROP TABLE IF EXISTS `archive_audit_log`;
+CREATE TABLE `archive_audit_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(50) NOT NULL COMMENT 'Usuario que accede',
+  `action_type` enum('VIEW_LIST','VIEW_DETAIL','DOWNLOAD','DOWNLOAD_FILE','SEARCH') NOT NULL,
+  `archived_proposal_id` int(11) DEFAULT NULL COMMENT 'Propuesta archivada accedida',
+  `archived_project_id` int(11) DEFAULT NULL COMMENT 'Proyecto archivado accedido',
+  `details` text DEFAULT NULL COMMENT 'Detalles adicionales (filtros, etc.)',
+  `ip_address` varchar(45) DEFAULT NULL COMMENT 'IP del cliente',
+  `accessed_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_user_id` (`user_id`),
+  KEY `idx_action_type` (`action_type`),
+  KEY `idx_accessed_at` (`accessed_at`),
+  KEY `idx_archived_proposal` (`archived_proposal_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
