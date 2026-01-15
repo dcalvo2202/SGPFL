@@ -73,7 +73,7 @@
                     
                     <div class="text-center p-0">
                         <a href="registro.php" class="btn btn-outline-secondary w-100" tabindex="-1">
-                            <!--¿No tienes cuenta? Regístrate aquí -->
+                            ¿Eres Asesor Externo? <strong>Solicita tu registro aquí</strong>
                         </a>
                         <!-- Implementar la vista registro.php -->
                     </div>

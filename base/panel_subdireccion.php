@@ -25,6 +25,47 @@ if ($current_user_rol != 2 && $current_user_rol != 1) {
     header('Location: login.php');
     exit; // Detiene la ejecución del script para asegurar que no se muestre nada más.
 }
+
+// 4. NOTIFICACIÓN INTERNA: Solicitudes de Asesor Externo en revisión
+$external_profiles_pending = 0;
+try {
+    // Importante: mod/login/check.php usa la variable $usuario para el ID de sesión.
+    // bdcommon.inc también usa $usuario para el usuario de MySQL.
+    // Para evitar colisiones, cargamos la config de BD en un scope local.
+    $dbcfg = (function (string $path): array {
+        $db_host = null;
+        $usuario = null;
+        $clave = null;
+        $db = null;
+        require $path;
+        return [
+            'host' => (string)$db_host,
+            'user' => (string)$usuario,
+            'pass' => (string)$clave,
+            'name' => (string)$db,
+        ];
+    })(__DIR__ . '/inc/db/bdcommon.inc');
+
+    $conn_notif = new mysqli($dbcfg['host'], $dbcfg['user'], $dbcfg['pass'], $dbcfg['name']);
+    if ($conn_notif->connect_error) {
+        error_log('Error de conexión (notificaciones HU-011): ' . $conn_notif->connect_error);
+    } else {
+        $conn_notif->set_charset('utf8');
+
+        // Consulta simple (según el estado real en BD: "En Revision" sin tilde)
+        $rs = $conn_notif->query("SELECT COUNT(*) AS c FROM external_advisor_profile_requests WHERE status = 'En Revision'");
+        if ($rs) {
+            $rowc = $rs->fetch_assoc();
+            $external_profiles_pending = (int)($rowc['c'] ?? 0);
+        } else {
+            error_log('Error contando external_advisor_profile_requests: ' . $conn_notif->error);
+        }
+
+        $conn_notif->close();
+    }
+} catch (Exception $e) {
+    error_log('Error contando solicitudes de asesor externo en revisión: ' . $e->getMessage());
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -57,6 +98,22 @@ if ($current_user_rol != 2 && $current_user_rol != 1) {
                 <h1 style="font-size: 2.5rem; font-weight: 700;">Panel del Gestor Académico</h1>
                 <p class="lead">Bienvenido, <?= htmlspecialchars($current_user_name) ?>. Desde aquí puede gestionar las propuestas de TFG.</p>
             </div>
+
+            <?php if ($external_profiles_pending > 0): ?>
+                <div id="external-profiles-alert" class="alert alert-warning" role="alert">
+                    <i class="bi bi-bell-fill"></i>
+                    Hay <strong><?= (int)$external_profiles_pending ?></strong> solicitud(es) de <strong>Perfil Académico de Asesor Externo</strong> en estado <strong>En Revisión</strong>.
+                </div>
+                <script>
+                    // Oculta la notificación automáticamente luego de 5 segundos
+                    setTimeout(function () {
+                        var alertEl = document.getElementById('external-profiles-alert');
+                        if (alertEl) {
+                            alertEl.style.display = 'none';
+                        }
+                    }, 5000);
+                </script>
+            <?php endif; ?>
 
             <!-- Sección de Acciones Rápidas -->
             <div class="quick-actions-section">

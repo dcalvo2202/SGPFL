@@ -2462,3 +2462,44 @@ CREATE TABLE `tfg_notifications` (
   CONSTRAINT `fk_tfg_notif_sender` FOREIGN KEY (`sender_id`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_tfg_notif_role` FOREIGN KEY (`recipient_role_id`) REFERENCES `sis_rolls` (`id_roll`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+
+-- ----------------------------
+-- Table structure for `external_advisor_profile_requests`
+-- Solicitud de registro de Asesor Externo (HU-011)
+-- Nota: el solicitante aún NO existe en sis_user/sis_login
+-- Documentos almacenados en BLOB
+-- ----------------------------
+DROP TABLE IF EXISTS `external_advisor_profile_requests`;
+CREATE TABLE `external_advisor_profile_requests` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `applicant_id` varchar(50) NOT NULL COMMENT 'Cédula / identificador del solicitante (futuro sis_login.id)',
+  `full_name` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `telefono` varchar(15) DEFAULT NULL,
+  `id_tipo_tel` varchar(1) DEFAULT NULL,
+  `institution` varchar(255) NOT NULL,
+  `specialization` varchar(255) NOT NULL,
+
+  `cv_document` longblob NOT NULL,
+  `cv_file_name` varchar(255) NOT NULL,
+  `cv_mime_type` varchar(100) NOT NULL,
+  `cv_file_size` int(11) NOT NULL,
+
+  `id_copy_document` longblob NOT NULL,
+  `id_copy_file_name` varchar(255) NOT NULL,
+  `id_copy_mime_type` varchar(100) NOT NULL,
+  `id_copy_file_size` int(11) NOT NULL,
+
+  `status` enum('En Revisión','Aprobado','Rechazado') NOT NULL DEFAULT 'En Revisión',
+  `admin_comments` text DEFAULT NULL,
+  `reviewed_by` varchar(50) DEFAULT NULL,
+  `reviewed_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_external_advisor_request_applicant` (`applicant_id`),
+  KEY `idx_external_advisor_request_status` (`status`),
+  KEY `fk_external_advisor_request_reviewer` (`reviewed_by`),
+  CONSTRAINT `fk_external_advisor_request_reviewer` FOREIGN KEY (`reviewed_by`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
