@@ -122,10 +122,66 @@ function detect_mime(string $tmp_name): string {
     return $finfo->file($tmp_name) ?: '';
 }
 
+function ini_size_to_bytes(string $value): int {
+    $value = trim($value);
+    if ($value === '') return 0;
+    $last = strtolower(substr($value, -1));
+    $num = (float)$value;
+    switch ($last) {
+        case 'g':
+            return (int)($num * 1024 * 1024 * 1024);
+        case 'm':
+            return (int)($num * 1024 * 1024);
+        case 'k':
+            return (int)($num * 1024);
+        default:
+            return (int)$num;
+    }
+}
+
+function bytes_to_human(int $bytes): string {
+    if ($bytes <= 0) return '0 B';
+    $units = ['B', 'KB', 'MB', 'GB'];
+    $i = (int)floor(log($bytes, 1024));
+    $i = max(0, min($i, count($units) - 1));
+    $value = $bytes / (1024 ** $i);
+    return ($i === 0 ? (string)(int)$value : number_format($value, 2)) . ' ' . $units[$i];
+}
+
+function upload_error_to_message(int $code, string $label): string {
+    $uploadMax = ini_get('upload_max_filesize') ?: '';
+    $postMax = ini_get('post_max_size') ?: '';
+    $uploadMaxBytes = ini_size_to_bytes($uploadMax);
+    $postMaxBytes = ini_size_to_bytes($postMax);
+
+    switch ($code) {
+        case UPLOAD_ERR_INI_SIZE:
+            return "El archivo de {$label} excede el límite del servidor (upload_max_filesize={$uploadMax}).";
+        case UPLOAD_ERR_FORM_SIZE:
+            return "El archivo de {$label} excede el límite del formulario.";
+        case UPLOAD_ERR_PARTIAL:
+            return "El archivo de {$label} se subió parcialmente. Intente de nuevo.";
+        case UPLOAD_ERR_NO_FILE:
+            return "No se adjuntó el archivo de {$label}.";
+        case UPLOAD_ERR_NO_TMP_DIR:
+            return "Falta la carpeta temporal del servidor para subir {$label}.";
+        case UPLOAD_ERR_CANT_WRITE:
+            return "El servidor no pudo escribir el archivo de {$label} en disco.";
+        case UPLOAD_ERR_EXTENSION:
+            return "Una extensión de PHP bloqueó la subida de {$label}.";
+        default:
+            $hint = '';
+            if ($postMaxBytes > 0) {
+                $hint = " (post_max_size={$postMax}, upload_max_filesize={$uploadMax})";
+            }
+            return "Error al subir {$label} (código {$code}){$hint}.";
+    }
+}
+
 function validate_uploaded_file(array $file, array $allowed_mimes, array $allowed_exts, int $max_mb, string $label): array {
     if (($file['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
         $code = $file['error'] ?? UPLOAD_ERR_NO_FILE;
-        throw new Exception("Error al subir $label (código $code)");
+        throw new Exception(upload_error_to_message((int)$code, $label));
     }
 
     $name = (string)($file['name'] ?? '');
@@ -170,6 +226,22 @@ function validate_uploaded_file(array $file, array $allowed_mimes, array $allowe
 try {
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         throw new Exception('Método no permitido');
+    }
+
+    // Cuando se excede post_max_size, PHP suele dejar $_POST y $_FILES vacíos.
+    // Detectamos este caso y mostramos un mensaje útil.
+    if (empty($_POST) && empty($_FILES)) {
+        $contentLength = (int)($_SERVER['CONTENT_LENGTH'] ?? 0);
+        $postMax = ini_get('post_max_size') ?: '';
+        $postMaxBytes = ini_size_to_bytes($postMax);
+        if ($contentLength > 0 && $postMaxBytes > 0 && $contentLength > $postMaxBytes) {
+            $uploadMax = ini_get('upload_max_filesize') ?: '';
+            throw new Exception(
+                'La solicitud excede el límite del servidor (post_max_size=' . $postMax .
+                ', upload_max_filesize=' . $uploadMax .
+                '). Tamaño recibido: ' . bytes_to_human($contentLength)
+            );
+        }
     }
 
     $applicant_id = trim($_POST['applicant_id'] ?? '');
@@ -297,8 +369,19 @@ try {
         $stmt->send_long_data(10, $id_copy['content']);
 
         if (!$stmt->execute()) {
+            $err = $stmt->error;
             $stmt->close();
             $conn->close();
+            if (
+                stripos($err, 'max_allowed_packet') !== false ||
+                stripos($err, 'packet') !== false ||
+                stripos($err, 'server has gone away') !== false
+            ) {
+                throw new Exception(
+                    'No se pudo guardar los documentos en la base de datos (posible límite de MySQL: max_allowed_packet). ' .
+                    'Intente con archivos más livianos o aumente max_allowed_packet en el servidor.'
+                );
+            }
             throw new Exception('No se pudo actualizar la solicitud');
         }
         $stmt->close();
@@ -347,6 +430,17 @@ try {
 
             if (stripos($err, 'Duplicate') !== false) {
                 throw new Exception('Ya existe una solicitud registrada para esta cédula');
+            }
+
+            if (
+                stripos($err, 'max_allowed_packet') !== false ||
+                stripos($err, 'packet') !== false ||
+                stripos($err, 'server has gone away') !== false
+            ) {
+                throw new Exception(
+                    'No se pudo guardar los documentos en la base de datos (posible límite de MySQL: max_allowed_packet). ' .
+                    'Intente con archivos más livianos o aumente max_allowed_packet en el servidor.'
+                );
             }
 
             throw new Exception('No se pudo guardar la solicitud');
