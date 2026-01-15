@@ -16,8 +16,8 @@ include __DIR__ . '/../../../inc/db/bdcommon.inc';
 
 include_once(__DIR__ . '/../../../inc/tfg_final_functions.php');
 
-// Verificar autenticación y rol (CTFG - rol 3)
-if (!$reviewer_id || $user_rol != 3) {
+// Verificar autenticación y rol (CTFG, gestor academico - rol 3, 2)
+if (!$reviewer_id || ($user_rol != 3 && $user_rol != 2)) {
     http_response_code(403);
     echo json_encode(['success' => false, 'message' => 'Acceso denegado. Permisos insuficientes.']);
     exit;

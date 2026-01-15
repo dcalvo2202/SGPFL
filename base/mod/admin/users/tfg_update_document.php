@@ -10,7 +10,7 @@ try {
     $user_id = $mySessionController->getVar("usuario");
     $user_rol = $mySessionController->getVar("rol");
 
-    if (!$user_id || ($user_rol != 4 && $user_rol != 3)) {
+    if (!$user_id || ($user_rol != 4 && $user_rol != 3 && $user_rol != 2)) {
         http_response_code(403);
         throw new Exception('Acceso no autorizado');
     }

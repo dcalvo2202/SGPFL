@@ -1,0 +1,176 @@
+/*
+ * Estilos RESPONSIVE específicos para registro.php (Solicitud de Registro - Asesor Externo)
+ * Mantiene consistencia con estilos UNA existentes, pero mejora visualización en móvil/tablet.
+ */
+
+/* ===== Header ===== */
+.navbar-una.registro-navbar {
+    background: linear-gradient(135deg, #CD1719, #A01215) !important;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.15);
+    min-height: auto;
+    padding: 1.25rem 0;
+}
+
+.navbar-una.registro-navbar .header-text h5 {
+    font-size: clamp(1.5rem, 3.2vw, 2rem) !important;
+    line-height: 1.2;
+}
+
+.navbar-una.registro-navbar .header-text small {
+    font-size: clamp(2rem, 2.5vw, 1.15rem);
+}
+
+.navbar-una.registro-navbar .btn-outline-light.registro-back-btn {
+    font-size: 1.4rem;
+    padding: 0.55rem 1rem;
+    white-space: normal;
+}
+
+@media (max-width: 768px) {
+    .navbar-una.registro-navbar {
+        padding: 1rem 0;
+    }
+
+    .navbar-una.registro-navbar .logo-una {
+        width: 4.5rem !important;
+        height: 4.5rem !important;
+    }
+
+    .navbar-una.registro-navbar .user-details {
+        width: 100%;
+    }
+
+    .navbar-una.registro-navbar .btn-outline-light.registro-back-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ===== Título principal ===== */
+.dashboard-header h1 {
+    font-size: clamp(1.6rem, 4.2vw, 2.25rem) !important;
+    line-height: 1.15;
+}
+
+.dashboard-header .lead {
+    font-size: clamp(1.3rem, 2.6vw, 1.4rem);
+}
+
+/* ===== Tarjetas / spacing en móvil ===== */
+@media (max-width: 576px) {
+    .container.my-5 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .section-body {
+        padding: 16px;
+    }
+
+    .section-header {
+        padding: 16px;
+    }
+}
+
+/* ===== Tipografía de inputs (consistencia) ===== */
+.form-label-tfg {
+    font-size: 1.4rem;
+}
+
+.form-control-tfg {
+    font-size: 1.4rem;
+}
+
+/* ===== Barra de acciones (Cancelar / Enviar) ===== */
+.registro-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    font-size: 1.4rem;
+}
+
+@media (max-width: 576px) {
+    .registro-actions {
+        justify-content: stretch;
+    }
+
+    .registro-actions .btn-tfg {
+        flex: 1 1 100%;
+        justify-content: center;
+    }
+}
+
+/* ===== Input file custom (evita desbordes y mejora accesibilidad) ===== */
+.custom-file-input-wrapper {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e1e8ed;
+    border-radius: 6px;
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    min-height: 48px;
+}
+
+.custom-file-input-wrapper:hover {
+    border-color: #034991;
+}
+
+.custom-file-input-wrapper:focus,
+.custom-file-input-wrapper:focus-within {
+    outline: none;
+    border-color: #034991;
+    box-shadow: 0 0 0 3px rgba(3, 73, 145, 0.12);
+}
+
+.custom-file-select-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #034991;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1.3rem;
+    user-select: none;
+    flex: 0 0 auto;
+}
+
+.custom-file-input-wrapper:hover .custom-file-select-btn {
+    background: #023366;
+}
+
+.custom-file-name {
+    color: #6c757d;
+    font-size: 1.4rem;
+    flex: 1 1 240px;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.form-group-tfg small{
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+@media (max-width: 576px) {
+    .custom-file-select-btn {
+        width: 100%;
+    }
+
+    .custom-file-name {
+        flex-basis: 100%;
+        white-space: normal;
+        word-break: break-word;
+    }
+}

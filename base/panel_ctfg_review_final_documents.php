@@ -278,7 +278,7 @@ if ($current_user_rol != 3 && $current_user_rol != 2 && $current_user_rol != 1) 
                                     </td>
                                     <td class="text-center">
                                         <div class="btn-group" role="group">
-                                        <?php $download_url = $base_url . 'mod/admin/users/tfg_final_download.php?id=' . $row['id']; ?>
+                                        <?php $download_url = $base_url . 'mod/admin/users/tfg_download_file.php?id=' . $row['id']; ?>
                                         <a href="<?= htmlspecialchars($download_url) ?>" 
                                            class="btn btn-sm btn-primary text-white"
                                            target="_blank"

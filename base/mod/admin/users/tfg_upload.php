@@ -172,7 +172,7 @@ $additional_css = ['inc/css/tfg_upload.css'];
                                placeholder="Ingrese el título único de su propuesta TFG">
                         <small class="text-muted">Este título debe ser único en el sistema (10-255 caracteres)</small>
                     </div>
-
+    
                     <div class="form-group-tfg">
                         <label for="inp-document" class="form-label-tfg">
                             <i class="bi bi-file-pdf-fill"></i> Documentos de la Propuesta *

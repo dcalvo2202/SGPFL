@@ -69,20 +69,18 @@
                     <button id="saveForm" class="btn btn-danger btn-lg login-btn" type="submit" name="submit">
                         <?= $vocab["login_but_start"] ?>
                     </button>
-                    <!-- Apartado de registro: prototipo, redirige a una vista no implementada -->
                     
                     <div class="text-center p-0">
                         <a href="registro.php" class="btn btn-outline-secondary w-100" tabindex="-1">
-                            <!--¿No tienes cuenta? Regístrate aquí -->
+                            ¿Eres Asesor Externo? <strong>Solicita tu registro aquí</strong>
                         </a>
-                        <!-- Implementar la vista registro.php -->
                     </div>
                 </form>
 
                 <img src="img/bottom.png" alt="" class="login-img" />
             </div>
         </div>
-        <footer class="footer">
+        <footer class="footer mt-auto">
             <div class="container-footer">
                 <p class="text-muted text-center"><?= $footer_title ?></p>
             </div>

@@ -544,3 +544,10 @@ El resultado debe incluir:
 ```
 supportedLDAPVersion: 3
 ```
+
+## Anexo
+
+* En la siguiente imagen se muestra la estructura que se utiliza para manejar el LDAP en el sistema. Se utilizan grupos los cuales son el nombre de los roles que están en la base de datos.
+
+(Se llama Estructura_LDAP.png)
+

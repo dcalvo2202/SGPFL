@@ -37,10 +37,8 @@ function ensureUploadDirectory($path) {
  * @return string Tipo MIME detectado
  */
 function getActualMimeType($tmp_name) {
-    $finfo = finfo_open(FILEINFO_MIME_TYPE);
-    $mime_type = finfo_file($finfo, $tmp_name);
-    finfo_close($finfo);
-    return $mime_type;
+    $finfo = new finfo(FILEINFO_MIME_TYPE);
+    return $finfo->file($tmp_name) ?: '';
 }
 
 /**
