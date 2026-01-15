@@ -121,7 +121,34 @@ extension=mysqli
 
 ---
 
-### 2. Configuración de envío de correos
+### 2. Límites de subida de archivos (IMPORTANTE)
+
+Para permitir que los estudiantes suban propuestas TFG de hasta **8MB**, debe configurar los siguientes valores en `php.ini`:
+
+```ini
+upload_max_filesize = 8M
+post_max_size = 10M
+max_execution_time = 300
+max_input_time = 300
+memory_limit = 256M
+```
+
+**Ubicación del archivo `php.ini`:**
+- **XAMPP Windows:** `C:\xampp\php\php.ini`
+- **XAMPP Linux/Mac:** `/opt/lampp/etc/php.ini`
+- **Ubuntu/Debian:** `/etc/php/8.x/apache2/php.ini`
+
+**Pasos para modificar:**
+1. Abrir `php.ini` con un editor de texto
+2. Buscar cada parámetro (Ctrl+F) y cambiar el valor
+3. Guardar el archivo
+4. **Reiniciar Apache** desde el panel de XAMPP
+
+> **Nota:** El archivo `.htaccess` del proyecto también define estos valores como respaldo, pero algunos servidores pueden ignorarlos dependiendo de la configuración de `AllowOverride`.
+
+---
+
+### 3. Configuración de envío de correos
 
 Para el envío de notificaciones institucionales desde el sistema, debe configurarse el remitente predeterminado:
 

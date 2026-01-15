@@ -2,9 +2,9 @@
 include(dirname(__FILE__) . "/../../lib/mysession/mySession.class.php");
 include(dirname(__FILE__) . "/../../lib/mysession/mySession.conf.php");
 $mySessionController = mySession::getIstance($_MYSESSION_CONF);
-$usuario = $mySessionController->getVar("usuario");
+$session_usuario = $mySessionController->getVar("usuario");
 
-if ($usuario == "") {
+if ($session_usuario == "") {
     require_once dirname(__FILE__) . '/../../config.inc';
     $mySessionController->destroy($_MYSESSION_CONF['SID']);
     

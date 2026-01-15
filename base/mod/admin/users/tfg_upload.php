@@ -12,6 +12,7 @@ $base_path = realpath(__DIR__ . '/../../../');
 
 // Incluir archivos necesarios con rutas relativas
 include_once($base_path . '/inc/db/bdcommon.inc');
+include_once($base_path . '/inc/constants.php');
 
 // Obtener tipos de proyecto desde la base de datos
 try {
@@ -83,7 +84,7 @@ try {
             $existing_proposal_status = $proposal_data['status'];
             
             // Si está en revisión o pendiente, bloquear nueva subida
-            if (in_array($existing_proposal_status, ['Pendiente de Revisión', 'En Revisión', 'Cumple requisitos', 'Aprobado'])) {
+            if (in_array($existing_proposal_status, TFG_BLOCKING_STATUSES)) {
                 $can_submit_proposal = false;
                 $blocked_message = 'Ya tienes una propuesta en estado "' . htmlspecialchars($existing_proposal_status) . '". No puedes subir otra propuesta hasta que sea rechazada o finalizada.';
             }
@@ -549,17 +550,32 @@ $additional_css = ['inc/css/tfg_upload.css'];
                 const newFiles = Array.from(e.target.files || []);
                 
                 if (newFiles.length > 0) {
+                    let hasError = false;
+                    
                     // Filtrar archivos que ya existen por nombre y solo agregar los nuevos
-                    newFiles.forEach(newFile => {
+                    for (const newFile of newFiles) {
                         // Verificar que el archivo tenga propiedades válidas
-                        if (newFile && newFile.name && typeof newFile.size === 'number' && newFile.size > 0) {
-                            // Verificar si ya existe un archivo con el mismo nombre
-                            const exists = accumulatedFiles.some(f => f.name === newFile.name);
-                            if (!exists) {
-                                accumulatedFiles.push(newFile);
-                            }
+                        if (!newFile || !newFile.name || typeof newFile.size !== 'number') {
+                            continue;
                         }
-                    });
+                        
+                        // Verificar que el archivo no esté vacío (0 bytes)
+                        if (newFile.size === 0) {
+                            alert(`El archivo "${newFile.name}" está vacío (0 bytes) y no puede ser subido`);
+                            hasError = true;
+                            break;
+                        }
+                        
+                        // Verificar si ya existe un archivo con el mismo nombre
+                        const exists = accumulatedFiles.some(f => f.name === newFile.name);
+                        if (!exists) {
+                            accumulatedFiles.push(newFile);
+                        }
+                    }
+                    
+                    if (hasError) {
+                        return;
+                    }
                     
                     // Calcular tamaño total
                     let totalSize = 0;
@@ -569,9 +585,9 @@ $additional_css = ['inc/css/tfg_upload.css'];
                         }
                     });
                     
-                    // Validar tamaño total (máximo 10 MB para todos los archivos)
-                    if (totalSize > 10 * 1024 * 1024) {
-                        alert('El tamaño total de los archivos excede 10 MB. Por favor, elimine algunos archivos.');
+                    // Validar tamaño total (máximo 8 MB para todos los archivos)
+                    if (totalSize > 8 * 1024 * 1024) {
+                        alert('El tamaño total de los archivos excede 8 MB. Por favor, elimine algunos archivos.');
                     }
                     
                     // Actualizar display y sincronizar

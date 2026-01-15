@@ -24,6 +24,7 @@ $user_rol = $mySessionController->getVar("rol");
 // Incluir configuración BD y funciones helper
 include_once(__DIR__ . '/../../../inc/db/bdcommon.inc');
 include_once(__DIR__ . '/../../../inc/upload_helpers.php');
+include_once(__DIR__ . '/../../../inc/constants.php');
 
 // Verificar autenticación básica (solo requiere user_id)
 if (!$user_id) {
@@ -33,6 +34,38 @@ if (!$user_id) {
 // Verificar que sea estudiante (rol 4 según tu BD)
 if ($user_rol != 4) {
     respond_json(false, 'Solo estudiantes pueden crear propuestas TFG');
+}
+
+// =============================== VERIFICAR SI TIENE PROPUESTA EN ESTADO BLOQUEANTE ===============================
+try {
+    $conn_block_check = new mysqli($db_host, $usuario, $clave, $db);
+    if (!$conn_block_check->connect_error) {
+        $conn_block_check->set_charset("utf8");
+        
+        // Buscar la propuesta más reciente del estudiante
+        $sql_block = "SELECT id, status, title FROM tfg_proposals WHERE user_id = ? ORDER BY created_at DESC LIMIT 1";
+        $stmt_block = $conn_block_check->prepare($sql_block);
+        $stmt_block->bind_param("s", $user_id);
+        $stmt_block->execute();
+        $result_block = $stmt_block->get_result();
+        
+        if ($result_block->num_rows > 0) {
+            $proposal_data = $result_block->fetch_assoc();
+            $existing_status = $proposal_data['status'];
+            
+            // Si está en un estado bloqueante, rechazar la subida
+            if (in_array($existing_status, TFG_BLOCKING_STATUSES)) {
+                $stmt_block->close();
+                $conn_block_check->close();
+                respond_json(false, 'Ya tienes una propuesta en estado "' . $existing_status . '". No puedes subir otra propuesta hasta que sea rechazada.');
+            }
+        }
+        
+        $stmt_block->close();
+        $conn_block_check->close();
+    }
+} catch (Exception $e) {
+    error_log("Error al verificar estado de propuesta: " . $e->getMessage());
 }
 
 // Configurar respuesta JSON
@@ -121,9 +154,9 @@ try {
             }
         }
         
-        // Validar tamaño total (máximo 10MB)
-        if ($total_file_size > 10 * 1024 * 1024) {
-            respond_json(false, 'El tamaño total de los archivos excede 10MB');
+        // Validar tamaño total (máximo 8MB)
+        if ($total_file_size > 8 * 1024 * 1024) {
+            respond_json(false, 'El tamaño total de los archivos excede 8MB');
         }
     }
     // Compatibilidad con formato antiguo (un solo archivo)
@@ -173,7 +206,7 @@ try {
     $file_size = $total_file_size;
     
     $tfg_sql = "INSERT INTO tfg_proposals (user_id, title, disciplines, project_description, document, file_name, mime_type, file_size, status, created_at, updated_at) 
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'Pendiente de Revisión', NOW(), NOW())";
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())";
     
     $tfg_stmt = $conn->prepare($tfg_sql);
     if (!$tfg_stmt) {
@@ -183,7 +216,9 @@ try {
 
     // IMPORTANTE: Para BLOB, primero bind_param con NULL, luego send_long_data
     // Usar el nombre de archivo único generado, no el original
-    $tfg_stmt->bind_param("ssssbssi", $user_id, $title, $disciplines, $description, $null_blob, $file_name, $mime_type, $file_size);
+    // Status se pasa como parámetro para evitar problemas de encoding con caracteres especiales
+    $initial_status = TFG_STATUS_PENDING; // 'Pendiente de Revisión' desde constants.php
+    $tfg_stmt->bind_param("ssssbssis", $user_id, $title, $disciplines, $description, $null_blob, $file_name, $mime_type, $file_size, $initial_status);
     
     // Enviar el BLOB por separado si existe
     if ($document_data !== null && strlen($document_data) > 0) {
@@ -203,7 +238,8 @@ try {
     // =============================== INSERTAR ARCHIVOS ADICIONALES ===============================
     // Si hay múltiples archivos, guardarlos en tfg_files vinculados a esta propuesta
     if (count($uploaded_files) > 1) {
-        saveAdditionalFiles($conn, $uploaded_files, $user_id, 'Propuesta TFG Anexo');
+        $additional_files_saved = saveAdditionalFiles($conn, $uploaded_files, $user_id, 'Propuesta TFG Anexo');
+        error_log("Archivos adicionales guardados: $additional_files_saved");
     }
 
     // =============================== INSERCIÓN EN HISTORIAL DE VERSIONES ===============================
