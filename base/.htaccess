@@ -1,1 +1,9 @@
+# Aumentar límites de subida de archivos para TFG
+# Nota: Estos valores también deben configurarse en php.ini (ver README.md)
+php_value upload_max_filesize 8M
+php_value post_max_size 10M
+php_value max_execution_time 300
+php_value max_input_time 300
+php_value memory_limit 256M
+
 # Forzar HTTPS en todo el sitio.

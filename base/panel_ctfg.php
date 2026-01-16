@@ -81,6 +81,16 @@ $avisos_generales = $panel->getAvisos();
                             <p>Buscar y consultar proyectos aprobados, sin aprobar o en corrección.</p>
                         </div>
                     </div>
+                    <!-- HU-027: Archivo Histórico -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_archivo_historico.php'" style="border-left: 4px solid #6c757d;">
+                            <div class="card-icon" style="color: #6c757d;">
+                                <i class="bi bi-archive-fill"></i>
+                            </div>
+                            <h5>Archivo Histórico</h5>
+                            <p>Consultar proyectos concluidos o cancelados (Art. 68 RGPEA).</p>
+                        </div>
+                    </div>
                     <!--div class="col-md-6 col-lg-4">
                         <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>listar_actas.php'">
                             <div class="card-icon">

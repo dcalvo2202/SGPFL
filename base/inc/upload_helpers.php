@@ -78,11 +78,11 @@ function validateFileExtension($file_name, $allowed_extensions = ['pdf', 'docx']
 /**
  * Valida el tamaño del archivo
  * @param int $file_size Tamaño en bytes
- * @param int $max_size_mb Tamaño máximo en MB
+ * @param int $max_size_mb Tamaño máximo en MB (predeterminado 8MB)
  * @param string $file_name Nombre del archivo para mensajes de error
  * @return bool True si es válido
  */
-function validateFileSize($file_size, $max_size_mb = 10, $file_name = '') {
+function validateFileSize($file_size, $max_size_mb = 8, $file_name = '') {
     $max_bytes = $max_size_mb * 1024 * 1024;
     if ($file_size > $max_bytes) {
         $file_info = $file_name ? "El archivo '$file_name'" : 'El archivo';
@@ -259,7 +259,21 @@ function saveAdditionalFiles($conn, $files, $user_id, $document_type = 'Anexo') 
     
     for ($i = 1; $i < count($files); $i++) {
         $file = $files[$i];
-        $file_content = isset($file['content']) ? $file['content'] : file_get_contents($file['tmp_name']);
+        
+        // Obtener contenido del archivo con validación
+        if (isset($file['content'])) {
+            $file_content = $file['content'];
+        } else {
+            if (!isset($file['tmp_name']) || !is_readable($file['tmp_name'])) {
+                error_log("No se pudo acceder al archivo temporal adicional: " . ($file['tmp_name'] ?? 'undefined'));
+                continue; // Saltar este archivo pero continuar con los demás
+            }
+            $file_content = file_get_contents($file['tmp_name']);
+            if ($file_content === false) {
+                error_log("Error al leer el archivo temporal adicional: " . $file['tmp_name']);
+                continue; // Saltar este archivo pero continuar con los demás
+            }
+        }
         
         $sql = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by, version, document_type) 
                 VALUES (?, ?, ?, ?, NULL, ?, 1, ?)";
@@ -268,6 +282,8 @@ function saveAdditionalFiles($conn, $files, $user_id, $document_type = 'Anexo') 
         if ($stmt) {
             $null_blob = null;
             $file_name = isset($file['unique_name']) ? $file['unique_name'] : $file['name'];
+            // bind_param types: s = string, i = integer, b = blob
+            // "ssibss" => file_name (s), mime_type (s), file_size (i), file_data (b), uploaded_by (s), document_type (s)
             $stmt->bind_param("ssibss", 
                 $file_name, 
                 $file['type'], 

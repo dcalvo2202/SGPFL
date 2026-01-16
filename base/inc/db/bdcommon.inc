@@ -1,7 +1,7 @@
 <?php
 $db_host = 'localhost';
-$usuario = 'root';
-$clave = '';
+$usuario = 'root';      // Usuario de base de datos
+$clave = '';            // Contraseña de base de datos
 $db = 'base_db';
 $DBMS = 'mysql';
 

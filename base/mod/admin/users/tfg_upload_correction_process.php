@@ -63,11 +63,11 @@ if (!isset($_FILES['document']) || $_FILES['document']['error'] !== UPLOAD_ERR_O
 }
 
 $file = $_FILES['document'];
-$max_size = 10 * 1024 * 1024; // 10 MB
+$max_size = 8 * 1024 * 1024; // 8 MB
 
 if ($file['size'] > $max_size) {
     http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'El archivo excede el tamaño máximo de 10 MB.']);
+    echo json_encode(['success' => false, 'message' => 'El archivo excede el tamaño máximo de 8 MB.']);
     exit;
 }
 

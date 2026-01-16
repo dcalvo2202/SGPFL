@@ -224,13 +224,13 @@ $page_title = "Subir Correcciones - TFG";
         }
         
         const file = fileInput.files[0];
-        const maxSize = 10 * 1024 * 1024; // 10 MB
+        const maxSize = 8 * 1024 * 1024; // 8 MB
         
         if (file.size > maxSize) {
             Swal.fire({
                 icon: 'error',
                 title: 'Archivo muy grande',
-                text: 'El archivo PDF no debe superar los 10 MB.'
+                text: 'El archivo PDF no debe superar los 8 MB.'
             });
             return false;
         }
