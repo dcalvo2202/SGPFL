@@ -56,8 +56,14 @@ if (!in_array($new_status, $allowed_statuses)) {
 try {
     // Usar bdcommon.inc para la conexión para evitar conflicto de variables
     include __DIR__ . '/../../../inc/db/bdcommon.inc';
-    $conn = new mysqli($db_host, $usuario, $clave, $db);
-    if ($conn->connect_error) {
+    // Si se está ejecutando en un entorno de prueba, usar la conexión mockeada
+    if (isset($GLOBALS['__mysqli_mock'])) {
+        $conn = $GLOBALS['__mysqli_mock'];
+    // Si no, crear una nueva conexión y trabajar normalmente
+    } else {
+        $conn = new mysqli($db_host, $usuario, $clave, $db);
+    }
+    if (property_exists($conn, 'connect_error') && $conn->connect_error) {
         throw new Exception('Error de conexión a la base de datos: ' . $conn->connect_error);
     }
     $conn->set_charset("utf8");
@@ -85,10 +91,10 @@ try {
     $stmt_current->bind_param("i", $document_id);
     $stmt_current->execute();
     $result_current = $stmt_current->get_result();
-    if ($result_current->num_rows === 0) {
+    $current_doc = $result_current ? $result_current->fetch_assoc() : null;
+    if (!$current_doc) {
         throw new Exception("No se encontró el documento final original con ID " . $document_id);
     }
-    $current_doc = $result_current->fetch_assoc();
     $stmt_current->close();
 
     // 2. Determinar la nueva versión

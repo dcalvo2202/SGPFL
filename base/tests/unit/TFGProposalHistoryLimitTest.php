@@ -9,11 +9,11 @@ class TFGProposalHistoryLimitTest extends TestCase
     {
         $mockConn = $this->createMock(mysqli::class);
 
-        $mockStmtSelect = $this->createMock(mysqli_stmt::class);
-        $mockStmtDelete = $this->createMock(mysqli_stmt::class);
-        $mockStmtInsert = $this->createMock(mysqli_stmt::class);
+        $mockStmtSelectProposals = $this->createMock(mysqli_stmt::class);
+        $mockStmtDeleteHistory = $this->createMock(mysqli_stmt::class);
+        $mockStmtDeleteRegistered = $this->createMock(mysqli_stmt::class);
+        $mockStmtDeleteProposal = $this->createMock(mysqli_stmt::class);
 
-        // CORRECCIÓN AQUÍ:
         $mockResult = $this->createMock(mysqli_result::class);
 
         $mockResult->expects($this->exactly(6))
@@ -22,45 +22,45 @@ class TFGProposalHistoryLimitTest extends TestCase
                 ['id' => 10], ['id' => 11], ['id' => 12], ['id' => 13], ['id' => 14], null
             );
 
-        $mockConn->expects($this->exactly(3))
+        $mockConn->method('commit')->willReturn(true);
+        $mockConn->method('rollback')->willReturn(true);
+
+        $mockConn->expects($this->exactly(4))
             ->method('prepare')
-            ->willReturnCallback(function($sql) use ($mockStmtSelect, $mockStmtDelete, $mockStmtInsert) {
-                if (strpos($sql, 'SELECT id FROM tfg_proposal_history') !== false) {
-                    return $mockStmtSelect;
+            ->willReturnCallback(function($sql) use ($mockStmtSelectProposals, $mockStmtDeleteHistory, $mockStmtDeleteRegistered, $mockStmtDeleteProposal) {
+                if (strpos($sql, 'SELECT id') !== false && strpos($sql, 'FROM tfg_proposals') !== false) {
+                    return $mockStmtSelectProposals;
                 }
                 if (strpos($sql, 'DELETE FROM tfg_proposal_history') !== false) {
-                    return $mockStmtDelete;
+                    return $mockStmtDeleteHistory;
                 }
-                if (strpos($sql, 'INSERT INTO tfg_proposal_history') !== false) {
-                    return $mockStmtInsert;
+                if (strpos($sql, 'DELETE FROM registered_projects') !== false) {
+                    return $mockStmtDeleteRegistered;
                 }
-                return null;
+                if (strpos($sql, 'DELETE FROM tfg_proposals') !== false) {
+                    return $mockStmtDeleteProposal;
+                }
+                return false;
             });
 
-        $mockStmtSelect->expects($this->once())->method('bind_param')->with('i', 123);
-        $mockStmtSelect->expects($this->once())->method('execute');
-        $mockStmtSelect->expects($this->once())->method('get_result')->willReturn($mockResult);
-        $mockStmtSelect->expects($this->once())->method('close');
+        $mockStmtSelectProposals->expects($this->once())->method('bind_param')->with('s', 'user123');
+        $mockStmtSelectProposals->expects($this->once())->method('execute');
+        $mockStmtSelectProposals->expects($this->once())->method('get_result')->willReturn($mockResult);
+        $mockStmtSelectProposals->expects($this->once())->method('close');
 
-        $mockStmtDelete->expects($this->once())->method('bind_param')->with('i', 10);
-        $mockStmtDelete->expects($this->once())->method('execute');
-        $mockStmtDelete->expects($this->once())->method('close');
+        $mockStmtDeleteHistory->expects($this->once())->method('bind_param')->with('i', 10);
+        $mockStmtDeleteHistory->expects($this->once())->method('execute');
+        $mockStmtDeleteHistory->expects($this->once())->method('close');
 
-        $mockStmtInsert->expects($this->once())->method('bind_param');
-        $mockStmtInsert->expects($this->any())->method('send_long_data');
-        $mockStmtInsert->expects($this->once())->method('execute')->willReturn(true);
-        $mockStmtInsert->expects($this->once())->method('close');
+        $mockStmtDeleteRegistered->expects($this->once())->method('bind_param')->with('i', 10);
+        $mockStmtDeleteRegistered->expects($this->once())->method('execute');
+        $mockStmtDeleteRegistered->expects($this->once())->method('close');
 
-        limitarVersionesYAgregarHistorial(
-            $mockConn,
-            123, // $tfg_id
-            456, // $user_id
-            'archivo.pdf', // $unique_filename
-            'application/pdf', // $mime_type
-            1000, // $file_size
-            'contenido', // $document_data
-            null // $null_blob
-        );
+        $mockStmtDeleteProposal->expects($this->once())->method('bind_param')->with('i', 10);
+        $mockStmtDeleteProposal->expects($this->once())->method('execute');
+        $mockStmtDeleteProposal->expects($this->once())->method('close');
+
+        limitarVersionesYAgregarHistorial($mockConn, 'user123');
 
         $this->assertTrue(true);
     }
