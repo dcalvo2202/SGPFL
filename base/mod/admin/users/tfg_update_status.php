@@ -70,7 +70,7 @@ try {
                    SET status = ?, reviewed_by = ?, reviewed_at = NOW(), admin_comments = ? 
                    WHERE id = ?";
     $stmt_update = $conn->prepare($sql_update);
-    $stmt_update->bind_param("sssi", $main_table_status, $reviewer_id, $comments, $proposal_id);
+    $stmt_update->bind_param("sssi", $review_status, $reviewer_id, $comments, $proposal_id);
     $stmt_update->execute();
 
     // 3. Si la propuesta fue APROBADA, crear automáticamente el timeline del proyecto
