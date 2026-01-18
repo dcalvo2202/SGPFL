@@ -4,7 +4,9 @@
         "php-mock/php-mock-phpunit": "^2.7"
     },
     "scripts": {
-        "test": "phpunit --colors=always --testdox"
+        "test": "phpunit -c phpunit.unit.xml --colors=always --testdox",
+        "test:unit": "phpunit -c phpunit.unit.xml --colors=always --testdox",
+        "test:integration": "phpunit -c phpunit.integration.xml --colors=always --testdox"
     },
     "require": {
         "php-webdriver/webdriver": "^1.1"
