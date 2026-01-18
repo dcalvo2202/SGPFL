@@ -168,6 +168,61 @@ try {
                 </div>
             </div>
 
+            <!-- ===================== SECCIÓN ESTUDIANTE A ASESORAR ===================== -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h3><i class="bi bi-mortarboard-fill"></i> Estudiante a asesorar</h3>
+                </div>
+                <div class="section-body">
+
+                    <div class="alert-tfg alert-tfg-info mb-3">
+                        <i class="bi bi-info-circle"></i>
+                        <div>
+                            <strong>Instrucciones:</strong> Busque y seleccione el estudiante al que desea asesorar en su Trabajo Final de Graduación.
+                        </div>
+                    </div>
+
+                    <div class="form-group-tfg">
+                        <label class="form-label-tfg" for="inp-search-student">
+                            <i class="bi bi-search"></i> Buscar estudiante *
+                        </label>
+                        <div class="search-student-container">
+                            <div class="input-group">
+                                <input type="text" class="form-control-tfg" id="inp-search-student" 
+                                       placeholder="Escriba el nombre o cédula del estudiante..." autocomplete="off">
+                                <button type="button" class="btn btn-primary" id="btn-search-student">
+                                    <i class="bi bi-search"></i> Buscar
+                                </button>
+                            </div>
+                            <small class="text-muted">Ingrese al menos 2 caracteres para iniciar la búsqueda</small>
+                        </div>
+                    </div>
+
+                    <!-- Resultados de búsqueda -->
+                    <div id="div-search-student-results" class="search-results-container" style="display: none;"></div>
+
+                    <!-- Estudiante seleccionado -->
+                    <div id="div-selected-student" class="selected-student-container" style="display: none;">
+                        <label class="form-label-tfg">
+                            <i class="bi bi-person-check-fill text-success"></i> Estudiante seleccionado
+                        </label>
+                        <div class="selected-student-card">
+                            <div class="student-info">
+                                <span id="selected-student-name"></span>
+                                <small id="selected-student-email" class="text-muted"></small>
+                            </div>
+                            <button type="button" class="btn btn-sm btn-outline-danger" id="btn-remove-student" title="Quitar estudiante">
+                                <i class="bi bi-x-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Campo oculto para el ID del estudiante -->
+                    <input type="hidden" id="inp-linked-student-id" name="linked_student_id" value="">
+
+                </div>
+            </div>
+
             <div class="section-card">
                 <div class="section-header">
                     <h3><i class="bi bi-file-earmark-arrow-up-fill"></i> Documentos</h3>
@@ -426,7 +481,152 @@ try {
             bindCustomSingleFileInput('inp-cv', 'Seleccionar archivo', 'Ningún archivo seleccionado');
             bindCustomSingleFileInput('inp-id-copy', 'Seleccionar archivo', 'Ningún archivo seleccionado');
             bindFormValidationFallback();
+            initStudentSearch();
         });
+
+        // ===== Búsqueda de Estudiante =====
+        function initStudentSearch() {
+            const searchInput = document.getElementById('inp-search-student');
+            const searchBtn = document.getElementById('btn-search-student');
+            const resultsDiv = document.getElementById('div-search-student-results');
+            const selectedDiv = document.getElementById('div-selected-student');
+            const hiddenInput = document.getElementById('inp-linked-student-id');
+            const selectedName = document.getElementById('selected-student-name');
+            const selectedEmail = document.getElementById('selected-student-email');
+            const removeBtn = document.getElementById('btn-remove-student');
+
+            if (!searchInput || !searchBtn || !resultsDiv) return;
+
+            let searchTimeout = null;
+
+            // Búsqueda mientras escribe (debounced)
+            searchInput.addEventListener('input', function () {
+                clearTimeout(searchTimeout);
+                const term = this.value.trim();
+
+                if (term.length < 2) {
+                    resultsDiv.style.display = 'none';
+                    resultsDiv.innerHTML = '';
+                    return;
+                }
+
+                searchTimeout = setTimeout(() => searchStudents(term), 300);
+            });
+
+            // Búsqueda al presionar Enter
+            searchInput.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const term = this.value.trim();
+                    if (term.length >= 2) {
+                        searchStudents(term);
+                    }
+                }
+            });
+
+            // Búsqueda al hacer clic en botón
+            searchBtn.addEventListener('click', function () {
+                const term = searchInput.value.trim();
+                if (term.length >= 2) {
+                    searchStudents(term);
+                } else {
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Búsqueda',
+                        text: 'Ingrese al menos 2 caracteres para buscar.',
+                        confirmButtonText: 'Aceptar'
+                    });
+                }
+            });
+
+            // Quitar estudiante seleccionado
+            if (removeBtn) {
+                removeBtn.addEventListener('click', function () {
+                    clearSelection();
+                });
+            }
+
+            function searchStudents(term) {
+                resultsDiv.innerHTML = '<div class="no-results-message"><i class="bi bi-hourglass-split"></i> Buscando...</div>';
+                resultsDiv.style.display = 'block';
+
+                fetch('mod/admin/users/search_users.php?term=' + encodeURIComponent(term))
+                    .then(response => response.json())
+                    .then(data => {
+                        displayResults(data);
+                    })
+                    .catch(error => {
+                        console.error('Error en búsqueda:', error);
+                        resultsDiv.innerHTML = '<div class="no-results-message text-danger"><i class="bi bi-exclamation-circle"></i> Error al buscar estudiantes</div>';
+                    });
+            }
+
+            function displayResults(students) {
+                if (!students || students.length === 0) {
+                    resultsDiv.innerHTML = '<div class="no-results-message"><i class="bi bi-person-x"></i> No se encontraron estudiantes</div>';
+                    return;
+                }
+
+                let html = '';
+                students.forEach(student => {
+                    html += `
+                        <div class="search-result-item" data-id="${escapeHtml(student.id)}" data-name="${escapeHtml(student.nombre)}" data-email="${escapeHtml(student.email)}">
+                            <div class="student-info">
+                                <span class="student-name">${escapeHtml(student.nombre)}</span>
+                                <span class="student-email">${escapeHtml(student.email)}</span>
+                            </div>
+                            <button type="button" class="btn-select">
+                                <i class="bi bi-check-lg"></i> Seleccionar
+                            </button>
+                        </div>
+                    `;
+                });
+                resultsDiv.innerHTML = html;
+
+                // Agregar eventos de clic
+                resultsDiv.querySelectorAll('.search-result-item').forEach(item => {
+                    item.addEventListener('click', function () {
+                        selectStudent(
+                            this.dataset.id,
+                            this.dataset.name,
+                            this.dataset.email
+                        );
+                    });
+                });
+            }
+
+            function selectStudent(id, name, email) {
+                hiddenInput.value = id;
+                selectedName.textContent = name;
+                selectedEmail.textContent = email;
+                selectedDiv.style.display = 'block';
+                resultsDiv.style.display = 'none';
+                searchInput.value = '';
+
+                // Feedback visual
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Estudiante seleccionado',
+                    text: name,
+                    timer: 1500,
+                    showConfirmButton: false
+                });
+            }
+
+            function clearSelection() {
+                hiddenInput.value = '';
+                selectedName.textContent = '';
+                selectedEmail.textContent = '';
+                selectedDiv.style.display = 'none';
+            }
+
+            function escapeHtml(text) {
+                if (!text) return '';
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+        }
     })();
 </script>
 </body>

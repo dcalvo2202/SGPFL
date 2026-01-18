@@ -39,19 +39,21 @@ if (!in_array($filtro_status, $allowed_filters)) {
 
 try {
     // $id_con viene de inc/db/db.php
-    $sql = "SELECT id, applicant_id, full_name, email, telefono, institution, specialization,
-                   cv_file_name, cv_file_size, id_copy_file_name, id_copy_file_size,
-                   status, rejection_count, approval_expires_at, admin_comments, 
-                   reviewed_by, reviewed_at, created_at, updated_at
-            FROM external_advisor_profile_requests";
+    $sql = "SELECT ear.id, ear.applicant_id, ear.full_name, ear.email, ear.telefono, ear.institution, ear.specialization,
+                   ear.cv_file_name, ear.cv_file_size, ear.id_copy_file_name, ear.id_copy_file_size,
+                   ear.status, ear.rejection_count, ear.approval_expires_at, ear.admin_comments, 
+                   ear.reviewed_by, ear.reviewed_at, ear.created_at, ear.updated_at,
+                   ear.linked_student_id, u.nombre AS linked_student_name
+            FROM external_advisor_profile_requests ear
+            LEFT JOIN sis_user u ON ear.linked_student_id = u.id";
     
     if ($filtro_status === 'Pendiente') {
         // Buscar "En Revision" o "En Revisión" (con o sin tilde)
-        $sql .= " WHERE (status = 'En Revision' OR status = 'En Revisión')";
+        $sql .= " WHERE (ear.status = 'En Revision' OR ear.status = 'En Revisión')";
     } elseif ($filtro_status !== 'Todos') {
-        $sql .= " WHERE status = '" . mysqli_real_escape_string($id_con, $filtro_status) . "'";
+        $sql .= " WHERE ear.status = '" . mysqli_real_escape_string($id_con, $filtro_status) . "'";
     }
-    $sql .= " ORDER BY created_at DESC";
+    $sql .= " ORDER BY ear.created_at DESC";
 
     $result = mysqli_query($id_con, $sql);
     if ($result) {
@@ -248,6 +250,15 @@ function formatBytes($bytes) {
                                     <p><span class="info-label">Teléfono:</span> <?= htmlspecialchars($sol['telefono'] ?: 'No especificado') ?></p>
                                     <p><span class="info-label">Institución:</span> <?= htmlspecialchars($sol['institution']) ?></p>
                                     <p><span class="info-label">Especialización:</span> <?= htmlspecialchars($sol['specialization']) ?></p>
+                                    <p>
+                                        <span class="info-label"><i class="bi bi-mortarboard-fill text-primary"></i> Estudiante a asesorar:</span>
+                                        <?php if (!empty($sol['linked_student_name'])): ?>
+                                            <span class="badge bg-info"><?= htmlspecialchars($sol['linked_student_name']) ?></span>
+                                            <small class="text-muted">(ID: <?= htmlspecialchars($sol['linked_student_id']) ?>)</small>
+                                        <?php else: ?>
+                                            <span class="text-muted">No especificado</span>
+                                        <?php endif; ?>
+                                    </p>
                                 </div>
                                 <div class="col-md-6">
                                     <p>

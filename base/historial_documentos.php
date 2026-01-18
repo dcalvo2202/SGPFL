@@ -24,6 +24,41 @@ if ($current_user_rol != 4 && $current_user_rol != 5 && $current_user_rol != 1) 
     exit;
 }
 
+// =============================== DETERMINAR ID DEL ESTUDIANTE A CONSULTAR ===============================
+// Para asesores externos (rol 5), obtener el estudiante vinculado
+$target_student_id = $current_user_id; // Por defecto, el mismo usuario
+$linked_student_name = '';
+$is_external_advisor = ($current_user_rol == 5);
+
+if ($is_external_advisor) {
+    try {
+        $conn = new mysqli($db_host, $usuario, $clave, $db);
+        $conn->set_charset("utf8");
+        
+        // Buscar el estudiante vinculado al asesor externo aprobado
+        $sql = "SELECT ear.linked_student_id, u.nombre as student_name
+                FROM external_advisor_profile_requests ear
+                LEFT JOIN sis_user u ON ear.linked_student_id = u.id
+                WHERE ear.applicant_id = ? 
+                AND ear.status = 'Aprobado'
+                AND ear.linked_student_id IS NOT NULL
+                LIMIT 1";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $current_user_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($row = $result->fetch_assoc()) {
+            $target_student_id = $row['linked_student_id'];
+            $linked_student_name = $row['student_name'];
+        }
+        $stmt->close();
+        $conn->close();
+    } catch (Exception $e) {
+        error_log("Error obteniendo estudiante vinculado: " . $e->getMessage());
+    }
+}
+
 function formatoLegible($mime_type) {
     // Normalizar a minúsculas para comparaciones más fáciles
     $mime = strtolower($mime_type);
@@ -56,7 +91,7 @@ function formatoLegible($mime_type) {
 
 // =============================== OBTENER ID DE PROYECTO ===============================
 
-// Buscar el project_id asociado al usuario autenticado
+// Buscar el project_id asociado al estudiante (propio o vinculado)
 $project_id = 0;
 try {
     $conn = new mysqli($db_host, $usuario, $clave, $db);
@@ -67,7 +102,7 @@ try {
             WHERE tp.user_id = ?
             LIMIT 1";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $current_user_id);
+    $stmt->bind_param("s", $target_student_id);
     $stmt->execute();
     $stmt->bind_result($project_id);
     $stmt->fetch();
@@ -90,7 +125,7 @@ try {
             ORDER BY tp.created_at DESC
             LIMIT 1";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $current_user_id);
+    $stmt->bind_param("s", $target_student_id);
     $stmt->execute();
     $result = $stmt->get_result();
     if ($row = $result->fetch_assoc()) {
@@ -125,7 +160,7 @@ try {
         LIMIT 4"; // Limitamos a 5 versiones
         
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("si", $current_user_id, $propuesta_principal_id);
+    $stmt->bind_param("si", $target_student_id, $propuesta_principal_id);
     $stmt->execute();
     $result = $stmt->get_result();
     
@@ -154,7 +189,7 @@ try {
             ORDER BY fd.submitted_at DESC
             LIMIT 1";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $current_user_id);
+    $stmt->bind_param("s", $target_student_id);
     $stmt->execute();
     $result = $stmt->get_result();
     
@@ -204,7 +239,7 @@ if (!empty($doc_final_ids)) {
                     LIMIT 4"; // Limitamos a 5 versiones
                     
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssi", $doc_info['document_type'], $current_user_id, $doc_info['file_id']);
+            $stmt->bind_param("ssi", $doc_info['document_type'], $target_student_id, $doc_info['file_id']);
             $stmt->execute();
             $result = $stmt->get_result();
             
@@ -250,7 +285,7 @@ try {
             ORDER BY upload_date DESC";
             
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $current_user_id);
+    $stmt->bind_param("s", $target_student_id);
     $stmt->execute();
     $result = $stmt->get_result();
     
@@ -288,6 +323,27 @@ try {
     <main class="flex-fill">
         <div class="container my-4">
             <h1 class="text-center mb-4" style="color: #b00; font-size: 2.5rem;">Historial de documentos</h1>
+            
+            <?php if ($is_external_advisor && !empty($linked_student_name)): ?>
+            <!-- Banner informativo para asesor externo -->
+            <div class="alert alert-info d-flex align-items-center mb-4" role="alert" style="font-size: 1.1rem;">
+                <i class="bi bi-mortarboard-fill me-3" style="font-size: 1.5rem;"></i>
+                <div>
+                    <strong>Visualizando documentos del estudiante:</strong> <?= htmlspecialchars($linked_student_name) ?>
+                    <br><small class="text-muted">Como asesor externo, puede ver los documentos de su estudiante asignado (solo lectura).</small>
+                </div>
+            </div>
+            <?php elseif ($is_external_advisor && empty($linked_student_name)): ?>
+            <!-- Mensaje cuando no hay estudiante vinculado -->
+            <div class="alert alert-warning d-flex align-items-center mb-4" role="alert" style="font-size: 1.1rem;">
+                <i class="bi bi-exclamation-triangle-fill me-3" style="font-size: 1.5rem;"></i>
+                <div>
+                    <strong>Sin estudiante vinculado</strong>
+                    <br><small>No tiene un estudiante asociado aprobado. Contacte a la Subdirección si cree que esto es un error.</small>
+                </div>
+            </div>
+            <?php endif; ?>
+            
             <div class="table-responsive">
                 <table class="table table-bordered align-middle text-center">
                     <thead class="table-secondary table-responsive">
