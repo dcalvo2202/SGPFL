@@ -50,7 +50,7 @@ include_once(__DIR__ . "/inc/db/db.php");
                 <!-- Debe buscar con el estudiante relacionado a este asesor -->
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>historial_documentos.php'">
+                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>historial_documentos.php'" style="border-left: 4px solid #6c757d;">
                             <div class="card-icon">
                                 <i class="bi bi-clock-history"></i>
                             </div>

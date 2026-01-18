@@ -11,9 +11,6 @@ $user_rol = $mySessionController->getVar("rol");
 // Incluir la configuración de la base de datos
 include __DIR__ . '/../../../inc/db/bdcommon.inc';
 
-// HU-027: Incluir funciones de archivado histórico
-require_once __DIR__ . '/../../../inc/archive_functions.php';
-
 header('Content-Type: application/json');
 
 // --- Validación de seguridad ---
@@ -85,24 +82,6 @@ try {
         $stmt_timeline->close();
         
         error_log("Timeline creado automáticamente para propuesta ID: " . $proposal_id);
-        
-        // HU-027: Archivar propuesta automáticamente cuando se aprueba (Concluido)
-        $archive_result = archiveProposal($conn, $proposal_id, 'Concluido', $reviewer_id);
-        if ($archive_result['success']) {
-            error_log("HU-027: Propuesta ID $proposal_id archivada automáticamente como Concluido");
-        } else {
-            error_log("HU-027: Error archivando propuesta ID $proposal_id: " . $archive_result['message']);
-        }
-    }
-    
-    // HU-027: Si la propuesta fue RECHAZADA, archivar como Cancelado
-    if ($main_table_status === 'Rechazado') {
-        $archive_result = archiveProposal($conn, $proposal_id, 'Cancelado', $reviewer_id);
-        if ($archive_result['success']) {
-            error_log("HU-027: Propuesta ID $proposal_id archivada automáticamente como Cancelado");
-        } else {
-            error_log("HU-027: Error archivando propuesta ID $proposal_id: " . $archive_result['message']);
-        }
     }
 
     // 4. Send email notification

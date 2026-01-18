@@ -129,8 +129,7 @@ try {
                                 <label class="form-label-tfg" for="inp-tipo-tel">
                                     <i class="bi bi-telephone"></i> Tipo de teléfono
                                 </label>
-                                <select class="form-control-tfg" id="inp-tipo-tel" name="id_tipo_tel">
-                                    <option value="">[Seleccione]</option>
+                                <select class="form-control-tfg" id="inp-tipo-tel" name="id_tipo_tel" required>
                                     <?php foreach ($tipo_tel_options as $opt): ?>
                                         <option value="<?= htmlspecialchars($opt['id_tipo_tel']) ?>">
                                             <?= htmlspecialchars($opt['desc_tipo_tel']) ?>

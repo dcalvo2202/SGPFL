@@ -15,6 +15,7 @@ $user_rol = $mySessionController->getVar("rol");
 include __DIR__ . '/../../../inc/db/bdcommon.inc';
 
 include_once(__DIR__ . '/../../../inc/tfg_final_functions.php');
+require_once(__DIR__ . '/../../../inc/archive_functions.php');
 
 // Verificar autenticación y rol (CTFG, gestor academico - rol 3, 2)
 if (!$reviewer_id || ($user_rol != 3 && $user_rol != 2)) {
@@ -140,15 +141,203 @@ try {
     $conn->commit();
     
     // ===============================
+    // ENVIAR CORREO AL ESTUDIANTE (HU-020)
+    // ===============================
+    $email_sent = false;
+    $email_error = '';
+    
+    try {
+        error_log("HU-020: Iniciando envío de correo para documento $document_id, estado: $db_status");
+        
+        // Obtener información del estudiante
+        $sql_student = "SELECT u.email, u.nombre, tp.title 
+                        FROM sis_user u 
+                        INNER JOIN tfg_proposals tp ON tp.user_id = u.id
+                        WHERE u.id = ? AND tp.id = ?";
+        $stmt_student = $conn->prepare($sql_student);
+        if (!$stmt_student) {
+            throw new Exception("Error preparando consulta estudiante: " . $conn->error);
+        }
+        $stmt_student->bind_param("si", $current_doc['submitted_by'], $current_doc['proposal_id']);
+        $stmt_student->execute();
+        $student_info = $stmt_student->get_result()->fetch_assoc();
+        $stmt_student->close();
+        
+        error_log("HU-020: Datos estudiante - Email: " . ($student_info['email'] ?? 'NULL') . ", Nombre: " . ($student_info['nombre'] ?? 'NULL'));
+        
+        if ($student_info && !empty($student_info['email'])) {
+            $student_email = $student_info['email'];
+            $student_name = $student_info['nombre'];
+            $project_title = $student_info['title'];
+            
+            // Configuración del correo (mismo estilo que tfg_update_document.php)
+            $headers = "MIME-Version: 1.0\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8\r\n";
+            $headers .= "From: noreply@una.cr\r\n";
+            $headers .= "Reply-To: escinf@una.cr\r\n";
+            
+            $subject = "Notificación de Revisión de Documento Final de TFG";
+            $status_display = ($new_status === 'Aprobado para Defensa') ? 'Aprobado para Defensa' : 'Correcciones Requeridas';
+            $comments_display = !empty($comments) ? $comments : 'No se proporcionaron comentarios adicionales.';
+            
+            $base_url = "https://localhost/base/";
+            $historial_url = $base_url . "historial_documentos.php";
+            
+            $message_body = '
+            <html>
+            <head>
+            <meta charset="UTF-8">
+            <style>
+                body { font-family: Arial, sans-serif; color: #333; line-height: 1.6; }
+                .container { max-width: 600px; margin: 0 auto; padding: 15px; border: 1px solid #e0e0e0; border-radius: 8px; background-color: #fafafa; }
+                .footer { margin-top: 25px; padding-top: 15px; border-top: 1px solid #ccc; font-size: 13px; color: #555; }
+                .footer img { width: 120px; vertical-align: middle; margin-right: 10px; }
+                .footer td { vertical-align: top; }
+                .divider { border-left: 2px solid #999; width: 1px; }
+                a { color: #0056b3; text-decoration: none; }
+                a:hover { text-decoration: underline; }
+                .comments-box { background-color: #f0f0f0; border-left: 4px solid #0056b3; padding: 10px 15px; margin-top: 10px; }
+                .status-approved { color: #198754; font-weight: bold; }
+                .status-rejected { color: #dc3545; font-weight: bold; }
+            </style>
+            </head>
+            <body>
+            <div class="container">
+                <p>Estimado/a <strong>' . htmlspecialchars($student_name) . '</strong>,</p>
+
+                <p>Le informamos que la <strong>Comisión de Trabajos Finales de Graduación (CTFG)</strong> ha revisado su documento final.</p>
+
+                <p><strong>Detalles de la revisión:</strong></p>
+                <ul>
+                    <li><strong>Proyecto:</strong> ' . htmlspecialchars($project_title) . '</li>
+                    <li><strong>Fecha de revisión:</strong> ' . date("d/m/Y H:i") . '</li>
+                    <li><strong>Resultado:</strong> <span class="' . ($db_status === 'Aprobado' ? 'status-approved' : 'status-rejected') . '">' . htmlspecialchars($status_display) . '</span></li>
+                </ul>
+
+                <p><strong>Comentarios de la comisión:</strong></p>
+                <div class="comments-box">
+                    <p>' . nl2br(htmlspecialchars($comments_display)) . '</p>
+                </div>';
+            
+            // Si fue rechazado, indicar que puede subir correcciones
+            if ($db_status === 'Rechazado') {
+                $message_body .= '
+                <p style="margin-top: 15px; padding: 10px; background-color: #fff3cd; border-left: 4px solid #ffc107;">
+                    <strong>Nota:</strong> Puede subir una versión corregida de su documento desde el panel de estudiante 
+                    atendiendo las observaciones indicadas.
+                </p>';
+            } else {
+                $message_body .= '
+                <p style="margin-top: 15px; padding: 10px; background-color: #d4edda; border-left: 4px solid #198754;">
+                    <strong>¡Felicidades!</strong> Su documento ha sido aprobado. 
+                    Pronto recibirá información sobre los siguientes pasos para la defensa de su TFG.
+                </p>';
+            }
+            
+            $message_body .= '
+                <p>Puede consultar el historial de su TFG ingresando al sistema:</p>
+                <p><a href="' . htmlspecialchars($historial_url) . '">' . htmlspecialchars($historial_url) . '</a></p>
+
+                <div class="footer">
+                <table>
+                    <tr>
+                    <td><img src="http://www.escinf.una.ac.cr/templates/zt_zizia/images/logo.png" alt="Escuela de Informática"></td>
+                    <td class="divider"></td>
+                    <td>
+                        <strong>Escuela de Informática</strong><br>
+                        Tel: <strong>(506) 2562-6363</strong> &nbsp;·&nbsp; Fax: <strong>(506) 2562-6384</strong><br>
+                        <a href="mailto:escinf@una.cr">escinf@una.cr</a><br>
+                        Universidad Nacional · Campus Presbítero Benjamín Núñez<br>
+                        Heredia, Costa Rica
+                    </td>
+                    </tr>
+                </table>
+                <p style="margin-top:10px; font-size:12px; color:#777;">' . date("d/m/Y") . '</p>
+                </div>
+            </div>
+            </body>
+            </html>';
+            
+            // Enviar correo
+            error_log("HU-020: Intentando enviar correo a: $student_email");
+            error_log("HU-020: Subject: $subject");
+            
+            // Capturar errores de mail()
+            $old_error_reporting = error_reporting(E_ALL);
+            $mail_sent = mail($student_email, $subject, $message_body, $headers);
+            error_reporting($old_error_reporting);
+            
+            $email_sent = $mail_sent;
+            
+            if ($mail_sent) {
+                error_log("HU-020: ✓ Correo enviado exitosamente a: $student_email (Estado: $status_display)");
+            } else {
+                $email_error = error_get_last();
+                error_log("HU-020: ✗ Error al enviar correo a: $student_email - " . ($email_error['message'] ?? 'Sin detalle de error'));
+            }
+        } else {
+            error_log("HU-020: No se pudo obtener email del estudiante o está vacío");
+        }
+    } catch (Exception $mail_error) {
+        $email_error = $mail_error->getMessage();
+        error_log("HU-020: Excepción en envío de correo: " . $email_error);
+    }
+    
+    // ===============================
+    // HU-027: ARCHIVAR DOCUMENTO FINAL
+    // ===============================
+    $archived = false;
+    $archive_message = '';
+    
+    if ($db_status === 'Aprobado') {
+        // Primero archivar el documento final
+        $doc_archive_result = archiveFinalDocument($conn, $document_id, $current_doc['proposal_id'], $reviewer_id);
+        
+        // Luego archivar la propuesta completa al histórico como "Concluido"
+        $archive_result = archiveProposal($conn, $current_doc['proposal_id'], 'Concluido', $reviewer_id);
+        $archived = $archive_result['success'];
+        $archive_message = $archive_result['message'];
+        
+        if (!$archived) {
+            error_log("HU-027 Warning: No se pudo archivar propuesta {$current_doc['proposal_id']}: " . $archive_message);
+        }
+        if (!$doc_archive_result['success']) {
+            error_log("HU-027 Warning: No se pudo archivar documento final {$document_id}: " . $doc_archive_result['message']);
+        }
+    }
+    
+    // HU-027: Si fue RECHAZADO, archivar como "Cancelado" y eliminar registro para desbloquear nueva subida
+    if ($db_status === 'Rechazado') {
+        // Archivar el documento final rechazado
+        $doc_archive_result = archiveFinalDocument($conn, $document_id, $current_doc['proposal_id'], $reviewer_id);
+        
+        if ($doc_archive_result['success']) {
+            // Eliminar el registro de tfg_final_documents para que el estudiante pueda subir otro
+            $stmt_delete = $conn->prepare("DELETE FROM tfg_final_documents WHERE id = ?");
+            $stmt_delete->bind_param("i", $document_id);
+            $stmt_delete->execute();
+            $stmt_delete->close();
+            
+            $archived = true;
+            $archive_message = 'Documento archivado. El estudiante puede subir un nuevo documento final.';
+            error_log("HU-027: Documento final $document_id rechazado y archivado. Estudiante desbloqueado para nueva subida.");
+        } else {
+            error_log("HU-027 Warning: No se pudo archivar documento final rechazado {$document_id}: " . $doc_archive_result['message']);
+        }
+    }
+    
+    // ===============================
     // RESPUESTA
     // ===============================
     
     echo json_encode([
         'success' => true, 
-        'message' => 'El estado del documento ha sido actualizado.',
+        'message' => 'El estado del documento ha sido actualizado.' . ($archived ? ' El proyecto ha sido archivado en el histórico.' : ''),
         'document_id' => $document_id,
         'status' => $new_status, // Devolver el estado del frontend para el correo
-        'comments' => $comments
+        'comments' => $comments,
+        'archived' => $archived,
+        'archive_message' => $archive_message
     ]);
 
 } catch (Exception $e) {

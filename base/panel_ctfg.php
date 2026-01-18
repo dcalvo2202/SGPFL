@@ -53,7 +53,7 @@ $avisos_generales = $panel->getAvisos();
                 <div class="row justify-content-center">
                     <!-- Revisar Documentos Finales -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_ctfg_review_final_documents.php'">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_ctfg_review_final_documents.php'" style="border-left: 4px solid #0d6efd;">
                             <div class="card-icon">
                                 <i class="bi bi-file-earmark-check-fill"></i>
                             </div>
@@ -63,7 +63,7 @@ $avisos_generales = $panel->getAvisos();
                     </div>
                     <!-- Aprobar Proyectos -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>proyecto_aprobado.php'">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>proyecto_aprobado.php'" style="border-left: 4px solid #198754;">
                             <div class="card-icon">
                                 <i class="bi bi-check-circle-fill"></i>
                             </div>
@@ -73,7 +73,7 @@ $avisos_generales = $panel->getAvisos();
                     </div>  
                     <!-- Proyectos Registrados -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>ProyectosRegistrados.php'">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>ProyectosRegistrados.php'" style="border-left: 4px solid #ffc107;">
                             <div class="card-icon">
                                 <i class="bi bi-list-task"></i>
                             </div>

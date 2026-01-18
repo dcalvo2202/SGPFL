@@ -436,3 +436,87 @@ function getArchivedDocument($conn, $archived_proposal_id, $user_id) {
     
     return $doc;
 }
+/**
+ * Archiva un documento final TFG
+ * Se llama cuando el documento final es aprobado para defensa
+ * 
+ * @param mysqli $conn Conexión a la base de datos
+ * @param int $document_id ID del documento final
+ * @param int $proposal_id ID de la propuesta asociada
+ * @param string $archived_by Usuario que archiva
+ * @return array ['success' => bool, 'message' => string]
+ */
+function archiveFinalDocument($conn, $document_id, $proposal_id, $archived_by = null) {
+    try {
+        // Obtener datos del documento final
+        $stmt = $conn->prepare("
+            SELECT fd.id, fd.proposal_id, fd.file_id, fd.status, fd.submitted_by, fd.submitted_at,
+                   f.file_name, f.mime_type, f.file_size, f.file_data, f.version
+            FROM tfg_final_documents fd
+            INNER JOIN tfg_files f ON fd.file_id = f.id
+            WHERE fd.id = ?
+        ");
+        $stmt->bind_param("i", $document_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($result->num_rows === 0) {
+            $stmt->close();
+            return ['success' => false, 'message' => 'Documento final no encontrado'];
+        }
+        
+        $doc = $result->fetch_assoc();
+        $stmt->close();
+        
+        // Comprimir el documento
+        $compressed = compressData($doc['file_data']);
+        
+        // Insertar en tfg_files_archive
+        $archive_stmt = $conn->prepare("
+            INSERT INTO tfg_files_archive (
+                original_file_id, original_proposal_id, file_name, mime_type,
+                original_size, compressed_size, file_data, is_compressed,
+                document_type, uploaded_by, original_created_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, 1, 'Documento Final TFG', ?, ?)
+        ");
+        
+        $null_blob = null;
+        $archive_stmt->bind_param(
+            "iissiisss",
+            $doc['file_id'],
+            $proposal_id,
+            $doc['file_name'],
+            $doc['mime_type'],
+            $compressed['original_size'],
+            $compressed['compressed_size'],
+            $null_blob,
+            $doc['submitted_by'],
+            $doc['submitted_at']
+        );
+        
+        // Enviar el blob comprimido
+        if ($compressed['data'] !== null) {
+            $archive_stmt->send_long_data(6, $compressed['data']);
+        }
+        
+        if (!$archive_stmt->execute()) {
+            throw new Exception("Error al archivar documento final: " . $archive_stmt->error);
+        }
+        $archive_stmt->close();
+        
+        // HU-027: Liberar espacio - poner blob a NULL en tfg_files original
+        $update_stmt = $conn->prepare("UPDATE tfg_files SET file_data = NULL WHERE id = ?");
+        $update_stmt->bind_param("i", $doc['file_id']);
+        if (!$update_stmt->execute()) {
+            error_log("HU-027 Warning: No se pudo limpiar blob de tfg_files ID {$doc['file_id']}");
+        }
+        $update_stmt->close();
+        
+        error_log("HU-027: Documento final $document_id archivado exitosamente, blob liberado");
+        return ['success' => true, 'message' => 'Documento final archivado'];
+        
+    } catch (Exception $e) {
+        error_log("HU-027 Error archivando documento final: " . $e->getMessage());
+        return ['success' => false, 'message' => $e->getMessage()];
+    }
+}

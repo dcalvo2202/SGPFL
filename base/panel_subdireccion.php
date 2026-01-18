@@ -125,7 +125,7 @@ try {
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-lg-4">
                         <!-- Tarjeta que redirige al panel de revisión de propuestas -->
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_revision_tfg.php'">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_revision_tfg.php'" style="border-left: 4px solid #dc3545;">
                             <div class="card-icon">
                                 <i class="bi bi-clipboard2-check-fill"></i>
                             </div>
@@ -135,7 +135,7 @@ try {
                     </div>
                     <!-- Aprobar Proyectos -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>proyecto_aprobado.php'">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>proyecto_aprobado.php'" style="border-left: 4px solid #198754;">
                             <div class="card-icon">
                                 <i class="bi bi-check-circle-fill"></i>
                             </div>
@@ -145,7 +145,7 @@ try {
                     </div> 
                     <!-- Revisar Documentos Finales -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_ctfg_review_final_documents.php'">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_ctfg_review_final_documents.php'" style="border-left: 4px solid #0d6efd;">
                             <div class="card-icon">
                                 <i class="bi bi-file-earmark-check-fill"></i>
                             </div>
@@ -155,7 +155,7 @@ try {
                     </div>
                     <!-- Proyectos Registrados -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>ProyectosRegistrados.php'">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>ProyectosRegistrados.php'" style="border-left: 4px solid #ffc107;">
                             <div class="card-icon">
                                 <i class="bi bi-list-task"></i>
                             </div>
@@ -171,6 +171,19 @@ try {
                             </div>
                             <h5>Archivo Histórico</h5>
                             <p>Consultar proyectos concluidos o cancelados (Art. 68 RGPEA).</p>
+                        </div>
+                    </div>
+                    <!-- HU-012: Revisar Solicitudes de Asesor Externo -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_revisar_asesor_externo.php'" style="border-left: 4px solid #17a2b8;">
+                            <div class="card-icon" style="color: #17a2b8;">
+                                <i class="bi bi-person-badge-fill"></i>
+                            </div>
+                            <h5>Asesores Externos</h5>
+                            <p>Revisar y aprobar solicitudes de perfil académico de asesores externos.</p>
+                            <?php if ($external_profiles_pending > 0): ?>
+                                <span class="badge bg-warning text-dark"><?= (int)$external_profiles_pending ?> pendiente(s)</span>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
