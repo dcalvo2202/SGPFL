@@ -190,15 +190,15 @@ try {
                 
             </div>
             <!-- =============================== GESTIÓN DE ACTAS =============================== -->
-            <!-- div class="quick-actions-section mt-5">
+            <div class="quick-actions-section mt-5">
                 <h2 class="section-title mb-4 text-center">
                     <i class="bi bi-file-earmark-text-fill text-rojo-una"></i>
                     Gestión de Actas de Examen Final
                 </h2>
 
-                <div class="row justify-content-center" -->
+                <div class="row justify-content-center">
                     <!-- Generar nueva acta -->
-                    <!-- div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4">
                         <div class="quick-action-card" onclick="location.href='<?= $base_url ?>generar_acta.php'">
                             <div class="card-icon">
                                 <i class="bi bi-file-earmark-plus-fill"></i>
@@ -206,10 +206,10 @@ try {
                             <h5>Generar Nueva Acta</h5>
                             <p>Crear acta de examen público en formato PDF.</p>
                         </div>
-                    </div -->
+                    </div>
             
                     <!-- Ver listado de actas -->
-                    <!-- div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4">
                         <div class="quick-action-card" onclick="location.href='<?= $base_url ?>listar_actas.php'">
                             <div class="card-icon">
                                 <i class="bi bi-collection-fill"></i>
@@ -219,7 +219,7 @@ try {
                         </div>
                     </div>
                 </div>
-            </div-->
+            </div>
         </div>
     </main>
 
