@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost
 Source Server Version : 50719
 Source Host           : localhost:3306
-Source Database       : base
+Source Database       : base_db
 
 Target Server Type    : MYSQL
 Target Server Version : 50719
 File Encoding         : 65001
 
-Date: 2025-09-16 09:56:20
+Date: 2026-01-20 12:00:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -2491,7 +2491,11 @@ CREATE TABLE `external_advisor_profile_requests` (
   `id_copy_mime_type` varchar(100) NOT NULL,
   `id_copy_file_size` int(11) NOT NULL,
 
-  `status` enum('En Revisión','Aprobado','Rechazado') NOT NULL DEFAULT 'En Revisión',
+  `status` enum('En Revision','Aprobado','Rechazado') NOT NULL DEFAULT 'En Revision',
+  `rejection_count` int(11) DEFAULT 0 COMMENT 'Contador de rechazos (máximo 2 antes de bloqueo)',
+  `approval_expires_at` datetime DEFAULT NULL COMMENT 'Fecha de vencimiento de la aprobación',
+  `linked_proposal_id` int(11) DEFAULT NULL COMMENT 'FK a tfg_proposals (propuesta vinculada)',
+  `linked_student_id` varchar(50) DEFAULT NULL COMMENT 'ID del estudiante a asesorar',
   `admin_comments` text DEFAULT NULL,
   `reviewed_by` varchar(50) DEFAULT NULL,
   `reviewed_at` datetime DEFAULT NULL,
@@ -2500,6 +2504,8 @@ CREATE TABLE `external_advisor_profile_requests` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_external_advisor_request_applicant` (`applicant_id`),
   KEY `idx_external_advisor_request_status` (`status`),
+  KEY `idx_approval_expires` (`approval_expires_at`),
+  KEY `idx_linked_proposal` (`linked_proposal_id`),
   KEY `fk_external_advisor_request_reviewer` (`reviewed_by`),
   CONSTRAINT `fk_external_advisor_request_reviewer` FOREIGN KEY (`reviewed_by`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -2624,15 +2630,14 @@ DROP TABLE IF EXISTS `archive_audit_log`;
 CREATE TABLE `archive_audit_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` varchar(50) NOT NULL COMMENT 'Usuario que accede',
-  `action_type` enum('VIEW_LIST','VIEW_DETAIL','DOWNLOAD','DOWNLOAD_FILE','SEARCH') NOT NULL,
+  `action_type` enum('VIEW','DOWNLOAD','SEARCH') NOT NULL,
   `archived_proposal_id` int(11) DEFAULT NULL COMMENT 'Propuesta archivada accedida',
   `archived_project_id` int(11) DEFAULT NULL COMMENT 'Proyecto archivado accedido',
   `details` text DEFAULT NULL COMMENT 'Detalles adicionales (filtros, etc.)',
   `ip_address` varchar(45) DEFAULT NULL COMMENT 'IP del cliente',
-  `accessed_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_user_id` (`user_id`),
-  KEY `idx_action_type` (`action_type`),
-  KEY `idx_accessed_at` (`accessed_at`),
-  KEY `idx_archived_proposal` (`archived_proposal_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  KEY `idx_action` (`action_type`),
+  KEY `idx_created` (`created_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci COMMENT='Log de auditoría para accesos al archivo histórico (Art. 68 RGPEA)';
