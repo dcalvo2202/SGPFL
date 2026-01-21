@@ -52,7 +52,7 @@ try {
     $can_download = false;
     if ($row['user_id'] === $current_user_id) {
         $can_download = true;
-    } elseif ($current_user_rol == 1 || $current_user_rol == 2) {
+    } elseif ($current_user_rol == 1 || $current_user_rol == 2 || $current_user_rol == 5) {
         $can_download = true;
     } elseif ($current_user_rol == 3) {
         $can_download = true;
