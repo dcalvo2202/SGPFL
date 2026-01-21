@@ -179,8 +179,9 @@ try {
         @mail($solicitud['email'], $subject, $message_body, $headers);
 
         // ============================
-        // NOTIFICAR A LA CTFG (rol 3)
+        // NOTIFICAR A LA CTFG (rol 3) - DESACTIVADO
         // ============================
+        /*
         try {
             $stmt_ctfg = $conn->prepare("SELECT u.email, u.nombre FROM sis_user u 
                                           INNER JOIN sis_login l ON u.id = l.id 
@@ -218,6 +219,7 @@ try {
         } catch (Exception $e) {
             error_log("Error al notificar a CTFG: " . $e->getMessage());
         }
+        */
         
         error_log("APROBACIÓN EXITOSA: Asesor Externo {$solicitud['full_name']} ({$solicitud['applicant_id']}) - Usuario creado en sis_login y sis_user");
 

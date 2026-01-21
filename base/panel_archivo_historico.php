@@ -95,16 +95,24 @@ $archived_proposals = getArchivedProposals($conn, $filters);
         }
     </style>
 </head>
-<body>
+<body class="fondo-una d-flex flex-column min-vh-100">
+    <!-- =============================== HEADER =============================== -->
     <?php include('header.php'); ?>
     
+    <!-- =============================== CONTENIDO PRINCIPAL =============================== -->
+    <main class="flex-fill">
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-12">
                 <div class="card shadow">
-                    <div class="card-header bg-secondary text-white d-flex align-items-center">
-                        <i class="bi bi-archive-fill me-2" style="font-size: 1.5rem;"></i>
-                        <h4 class="mb-0" style="color: white !important;">Archivo Histórico de Proyectos</h4>
+                    <div class="card-header bg-secondary text-white d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-archive-fill me-2" style="font-size: 1.5rem;"></i>
+                            <h4 class="mb-0" style="color: white !important;">Archivo Histórico de Proyectos</h4>
+                        </div>
+                        <a href="<?= htmlspecialchars($base_url) ?>dashboard.php" class="btn btn-warning btn-sm">
+                            <i class="bi bi-arrow-left"></i> Volver al Panel Principal
+                        </a>
                     </div>
                     
                     <div class="card-body">
@@ -248,7 +256,9 @@ $archived_proposals = getArchivedProposals($conn, $filters);
             </div>
         </div>
     </div>
+    </main>
     
+    <!-- =============================== FOOTER =============================== -->
     <?php include('footer.php'); ?>
     
     <script>
