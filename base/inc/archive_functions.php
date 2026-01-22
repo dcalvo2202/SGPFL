@@ -140,13 +140,26 @@ function archiveProposal($conn, $proposal_id, $archive_reason, $archived_by = nu
         // 6. Liberar espacio: poner document a NULL en la propuesta original
         // Mantenemos el registro para integridad referencial con tablas dependientes
         // (tfg_proposal_history, tfg_project_timeline, etc.) pero liberamos el BLOB
-        $update_stmt = $conn->prepare("UPDATE tfg_proposals SET document = NULL, status = ? WHERE id = ?");
-        $archived_status = $archive_reason; // 'Concluido' o 'Cancelado'
+        $update_stmt = $conn->prepare("UPDATE tfg_final_documents SET status = ? WHERE proposal_id = ?");
+        // Determinar nuevo estado basado en razón de archivado
+        if ($archive_reason === 'Concluido') {
+            $archived_status = 'Aprobado';
+        } else {
+            $archived_status = 'Rechazado';
+        }
         $update_stmt->bind_param("si", $archived_status, $proposal_id);
+        
+        if (!$update_stmt->execute()) {
+            throw new Exception("Error al actualizar documento final: " . $update_stmt->error);
+        }
+
+        $update_stmt = $conn->prepare("UPDATE tfg_proposals SET document = NULL WHERE id = ?");
+        $update_stmt->bind_param("i", $proposal_id);
         
         if (!$update_stmt->execute()) {
             throw new Exception("Error al actualizar propuesta: " . $update_stmt->error);
         }
+
         $update_stmt->close();
         
         $conn->commit();
