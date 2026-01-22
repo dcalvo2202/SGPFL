@@ -122,6 +122,7 @@ try {
     $total_file_size = 0;
     $combined_document_data = '';
     $first_file_name = '';
+    $first_original_file_name = '';
     $first_mime_type = '';
     
     // Crear directorio de uploads una sola vez
@@ -148,6 +149,7 @@ try {
                 // Usar el primer archivo como documento principal
                 if ($i === 0) {
                     $first_file_name = $processed_file['unique_name'];
+                    $first_original_file_name = $processed_file['name'];
                     $first_mime_type = $processed_file['type'];
                     $combined_document_data = $processed_file['content'];
                 }
@@ -165,6 +167,7 @@ try {
         $uploaded_files[] = $processed_file;
         
         $first_file_name = $processed_file['unique_name'];
+        $first_original_file_name = $processed_file['name'];
         $first_mime_type = $processed_file['type'];
         $total_file_size = $processed_file['size'];
         $combined_document_data = $processed_file['content'];
@@ -201,7 +204,8 @@ try {
     
     // Usar datos del primer archivo subido (o valores vacíos si no hay archivos)
     $document_data = !empty($combined_document_data) ? $combined_document_data : null;
-    $file_name = !empty($first_file_name) ? $first_file_name : '';
+    // Guardar el nombre ORIGINAL que subió el usuario (no el nombre único del filesystem)
+    $file_name = !empty($first_original_file_name) ? $first_original_file_name : '';
     $mime_type = !empty($first_mime_type) ? $first_mime_type : '';
     $file_size = $total_file_size;
     
@@ -215,7 +219,7 @@ try {
     }
 
     // IMPORTANTE: Para BLOB, primero bind_param con NULL, luego send_long_data
-    // Usar el nombre de archivo único generado, no el original
+    // El archivo físico se guarda con nombre único, pero en BD guardamos el nombre original del usuario
     // Status se pasa como parámetro para evitar problemas de encoding con caracteres especiales
     $initial_status = TFG_STATUS_PENDING; // 'Pendiente de Revisión' desde constants.php
     $tfg_stmt->bind_param("ssssbssis", $user_id, $title, $disciplines, $description, $null_blob, $file_name, $mime_type, $file_size, $initial_status);
