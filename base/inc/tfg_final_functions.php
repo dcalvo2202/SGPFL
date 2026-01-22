@@ -37,7 +37,7 @@ function canUploadFinalDocument($user_id) {
         $conn->set_charset("utf8");
         
         // 1. Verificar que tiene propuesta aprobada
-        $sql = "SELECT id, status FROM tfg_proposals WHERE user_id = ? AND status IN ('Cumple requisitos', 'Aprobado')";
+        $sql = "SELECT id, status FROM tfg_proposals WHERE user_id = ? AND status IN ('Aprobado')";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $user_id);
         $stmt->execute();

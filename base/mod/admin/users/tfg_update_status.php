@@ -34,17 +34,33 @@ if ($conn->connect_error) {
 try {
     $conn->begin_transaction();
 
-    $proposal_id = $_POST['id'];
-    $review_status = $_POST['status'];
-    $comments = isset($_POST['comments']) ? $_POST['comments'] : '';
+    $proposal_id = (int)$_POST['id'];
+    $review_status = trim((string)$_POST['status']);
+    $comments = isset($_POST['comments']) ? (string)$_POST['comments'] : '';
+
+    // Validar valores contra el ENUM de la BD (deben coincidir exactamente)
+    $allowed_statuses = ['Pendiente de Revisión', 'Cumple requisitos', 'No cumple requisitos', 'Aprobado', 'Rechazado'];
+    if (!in_array($review_status, $allowed_statuses, true)) {
+        throw new Exception('Estado inválido.');
+    }
+
+    // Si se rechaza, exigir observaciones
+    if ($review_status === 'No cumple requisitos' && trim($comments) === '') {
+        throw new Exception('Debe ingresar observaciones para rechazar la propuesta.');
+    }
 
     // 1. Get current proposal data
     $stmt = $conn->prepare("SELECT p.document, p.file_name, p.mime_type, p.file_size, p.title, u.email, u.nombre 
                        FROM tfg_proposals p 
                        JOIN sis_user u ON p.user_id = u.id 
                        WHERE p.id = ?");
+    if (!$stmt) {
+        throw new Exception('Error preparando consulta: ' . $conn->error);
+    }
     $stmt->bind_param("i", $proposal_id);
-    $stmt->execute();
+    if (!$stmt->execute()) {
+        throw new Exception('Error ejecutando consulta: ' . $stmt->error);
+    }
     $result = $stmt->get_result();
     $proposal = $result->fetch_assoc();
 
@@ -53,49 +69,79 @@ try {
     }
 
     // 2. Update main table
-    $main_table_status = '';
-    if ($review_status === 'Cumple Requisitos') {
-        $main_table_status = 'Aprobado';  // Cambio: "Cumple Requisitos" → "Aprobado"
-    } else if ($review_status === 'No Cumple Requisitos') {
-        $main_table_status = 'Rechazado';  // Cambio: "No Cumple Requisitos" → "Rechazado"
-    } else {
-        // Fallback for any other status that might be used
-        $main_table_status = $review_status;
+    // La BD guarda el ENUM original; para mostrar al usuario usamos un texto más claro.
+    $display_status = $review_status;
+    if ($review_status === 'Cumple requisitos') {
+        $display_status = 'Aprobado';
+    } elseif ($review_status === 'No cumple requisitos') {
+        $display_status = 'Rechazado';
     }
 
     $sql_update = "UPDATE tfg_proposals 
                    SET status = ?, reviewed_by = ?, reviewed_at = NOW(), admin_comments = ? 
                    WHERE id = ?";
     $stmt_update = $conn->prepare($sql_update);
+    if (!$stmt_update) {
+        throw new Exception('Error preparando UPDATE: ' . $conn->error);
+    }
     $stmt_update->bind_param("sssi", $review_status, $reviewer_id, $comments, $proposal_id);
-    $stmt_update->execute();
+    if (!$stmt_update->execute()) {
+        throw new Exception('Error ejecutando UPDATE: ' . $stmt_update->error);
+    }
+
+    // Actualizar historial existente (sin insertar nuevas filas)
+    // Se actualiza el registro más reciente del historial para este proposal_id.
+    $history_sql = "UPDATE tfg_proposal_history
+                    SET status = ?, reviewed_by = ?, comments = ?
+                    WHERE proposal_id = ?
+                    ORDER BY created_at DESC, id DESC
+                    LIMIT 1";
+    $stmt_history = $conn->prepare($history_sql);
+    if (!$stmt_history) {
+        throw new Exception('Error preparando UPDATE historial: ' . $conn->error);
+    }
+    $stmt_history->bind_param("sssi", $review_status, $reviewer_id, $comments, $proposal_id);
+    if (!$stmt_history->execute()) {
+        throw new Exception('Error ejecutando UPDATE historial: ' . $stmt_history->error);
+    }
+    if ($stmt_history->affected_rows < 1) {
+        // No existe historial previo; por requerimiento NO insertamos aquí.
+        error_log('Aviso: No se encontró registro en tfg_proposal_history para proposal_id=' . $proposal_id);
+    }
+    $stmt_history->close();
 
     // 3. Si la propuesta fue APROBADA, crear automáticamente el timeline del proyecto
-    if ($main_table_status === 'Aprobado') {
+    if ($review_status === 'Cumple requisitos') {
         // Calcular deadline: 1 año (12 meses) desde la fecha de aprobación
-        $sql_timeline = "INSERT INTO tfg_project_timeline 
+        // Evitar fallo por registro duplicado (UNIQUE proposal_id)
+        $sql_timeline = "INSERT IGNORE INTO tfg_project_timeline 
                         (proposal_id, approval_date, original_deadline, status) 
                         VALUES (?, CURDATE(), DATE_ADD(CURDATE(), INTERVAL 12 MONTH), 'Vigente')";
         $stmt_timeline = $conn->prepare($sql_timeline);
+        if (!$stmt_timeline) {
+            throw new Exception('Error preparando timeline: ' . $conn->error);
+        }
         $stmt_timeline->bind_param("i", $proposal_id);
-        $stmt_timeline->execute();
+        if (!$stmt_timeline->execute()) {
+            throw new Exception('Error creando timeline: ' . $stmt_timeline->error);
+        }
         $stmt_timeline->close();
         
         error_log("Timeline creado automáticamente para propuesta ID: " . $proposal_id);
     }
 
     // 4. Send email notification
-    $to = "calvoss2002@gmail.com";//$proposal['email'];
+    $to = "rodri100ro@gmail.com";//$proposal['email'];
     $subject = "Actualización de estado - Propuesta TFG";
     $message = "Estimado/a " . $proposal['nombre'] . ",\n\n";
     $message .= "Su propuesta de TFG \"" . $proposal['title'] . "\" ha sido revisada.\n\n";
-    $message .= "Nuevo estado: " . $main_table_status . "\n";
+    $message .= "Nuevo estado: " . $display_status . "\n";
     if (!empty($comments)) {
         $message .= "Comentarios: " . $comments . "\n";
     }
     
     // Agregar información del timeline si fue aprobada
-    if ($main_table_status === 'Aprobado') {
+    if ($review_status === 'Cumple requisitos') {
         $message .= "\n¡Su propuesta ha sido aprobada!\n";
         $message .= "A partir de hoy, tiene 12 meses (1 año) para completar su TFG.\n";
         $message .= "Fecha límite: " . date('d/m/Y', strtotime('+12 months')) . "\n";
@@ -105,8 +151,8 @@ try {
     $message .= "\nPuede revisar su propuesta en el panel de estudiante.\n\n";
     $message .= "Saludos,\nEscuela de Informática - UNA";
 
-    $headers = "From: calvoss2002@gmail.com\r\n";
-    $headers .= "Reply-To: calvoss2002@gmail.com\r\n";
+    $headers = "From: rodri100ro@gmail.com\r\n";
+    $headers .= "Reply-To: rodri100ro@gmail.com\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
     
     if (mail($to, $subject, $message, $headers)) {
@@ -126,7 +172,6 @@ try {
     echo json_encode(['success' => false, 'message' => 'Ocurrió un error en el servidor: ' . $e->getMessage()]);
 } finally {
     if (isset($stmt)) $stmt->close();
-    if (isset($stmt_history)) $stmt_history->close();
     if (isset($stmt_update)) $stmt_update->close();
     $conn->close();
 }

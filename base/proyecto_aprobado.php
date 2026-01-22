@@ -79,7 +79,8 @@ $sql_prop = "SELECT
                tp.title
              FROM registered_projects rp
              JOIN tfg_proposals tp ON tp.id = rp.tfg_proposal_id
-             WHERE NOT EXISTS (
+             WHERE tp.status = 'Cumple requisitos'
+               AND NOT EXISTS (
                SELECT 1 FROM proyecto_aprobado pa WHERE pa.nombre = tp.title
              )
              ORDER BY tp.title";
