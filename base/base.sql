@@ -950,7 +950,7 @@ INSERT INTO `sis_login` VALUES ('504430777', '5d7845ac6ee7cfffafc5fe5f35cf666d',
 INSERT INTO `sis_login` VALUES ('118440202', '5d7845ac6ee7cfffafc5fe5f35cf666d', '4');
 INSERT INTO `sis_login` VALUES ('402290345', '5d7845ac6ee7cfffafc5fe5f35cf666d', '4');
 INSERT INTO `sis_login` VALUES ('116440018', '5d7845ac6ee7cfffafc5fe5f35cf666d', '4');
--- Asesor externo
+-- Asesor
 INSERT INTO `sis_login` VALUES ('105710421', '5d7845ac6ee7cfffafc5fe5f35cf666d', '5');
 INSERT INTO `sis_login` VALUES ('800870458', '5d7845ac6ee7cfffafc5fe5f35cf666d', '5');
 INSERT INTO `sis_login` VALUES ('205830110', '5d7845ac6ee7cfffafc5fe5f35cf666d', '5');
@@ -992,7 +992,7 @@ INSERT INTO `sis_user` VALUES ('504430777', upper('Jose Domingo Molina Salas'), 
 INSERT INTO `sis_user` VALUES ('118440202', upper('Larissa Segura Arguello'), 'larissa.segura.arguello@est.una.ac.cr', NULL, NULL);
 INSERT INTO `sis_user` VALUES ('402290345', upper('Esteban Espinoza Fallas'), 'eef251195@gmail.com', NULL, NULL);
 INSERT INTO `sis_user` VALUES ('116440018', upper('Marco Antonio Murillo Sánchez'), 'mmurillo532@gmail.com', NULL, NULL);
--- Asesor externo
+-- Asesor
 INSERT INTO `sis_user` VALUES ('105710421', upper('Georges Alfaro Salazar'), 'georges.alfaro.salazar@una.cr', NULL, NULL);
 INSERT INTO `sis_user` VALUES ('800870458', upper('Darinka Grbic Grbic'), 'darinka.grbic.grbic@una.cr', '88373584', 'M');
 INSERT INTO `sis_user` VALUES ('205830110', upper('Katty Vásquez Ávila'), 'katty.vasquez.avila@una.cr', '88198417', 'M');
@@ -1063,7 +1063,7 @@ INSERT INTO `sis_rolls` VALUES ('1', 'Administrador', 'Permisos totales sobre to
 INSERT INTO `sis_rolls` VALUES ('2', 'Gestor Academico', 'Tiene todos los permisos, excepto los relacionados al control de modulos y permisos de usuarios');
 INSERT INTO `sis_rolls` VALUES ('3', 'CTFG', 'Comisión de trabajos finales de graduación tiene permisos de lectura sobre los documentos de los estudiantes y puede aprobar o rechazar los trabajos finales de graduación');
 INSERT INTO `sis_rolls` VALUES ('4', 'Estudiante', 'Estudiantes de la universidad tiene permisos de lectura y escritura sobre sus documentos y puede enviar solicitudes de trabajos finales de graduación');
-INSERT INTO `sis_rolls` VALUES ('5', 'Asesor externo', 'Tiene acceso de lectura a los modulos del estudiante');
+INSERT INTO `sis_rolls` VALUES ('5', 'Asesor', 'Tiene acceso de lectura a los modulos del estudiante');
 
 -- ----------------------------
 -- Table structure for `sis_permits`
@@ -1134,8 +1134,8 @@ INSERT INTO `sis_permits` (`id_mod`, `id_action`, `id_roll`) VALUES
 (7, 1, 4), (7, 6, 4),
 (8, 1, 4), (8, 3, 4), (8, 4, 4);
 
--- Permisos para Asesor externo
--- Permisos limitados para el rol Asesor externo (id_roll = 5)
+-- Permisos para Asesor
+-- Permisos limitados para el rol Asesor (id_roll = 5)
 INSERT INTO `sis_permits` (`id_mod`, `id_action`, `id_roll`) VALUES
 (1, 1, 5),
 (2, 1, 5),
