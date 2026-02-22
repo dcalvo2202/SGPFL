@@ -7,6 +7,8 @@ Este proyecto usa **PHPUnit** vía **Composer** para ejecutar tests (principalme
 
 ---
 
+Activar la extension zip de `php.ini`.
+
 ## 1) Qué hay actualmente (configuración)
 
 ### Dependencias (Composer)

@@ -16,62 +16,62 @@ class ComposerStaticInit25ade676a4f5f913368ab25f12d0dce1
     );
 
     public static $prefixLengthsPsr4 = array (
-        'p' => 
+        'p' =>
         array (
             'phpmock\\phpunit\\' => 16,
             'phpmock\\integration\\' => 20,
             'phpmock\\' => 8,
         ),
-        'S' => 
+        'S' =>
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\Process\\' => 26,
         ),
-        'P' => 
+        'P' =>
         array (
             'PhpParser\\' => 10,
         ),
-        'F' => 
+        'F' =>
         array (
             'Facebook\\WebDriver\\' => 19,
         ),
-        'D' => 
+        'D' =>
         array (
             'DeepCopy\\' => 9,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'phpmock\\phpunit\\' => 
+        'phpmock\\phpunit\\' =>
         array (
             0 => __DIR__ . '/..' . '/php-mock/php-mock-phpunit/classes',
         ),
-        'phpmock\\integration\\' => 
+        'phpmock\\integration\\' =>
         array (
             0 => __DIR__ . '/..' . '/php-mock/php-mock-integration/classes',
         ),
-        'phpmock\\' => 
+        'phpmock\\' =>
         array (
             0 => __DIR__ . '/..' . '/php-mock/php-mock/classes',
             1 => __DIR__ . '/..' . '/php-mock/php-mock/tests',
         ),
-        'Symfony\\Polyfill\\Mbstring\\' => 
+        'Symfony\\Polyfill\\Mbstring\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
-        'Symfony\\Component\\Process\\' => 
+        'Symfony\\Component\\Process\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/process',
         ),
-        'PhpParser\\' => 
+        'PhpParser\\' =>
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
-        'Facebook\\WebDriver\\' => 
+        'Facebook\\WebDriver\\' =>
         array (
             0 => __DIR__ . '/..' . '/php-webdriver/webdriver/lib',
         ),
-        'DeepCopy\\' => 
+        'DeepCopy\\' =>
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
