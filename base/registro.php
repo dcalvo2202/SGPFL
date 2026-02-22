@@ -175,12 +175,12 @@ try {
                 </div>
                 <div class="section-body">
 
-                    <div class="alert-tfg alert-tfg-info mb-3">
+                    <h5 class="alert-tfg alert-tfg-info mb-3">
                         <i class="bi bi-info-circle"></i>
                         <div>
                             <strong>Instrucciones:</strong> Busque y seleccione el estudiante al que desea asesorar en su Trabajo Final de Graduación.
                         </div>
-                    </div>
+                    </h5>
 
                     <div class="form-group-tfg">
                         <label class="form-label-tfg" for="inp-search-student">
@@ -247,12 +247,12 @@ try {
                         <small class="text-muted">Tamaño máximo: 2 MB | Formatos permitidos: PDF, JPG, PNG</small>
                     </div>
 
-                    <h4 class="alert-tfg alert-tfg-info">
+                    <h5 class="alert-tfg alert-tfg-info">
                         <i class="bi bi-info-circle"></i>
                         <div>
                             <strong>Importante:</strong> Esta solicitud no crea una cuenta automáticamente. La Subdirección revisará la información y enviará un correo con el resultado.
                         </div>
-                    </h4>
+                    </h5>
 
                     <div class="text-center mt-4">
 
