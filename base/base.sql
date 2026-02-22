@@ -2623,3 +2623,27 @@ CREATE TABLE `archive_audit_log` (
   KEY `idx_action` (`action_type`),
   KEY `idx_created` (`created_at`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci COMMENT='Log de auditoría para accesos al archivo histórico (Art. 68 RGPEA)';
+
+-- ----------------------------
+-- HU-037: Table structure for `user_alerts`
+-- Sistema de alertas/notificaciones internas
+-- ----------------------------
+DROP TABLE IF EXISTS `user_alerts`;
+CREATE TABLE `user_alerts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(50) NOT NULL COMMENT 'Usuario destinatario de la alerta',
+  `subject` varchar(255) NOT NULL COMMENT 'Asunto de la alerta',
+  `message` text NOT NULL COMMENT 'Mensaje detallado',
+  `alert_type` enum('Nueva Propuesta','Propuesta Aprobada','Propuesta Rechazada','Documento Final','Correccion Solicitada','Asesor Aprobado','Asesor Rechazado','Prorroga','Informativa','Sistema') NOT NULL DEFAULT 'Informativa' COMMENT 'Tipo de alerta',
+  `priority` enum('Alta','Media','Baja') DEFAULT 'Media' COMMENT 'Prioridad de la alerta',
+  `related_entity_type` varchar(50) DEFAULT NULL COMMENT 'Tipo de entidad relacionada (proposal, document, etc.)',
+  `related_entity_id` int(11) DEFAULT NULL COMMENT 'ID de la entidad relacionada',
+  `read_at` datetime DEFAULT NULL COMMENT 'Fecha/hora en que se leyó la alerta',
+  `sent_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha/hora de envío',
+  PRIMARY KEY (`id`),
+  KEY `idx_user_id` (`user_id`),
+  KEY `idx_alert_type` (`alert_type`),
+  KEY `idx_priority` (`priority`),
+  KEY `idx_read_at` (`read_at`),
+  KEY `idx_sent_at` (`sent_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci COMMENT='HU-037: Alertas internas del sistema';

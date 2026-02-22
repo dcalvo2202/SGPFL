@@ -150,6 +150,22 @@ try {
         $conn->commit();
 
         // ============================
+        // HU-037: REGISTRAR ALERTA INTERNA
+        // ============================
+        try {
+            require_once __DIR__ . '/inc/alert_functions.php';
+            // Notificar al asesor externo (ahora tiene usuario en el sistema)
+            registerExternalAdvisorApprovedAlert(
+                $conn, 
+                $solicitud['applicant_id'], 
+                $solicitud['full_name'], 
+                date('d/m/Y', strtotime($vigencia_default))
+            );
+        } catch (Exception $alertEx) {
+            error_log("HU-037: Error registrando alerta (no crítico): " . $alertEx->getMessage());
+        }
+
+        // ============================
         // ENVIAR CORREO AL ASESOR
         // ============================
         $subject = 'Solicitud Aprobada - Asesor Externo SGPFL';

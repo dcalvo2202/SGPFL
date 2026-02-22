@@ -331,6 +331,29 @@ try {
 
     // =============================== CONFIRMAR TRANSACCIÓN ===============================
     $conn->commit();
+    
+    // =============================== HU-037: REGISTRAR ALERTAS ===============================
+    // Notificar a Gestores y CTFG sobre la nueva propuesta
+    $alert_count = 0;
+    try {
+        require_once(__DIR__ . '/../../../inc/alert_functions.php');
+        require_once(__DIR__ . '/../../../inc/db/bdcommon.inc');
+        
+        // Crear nueva conexión para alertas (la anterior puede estar en estado inconsistente)
+        $conn_alert = new mysqli($db_host, $usuario, $clave, $db);
+        if ($conn_alert->connect_error) {
+            error_log("HU-037: Error de conexión para alertas: " . $conn_alert->connect_error);
+        } else {
+            $conn_alert->set_charset("utf8");
+            $alert_count = registerProposalSubmittedAlert($conn_alert, $user_name, $title, $tfg_id);
+            error_log("HU-037: Alertas de propuesta enviadas: $alert_count para propuesta $tfg_id");
+            $conn_alert->close();
+        }
+    } catch (Exception $alertEx) {
+        // Las alertas son secundarias, no deben interrumpir el flujo principal
+        error_log("HU-037: Error registrando alertas (no crítico): " . $alertEx->getMessage());
+    }
+    
     $conn->close();
 
     // Limpiar todos los niveles de output buffering

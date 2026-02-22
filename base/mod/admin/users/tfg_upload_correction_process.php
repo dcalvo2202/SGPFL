@@ -209,6 +209,36 @@ try {
     
     // Confirmar transacción
     $conn->commit();
+    
+    // ===============================
+    // HU-037: REGISTRAR ALERTA INTERNA
+    // ===============================
+    try {
+        require_once __DIR__ . '/../../../inc/alert_functions.php';
+        
+        // Obtener nombre del estudiante y título para la alerta
+        $sql_info = "SELECT u.nombre, tp.title 
+                     FROM sis_user u 
+                     INNER JOIN tfg_proposals tp ON tp.user_id = u.id
+                     WHERE u.id = ? AND tp.id = ?";
+        $stmt_info = $conn->prepare($sql_info);
+        $stmt_info->bind_param("si", $current_user_id, $current_doc['proposal_id']);
+        $stmt_info->execute();
+        $info_result = $stmt_info->get_result()->fetch_assoc();
+        $stmt_info->close();
+        
+        if ($info_result) {
+            registerCorrectionSubmittedAlert(
+                $conn, 
+                $info_result['nombre'], 
+                $info_result['title'], 
+                $document_id
+            );
+        }
+    } catch (Exception $alertEx) {
+        error_log("HU-037: Error registrando alerta (no crítico): " . $alertEx->getMessage());
+    }
+    
     $conn->close();
     
     // ===============================

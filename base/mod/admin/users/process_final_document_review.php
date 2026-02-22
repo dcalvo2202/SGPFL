@@ -147,6 +147,35 @@ try {
     $conn->commit();
     
     // ===============================
+    // HU-037: REGISTRAR ALERTA INTERNA
+    // ===============================
+    try {
+        require_once __DIR__ . '/../../../inc/alert_functions.php';
+        $student_user_id = $current_doc['submitted_by'];
+        
+        // Obtener título de la propuesta
+        $sql_title = "SELECT title FROM tfg_proposals WHERE id = ?";
+        $stmt_title = $conn->prepare($sql_title);
+        $stmt_title->bind_param("i", $current_doc['proposal_id']);
+        $stmt_title->execute();
+        $title_result = $stmt_title->get_result()->fetch_assoc();
+        $proposal_title = $title_result['title'] ?? 'Tu TFG';
+        $stmt_title->close();
+        
+        if ($db_status === 'Aprobado') {
+            // Documento aprobado para defensa
+            $subject = "¡Tu Documento Final ha sido Aprobado para Defensa!";
+            $message = "Tu documento final de TFG \"$proposal_title\" ha sido aprobado y está listo para la defensa.";
+            registerAlert($conn, $student_user_id, $subject, $message, 'Documento Final', 'Alta', 'document', $document_id);
+        } else {
+            // Correcciones requeridas
+            registerCorrectionRequestedAlert($conn, $student_user_id, $proposal_title, $document_id, $comments);
+        }
+    } catch (Exception $alertEx) {
+        error_log("HU-037: Error registrando alerta (no crítico): " . $alertEx->getMessage());
+    }
+    
+    // ===============================
     // ENVIAR CORREO AL ESTUDIANTE (HU-020)
     // ===============================
     $email_sent = false;

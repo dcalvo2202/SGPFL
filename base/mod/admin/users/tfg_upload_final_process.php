@@ -136,6 +136,47 @@ try {
         error_log("Advertencia: No se pudo enviar notificación a la CTFG para propuesta $proposal_id");
     }
     
+    // ===============================
+    // HU-037: REGISTRAR ALERTA INTERNA
+    // ===============================
+    $alert_count = 0;
+    try {
+        require_once __DIR__ . '/../../../inc/alert_functions.php';
+        require_once __DIR__ . '/../../../inc/db/bdcommon.inc';
+        
+        $conn_alert = new mysqli($db_host, $usuario, $clave, $db);
+        if ($conn_alert->connect_error) {
+            error_log("HU-037: Error de conexión para alertas: " . $conn_alert->connect_error);
+        } else {
+            $conn_alert->set_charset("utf8");
+            
+            // Obtener título de la propuesta
+            $sql_title = "SELECT title FROM tfg_proposals WHERE id = ?";
+            $stmt_title = $conn_alert->prepare($sql_title);
+            $stmt_title->bind_param("i", $proposal_id);
+            $stmt_title->execute();
+            $title_result = $stmt_title->get_result()->fetch_assoc();
+            $proposal_title = $title_result['title'] ?? 'TFG';
+            $stmt_title->close();
+            
+            // Obtener el document_id del resultado o usar el proposal_id
+            $doc_id = isset($save_result['document_id']) ? $save_result['document_id'] : $proposal_id;
+            
+            $alert_count = registerFinalDocumentSubmittedAlert(
+                $conn_alert, 
+                $user_name, 
+                $proposal_title, 
+                $doc_id
+            );
+            
+            error_log("HU-037: Alertas de documento final enviadas: $alert_count");
+            
+            $conn_alert->close();
+        }
+    } catch (Exception $alertEx) {
+        error_log("HU-037: Error registrando alerta (no crítico): " . $alertEx->getMessage());
+    }
+    
     // Responder con éxito
     $message = 'Documento(s) final(es) subido(s) exitosamente. La CTFG ha sido notificada para su revisión.';
     if ($additional_files_saved > 0) {

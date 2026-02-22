@@ -50,7 +50,7 @@ try {
     }
 
     // 1. Get current proposal data
-    $stmt = $conn->prepare("SELECT p.document, p.file_name, p.mime_type, p.file_size, p.title, u.email, u.nombre 
+    $stmt = $conn->prepare("SELECT p.user_id, p.document, p.file_name, p.mime_type, p.file_size, p.title, u.email, u.nombre 
                        FROM tfg_proposals p 
                        JOIN sis_user u ON p.user_id = u.id 
                        WHERE p.id = ?");
@@ -164,6 +164,21 @@ try {
     }
 
     $conn->commit();
+    
+    // =============================== HU-037: REGISTRAR ALERTAS INTERNAS ===============================
+    try {
+        require_once __DIR__ . '/../../../inc/alert_functions.php';
+        $student_user_id = $proposal['user_id'];
+        
+        if ($review_status === 'Cumple requisitos') {
+            registerProposalApprovedAlert($conn, $student_user_id, $proposal['title'], $proposal_id);
+        } elseif ($review_status === 'No cumple requisitos') {
+            registerProposalRejectedAlert($conn, $student_user_id, $proposal['title'], $proposal_id, $comments);
+        }
+    } catch (Exception $alertEx) {
+        error_log("HU-037: Error registrando alerta (no crítico): " . $alertEx->getMessage());
+    }
+    
     echo json_encode(['success' => true, 'message' => 'Estado actualizado correctamente ' . $email_status]);
 
 } catch (Exception $e) {
