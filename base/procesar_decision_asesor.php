@@ -131,6 +131,26 @@ try {
         error_log("ÉXITO sis_user: Perfil de {$nombre_upper} creado");
         $stmt_user->close();
 
+        // ============================
+        // VINCULAR ASESOR CON TODOS LOS ESTUDIANTES DEL GRUPO
+        // ============================
+        $linked_students_info = [];
+        $linked_student_id = $solicitud['linked_student_id'];
+        
+        if (!empty($linked_student_id)) {
+            require_once __DIR__ . '/inc/student_functions.php';
+            
+            // Vincular al asesor con todos los miembros del grupo del estudiante
+            $link_result = linkAdvisorToGroupMembers($conn, $id, $linked_student_id);
+            
+            if ($link_result['success']) {
+                error_log("VINCULACIÓN GRUPAL: Asesor {$solicitud['applicant_id']} vinculado a {$link_result['linked_count']} estudiante(s)");
+                $linked_students_info = $link_result['group_members'] ?? [];
+            } else {
+                error_log("ADVERTENCIA: No se pudo vincular al asesor con el grupo: " . $link_result['message']);
+            }
+        }
+
         // Calcular fecha de vigencia (1 año por defecto, o hasta cierre del TFG si está vinculado)
         // Por defecto: 1 año desde la aprobación
         $vigencia_default = date('Y-m-d H:i:s', strtotime('+1 year'));
@@ -161,6 +181,19 @@ try {
                 $solicitud['full_name'], 
                 date('d/m/Y', strtotime($vigencia_default))
             );
+            
+            // Notificar a los estudiantes que se les asignó el asesor externo
+            if (!empty($linked_students_info)) {
+                foreach ($linked_students_info as $estudiante) {
+                    registerAdvisorAssignedToStudentAlert(
+                        $conn,
+                        $estudiante['id'],
+                        $solicitud['full_name'],
+                        $solicitud['email']
+                    );
+                }
+                error_log("HU-037: Notificaciones enviadas a " . count($linked_students_info) . " estudiantes sobre asignación de asesor");
+            }
         } catch (Exception $alertEx) {
             error_log("HU-037: Error registrando alerta (no crítico): " . $alertEx->getMessage());
         }
@@ -168,6 +201,19 @@ try {
         // ============================
         // ENVIAR CORREO AL ASESOR
         // ============================
+        
+        // Preparar lista de estudiantes vinculados para el correo
+        $estudiantes_lista_html = '';
+        if (!empty($linked_students_info)) {
+            $estudiantes_lista_html = '<p><strong>Estudiantes asignados a su asesoría:</strong></p><ul>';
+            foreach ($linked_students_info as $est) {
+                $tipo = ($est['is_primary'] == 1) ? ' (Principal)' : '';
+                $estudiantes_lista_html .= "<li>{$est['nombre']} - {$est['email']}{$tipo}</li>";
+            }
+            $estudiantes_lista_html .= '</ul>';
+            $estudiantes_lista_html .= '<p><small>Usted podrá ver los documentos de todos los estudiantes del grupo desde su panel.</small></p>';
+        }
+        
         $subject = 'Solicitud Aprobada - Asesor Externo SGPFL';
         $message_body = "
         <html><head><meta charset='UTF-8'></head><body>
@@ -179,6 +225,7 @@ try {
                 <li><strong>Usuario:</strong> {$solicitud['applicant_id']}</li>
                 <li><strong>Contraseña temporal:</strong> {$temp_password}</li>
             </ul>
+            {$estudiantes_lista_html}
             <p><strong>Vigencia de la aprobación:</strong> Hasta " . date('d/m/Y', strtotime($vigencia_default)) . " o hasta el cierre del TFG asignado.</p>
             <p>Por seguridad, le recomendamos cambiar su contraseña después del primer inicio de sesión.</p>
             <p>Puede acceder al sistema en: <a href='{$base_url}login.php'>{$base_url}login.php</a></p>
@@ -239,9 +286,16 @@ try {
         
         error_log("APROBACIÓN EXITOSA: Asesor Externo {$solicitud['full_name']} ({$solicitud['applicant_id']}) - Usuario creado en sis_login y sis_user");
 
+        // Preparar mensaje con información del grupo
+        $linked_count = count($linked_students_info);
+        $grupo_msg = $linked_count > 1 
+            ? " Se vinculó automáticamente con $linked_count estudiantes del grupo TFG."
+            : ($linked_count == 1 ? " Se vinculó con el estudiante asignado." : "");
+
         echo json_encode([
             'success' => true, 
-            'message' => "Solicitud aprobada. Se creó el usuario {$solicitud['applicant_id']} y se notificó a la CTFG."
+            'message' => "Solicitud aprobada. Se creó el usuario {$solicitud['applicant_id']}.{$grupo_msg}",
+            'linked_students_count' => $linked_count
         ]);
 
     } else {

@@ -32,6 +32,8 @@ if (isset($_GET['success']) && $_GET['success'] === 'tfg_created') {
 // --- Obtener estadísticas del usuario autenticado ---
 $total_proposals = 0;
 $approved_proposals = 0;
+$is_group_member = false; // Si el usuario es miembro de un grupo (no líder)
+$group_project_info = null; // Info del proyecto si es miembro
 
 try {
     $conn = new mysqli($db_host, $usuario, $clave, $db);
@@ -41,20 +43,51 @@ try {
     
     $conn->set_charset("utf8");
     
-    $sql_stats = "SELECT status, COUNT(*) as count FROM tfg_proposals WHERE user_id = ? GROUP BY status";
-    $stmt_stats = $conn->prepare($sql_stats);
-    $stmt_stats->bind_param("s", $current_user_id);
-    $stmt_stats->execute();
-    $result_stats = $stmt_stats->get_result();
+    // Primero verificar si el usuario es miembro de algún proyecto (como líder o miembro)
+    $sql_group = "SELECT pm.project_id, pm.role, rp.status as project_status, 
+                         tp.title, tp.user_id as owner_id, tp.status as proposal_status,
+                         u.nombre as owner_name
+                  FROM project_members pm
+                  INNER JOIN registered_projects rp ON pm.project_id = rp.id
+                  INNER JOIN tfg_proposals tp ON rp.tfg_proposal_id = tp.id
+                  LEFT JOIN sis_user u ON tp.user_id = u.id
+                  WHERE pm.user_id = ? AND pm.status = 'Activo'
+                  ORDER BY pm.joined_at DESC
+                  LIMIT 1";
+    $stmt_group = $conn->prepare($sql_group);
+    $stmt_group->bind_param("s", $current_user_id);
+    $stmt_group->execute();
+    $result_group = $stmt_group->get_result();
+    
+    if ($row_group = $result_group->fetch_assoc()) {
+        $group_project_info = $row_group;
+        // Es miembro si NO es el propietario de la propuesta
+        $is_group_member = ($row_group['owner_id'] !== $current_user_id);
+    }
+    $stmt_group->close();
+    
+    // Obtener estadísticas de propuestas (propias o del grupo)
+    if ($is_group_member && $group_project_info) {
+        // Si es miembro, usar las estadísticas del proyecto del grupo
+        $total_proposals = 1;
+        $approved_proposals = ($group_project_info['proposal_status'] === 'Aprobado') ? 1 : 0;
+    } else {
+        // Si es líder o no tiene grupo, buscar sus propias propuestas
+        $sql_stats = "SELECT status, COUNT(*) as count FROM tfg_proposals WHERE user_id = ? GROUP BY status";
+        $stmt_stats = $conn->prepare($sql_stats);
+        $stmt_stats->bind_param("s", $current_user_id);
+        $stmt_stats->execute();
+        $result_stats = $stmt_stats->get_result();
 
-    while($row_stat = $result_stats->fetch_assoc()) {
-        if ($row_stat['status'] === 'Aprobado') {
-            $approved_proposals = $row_stat['count'];
+        while($row_stat = $result_stats->fetch_assoc()) {
+            if ($row_stat['status'] === 'Aprobado') {
+                $approved_proposals = $row_stat['count'];
+            }
+            $total_proposals += $row_stat['count'];
         }
-        $total_proposals += $row_stat['count'];
+        $stmt_stats->close();
     }
     
-    $stmt_stats->close();
     $conn->close();
     
 } catch (Exception $e) {
@@ -103,6 +136,19 @@ try {
                 </h2>
                 
                 <div class="row justify-content-center">
+                    <?php if ($is_group_member && $group_project_info): ?>
+                    <!-- Para miembros de grupo (no líderes), mostrar info del proyecto en lugar de Nueva Propuesta -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>historial_documentos.php'" style="border-left: 4px solid #198754;">
+                            <div class="card-icon">
+                                <i class="bi bi-folder-fill"></i>
+                            </div>
+                            <h5>Mi Proyecto TFG</h5>
+                            <p>Ver documentos del grupo</p>
+                        </div>
+                    </div>
+                    <?php else: ?>
+                    <!-- Para líderes o usuarios sin grupo, mostrar Nueva Propuesta -->
                     <div class="col-md-6 col-lg-4">
                         <div class="quick-action-card" onclick="location.href='<?= $base_url ?>mod/admin/users/tfg_upload.php'" style="border-left: 4px solid #dc3545;">
                             <div class="card-icon">
@@ -112,6 +158,7 @@ try {
                             <p>Crear propuesta y formar grupo</p>
                         </div>
                     </div>
+                    <?php endif; ?>
                     <div class="col-md-6 col-lg-4">
                         <div class="quick-action-card" onclick="location.href='<?= $base_url ?>mod/admin/users/tfg_upload_final_document.php'" style="border-left: 4px solid #0d6efd;">
                             <div class="card-icon">

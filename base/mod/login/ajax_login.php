@@ -32,9 +32,27 @@ include(dirname(__FILE__) . "/../../config.inc");
 // FUNCIONES AUXILIARES
 // =============================
 
-// Función para verificar si un estudiante tiene propuesta TFG
+// Función para verificar si un estudiante tiene propuesta TFG o es miembro de grupo
 function verificarEstudiante($user){
-        // Verificar si el estudiante ya tiene una propuesta TFG
+        // Primero verificar si es miembro de algún proyecto grupal (aunque no sea el propietario)
+        $group_check_sql = "SELECT pm.project_id, pm.role, tp.title, tp.user_id as owner_id, 
+                                   tp.status as proposal_status, u.nombre as owner_name
+                            FROM project_members pm
+                            INNER JOIN registered_projects rp ON pm.project_id = rp.id
+                            INNER JOIN tfg_proposals tp ON rp.tfg_proposal_id = tp.id
+                            LEFT JOIN sis_user u ON tp.user_id = u.id
+                            WHERE pm.user_id = '" . $user . "' AND pm.status = 'Activo'
+                            ORDER BY pm.joined_at DESC
+                            LIMIT 1";
+        $group_result = seleccion($group_check_sql);
+        
+        if ($group_result !== false && count($group_result) > 0) {
+            // Es miembro de un grupo - redirigir directamente al panel
+            echo "estudiante_con_tfg";
+            exit();
+        }
+        
+        // Verificar si el estudiante tiene una propuesta TFG propia
         $tfg_check_sql = "SELECT COUNT(*) as tfg_count FROM tfg_proposals WHERE user_id = '" . $user . "'";
         $tfg_result = seleccion($tfg_check_sql);
         

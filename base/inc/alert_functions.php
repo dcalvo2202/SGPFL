@@ -382,3 +382,40 @@ function registerFinalDocumentSubmittedAlert($conn, $student_name, $proposal_tit
     
     return $count;
 }
+
+/**
+ * Notifica a un estudiante que ha sido agregado a un grupo TFG
+ * 
+ * @param mysqli $conn Conexión a la base de datos
+ * @param string $member_id ID del estudiante agregado
+ * @param string $leader_name Nombre del líder del proyecto
+ * @param string $project_title Título del proyecto TFG
+ * @param int $project_id ID del proyecto
+ * @return bool True si se registró correctamente
+ */
+function registerGroupMemberAddedAlert($conn, $member_id, $leader_name, $project_title, $project_id) {
+    $subject = "Has sido agregado a un grupo TFG";
+    $message = "El estudiante {$leader_name} te ha agregado como miembro del proyecto TFG: \"{$project_title}\". ";
+    $message .= "Ahora formas parte de este grupo y puedes acceder al historial de documentos del proyecto.";
+    
+    return registerAlert($conn, $member_id, $subject, $message, 'Informativa', 'Media', 'project', $project_id);
+}
+
+/**
+ * Notifica a un estudiante que se le ha asignado un asesor externo
+ * 
+ * @param mysqli $conn Conexión a la base de datos
+ * @param string $student_id ID del estudiante
+ * @param string $advisor_name Nombre del asesor externo
+ * @param string $advisor_email Email del asesor externo
+ * @return bool True si se registró correctamente
+ */
+function registerAdvisorAssignedToStudentAlert($conn, $student_id, $advisor_name, $advisor_email) {
+    $subject = "Se te ha asignado un Asesor Externo";
+    $message = "Se te ha asignado un Asesor Externo para tu proyecto TFG.\n\n";
+    $message .= "Nombre del Asesor: {$advisor_name}\n";
+    $message .= "Email de contacto: {$advisor_email}\n\n";
+    $message .= "Tu asesor externo podrá revisar y aprobar los documentos de tu TFG.";
+    
+    return registerAlert($conn, $student_id, $subject, $message, 'Informativa', 'Alta', null, null);
+}

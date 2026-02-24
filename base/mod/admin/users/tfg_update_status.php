@@ -39,7 +39,7 @@ try {
     $comments = isset($_POST['comments']) ? (string)$_POST['comments'] : '';
 
     // Validar valores contra el ENUM de la BD (deben coincidir exactamente)
-    $allowed_statuses = ['Pendiente de Revisión', 'Cumple requisitos', 'No cumple requisitos', 'Aprobado', 'Rechazado'];
+    $allowed_statuses = ['Pendiente de Revision', 'Cumple requisitos', 'No cumple requisitos', 'Aprobado', 'Rechazado'];
     if (!in_array($review_status, $allowed_statuses, true)) {
         throw new Exception('Estado inválido.');
     }

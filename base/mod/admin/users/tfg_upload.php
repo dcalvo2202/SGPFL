@@ -278,7 +278,7 @@ $additional_css = ['inc/css/tfg_upload.css'];
                         <div>
                             <strong>Al enviar esta propuesta:</strong>
                             <ul style="margin: 8px 0 0 16px;">
-                                <li>Su propuesta TFG quedará con estado "Pendiente de Revisión"</li>
+                                <li>Su propuesta TFG quedará con estado "Pendiente de Revision"</li>
                                 <li>Se creará automáticamente el proyecto grupal asociado</li>
                                 <li>Usted será registrado como líder del proyecto</li>
                                 <li>Los miembros seleccionados serán agregados al grupo</li>

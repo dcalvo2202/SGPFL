@@ -5,7 +5,7 @@
  */
 
 // =============================== ESTADOS DE PROPUESTAS TFG ===============================
-define('TFG_STATUS_PENDING', 'Pendiente de Revisión');
+define('TFG_STATUS_PENDING', 'Pendiente de Revision');
 define('TFG_STATUS_IN_REVIEW', 'En Revisión');
 define('TFG_STATUS_MEETS_REQUIREMENTS', 'Cumple requisitos');
 define('TFG_STATUS_APPROVED', 'Aprobado');
@@ -20,7 +20,7 @@ define('TFG_BLOCKING_STATUSES', [
 ]);
 
 // =============================== ESTADOS DE DOCUMENTOS FINALES ===============================
-define('DOC_STATUS_PENDING', 'Pendiente de Revisión');
+define('DOC_STATUS_PENDING', 'Pendiente de Revision');
 define('DOC_STATUS_APPROVED', 'Aprobado');
 define('DOC_STATUS_REJECTED', 'Rechazado');
 

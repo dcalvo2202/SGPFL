@@ -2239,7 +2239,7 @@ CREATE TABLE tfg_proposals (
     file_name VARCHAR(255) NOT NULL DEFAULT '',
     mime_type VARCHAR(100) NOT NULL DEFAULT '',
     file_size INT NOT NULL DEFAULT 0,
-    status ENUM('Pendiente de Revisión', 'Cumple requisitos', 'No cumple requisitos', 'Aprobado', 'Rechazado') DEFAULT 'Pendiente de Revisión',
+    status ENUM('Pendiente de Revision', 'Cumple requisitos', 'No cumple requisitos', 'Aprobado', 'Rechazado') DEFAULT 'Pendiente de Revision',
     admin_comments TEXT NULL,
     reviewed_by VARCHAR(50) NULL,
     reviewed_at DATETIME NULL,
@@ -2647,3 +2647,28 @@ CREATE TABLE `user_alerts` (
   KEY `idx_read_at` (`read_at`),
   KEY `idx_sent_at` (`sent_at`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci COMMENT='HU-037: Alertas internas del sistema';
+
+-- ----------------------------
+-- HU-011: Table structure for `external_advisor_linked_students`
+-- Vinculación de asesor externo con todos los estudiantes de un grupo TFG
+-- ----------------------------
+DROP TABLE IF EXISTS `external_advisor_linked_students`;
+CREATE TABLE `external_advisor_linked_students` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `advisor_request_id` int(11) NOT NULL COMMENT 'FK a external_advisor_profile_requests',
+    `student_id` varchar(50) NOT NULL COMMENT 'ID del estudiante vinculado (FK a sis_user)',
+    `is_primary` tinyint(1) DEFAULT 0 COMMENT '1 si es el estudiante principal (seleccionado en registro)',
+    `project_id` int(11) DEFAULT NULL COMMENT 'FK a registered_projects (proyecto del grupo)',
+    `linked_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha de vinculación',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `unique_advisor_student` (`advisor_request_id`, `student_id`),
+    KEY `idx_advisor_request` (`advisor_request_id`),
+    KEY `idx_student` (`student_id`),
+    KEY `idx_project` (`project_id`),
+    KEY `idx_eal_lookup` (`advisor_request_id`, `student_id`, `is_primary`),
+    CONSTRAINT `fk_eal_advisor_request` FOREIGN KEY (`advisor_request_id`) 
+        REFERENCES `external_advisor_profile_requests` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `fk_eal_student` FOREIGN KEY (`student_id`) 
+        REFERENCES `sis_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci 
+COMMENT='HU-011: Vinculación de asesor externo con todos los estudiantes de un grupo TFG';

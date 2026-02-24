@@ -36,15 +36,46 @@ function canUploadFinalDocument($user_id) {
         
         $conn->set_charset("utf8");
         
-        // 1. Verificar que tiene propuesta aprobada
-        $sql = "SELECT id, status FROM tfg_proposals WHERE user_id = ? AND status IN ('Aprobado')";
+        // 1. Verificar que tiene propuesta aprobada (propia o del grupo)
+        // Primero buscar propuesta propia
+        $sql = "SELECT id, status FROM tfg_proposals WHERE user_id = ? AND status IN ('Aprobado', 'Cumple requisitos')";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $user_id);
         $stmt->execute();
         $result = $stmt->get_result();
         
-        if ($result->num_rows === 0) {
-            $stmt->close();
+        $proposal_id = null;
+        
+        if ($result->num_rows > 0) {
+            $proposal = $result->fetch_assoc();
+            $proposal_id = $proposal['id'];
+        }
+        $stmt->close();
+        
+        // Si no tiene propuesta propia, buscar si es miembro de un grupo con propuesta aprobada
+        if (!$proposal_id) {
+            $sql_group = "SELECT tp.id, tp.status
+                          FROM project_members pm
+                          INNER JOIN registered_projects rp ON pm.project_id = rp.id
+                          INNER JOIN tfg_proposals tp ON rp.tfg_proposal_id = tp.id
+                          WHERE pm.user_id = ? 
+                          AND pm.status = 'Activo'
+                          AND tp.status IN ('Aprobado', 'Cumple requisitos')
+                          ORDER BY pm.joined_at DESC
+                          LIMIT 1";
+            $stmt_group = $conn->prepare($sql_group);
+            $stmt_group->bind_param("s", $user_id);
+            $stmt_group->execute();
+            $result_group = $stmt_group->get_result();
+            
+            if ($result_group->num_rows > 0) {
+                $proposal = $result_group->fetch_assoc();
+                $proposal_id = $proposal['id'];
+            }
+            $stmt_group->close();
+        }
+        
+        if (!$proposal_id) {
             $conn->close();
             return [
                 'can_upload' => false,
@@ -53,10 +84,6 @@ function canUploadFinalDocument($user_id) {
                 'project_status' => null
             ];
         }
-        
-        $proposal = $result->fetch_assoc();
-        $proposal_id = $proposal['id'];
-        $stmt->close();
         
         // 2. Verificar si ya subió documento final
         // HU-020: Si el documento está rechazado, redirigir al estudiante a la página de correcciones

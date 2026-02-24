@@ -19,7 +19,7 @@ if (!isset($base_url)) {
 $sql = "SELECT p.*, u.nombre as estudiante, u.id as estudiante_id
         FROM tfg_proposals p 
         JOIN sis_user u ON p.user_id = u.id 
-        WHERE p.status = 'Pendiente de Revisión'
+        WHERE p.status = 'Pendiente de Revision'
         ORDER BY p.created_at DESC";
 
 $result = $conn->query($sql);

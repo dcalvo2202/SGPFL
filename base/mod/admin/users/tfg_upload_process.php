@@ -254,7 +254,7 @@ try {
         
     // Insertar la versión inicial en el historial
     $history_sql = "INSERT INTO tfg_proposal_history (proposal_id, document, file_name, mime_type, file_size, status, reviewed_by, comments, created_at) 
-                    VALUES (?, ?, ?, ?, ?, 'Pendiente de Revisión', ?, 'Versión inicial subida por el estudiante', NOW())";
+                    VALUES (?, ?, ?, ?, ?, 'Pendiente de Revision', ?, 'Versión inicial subida por el estudiante', NOW())";
     $history_stmt = $conn->prepare($history_sql);
     if ($history_stmt) {
         $history_stmt->bind_param("ibssis", $tfg_id, $null_blob, $file_name, $mime_type, $file_size, $user_id);
@@ -306,6 +306,7 @@ try {
     }
 
     // 4. Agregar miembros adicionales del grupo (si los hay)
+    $added_members = []; // Lista de miembros agregados para notificarles después
     if (!empty($_POST['group_members'])) {
         $members = json_decode($_POST['group_members'], true);
         if (is_array($members)) {
@@ -322,6 +323,7 @@ try {
                             $conn->rollback();
                             respond_json(false, 'Error al agregar miembro adicional');
                         }
+                        $added_members[] = $member['user_id']; // Guardar para notificar
                     }
                 }
                 $additional_member_stmt->close();
@@ -347,6 +349,15 @@ try {
             $conn_alert->set_charset("utf8");
             $alert_count = registerProposalSubmittedAlert($conn_alert, $user_name, $title, $tfg_id);
             error_log("HU-037: Alertas de propuesta enviadas: $alert_count para propuesta $tfg_id");
+            
+            // Notificar a los miembros agregados al grupo
+            if (!empty($added_members)) {
+                foreach ($added_members as $member_id) {
+                    registerGroupMemberAddedAlert($conn_alert, $member_id, $user_name, $title, $project_id);
+                }
+                error_log("HU-037: Notificaciones enviadas a " . count($added_members) . " miembros del grupo");
+            }
+            
             $conn_alert->close();
         }
     } catch (Exception $alertEx) {
@@ -425,7 +436,7 @@ try {
                     </p>
                     <p style="font-size: 0.95rem; color: #666; margin-top: 10px;">
                         <i class="bi bi-info-circle"></i> 
-                        El estado de su propuesta es: <strong>Pendiente de Revisión</strong>
+                        El estado de su propuesta es: <strong>Pendiente de Revision</strong>
                     </p>
                     <p style="font-size: 0.9rem; color: #999; margin-top: 15px;">
                         Será redirigido a su panel en unos segundos...
