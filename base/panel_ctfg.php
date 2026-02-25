@@ -91,6 +91,16 @@ $avisos_generales = $panel->getAvisos();
                             <p>Consultar proyectos concluidos o cancelados (Art. 68 RGPEA).</p>
                         </div>
                     </div>
+                    <!-- Revisión de Prórrogas -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_aprobarProrroga.php'" style="border-left: 4px solid #17a2b8;">
+                            <div class="card-icon" style="color: #17a2b8;">
+                                <i class="bi bi-file-earmark-check-fill"></i>
+                            </div>
+                            <h5>Revisión de Prórrogas</h5>
+                            <p>Revisar y aprobar solicitudes de prórroga de estudiantes.</p>
+                        </div>
+                    </div>
                     <!--div class="col-md-6 col-lg-4">
                         <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>listar_actas.php'">
                             <div class="card-icon">
