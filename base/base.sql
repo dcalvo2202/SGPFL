@@ -1291,6 +1291,30 @@ CREATE TABLE `proyecto_notas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 
+-- ----------------------------
+-- Table structure for `tfg_extension_requests`
+-- Almacena las solicitudes de prórroga de proyectos
+-- Máximo 2 prórrogas: 1ra = 1 año, 2da = 6 meses
+-- ----------------------------
+DROP TABLE IF EXISTS `tfg_extension_requests`;
+CREATE TABLE `tfg_extension_requests` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `proposal_id` int(11) NOT NULL,
+  `user_id` varchar(50) NOT NULL,
+  `extension_number` tinyint(4) NOT NULL COMMENT '1=Primera prórroga (1 año), 2=Segunda prórroga (6 meses)',
+  `reason` text NOT NULL,
+  `status` enum('pendiente','aprobada','rechazada') DEFAULT 'pendiente',
+  `request_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `response_date` datetime DEFAULT NULL,
+  `responded_by` varchar(50) DEFAULT NULL,
+  `response_comment` text,
+  PRIMARY KEY (`id`),
+  KEY `idx_user` (`user_id`),
+  KEY `idx_proposal` (`proposal_id`),
+  KEY `idx_status` (`status`),
+  CONSTRAINT `fk_extension_proposal` FOREIGN KEY (`proposal_id`) REFERENCES `tfg_proposals` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 
 -- ----------------------------
