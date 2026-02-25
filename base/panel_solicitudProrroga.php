@@ -82,6 +82,27 @@ if (!$conn->connect_error) {
     $conn->close();
 }
 
+// Obtener historial de solicitudes (aprobadas y rechazadas)
+$historial_solicitudes = [];
+$conn = new mysqli($db_host, $usuario, $clave, $db);
+if (!$conn->connect_error && $proposal_id) {
+    $sql_historial = "SELECT id, extension_number, reason, status, request_date, response_date, response_comment 
+                       FROM tfg_extension_requests 
+                       WHERE proposal_id = ? AND status IN ('aprobada', 'rechazada')
+                       ORDER BY request_date DESC";
+    $stmt = $conn->prepare($sql_historial);
+    if ($stmt) {
+        $stmt->bind_param("i", $proposal_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        while ($row = $result->fetch_assoc()) {
+            $historial_solicitudes[] = $row;
+        }
+        $stmt->close();
+    }
+    $conn->close();
+}
+
 // Determinar estado y próxima prórroga
 $proxima_prorroga = $prorrogas_aprobadas + 1;
 
@@ -209,6 +230,69 @@ CSS;
           <?php endif; ?>
         </div>
       </div>
+      
+      <!-- Historial de Solicitudes -->
+      <?php if (!empty($historial_solicitudes)): ?>
+      <div class="card form-card shadow-sm mx-auto mt-4" style="max-width: 800px;">
+        <div class="card-header text-center" style="background:#f8f9fa;font-weight:600;color:#034991;">
+          <i class="fa fa-history"></i> Historial de Solicitudes
+        </div>
+        <div class="card-body" style="padding:24px;">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover" style="font-size:14px;">
+              <thead style="background-color:#034991; color:#fff;">
+                <tr>
+                  <th class="text-center" style="width:80px;">Prórroga</th>
+                  <th class="text-center" style="width:120px;">Fecha Solicitud</th>
+                  <th class="text-center" style="width:100px;">Estado</th>
+                  <th>Motivo</th>
+                  <th style="width:150px;">Comentarios</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($historial_solicitudes as $solicitud): ?>
+                <tr>
+                  <td class="text-center">
+                    <strong><?php echo ($solicitud['extension_number'] == 1) ? '1ra' : '2da'; ?></strong>
+                  </td>
+                  <td class="text-center">
+                    <?php echo date('d/m/Y', strtotime($solicitud['request_date'])); ?>
+                  </td>
+                  <td class="text-center">
+                    <?php if ($solicitud['status'] == 'aprobada'): ?>
+                      <span class="badge badge-success" style="padding:5px 10px; color:#000;">Aprobada</span>
+                    <?php else: ?>
+                      <span class="badge badge-danger" style="padding:5px 10px; color:#000;">Rechazada</span>
+                    <?php endif; ?>
+                  </td>
+                  <td>
+                    <?php echo htmlspecialchars(substr($solicitud['reason'], 0, 100)); ?>
+                    <?php if (strlen($solicitud['reason']) > 100): ?>...
+                    <?php endif; ?>
+                  </td>
+                  <td>
+                    <?php if (!empty($solicitud['response_comment'])): ?>
+                      <small><?php echo htmlspecialchars($solicitud['response_comment']); ?></small>
+                    <?php else: ?>
+                      <small class="text-muted">Sin comentarios</small>
+                    <?php endif; ?>
+                  </td>
+                </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
+          <?php if ($historial_solicitudes[0]['status'] == 'aprobada' && !empty($historial_solicitudes[0]['response_date'])): ?>
+          <div class="alert alert-info mt-3 mb-0" style="font-size:13px;">
+            <i class="fa fa-info-circle"></i>
+            <strong>Última prórroga aprobada:</strong> 
+            <?php echo date('d/m/Y', strtotime($historial_solicitudes[0]['response_date'])); ?>
+          </div>
+          <?php endif; ?>
+        </div>
+      </div>
+      <?php endif; ?>
+      
     </div>
   </main>
   <?php include 'footer.php'; ?>
