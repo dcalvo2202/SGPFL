@@ -7,29 +7,99 @@ require_once __DIR__ . '/lib/mysession/mySession.conf.php';
 require_once __DIR__ . '/lib/mysession/mySession.class.php';
 $mySessionController = mySession::getIstance($_MYSESSION_CONF);
 
+// Mensajes de la sesión (usando mySession)
+$msg_success = '';
+$msg_error = '';
+if ($mySessionController->getVar('prorroga_success')) {
+    $msg_success = $mySessionController->getVar('prorroga_success');
+    $mySessionController->delete('prorroga_success');
+}
+if ($mySessionController->getVar('prorroga_error')) {
+    $msg_error = $mySessionController->getVar('prorroga_error');
+    $mySessionController->delete('prorroga_error');
+}
+
 // Obtener variables de sesión
 $current_user_id = $mySessionController->getVar("usuario");
 $current_user_name = $mySessionController->getVar("nombre");
 $current_user_rol = $mySessionController->getVar("rol");
 $base_url = $mySessionController->getVar("cds_domain") . $mySessionController->getVar("cds_locate");
 
-// Obtener el título del proyecto asignado al estudiante
+// Variables para el control de prórrogas
 $titulo_proyecto = '';
+$proposal_id = null;
+$prorrogas_aprobadas = 0;
+$tiene_solicitud_pendiente = false;
+$puede_solicitar = true;
+$mensaje_estado = '';
+$proxima_prorroga = 1; // 1 = Primera (1 año), 2 = Segunda (6 meses)
+
 $conn = new mysqli($db_host, $usuario, $clave, $db);
 if (!$conn->connect_error) {
-    $sql = "SELECT title FROM tfg_proposals WHERE user_id = ? ORDER BY created_at DESC LIMIT 1";
+    // Obtener el título y ID del proyecto asignado al estudiante
+    $sql = "SELECT id, title FROM tfg_proposals WHERE user_id = ? ORDER BY created_at DESC LIMIT 1";
     $stmt = $conn->prepare($sql);
     if ($stmt) {
         $stmt->bind_param("s", $current_user_id);
         $stmt->execute();
         $result = $stmt->get_result();
         if ($row = $result->fetch_assoc()) {
+            $proposal_id = $row['id'];
             $titulo_proyecto = htmlspecialchars($row['title']);
         }
         $stmt->close();
     }
+    
+
+    if ($proposal_id) {
+        // Contar prórrogas aprobadas
+        $sql_aprobadas = "SELECT COUNT(*) as total FROM tfg_extension_requests 
+                          WHERE proposal_id = ? AND status = 'aprobada'";
+        $stmt = $conn->prepare($sql_aprobadas);
+        if ($stmt) {
+            $stmt->bind_param("i", $proposal_id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            if ($row = $result->fetch_assoc()) {
+                $prorrogas_aprobadas = (int)$row['total'];
+            }
+            $stmt->close();
+        }
+        
+        // Verificar si tiene solicitud pendiente
+        $sql_pendiente = "SELECT id FROM tfg_extension_requests 
+                          WHERE proposal_id = ? AND status = 'pendiente' LIMIT 1";
+        $stmt = $conn->prepare($sql_pendiente);
+        if ($stmt) {
+            $stmt->bind_param("i", $proposal_id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $tiene_solicitud_pendiente = ($result->num_rows > 0);
+            $stmt->close();
+        }
+    }
+    
     $conn->close();
 }
+
+// Determinar estado y próxima prórroga
+$proxima_prorroga = $prorrogas_aprobadas + 1;
+
+if ($prorrogas_aprobadas >= 2) {
+    $puede_solicitar = false;
+    $mensaje_estado = 'Ya ha utilizado sus 2 prórrogas permitidas. No puede solicitar más.';
+} elseif ($tiene_solicitud_pendiente) {
+    $puede_solicitar = false;
+    $mensaje_estado = 'Ya tiene una solicitud de prórroga pendiente de revisión.';
+} elseif (empty($proposal_id)) {
+    $puede_solicitar = false;
+    $mensaje_estado = 'No tiene un proyecto registrado para solicitar prórroga.';
+}
+
+// Información de la prórroga a solicitar
+$info_prorroga = ($proxima_prorroga == 1) 
+    ? ['numero' => '1ra', 'duracion' => '1 año (365 días)']
+    : ['numero' => '2da', 'duracion' => '6 meses (180 días)'];
 
 $page_title = 'Solicitud de Prórroga';
 $inlineStyles = <<<'CSS'
@@ -57,38 +127,86 @@ CSS;
           </h4>
           <?php endif; ?>
           
-          <!-- Panel de Motivo -->
-          <div class="form-group mb-4">
-            <label for="motivo" style="font-weight:600; color:#034991; margin-bottom:8px; display:block;">
-              Motivo (menos de 200 palabras)
-            </label>
-            <textarea 
-              id="motivo" 
-              name="motivo" 
-              class="form-control" 
-              rows="5" 
-              maxlength="200" 
-              placeholder="Escriba el motivo de su solicitud de prórroga..."
-              style="resize:vertical; border:1px solid #ced4da; border-radius:4px;"
-              required
-            ></textarea>
-            <small class="text-muted" style="display:block; margin-top:5px;">
-              <span id="charCount">0</span>/200 caracteres
-            </small>
-          </div>
-          
-          <script>
-            document.getElementById('motivo').addEventListener('input', function() {
-              document.getElementById('charCount').textContent = this.value.length;
-            });
-          </script>
-          
-          <!-- Botón Aceptar -->
-          <div class="text-center mt-4">
-            <button type="submit" class="btn" style="background-color:#28a745; color:#fff; padding:10px 40px; font-weight:600; border:none; border-radius:4px;">
-              Aceptar
+          <?php if (!empty($msg_success)): ?>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="fa fa-check-circle"></i> <?php echo htmlspecialchars($msg_success); ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar">
+              <span aria-hidden="true">&times;</span>
             </button>
           </div>
+          <?php endif; ?>
+          
+          <?php if (!empty($msg_error)): ?>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fa fa-exclamation-circle"></i> <?php echo htmlspecialchars($msg_error); ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <?php endif; ?>
+          
+          <!-- Estado de Prórrogas -->
+          <div class="alert alert-info mb-4" style="border-left:4px solid #034991;">
+            <strong>Estado de Prórrogas:</strong>
+            <ul class="mb-0 mt-2">
+              <li>Prórrogas aprobadas: <strong><?php echo $prorrogas_aprobadas; ?>/2</strong></li>
+              <li>1ra Prórroga: 1 año (365 días)</li>
+              <li>2da Prórroga: 6 meses (180 días)</li>
+            </ul>
+          </div>
+          
+          <?php if (!$puede_solicitar): ?>
+          <!-- Mensaje de bloqueo -->
+          <div class="alert alert-warning text-center" style="border-left:4px solid #ffc107;">
+            <i class="fa fa-exclamation-triangle"></i>
+            <strong><?php echo htmlspecialchars($mensaje_estado); ?></strong>
+          </div>
+          <?php else: ?>
+          
+          <!-- Información de prórroga a solicitar -->
+          <div class="alert alert-success mb-4" style="border-left:4px solid #28a745;">
+            <strong>Solicitando:</strong> <?php echo $info_prorroga['numero']; ?> Prórroga 
+            (<?php echo $info_prorroga['duracion']; ?>)
+          </div>
+          
+          <form method="POST" action="mod/admin/users/procesar_prorroga.php" id="formProrroga">
+            <input type="hidden" name="proposal_id" value="<?php echo $proposal_id; ?>">
+            <input type="hidden" name="extension_number" value="<?php echo $proxima_prorroga; ?>">
+            
+            <!-- Panel de Motivo -->
+            <div class="form-group mb-4">
+              <label for="motivo" style="font-weight:600; color:#034991; margin-bottom:8px; display:block;">
+                Motivo (menos de 200 palabras)
+              </label>
+              <textarea 
+                id="motivo" 
+                name="motivo" 
+                class="form-control" 
+                rows="5" 
+                maxlength="200" 
+                placeholder="Escriba el motivo de su solicitud de prórroga..."
+                style="resize:vertical; border:1px solid #ced4da; border-radius:4px;"
+                required
+              ></textarea>
+              <small class="text-muted" style="display:block; margin-top:5px;">
+                <span id="charCount">0</span>/200 caracteres
+              </small>
+            </div>
+            
+            <script>
+              document.getElementById('motivo').addEventListener('input', function() {
+                document.getElementById('charCount').textContent = this.value.length;
+              });
+            </script>
+            
+            <!-- Botón Aceptar -->
+            <div class="text-center mt-4">
+              <button type="submit" class="btn" style="background-color:#28a745; color:#fff; padding:10px 40px; font-weight:600; border:none; border-radius:4px;">
+                Enviar Solicitud
+              </button>
+            </div>
+          </form>
+          <?php endif; ?>
         </div>
       </div>
     </div>
