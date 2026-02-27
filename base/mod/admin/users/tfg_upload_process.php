@@ -307,27 +307,34 @@ try {
 
     // 4. Agregar miembros adicionales del grupo (si los hay)
     $added_members = []; // Lista de miembros agregados para notificarles después
-    if (!empty($_POST['group_members'])) {
-        $members = json_decode($_POST['group_members'], true);
-        if (is_array($members)) {
-            $additional_member_sql = "INSERT INTO project_members (project_id, user_id, role, joined_at) 
-                                    VALUES (?, ?, 'Miembro', NOW())";
-            
-            $additional_member_stmt = $conn->prepare($additional_member_sql);
-            if ($additional_member_stmt) {
-                foreach ($members as $member) {
-                    if (!empty($member['user_id']) && $member['user_id'] !== $user_id) {
-                        $additional_member_stmt->bind_param("is", $project_id, $member['user_id']);
-                        
-                        if (!$additional_member_stmt->execute()) {
-                            $conn->rollback();
-                            respond_json(false, 'Error al agregar miembro adicional');
-                        }
-                        $added_members[] = $member['user_id']; // Guardar para notificar
-                    }
-                }
-                $additional_member_stmt->close();
+    $members = [];
+    if (!empty($_POST['members']) && is_array($_POST['members'])) {
+        foreach ($_POST['members'] as $member_id) {
+            $member_id = trim((string)$member_id);
+            if ($member_id !== '') {
+                $members[] = ['user_id' => $member_id];
             }
+        }
+    }
+
+    if (!empty($members)) {
+        $additional_member_sql = "INSERT INTO project_members (project_id, user_id, role, joined_at) 
+                                VALUES (?, ?, 'Miembro', NOW())";
+        
+        $additional_member_stmt = $conn->prepare($additional_member_sql);
+        if ($additional_member_stmt) {
+            foreach ($members as $member) {
+                if (!empty($member['user_id']) && $member['user_id'] !== $user_id) {
+                    $additional_member_stmt->bind_param("is", $project_id, $member['user_id']);
+                    
+                    if (!$additional_member_stmt->execute()) {
+                        $conn->rollback();
+                        respond_json(false, 'Error al agregar miembro adicional');
+                    }
+                    $added_members[] = $member['user_id']; // Guardar para notificar
+                }
+            }
+            $additional_member_stmt->close();
         }
     }
 
