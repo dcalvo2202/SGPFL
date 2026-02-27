@@ -499,16 +499,45 @@ $additional_css = ['inc/css/tfg_upload.css'];
             Swal.fire({
                 title: '¿Subir documento(s) final(es)?',
                 html: `
-                    <p>Estás a punto de subir <strong>${filesCount} documento(s)</strong> final(es) de tu TFG.</p>
-                    <p><strong>Una vez subido(s), será(n) enviado(s) a la CTFG para revisión.</strong></p>
-                    <p>La CTFG verificará manualmente que el documento cumple con todos los requisitos de la Tabla 4.</p>
+                    <div style="text-align: left; padding: 30px 25px;">
+                        <p style="font-size: 16px; margin-bottom: 12px; line-height: 1.6;">
+                            Estás a punto de subir <strong>${filesCount} documento(s)</strong> final(es) de tu TFG.
+                        </p>
+                        <p style="font-size: 16px; margin-bottom: 12px; line-height: 1.6;">
+                            <strong>Una vez subido(s), será(n) enviado(s) a la CTFG para revisión.</strong>
+                        </p>
+                        <p style="font-size: 14px; color: #666; line-height: 1.6;">
+                            La CTFG verificará manualmente que el documento cumple con todos los requisitos de la Tabla 4.
+                        </p>
+                    </div>
                 `,
                 icon: 'question',
                 showCancelButton: true,
                 confirmButtonColor: '#CD1719',
                 cancelButtonColor: '#6c757d',
                 confirmButtonText: 'Sí, subir documento',
-                cancelButtonText: 'Cancelar'
+                cancelButtonText: 'Cancelar',
+                width: '44%',
+                maxWidth: '700px',
+                didOpen: (modal) => {
+                    const actions = modal.querySelector('.swal2-actions');
+                    if (actions) {
+                        actions.style.display = 'flex';
+                        actions.style.justifyContent = 'center';
+                        actions.style.alignItems = 'center';
+                        actions.style.gap = '10px';
+                        actions.style.marginTop = '8px';
+                    }
+                    const buttons = modal.querySelectorAll('.swal2-styled');
+                    buttons.forEach(button => {
+                        button.style.minWidth = '110px';
+                        button.style.padding = '9px 12px';
+                        button.style.fontSize = '14px';
+                        button.style.fontWeight = '500';
+                        button.style.margin = '1px';
+                        button.style.lineHeight = '1.2';
+                    });
+                }
             }).then((result) => {
                 if (result.isConfirmed) {
                     // Mostrar loading
@@ -548,8 +577,14 @@ $additional_css = ['inc/css/tfg_upload.css'];
                             Swal.fire({
                                 icon: 'success',
                                 title: '¡Documento subido!',
-                                html: data.message + '<br><br>La CTFG ha sido notificada y procederá con la revisión.',
-                                confirmButtonColor: '#034991'
+                                html: `
+                                    <div style="text-align: left; line-height: 1.6; padding: 12px 20px;">
+                                        <div style="font-size: 15px; color: #2c3e50; margin-bottom: 10px;">${data.message}</div>
+                                        <div style="font-size: 14px; color: #566573;">La CTFG ha sido notificada y procederá con la revisión.</div>
+                                    </div>
+                                `,
+                                width: '30%',
+                                confirmButtonColor: '#034991',
                             }).then(() => {
                                 window.location.href = '<?= $panel_href ?>?success=final_uploaded';
                             });

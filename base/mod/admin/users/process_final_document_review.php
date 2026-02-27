@@ -161,15 +161,47 @@ try {
         $title_result = $stmt_title->get_result()->fetch_assoc();
         $proposal_title = $title_result['title'] ?? 'Tu TFG';
         $stmt_title->close();
-        
+
+        // Obtener todos los miembros activos del proyecto (lider y miembros)
+        $recipient_ids = [];
+        $recipient_ids[$student_user_id] = true;
+
+        $sql_project = "SELECT id FROM registered_projects WHERE tfg_proposal_id = ?";
+        $stmt_project = $conn->prepare($sql_project);
+        if ($stmt_project) {
+            $stmt_project->bind_param("i", $current_doc['proposal_id']);
+            $stmt_project->execute();
+            $project_result = $stmt_project->get_result()->fetch_assoc();
+            $project_id = $project_result['id'] ?? null;
+            $stmt_project->close();
+
+            if ($project_id) {
+                $sql_members = "SELECT user_id FROM project_members WHERE project_id = ? AND status = 'Activo'";
+                $stmt_members = $conn->prepare($sql_members);
+                if ($stmt_members) {
+                    $stmt_members->bind_param("i", $project_id);
+                    $stmt_members->execute();
+                    $members_result = $stmt_members->get_result();
+                    while ($members_result && ($member = $members_result->fetch_assoc())) {
+                        $recipient_ids[$member['user_id']] = true;
+                    }
+                    $stmt_members->close();
+                }
+            }
+        }
+
         if ($db_status === 'Aprobado') {
             // Documento aprobado para defensa
             $subject = "¡Tu Documento Final ha sido Aprobado para Defensa!";
             $message = "Tu documento final de TFG \"$proposal_title\" ha sido aprobado y está listo para la defensa.";
-            registerAlert($conn, $student_user_id, $subject, $message, 'Documento Final', 'Alta', 'document', $document_id);
+            foreach (array_keys($recipient_ids) as $recipient_id) {
+                registerAlert($conn, $recipient_id, $subject, $message, 'Documento Final', 'Alta', 'document', $document_id);
+            }
         } else {
             // Correcciones requeridas
-            registerCorrectionRequestedAlert($conn, $student_user_id, $proposal_title, $document_id, $comments);
+            foreach (array_keys($recipient_ids) as $recipient_id) {
+                registerCorrectionRequestedAlert($conn, $recipient_id, $proposal_title, $document_id, $comments);
+            }
         }
     } catch (Exception $alertEx) {
         error_log("HU-037: Error registrando alerta (no crítico): " . $alertEx->getMessage());
