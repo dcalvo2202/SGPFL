@@ -30,6 +30,7 @@ class ComposerStaticInit25ade676a4f5f913368ab25f12d0dce1
         'P' =>
         array (
             'PhpParser\\' => 10,
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'F' =>
         array (
@@ -66,6 +67,10 @@ class ComposerStaticInit25ade676a4f5f913368ab25f12d0dce1
         'PhpParser\\' =>
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'PHPMailer\\PHPMailer\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'Facebook\\WebDriver\\' =>
         array (

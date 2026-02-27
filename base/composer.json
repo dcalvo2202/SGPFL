@@ -9,6 +9,7 @@
         "test:integration": "phpunit -c phpunit.integration.xml --colors=always --testdox"
     },
     "require": {
-        "php-webdriver/webdriver": "^1.1"
+        "php-webdriver/webdriver": "^1.1",
+        "phpmailer/phpmailer": "^7.0"
     }
 }

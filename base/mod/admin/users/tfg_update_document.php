@@ -2,7 +2,7 @@
 // =============================== AUTENTICACIÓN Y SESIÓN ===============================
 include_once __DIR__ . '/../../../lib/mysession/mySession.class.php';
 include_once __DIR__ . '/../../../lib/mysession/mySession.conf.php';
-include('lang/lang.es');
+include __DIR__ . '/../../../lang/lang.es';
 date_default_timezone_set('America/Costa_Rica');
 
 try {
