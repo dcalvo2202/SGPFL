@@ -42,7 +42,6 @@ try {
     <link href="<?= htmlspecialchars($base_url . 'inc/css/tfg_upload.css') ?>" rel="stylesheet">
     <link href="<?= htmlspecialchars($base_url . 'inc/css/registro.css') ?>" rel="stylesheet">
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="d-flex flex-column min-vh-100 fondo-una">
 
