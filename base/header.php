@@ -85,6 +85,43 @@ try {
             display: flex;
             align-items: center;
         }
+        .user-profile-link {
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.65rem 1.2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .user-profile-link:hover {
+            background: rgba(255,255,255,0.35);
+            border-color: rgba(255,255,255,0.6);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        .user-profile-link:active {
+            transform: translateY(0);
+        }
+        .user-profile-link i {
+            font-size: 1.4rem;
+            margin-right: 0.5rem;
+        }
+        .user-profile-link::after {
+            font-size: 1.1rem;
+            margin-left: 0.5rem;
+            opacity: 0.7;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .user-profile-link:hover::after {
+            opacity: 1;
+            transform: translateX(3px);
+        }
     </style>
     <header class="navbar-una" style="background: linear-gradient(135deg, #CD1719, #A01215) !important; padding: 1.25rem 0;">
         <div class="container-fluid px-4">
@@ -97,8 +134,10 @@ try {
             </div>
             <div class="header-right text-end">
                 <div class="user-info text-white mb-2">
-                    <i class="bi bi-person-circle fs-5"></i>
-                    <span class="ms-2 fw-semibold"><?= htmlspecialchars($current_user_name) ?></span>
+                    <a href="<?= htmlspecialchars($base_url) ?>perfil.php" class="user-profile-link" title="Haz clic para ver tu perfil">
+                        <i class="bi bi-person-badge"></i>
+                        <span><?= htmlspecialchars($current_user_name) ?></span>
+                    </a>
                 </div>
                 <div class="header-actions user-details">
                     <small class="text-light opacity-75 me-2">ID: <?= htmlspecialchars($current_user_id) ?></small>

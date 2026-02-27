@@ -61,9 +61,9 @@
                     </div>
 
                     <div class="text-center mt-2">
-                        <a href="https://recuperacion.una.ac.cr/" target="_blank" class="btn btn-link w-100 mt-2" tabindex="-1">
-                        ¿Olvidó su nombre de usuario o contraseña?
-                        </a>   
+                        <button type="button" class="btn btn-link w-100 mt-2" onclick="showPasswordRecoveryOptions()" tabindex="-1">
+                            ¿Olvidó su nombre de usuario o contraseña?
+                        </button>
                     </div>
                     <div id="loading_container"></div>
                     <button id="saveForm" class="btn btn-danger btn-lg login-btn" type="submit" name="submit">
@@ -80,6 +80,37 @@
                 <img src="img/bottom.png" alt="" class="login-img" />
             </div>
         </div>
+
+        <!-- Modal para recuperación de contraseña -->
+        <div class="modal fade" id="passwordRecoveryModal" tabindex="-1" role="dialog" aria-labelledby="passwordRecoveryLabel">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger text-white">
+                        <h4 class="modal-title" id="passwordRecoveryLabel">
+                            <i class="fa fa-lock"></i> Recuperar Contraseña
+                        </h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="mb-3">¿Cuál es tu tipo de usuario?</p>
+                        <div class="buttonsRecovery">
+                            <button type="button" class="btn btn-primary btn-block" onclick="redirectPasswordRecovery('regular')">
+                                <i class="fa fa-user"></i> Usuario Regular
+                            </button>
+                            <button type="button" class="btn btn-primary btn-block" style="margin-top:10px;" onclick="redirectPasswordRecovery('external_advisor')">
+                                <i class="fa fa-graduation-cap"></i> Asesor Externo
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <footer class="footer mt-auto">
             <div class="container-footer">
                 <p class="text-muted text-center"><?= $footer_title ?></p>
@@ -87,3 +118,54 @@
         </footer>
     </body>
 </html>
+
+<style>
+/* Centrar modal usando posicionamiento absoluto */
+.modal.fade.in {
+    padding: 0 !important;
+    display: block;
+    padding-top: 150px !important;
+}
+
+.modal.fade.in .modal-dialog {
+    margin: 50px auto;
+}
+</style>
+
+<script>
+// Mostrar modal usando vanilla JavaScript
+function showPasswordRecoveryOptions() {
+    // Esperar a que jQuery esté listo
+    if (typeof jQuery !== 'undefined') {
+        jQuery('#passwordRecoveryModal').modal('show');
+    } else {
+        // Fallback si jQuery no está disponible
+        var modal = document.getElementById('passwordRecoveryModal');
+        if (modal) {
+            modal.style.display = 'block';
+            modal.classList.add('in');
+        }
+    }
+}
+
+// Redirigir según el tipo de usuario seleccionado
+function redirectPasswordRecovery(userType) {
+    if (typeof jQuery !== 'undefined') {
+        jQuery('#passwordRecoveryModal').modal('hide');
+    } else {
+        var modal = document.getElementById('passwordRecoveryModal');
+        if (modal) {
+            modal.style.display = 'none';
+            modal.classList.remove('in');
+        }
+    }
+    
+    if (userType === 'regular') {
+        // Usuario regular: redirigir al sitio de recuperación estándar
+        window.open('https://recuperacion.una.ac.cr/', '_blank');
+    } else if (userType === 'external_advisor') {
+        // Asesor externo: redirigir a su propio proceso de recuperación
+        window.location.href = 'mod/login/cambiar_contrasena_asesor.php';
+    }
+}
+</script>
