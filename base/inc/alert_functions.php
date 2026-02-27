@@ -220,17 +220,30 @@ function registerProposalSubmittedAlert($conn, $student_name, $proposal_title, $
 }
 
 /**
- * Alerta cuando una propuesta es aprobada
+ * Alerta cuando una propuesta cumple con los requisitos de subdirección
  * Notifica al estudiante
  */
 function registerProposalApprovedAlert($conn, $student_user_id, $proposal_title, $proposal_id) {
-    $subject = "¡Tu Propuesta de TFG ha sido Aprobada!";
-    $message = "Nos complace informarte que tu propuesta de TFG \"$proposal_title\" ha sido aprobada.\n\n";
-    $message .= "Ya puedes proceder con el desarrollo de tu trabajo.\n";
-    $message .= "Recuerda revisar los plazos establecidos en el sistema.";
+    $subject = "¡Tu Propuesta de TFG cumple con los requisitos!";
+    $message = "Nos complace informarte que tu propuesta de TFG \"$proposal_title\" cumple con los requisitos de subdirección.\n";
+    $message .= "Proximamente va a ser revisado por la CTFG.\n";
+    $message .= "Recuerda estar atento a las notificaciones del sistema.";
+    
+    return registerAlert($conn, $student_user_id, $subject, $message, 'Informativa', 'Media', 'proposal', $proposal_id);
+}
+
+/**
+ * Alerta cuando una propuesta es aprovada por la CTFG
+ */
+function registerProposalApprovedByCTFGAlert($conn, $student_user_id, $proposal_title, $proposal_id) {
+    $subject = "¡Tu Propuesta de TFG ha sido Aprobada por la CTFG!";
+    $message = "Tu propuesta de TFG \"$proposal_title\" ha sido aprobada por la Comisión TFG.\n";
+    $message .= "Puedes comenzar a trabajar en tu proyecto y subir los documentos correspondientes.\n";
+    $message .= "Recuerda revisar las fechas límite y requisitos para cada etapa del proceso.";
     
     return registerAlert($conn, $student_user_id, $subject, $message, 'Propuesta Aprobada', 'Alta', 'proposal', $proposal_id);
 }
+
 
 /**
  * Alerta cuando una propuesta es rechazada

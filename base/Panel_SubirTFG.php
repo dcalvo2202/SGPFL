@@ -136,19 +136,6 @@ try {
                 </h2>
                 
                 <div class="row justify-content-center">
-                    <?php if ($is_group_member && $group_project_info): ?>
-                    <!-- Para miembros de grupo (no líderes), mostrar info del proyecto en lugar de Nueva Propuesta -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>historial_documentos.php'" style="border-left: 4px solid #198754;">
-                            <div class="card-icon">
-                                <i class="bi bi-folder-fill"></i>
-                            </div>
-                            <h5>Mi Proyecto TFG</h5>
-                            <p>Ver documentos del grupo</p>
-                        </div>
-                    </div>
-                    <?php else: ?>
-                    <!-- Para líderes o usuarios sin grupo, mostrar Nueva Propuesta -->
                     <div class="col-md-6 col-lg-4">
                         <div class="quick-action-card" onclick="location.href='<?= $base_url ?>mod/admin/users/tfg_upload.php'" style="border-left: 4px solid #dc3545;">
                             <div class="card-icon">
@@ -158,7 +145,7 @@ try {
                             <p>Crear propuesta y formar grupo</p>
                         </div>
                     </div>
-                    <?php endif; ?>
+
                     <div class="col-md-6 col-lg-4">
                         <div class="quick-action-card" onclick="location.href='<?= $base_url ?>mod/admin/users/tfg_upload_final_document.php'" style="border-left: 4px solid #0d6efd;">
                             <div class="card-icon">

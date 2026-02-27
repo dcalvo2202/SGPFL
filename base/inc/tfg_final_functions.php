@@ -38,7 +38,7 @@ function canUploadFinalDocument($user_id) {
         
         // 1. Verificar que tiene propuesta aprobada (propia o del grupo)
         // Primero buscar propuesta propia
-        $sql = "SELECT id, status FROM tfg_proposals WHERE user_id = ? AND status IN ('Aprobado', 'Cumple requisitos')";
+        $sql = "SELECT id, status FROM tfg_proposals WHERE user_id = ? AND status IN ('Aprobado')";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $user_id);
         $stmt->execute();
@@ -60,7 +60,7 @@ function canUploadFinalDocument($user_id) {
                           INNER JOIN tfg_proposals tp ON rp.tfg_proposal_id = tp.id
                           WHERE pm.user_id = ? 
                           AND pm.status = 'Activo'
-                          AND tp.status IN ('Aprobado', 'Cumple requisitos')
+                          AND tp.status IN ('Aprobado')
                           ORDER BY pm.joined_at DESC
                           LIMIT 1";
             $stmt_group = $conn->prepare($sql_group);

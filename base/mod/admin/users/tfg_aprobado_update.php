@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../../../inc/db/db.php';
+require_once '../../../inc/alert_functions.php';
 // Intentar obtener usuario autenticado para el historial (si el entorno lo provee)
 @include("../../login/check.php");
 
@@ -227,6 +228,39 @@ try {
     mysqli_stmt_close($stmtH);
 
     mysqli_commit($id_con);
+    
+    // Enviar alerta a todos los estudiantes del proyecto
+    $sql_student = "SELECT user_id FROM tfg_proposals WHERE id = ?";
+    $stmt_student = mysqli_prepare($id_con, $sql_student);
+    if ($stmt_student) {
+        mysqli_stmt_bind_param($stmt_student, "i", $proposal_id);
+        mysqli_stmt_execute($stmt_student);
+        $rs_student = mysqli_stmt_get_result($stmt_student);
+        if ($rs_student && ($row_student = mysqli_fetch_assoc($rs_student))) {
+            $student_id = $row_student['user_id'];
+            registerProposalApprovedByCTFGAlert($id_con, $student_id, $nombre_title, $proposal_id);
+        }
+        mysqli_stmt_close($stmt_student);
+    }
+    
+    // Enviar alerta a los demás miembros del grupo
+    foreach ($unique as $member_id) {
+        $sql_student = "SELECT user_id FROM tfg_proposals WHERE id = ?";
+        $stmt_student = mysqli_prepare($id_con, $sql_student);
+        if ($stmt_student) {
+            mysqli_stmt_bind_param($stmt_student, "i", $proposal_id);
+            mysqli_stmt_execute($stmt_student);
+            $rs_student = mysqli_stmt_get_result($stmt_student);
+            if ($rs_student && ($row_student = mysqli_fetch_assoc($rs_student))) {
+                $leader_id = $row_student['user_id'];
+                if ($member_id !== $leader_id) {
+                    registerProposalApprovedByCTFGAlert($id_con, $member_id, $nombre_title, $proposal_id);
+                }
+            }
+            mysqli_stmt_close($stmt_student);
+        }
+    }
+    
     unset($_SESSION['identificador_preview']);
     header('Location: ../../../proyecto_aprobado.php?ok=1'); exit;
 } catch (Exception $ex) {

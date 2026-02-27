@@ -90,6 +90,34 @@ try {
             }
             // Si está rechazada, puede subir otra (no bloquear)
         }
+
+        if ($can_submit_proposal) {
+            $sql_group_block = "SELECT pm.project_id, pm.role, tp.title, tp.user_id as owner_id, tp.status as proposal_status,
+                                       u.nombre as owner_name
+                                FROM project_members pm
+                                INNER JOIN registered_projects rp ON pm.project_id = rp.id
+                                INNER JOIN tfg_proposals tp ON rp.tfg_proposal_id = tp.id
+                                LEFT JOIN sis_user u ON tp.user_id = u.id
+                                WHERE pm.user_id = ? AND pm.status = 'Activo'
+                                ORDER BY pm.joined_at DESC
+                                LIMIT 1";
+            $stmt_group_block = $conn_check->prepare($sql_group_block);
+            if ($stmt_group_block) {
+                $stmt_group_block->bind_param("s", $current_user_id);
+                $stmt_group_block->execute();
+                $result_group_block = $stmt_group_block->get_result();
+
+                if ($row_group_block = $result_group_block->fetch_assoc()) {
+                    if (in_array($row_group_block['proposal_status'], TFG_BLOCKING_STATUSES)) {
+                        $can_submit_proposal = false;
+                        $owner_name = $row_group_block['owner_name'] ?: 'otro miembro del grupo';
+                        $blocked_message = 'Ya existe una propuesta del grupo en estado "' . htmlspecialchars($row_group_block['proposal_status']) . '" registrada por ' . htmlspecialchars($owner_name) . '.<br> No puedes subir otra propuesta hasta que sea rechazada o finalizada.';
+                    }
+                }
+
+                $stmt_group_block->close();
+            }
+        }
         
         $stmt_check->close();
         $conn_check->close();
@@ -147,7 +175,7 @@ $additional_css = ['inc/css/tfg_upload.css'];
                 <h5><i class="bi bi-exclamation-triangle-fill"></i> No puedes subir una nueva propuesta</h5>
                 <p class="mb-3"><?= $blocked_message ?></p>
                 <a href="<?= htmlspecialchars($panel_href) ?>" class="btn btn-primary">
-                    <i class="bi bi-arrow-left"></i> Volver al Panel
+                    <i class="bi bi-arrow-left"></i> Volver al Panel Principal
                 </a>
             </div>
             <?php else: ?>

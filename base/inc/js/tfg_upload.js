@@ -5,9 +5,32 @@ class TfgUploadManager {
         this.searchTimeout = null;
         this.baseUrl = this.getBaseUrl();
         
+        this.injectStyles();
         this.initializeEventListeners();
         this.loadInitialMaxMembers();
         this.updateMembersDisplay();
+    }
+    
+    injectStyles() {
+        // Inyectar estilos CSS para SweetAlert2
+        const style = document.createElement('style');
+        style.textContent = `
+            .swal2-popup .swal2-actions {
+                gap: 0.5rem;
+            }
+            
+            .swal2-popup .swal2-styled {
+                min-width: 110px;
+                padding: 10px 20px;
+                font-size: 1.10rem;
+            }
+            
+            .swal2-popup .swal2-confirm,
+            .swal2-popup .swal2-cancel {
+                flex: 1;
+            }
+        `;
+        document.head.appendChild(style);
     }
     
     getBaseUrl() {
