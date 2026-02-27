@@ -92,18 +92,22 @@ function formatBytes($bytes) {
     <link href="<?= htmlspecialchars($base_url . 'inc/css/panel_estudiante.css') ?>" rel="stylesheet">
     
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 1.3rem; }
         
         .dashboard-header h1 {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: #034991;
         }
         
+        .dashboard-header .lead {
+            font-size: 1.5rem;
+        }
+        
         .status-badge { 
             padding: 0.35em 0.65em; 
-            font-size: 0.85em; 
+            font-size: 1.2rem; 
             border-radius: 0.25rem; 
             font-weight: 600;
         }
@@ -114,7 +118,7 @@ function formatBytes($bytes) {
         .action-btn { margin: 0 2px; }
         .filter-bar { margin-bottom: 1.5rem; }
         .card-solicitud { border-left: 4px solid #034991; margin-bottom: 1rem; }
-        .info-label { font-weight: 600; color: #555; }
+        .info-label { font-weight: 600; color: #555; font-size: 1.3rem; }
         .doc-link { text-decoration: none; }
         .doc-link:hover { text-decoration: underline; }
         
@@ -171,13 +175,13 @@ function formatBytes($bytes) {
         
         .modal-error {
             color: #dc3545;
-            font-size: 0.875rem;
+            font-size: 1.2rem;
             display: none;
             margin-bottom: 10px;
         }
         
         .modal-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 15px;
         }
         .modal-icon.success { color: #198754; }
@@ -199,7 +203,7 @@ function formatBytes($bytes) {
                 <h1>
                     <i class="bi bi-person-badge-fill"></i> Revisión de Solicitudes - Asesor Externo
                 </h1>
-                <p class="lead">HU-012: Validar y aprobar documentos de Asesores Externos</p>
+                <p class="lead">Validar y aprobar documentos de Asesores Externos</p>
             </div>
 
             <!-- Filtros -->
@@ -219,7 +223,7 @@ function formatBytes($bytes) {
                     </a>
                 </div>
                 <a href="panel_subdireccion.php" class="btn btn-outline-dark ms-3">
-                    <i class="bi bi-arrow-left"></i> Volver al Panel
+                    <i class="bi bi-arrow-left"></i> Volver al Panel Principal
                 </a>
             </div>
 
