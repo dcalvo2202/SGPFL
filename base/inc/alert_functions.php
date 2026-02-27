@@ -412,10 +412,10 @@ function registerGroupMemberAddedAlert($conn, $member_id, $leader_name, $project
  */
 function registerAdvisorAssignedToStudentAlert($conn, $student_id, $advisor_name, $advisor_email) {
     $subject = "Se te ha asignado un Asesor Externo";
-    $message = "Se te ha asignado un Asesor Externo para tu proyecto TFG.\n\n";
-    $message .= "Nombre del Asesor: {$advisor_name}\n";
-    $message .= "Email de contacto: {$advisor_email}\n\n";
-    $message .= "Tu asesor externo podrá revisar y aprobar los documentos de tu TFG.";
+    $message = "Se te ha asignado un Asesor Externo para tu proyecto TFG.\n";
+    $message .= "Nombre del Asesor: {$advisor_name}";
+    $message .= "Email de contacto: {$advisor_email}\n";
+    $message .= "Tu asesor externo podrá visualizar los documentos de tu TFG.";
     
     return registerAlert($conn, $student_id, $subject, $message, 'Informativa', 'Alta', null, null);
 }

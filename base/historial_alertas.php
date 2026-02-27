@@ -155,8 +155,9 @@ $grouped_alerts = groupAlertsByDate($alerts);
         
         .page-header h1 {
             font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 0.5rem;
+            color: white;
         }
         
         .page-header p {
@@ -170,7 +171,7 @@ $grouped_alerts = groupAlertsByDate($alerts);
             background: rgba(255,255,255,0.2);
             padding: 0.35rem 0.75rem;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 1rem;
             margin-top: 0.75rem;
         }
         
@@ -185,6 +186,7 @@ $grouped_alerts = groupAlertsByDate($alerts);
             margin-bottom: 1.5rem;
             flex-wrap: wrap;
             gap: 1rem;
+            font-size: 1.15rem;
         }
         
         .btn-back {
@@ -220,7 +222,7 @@ $grouped_alerts = groupAlertsByDate($alerts);
         }
         
         .date-header {
-            font-size: 0.85rem;
+            font-size: 1rem;
             font-weight: 600;
             color: #6c757d;
             text-transform: uppercase;
@@ -297,14 +299,14 @@ $grouped_alerts = groupAlertsByDate($alerts);
         
         .notification-title {
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 1.5rem;
             color: #212529;
             margin: 0;
             line-height: 1.4;
         }
         
         .notification-time {
-            font-size: 0.8rem;
+            font-size: 1.15rem;
             color: #6c757d;
             white-space: nowrap;
             display: flex;
@@ -314,7 +316,7 @@ $grouped_alerts = groupAlertsByDate($alerts);
         
         .notification-type {
             display: inline-block;
-            font-size: 0.7rem;
+            font-size: 1rem;
             font-weight: 600;
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
@@ -325,7 +327,7 @@ $grouped_alerts = groupAlertsByDate($alerts);
         
         .notification-message {
             color: #495057;
-            font-size: 0.9rem;
+            font-size: 1.30rem;
             line-height: 1.6;
             margin: 0 0 0.75rem 0;
             white-space: pre-line;
@@ -345,7 +347,7 @@ $grouped_alerts = groupAlertsByDate($alerts);
             color: #6c757d;
             padding: 0.35rem 0.75rem;
             border-radius: 6px;
-            font-size: 0.8rem;
+            font-size: 1.15rem;
             transition: all 0.2s;
             display: flex;
             align-items: center;
@@ -359,7 +361,7 @@ $grouped_alerts = groupAlertsByDate($alerts);
         }
         
         .read-status {
-            font-size: 0.8rem;
+            font-size: 1.15rem;
             color: #28a745;
             display: flex;
             align-items: center;
@@ -405,7 +407,7 @@ $grouped_alerts = groupAlertsByDate($alerts);
             text-align: center;
             padding: 1.5rem;
             color: #6c757d;
-            font-size: 0.85rem;
+            font-size: 1.30rem;
         }
         
         .footer-info i {
@@ -428,7 +430,7 @@ $grouped_alerts = groupAlertsByDate($alerts);
             
             .notification-content {
                 flex-direction: column;
-                gap: 0.75rem;
+                gap: 1.15rem;
             }
             
             .notification-icon {
@@ -442,7 +444,7 @@ $grouped_alerts = groupAlertsByDate($alerts);
             }
             
             .notification-time {
-                font-size: 0.75rem;
+                font-size: 1rem;
             }
         }
     </style>
@@ -475,7 +477,7 @@ $grouped_alerts = groupAlertsByDate($alerts);
                 <!-- Barra de acciones -->
                 <div class="action-bar">
                     <a href="dashboard.php" class="btn-back">
-                        <i class="bi bi-arrow-left me-1"></i> Volver al Panel
+                        <i class="bi bi-arrow-left me-1"></i> Volver al Panel Principal
                     </a>
                     <?php if ($unread_count > 0): ?>
                         <form method="POST" class="d-inline">
