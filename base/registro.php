@@ -177,7 +177,7 @@ try {
                     <h5 class="alert-tfg alert-tfg-info mb-3">
                         <i class="bi bi-info-circle"></i>
                         <div>
-                            <strong>Instrucciones:</strong> Busque y seleccione el estudiante al que desea asesorar en su Trabajo Final de Graduación.
+                            <strong>Instrucciones:</strong> Busque y seleccione el estudiante al que desea asesorar en su Trabajo Final de Graduación. (Al seleccionar un estudiante se vincula con el resto del grupo de TFG)
                         </div>
                     </h5>
 

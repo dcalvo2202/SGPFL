@@ -168,4 +168,27 @@ function redirectPasswordRecovery(userType) {
         window.location.href = 'mod/login/cambiar_contrasena_asesor.php';
     }
 }
+
+// Detectar si viene de cambio de contraseña exitoso
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('pwd_changed') === '1') {
+        // Limpiar el parámetro de la URL sin recargar
+        if (window.history && window.history.replaceState) {
+            const newUrl = window.location.pathname;
+            window.history.replaceState({}, document.title, newUrl);
+        }
+        
+        // Mostrar mensaje de éxito
+        if (typeof Swal !== 'undefined') {
+            Swal.fire({
+                icon: 'success',
+                title: '¡Contraseña Actualizada!',
+                html: '<p>Tu contraseña ha sido cambiada exitosamente.</p><p style="font-weight: bold; margin-top: 15px;">Ahora puedes iniciar sesión con tu nueva contraseña.</p>',
+                confirmButtonColor: '#28a745',
+                confirmButtonText: 'Entendido'
+            });
+        }
+    }
+});
 </script>

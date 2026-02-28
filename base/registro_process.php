@@ -332,6 +332,19 @@ try {
         throw new Exception('Ya existe una solicitud para esta cédula con estado: ' . $existing_status . '');
     }
 
+    // Verificar que el email no esté siendo usado por otro usuario diferente
+    $stmt_email = $conn->prepare('SELECT applicant_id FROM external_advisor_profile_requests WHERE email = ? AND applicant_id != ? LIMIT 1');
+    $stmt_email->bind_param('ss', $email, $applicant_id);
+    $stmt_email->execute();
+    $res_email = $stmt_email->get_result();
+    if ($res_email && $res_email->num_rows > 0) {
+        $other_user = $res_email->fetch_assoc();
+        $stmt_email->close();
+        $conn->close();
+        throw new Exception('El correo electrónico ' . htmlspecialchars($email) . ' ya está registrado para otro usuario (ID: ' . htmlspecialchars($other_user['applicant_id']) . '). Por favor use otro correo o contacte a soporte.');
+    }
+    $stmt_email->close();
+
     $null_blob_1 = null;
     $null_blob_2 = null;
 

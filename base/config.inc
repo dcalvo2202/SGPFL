@@ -9,8 +9,16 @@
  *  por ejemplo: "/sistema/", "/lib/sistema/"
  */
 
-$cds_domain = "http://localhost/";
-$cds_locate = "base/"; 
+// Rutas dinámicas - Funcionan desde cualquier directorio
+// Se calculan basado en la ubicación real del archivo
+$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+$cds_domain = $protocol . "://" . ($_SERVER['HTTP_HOST'] ?? 'localhost') . "/";
+
+// Calcular ruta relativa web basada en la ubicación del archivo
+$base_real_path = str_replace('\\', '/', __DIR__); // c:/xampp/htdocs/base
+$doc_root = str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT'] ?? 'c:/xampp/htdocs'); // c:/xampp/htdocs
+$relative_from_root = str_replace($doc_root, '', $base_real_path); // /base
+$cds_locate = $relative_from_root . '/'; 
 
 $ldap_status = 1;
 /*$ldap_server[0] = "10.0.2.53";*/
@@ -28,7 +36,8 @@ $ldap_pass = "admin";
  *  en los diferentes modulos
  */
 
-$favicon_url = "./img/logo.webp";
+// Ruta dinámica del favicon - Funciona desde cualquier directorio
+$favicon_url = rtrim($cds_locate, '/') . "/img/logo.webp";
 
 $page_cant = 10;
 

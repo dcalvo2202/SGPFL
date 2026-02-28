@@ -992,7 +992,32 @@ class mySession
      */
     function write($session_id, $session_data)
     {       
-        
+        // Sincronizar siempre el SID recibido por el handler de PHP
+        // para evitar escribir variables con un SID no existente.
+        if (!empty($session_id)) {
+            $this->sessionId = $session_id;
+        }
+
+        // Garantizar que exista la fila padre en sis_sessions antes
+        // de insertar/actualizar filas en sis_sessions_vars.
+        if ($this->getSidCount($this->sessionId) == 0) {
+            $this->forcedExpire = time() + $this->session_max_duration;
+            $expireTime = time() + $this->session_duration;
+
+            $this->SQLStatement_InsertSession->bindParam(':expires', $expireTime, PDO::PARAM_INT);
+            $this->SQLStatement_InsertSession->bindParam(':forcedExpires', $this->forcedExpire, PDO::PARAM_INT);
+            $this->SQLStatement_InsertSession->bindParam(':sid', $this->sessionId, PDO::PARAM_STR, $this->sid_len);
+            $ua = $this->getUa();
+            $this->SQLStatement_InsertSession->bindParam(':ua', $ua, PDO::PARAM_STR, 40);
+            try {
+                $this->SQLStatement_InsertSession->execute();
+            } catch (PDOException $e) {
+                if ($e->getCode() !== '23000') {
+                    throw $e;
+                }
+            }
+        }
+
         $myData = $this->unserializePhpSession($session_data);
         foreach ($myData as $nome => $valore) {
             $this->save($nome, $valore);
