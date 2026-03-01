@@ -58,7 +58,7 @@ mysql -u root -p base_db < base_add_password_recovery_table.sql
 ✅ Revisar que `C:\xampp\sendmail\sendmail.ini` tenga:
 ```ini
 smtp_server=smtp.gmail.com
-auth_username=rodri100ro@gmail.com
+auth_username=correo-asignado
 force_sender=noreply@una.cr
 ```
 
