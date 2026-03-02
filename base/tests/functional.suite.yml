@@ -1,0 +1,8 @@
+actor: FunctionalTester
+modules:
+  enabled:
+    - Asserts
+    - PhpBrowser:
+        url: 'http://localhost/base/'
+step_decorators:
+  - Codeception\Step\TryTo
