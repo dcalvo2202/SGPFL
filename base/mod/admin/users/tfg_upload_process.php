@@ -485,9 +485,18 @@ try {
     exit;
 
 } catch (Exception $e) {
-    if (isset($conn)) {
-        $conn->rollback();
-        $conn->close();
+    if (isset($conn) && $conn instanceof mysqli) {
+        try {
+            $conn->rollback();
+        } catch (Throwable $rollbackEx) {
+            error_log('TFG Upload - rollback falló: ' . $rollbackEx->getMessage());
+        }
+
+        try {
+            $conn->close();
+        } catch (Throwable $closeEx) {
+            error_log('TFG Upload - cierre de conexión falló: ' . $closeEx->getMessage());
+        }
     }
     respond_json(false, 'Error: ' . $e->getMessage());
 }
