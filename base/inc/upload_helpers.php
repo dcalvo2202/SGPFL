@@ -116,8 +116,20 @@ function validateMinFileSize($file_size, $min_size_kb = 100, $file_name = '') {
  */
 function generateUniqueFilename($user_id, $original_name, $index = 0) {
     $extension = pathinfo($original_name, PATHINFO_EXTENSION);
-    $suffix = $index > 0 ? '_' . $index : '';
-    return $user_id . '_' . date('Y-m-d_H-i-s') . '_' . uniqid() . $suffix . '.' . $extension;
+    $basename = pathinfo($original_name, PATHINFO_FILENAME);
+    
+    // Limpiar el nombre base: eliminar caracteres especiales y espacios, mantener guiones/underscores
+    $clean_basename = preg_replace('/[^a-zA-Z0-9_-]/', '_', $basename);
+    // Limitar longitud del nombre base para evitar nombres excesivamente largos
+    $clean_basename = substr($clean_basename, 0, 50);
+    
+    // Generar identificador único corto (primeros 8 caracteres de uniqid)
+    $unique_id = substr(uniqid(), -8);
+    
+    // Formato: NombreOriginal_UserID_FechaCorta_ID.ext
+    // Ejemplo: Mi-Propuesta-TFG_205550555_20260301_a7b2e4c0.pdf
+    $suffix = $index > 0 ? '_v' . $index : '';
+    return $clean_basename . '_' . $user_id . '_' . date('Ymd') . '_' . $unique_id . $suffix . '.' . $extension;
 }
 
 /**

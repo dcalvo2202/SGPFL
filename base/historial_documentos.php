@@ -191,7 +191,7 @@ if ($is_student) {
         $conn->set_charset("utf8");
         
         $sql = "SELECT ear.applicant_id, ear.full_name as advisor_name, ear.email as advisor_email, 
-                       ear.institucion_procedencia, eals.linked_at
+                  ear.institution as institucion_procedencia, eals.linked_at
                 FROM external_advisor_linked_students eals
                 INNER JOIN external_advisor_profile_requests ear ON eals.advisor_request_id = ear.id
                 WHERE eals.student_id = ? 
@@ -597,6 +597,7 @@ try {
                         </tr>
                     </thead>
                     <tbody>
+                        <?php $colspan_value = count($linked_students_list) > 1 ? 8 : 7; ?>
                         <?php foreach ($documentos as $i => $doc): ?>
                             <?php $collapseId = 'versionesCollapse_' . $i; ?>
                             <!-- Fila principal -->

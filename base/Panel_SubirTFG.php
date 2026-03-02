@@ -193,7 +193,7 @@ try {
                                     t.status,
                                     t.created_at,
                                     t.updated_at,
-                                    t.proposal_file_path,
+                                    t.file_name AS proposal_file_path,
                                     rp.project_type_id,
                                     pt.type_name
                                 FROM tfg_proposals t
