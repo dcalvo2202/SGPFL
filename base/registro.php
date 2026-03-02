@@ -284,6 +284,29 @@ try {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     (function () {
+        // Inyectar estilos CSS para SweetAlert2
+        const style = document.createElement('style');
+        style.textContent = `
+            .swal2-popup .swal2-actions {
+                gap: 0.5rem;
+                align-items: center;
+            }
+            
+            .swal2-popup .swal2-styled {
+                min-width: 110px;
+                padding: 10px 20px;
+                font-size: 1.2rem;
+                margin: 0;
+            }
+            
+            .swal2-popup .swal2-confirm,
+            .swal2-popup .swal2-cancel {
+                flex: 1;
+                margin: 0 !important;
+            }
+        `;
+        document.head.appendChild(style);
+
         function formatBytes(bytes) {
             if (!Number.isFinite(bytes) || bytes < 0) return '';
             if (bytes === 0) return '0 B';
@@ -448,29 +471,53 @@ try {
             if (!form) return;
 
             form.addEventListener('submit', function (e) {
-                if (form.checkValidity()) return;
-                e.preventDefault();
+                // Si el formulario no es válido, mostrar errores
+                if (!form.checkValidity()) {
+                    e.preventDefault();
 
-                // Hallar primer campo inválido y mostrar su mensaje (en español)
-                const firstInvalid = form.querySelector(':invalid');
-                if (!firstInvalid) return;
+                    // Hallar primer campo inválido y mostrar su mensaje (en español)
+                    const firstInvalid = form.querySelector(':invalid');
+                    if (!firstInvalid) return;
 
-                // Intentar bubble nativa cuando sea posible
-                if (typeof firstInvalid.reportValidity === 'function') {
-                    try {
-                        firstInvalid.reportValidity();
-                        return;
-                    } catch (_) {
-                        // continuar a Swal
+                    // Intentar bubble nativa cuando sea posible
+                    if (typeof firstInvalid.reportValidity === 'function') {
+                        try {
+                            firstInvalid.reportValidity();
+                            return;
+                        } catch (_) {
+                            // continuar a Swal
+                        }
                     }
+
+                    const msg = firstInvalid.validationMessage || 'Debe completar los campos requeridos.';
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Revise el formulario',
+                        text: msg,
+                        confirmButtonText: 'Aceptar'
+                    });
+                    return;
                 }
 
-                const msg = firstInvalid.validationMessage || 'Debe completar los campos requeridos.';
+                // Si el formulario es válido, mostrar confirmación antes de enviar
+                e.preventDefault();
+
                 Swal.fire({
-                    icon: 'error',
-                    title: 'Revise el formulario',
-                    text: msg,
-                    confirmButtonText: 'Aceptar'
+                    title: 'Confirmar envío',
+                    text: '¿Está seguro de enviar la solicitud? Por favor, revise que toda la información sea correcta.',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#034991',
+                    cancelButtonColor: '#6c757d',
+                    confirmButtonText: 'Sí, enviar',
+                    cancelButtonText: 'Cancelar',
+                    reverseButtons: true
+                }).then(function (result) {
+                    if (result.isConfirmed) {
+                        // Remover el evento listeners para evitar mostrar el diálogo nuevamente
+                        form.removeEventListener('submit', arguments.callee);
+                        form.submit();
+                    }
                 });
             });
         }
