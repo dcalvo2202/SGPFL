@@ -499,9 +499,29 @@ try {
                     return;
                 }
 
-                // Si el formulario es válido, mostrar confirmación antes de enviar
+                // Validar que se haya seleccionado un estudiante
                 e.preventDefault();
+                
+                const linkedStudentId = document.getElementById('inp-linked-student-id');
+                if (!linkedStudentId || !linkedStudentId.value || linkedStudentId.value.trim() === '') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Estudiante requerido',
+                        text: 'Debe buscar y seleccionar el estudiante que desea asesorar antes de enviar la solicitud.',
+                        confirmButtonText: 'Entendido',
+                        confirmButtonColor: '#034991'
+                    });
+                    
+                    // Hacer scroll hacia la sección de estudiantes
+                    const studentSection = document.getElementById('inp-search-student');
+                    if (studentSection) {
+                        studentSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        setTimeout(() => studentSection.focus(), 500);
+                    }
+                    return;
+                }
 
+                // Si el formulario es válido y hay estudiante, mostrar confirmación antes de enviar
                 Swal.fire({
                     title: 'Confirmar envío',
                     text: '¿Está seguro de enviar la solicitud? Por favor, revise que toda la información sea correcta.',
