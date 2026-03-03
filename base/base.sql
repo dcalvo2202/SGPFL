@@ -405,6 +405,32 @@ CREATE TABLE `proyecto_notas` (
   CONSTRAINT `proyecto_notas_ibfk_1` FOREIGN KEY (`proyecto_id`) REFERENCES `proyecto_aprobado` (`id_aprobado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+ALTER TABLE proyecto_aprobado
+ADD COLUMN estado VARCHAR(20) NOT NULL DEFAULT 'ACTIVO';
+
+ALTER TABLE proyecto_aprobado
+ADD COLUMN fecha_ultimo_avance DATETIME NULL;
+
+----------------------------------
+-- Tabla de acuerdos de cancelacion
+----------------------------------
+
+
+CREATE TABLE acuerdo_cancelacion (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  proyecto_id INT NOT NULL,
+  usuario_id VARCHAR(50) NOT NULL,
+  motivo VARCHAR(500) NOT NULL,
+  observaciones TEXT,
+  fecha_cancelacion DATETIME NOT NULL,
+  fecha_ultimo_avance_usada DATETIME,
+  UNIQUE KEY uq_cancelacion_proyecto (proyecto_id),
+  CONSTRAINT fk_cancelacion_proyecto
+    FOREIGN KEY (proyecto_id)
+    REFERENCES proyecto_aprobado(id_aprobado)
+    ON DELETE CASCADE
+);
+
 
 -- ----------------------------
 -- Records of sis_sessions_vars
