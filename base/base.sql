@@ -411,9 +411,9 @@ ADD COLUMN estado VARCHAR(20) NOT NULL DEFAULT 'ACTIVO';
 ALTER TABLE proyecto_aprobado
 ADD COLUMN fecha_ultimo_avance DATETIME NULL;
 
-----------------------------------
+-- --------------------------------
 -- Tabla de acuerdos de cancelacion
-----------------------------------
+-- --------------------------------
 
 
 CREATE TABLE acuerdo_cancelacion (
