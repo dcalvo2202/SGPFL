@@ -105,12 +105,12 @@ $archived_proposals = getArchivedProposals($conn, $filters);
         <div class="row">
             <div class="col-12">
                 <div class="card shadow">
-                    <div class="card-header bg-secondary text-white d-flex align-items-center justify-content-between">
+                    <div class="card-header bg-primary text-white d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center">
                             <i class="bi bi-archive-fill me-2" style="font-size: 1.5rem;"></i>
                             <h4 class="mb-0" style="color: white !important;">Archivo Histórico de Proyectos</h4>
                         </div>
-                        <a href="<?= htmlspecialchars($base_url) ?>dashboard.php" class="btn btn-warning btn-sm">
+                        <a href="<?= htmlspecialchars($base_url) ?>dashboard.php" class="btn btn-light btn-sm">
                             <i class="bi bi-arrow-left"></i> Volver al Panel Principal
                         </a>
                     </div>

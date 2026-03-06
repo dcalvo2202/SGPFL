@@ -70,6 +70,16 @@ $avisos_generales = $panel->getAvisos();
                             <h5>Aprobar Proyectos</h5>
                             <p>Gestionar y aprobar proyectos de TFG.</p>
                         </div>
+                    </div>
+                    <!-- Revisar Documentos Finales -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_ctfg_review_final_documents.php'" style="border-left: 4px solid #0d6efd;">
+                            <div class="card-icon">
+                                <i class="bi bi-file-earmark-check-fill"></i>
+                            </div>
+                            <h5>Revisar Documentos Finales</h5>
+                            <p>Ver y gestionar documentos finales de TFG pendientes de revisión.</p>
+                        </div>
                     </div>  
                     <!-- Proyectos Registrados -->
                     <div class="col-md-6 col-lg-4">
