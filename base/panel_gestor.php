@@ -103,6 +103,16 @@ $calificaciones          = $panel->getCalificaciones();
                             <p>Consulte o modifique notas de proyectos registrados.</p>
                         </div>
                     </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>ProyectosRegistrados.php'">
+                            <div class="card-icon">
+                                <i class="bi bi-folder2-open"></i>
+                            </div>
+                            <h5>Proyectos Registrados</h5>
+                            <p>Ver, filtrar y cancelar proyectos aprobados (Art. 73).</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
