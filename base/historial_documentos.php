@@ -777,7 +777,7 @@ try {
                                                     <tr>
                                                         <td><?= htmlspecialchars($pf_hist['file_name']) ?></td>
                                                         <td><?= date('d/m/Y', strtotime($pf_hist['upload_date'])) ?></td>
-                                                        <td>-</td>
+                                                        <td><?= htmlspecialchars($version['status']) ?></td>
                                                         <?php if (count($linked_students_list) > 1): ?>
                                                         <td>
                                                             <?php

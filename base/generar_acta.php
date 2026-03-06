@@ -1,6 +1,5 @@
 <?php
 include("mod/login/check.php");
-include('includes.php');
 include('lang/lang.es');
 
 $current_user_name = $mySessionController->getVar("nombre");

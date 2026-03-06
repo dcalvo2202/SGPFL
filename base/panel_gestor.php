@@ -1,7 +1,6 @@
 <?php
 // ================== VERIFICAR AUTENTICACIÓN ==================
 include("mod/login/check.php");
-include('includes.php');
 include('lang/lang.es');
 
 // ================== VARIABLES DE SESIÓN ==================
