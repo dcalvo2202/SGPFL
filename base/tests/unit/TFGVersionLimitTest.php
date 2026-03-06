@@ -11,7 +11,6 @@ class TFGVersionLimitTest extends TestCase
         $mockConn = $this->createMock(mysqli::class);
 
         $mockStmtSelect = $this->createMock(mysqli_stmt::class);
-        $mockStmtDeleteFinalDocuments = $this->createMock(mysqli_stmt::class);
         $mockStmtDeleteFile = $this->createMock(mysqli_stmt::class);
 
         $mockResult = $this->createMock(mysqli_result::class);
@@ -26,14 +25,11 @@ class TFGVersionLimitTest extends TestCase
         $mockConn->method('commit')->willReturn(true);
         $mockConn->method('rollback')->willReturn(true);
 
-        $mockConn->expects($this->exactly(3))
+        $mockConn->expects($this->exactly(2))
             ->method('prepare')
-            ->willReturnCallback(function($sql) use ($mockStmtSelect, $mockStmtDeleteFinalDocuments, $mockStmtDeleteFile) {
+            ->willReturnCallback(function($sql) use ($mockStmtSelect, $mockStmtDeleteFile) {
                 if (strpos($sql, 'SELECT id FROM tfg_files') !== false) {
                     return $mockStmtSelect;
-                }
-                if (strpos($sql, 'DELETE FROM tfg_final_documents') !== false) {
-                    return $mockStmtDeleteFinalDocuments;
                 }
                 if (strpos($sql, 'DELETE FROM tfg_files') !== false) {
                     return $mockStmtDeleteFile;
@@ -46,10 +42,6 @@ class TFGVersionLimitTest extends TestCase
         $mockStmtSelect->expects($this->once())->method('get_result')->willReturn($mockResult);
         $mockStmtSelect->expects($this->once())->method('close');
 
-        $mockStmtDeleteFinalDocuments->expects($this->once())->method('bind_param')->with('i', 1);
-        $mockStmtDeleteFinalDocuments->expects($this->once())->method('execute');
-        $mockStmtDeleteFinalDocuments->expects($this->once())->method('close');
-
         $mockStmtDeleteFile->expects($this->once())->method('bind_param')->with('i', 1);
         $mockStmtDeleteFile->expects($this->once())->method('execute');
         $mockStmtDeleteFile->expects($this->once())->method('close');
@@ -57,7 +49,7 @@ class TFGVersionLimitTest extends TestCase
         // Llama a la función real con los mocks y datos de prueba
         limitarVersionesTFGFiles(
             $mockConn,
-            'user123', // $user_id
+            'user123',           // $user_id
             'Documento Final TFG' // $document_type
         );
 

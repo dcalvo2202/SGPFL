@@ -284,12 +284,9 @@ function archiveProjectMembers($conn, $project_id) {
  */
 function archiveAdditionalFiles($conn, $proposal_id) {
     // Buscar archivos en tfg_files que pertenezcan a esta propuesta
-    // Nota: Ajustar según la estructura real de tfg_files
     $stmt = $conn->prepare("
         SELECT * FROM tfg_files 
-        WHERE uploaded_by IN (
-            SELECT user_id FROM tfg_proposals WHERE id = ?
-        )
+        WHERE proposal_id = ?
     ");
     $stmt->bind_param("i", $proposal_id);
     $stmt->execute();

@@ -302,6 +302,7 @@ try {
     if ($row = $result->fetch_assoc()) {
         $row['tipo'] = 'Propuesta TFG'; // Identificador de tipo de documento
         $row['version'] = 1; // Versión inicial
+        $row['_is_first_proposal'] = true;
         $documentos[] = $row;
     }
     $stmt->close();
@@ -312,6 +313,47 @@ try {
 
 // Guardar el ID de la propuesta principal para excluirla de las versiones
 $propuesta_principal_id = $documentos[0]['id'] ?? 0;
+
+// Archivos adicionales del lote actual de la propuesta (mismo batch de subida)
+if ($propuesta_principal_id > 0) {
+    try {
+        $conn = new mysqli($db_host, $usuario, $clave, $db);
+        $conn->set_charset("utf8");
+        $stmt_pf = $conn->prepare(
+            "SELECT f.id, f.file_name, f.mime_type, f.file_size, f.version, f.document_type,
+                    f.upload_date, f.uploaded_by, u.nombre as uploaded_by_name
+             FROM tfg_files f
+             LEFT JOIN sis_user u ON f.uploaded_by = u.id
+             WHERE f.proposal_id = ?
+             ORDER BY f.id ASC"
+        );
+        $stmt_pf->bind_param("i", $propuesta_principal_id);
+        $stmt_pf->execute();
+        $res_pf = $stmt_pf->get_result();
+        while ($pf = $res_pf->fetch_assoc()) {
+            $documentos[] = [
+                'id'                 => $pf['id'],
+                'title'              => $pf['file_name'],
+                'file_name'          => $pf['file_name'],
+                'mime_type'          => $pf['mime_type'],
+                'file_size'          => $pf['file_size'],
+                'status'             => $documentos[0]['status'] ?? '-',
+                'created_at'         => $pf['upload_date'],
+                'tipo'               => 'Propuesta TFG',
+                'document_type'      => $pf['document_type'],
+                'version'            => $pf['version'],
+                'uploaded_by'        => $pf['uploaded_by'],
+                'uploaded_by_name'   => $pf['uploaded_by_name'],
+                '_is_first_proposal' => false,
+            ];
+        }
+        $stmt_pf->close();
+        $conn->close();
+    } catch (Exception $e) {
+        error_log("Error obteniendo archivos adicionales de propuesta: " . $e->getMessage());
+    }
+}
+
 // =============================== OBTENER VERSIONES DE PROPUESTA TFG ===============================
 
 // Versiones históricas de la propuesta TFG (excluyendo la principal)
@@ -351,113 +393,123 @@ try {
     error_log("Error obteniendo versiones de propuestas: " . $e->getMessage());
 }
 
-// =============================== OBTENER DOCUMENTO FINAL DE TFG ===============================
+// Archivos adicionales de cada versión histórica de propuesta [id_pro => [files...]]
+$propuestas_vers_files = [];
+if (!empty($propuestas_vers)) {
+    try {
+        $conn = new mysqli($db_host, $usuario, $clave, $db);
+        $conn->set_charset("utf8");
+        $prop_ids_hist = array_unique(array_column($propuestas_vers, 'id_pro'));
+        $placeholders_hist = implode(',', array_fill(0, count($prop_ids_hist), '?'));
+        $types_hist = str_repeat('i', count($prop_ids_hist));
+        $stmt_pf2 = $conn->prepare(
+            "SELECT f.id, f.file_name, f.mime_type, f.file_size, f.version,
+                    f.upload_date, f.uploaded_by, f.proposal_id, u.nombre as uploaded_by_name
+             FROM tfg_files f
+             LEFT JOIN sis_user u ON f.uploaded_by = u.id
+             WHERE f.proposal_id IN ($placeholders_hist)
+             ORDER BY f.proposal_id, f.id ASC"
+        );
+        $stmt_pf2->bind_param($types_hist, ...$prop_ids_hist);
+        $stmt_pf2->execute();
+        $res_pf2 = $stmt_pf2->get_result();
+        while ($pf2 = $res_pf2->fetch_assoc()) {
+            $propuestas_vers_files[$pf2['proposal_id']][] = $pf2;
+        }
+        $stmt_pf2->close();
+        $conn->close();
+    } catch (Exception $e) {
+        error_log("Error obteniendo archivos adicionales de versiones históricas: " . $e->getMessage());
+    }
+}
 
-// Documento final de TFG (último entregado)
+// =============================== OBTENER DOCUMENTO FINAL DE TFG ===============================
+// Todos los archivos de la entrega actual se muestran como hermanos (misma versión).
+// Las versiones anteriores son las de rondas previas tras rechazos.
+$doc_final_previous_versions = []; // [version_num => [files...]]
+
 try {
     $conn = new mysqli($db_host, $usuario, $clave, $db);
     $conn->set_charset("utf8");
-    
+
+    // 1. Obtener el registro tfg_final_documents del grupo
     $in_clause = buildInClause($group_member_ids);
-    $sql = "SELECT fd.id as doc_id, fd.proposal_id, fd.status, fd.project_status, fd.submitted_at,
-                   f.id as file_id, f.file_name, f.mime_type, f.file_size, f.version, f.document_type, f.upload_date,
-                   f.uploaded_by, u.nombre as uploaded_by_name
+    $sql = "SELECT fd.id as doc_id, fd.proposal_id, fd.status, fd.project_status, fd.submitted_at
             FROM tfg_final_documents fd
-            INNER JOIN tfg_files f ON fd.file_id = f.id
             INNER JOIN tfg_proposals tp ON fd.proposal_id = tp.id
-            LEFT JOIN sis_user u ON f.uploaded_by = u.id
             WHERE tp.user_id IN ({$in_clause['placeholders']})
-            ORDER BY fd.submitted_at DESC
             LIMIT 1";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param($in_clause['types'], ...$group_member_ids);
     $stmt->execute();
-    $result = $stmt->get_result();
-    
-    while ($row = $result->fetch_assoc()) {
-        $doc = [
-            'id' => $row['file_id'],
-            'title' => $row['file_name'],
-            'file_name' => $row['file_name'],
-            'mime_type' => $row['mime_type'],
-            'file_size' => $row['file_size'],
-            'status' => $row['status'],
-            'created_at' => $row['submitted_at'],
-            'tipo' => $row['document_type'],
-            'document_type' => $row['document_type'],
-            'version' => $row['version'],
-            'uploaded_by' => $row['uploaded_by'],
-            'uploaded_by_name' => $row['uploaded_by_name']
-        ];
-        $documentos[] = $doc;
-        
-        // Guardar info para buscar versiones de este documento final
-        $doc_final_ids[$row['document_type']] = [
-            'file_id' => $row['file_id'],
-            'document_type' => $row['document_type'],
-            'uploaded_by' => $row['uploaded_by']
-        ];
-    }
+    $doc_final_row = $stmt->get_result()->fetch_assoc();
     $stmt->close();
+
+    if ($doc_final_row) {
+        $doc_id = $doc_final_row['doc_id'];
+
+        // 2. Versión actual = la más alta subida para este documento
+        $stmt_ver = $conn->prepare("SELECT MAX(version) as max_ver FROM tfg_files WHERE final_document_id = ?");
+        $stmt_ver->bind_param("i", $doc_id);
+        $stmt_ver->execute();
+        $current_version = (float)$stmt_ver->get_result()->fetch_assoc()['max_ver'];
+        $stmt_ver->close();
+
+        // 3. Todos los archivos de la entrega actual (misma versión = mismo lote)
+        $stmt_cur = $conn->prepare(
+            "SELECT f.id, f.file_name, f.mime_type, f.file_size, f.version, f.document_type,
+                    f.upload_date, f.uploaded_by, u.nombre as uploaded_by_name
+             FROM tfg_files f
+             LEFT JOIN sis_user u ON f.uploaded_by = u.id
+             WHERE f.final_document_id = ? AND f.version = ?
+             ORDER BY f.id ASC"
+        );
+        $stmt_cur->bind_param("id", $doc_id, $current_version);
+        $stmt_cur->execute();
+        $result_cur = $stmt_cur->get_result();
+        $is_first = true;
+        while ($file = $result_cur->fetch_assoc()) {
+            $documentos[] = [
+                'id'               => $file['id'],
+                'title'            => $file['file_name'],
+                'file_name'        => $file['file_name'],
+                'mime_type'        => $file['mime_type'],
+                'file_size'        => $file['file_size'],
+                'status'           => $doc_final_row['status'],
+                'created_at'       => $file['upload_date'],
+                'tipo'             => 'Documento Final TFG',
+                'document_type'    => 'Documento Final TFG',
+                'version'          => $file['version'],
+                'uploaded_by'      => $file['uploaded_by'],
+                'uploaded_by_name' => $file['uploaded_by_name'],
+                '_is_first_final'  => $is_first,
+            ];
+            $is_first = false;
+        }
+        $stmt_cur->close();
+
+        // 4. Entregas anteriores (versiones previas = rondas tras rechazo), agrupadas por versión
+        $stmt_prev = $conn->prepare(
+            "SELECT f.id, f.file_name, f.mime_type, f.file_size, f.version,
+                    f.upload_date, f.uploaded_by, u.nombre as uploaded_by_name
+             FROM tfg_files f
+             LEFT JOIN sis_user u ON f.uploaded_by = u.id
+             WHERE f.final_document_id = ? AND f.version < ?
+             ORDER BY f.version DESC, f.id ASC"
+        );
+        $stmt_prev->bind_param("id", $doc_id, $current_version);
+        $stmt_prev->execute();
+        $result_prev = $stmt_prev->get_result();
+        while ($prev = $result_prev->fetch_assoc()) {
+            $v = number_format((float)$prev['version'], 1);
+            $doc_final_previous_versions[$v][] = $prev;
+        }
+        $stmt_prev->close();
+    }
+
+    $conn->close();
 } catch (Exception $e) {
     error_log("Error obteniendo documentos finales: " . $e->getMessage());
-}
-
-// =============================== OBTENER VERSIONES DE DOCUMENTO FINAL DE TFG ===============================
-// Array para almacenar versiones de documentos finales
-$versiones_docs_finales = [];
-if (!empty($doc_final_ids)) {
-    try {
-        foreach ($doc_final_ids as $doc_info) {
-            $conn = new mysqli($db_host, $usuario, $clave, $db);
-            $conn->set_charset("utf8");
-            
-            // Obtener todas las versiones del mismo tipo de documento excepto la actual (de cualquier miembro del grupo)
-            $in_clause_vers = buildInClause($group_member_ids);
-            $sql = "SELECT f.id, fd.project_status as status, f.file_name, f.mime_type, f.file_size, f.version, f.document_type, f.upload_date, f.uploaded_by, fd.status, fd.proposal_id, u.nombre as uploaded_by_name
-                    FROM tfg_files f
-                    LEFT JOIN tfg_final_documents fd ON f.id = fd.file_id
-                    LEFT JOIN sis_user u ON f.uploaded_by = u.id
-                    WHERE f.document_type = ? 
-                    AND f.uploaded_by IN ({$in_clause_vers['placeholders']})
-                    AND f.id != ?
-                    ORDER BY f.upload_date DESC
-                    LIMIT 4"; // Limitamos a 5 versiones
-            
-            // Preparar tipos y parámetros: documento_type + group_member_ids + file_id
-            $types_vers = 's' . $in_clause_vers['types'] . 'i';
-            $params_vers = array_merge([$doc_info['document_type']], $group_member_ids, [$doc_info['file_id']]);
-            
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param($types_vers, ...$params_vers);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            
-            $versions = [];
-            while ($row = $result->fetch_assoc()) {
-                $versions[] = [
-                    'id' => $row['id'],
-                    'title' => $row['file_name'],
-                    'file_name' => $row['file_name'],
-                    'mime_type' => $row['mime_type'],
-                    'file_size' => $row['file_size'],
-                    'version' => $row['version'],
-                    'document_type' => $row['document_type'],
-                    'created_at' => $row['upload_date'],
-                    'status' => $row['status'] ? $row['status'] : 'Versión anterior' // Usamos el estado de la tabla si existe
-                ];
-            }
-            
-            if (!empty($versions)) {
-                $versiones_docs_finales[$doc_info['document_type']] = $versions;
-            }
-            
-            $stmt->close();
-            $conn->close();
-        }
-    } catch (Exception $e) {
-        error_log("Error obteniendo versiones de documentos finales: " . $e->getMessage());
-    }
 }
 
 // =============================== OBTENER OTROS DOCUMENTOS DEL USUARIO ===============================
@@ -474,8 +526,10 @@ try {
             LEFT JOIN sis_user u ON f.uploaded_by = u.id
             WHERE f.uploaded_by IN ({$in_clause['placeholders']})
             AND f.document_type NOT IN ('Propuesta TFG', 'Documento Final TFG')
+            AND f.final_document_id IS NULL
+            AND f.proposal_id IS NULL
             ORDER BY f.upload_date DESC";
-            
+    
     $stmt = $conn->prepare($sql);
     $stmt->bind_param($in_clause['types'], ...$group_member_ids);
     $stmt->execute();
@@ -516,7 +570,7 @@ try {
     <!-- =============================== CONTENIDO PRINCIPAL =============================== -->
     <main class="flex-fill">
         <div class="container my-4">
-            <h1 class="text-center mb-4" style="color: #b00; font-size: 2.5rem;">Historial de documentos</h1>
+            <h1 class="text-center mb-4" style="font-size: 2.5rem; color: #000;">Historial de documentos</h1>
             
             <?php if ($is_external_advisor && !empty($linked_students_list)): ?>
             <!-- Banner informativo para asesor externo -->
@@ -622,12 +676,23 @@ try {
                                 </td>
                                 <?php endif; ?>
                                 <td data-label="Versión">
-                                    <?php if (($doc['tipo'] === 'Propuesta TFG' && !empty($propuestas_vers)) || 
-                                            ($doc['tipo'] === 'Documento Final TFG' && !empty($versiones_docs_finales[$doc['document_type']]))): ?>
-                                        <button class="btn btn-link-una toggle-collapse" type="button"
-                                        data-target="<?= $collapseId ?>">
+                                    <?php if ($doc['tipo'] === 'Propuesta TFG' && !empty($doc['_is_first_proposal'])): ?>
+                                        <?php $prop_ver_num = count($propuestas_vers) + 1; ?>
+                                        <?= number_format($prop_ver_num, 1) ?>
+                                        <?php if (!empty($propuestas_vers)): ?>
+                                        <br><button class="btn btn-link-una toggle-collapse" type="button"
+                                            data-target="<?= $collapseId ?>">
                                             Versiones
                                         </button>
+                                        <?php endif; ?>
+                                    <?php elseif ($doc['tipo'] === 'Documento Final TFG' && !empty($doc['_is_first_final'])): ?>
+                                        <?= number_format($doc['version'], 1) ?>
+                                        <?php if (!empty($doc_final_previous_versions)): ?>
+                                        <br><button class="btn btn-link-una toggle-collapse" type="button"
+                                            data-target="finalVersionCollapse">
+                                            Versiones
+                                        </button>
+                                        <?php endif; ?>
                                     <?php elseif (isset($doc['version'])): ?>
                                         <?= number_format($doc['version'], 1) ?>
                                     <?php else: ?>
@@ -637,12 +702,12 @@ try {
                                 <td data-label="Tamaño"><?= number_format($doc['file_size'] / (1024 * 1024), 2) ?> MB</td>
                                 <td data-label="Formato"><?= formatoLegible($doc['mime_type']) ?></td>
                                 <td data-label="Acción">
-                                    <?php if ($doc['tipo'] === 'Propuesta TFG'): ?>  
+                                    <?php if ($doc['tipo'] === 'Propuesta TFG' && !empty($doc['_is_first_proposal'])): ?>  
                                         <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $doc['id'] ?>" class="btn-link-una">
                                             <i class="bi bi-download me-1"></i>
                                             <span>Descargar</span>
                                         </a>
-                                    <?php elseif ($doc['tipo'] === 'Documento Final TFG' || $doc['tipo'] !== 'Propuesta TFG'): ?>
+                                    <?php else: ?>
                                         <a href="<?= $base_url . 'mod/admin/users/tfg_download_file.php?id=' . $doc['id'] ?>" class="btn-link-una">
                                             <i class="bi bi-download me-1"></i>
                                             <span>Descargar</span>    
@@ -655,12 +720,20 @@ try {
                             <?php 
                             $colspan_value = count($linked_students_list) > 1 ? 8 : 7;
                             ?>
-                            <?php if ($doc['tipo'] === 'Propuesta TFG' && !empty($propuestas_vers)): ?>
+                            <?php if ($doc['tipo'] === 'Propuesta TFG' && !empty($doc['_is_first_proposal']) && !empty($propuestas_vers)): ?>
                             <tr class="collapse-row">
                                 <td colspan="<?= $colspan_value ?>" class="p-0">
                                     <div class="custom-collapse" id="<?= $collapseId ?>" style="display: none;">
                                         <div class="bg-light py-2 px-4">
-                                            <table class="table table-bordered mb-0 version-table">
+                                            <?php
+                                            $num_prop_vers = count($propuestas_vers);
+                                            foreach ($propuestas_vers as $k => $version):
+                                                $ver_num = number_format($num_prop_vers - $k, 1);
+                                            ?>
+                                            <h6 class="mt-2 mb-1 text-muted">
+                                                Entrega v<?= $ver_num ?> &mdash; <?= date('d/m/Y', strtotime($version['created_at'])) ?>
+                                            </h6>
+                                            <table class="table table-bordered mb-2 version-table">
                                                 <thead class="table-light">
                                                     <tr>
                                                         <th>Nombre</th>
@@ -676,14 +749,13 @@ try {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php foreach ($propuestas_vers as $version): ?>
                                                     <tr>
-                                                        <td data-label="Documento"><?= htmlspecialchars($version['title']) ?></td>
-                                                        <td data-label="Fecha"><?= date('d/m/Y', strtotime($version['created_at'])) ?></td>
-                                                        <td data-label="Estado"><?= htmlspecialchars($version['status']) ?></td>
+                                                        <td><?= htmlspecialchars($version['title']) ?></td>
+                                                        <td><?= date('d/m/Y', strtotime($version['created_at'])) ?></td>
+                                                        <td><?= htmlspecialchars($version['status']) ?></td>
                                                         <?php if (count($linked_students_list) > 1): ?>
-                                                        <td data-label="Subido por">
-                                                            <?php 
+                                                        <td>
+                                                            <?php
                                                             $v_uploader = $version['uploaded_by_name'] ?? '';
                                                             $v_uploader_id = $version['user_id'] ?? '';
                                                             echo !empty($v_uploader) ? htmlspecialchars($v_uploader) : '-';
@@ -691,64 +763,34 @@ try {
                                                             ?>
                                                         </td>
                                                         <?php endif; ?>
-                                                        <td data-label="Versión" class="text-center">-</td>
-                                                        <td data-label="Tamaño"><?= number_format($version['file_size'] / (1024 * 1024), 2) ?> MB</td>
-                                                        <td data-label="Formato"><?= formatoLegible($version['mime_type']) ?></td>
-                                                        <td data-label="Acción">
+                                                        <td class="text-center"><?= $ver_num ?></td>
+                                                        <td><?= number_format($version['file_size'] / (1024 * 1024), 2) ?> MB</td>
+                                                        <td><?= formatoLegible($version['mime_type']) ?></td>
+                                                        <td>
                                                             <a href="<?= $base_url . 'mod/admin/users/tfg_download.php?id=' . $version['id_pro'] ?>" class="btn-link-una">
                                                                 <i class="bi bi-download me-1"></i>
                                                                 <span>Descargar</span>
-                                                            </a>    
+                                                            </a>
                                                         </td>
                                                     </tr>
-                                                    <?php endforeach; ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <?php elseif ($doc['tipo'] === 'Documento Final TFG' && !empty($versiones_docs_finales[$doc['document_type']])): ?>
-                            <tr class="collapse-row">
-                                <td colspan="<?= $colspan_value ?>" class="p-0">
-                                    <div class="custom-collapse" id="<?= $collapseId ?>" style="display: none;">
-                                        <div class="bg-light py-2 px-4">
-                                            <table class="table table-bordered mb-0 version-table">
-                                                <thead class="table-light">
+                                                    <?php foreach ($propuestas_vers_files[$version['id_pro']] ?? [] as $pf_hist): ?>
                                                     <tr>
-                                                        <th>Nombre</th>
-                                                        <th>Fecha</th>
-                                                        <th>Estado</th>
+                                                        <td><?= htmlspecialchars($pf_hist['file_name']) ?></td>
+                                                        <td><?= date('d/m/Y', strtotime($pf_hist['upload_date'])) ?></td>
+                                                        <td>-</td>
                                                         <?php if (count($linked_students_list) > 1): ?>
-                                                        <th>Subido por</th>
-                                                        <?php endif; ?>
-                                                        <th>Versión</th>
-                                                        <th>Tamaño</th>
-                                                        <th>Formato</th>
-                                                        <th>Acción</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php foreach ($versiones_docs_finales[$doc['document_type']] as $version): ?>
-                                                    <tr>
-                                                        <td data-label="Documento"><?= htmlspecialchars($version['file_name']) ?></td>
-                                                        <td data-label="Fecha"><?= date('d/m/Y', strtotime($version['created_at'])) ?></td>
-                                                        <td data-label="Estado"><?= htmlspecialchars($version['status']) ?></td>
-                                                        <?php if (count($linked_students_list) > 1): ?>
-                                                        <td data-label="Subido por">
-                                                            <?php 
-                                                            $vf_uploader = $version['uploaded_by_name'] ?? '';
-                                                            $vf_uploader_id = $version['uploaded_by'] ?? '';
-                                                            echo !empty($vf_uploader) ? htmlspecialchars($vf_uploader) : '-';
-                                                            if ($vf_uploader_id == $current_user_id) echo ' <span class="badge bg-success">Tú</span>';
+                                                        <td>
+                                                            <?php
+                                                            echo !empty($pf_hist['uploaded_by_name']) ? htmlspecialchars($pf_hist['uploaded_by_name']) : '-';
+                                                            if ($pf_hist['uploaded_by'] == $current_user_id) echo ' <span class="badge bg-success">Tú</span>';
                                                             ?>
                                                         </td>
                                                         <?php endif; ?>
-                                                        <td data-label="Versión"><?= number_format($version['version'], 1) ?></td>
-                                                        <td data-label="Tamaño"><?= number_format($version['file_size'] / (1024 * 1024), 2) ?> MB</td>
-                                                        <td data-label="Formato"><?= formatoLegible($version['mime_type']) ?></td>
-                                                        <td data-label="Acción">
-                                                            <a href="<?= $base_url . 'mod/admin/users/tfg_download_file.php?id=' . $version['id'] ?>" class="btn-link-una">
+                                                        <td class="text-center"><?= $ver_num ?></td>
+                                                        <td><?= number_format($pf_hist['file_size'] / (1024 * 1024), 2) ?> MB</td>
+                                                        <td><?= formatoLegible($pf_hist['mime_type']) ?></td>
+                                                        <td>
+                                                            <a href="<?= $base_url . 'mod/admin/users/tfg_download_file.php?id=' . $pf_hist['id'] ?>" class="btn-link-una">
                                                                 <i class="bi bi-download me-1"></i>
                                                                 <span>Descargar</span>
                                                             </a>
@@ -757,6 +799,59 @@ try {
                                                     <?php endforeach; ?>
                                                 </tbody>
                                             </table>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <?php elseif ($doc['tipo'] === 'Documento Final TFG' && !empty($doc['_is_first_final']) && !empty($doc_final_previous_versions)): ?>
+                            <tr class="collapse-row">
+                                <td colspan="<?= $colspan_value ?>" class="p-0">
+                                    <div class="custom-collapse" id="finalVersionCollapse" style="display: none;">
+                                        <div class="bg-light py-2 px-4">
+                                            <?php foreach ($doc_final_previous_versions as $ver_num => $ver_files): ?>
+                                            <h6 class="mt-2 mb-1 text-muted">
+                                                Entrega v<?= $ver_num ?> &mdash; <?= date('d/m/Y', strtotime($ver_files[0]['upload_date'])) ?>
+                                            </h6>
+                                            <table class="table table-bordered mb-2 version-table">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>Nombre</th>
+                                                        <?php if (count($linked_students_list) > 1): ?>
+                                                        <th>Subido por</th>
+                                                        <?php endif; ?>
+                                                        <th>Versión</th>
+                                                        <th>Tamaño</th>
+                                                        <th>Formato</th>
+                                                        <th>Acción</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php foreach ($ver_files as $vf): ?>
+                                                    <tr>
+                                                        <td><?= htmlspecialchars($vf['file_name']) ?></td>
+                                                        <?php if (count($linked_students_list) > 1): ?>
+                                                        <td>
+                                                            <?php
+                                                            echo !empty($vf['uploaded_by_name']) ? htmlspecialchars($vf['uploaded_by_name']) : '-';
+                                                            if ($vf['uploaded_by'] == $current_user_id) echo ' <span class="badge bg-success">Tú</span>';
+                                                            ?>
+                                                        </td>
+                                                        <?php endif; ?>
+                                                        <td><?= $ver_num ?></td>
+                                                        <td><?= number_format($vf['file_size'] / (1024 * 1024), 2) ?> MB</td>
+                                                        <td><?= formatoLegible($vf['mime_type']) ?></td>
+                                                        <td>
+                                                            <a href="<?= $base_url . 'mod/admin/users/tfg_download_file.php?id=' . $vf['id'] ?>" class="btn-link-una">
+                                                                <i class="bi bi-download me-1"></i>
+                                                                <span>Descargar</span>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <?php endforeach; ?>
+                                                </tbody>
+                                            </table>
+                                            <?php endforeach; ?>
                                         </div>
                                     </div>
                                 </td>

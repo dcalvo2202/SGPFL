@@ -10,6 +10,8 @@ $db_name = $db;       // Guardar 'base_db'
 
 include_once __DIR__ . '/../../../lib/mysession/mySession.class.php';
 include_once __DIR__ . '/../../../lib/mysession/mySession.conf.php';
+include_once __DIR__ . '/../../../inc/tfg_final_functions.php';
+require_once __DIR__ . '/../../../inc/alert_functions.php';
 
 $mySessionController = mySession::getIstance($_MYSESSION_CONF);
 $current_user_id = $mySessionController->getVar("usuario");
@@ -138,7 +140,20 @@ try {
         throw new Exception("Error al leer el archivo PDF.");
     }
     
-    // 5. Insertar nueva versión en tfg_files
+    // 5. Limitar versiones antiguas del estudiante y calcular siguiente versión
+    $document_type_final = 'Documento Final TFG';
+    limitarVersionesTFGFiles($conn, $current_user_id, $document_type_final);
+
+    $sql_version = "SELECT MAX(version) AS max_version FROM tfg_files WHERE uploaded_by = ? AND document_type = ?";
+    $stmt_version = $conn->prepare($sql_version);
+    $stmt_version->bind_param("ss", $current_user_id, $document_type_final);
+    $stmt_version->execute();
+    $row_version = $stmt_version->get_result()->fetch_assoc();
+    $stmt_version->close();
+    // Reemplaza el cálculo simple $doc_data['version'] + 1 con el real por estudiante
+    $next_version = $row_version['max_version'] ? $row_version['max_version'] + 1 : 1;
+
+    // Insertar nueva versión en tfg_files
     $sql_file = "INSERT INTO tfg_files 
                  (file_name, mime_type, file_size, file_data, storage_path, uploaded_by, version, document_type) 
                  VALUES (?, ?, ?, ?, NULL, ?, ?, 'Documento Final TFG')";
@@ -148,14 +163,13 @@ try {
     
     // Bind parameters: s=string, i=int, b=blob, d=double (para version que es float)
     $null_blob = null;
-    $stmt_file->bind_param("ssibsds", 
+    $stmt_file->bind_param("ssibsd", 
         $file['name'],
         $mime_type,
         $file['size'],
         $null_blob,
         $current_user_id,
-        $next_version,
-        'Documento Final TFG'
+        $next_version
     );
     
     // Enviar el contenido del BLOB (índice 3 = 4º parámetro, basado en 0)
@@ -182,6 +196,13 @@ try {
         throw new Exception("Error al actualizar el documento: " . $stmt_update->error);
     }
     $stmt_update->close();
+
+    // 6b. Vincular el nuevo archivo con este documento final
+    $stmt_link = $conn->prepare("UPDATE tfg_files SET final_document_id = ? WHERE id = ?");
+    if (!$stmt_link) throw new Exception("Error preparando vínculo de archivo: " . $conn->error);
+    $stmt_link->bind_param("ii", $document_id, $new_file_id);
+    $stmt_link->execute();
+    $stmt_link->close();
     
     // 7. Insertar registro en tfg_document_reviews (respuesta del estudiante)
     $review_type = 'Correccion Estudiante';
@@ -214,7 +235,6 @@ try {
     // HU-037: REGISTRAR ALERTA INTERNA
     // ===============================
     try {
-        require_once __DIR__ . '/../../../inc/alert_functions.php';
         
         // Obtener nombre del estudiante y título para la alerta
         $sql_info = "SELECT u.nombre, tp.title 
@@ -222,7 +242,7 @@ try {
                      INNER JOIN tfg_proposals tp ON tp.user_id = u.id
                      WHERE u.id = ? AND tp.id = ?";
         $stmt_info = $conn->prepare($sql_info);
-        $stmt_info->bind_param("si", $current_user_id, $current_doc['proposal_id']);
+        $stmt_info->bind_param("si", $current_user_id, $doc_data['proposal_id']);
         $stmt_info->execute();
         $info_result = $stmt_info->get_result()->fetch_assoc();
         $stmt_info->close();
@@ -235,7 +255,7 @@ try {
                 $document_id
             );
         }
-    } catch (Exception $alertEx) {
+    } catch (\Throwable $alertEx) {
         error_log("HU-037: Error registrando alerta (no crítico): " . $alertEx->getMessage());
     }
     

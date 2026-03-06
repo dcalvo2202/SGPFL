@@ -429,7 +429,7 @@ CREATE TABLE acuerdo_cancelacion (
     FOREIGN KEY (proyecto_id)
     REFERENCES proyecto_aprobado(id_aprobado)
     ON DELETE CASCADE
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 
 -- ----------------------------
@@ -1484,10 +1484,15 @@ CREATE TABLE `tfg_files` (
   `upload_date` datetime DEFAULT CURRENT_TIMESTAMP,
   `version` FLOAT NOT NULL DEFAULT 1,
   `document_type` VARCHAR(50) NOT NULL,
+  `proposal_id` int(11) DEFAULT NULL COMMENT 'FK a tfg_proposals (archivo de propuesta)',
+  `final_document_id` int(11) DEFAULT NULL COMMENT 'FK a tfg_final_documents (archivo de documento final)',
   PRIMARY KEY (`id`),
   KEY `idx_upload_date` (`upload_date`),
   KEY `fk_tfg_files_user` (`uploaded_by`),
-  CONSTRAINT `fk_tfg_files_user` FOREIGN KEY (`uploaded_by`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
+  KEY `idx_tfg_files_proposal` (`proposal_id`),
+  KEY `idx_tfg_files_final_document` (`final_document_id`),
+  CONSTRAINT `fk_tfg_files_user` FOREIGN KEY (`uploaded_by`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_tfg_files_proposal` FOREIGN KEY (`proposal_id`) REFERENCES `tfg_proposals` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- ----------------------------
@@ -1515,6 +1520,12 @@ CREATE TABLE `tfg_final_documents` (
   CONSTRAINT `fk_tfg_final_file` FOREIGN KEY (`file_id`) REFERENCES `tfg_files` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `fk_tfg_final_submitter` FOREIGN KEY (`submitted_by`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- Vincular tfg_files con tfg_final_documents (FK diferida por dependencia circular)
+ALTER TABLE `tfg_files`
+  ADD CONSTRAINT `fk_tfg_files_final_document`
+    FOREIGN KEY (`final_document_id`) REFERENCES `tfg_final_documents` (`id`)
+    ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- ----------------------------
 -- Table structure for `tfg_document_reviews`

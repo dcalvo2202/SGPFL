@@ -264,11 +264,16 @@ function processMultipleFiles($files, $validator) {
  * @param array $files Array de archivos a insertar (sin el primero)
  * @param string $user_id ID del usuario
  * @param string $document_type Tipo de documento
+ * @param int|null $parent_id ID del padre (proposal_id o final_document_id)
+ * @param string $parent_type Tipo de padre: 'proposal' o 'final_document'
+ * @param float $version Número de versión del lote (todos los archivos del mismo envío comparten versión)
  * @return int Número de archivos guardados exitosamente
  */
-function saveAdditionalFiles($conn, $files, $user_id, $document_type = 'Anexo') {
+function saveAdditionalFiles($conn, $files, $user_id, $document_type = 'Anexo', $parent_id = null, $parent_type = 'proposal', $version = 1) {
     $saved_count = 0;
     
+    $col_parent = ($parent_type === 'final_document') ? 'final_document_id' : 'proposal_id';
+
     for ($i = 1; $i < count($files); $i++) {
         $file = $files[$i];
         
@@ -287,22 +292,22 @@ function saveAdditionalFiles($conn, $files, $user_id, $document_type = 'Anexo') 
             }
         }
         
-        $sql = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by, version, document_type) 
-                VALUES (?, ?, ?, ?, NULL, ?, 1, ?)";
+        $sql = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by, version, document_type, $col_parent) 
+                VALUES (?, ?, ?, ?, NULL, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         
         if ($stmt) {
             $null_blob = null;
             $file_name = isset($file['unique_name']) ? $file['unique_name'] : $file['name'];
-            // bind_param types: s = string, i = integer, b = blob
-            // "ssibss" => file_name (s), mime_type (s), file_size (i), file_data (b), uploaded_by (s), document_type (s)
-            $stmt->bind_param("ssibss", 
+            $stmt->bind_param("ssibsdsi", 
                 $file_name, 
                 $file['type'], 
                 $file['size'], 
                 $null_blob,
                 $user_id,
-                $document_type
+                $version,
+                $document_type,
+                $parent_id
             );
             
             if (!empty($file_content)) {

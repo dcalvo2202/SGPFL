@@ -72,8 +72,8 @@ $additional_css = ['inc/css/tfg_upload.css'];
                         <h5><i class="bi bi-exclamation-triangle-fill"></i> Documento Final Rechazado</h5>
                         <p class="mb-3"><?= htmlspecialchars($upload_check['message']) ?></p>
                         <div class="d-flex gap-2">
-                            <a href="<?= $base_url ?>mod/admin/users/tfg_upload_correction.php?id=<?= $upload_check['document_id'] ?>" class="btn btn-warning">
-                                <i class="bi bi-file-earmark-arrow-up-fill"></i> Subir Correcciones (HU-020)
+                            <a  href="<?= $base_url ?>mod/admin/users/tfg_upload_correction.php?id=<?= $upload_check['document_id'] ?>" class="btn btn-primary">
+                                <i class="bi bi-file-earmark-arrow-up-fill"></i> Subir Correcciones
                             </a>
                             <a href="<?= htmlspecialchars($panel_href) ?>" class="btn btn-secondary">
                                 <i class="bi bi-arrow-left"></i> Volver al Panel
