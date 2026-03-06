@@ -185,5 +185,3 @@ vendor/bin/codecept run functional --steps
 ```
 
 ---
-
-Si necesitas, puedo agregar una sección de "checklist de CI" para correr estas pruebas en GitHub Actions o en tu pipeline actual.
