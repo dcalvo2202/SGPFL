@@ -318,6 +318,44 @@ try {
             return value.toFixed(decimals) + ' ' + units[i];
         }
 
+        // Validación de tamaño máximo de archivos
+        function bindFileSizeValidation() {
+            const fileValidationRules = {
+                'inp-cv': { maxMB: 5, label: 'Currículum' },
+                'inp-id-copy': { maxMB: 2, label: 'Fotocopia de cédula' }
+            };
+
+            Object.keys(fileValidationRules).forEach(function (inputId) {
+                const input = document.getElementById(inputId);
+                if (!input) return;
+
+                const { maxMB, label } = fileValidationRules[inputId];
+                const maxBytes = maxMB * 1024 * 1024;
+
+                input.addEventListener('change', function () {
+                    const file = input.files && input.files[0] ? input.files[0] : null;
+                    
+                    if (!file) {
+                        input.setCustomValidity('');
+                        return;
+                    }
+
+                    if (file.size > maxBytes) {
+                        const fileSize = formatBytes(file.size);
+                        const maxSize = formatBytes(maxBytes);
+                        input.setCustomValidity(
+                            `${label} excede el tamaño máximo. ` +
+                            `Archivo: ${fileSize}, Máximo permitido: ${maxSize}`
+                        );
+                        input.reportValidity?.();
+                        return;
+                    }
+
+                    input.setCustomValidity('');
+                });
+            });
+        }
+
         // Excepción personalizada para mensajes de validación
         function bindCustomValidationMessages() {
             const rules = {
@@ -339,9 +377,11 @@ try {
                 },
                 'inp-cv': {
                     valueMissing: 'Debe adjuntar el currículum (PDF o DOCX).',
+                    fileSize: 'El currículum excede el tamaño máximo permitido (5 MB).',
                 },
                 'inp-id-copy': {
                     valueMissing: 'Debe adjuntar la fotocopia de cédula (PDF, JPG o PNG).',
+                    fileSize: 'La fotocopia de cédula excede el tamaño máximo permitido (2 MB).',
                 },
             };
 
@@ -359,6 +399,11 @@ try {
                 el.addEventListener('change', clear);
 
                 el.addEventListener('invalid', function () {
+                    // Si el mensaje personalizado ya coniene "excede", mantenerlo (viene de validación de tamaño)
+                    if (el.validationMessage && el.validationMessage.includes('excede')) {
+                        return;
+                    }
+
                     // Prioridad: requerido -> tipo/email -> patrón
                     if (el.validity.valueMissing && messages.valueMissing) {
                         el.setCustomValidity(messages.valueMissing);
@@ -370,6 +415,12 @@ try {
                     }
                     if (el.validity.patternMismatch && messages.patternMismatch) {
                         el.setCustomValidity(messages.patternMismatch);
+                        return;
+                    }
+
+                    // Si hay un mensaje personalizado por tamaño de archivo y está vacío, usar genérico
+                    if (el.customValidity === '' && messages.fileSize) {
+                        el.setCustomValidity(messages.fileSize);
                         return;
                     }
 
@@ -544,6 +595,7 @@ try {
 
         document.addEventListener('DOMContentLoaded', function () {
             bindCustomValidationMessages();
+            bindFileSizeValidation();
             bindCustomSingleFileInput('inp-cv', 'Seleccionar archivo', 'Ningún archivo seleccionado');
             bindCustomSingleFileInput('inp-id-copy', 'Seleccionar archivo', 'Ningún archivo seleccionado');
             bindFormValidationFallback();
