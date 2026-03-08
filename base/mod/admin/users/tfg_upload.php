@@ -66,6 +66,9 @@ if ($current_user_rol != 4) {
 $can_submit_proposal = true;
 $blocked_message = '';
 $existing_proposal_status = null;
+$preloaded_members = [];
+$preloaded_project_type = null;
+$preloaded_description = '';
 
 try {
     $conn_check = new mysqli($db_host, $usuario, $clave, $db);
@@ -118,6 +121,51 @@ try {
                 $stmt_group_block->close();
             }
         }
+
+        // =============================== PRE-CARGAR MIEMBROS DE PROPUESTA RECHAZADA ===============================
+        // Si el estudiante puede enviar una nueva propuesta y tiene una anterior rechazada,
+        // pre-cargar los miembros del grupo anterior para no tener que ingresarlos de nuevo.
+        if ($can_submit_proposal && $existing_proposal_status !== null && !in_array($existing_proposal_status, TFG_BLOCKING_STATUSES)) {
+            $rejected_proposal_id = $proposal_data['id'];
+
+            // Obtener miembros del proyecto asociado a la propuesta rechazada (excluyendo al líder)
+            $sql_prev_members = "SELECT u.id, u.nombre, u.email
+                                 FROM project_members pm
+                                 INNER JOIN registered_projects rp ON pm.project_id = rp.id
+                                 INNER JOIN sis_user u ON pm.user_id = u.id
+                                 WHERE rp.tfg_proposal_id = ? AND pm.user_id != ? AND pm.role = 'Miembro'";
+            $stmt_prev = $conn_check->prepare($sql_prev_members);
+            if ($stmt_prev) {
+                $stmt_prev->bind_param("is", $rejected_proposal_id, $current_user_id);
+                $stmt_prev->execute();
+                $result_prev = $stmt_prev->get_result();
+                while ($row_prev = $result_prev->fetch_assoc()) {
+                    $preloaded_members[] = [
+                        'id' => $row_prev['id'],
+                        'nombre' => $row_prev['nombre'],
+                        'email' => $row_prev['email'] ?? ''
+                    ];
+                }
+                $stmt_prev->close();
+            }
+
+            // Obtener tipo de proyecto y descripción de la propuesta rechazada
+            $sql_prev_project = "SELECT rp.project_type_id, tp.project_description
+                                 FROM registered_projects rp
+                                 INNER JOIN tfg_proposals tp ON rp.tfg_proposal_id = tp.id
+                                 WHERE tp.id = ?";
+            $stmt_prev_proj = $conn_check->prepare($sql_prev_project);
+            if ($stmt_prev_proj) {
+                $stmt_prev_proj->bind_param("i", $rejected_proposal_id);
+                $stmt_prev_proj->execute();
+                $result_prev_proj = $stmt_prev_proj->get_result();
+                if ($row_prev_proj = $result_prev_proj->fetch_assoc()) {
+                    $preloaded_project_type = $row_prev_proj['project_type_id'];
+                    $preloaded_description = $row_prev_proj['project_description'] ?? '';
+                }
+                $stmt_prev_proj->close();
+            }
+        }
         
         $stmt_check->close();
         $conn_check->close();
@@ -141,6 +189,10 @@ $additional_css = ['inc/css/tfg_upload.css'];
     // Pasar datos del usuario actual a JavaScript
     window.CURRENT_USER_ID = '<?= htmlspecialchars($current_user_id) ?>';
     window.CURRENT_USER_NAME = '<?= htmlspecialchars($current_user_name) ?>';
+    // Pre-cargar miembros y datos de propuesta rechazada anterior (si existen)
+    window.PRELOADED_MEMBERS = <?= json_encode($preloaded_members, JSON_HEX_TAG | JSON_HEX_APOS) ?>;
+    window.PRELOADED_PROJECT_TYPE = <?= json_encode($preloaded_project_type) ?>;
+    window.PRELOADED_DESCRIPTION = <?= json_encode($preloaded_description, JSON_HEX_TAG | JSON_HEX_APOS) ?>;
 </script>
 <style>
 /* Forzar color blanco en headers azules - debe cargarse después de todos los CSS */

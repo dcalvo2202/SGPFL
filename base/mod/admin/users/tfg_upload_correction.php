@@ -111,6 +111,9 @@ $page_title = "Subir Correcciones - TFG";
                         <strong><i class="bi bi-exclamation-triangle-fill"></i> Correcciones Requeridas:</strong>
                         <p class="mt-2" style="white-space: pre-wrap;"><?= htmlspecialchars($document['observations'] ?? 'No se encontraron observaciones.') ?></p>
                     </div>
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle-fill"></i> <strong>Importante:</strong> Debe subir <u>todos</u> los archivos nuevamente, no solo los archivos que fueron modificados.
+                    </div>
                 </div>
             </div>
 
@@ -125,15 +128,51 @@ $page_title = "Subir Correcciones - TFG";
                     <div class="section-body">
                         <div class="form-group-tfg">
                             <label for="inp-document" class="form-label-tfg">
-                                <i class="bi bi-upload"></i> Subir Documento Corregido (PDF) *
+                                <i class="bi bi-upload"></i> Subir Documento(s) Corregido(s) (PDF) *
                             </label>
                             <input type="file" 
                                    class="form-control-tfg" 
                                    id="inp-document" 
-                                   name="document" 
-                                   accept=".pdf" 
-                                   required>
-                            <small class="text-muted">Solo PDF | Tamaño máximo: 10 MB</small>
+                                   name="documents[]" 
+                                   accept=".pdf"
+                                   multiple
+                                   required
+                                   style="display: none;">
+                            <div id="customFileInput" class="custom-file-input-wrapper" style="
+                                width: 100%;
+                                padding: 12px;
+                                border: 2px solid #e1e8ed;
+                                border-radius: 6px;
+                                background: white;
+                                display: flex;
+                                align-items: center;
+                                gap: 12px;
+                                cursor: pointer;
+                                transition: border-color 0.3s ease;
+                                min-height: 48px;
+                            ">
+                                <span id="selectButton" style="
+                                    background: #034991;
+                                    color: white;
+                                    padding: 8px 16px;
+                                    border-radius: 4px;
+                                    font-weight: 500;
+                                    font-size: 14px;
+                                    cursor: pointer;
+                                    user-select: none;
+                                    flex-shrink: 0;
+                                ">Seleccionar archivos</span>
+                                <span id="fileNameDisplay" style="
+                                    color: #6c757d;
+                                    font-size: 14px;
+                                    flex: 1;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                ">Puede seleccionar varios archivos PDF</span>
+                            </div>
+                            <small class="text-muted">Solo PDF | Tamaño máximo: 10 MB por archivo | Puede seleccionar múltiples archivos</small>
+                            <div id="filesList" class="mt-2"></div>
                         </div>
 
                         <div class="form-group-tfg">
@@ -197,7 +236,141 @@ $page_title = "Subir Correcciones - TFG";
         }
     });
 
-    // Validación del formulario
+    // =============================== MULTI-FILE UPLOAD ===============================
+    let accumulatedFiles = [];
+    
+    const fileInput = document.getElementById('inp-document');
+    const customFileInput = document.getElementById('customFileInput');
+    const selectButton = document.getElementById('selectButton');
+    const fileNameDisplay = document.getElementById('fileNameDisplay');
+    const filesList = document.getElementById('filesList');
+    
+    // Efectos hover
+    customFileInput.addEventListener('mouseenter', function() {
+        this.style.borderColor = '#034991';
+        selectButton.style.background = '#023366';
+    });
+    customFileInput.addEventListener('mouseleave', function() {
+        this.style.borderColor = '#e1e8ed';
+        selectButton.style.background = '#034991';
+    });
+    
+    // Click para abrir selector
+    customFileInput.addEventListener('click', function(e) {
+        e.stopPropagation();
+        fileInput.click();
+    });
+    
+    function formatFileSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
+    }
+    
+    function updateFilesDisplay() {
+        filesList.innerHTML = '';
+        
+        if (accumulatedFiles.length === 0) {
+            fileNameDisplay.textContent = 'Puede seleccionar varios archivos PDF';
+            fileNameDisplay.style.color = '#6c757d';
+            return;
+        }
+        
+        let totalSize = 0;
+        accumulatedFiles.forEach(file => { if (file && typeof file.size === 'number') totalSize += file.size; });
+        
+        if (accumulatedFiles.length === 1) {
+            fileNameDisplay.textContent = `${accumulatedFiles[0].name} (${formatFileSize(accumulatedFiles[0].size)})`;
+        } else {
+            fileNameDisplay.textContent = `${accumulatedFiles.length} archivos seleccionados (${formatFileSize(totalSize)} en total)`;
+        }
+        fileNameDisplay.style.color = '#2c3e50';
+        
+        const filesContainer = document.createElement('div');
+        filesContainer.style.cssText = 'display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;';
+        
+        accumulatedFiles.forEach((file, index) => {
+            const size = formatFileSize(file.size || 0);
+            const fileName = file.name || 'Archivo';
+            
+            const fileItem = document.createElement('div');
+            fileItem.style.cssText = 'display: inline-flex; align-items: center; background: linear-gradient(135deg, #034991 0%, #023366 100%); color: white; padding: 8px 12px; border-radius: 20px; font-size: 13px; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;';
+            
+            const fileIcon = document.createElement('i');
+            fileIcon.className = 'bi bi-file-earmark-pdf-fill';
+            fileIcon.style.fontSize = '16px';
+            
+            const fileInfoSpan = document.createElement('span');
+            fileInfoSpan.style.cssText = 'max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;';
+            fileInfoSpan.textContent = `${fileName} (${size})`;
+            fileInfoSpan.title = fileName;
+            
+            const removeBtn = document.createElement('button');
+            removeBtn.type = 'button';
+            removeBtn.innerHTML = '&times;';
+            removeBtn.style.cssText = 'background: rgba(255,255,255,0.3); border: none; color: white; width: 22px; height: 22px; border-radius: 50%; cursor: pointer; font-size: 16px; font-weight: bold; display: flex; align-items: center; justify-content: center; padding: 0; line-height: 1; transition: background 0.2s, transform 0.2s;';
+            removeBtn.title = 'Eliminar archivo';
+            
+            removeBtn.addEventListener('mouseenter', function() { this.style.background = 'rgba(255,0,0,0.7)'; this.style.transform = 'scale(1.1)'; });
+            removeBtn.addEventListener('mouseleave', function() { this.style.background = 'rgba(255,255,255,0.3)'; this.style.transform = 'scale(1)'; });
+            removeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                accumulatedFiles.splice(index, 1);
+                updateFilesDisplay();
+                syncFilesToInput();
+            });
+            
+            fileItem.addEventListener('mouseenter', function() { this.style.transform = 'translateY(-2px)'; this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)'; });
+            fileItem.addEventListener('mouseleave', function() { this.style.transform = 'translateY(0)'; this.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'; });
+            
+            fileItem.appendChild(fileIcon);
+            fileItem.appendChild(fileInfoSpan);
+            fileItem.appendChild(removeBtn);
+            filesContainer.appendChild(fileItem);
+        });
+        
+        filesList.appendChild(filesContainer);
+    }
+    
+    function syncFilesToInput() {
+        try {
+            const dataTransfer = new DataTransfer();
+            accumulatedFiles.forEach(file => dataTransfer.items.add(file));
+            fileInput.files = dataTransfer.files;
+        } catch (e) { console.error('Error sincronizando archivos:', e); }
+    }
+    
+    fileInput.addEventListener('change', function(e) {
+        const newFiles = Array.from(e.target.files || []);
+        if (newFiles.length > 0) {
+            let hasError = false;
+            for (const file of newFiles) {
+                if (!file || !file.name || typeof file.size !== 'number') continue;
+                if (file.size === 0) {
+                    Swal.fire({ icon: 'error', title: 'Archivo vacío', text: `El archivo "${file.name}" está vacío (0 bytes).`, confirmButtonColor: '#034991' });
+                    hasError = true; break;
+                }
+                if (file.size > 10 * 1024 * 1024) {
+                    Swal.fire({ icon: 'error', title: 'Archivo muy grande', text: `El archivo "${file.name}" excede 10 MB.`, confirmButtonColor: '#034991' });
+                    hasError = true; break;
+                }
+                if (file.type !== 'application/pdf') {
+                    Swal.fire({ icon: 'error', title: 'Tipo no válido', text: `El archivo "${file.name}" no es un PDF válido.`, confirmButtonColor: '#034991' });
+                    hasError = true; break;
+                }
+                const exists = accumulatedFiles.some(f => f.name === file.name);
+                if (!exists) accumulatedFiles.push(file);
+            }
+            if (!hasError) {
+                updateFilesDisplay();
+                syncFilesToInput();
+            }
+        }
+    });
+
+    // =============================== FORM SUBMIT ===============================
     document.getElementById('correctionForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -213,24 +386,11 @@ $page_title = "Subir Correcciones - TFG";
             return false;
         }
 
-        const fileInput = document.getElementById('inp-document');
-        if (fileInput.files.length === 0) {
+        if (accumulatedFiles.length === 0) {
             Swal.fire({
                 icon: 'error',
                 title: 'Archivo requerido',
-                text: 'Debe seleccionar un archivo PDF con las correcciones.'
-            });
-            return false;
-        }
-        
-        const file = fileInput.files[0];
-        const maxSize = 8 * 1024 * 1024; // 8 MB
-        
-        if (file.size > maxSize) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Archivo muy grande',
-                text: 'El archivo PDF no debe superar los 8 MB.'
+                text: 'Debe seleccionar al menos un archivo PDF con las correcciones.'
             });
             return false;
         }

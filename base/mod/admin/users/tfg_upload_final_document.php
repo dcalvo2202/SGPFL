@@ -71,6 +71,7 @@ $additional_css = ['inc/css/tfg_upload.css'];
                     <div class="alert alert-danger" role="alert">
                         <h5><i class="bi bi-exclamation-triangle-fill"></i> Documento Final Rechazado</h5>
                         <p class="mb-3"><?= htmlspecialchars($upload_check['message']) ?></p>
+                        <p class="mb-3 text-danger fw-bold"><i class="bi bi-info-circle-fill"></i> Importante: Debe subir <u>todos</u> los archivos nuevamente al enviar la corrección, no solo los archivos modificados.</p>
                         <div class="d-flex gap-2">
                             <a href="<?= $base_url ?>mod/admin/users/tfg_upload_correction.php?id=<?= $upload_check['document_id'] ?>" class="btn btn-warning">
                                 <i class="bi bi-file-earmark-arrow-up-fill"></i> Subir Correcciones (HU-020)

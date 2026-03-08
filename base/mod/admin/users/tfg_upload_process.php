@@ -195,6 +195,31 @@ try {
     $conn->set_charset("utf8");
     $conn->autocommit(false);
 
+    // =============================== DESACTIVAR MIEMBROS DE PROPUESTAS ANTERIORES RECHAZADAS ===============================
+    // Antes de crear nuevos registros, desactivar los miembros de proyectos asociados
+    // a propuestas anteriores rechazadas de este usuario para evitar duplicados.
+    try {
+        $sql_deactivate = "UPDATE project_members pm
+                           INNER JOIN registered_projects rp ON pm.project_id = rp.id
+                           INNER JOIN tfg_proposals tp ON rp.tfg_proposal_id = tp.id
+                           SET pm.status = 'Inactivo'
+                           WHERE tp.user_id = ? AND pm.status = 'Activo'
+                           AND tp.status NOT IN ('Pendiente de Revision', 'En Revisión', 'Cumple requisitos', 'Aprobado')";
+        $stmt_deactivate = $conn->prepare($sql_deactivate);
+        if ($stmt_deactivate) {
+            $stmt_deactivate->bind_param("s", $user_id);
+            $stmt_deactivate->execute();
+            $deactivated_count = $stmt_deactivate->affected_rows;
+            if ($deactivated_count > 0) {
+                error_log("TFG Upload - Miembros desactivados de propuestas anteriores rechazadas: $deactivated_count");
+            }
+            $stmt_deactivate->close();
+        }
+    } catch (Exception $e) {
+        error_log("Error al desactivar miembros anteriores: " . $e->getMessage());
+        // No es crítico, continuar con la inserción
+    }
+
     // 1. Insertar propuesta TFG con estructura correcta de la tabla
     // La tabla real tiene: id, user_id, title, disciplines, project_description, document, file_name, mime_type, file_size, status, admin_comments, reviewed_by, reviewed_at, created_at, updated_at
     
