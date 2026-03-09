@@ -431,6 +431,25 @@ CREATE TABLE acuerdo_cancelacion (
     ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tfg_extension_requests`
+--
+
+CREATE TABLE `tfg_extension_requests` (
+  `id` int(11) NOT NULL,
+  `proposal_id` int(11) NOT NULL,
+  `user_id` varchar(50) NOT NULL,
+  `extension_number` tinyint(4) NOT NULL COMMENT '1=Primera prórroga (1 año), 2=Segunda prórroga (6 meses)',
+  `reason` text NOT NULL,
+  `status` enum('pendiente','aprobada','rechazada') DEFAULT 'pendiente',
+  `request_date` datetime DEFAULT current_timestamp(),
+  `response_date` datetime DEFAULT NULL,
+  `responded_by` varchar(50) DEFAULT NULL,
+  `response_comment` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 -- ----------------------------
 -- Records of sis_sessions_vars
