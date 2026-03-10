@@ -322,16 +322,14 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
                       </a>
 
                       <?php if (!$isCancelado): ?>
-                        <button
-                          type="button"
-                          class="btn btn-sm btn-outline-danger"
-                          data-bs-toggle="modal"
-                          data-bs-target="#modalCancelar"
-                          data-id="<?php echo (int)$p['id_aprobado']; ?>"
-                          data-nombre="<?php echo htmlspecialchars($p['nombre'], ENT_QUOTES, 'UTF-8'); ?>"
-                        >
-                          <i class="bi bi-x-octagon"></i> Cancelar
-                        </button>
+                        <form method="post" action="cancelar_proyecto_aprobado.php" style="display:inline;" onsubmit="return confirm('¿Cancelar este proyecto?');">
+                          <input type="hidden" name="proyecto_id" value="<?php echo (int)$p['id_aprobado']; ?>">
+                          <input type="hidden" name="motivo" value="Prueba funcional de cancelación">
+                          <input type="hidden" name="observaciones" value="Prueba temporal sin modal">
+                          <button type="submit" class="btn btn-sm btn-outline-danger">
+                            <i class="bi bi-x-octagon"></i> Cancelar
+                          </button>
+                        </form>
                       <?php endif; ?>
 
                       <span class="badge bg-<?php echo $bdg; ?>"><?php echo $lbl; ?></span>
