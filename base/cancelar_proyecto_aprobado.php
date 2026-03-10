@@ -37,7 +37,7 @@ if ($motivo === '' || mb_strlen($motivo) > 500) backErr('Motivo es requerido (m�
 if (!$current_user_id) backErr('Sesión inválida.');
 
 function getProyecto(mysqli $db, int $pid): array {
-  $sql = "SELECT id_aprobado, estado, fecha_creacion, fecha_ultimo_avance
+  $sql = "SELECT id_aprobado, proposal_id, estado, fecha_creacion, fecha_ultimo_avance
           FROM proyecto_aprobado
           WHERE id_aprobado = ?
           LIMIT 1";
@@ -111,10 +111,17 @@ try {
   mysqli_stmt_close($stmt);
 
   // Update estado
-  $stmt = mysqli_prepare($id_con, "UPDATE proyecto_aprobado SET estado='CANCELADO' WHERE id_aprobado=?");
+  $stmt = mysqli_prepare($id_con, "UPDATE proyecto_aprobado SET estado='CANCELADO', aprobado=4 WHERE id_aprobado=?");
   mysqli_stmt_bind_param($stmt, 'i', $proyecto_id);
   if (!mysqli_stmt_execute($stmt)) throw new Exception(mysqli_stmt_error($stmt));
   mysqli_stmt_close($stmt);
+
+  if (!empty($proyecto['proposal_id'])) {
+      $stmt = mysqli_prepare($id_con, "UPDATE tfg_proposals SET status='Cancelado' WHERE id=?");
+      mysqli_stmt_bind_param($stmt, 'i', $proyecto['proposal_id']);
+      if (!mysqli_stmt_execute($stmt)) throw new Exception(mysqli_stmt_error($stmt));
+      mysqli_stmt_close($stmt);
+  }
 
   mysqli_commit($id_con);
   backOk();
