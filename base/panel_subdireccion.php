@@ -193,7 +193,7 @@ try {
             <div class="quick-actions-section mt-5">
                 <h2 class="section-title mb-4 text-center">
                     <i class="bi bi-file-earmark-text-fill text-rojo-una"></i>
-                    Gestión de Actas de Examen Final
+                    Gestión de Actas y Reportes
                 </h2>
 
                 <div class="row justify-content-center">
@@ -227,6 +227,17 @@ try {
                             </div>
                             <h5>Resumen por Estudiante</h5>
                             <p>Buscar estudiantes y descargar el resumen consolidado de su proceso de TFG.</p>
+                        </div>
+                    </div>
+
+                    <!-- Reporte de proyectos en prórroga -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card w-100 h-100" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_reporte_prorrogas.php'">
+                            <div class="card-icon">
+                                <i class="bi bi-clock-history"></i>
+                            </div>
+                            <h5>Reporte de Proyectos en Prórroga</h5>
+                            <p>Generar y descargar el reporte de proyectos con prórrogas aprobadas.</p>
                         </div>
                     </div>
                 </div>

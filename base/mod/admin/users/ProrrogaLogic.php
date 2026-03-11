@@ -218,6 +218,15 @@ class ProrrogaLogic {
         $stmt->bind_param("ii", $dias_agregar, $solicitud['proposal_id']);
         $stmt->execute();
         $stmt->close();
+
+    // Actualizar estado del proyecto aprobado
+        $sql_estado = "UPDATE proyecto_aprobado
+                    SET estado = 'Prorrogado'
+                    WHERE proposal_id = ?";
+        $stmt = $this->conn->prepare($sql_estado);
+        $stmt->bind_param("i", $solicitud['proposal_id']);
+        $stmt->execute();
+        $stmt->close();
     }
 
     /**

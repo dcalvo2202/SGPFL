@@ -438,7 +438,7 @@ CREATE TABLE acuerdo_cancelacion (
 --
 
 CREATE TABLE `tfg_extension_requests` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `proposal_id` int(11) NOT NULL,
   `user_id` varchar(50) NOT NULL,
   `extension_number` tinyint(4) NOT NULL COMMENT '1=Primera prórroga (1 año), 2=Segunda prórroga (6 meses)',
