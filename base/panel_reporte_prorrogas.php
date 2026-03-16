@@ -254,8 +254,8 @@ for ($year = $current_year + 1; $year >= 2024; $year--) {
         </div>
 
         <div class="text-center mt-4">
-            <a href="panel_subdireccion.php" class="btn btn-lg btn-secondary px-5">
-                <i class="bi bi-arrow-left-circle me-2"></i> Volver al Panel Principal
+            <a href="panel_ctfg.php" class="btn btn-secondary">
+            <i class="bi bi-arrow-left-circle"></i> Volver al panel principal
             </a>
         </div>
     </div>

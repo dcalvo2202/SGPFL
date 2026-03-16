@@ -132,6 +132,13 @@ CSS;
           
         </div>
       </div>
+
+      <div class="text-center mt-4">
+        <a href="dashboard.php" class="btn btn-secondary">
+          <i class="bi bi-arrow-left-circle"></i> Volver al panel principal
+        </a>
+      </div>
+
     </div>
   </main>
   <?php include 'footer.php'; ?>

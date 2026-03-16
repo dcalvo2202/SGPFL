@@ -229,6 +229,17 @@ try {
                             <p>Buscar estudiantes y descargar el resumen consolidado de su proceso de TFG.</p>
                         </div>
                     </div>
+                    
+                    <!-- Revisión de Prórrogas -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_aprobarProrroga.php'" style="border-left: 4px solid #17a2b8;">
+                            <div class="card-icon" style="color: #17a2b8;">
+                                <i class="bi bi-file-earmark-check-fill"></i>
+                            </div>
+                            <h5>Revisión de Prórrogas</h5>
+                            <p>Revisar y aprobar solicitudes de prórroga de estudiantes.</p>
+                        </div>
+                    </div>
 
                     <!-- Reporte de proyectos en prórroga -->
                     <div class="col-md-6 col-lg-4">
