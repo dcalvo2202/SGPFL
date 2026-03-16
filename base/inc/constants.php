@@ -73,3 +73,20 @@ define('PROJECT_ARCHIVE_STATUSES', [
 
 // Alias para compatibilidad con código que usa nombre diferente
 define('ROL_ADMINISTRADOR', ROL_ADMIN);
+
+// =============================== HU-029: SISTEMA DE CHAT/MENSAJERÍA ===============================
+define('CHAT_TYPE_INDIVIDUAL', 'individual');
+define('CHAT_TYPE_GROUP', 'group');
+define('CHAT_MAX_MESSAGE_LENGTH', 5000);
+define('CHAT_MIN_MESSAGE_LENGTH', 1);
+define('CHAT_POLLING_INTERVAL', 5000); // milisegundos
+define('CHAT_SEARCH_MIN_LENGTH', 1);   // mínimo de caracteres para buscar usuarios
+
+// Colores de badges de rol para el chat
+define('CHAT_ROL_COLORS', [
+    ROL_ADMIN      => '#dc3545',  // Rojo
+    ROL_GESTOR     => '#1a3a5c',  // Azul oscuro
+    ROL_CTFG       => '#fd7e14',  // Naranja
+    ROL_ESTUDIANTE => '#198754',  // Verde
+    ROL_ASESOR     => '#6f42c1',  // Morado
+]);
