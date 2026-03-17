@@ -8,7 +8,6 @@
 include("mod/login/check.php");
 
 // Incluir archivos necesarios
-include('includes.php');
 include('lang/lang.es');
 require_once 'inc/alert_functions.php';
 

@@ -115,11 +115,11 @@ try {
                 </script>
             <?php endif; ?>
 
-            <!-- Sección de Acciones Rápidas -->
+            <!-- Sección de Gestión Académica y Seguimiento TFG -->
             <div class="quick-actions-section">
                 <h2 class="section-title">
                     <i class="bi bi-lightning-fill text-rojo-una"></i>
-                    Acciones Rápidas
+                    Gestión Académica y Seguimiento TFG
                 </h2>
                 
                 <div class="row justify-content-center">
@@ -193,13 +193,13 @@ try {
             <div class="quick-actions-section mt-5">
                 <h2 class="section-title mb-4 text-center">
                     <i class="bi bi-file-earmark-text-fill text-rojo-una"></i>
-                    Gestión de Actas de Examen Final
+                    Gestión de Actas y Reportes
                 </h2>
 
                 <div class="row justify-content-center">
                     <!-- Generar nueva acta -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>generar_acta.php'">
+                        <div class="quick-action-card w-100 h-100" onclick="location.href='<?= $base_url ?>generar_acta.php'">
                             <div class="card-icon">
                                 <i class="bi bi-file-earmark-plus-fill"></i>
                             </div>
@@ -210,12 +210,45 @@ try {
             
                     <!-- Ver listado de actas -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>listar_actas.php'">
+                        <div class="quick-action-card w-100 h-100" onclick="location.href='<?= $base_url ?>listar_actas.php'">
                             <div class="card-icon">
                                 <i class="bi bi-collection-fill"></i>
                             </div>
                             <h5>Listar Actas Existentes</h5>
                             <p>Ver o descargar actas generadas previamente.</p>
+                        </div>
+                    </div>
+
+                    <!-- Resumen consolidado por estudiante -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card w-100 h-100" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_student_summary.php'">
+                            <div class="card-icon">
+                                <i class="bi bi-person-lines-fill"></i>
+                            </div>
+                            <h5>Resumen por Estudiante</h5>
+                            <p>Buscar estudiantes y descargar el resumen consolidado de su proceso de TFG.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Revisión de Prórrogas -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_aprobarProrroga.php'" style="border-left: 4px solid #17a2b8;">
+                            <div class="card-icon" style="color: #17a2b8;">
+                                <i class="bi bi-file-earmark-check-fill"></i>
+                            </div>
+                            <h5>Revisión de Prórrogas</h5>
+                            <p>Revisar y aprobar solicitudes de prórroga de estudiantes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Reporte de proyectos en prórroga -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card w-100 h-100" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_reporte_prorrogas.php'">
+                            <div class="card-icon">
+                                <i class="bi bi-clock-history"></i>
+                            </div>
+                            <h5>Reporte de Proyectos en Prórroga</h5>
+                            <p>Generar y descargar el reporte de proyectos con prórrogas aprobadas.</p>
                         </div>
                     </div>
                 </div>

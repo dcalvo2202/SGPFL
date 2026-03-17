@@ -97,6 +97,7 @@ mysqldump -u usuario -p base_db > respaldo_base_db.sql
 | Error de permisos en logs        | Carpeta sin permisos de escritura                      | Mover logs a `C:\xampp\tmp\` en `sendmail.ini`                    |
 | mail() retorna FALSE             | Apache no reiniciado tras cambios                      | Reiniciar Apache desde XAMPP Control Panel                        |
 | No carga la base de datos        | Credenciales incorrectas o base no creada              | Revisar `dbcommon.inc` y existencia de la base          |
+| Error "MySQL server has gone away" al subir archivos | `max_allowed_packet` bajo o timeout en MySQL/XAMPP | Aumentar parámetros en `my.ini` y reiniciar MySQL/Apache |
 | Listados incompletos o sin datos | `$page_cant` demasiado bajo                            | Ajustar valor en `config.inc`                           |
 | Accesos denegados en módulos     | Usuario no asignado al rol correcto                    | Revisar LDAP y tabla `sis_rolls`                        |
 
@@ -148,6 +149,35 @@ memory_limit = 256M
 4. **Reiniciar Apache** desde el panel de XAMPP
 
 > **Nota:** El archivo `.htaccess` del proyecto también define estos valores como respaldo, pero algunos servidores pueden ignorarlos dependiendo de la configuración de `AllowOverride`.
+
+---
+
+### 2.1 Ajustes de MySQL para archivos grandes (XAMPP)
+
+Si durante la subida de documentos aparece el error:
+
+```text
+MySQL server has gone away
+```
+
+normalmente la causa es un límite bajo en MySQL al guardar BLOBs.
+
+Edite el archivo `my.ini` de XAMPP y ajuste en la sección `[mysqld]`:
+
+```ini
+max_allowed_packet = 64M
+innodb_log_file_size = 128M
+```
+
+**Ubicación habitual (Windows XAMPP):**
+- `C:\xampp\mysql\bin\my.ini`
+
+**Pasos recomendados:**
+1. Detener MySQL y Apache desde XAMPP Control Panel.
+2. Guardar los cambios en `my.ini`.
+3. Iniciar MySQL y Apache nuevamente.
+
+> Si el error persiste, revisar también `wait_timeout`/`interactive_timeout` en MySQL y confirmar los límites de PHP (`upload_max_filesize`, `post_max_size`).
 
 ---
 

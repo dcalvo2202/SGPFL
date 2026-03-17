@@ -132,7 +132,7 @@ try {
             <div class="quick-actions-section">
                 <h2 class="section-title">
                     <i class="bi bi-lightning-fill text-rojo-una"></i>
-                    Acciones Rápidas
+                    Gestión Proceso TFG
                 </h2>
                 
                 <div class="row justify-content-center">
@@ -164,6 +164,15 @@ try {
                             <p>Ver documentos subidos al sistema</p>
                         </div>
                     </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>panel_solicitudProrroga.php'" style="border-left: 4px solid #ffc107;">
+                            <div class="card-icon">
+                                <i class="bi bi-calendar-plus"></i>
+                            </div>
+                            <h5>Solicitud de Prórroga</h5>
+                            <p>Solicitar extensión de plazo para TFG</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -193,7 +202,7 @@ try {
                                     t.status,
                                     t.created_at,
                                     t.updated_at,
-                                    t.proposal_file_path,
+                                    t.file_name AS proposal_file_path,
                                     rp.project_type_id,
                                     pt.type_name
                                 FROM tfg_proposals t

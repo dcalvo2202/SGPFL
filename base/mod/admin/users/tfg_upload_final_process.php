@@ -123,7 +123,10 @@ try {
                 $conn, 
                 $uploaded_files, 
                 $user_id, 
-                'Documento Final TFG Anexo'
+                'Documento Final TFG',
+                $save_result['document_id'],
+                'final_document',
+                $save_result['version']
             );
             $conn->close();
         }

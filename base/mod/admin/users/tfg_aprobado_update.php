@@ -227,6 +227,40 @@ try {
     }
     mysqli_stmt_close($stmtH);
 
+    // Vincular miembros del comité (asesores internos) con los estudiantes del proyecto
+    $stmt_comite = mysqli_prepare($id_con, "SELECT tutor, asesor_1, asesor_2 FROM comite WHERE Id = ?");
+    if ($stmt_comite) {
+        mysqli_stmt_bind_param($stmt_comite, "i", $comite_id);
+        mysqli_stmt_execute($stmt_comite);
+        $rs_comite = mysqli_stmt_get_result($stmt_comite);
+        if ($rs_comite && ($comite_row = mysqli_fetch_assoc($rs_comite))) {
+            $internal_advisors = array_values(array_filter([
+                $comite_row['tutor'],
+                $comite_row['asesor_1'],
+                $comite_row['asesor_2']
+            ]));
+            $stmt_link = mysqli_prepare($id_con,
+                "INSERT INTO external_advisor_linked_students
+                 (internal_advisor_id, student_id, is_primary, project_id)
+                 VALUES (?, ?, 0, ?)
+                 ON DUPLICATE KEY UPDATE linked_at = NOW()"
+            );
+            if ($stmt_link) {
+                $link_project_id = ($registered_id > 0) ? $registered_id : null;
+                foreach ($internal_advisors as $advisor_id) {
+                    foreach ($unique as $student_id) {
+                        mysqli_stmt_bind_param($stmt_link, "ssi", $advisor_id, $student_id, $link_project_id);
+                        if (!mysqli_stmt_execute($stmt_link)) {
+                            error_log("Aviso: No se pudo vincular asesor interno $advisor_id con estudiante $student_id: " . mysqli_stmt_error($stmt_link));
+                        }
+                    }
+                }
+                mysqli_stmt_close($stmt_link);
+            }
+        }
+        mysqli_stmt_close($stmt_comite);
+    }
+
     mysqli_commit($id_con);
     
     // Enviar alerta a todos los estudiantes del proyecto

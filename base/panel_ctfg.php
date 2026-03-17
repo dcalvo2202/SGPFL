@@ -13,6 +13,38 @@ $cds_domain = $mySessionController->getVar("cds_domain");
 $cds_locate = $mySessionController->getVar("cds_locate");
 $base_url   = $cds_domain . $cds_locate;
 
+include_once(__DIR__ . "/inc/db/bdcommon.inc");
+
+// Este arreglo se llena solo cuando el usuario CTFG también está ligado
+// como asesor interno (tutor/asesor de comité) a uno o más estudiantes.
+$advisor_linked_students = [];
+try {
+    $conn = new mysqli($db_host, $usuario, $clave, $db);
+    $conn->set_charset("utf8");
+
+    // Consulta de vínculos activos por cédula del asesor interno.
+    // Si hay filas, el panel mostrará la sección opcional "Acciones Asesor".
+    $sql = "SELECT DISTINCT eals.student_id, su.nombre as student_name
+            FROM external_advisor_linked_students eals
+            INNER JOIN sis_user su ON su.id = eals.student_id
+            WHERE eals.internal_advisor_id = ?
+            ORDER BY su.nombre ASC";
+    $stmt = $conn->prepare($sql);
+    if ($stmt) {
+        $stmt->bind_param("s", $current_user_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        while ($row = $result->fetch_assoc()) {
+            $advisor_linked_students[] = $row;
+        }
+        $stmt->close();
+    }
+    $conn->close();
+} catch (Exception $e) {
+    // No bloquea el panel CTFG: solo registra el error y continúa.
+    error_log("Error obteniendo estudiantes vinculados del asesor: " . $e->getMessage());
+}
+
 // ================== CONTROL DE ACCESO ==================
 // Rol 3 = Comisión TFG (ajustar según tu base de datos)
 if ($current_user_rol != 3) {
@@ -44,11 +76,11 @@ $avisos_generales = $panel->getAvisos();
                 <h1 style="font-size: 2.5rem; font-weight: 700;">Panel de la Comisión de Trabajos Finales de Graduación</h1>
                 <p class="lead">Bienvenido, <?= htmlspecialchars($current_user_name) ?>. Gestione las propuestas y documentos finales de TFG.</p>
             </div>
-            <!-- Sección de Acciones Rápidas -->
+            <!-- Sección de Gestión de Evaluación y Seguimiento TFG -->
             <div class="quick-actions-section">
                 <h2 class="section-title">
                     <i class="bi bi-lightning-fill text-rojo-una"></i>
-                    Acciones Rápidas
+                    Gestión de Evaluación y Seguimiento TFG
                 </h2>
                 <div class="row justify-content-center">
                     <!-- Revisar Documentos Finales -->
@@ -69,6 +101,16 @@ $avisos_generales = $panel->getAvisos();
                             </div>
                             <h5>Aprobar Proyectos</h5>
                             <p>Gestionar y aprobar proyectos de TFG.</p>
+                        </div>
+                    </div>
+                    <!-- Revisar Documentos Finales -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_ctfg_review_final_documents.php'" style="border-left: 4px solid #0d6efd;">
+                            <div class="card-icon">
+                                <i class="bi bi-file-earmark-check-fill"></i>
+                            </div>
+                            <h5>Revisar Documentos Finales</h5>
+                            <p>Ver y gestionar documentos finales de TFG pendientes de revisión.</p>
                         </div>
                     </div>  
                     <!-- Proyectos Registrados -->
@@ -91,6 +133,16 @@ $avisos_generales = $panel->getAvisos();
                             <p>Consultar proyectos concluidos o cancelados (Art. 68 RGPEA).</p>
                         </div>
                     </div>
+                    <!-- Revisión de Prórrogas -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_aprobarProrroga.php'" style="border-left: 4px solid #17a2b8;">
+                            <div class="card-icon" style="color: #17a2b8;">
+                                <i class="bi bi-file-earmark-check-fill"></i>
+                            </div>
+                            <h5>Revisión de Prórrogas</h5>
+                            <p>Revisar y aprobar solicitudes de prórroga de estudiantes.</p>
+                        </div>
+                    </div>
                     <!--div class="col-md-6 col-lg-4">
                         <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>listar_actas.php'">
                             <div class="card-icon">
@@ -102,6 +154,29 @@ $avisos_generales = $panel->getAvisos();
                     </div-->
                 </div>
             </div>
+
+            <?php if (!empty($advisor_linked_students)): ?>
+            <!-- Sección opcional: solo se renderiza cuando el usuario tiene estudiantes vinculados como asesor -->
+            <div class="quick-actions-section mt-5">
+                <h2 class="section-title">
+                    <i class="bi bi-person-badge-fill text-rojo-una"></i>
+                    Acciones Asesor
+                </h2>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <!-- Acceso directo al historial compartido del/los estudiante(s) vinculados -->
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>historial_documentos.php'" style="border-left: 4px solid #6c757d;">
+                            <div class="card-icon" style="color: #6c757d;">
+                                <i class="bi bi-clock-history"></i>
+                            </div>
+                            <h5>Historial de documentos</h5>
+                            <p>Tienes <?= count($advisor_linked_students) ?> estudiante(s) vinculado(s). Ver documentos del grupo asignado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endif; ?>
         </div>
     </main>
 

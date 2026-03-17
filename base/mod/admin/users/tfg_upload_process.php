@@ -267,7 +267,14 @@ try {
     // =============================== INSERTAR ARCHIVOS ADICIONALES ===============================
     // Si hay múltiples archivos, guardarlos en tfg_files vinculados a esta propuesta
     if (count($uploaded_files) > 1) {
-        $additional_files_saved = saveAdditionalFiles($conn, $uploaded_files, $user_id, 'Propuesta TFG Anexo');
+        // La versión del lote es el número total de propuestas del estudiante (incluye la recién insertada)
+        $stmt_ver = $conn->prepare("SELECT COUNT(*) AS cnt FROM tfg_proposals WHERE user_id = ?");
+        $stmt_ver->bind_param("s", $user_id);
+        $stmt_ver->execute();
+        $proposal_version = (int)$stmt_ver->get_result()->fetch_assoc()['cnt'];
+        $stmt_ver->close();
+
+        $additional_files_saved = saveAdditionalFiles($conn, $uploaded_files, $user_id, 'Propuesta TFG', $tfg_id, 'proposal', $proposal_version);
         error_log("Archivos adicionales guardados: $additional_files_saved");
     }
 
@@ -510,9 +517,18 @@ try {
     exit;
 
 } catch (Exception $e) {
-    if (isset($conn)) {
-        $conn->rollback();
-        $conn->close();
+    if (isset($conn) && $conn instanceof mysqli) {
+        try {
+            $conn->rollback();
+        } catch (Throwable $rollbackEx) {
+            error_log('TFG Upload - rollback falló: ' . $rollbackEx->getMessage());
+        }
+
+        try {
+            $conn->close();
+        } catch (Throwable $closeEx) {
+            error_log('TFG Upload - cierre de conexión falló: ' . $closeEx->getMessage());
+        }
     }
     respond_json(false, 'Error: ' . $e->getMessage());
 }

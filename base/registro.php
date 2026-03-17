@@ -284,6 +284,29 @@ try {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     (function () {
+        // Inyectar estilos CSS para SweetAlert2
+        const style = document.createElement('style');
+        style.textContent = `
+            .swal2-popup .swal2-actions {
+                gap: 0.5rem;
+                align-items: center;
+            }
+            
+            .swal2-popup .swal2-styled {
+                min-width: 110px;
+                padding: 10px 20px;
+                font-size: 1.2rem;
+                margin: 0;
+            }
+            
+            .swal2-popup .swal2-confirm,
+            .swal2-popup .swal2-cancel {
+                flex: 1;
+                margin: 0 !important;
+            }
+        `;
+        document.head.appendChild(style);
+
         function formatBytes(bytes) {
             if (!Number.isFinite(bytes) || bytes < 0) return '';
             if (bytes === 0) return '0 B';
@@ -293,6 +316,44 @@ try {
             const value = bytes / Math.pow(k, i);
             const decimals = i === 0 ? 0 : 2;
             return value.toFixed(decimals) + ' ' + units[i];
+        }
+
+        // Validación de tamaño máximo de archivos
+        function bindFileSizeValidation() {
+            const fileValidationRules = {
+                'inp-cv': { maxMB: 5, label: 'Currículum' },
+                'inp-id-copy': { maxMB: 2, label: 'Fotocopia de cédula' }
+            };
+
+            Object.keys(fileValidationRules).forEach(function (inputId) {
+                const input = document.getElementById(inputId);
+                if (!input) return;
+
+                const { maxMB, label } = fileValidationRules[inputId];
+                const maxBytes = maxMB * 1024 * 1024;
+
+                input.addEventListener('change', function () {
+                    const file = input.files && input.files[0] ? input.files[0] : null;
+                    
+                    if (!file) {
+                        input.setCustomValidity('');
+                        return;
+                    }
+
+                    if (file.size > maxBytes) {
+                        const fileSize = formatBytes(file.size);
+                        const maxSize = formatBytes(maxBytes);
+                        input.setCustomValidity(
+                            `${label} excede el tamaño máximo. ` +
+                            `Archivo: ${fileSize}, Máximo permitido: ${maxSize}`
+                        );
+                        input.reportValidity?.();
+                        return;
+                    }
+
+                    input.setCustomValidity('');
+                });
+            });
         }
 
         // Excepción personalizada para mensajes de validación
@@ -316,9 +377,11 @@ try {
                 },
                 'inp-cv': {
                     valueMissing: 'Debe adjuntar el currículum (PDF o DOCX).',
+                    fileSize: 'El currículum excede el tamaño máximo permitido (5 MB).',
                 },
                 'inp-id-copy': {
                     valueMissing: 'Debe adjuntar la fotocopia de cédula (PDF, JPG o PNG).',
+                    fileSize: 'La fotocopia de cédula excede el tamaño máximo permitido (2 MB).',
                 },
             };
 
@@ -336,6 +399,11 @@ try {
                 el.addEventListener('change', clear);
 
                 el.addEventListener('invalid', function () {
+                    // Si el mensaje personalizado ya coniene "excede", mantenerlo (viene de validación de tamaño)
+                    if (el.validationMessage && el.validationMessage.includes('excede')) {
+                        return;
+                    }
+
                     // Prioridad: requerido -> tipo/email -> patrón
                     if (el.validity.valueMissing && messages.valueMissing) {
                         el.setCustomValidity(messages.valueMissing);
@@ -347,6 +415,12 @@ try {
                     }
                     if (el.validity.patternMismatch && messages.patternMismatch) {
                         el.setCustomValidity(messages.patternMismatch);
+                        return;
+                    }
+
+                    // Si hay un mensaje personalizado por tamaño de archivo y está vacío, usar genérico
+                    if (el.customValidity === '' && messages.fileSize) {
+                        el.setCustomValidity(messages.fileSize);
                         return;
                     }
 
@@ -448,35 +522,80 @@ try {
             if (!form) return;
 
             form.addEventListener('submit', function (e) {
-                if (form.checkValidity()) return;
-                e.preventDefault();
+                // Si el formulario no es válido, mostrar errores
+                if (!form.checkValidity()) {
+                    e.preventDefault();
 
-                // Hallar primer campo inválido y mostrar su mensaje (en español)
-                const firstInvalid = form.querySelector(':invalid');
-                if (!firstInvalid) return;
+                    // Hallar primer campo inválido y mostrar su mensaje (en español)
+                    const firstInvalid = form.querySelector(':invalid');
+                    if (!firstInvalid) return;
 
-                // Intentar bubble nativa cuando sea posible
-                if (typeof firstInvalid.reportValidity === 'function') {
-                    try {
-                        firstInvalid.reportValidity();
-                        return;
-                    } catch (_) {
-                        // continuar a Swal
+                    // Intentar bubble nativa cuando sea posible
+                    if (typeof firstInvalid.reportValidity === 'function') {
+                        try {
+                            firstInvalid.reportValidity();
+                            return;
+                        } catch (_) {
+                            // continuar a Swal
+                        }
                     }
+
+                    const msg = firstInvalid.validationMessage || 'Debe completar los campos requeridos.';
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Revise el formulario',
+                        text: msg,
+                        confirmButtonText: 'Aceptar'
+                    });
+                    return;
                 }
 
-                const msg = firstInvalid.validationMessage || 'Debe completar los campos requeridos.';
+                // Validar que se haya seleccionado un estudiante
+                e.preventDefault();
+                
+                const linkedStudentId = document.getElementById('inp-linked-student-id');
+                if (!linkedStudentId || !linkedStudentId.value || linkedStudentId.value.trim() === '') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Estudiante requerido',
+                        text: 'Debe buscar y seleccionar el estudiante que desea asesorar antes de enviar la solicitud.',
+                        confirmButtonText: 'Entendido',
+                        confirmButtonColor: '#034991'
+                    });
+                    
+                    // Hacer scroll hacia la sección de estudiantes
+                    const studentSection = document.getElementById('inp-search-student');
+                    if (studentSection) {
+                        studentSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        setTimeout(() => studentSection.focus(), 500);
+                    }
+                    return;
+                }
+
+                // Si el formulario es válido y hay estudiante, mostrar confirmación antes de enviar
                 Swal.fire({
-                    icon: 'error',
-                    title: 'Revise el formulario',
-                    text: msg,
-                    confirmButtonText: 'Aceptar'
+                    title: 'Confirmar envío',
+                    text: '¿Está seguro de enviar la solicitud? Por favor, revise que toda la información sea correcta.',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#034991',
+                    cancelButtonColor: '#6c757d',
+                    confirmButtonText: 'Sí, enviar',
+                    cancelButtonText: 'Cancelar',
+                    reverseButtons: true
+                }).then(function (result) {
+                    if (result.isConfirmed) {
+                        // Remover el evento listeners para evitar mostrar el diálogo nuevamente
+                        form.removeEventListener('submit', arguments.callee);
+                        form.submit();
+                    }
                 });
             });
         }
 
         document.addEventListener('DOMContentLoaded', function () {
             bindCustomValidationMessages();
+            bindFileSizeValidation();
             bindCustomSingleFileInput('inp-cv', 'Seleccionar archivo', 'Ningún archivo seleccionado');
             bindCustomSingleFileInput('inp-id-copy', 'Seleccionar archivo', 'Ningún archivo seleccionado');
             bindFormValidationFallback();

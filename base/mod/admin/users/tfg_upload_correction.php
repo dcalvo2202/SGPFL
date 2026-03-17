@@ -46,9 +46,9 @@ try {
     
     // Verificar que el documento pertenece al estudiante y está rechazado
     $sql = "SELECT fd.id, fd.proposal_id, fd.status, tp.title, 
-                   (SELECT observations FROM tfg_document_reviews 
+                   (SELECT corrections_summary FROM tfg_document_reviews 
                     WHERE document_id = fd.id AND review_type = 'Revision CTFG' 
-                    ORDER BY review_date DESC LIMIT 1) as observations,
+                    ORDER BY reviewed_at DESC LIMIT 1) as corrections_summary,
                    (SELECT COUNT(*) FROM tfg_document_reviews 
                     WHERE document_id = fd.id AND review_type = 'Correccion Estudiante') as corrections_count
             FROM tfg_final_documents fd
@@ -109,7 +109,7 @@ $page_title = "Subir Correcciones - TFG";
                 <div class="section-body">
                     <div class="alert alert-warning">
                         <strong><i class="bi bi-exclamation-triangle-fill"></i> Correcciones Requeridas:</strong>
-                        <p class="mt-2" style="white-space: pre-wrap;"><?= htmlspecialchars($document['observations'] ?? 'No se encontraron observaciones.') ?></p>
+                        <p class="mt-2" style="white-space: pre-wrap;"><?= htmlspecialchars($document['corrections_summary'] ?? 'No se encontraron observaciones.') ?></p>
                     </div>
                     <div class="alert alert-info">
                         <i class="bi bi-info-circle-fill"></i> <strong>Importante:</strong> Debe subir <u>todos</u> los archivos nuevamente, no solo los archivos que fueron modificados.
@@ -216,7 +216,6 @@ $page_title = "Subir Correcciones - TFG";
 
     <?php include $base_path . '/footer.php'; ?>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
     // Contador de palabras
     const textarea = document.getElementById('txt-corrections-summary');

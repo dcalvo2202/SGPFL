@@ -83,6 +83,7 @@ $usuario = $usuario_sesion ?? 'Estudiante';
                 <a href="<?= $base_url ?>" class="btn btn-outline-dark">Fechas importantes</a>
                 <a href="<?= $base_url ?>" class="btn btn-outline-dark">Enviar documentos</a>
                 <a href="<?= $base_url ?>historial_documentos.php" class="btn btn-outline-dark">Historial de documentos</a>
+                <a href="<?= $base_url ?>panel_solicitudProrroga.php" class="btn btn-outline-dark">Solicitud de Prórroga</a>
                 <a href="<?= $base_url ?>index.php" class="btn btn-outline-dark">Inicio</a>
             </header>
             <main class="flex-grow-1 container py-4">
@@ -137,6 +138,7 @@ $usuario = $usuario_sesion ?? 'Estudiante';
 
                                 <div class="text-center mt-4">
                                     <a href="<?= $base_url ?>Panel_SubirTFG.php" class="btn btn-primary btn-lg me-2">Editar Propuesta TFG</a>
+                                    <a href="<?= $base_url ?>panel_solicitudProrroga.php" class="btn btn-warning btn-lg me-2">Solicitud de Prórroga</a>
                                     <a href="#" class="btn btn-secondary btn-lg">Ver Progreso</a>
                                 </div>
                             </div>

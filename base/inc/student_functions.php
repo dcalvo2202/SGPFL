@@ -280,14 +280,17 @@ function linkAdvisorToGroupMembers($conn, $advisor_request_id, $primary_student_
         $create_table_sql = "
         CREATE TABLE IF NOT EXISTS `external_advisor_linked_students` (
             `id` int(11) NOT NULL AUTO_INCREMENT,
-            `advisor_request_id` int(11) NOT NULL,
+            `advisor_request_id` int(11) DEFAULT NULL,
+            `internal_advisor_id` varchar(50) DEFAULT NULL,
             `student_id` varchar(50) NOT NULL,
             `is_primary` tinyint(1) DEFAULT 0,
             `project_id` int(11) DEFAULT NULL,
             `linked_at` datetime DEFAULT CURRENT_TIMESTAMP,
             PRIMARY KEY (`id`),
             UNIQUE KEY `unique_advisor_student` (`advisor_request_id`, `student_id`),
+            UNIQUE KEY `unique_internal_advisor_student` (`internal_advisor_id`, `student_id`),
             KEY `idx_advisor_request` (`advisor_request_id`),
+            KEY `idx_internal_advisor` (`internal_advisor_id`),
             KEY `idx_student` (`student_id`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci";
         

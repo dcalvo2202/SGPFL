@@ -222,9 +222,11 @@ function formatBytes($bytes) {
                         <i class="bi bi-list"></i> Todos
                     </a>
                 </div>
-                <a href="panel_subdireccion.php" class="btn btn-outline-dark ms-3">
-                    <i class="bi bi-arrow-left"></i> Volver al Panel Principal
+
+                <a href="dashboard.php" class="btn btn-secondary">
+                <i class="bi bi-arrow-left-circle"></i> Volver al panel principal
                 </a>
+
             </div>
 
             <!-- Listado de Solicitudes -->
