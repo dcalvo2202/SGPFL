@@ -373,21 +373,18 @@ try {
         }
     }
     
-    // HU-027: Si fue RECHAZADO, archivar como "Cancelado" y eliminar registro para desbloquear nueva subida
+    // HU-027: Si fue RECHAZADO, archivar como "Cancelado" 
+    // Nota: No eliminamos el registro físicamente para preservar auditoría y evitar conflictos de FK
     if ($db_status === 'Rechazado') {
         // Archivar el documento final rechazado
         $doc_archive_result = archiveFinalDocument($conn, $document_id, $current_doc['proposal_id'], $reviewer_id);
         
         if ($doc_archive_result['success']) {
-            // Eliminar el registro de tfg_final_documents para que el estudiante pueda subir otro
-            $stmt_delete = $conn->prepare("DELETE FROM tfg_final_documents WHERE id = ?");
-            $stmt_delete->bind_param("i", $document_id);
-            $stmt_delete->execute();
-            $stmt_delete->close();
-            
+            // El registro de tfg_final_documents se mantiene con status='Rechazado' para auditoría
+            // El estudiante puede subir un nuevo documento que creará un nuevo registro en tfg_final_documents
             $archived = true;
             $archive_message = 'Documento archivado. El estudiante puede subir un nuevo documento final.';
-            error_log("HU-027: Documento final $document_id rechazado y archivado. Estudiante desbloqueado para nueva subida.");
+            error_log("HU-027: Documento final $document_id rechazado y archivado. Estudiante puede subir nueva versión.");
         } else {
             error_log("HU-027 Warning: No se pudo archivar documento final rechazado {$document_id}: " . $doc_archive_result['message']);
         }

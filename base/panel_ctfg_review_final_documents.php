@@ -449,24 +449,40 @@ if ($current_user_rol != 3 && $current_user_rol != 2 && $current_user_rol != 1) 
             return response.json();
         })
         .then(data => {
+            console.log('Respuesta de process_final_document_review.php:', data);
             if (data.success) {
                 // --- Step 2: Send notification email ---
                 const emailBody = `status=${encodeURIComponent(data.status)}&comments=${encodeURIComponent(data.comments)}&tipo=Documento Final TFG`;
 
-                fetch('mod/admin/users/send_tfg_mail.php', {
+                return fetch('mod/admin/users/send_tfg_mail.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: emailBody
                 })
-                .then(emailResponse => emailResponse.json().catch(() => ({}))) // Evita error si la respuesta no es JSON
+                .then(emailResponse => {
+                    console.log('Estado de respuesta de send_tfg_mail.php:', emailResponse.status);
+                    if (!emailResponse.ok) {
+                        console.warn('send_tfg_mail.php retornó estado:', emailResponse.status);
+                    }
+                    return emailResponse.text().then(text => {
+                        try {
+                            return JSON.parse(text);
+                        } catch (e) {
+                            console.warn('send_tfg_mail.php no retornó JSON válido:', text);
+                            return { success: true };
+                        }
+                    });
+                })
                 .then(emailData => {
                     console.log('Respuesta del script de correo:', emailData);
                     showCustomAlert('Operación Exitosa', data.message, true);
+                    return; // Importante: return para resolver la cadena
                 })
                 .catch(emailError => {
                     console.error('Error al enviar el correo:', emailError);
                     // Muestra éxito aunque el correo falle, porque la operación principal (BD) fue exitosa
                     showCustomAlert('Operación Exitosa', `${data.message} (Pero hubo un problema al enviar la notificación por correo.)`, true);
+                    return; // Importante: return para resolver la cadena
                 });
             } else {
                 // El script de BD devolvió success: false
