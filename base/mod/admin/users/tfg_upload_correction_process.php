@@ -57,32 +57,89 @@ if (!$all_addressed) {
     exit;
 }
 
-// Validar archivo PDF
-if (!isset($_FILES['document']) || $_FILES['document']['error'] !== UPLOAD_ERR_OK) {
+// Validar archivos PDF (múltiples o singular)
+include_once __DIR__ . '/../../../inc/upload_helpers.php';
+
+$uploaded_files = [];
+$file = null;
+$mime_type = '';
+
+// Nuevo formato: múltiples archivos con documents[]
+if (isset($_FILES['documents']) && is_array($_FILES['documents']['name'])) {
+    $files_count = count($_FILES['documents']['name']);
+    $max_size = 10 * 1024 * 1024; // 10 MB por archivo
+    $allowed_mime = ['application/pdf'];
+    
+    for ($i = 0; $i < $files_count; $i++) {
+        if ($_FILES['documents']['error'][$i] === UPLOAD_ERR_OK) {
+            $tmp = $_FILES['documents']['tmp_name'][$i];
+            $fname = $_FILES['documents']['name'][$i];
+            $fsize = $_FILES['documents']['size'][$i];
+            
+            if ($fsize > $max_size) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'message' => "El archivo \"$fname\" excede el tamaño máximo de 10 MB."]);
+                exit;
+            }
+            
+            $finfo = finfo_open(FILEINFO_MIME_TYPE);
+            $fmime = finfo_file($finfo, $tmp);
+            finfo_close($finfo);
+            
+            if (!in_array($fmime, $allowed_mime)) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'message' => "El archivo \"$fname\" no es un PDF válido."]);
+                exit;
+            }
+            
+            $uploaded_files[] = [
+                'name' => $fname,
+                'type' => $fmime,
+                'size' => $fsize,
+                'tmp_name' => $tmp,
+                'error' => UPLOAD_ERR_OK
+            ];
+        } elseif ($_FILES['documents']['error'][$i] !== UPLOAD_ERR_NO_FILE) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => 'Error al subir uno de los archivos.']);
+            exit;
+        }
+    }
+}
+// Compatibilidad: formato antiguo con un solo archivo (name="document")
+elseif (isset($_FILES['document']) && $_FILES['document']['error'] === UPLOAD_ERR_OK) {
+    $max_size = 10 * 1024 * 1024;
+    if ($_FILES['document']['size'] > $max_size) {
+        http_response_code(400);
+        echo json_encode(['success' => false, 'message' => 'El archivo excede el tamaño máximo de 10 MB.']);
+        exit;
+    }
+    $finfo = finfo_open(FILEINFO_MIME_TYPE);
+    $fmime = finfo_file($finfo, $_FILES['document']['tmp_name']);
+    finfo_close($finfo);
+    if (!in_array($fmime, ['application/pdf'])) {
+        http_response_code(400);
+        echo json_encode(['success' => false, 'message' => 'Solo se permiten archivos PDF.']);
+        exit;
+    }
+    $uploaded_files[] = [
+        'name' => $_FILES['document']['name'],
+        'type' => $fmime,
+        'size' => $_FILES['document']['size'],
+        'tmp_name' => $_FILES['document']['tmp_name'],
+        'error' => UPLOAD_ERR_OK
+    ];
+}
+
+if (empty($uploaded_files)) {
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'Error al subir el archivo. Por favor intente nuevamente.']);
     exit;
 }
 
-$file = $_FILES['document'];
-$max_size = 8 * 1024 * 1024; // 8 MB
-
-if ($file['size'] > $max_size) {
-    http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'El archivo excede el tamaño máximo de 8 MB.']);
-    exit;
-}
-
-$allowed_mime = ['application/pdf'];
-$finfo = finfo_open(FILEINFO_MIME_TYPE);
-$mime_type = finfo_file($finfo, $file['tmp_name']);
-finfo_close($finfo);
-
-if (!in_array($mime_type, $allowed_mime)) {
-    http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'Solo se permiten archivos PDF.']);
-    exit;
-}
+// Usar el primer archivo como documento principal
+$file = $uploaded_files[0];
+$mime_type = $file['type'];
 
 // ===============================
 // PROCESAMIENTO EN BD
@@ -134,7 +191,7 @@ try {
     // 3. Obtener la siguiente versión
     $next_version = $doc_data['version'] + 1;
     
-    // 4. Leer el archivo PDF
+    // 4. Leer el archivo PDF principal
     $file_content = file_get_contents($file['tmp_name']);
     if ($file_content === false) {
         throw new Exception("Error al leer el archivo PDF.");
@@ -166,7 +223,7 @@ try {
     $stmt_file->bind_param("ssibsd", 
         $file['name'],
         $mime_type,
-        $file['size'],
+        $file_size_val,
         $null_blob,
         $current_user_id,
         $next_version
@@ -203,6 +260,17 @@ try {
     $stmt_link->bind_param("ii", $document_id, $new_file_id);
     $stmt_link->execute();
     $stmt_link->close();
+    
+    // 6.5 Guardar archivos adicionales si hay más de uno
+    if (count($uploaded_files) > 1) {
+        $additional_saved = saveAdditionalFiles(
+            $conn,
+            $uploaded_files,
+            $current_user_id,
+            'Correccion TFG Anexo'
+        );
+        error_log("HU-020: Archivos adicionales de corrección guardados: $additional_saved");
+    }
     
     // 7. Insertar registro en tfg_document_reviews (respuesta del estudiante)
     $review_type = 'Correccion Estudiante';

@@ -125,6 +125,7 @@ $usuario = $usuario_sesion ?? 'Estudiante';
                                         <h6 class="alert-heading">Documento: <?= htmlspecialchars($doc['title']) ?></h6>
                                         <p class="mb-2">El CTFG ha solicitado correcciones en su documento final.</p>
                                         <p class="mb-2"><strong>Correcciones enviadas:</strong> <?= $doc['corrections_count'] ?> / 3</p>
+                                        <p class="mb-2 text-danger fw-bold"><i class="bi bi-info-circle-fill"></i> Importante: Debe subir <u>todos</u> los archivos nuevamente al enviar la corrección, no solo los archivos modificados.</p>
                                         <hr>
                                         <a href="<?= $base_url ?>mod/admin/users/tfg_upload_correction.php?id=<?= $doc['id'] ?>" 
                                            class="btn btn-warning btn-sm">
