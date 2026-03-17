@@ -18,20 +18,23 @@ $cds_domain = $mySessionController->getVar("cds_domain");
 $cds_locate = $mySessionController->getVar("cds_locate");
 $base_url = $cds_domain . $cds_locate;
 
-// Restringir acceso solo a estudiantes, asesor (rol 4, 5) o admin (rol 1)
-if ($current_user_rol != 4 && $current_user_rol != 5 && $current_user_rol != 1) {
+// Restringir acceso: estudiantes (4), asesores externos (5), admin (1), asesores internos de comité (3)
+if ($current_user_rol != 4 && $current_user_rol != 5 && $current_user_rol != 1 && $current_user_rol != 3) {
     header('Location: dashboard.php');
     exit;
 }
 
 // =============================== DETERMINAR ID DEL ESTUDIANTE A CONSULTAR ===============================
-// Para asesores externos (rol 5), obtener el estudiante vinculado
+// Para asesores externos (rol 5), obtener el estudiante vinculado (externo o interno de comité)
+// Para asesores internos de comité (rol 3), buscar vinculación por internal_advisor_id
 // Para estudiantes (rol 4), detectar si pertenecen a un grupo y mostrar documentos de todos
 $target_student_id = $current_user_id; // Por defecto, el mismo usuario
 $linked_student_name = '';
 $linked_students_list = []; // Array para todos los estudiantes del grupo
 $group_member_ids = []; // IDs de todos los miembros del grupo (para consultas)
 $is_external_advisor = ($current_user_rol == 5);
+$is_internal_advisor = ($current_user_rol == 3); // Miembro de comité (tutor/asesor interno)
+$is_advisor = ($is_external_advisor || $is_internal_advisor);
 $is_student = ($current_user_rol == 4);
 
 // Función para obtener los miembros del grupo de un estudiante
@@ -141,12 +144,81 @@ if ($is_external_advisor) {
             }
             $stmt->close();
         }
+
+        // También verificar vinculación como asesor interno de comité (rol 5 puede ser tutor)
+        $stmt_int = $conn->prepare(
+            "SELECT eals.student_id as linked_student_id, u.nombre as student_name, eals.is_primary
+             FROM external_advisor_linked_students eals
+             LEFT JOIN sis_user u ON eals.student_id = u.id
+             WHERE eals.internal_advisor_id = ?
+             ORDER BY eals.is_primary DESC, eals.linked_at DESC"
+        );
+        if ($stmt_int) {
+            $stmt_int->bind_param("s", $current_user_id);
+            $stmt_int->execute();
+            $result_int = $stmt_int->get_result();
+            while ($row = $result_int->fetch_assoc()) {
+                $already = false;
+                foreach ($linked_students_list as $ex) {
+                    if ($ex['id'] === $row['linked_student_id']) { $already = true; break; }
+                }
+                if (!$already) {
+                    $linked_students_list[] = [
+                        'id'         => $row['linked_student_id'],
+                        'name'       => $row['student_name'],
+                        'is_primary' => $row['is_primary']
+                    ];
+                    if (empty($target_student_id) || $row['is_primary']) {
+                        $target_student_id   = $row['linked_student_id'];
+                        $linked_student_name = $row['student_name'];
+                    }
+                }
+            }
+            $stmt_int->close();
+        }
         $conn->close();
     } catch (Exception $e) {
         error_log("Error obteniendo estudiante vinculado: " . $e->getMessage());
     }
     
     // Obtener todos los IDs para las consultas (para asesores)
+    foreach ($linked_students_list as $student) {
+        $group_member_ids[] = $student['id'];
+    }
+}
+
+// Para asesores internos de comité (rol 3): buscar estudiantes vinculados por internal_advisor_id
+if ($is_internal_advisor) {
+    try {
+        $conn = new mysqli($db_host, $usuario, $clave, $db);
+        $conn->set_charset("utf8");
+
+        $sql = "SELECT eals.student_id as linked_student_id, u.nombre as student_name, eals.is_primary
+                FROM external_advisor_linked_students eals
+                LEFT JOIN sis_user u ON eals.student_id = u.id
+                WHERE eals.internal_advisor_id = ?
+                ORDER BY eals.is_primary DESC, eals.linked_at DESC";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $current_user_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        while ($row = $result->fetch_assoc()) {
+            $linked_students_list[] = [
+                'id'         => $row['linked_student_id'],
+                'name'       => $row['student_name'],
+                'is_primary' => $row['is_primary']
+            ];
+            if (empty($target_student_id) || $row['is_primary']) {
+                $target_student_id   = $row['linked_student_id'];
+                $linked_student_name = $row['student_name'];
+            }
+        }
+        $stmt->close();
+        $conn->close();
+    } catch (Exception $e) {
+        error_log("Error obteniendo estudiantes vinculados (asesor interno): " . $e->getMessage());
+    }
+
     foreach ($linked_students_list as $student) {
         $group_member_ids[] = $student['id'];
     }
@@ -183,8 +255,8 @@ if ($is_student) {
     }
 }
 
-// Para estudiantes: obtener información del asesor externo asignado
-$assigned_advisor = null;
+// Para estudiantes: obtener información de asesores asignados (externos e internos)
+$assigned_advisors = [];
 if ($is_student) {
     try {
         $conn = new mysqli($db_host, $usuario, $clave, $db);
@@ -204,12 +276,48 @@ if ($is_student) {
         $result = $stmt->get_result();
         
         if ($row = $result->fetch_assoc()) {
-            $assigned_advisor = $row;
+            $assigned_advisors[] = [
+                'advisor_name' => $row['advisor_name'],
+                'advisor_email' => $row['advisor_email'],
+                'institucion_procedencia' => $row['institucion_procedencia'] ?? '',
+                'advisor_type' => 'Externo'
+            ];
         }
         $stmt->close();
         $conn->close();
     } catch (Exception $e) {
         error_log("Error obteniendo asesor asignado: " . $e->getMessage());
+    }
+
+    // Obtener asesor(es) interno(s) asignado(s) vía tabla de vinculaciones
+    try {
+        $conn = new mysqli($db_host, $usuario, $clave, $db);
+        $conn->set_charset("utf8");
+
+        $sql = "SELECT DISTINCT su.id as advisor_id, su.nombre as advisor_name, su.email as advisor_email
+                FROM external_advisor_linked_students eals
+                INNER JOIN sis_user su ON su.id = eals.internal_advisor_id
+                WHERE eals.student_id = ?
+                AND eals.internal_advisor_id IS NOT NULL
+                ORDER BY su.nombre ASC";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $current_user_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        while ($row = $result->fetch_assoc()) {
+            $assigned_advisors[] = [
+                'advisor_name' => $row['advisor_name'],
+                'advisor_email' => $row['advisor_email'] ?? '',
+                'institucion_procedencia' => '',
+                'advisor_type' => 'Interno'
+            ];
+        }
+
+        $stmt->close();
+        $conn->close();
+    } catch (Exception $e) {
+        error_log("Error obteniendo asesores internos asignados: " . $e->getMessage());
     }
 }
 
@@ -572,8 +680,8 @@ try {
         <div class="container my-4">
             <h1 class="text-center mb-4" style="font-size: 2.5rem; color: #000;">Historial de documentos</h1>
             
-            <?php if ($is_external_advisor && !empty($linked_students_list)): ?>
-            <!-- Banner informativo para asesor externo -->
+            <?php if ($is_advisor && !empty($linked_students_list)): ?>
+            <!-- Banner informativo para asesores -->
             <div class="alert alert-info d-flex align-items-center mb-4" role="alert" style="font-size: 1.1rem;">
                 <i class="bi bi-mortarboard-fill me-3" style="font-size: 1.5rem;"></i>
                 <div>
@@ -584,20 +692,20 @@ try {
                             <li><?= htmlspecialchars($student['name']) ?><?= $student['is_primary'] ? ' <span class="badge bg-primary">Principal</span>' : '' ?></li>
                         <?php endforeach; ?>
                         </ul>
-                        <small class="text-muted">Como asesor externo, puede ver los documentos de todos los estudiantes de su grupo asignado (solo lectura).</small>
+                        <small class="text-muted">Como asesor, puede ver los documentos de todos los estudiantes de su grupo asignado (solo lectura).</small>
                     <?php else: ?>
                         <strong>Visualizando documentos del estudiante:</strong> <?= htmlspecialchars($linked_student_name) ?>
-                        <br><small class="text-muted">Como asesor externo, puede ver los documentos de su estudiante asignado (solo lectura).</small>
+                        <br><small class="text-muted">Como asesor, puede ver los documentos de su estudiante asignado (solo lectura).</small>
                     <?php endif; ?>
                 </div>
             </div>
-            <?php elseif ($is_external_advisor && empty($linked_students_list)): ?>
+            <?php elseif ($is_advisor && empty($linked_students_list)): ?>
             <!-- Mensaje cuando no hay estudiante vinculado -->
             <div class="alert alert-warning d-flex align-items-center mb-4" role="alert" style="font-size: 1.1rem;">
                 <i class="bi bi-exclamation-triangle-fill me-3" style="font-size: 1.5rem;"></i>
                 <div>
                     <strong>Sin estudiante vinculado</strong>
-                    <br><small>No tiene un estudiante asociado aprobado. Contacte a la Subdirección si cree que esto es un error.</small>
+                    <br><small>No tiene un estudiante asociado aprobado como asesor. Contacte a la Subdirección si cree que esto es un error.</small>
                 </div>
             </div>
             <?php endif; ?>
@@ -617,19 +725,26 @@ try {
             </div>
             <?php endif; ?>
             
-            <?php if ($is_student && $assigned_advisor): ?>
-            <!-- Banner informativo del asesor externo asignado -->
+            <?php if ($is_student && !empty($assigned_advisors)): ?>
+            <!-- Banner informativo unificado de asesores asignados -->
             <div class="alert alert-success d-flex align-items-center mb-4" role="alert" style="font-size: 1.1rem;">
                 <i class="bi bi-person-badge-fill me-3" style="font-size: 1.5rem;"></i>
                 <div>
-                    <strong>Asesor Externo Asignado:</strong> <?= htmlspecialchars($assigned_advisor['advisor_name']) ?>
-                    <br>
-                    <small class="text-muted">
-                        <i class="bi bi-envelope"></i> <?= htmlspecialchars($assigned_advisor['advisor_email']) ?>
-                        <?php if (!empty($assigned_advisor['institucion_procedencia'])): ?>
-                        | <i class="bi bi-building"></i> <?= htmlspecialchars($assigned_advisor['institucion_procedencia']) ?>
-                        <?php endif; ?>
-                    </small>
+                    <strong>Asesores Asignados:</strong>
+                    <ul class="mb-0 mt-1">
+                    <?php foreach ($assigned_advisors as $advisor): ?>
+                        <li>
+                            <?= htmlspecialchars($advisor['advisor_name']) ?>
+                            <small class="text-muted">(<?= htmlspecialchars($advisor['advisor_type']) ?>)</small>
+                            <?php if (!empty($advisor['advisor_email'])): ?>
+                                <small class="text-muted"> | <i class="bi bi-envelope"></i> <?= htmlspecialchars($advisor['advisor_email']) ?></small>
+                            <?php endif; ?>
+                            <?php if (!empty($advisor['institucion_procedencia'])): ?>
+                                <small class="text-muted"> | <i class="bi bi-building"></i> <?= htmlspecialchars($advisor['institucion_procedencia']) ?></small>
+                            <?php endif; ?>
+                        </li>
+                    <?php endforeach; ?>
+                    </ul>
                 </div>
             </div>
             <?php endif; ?>

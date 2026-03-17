@@ -13,6 +13,38 @@ $cds_domain = $mySessionController->getVar("cds_domain");
 $cds_locate = $mySessionController->getVar("cds_locate");
 $base_url   = $cds_domain . $cds_locate;
 
+include_once(__DIR__ . "/inc/db/bdcommon.inc");
+
+// Este arreglo se llena solo cuando el usuario CTFG también está ligado
+// como asesor interno (tutor/asesor de comité) a uno o más estudiantes.
+$advisor_linked_students = [];
+try {
+    $conn = new mysqli($db_host, $usuario, $clave, $db);
+    $conn->set_charset("utf8");
+
+    // Consulta de vínculos activos por cédula del asesor interno.
+    // Si hay filas, el panel mostrará la sección opcional "Acciones Asesor".
+    $sql = "SELECT DISTINCT eals.student_id, su.nombre as student_name
+            FROM external_advisor_linked_students eals
+            INNER JOIN sis_user su ON su.id = eals.student_id
+            WHERE eals.internal_advisor_id = ?
+            ORDER BY su.nombre ASC";
+    $stmt = $conn->prepare($sql);
+    if ($stmt) {
+        $stmt->bind_param("s", $current_user_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        while ($row = $result->fetch_assoc()) {
+            $advisor_linked_students[] = $row;
+        }
+        $stmt->close();
+    }
+    $conn->close();
+} catch (Exception $e) {
+    // No bloquea el panel CTFG: solo registra el error y continúa.
+    error_log("Error obteniendo estudiantes vinculados del asesor: " . $e->getMessage());
+}
+
 // ================== CONTROL DE ACCESO ==================
 // Rol 3 = Comisión TFG (ajustar según tu base de datos)
 if ($current_user_rol != 3) {
@@ -122,6 +154,29 @@ $avisos_generales = $panel->getAvisos();
                     </div-->
                 </div>
             </div>
+
+            <?php if (!empty($advisor_linked_students)): ?>
+            <!-- Sección opcional: solo se renderiza cuando el usuario tiene estudiantes vinculados como asesor -->
+            <div class="quick-actions-section mt-5">
+                <h2 class="section-title">
+                    <i class="bi bi-person-badge-fill text-rojo-una"></i>
+                    Acciones Asesor
+                </h2>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <!-- Acceso directo al historial compartido del/los estudiante(s) vinculados -->
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>historial_documentos.php'" style="border-left: 4px solid #6c757d;">
+                            <div class="card-icon" style="color: #6c757d;">
+                                <i class="bi bi-clock-history"></i>
+                            </div>
+                            <h5>Historial de documentos</h5>
+                            <p>Tienes <?= count($advisor_linked_students) ?> estudiante(s) vinculado(s). Ver documentos del grupo asignado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endif; ?>
         </div>
     </main>
 

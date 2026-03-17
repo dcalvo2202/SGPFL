@@ -8,6 +8,15 @@ use Tests\Support\FunctionalTester;
 
 final class ExternalAdvisorProfileHU011Cest
 {
+    private const REAL_ADVISOR_ID = '402200272';
+    private const REAL_ADVISOR_NAME = 'MARIA JESUS ALVARADO HERNANDEZ';
+    private const REAL_ADVISOR_EMAIL = 'rodrigo.urena.castillo@est.una.ac.cr';
+    private const REAL_ADVISOR_PHONE = '88888888';
+    private const REAL_PHONE_TYPE = 'M'; // Móvil
+    private const REAL_INSTITUTION = 'UTN';
+    private const REAL_SPECIALIZATION = 'Ingeniería en sistemas';
+    private const REAL_LINKED_STUDENT_ID = '503550224'; // Miguel Ángel Rodríguez Arias
+
     public function registroPageShowsHu011Fields(FunctionalTester $I): void
     {
         $I->amOnPage('/registro.php');
@@ -29,12 +38,10 @@ final class ExternalAdvisorProfileHU011Cest
 
     public function rechazoCuandoNoHayEstudianteVinculado(FunctionalTester $I): void
     {
-        $suffix = $this->uniqueSuffix();
-
         $this->submitRequestWithFiles(
             $I,
-            'HU011-' . $suffix,
-            'hu011-noselinkea-' . $suffix . '@example.com',
+            self::REAL_ADVISOR_ID,
+            self::REAL_ADVISOR_EMAIL,
             ''
         );
 
@@ -44,9 +51,8 @@ final class ExternalAdvisorProfileHU011Cest
 
     public function envioValidoYReenvioBloqueadoSoloLectura(FunctionalTester $I): void
     {
-        $suffix = $this->uniqueSuffix();
-        $applicantId = 'HU011-' . $suffix;
-        $email = 'hu011-' . $suffix . '@example.com';
+        $applicantId = self::REAL_ADVISOR_ID;
+        $email = self::REAL_ADVISOR_EMAIL;
 
         // Primer envío exitoso
         $this->submitValidRequest($I, $applicantId, $email);
@@ -58,8 +64,8 @@ final class ExternalAdvisorProfileHU011Cest
         $this->submitRequestWithFiles(
             $I,
             $applicantId,  // Mismo ID debe fallar
-            'hu011-' . $this->uniqueSuffix() . '@example.com',  // Email distinto
-            'ST-HU011-001'
+            'rodrigo.urena.castillo+' . $this->uniqueSuffix() . '@est.una.ac.cr',  // Email distinto
+            self::REAL_LINKED_STUDENT_ID
         );
 
         // No debe ver "Solicitud enviada" (re-envío bloqueado)
@@ -69,7 +75,7 @@ final class ExternalAdvisorProfileHU011Cest
 
     private function submitValidRequest(FunctionalTester $I, string $applicantId, string $email): void
     {
-        $this->submitRequestWithFiles($I, $applicantId, $email, 'ST-HU011-001');
+        $this->submitRequestWithFiles($I, $applicantId, $email, self::REAL_LINKED_STUDENT_ID);
     }
 
     private function submitRequestWithFiles(
@@ -81,16 +87,20 @@ final class ExternalAdvisorProfileHU011Cest
         $I->amOnPage('/registro.php');
 
         $I->fillField('input[name="applicant_id"]', $applicantId);
-        $I->fillField('input[name="full_name"]', 'Asesor Externo Prueba HU011');
+        $I->fillField('input[name="full_name"]', self::REAL_ADVISOR_NAME);
         $I->fillField('input[name="email"]', $email);
-        $I->fillField('input[name="telefono"]', '88888888');
-        $I->fillField('input[name="institution"]', 'Organización Externa de Prueba');
-        $I->fillField('input[name="specialization"]', 'Arquitectura de Software');
+        $I->fillField('input[name="telefono"]', self::REAL_ADVISOR_PHONE);
+        $I->fillField('input[name="institution"]', self::REAL_INSTITUTION);
+        $I->fillField('input[name="specialization"]', self::REAL_SPECIALIZATION);
         $I->fillField('input[name="linked_student_id"]', $linkedStudentId);
 
-        $idTipoTel = $this->grabFirstTipoTelOrEmpty($I);
-        if ($idTipoTel !== '') {
-            $I->selectOption('select[name="id_tipo_tel"]', $idTipoTel);
+        if ($this->hasTipoTelOption($I, self::REAL_PHONE_TYPE)) {
+            $I->selectOption('select[name="id_tipo_tel"]', self::REAL_PHONE_TYPE);
+        } else {
+            $idTipoTel = $this->grabFirstTipoTelOrEmpty($I);
+            if ($idTipoTel !== '') {
+                $I->selectOption('select[name="id_tipo_tel"]', $idTipoTel);
+            }
         }
 
         $I->attachFile('input[name="cv_document"]', 'sample_cv.pdf');
@@ -110,6 +120,16 @@ final class ExternalAdvisorProfileHU011Cest
             return is_string($value) ? $value : '';
         } catch (\Throwable $e) {
             return '';
+        }
+    }
+
+    private function hasTipoTelOption(FunctionalTester $I, string $optionValue): bool
+    {
+        try {
+            $allValues = $I->grabMultiple('#inp-tipo-tel option', 'value');
+            return in_array($optionValue, $allValues, true);
+        } catch (\Throwable $e) {
+            return false;
         }
     }
 }

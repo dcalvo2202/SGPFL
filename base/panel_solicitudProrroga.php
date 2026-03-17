@@ -36,11 +36,18 @@ $proxima_prorroga = 1; // 1 = Primera (1 año), 2 = Segunda (6 meses)
 
 $conn = new mysqli($db_host, $usuario, $clave, $db);
 if (!$conn->connect_error) {
-    // Obtener el título y ID del proyecto asignado al estudiante
-    $sql = "SELECT id, title FROM tfg_proposals WHERE user_id = ? ORDER BY created_at DESC LIMIT 1";
+    // Obtener el título e ID de la propuesta asociada al estudiante.
+    // Puede ser el creador de la propuesta o un miembro activo del proyecto registrado.
+    $sql = "SELECT DISTINCT tp.id, tp.title
+            FROM tfg_proposals tp
+            LEFT JOIN registered_projects rp ON rp.tfg_proposal_id = tp.id
+            LEFT JOIN project_members pm ON pm.project_id = rp.id AND pm.status = 'Activo'
+            WHERE tp.user_id = ? OR pm.user_id = ?
+            ORDER BY tp.created_at DESC
+            LIMIT 1";
     $stmt = $conn->prepare($sql);
     if ($stmt) {
-        $stmt->bind_param("s", $current_user_id);
+        $stmt->bind_param("ss", $current_user_id, $current_user_id);
         $stmt->execute();
         $result = $stmt->get_result();
         if ($row = $result->fetch_assoc()) {
@@ -293,6 +300,12 @@ CSS;
       </div>
       <?php endif; ?>
       
+    </div>
+
+    <div class="text-center mt-4 mb-4">
+      <a href="panel_ctfg.php" class="btn btn-secondary">
+        <i class="bi bi-arrow-left-circle"></i> Volver al panel principal
+      </a>
     </div>
   </main>
   <?php include 'footer.php'; ?>
