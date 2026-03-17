@@ -8,6 +8,7 @@ class TfgUploadManager {
         this.injectStyles();
         this.initializeEventListeners();
         this.loadInitialMaxMembers();
+        this.loadPreloadedMembers();
         this.updateMembersDisplay();
     }
     
@@ -51,6 +52,51 @@ class TfgUploadManager {
             const selectedOption = projectTypeSelect.options[projectTypeSelect.selectedIndex];
             this.maxMembers = parseInt(selectedOption.getAttribute('data-max-members')) || 1;
             console.log('Max members inicializado:', this.maxMembers);
+        }
+    }
+
+    /**
+     * Pre-carga miembros y datos de una propuesta rechazada anterior.
+     * Esto evita que el estudiante tenga que volver a agregar los mismos miembros
+     * cuando reenvía una propuesta que fue rechazada.
+     */
+    loadPreloadedMembers() {
+        // Pre-cargar tipo de proyecto primero (para que maxMembers se actualice)
+        if (window.PRELOADED_PROJECT_TYPE) {
+            const select = document.getElementById('sel-project-type');
+            if (select) {
+                select.value = window.PRELOADED_PROJECT_TYPE;
+                // Disparar change para actualizar maxMembers
+                const selectedOption = select.options[select.selectedIndex];
+                if (selectedOption) {
+                    this.maxMembers = parseInt(selectedOption.getAttribute('data-max-members')) || 1;
+                }
+            }
+        }
+
+        // Pre-cargar descripción del proyecto
+        if (window.PRELOADED_DESCRIPTION) {
+            const desc = document.getElementById('txt-project-description');
+            if (desc) {
+                desc.value = window.PRELOADED_DESCRIPTION;
+            }
+        }
+
+        // Pre-cargar miembros del grupo anterior
+        if (window.PRELOADED_MEMBERS && Array.isArray(window.PRELOADED_MEMBERS) && window.PRELOADED_MEMBERS.length > 0) {
+            window.PRELOADED_MEMBERS.forEach(member => {
+                // Verificar que no esté ya agregado y no sea el usuario actual
+                const isAlreadySelected = this.selectedMembers.some(m => m.id === member.id);
+                const isCurrentUser = member.id === this.getCurrentUserId();
+                if (!isAlreadySelected && !isCurrentUser) {
+                    this.selectedMembers.push({
+                        id: member.id,
+                        nombre: member.nombre,
+                        email: member.email || ''
+                    });
+                }
+            });
+            console.log('Miembros pre-cargados de propuesta anterior:', this.selectedMembers.length);
         }
     }
     
