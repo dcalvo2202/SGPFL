@@ -132,7 +132,7 @@ try {
             <div class="quick-actions-section">
                 <h2 class="section-title">
                     <i class="bi bi-lightning-fill text-rojo-una"></i>
-                    Acciones Rápidas
+                    Gestión Proceso TFG
                 </h2>
                 
                 <div class="row justify-content-center">

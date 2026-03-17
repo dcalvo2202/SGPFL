@@ -76,11 +76,11 @@ $avisos_generales = $panel->getAvisos();
                 <h1 style="font-size: 2.5rem; font-weight: 700;">Panel de la Comisión de Trabajos Finales de Graduación</h1>
                 <p class="lead">Bienvenido, <?= htmlspecialchars($current_user_name) ?>. Gestione las propuestas y documentos finales de TFG.</p>
             </div>
-            <!-- Sección de Acciones Rápidas -->
+            <!-- Sección de Gestión de Evaluación y Seguimiento TFG -->
             <div class="quick-actions-section">
                 <h2 class="section-title">
                     <i class="bi bi-lightning-fill text-rojo-una"></i>
-                    Acciones Rápidas
+                    Gestión de Evaluación y Seguimiento TFG
                 </h2>
                 <div class="row justify-content-center">
                     <!-- Revisar Documentos Finales -->

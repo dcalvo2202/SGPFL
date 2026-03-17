@@ -115,11 +115,11 @@ try {
                 </script>
             <?php endif; ?>
 
-            <!-- Sección de Acciones Rápidas -->
+            <!-- Sección de Gestión Académica y Seguimiento TFG -->
             <div class="quick-actions-section">
                 <h2 class="section-title">
                     <i class="bi bi-lightning-fill text-rojo-una"></i>
-                    Acciones Rápidas
+                    Gestión Académica y Seguimiento TFG
                 </h2>
                 
                 <div class="row justify-content-center">
