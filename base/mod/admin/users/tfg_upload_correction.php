@@ -206,7 +206,7 @@ $page_title = "Subir Correcciones - TFG";
                     <button type="submit" class="btn btn-lg btn-primary px-5">
                         <i class="bi bi-send-fill"></i> Enviar Correcciones
                     </button>
-                    <a href="<?= $base_url ?>panel_estudiante.php" class="btn btn-lg btn-secondary px-5 ms-3">
+                    <a href="<?= $base_url ?>Panel_SubirTFG.php" class="btn btn-lg btn-secondary px-5 ms-3">
                         <i class="bi bi-x-circle"></i> Cancelar
                     </a>
                 </div>
@@ -415,17 +415,29 @@ $page_title = "Subir Correcciones - TFG";
             if (data.success) {
                 Swal.fire({
                     icon: 'success',
-                    title: '¡Correcciones Enviadas!',
-                    html: `${data.message}<br><br><strong>Versión:</strong> ${data.version}<br><strong>Corrección #:</strong> ${data.corrections_count}`,
-                    confirmButtonText: 'Ir al Panel'
+                    title: data.message,
+                    html: `<p style="margin: 15px 0; font-size: 15px; color: #666;">${data.details}</p>
+                           <div style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; margin-top: 15px; text-align: left;">
+                               <p style="margin: 5px 0;"><strong>Versión del documento:</strong> ${data.version}</p>
+                               <p style="margin: 5px 0;"><strong>Ciclo de corrección:</strong> ${data.corrections_count}</p>
+                           </div>`,
+                    confirmButtonText: 'Ir al panel principal',
+                    confirmButtonColor: '#034991',
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        setTimeout(() => {
+                            Swal.getConfirmButton().focus();
+                        }, 100);
+                    }
                 }).then(() => {
                     window.location.href = '<?= $base_url ?>Panel_SubirTFG.php';
                 });
             } else {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Error',
-                    text: data.message
+                    title: 'Error al enviar',
+                    text: data.message,
+                    confirmButtonColor: '#034991'
                 });
             }
         })
@@ -434,7 +446,8 @@ $page_title = "Subir Correcciones - TFG";
             Swal.fire({
                 icon: 'error',
                 title: 'Error de conexión',
-                text: 'No se pudo enviar las correcciones. Intente nuevamente.'
+                text: 'No se pudo enviar las correcciones. Por favor, intente nuevamente.',
+                confirmButtonColor: '#034991'
             });
         });
     });

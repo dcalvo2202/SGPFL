@@ -27,6 +27,30 @@ require_once(__DIR__ . '/../../../inc/tfg_final_functions.php');
 // Verificar si puede subir documento final
 $upload_check = canUploadFinalDocument($current_user_id);
 
+// Si el documento está rechazado, verificar si alcanzó el límite de correcciones
+$has_reached_correction_limit = false;
+if (isset($upload_check['is_rejected']) && $upload_check['is_rejected'] && isset($upload_check['document_id'])) {
+    try {
+        include(__DIR__ . '/../../../inc/db/bdcommon.inc');
+        $conn_check = new mysqli($db_host, $usuario, $clave, $db);
+        $conn_check->set_charset("utf8");
+        
+        $sql_corrections = "SELECT COUNT(*) as correction_count FROM tfg_document_reviews 
+                           WHERE document_id = ? AND review_type = 'Correccion Estudiante'";
+        $stmt_corr = $conn_check->prepare($sql_corrections);
+        $stmt_corr->bind_param("i", $upload_check['document_id']);
+        $stmt_corr->execute();
+        $result_corr = $stmt_corr->get_result()->fetch_assoc();
+        $stmt_corr->close();
+        $conn_check->close();
+        
+        $correction_count = $result_corr['correction_count'] ?? 0;
+        $has_reached_correction_limit = ($correction_count >= 3);
+    } catch (Exception $e) {
+        error_log("Error verificando límite de correcciones: " . $e->getMessage());
+    }
+}
+
 // URLs portables
 $panel_href = $base_url . "Panel_SubirTFG.php";
 $form_action = "tfg_upload_final_process.php";
@@ -67,7 +91,32 @@ $additional_css = ['inc/css/tfg_upload.css'];
             <?php if (!$upload_check['can_upload']): ?>
                 <!-- Mostrar mensaje de error si no puede subir -->
                 <?php if (isset($upload_check['is_rejected']) && $upload_check['is_rejected']): ?>
-                    <!-- Caso especial: Documento rechazado - Redirigir a HU-020 -->
+                    <?php if ($has_reached_correction_limit): ?>
+                    <!-- CASO: Documento rechazado Y alcanzó límite de correcciones -->
+                    <div class="alert alert-danger d-flex align-items-start" role="alert" style="border-radius: 8px; padding: 20px;">
+                        <i class="bi bi-exclamation-octagon-fill" style="font-size: 2rem; margin-right: 15px; color: #dc3545;"></i>
+                        <div style="flex: 1;">
+                            <h5 style="margin-top: 0; color: #dc3545; margin-bottom: 10px;"><strong>Has alcanzado el límite de correcciones</strong></h5>
+                            <p style="margin: 10px 0; color: #555;">
+                                Tu documento final fue rechazado y has realizado <strong>3 ciclos de corrección</strong>. 
+                                Ha alcanzado el límite máximo permitido por el sistema.
+                            </p>
+                            <p style="margin: 10px 0; color: #555;">
+                                <strong>Próximos pasos:</strong> Contacta directamente con la <strong>Comisión de Trabajos Finales de Graduación (CTFG)</strong> 
+                                para discutir opciones adicionales o recibir orientación sobre cómo proceder.
+                            </p>
+                            <div style="margin-top: 15px;">
+                                <a href="mailto:infoctfg@una.crr" class="btn btn-primary" style="margin-right: 10px;">
+                                    <i class="bi bi-envelope-fill"></i> Contactar CTFG
+                                </a>
+                                <a href="<?= $base_url ?>Panel_SubirTFG.php" class="btn btn-secondary">
+                                    <i class="bi bi-arrow-left-circle"></i> Volver al panel principal
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <?php else: ?>
+                    <!-- CASO: Documento rechazado pero AÚN puede hacer correcciones -->
                     <div class="alert alert-danger" role="alert">
                         <h5><i class="bi bi-exclamation-triangle-fill"></i> Documento Final Rechazado</h5>
                         <p class="mb-3"><?= htmlspecialchars($upload_check['message']) ?></p>
@@ -81,6 +130,7 @@ $additional_css = ['inc/css/tfg_upload.css'];
                             </a>
                         </div>
                     </div>
+                    <?php endif; ?>
                 <?php else: ?>
                     <!-- Otros casos de bloqueo -->
                     <div class="alert alert-danger" role="alert">

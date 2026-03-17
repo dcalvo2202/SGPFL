@@ -220,6 +220,7 @@ try {
     
     // Bind parameters: s=string, i=int, b=blob, d=double (para version que es float)
     $null_blob = null;
+    $file_size_val = $file['size'];
     $stmt_file->bind_param("ssibsd", 
         $file['name'],
         $mime_type,
@@ -364,7 +365,8 @@ try {
     // ===============================
     echo json_encode([
         'success' => true,
-        'message' => 'Correcciones enviadas exitosamente. La CTFG será notificada.',
+        'message' => '¡Correcciones enviadas exitosamente!',
+        'details' => 'Tu documento ha sido actualizado y la Comisión de TFG será notificada para revisar los cambios realizados.',
         'document_id' => $document_id,
         'version' => $next_version,
         'corrections_count' => $new_corrections_count
