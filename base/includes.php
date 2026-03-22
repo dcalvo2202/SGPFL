@@ -21,9 +21,12 @@ if (!isset($base_url) || !$base_url) {
 <link href="<?= $base_url ?>lib/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
 <!-- Prototype EvalScript -->
+<?php if (empty($disable_prototype_js)): ?>
 <script src="<?= $base_url ?>inc/js/prototype.js" type="text/javascript"></script>
+<?php endif; ?>
 
 <!-- Main  -->
+<?php if (empty($disable_prototype_js)): ?>
 <script src="<?= $base_url ?>inc/js/main.js" type="text/javascript"></script>
 <script src="<?= $base_url ?>inc/js/validator.js" type="text/javascript"></script>
 
@@ -32,6 +35,7 @@ if (!isset($base_url) || !$base_url) {
 <script src="<?= $base_url ?>inc/js/permit.js" type="text/javascript"></script>
 <script src="<?= $base_url ?>inc/js/roll.js" type="text/javascript"></script>
 <script src="<?= $base_url ?>inc/js/user.js" type="text/javascript"></script>
+<?php endif; ?>
 
 <!-- Bootstrap + Font-Awesome + Estilo -->
 <link href="<?= $base_url ?>lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>  

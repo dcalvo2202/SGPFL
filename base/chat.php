@@ -9,6 +9,9 @@
 include("mod/login/check.php");
 
 // Incluir archivos necesarios
+// Mantener estilos/scripts legacy para conservar el look original de la vista
+// pero desactivar Prototype solo en chat para evitar conflicto con jQuery.
+$disable_prototype_js = true;
 include('includes.php');
 include('lang/lang.es');
 require_once 'inc/chat_functions.php';
@@ -115,7 +118,7 @@ $page_title = 'Chat - SGPFL';
     <div class="modal fade" id="chatMembersModal" tabindex="-1" aria-labelledby="chatMembersModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
+                <div class="modal-header chat-members-modal-header">
                     <h5 class="modal-title" id="chatMembersModalLabel">
                         <i class="bi bi-people-fill me-2"></i>Miembros del Grupo
                     </h5>

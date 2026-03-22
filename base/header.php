@@ -1,6 +1,5 @@
 <?php 
 include("mod/login/check.php");
-// includes.php comentado porque causa problemas con rutas relativas en subdirectorios
 require_once('includes.php');
 include('lang/lang.es');
 

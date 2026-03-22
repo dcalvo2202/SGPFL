@@ -94,8 +94,47 @@
 
         // Botón ver miembros del grupo
         $(document).on('click', '#chatGroupMembersBtn', function() {
-            $('#chatMembersModal').modal('show');
+            if (state.currentConversationId) {
+                // Recargar siempre al abrir modal para evitar datos vacíos por fallos previos.
+                loadGroupMembers(state.currentConversationId);
+            }
+            showMembersModal();
         });
+
+        // Evita warning aria-hidden al cerrar modal con foco retenido dentro.
+        const membersModalEl = document.getElementById('chatMembersModal');
+        if (membersModalEl) {
+            membersModalEl.addEventListener('hide.bs.modal', function() {
+                if (document.activeElement && membersModalEl.contains(document.activeElement)) {
+                    document.activeElement.blur();
+                }
+            });
+
+            membersModalEl.addEventListener('hidden.bs.modal', function() {
+                const input = document.getElementById('chatMessageInput');
+                if (input && !input.disabled) {
+                    input.focus();
+                }
+            });
+        }
+    }
+
+    function showMembersModal() {
+        const modalEl = document.getElementById('chatMembersModal');
+        if (!modalEl) return;
+
+        if (document.activeElement && modalEl.contains(document.activeElement)) {
+            document.activeElement.blur();
+        }
+
+        if (window.bootstrap && window.bootstrap.Modal) {
+            window.bootstrap.Modal.getOrCreateInstance(modalEl).show();
+            return;
+        }
+
+        if (typeof jQuery !== 'undefined' && typeof jQuery.fn.modal === 'function') {
+            jQuery(modalEl).modal('show');
+        }
     }
 
     // =============================== BÚSQUEDA DE USUARIOS ===============================
@@ -317,14 +356,14 @@
         // Mostrar panel de chat (móvil)
         $('.chat-container').addClass('chat-open');
         
-        // Cargar mensajes
-        loadMessages(conversationId, false);
-        
-        // Marcar como leída
-        markAsRead(conversationId);
-        
-        // Iniciar polling
-        startMessagePolling();
+        // Cargar mensajes PRIMERO, luego polling
+        loadMessages(conversationId, false, function(success) {
+            // Después de cargar, iniciar polling solo si tuvo éxito
+            if (success) {
+                markAsRead(conversationId);
+                startMessagePolling();
+            }
+        });
         
         // Habilitar input
         enableInput();
@@ -344,7 +383,7 @@
     }
 
     // =============================== MENSAJES ===============================
-    function loadMessages(conversationId, isPolling) {
+    function loadMessages(conversationId, isPolling, callback) {
         const params = { conversation_id: conversationId };
         if (isPolling && state.lastMessageId > 0) {
             params.after_id = state.lastMessageId;
@@ -356,6 +395,15 @@
             dataType: 'json',
             success: function(resp) {
                 if (resp.success) {
+                    // Actualizar lastMessageId INMEDIATAMENTE antes de renderizar
+                    if (resp.messages.length > 0) {
+                        state.lastMessageId = Math.max(
+                            state.lastMessageId, 
+                            ...resp.messages.map(m => parseInt(m.id))
+                        );
+                    }
+                    
+                    // AHORA renderizar (con lastMessageId ya actualizado)
                     if (!isPolling) {
                         renderFullMessages(resp.messages, resp.conversation);
                         updateChatHeader(resp.conversation);
@@ -363,14 +411,14 @@
                         appendNewMessages(resp.messages);
                     }
                     
-                    // Actualizar lastMessageId
-                    if (resp.messages.length > 0) {
-                        state.lastMessageId = Math.max(
-                            state.lastMessageId, 
-                            ...resp.messages.map(m => parseInt(m.id))
-                        );
-                    }
+                    if (callback) callback(true);
+                } else {
+                    if (callback) callback(false);
                 }
+            },
+            error: function(xhr, status, error) {
+                console.error('Chat: Error cargando mensajes:', status, error, xhr.responseText);
+                if (callback) callback(false);
             }
         });
     }
@@ -442,7 +490,7 @@
             }
             $area.append(createMessageHtml(msg));
         });
-        
+
         scrollToBottom();
     }
 
@@ -453,7 +501,10 @@
         $area.find('.chat-no-messages').remove();
         
         messages.forEach(function(msg) {
-            $area.append(createMessageHtml(msg));
+            // Evitar duplicados: verificar si el mensaje ya existe en la pantalla
+            if ($area.find(`[data-msg-id="${msg.id}"]`).length === 0) {
+                $area.append(createMessageHtml(msg));
+            }
         });
         
         scrollToBottom();
@@ -520,18 +571,18 @@
                     $input.val('');
                     $input.css('height', 'auto');
                     
-                    // Si era una nueva conversación, actualizar el ID
+                    // Si era una nueva conversación, actualizar el ID y polling
                     if (pendingUserId && resp.conversation_id) {
                         state.currentConversationId = resp.conversation_id;
                         $input.removeData('pending-user-id');
                         startMessagePolling();
                     }
                     
-                    // Agregar el mensaje a la vista
-                    appendNewMessages([resp.message]);
-                    
-                    // Actualizar la última ID
+                    // Actualizar lastMessageId ANTES de renderizar para evitar race condition
                     state.lastMessageId = Math.max(state.lastMessageId, parseInt(resp.message.id));
+                    
+                    // Ahora agregar el mensaje a la vista
+                    appendNewMessages([resp.message]);
                     
                     // Recargar lista de conversaciones
                     loadConversations();
@@ -552,17 +603,70 @@
 
     // =============================== MIEMBROS DEL GRUPO ===============================
     function loadGroupMembers(conversationId) {
+        const $body = $('#chatMembersModalBody');
+        $body.html(
+            '<div class="text-center py-3">' +
+            '<div class="spinner-border text-secondary" role="status" style="width:1.8rem;height:1.8rem;">' +
+            '<span class="visually-hidden">Cargando...</span></div>' +
+            '<p class="text-muted mt-2 mb-0">Cargando miembros...</p></div>'
+        );
+
         $.ajax({
-            url: BASE_URL + 'chat_get_messages.php',
-            data: { conversation_id: conversationId, limit: 1 },
+            url: BASE_URL + 'chat_get_members.php',
+            data: { conversation_id: conversationId },
             dataType: 'json',
+            cache: false,
             success: function(resp) {
-                if (resp.success && resp.conversation && resp.conversation.type === 'group') {
-                    // Cargar miembros via mensajes endpoint (la info viene en conversation)
-                    // Necesitamos un endpoint dedicado, pero usamos la info disponible
+                if (resp.success) {
+                    renderGroupMembers(resp.members || []);
+                } else {
+                    $body.html(
+                        '<div class="text-center py-3 text-muted">' +
+                        '<i class="bi bi-exclamation-circle me-1"></i>No se pudieron cargar los miembros</div>'
+                    );
                 }
+            },
+            error: function() {
+                $body.html(
+                    '<div class="text-center py-3 text-muted">' +
+                    '<i class="bi bi-wifi-off me-1"></i>Error de conexión al cargar miembros.<br>' +
+                    '<small>Vuelve a intentar o cambia de conversación y regresa.</small></div>'
+                );
             }
         });
+    }
+
+    function renderGroupMembers(members) {
+        const $body = $('#chatMembersModalBody');
+
+        if (!members.length) {
+            $body.html(
+                '<div class="text-center py-3 text-muted">' +
+                '<i class="bi bi-people me-1"></i>Este chat aún no tiene miembros activos</div>'
+            );
+            return;
+        }
+
+        let html = '<div class="chat-members-list">';
+        members.forEach(function(member) {
+            const color = ROL_COLORS[member.id_roll] || '#6c757d';
+            const rolClass = ROL_CLASSES[member.id_roll] || '';
+
+            html +=
+                '<div class="chat-member-item">' +
+                    '<div class="member-avatar" style="background:' + color + '">' + getInitials(member.nombre) + '</div>' +
+                    '<div class="member-meta">' +
+                        '<div class="member-name">' + escapeHtml(member.nombre) + '</div>' +
+                        '<div class="member-row">' +
+                            '<span class="rol-badge ' + rolClass + '">' + escapeHtml(member.roll_name) + '</span>' +
+                            '<span class="member-id"><i class="bi bi-person-badge"></i> ' + escapeHtml(member.id) + '</span>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>';
+        });
+        html += '</div>';
+
+        $body.html(html);
     }
 
     // =============================== MARK AS READ ===============================

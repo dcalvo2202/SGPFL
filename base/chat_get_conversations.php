@@ -4,23 +4,31 @@
  * GET: (no requiere parámetros)
  * Retorna: lista de conversaciones con último mensaje y no leídos
  */
+ob_start();
+ini_set('display_errors', '0');
 header('Content-Type: application/json; charset=utf-8');
 
 include("mod/login/check.php");
 require_once __DIR__ . '/inc/chat_functions.php';
 
+function respondJson($payload) {
+    while (ob_get_level() > 0) {
+        ob_end_clean();
+    }
+    echo json_encode($payload, JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
 $current_user_id = $mySessionController->getVar("usuario");
 if (!$current_user_id) {
-    echo json_encode(['success' => false, 'error' => 'No autenticado']);
-    exit;
+    respondJson(['success' => false, 'error' => 'No autenticado']);
 }
 
 // Conexión a BD
 require_once __DIR__ . '/inc/db/bdcommon.inc';
 $conn = new mysqli($db_host, $usuario, $clave, $db);
 if ($conn->connect_error) {
-    echo json_encode(['success' => false, 'error' => 'Error de conexión']);
-    exit;
+    respondJson(['success' => false, 'error' => 'Error de conexión']);
 }
 $conn->set_charset("utf8");
 
@@ -34,14 +42,18 @@ $total_unread = getTotalUnreadMessages($conn, $current_user_id);
 // Escapar HTML
 foreach ($conversations as &$conv) {
     if (isset($conv['last_message'])) {
-        $conv['last_message'] = htmlspecialchars(mb_substr($conv['last_message'], 0, 80));
+        $last_message = (string)($conv['last_message'] ?? '');
+        $preview = function_exists('mb_substr')
+            ? mb_substr($last_message, 0, 80)
+            : substr($last_message, 0, 80);
+        $conv['last_message'] = htmlspecialchars($preview, ENT_QUOTES, 'UTF-8');
     }
-    $conv['display_name'] = htmlspecialchars($conv['display_name']);
+    $conv['display_name'] = htmlspecialchars((string)($conv['display_name'] ?? ''), ENT_QUOTES, 'UTF-8');
 }
 
 $conn->close();
 
-echo json_encode([
+respondJson([
     'success' => true,
     'conversations' => $conversations,
     'total_unread' => $total_unread
