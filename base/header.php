@@ -1,6 +1,5 @@
 <?php 
 include("mod/login/check.php");
-// includes.php comentado porque causa problemas con rutas relativas en subdirectorios
 require_once('includes.php');
 include('lang/lang.es');
 
@@ -20,18 +19,22 @@ $cds_locate = $mySessionController->getVar("cds_locate");
 $base_url = $cds_domain . $cds_locate;
 
 // HU-037: Obtener conteo de notificaciones sin leer
+// HU-029: Obtener conteo de mensajes sin leer
 $unread_notifications = 0;
+$unread_messages = 0;
 try {
     require_once __DIR__ . '/inc/alert_functions.php';
+    require_once __DIR__ . '/inc/chat_functions.php';
     require_once __DIR__ . '/inc/db/bdcommon.inc';
     $conn_header = new mysqli($db_host, $usuario, $clave, $db);
     if (!$conn_header->connect_error) {
         $conn_header->set_charset("utf8");
         $unread_notifications = getUnreadAlertCount($conn_header, $current_user_id);
+        $unread_messages = getTotalUnreadMessages($conn_header, $current_user_id);
         $conn_header->close();
     }
 } catch (Exception $e) {
-    // Silenciar errores de notificaciones
+    // Silenciar errores de notificaciones/chat
 }
 
 ?>
@@ -122,6 +125,47 @@ try {
             opacity: 1;
             transform: translateX(3px);
         }
+        /* HU-029: Chat bell */
+        .chat-bell {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            margin-right: 0.5rem;
+        }
+        .chat-bell:hover {
+            background: rgba(255,255,255,0.25);
+            color: white;
+            transform: scale(1.05);
+        }
+        .chat-bell i {
+            font-size: 1.3rem;
+        }
+        .chat-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            min-width: 20px;
+            height: 20px;
+            padding: 0 5px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #fff;
+            background: #6f42c1;
+            border: 2px solid #CD1719;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse-badge 2s infinite;
+        }
     </style>
     <header class="navbar-una" style="background: linear-gradient(135deg, #CD1719, #A01215) !important; padding: 1.25rem 0;">
         <div class="container-fluid px-4">
@@ -147,6 +191,16 @@ try {
                         <i class="bi bi-bell-fill"></i>
                         <?php if ($unread_notifications > 0): ?>
                             <span class="notification-badge"><?= $unread_notifications > 99 ? '99+' : $unread_notifications ?></span>
+                        <?php endif; ?>
+                    </a>
+                    
+                    <!-- HU-029: Chat de comunicación interna -->
+                    <a href="<?= htmlspecialchars($base_url) ?>chat.php" class="chat-bell" title="Mensajes">
+                        <i class="bi bi-chat-dots-fill"></i>
+                        <?php if ($unread_messages > 0): ?>
+                            <span class="chat-badge" id="chatHeaderBadge"><?= $unread_messages > 99 ? '99+' : $unread_messages ?></span>
+                        <?php else: ?>
+                            <span class="chat-badge" id="chatHeaderBadge" style="display:none;"></span>
                         <?php endif; ?>
                     </a>
                     
