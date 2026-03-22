@@ -36,15 +36,46 @@ function canUploadFinalDocument($user_id) {
         
         $conn->set_charset("utf8");
         
-        // 1. Verificar que tiene propuesta aprobada
-        $sql = "SELECT id, status FROM tfg_proposals WHERE user_id = ? AND status IN ('Cumple requisitos', 'Aprobado')";
+        // 1. Verificar que tiene propuesta aprobada (propia o del grupo)
+        // Primero buscar propuesta propia
+        $sql = "SELECT id, status FROM tfg_proposals WHERE user_id = ? AND status IN ('Aprobado')";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $user_id);
         $stmt->execute();
         $result = $stmt->get_result();
         
-        if ($result->num_rows === 0) {
-            $stmt->close();
+        $proposal_id = null;
+        
+        if ($result->num_rows > 0) {
+            $proposal = $result->fetch_assoc();
+            $proposal_id = $proposal['id'];
+        }
+        $stmt->close();
+        
+        // Si no tiene propuesta propia, buscar si es miembro de un grupo con propuesta aprobada
+        if (!$proposal_id) {
+            $sql_group = "SELECT tp.id, tp.status
+                          FROM project_members pm
+                          INNER JOIN registered_projects rp ON pm.project_id = rp.id
+                          INNER JOIN tfg_proposals tp ON rp.tfg_proposal_id = tp.id
+                          WHERE pm.user_id = ? 
+                          AND pm.status = 'Activo'
+                          AND tp.status IN ('Aprobado')
+                          ORDER BY pm.joined_at DESC
+                          LIMIT 1";
+            $stmt_group = $conn->prepare($sql_group);
+            $stmt_group->bind_param("s", $user_id);
+            $stmt_group->execute();
+            $result_group = $stmt_group->get_result();
+            
+            if ($result_group->num_rows > 0) {
+                $proposal = $result_group->fetch_assoc();
+                $proposal_id = $proposal['id'];
+            }
+            $stmt_group->close();
+        }
+        
+        if (!$proposal_id) {
             $conn->close();
             return [
                 'can_upload' => false,
@@ -53,10 +84,6 @@ function canUploadFinalDocument($user_id) {
                 'project_status' => null
             ];
         }
-        
-        $proposal = $result->fetch_assoc();
-        $proposal_id = $proposal['id'];
-        $stmt->close();
         
         // 2. Verificar si ya subió documento final
         // HU-020: Si el documento está rechazado, redirigir al estudiante a la página de correcciones
@@ -146,19 +173,18 @@ function canUploadFinalDocument($user_id) {
 
 
 /**
- * Limita a 5 versiones por documento final en tfg_files para un usuario y tipo de documento.
+ * Limita a 5 versiones de documento final en tfg_files para un estudiante.
  * Elimina la versión más antigua si ya existen 5 o más.
  *
  * @param mysqli $conn Conexión activa a la base de datos
- * @param string $user_id ID del usuario que sube el documento
+ * @param string $user_id ID del estudiante
  * @param string $document_type Tipo de documento (ej: 'Documento Final TFG')
  * @return void
  * @throws Exception Si ocurre un error en la base de datos
  */
 function limitarVersionesTFGFiles($conn, $user_id, $document_type) {
     try {
-        // 1. Obtener todas las versiones existentes para este usuario y tipo de documento
-        // Obtener todas las versiones existentes para este usuario y tipo de documento
+        // Obtener todas las versiones del estudiante para este tipo, de más antigua a más nueva
         $stmt = $conn->prepare("SELECT id FROM tfg_files WHERE uploaded_by = ? AND document_type = ? ORDER BY upload_date ASC");
         $stmt->bind_param("ss", $user_id, $document_type);
         $stmt->execute();
@@ -170,16 +196,8 @@ function limitarVersionesTFGFiles($conn, $user_id, $document_type) {
         }
         $stmt->close();
 
-
-        // Si ya hay 5 versiones, eliminar la más antigua
+        // Si ya hay 5 versiones, eliminar la más antigua (el registro en tfg_final_documents se conserva)
         if (count($version_ids) >= 5) {
-
-            $oldest_id = $version_ids[0];
-            $stmt = $conn->prepare("DELETE FROM tfg_final_documents WHERE file_id = ?");
-            $stmt->bind_param("i", $oldest_id);
-            $stmt->execute();
-            $stmt->close();
-
             $oldest_id = $version_ids[0];
             $stmt = $conn->prepare("DELETE FROM tfg_files WHERE id = ?");
             $stmt->bind_param("i", $oldest_id);
@@ -231,29 +249,20 @@ function saveFinalDocument($proposal_id, $file_data, $user_id, $project_status) 
             ];
         }
         
-        // =============================== LÍMITE DE VERSIONES POR DOCUMENTO ===============================
+        // =============================== LÍMITE DE VERSIONES POR ESTUDIANTE ===============================
         $document_type = 'Documento Final TFG';
 
-        // Eliminar versiones antiguas si hay más de 5
+        // Eliminar versiones antiguas del estudiante si ya tiene 5 o más
         limitarVersionesTFGFiles($conn, $user_id, $document_type);
 
-        // Obtener la última versión para este usuario y tipo de documento
-        $sql_version = "SELECT MAX(version) AS max_version 
-                        FROM tfg_files 
-                        WHERE uploaded_by = ? 
-                        AND document_type = ?";
-
+        // Calcular el siguiente número de versión para este estudiante
+        $sql_version = "SELECT MAX(version) AS max_version FROM tfg_files WHERE uploaded_by = ? AND document_type = ?";
         $stmt_version = $conn->prepare($sql_version);
         $stmt_version->bind_param("ss", $user_id, $document_type);
         $stmt_version->execute();
-        $result_version = $stmt_version->get_result();
-        $row_version = $result_version->fetch_assoc();
-        $next_version = 1; // Valor por defecto si no hay versiones previas
-
-        if ($row_version['max_version']) {
-            $next_version = $row_version['max_version'] + 1;
-        }
+        $row_version = $stmt_version->get_result()->fetch_assoc();
         $stmt_version->close();
+        $next_version = $row_version['max_version'] ? $row_version['max_version'] + 1 : 1;
 
         // 2. Insertar en tfg_files
         $sql_file = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by, version, document_type) 
@@ -312,6 +321,12 @@ function saveFinalDocument($proposal_id, $file_data, $user_id, $project_status) 
         
         $document_id = $conn->insert_id;
         $stmt_doc->close();
+
+        // 4. Vincular el archivo con el documento final recién creado
+        $stmt_link = $conn->prepare("UPDATE tfg_files SET final_document_id = ? WHERE id = ?");
+        $stmt_link->bind_param("ii", $document_id, $file_id);
+        $stmt_link->execute();
+        $stmt_link->close();
         
         $conn->commit();
         $conn->close();
@@ -323,7 +338,8 @@ function saveFinalDocument($proposal_id, $file_data, $user_id, $project_status) 
         return [
             'success' => true,
             'message' => 'Documento guardado exitosamente',
-            'document_id' => $document_id
+            'document_id' => $document_id,
+            'version' => $next_version
         ];
         
     } catch (Exception $e) {

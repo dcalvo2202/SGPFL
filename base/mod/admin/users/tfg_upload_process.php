@@ -122,6 +122,7 @@ try {
     $total_file_size = 0;
     $combined_document_data = '';
     $first_file_name = '';
+    $first_original_file_name = '';
     $first_mime_type = '';
     
     // Crear directorio de uploads una sola vez
@@ -148,6 +149,7 @@ try {
                 // Usar el primer archivo como documento principal
                 if ($i === 0) {
                     $first_file_name = $processed_file['unique_name'];
+                    $first_original_file_name = $processed_file['name'];
                     $first_mime_type = $processed_file['type'];
                     $combined_document_data = $processed_file['content'];
                 }
@@ -165,6 +167,7 @@ try {
         $uploaded_files[] = $processed_file;
         
         $first_file_name = $processed_file['unique_name'];
+        $first_original_file_name = $processed_file['name'];
         $first_mime_type = $processed_file['type'];
         $total_file_size = $processed_file['size'];
         $combined_document_data = $processed_file['content'];
@@ -192,6 +195,31 @@ try {
     $conn->set_charset("utf8");
     $conn->autocommit(false);
 
+    // =============================== DESACTIVAR MIEMBROS DE PROPUESTAS ANTERIORES RECHAZADAS ===============================
+    // Antes de crear nuevos registros, desactivar los miembros de proyectos asociados
+    // a propuestas anteriores rechazadas de este usuario para evitar duplicados.
+    try {
+        $sql_deactivate = "UPDATE project_members pm
+                           INNER JOIN registered_projects rp ON pm.project_id = rp.id
+                           INNER JOIN tfg_proposals tp ON rp.tfg_proposal_id = tp.id
+                           SET pm.status = 'Inactivo'
+                           WHERE tp.user_id = ? AND pm.status = 'Activo'
+                           AND tp.status NOT IN ('Pendiente de Revision', 'En Revisión', 'Cumple requisitos', 'Aprobado')";
+        $stmt_deactivate = $conn->prepare($sql_deactivate);
+        if ($stmt_deactivate) {
+            $stmt_deactivate->bind_param("s", $user_id);
+            $stmt_deactivate->execute();
+            $deactivated_count = $stmt_deactivate->affected_rows;
+            if ($deactivated_count > 0) {
+                error_log("TFG Upload - Miembros desactivados de propuestas anteriores rechazadas: $deactivated_count");
+            }
+            $stmt_deactivate->close();
+        }
+    } catch (Exception $e) {
+        error_log("Error al desactivar miembros anteriores: " . $e->getMessage());
+        // No es crítico, continuar con la inserción
+    }
+
     // 1. Insertar propuesta TFG con estructura correcta de la tabla
     // La tabla real tiene: id, user_id, title, disciplines, project_description, document, file_name, mime_type, file_size, status, admin_comments, reviewed_by, reviewed_at, created_at, updated_at
     
@@ -201,7 +229,8 @@ try {
     
     // Usar datos del primer archivo subido (o valores vacíos si no hay archivos)
     $document_data = !empty($combined_document_data) ? $combined_document_data : null;
-    $file_name = !empty($first_file_name) ? $first_file_name : '';
+    // Guardar el nombre ORIGINAL que subió el usuario (no el nombre único del filesystem)
+    $file_name = !empty($first_original_file_name) ? $first_original_file_name : '';
     $mime_type = !empty($first_mime_type) ? $first_mime_type : '';
     $file_size = $total_file_size;
     
@@ -215,7 +244,7 @@ try {
     }
 
     // IMPORTANTE: Para BLOB, primero bind_param con NULL, luego send_long_data
-    // Usar el nombre de archivo único generado, no el original
+    // El archivo físico se guarda con nombre único, pero en BD guardamos el nombre original del usuario
     // Status se pasa como parámetro para evitar problemas de encoding con caracteres especiales
     $initial_status = TFG_STATUS_PENDING; // 'Pendiente de Revisión' desde constants.php
     $tfg_stmt->bind_param("ssssbssis", $user_id, $title, $disciplines, $description, $null_blob, $file_name, $mime_type, $file_size, $initial_status);
@@ -238,7 +267,14 @@ try {
     // =============================== INSERTAR ARCHIVOS ADICIONALES ===============================
     // Si hay múltiples archivos, guardarlos en tfg_files vinculados a esta propuesta
     if (count($uploaded_files) > 1) {
-        $additional_files_saved = saveAdditionalFiles($conn, $uploaded_files, $user_id, 'Propuesta TFG Anexo');
+        // La versión del lote es el número total de propuestas del estudiante (incluye la recién insertada)
+        $stmt_ver = $conn->prepare("SELECT COUNT(*) AS cnt FROM tfg_proposals WHERE user_id = ?");
+        $stmt_ver->bind_param("s", $user_id);
+        $stmt_ver->execute();
+        $proposal_version = (int)$stmt_ver->get_result()->fetch_assoc()['cnt'];
+        $stmt_ver->close();
+
+        $additional_files_saved = saveAdditionalFiles($conn, $uploaded_files, $user_id, 'Propuesta TFG', $tfg_id, 'proposal', $proposal_version);
         error_log("Archivos adicionales guardados: $additional_files_saved");
     }
 
@@ -250,7 +286,7 @@ try {
         
     // Insertar la versión inicial en el historial
     $history_sql = "INSERT INTO tfg_proposal_history (proposal_id, document, file_name, mime_type, file_size, status, reviewed_by, comments, created_at) 
-                    VALUES (?, ?, ?, ?, ?, 'Pendiente de Revisión', ?, 'Versión inicial subida por el estudiante', NOW())";
+                    VALUES (?, ?, ?, ?, ?, 'Pendiente de Revision', ?, 'Versión inicial subida por el estudiante', NOW())";
     $history_stmt = $conn->prepare($history_sql);
     if ($history_stmt) {
         $history_stmt->bind_param("ibssis", $tfg_id, $null_blob, $file_name, $mime_type, $file_size, $user_id);
@@ -302,31 +338,72 @@ try {
     }
 
     // 4. Agregar miembros adicionales del grupo (si los hay)
-    if (!empty($_POST['group_members'])) {
-        $members = json_decode($_POST['group_members'], true);
-        if (is_array($members)) {
-            $additional_member_sql = "INSERT INTO project_members (project_id, user_id, role, joined_at) 
-                                    VALUES (?, ?, 'Miembro', NOW())";
-            
-            $additional_member_stmt = $conn->prepare($additional_member_sql);
-            if ($additional_member_stmt) {
-                foreach ($members as $member) {
-                    if (!empty($member['user_id']) && $member['user_id'] !== $user_id) {
-                        $additional_member_stmt->bind_param("is", $project_id, $member['user_id']);
-                        
-                        if (!$additional_member_stmt->execute()) {
-                            $conn->rollback();
-                            respond_json(false, 'Error al agregar miembro adicional');
-                        }
-                    }
-                }
-                $additional_member_stmt->close();
+    $added_members = []; // Lista de miembros agregados para notificarles después
+    $members = [];
+    if (!empty($_POST['members']) && is_array($_POST['members'])) {
+        foreach ($_POST['members'] as $member_id) {
+            $member_id = trim((string)$member_id);
+            if ($member_id !== '') {
+                $members[] = ['user_id' => $member_id];
             }
+        }
+    }
+
+    if (!empty($members)) {
+        $additional_member_sql = "INSERT INTO project_members (project_id, user_id, role, joined_at) 
+                                VALUES (?, ?, 'Miembro', NOW())";
+        
+        $additional_member_stmt = $conn->prepare($additional_member_sql);
+        if ($additional_member_stmt) {
+            foreach ($members as $member) {
+                if (!empty($member['user_id']) && $member['user_id'] !== $user_id) {
+                    $additional_member_stmt->bind_param("is", $project_id, $member['user_id']);
+                    
+                    if (!$additional_member_stmt->execute()) {
+                        $conn->rollback();
+                        respond_json(false, 'Error al agregar miembro adicional');
+                    }
+                    $added_members[] = $member['user_id']; // Guardar para notificar
+                }
+            }
+            $additional_member_stmt->close();
         }
     }
 
     // =============================== CONFIRMAR TRANSACCIÓN ===============================
     $conn->commit();
+    
+    // =============================== HU-037: REGISTRAR ALERTAS ===============================
+    // Notificar a Gestores y CTFG sobre la nueva propuesta
+    $alert_count = 0;
+    try {
+        require_once(__DIR__ . '/../../../inc/alert_functions.php');
+        require_once(__DIR__ . '/../../../inc/db/bdcommon.inc');
+        
+        // Crear nueva conexión para alertas (la anterior puede estar en estado inconsistente)
+        $conn_alert = new mysqli($db_host, $usuario, $clave, $db);
+        if ($conn_alert->connect_error) {
+            error_log("HU-037: Error de conexión para alertas: " . $conn_alert->connect_error);
+        } else {
+            $conn_alert->set_charset("utf8");
+            $alert_count = registerProposalSubmittedAlert($conn_alert, $user_name, $title, $tfg_id);
+            error_log("HU-037: Alertas de propuesta enviadas: $alert_count para propuesta $tfg_id");
+            
+            // Notificar a los miembros agregados al grupo
+            if (!empty($added_members)) {
+                foreach ($added_members as $member_id) {
+                    registerGroupMemberAddedAlert($conn_alert, $member_id, $user_name, $title, $project_id);
+                }
+                error_log("HU-037: Notificaciones enviadas a " . count($added_members) . " miembros del grupo");
+            }
+            
+            $conn_alert->close();
+        }
+    } catch (Exception $alertEx) {
+        // Las alertas son secundarias, no deben interrumpir el flujo principal
+        error_log("HU-037: Error registrando alertas (no crítico): " . $alertEx->getMessage());
+    }
+    
     $conn->close();
 
     // Limpiar todos los niveles de output buffering
@@ -398,7 +475,7 @@ try {
                     </p>
                     <p style="font-size: 0.95rem; color: #666; margin-top: 10px;">
                         <i class="bi bi-info-circle"></i> 
-                        El estado de su propuesta es: <strong>Pendiente de Revisión</strong>
+                        El estado de su propuesta es: <strong>Pendiente de Revision</strong>
                     </p>
                     <p style="font-size: 0.9rem; color: #999; margin-top: 15px;">
                         Será redirigido a su panel en unos segundos...
@@ -440,9 +517,18 @@ try {
     exit;
 
 } catch (Exception $e) {
-    if (isset($conn)) {
-        $conn->rollback();
-        $conn->close();
+    if (isset($conn) && $conn instanceof mysqli) {
+        try {
+            $conn->rollback();
+        } catch (Throwable $rollbackEx) {
+            error_log('TFG Upload - rollback falló: ' . $rollbackEx->getMessage());
+        }
+
+        try {
+            $conn->close();
+        } catch (Throwable $closeEx) {
+            error_log('TFG Upload - cierre de conexión falló: ' . $closeEx->getMessage());
+        }
     }
     respond_json(false, 'Error: ' . $e->getMessage());
 }

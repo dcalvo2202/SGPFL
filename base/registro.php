@@ -42,7 +42,6 @@ try {
     <link href="<?= htmlspecialchars($base_url . 'inc/css/tfg_upload.css') ?>" rel="stylesheet">
     <link href="<?= htmlspecialchars($base_url . 'inc/css/registro.css') ?>" rel="stylesheet">
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="d-flex flex-column min-vh-100 fondo-una">
 
@@ -168,6 +167,61 @@ try {
                 </div>
             </div>
 
+            <!-- ===================== SECCIÓN ESTUDIANTE A ASESORAR ===================== -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h3><i class="bi bi-mortarboard-fill"></i> Estudiante a asesorar</h3>
+                </div>
+                <div class="section-body">
+
+                    <h5 class="alert-tfg alert-tfg-info mb-3">
+                        <i class="bi bi-info-circle"></i>
+                        <div>
+                            <strong>Instrucciones:</strong> Busque y seleccione el estudiante al que desea asesorar en su Trabajo Final de Graduación. (Al seleccionar un estudiante se vincula con el resto del grupo de TFG)
+                        </div>
+                    </h5>
+
+                    <div class="form-group-tfg">
+                        <label class="form-label-tfg" for="inp-search-student">
+                            <i class="bi bi-search"></i> Buscar estudiante *
+                        </label>
+                        <div class="search-student-container">
+                            <div class="input-group">
+                                <input type="text" class="form-control-tfg" id="inp-search-student" 
+                                       placeholder="Escriba el nombre o cédula del estudiante..." autocomplete="off">
+                                <button type="button" class="btn btn-primary" id="btn-search-student">
+                                    <i class="bi bi-search"></i> Buscar
+                                </button>
+                            </div>
+                            <small class="text-muted">Ingrese al menos 2 caracteres para iniciar la búsqueda</small>
+                        </div>
+                    </div>
+
+                    <!-- Resultados de búsqueda -->
+                    <div id="div-search-student-results" class="search-results-container" style="display: none;"></div>
+
+                    <!-- Estudiante seleccionado -->
+                    <div id="div-selected-student" class="selected-student-container" style="display: none;">
+                        <label class="form-label-tfg">
+                            <i class="bi bi-person-check-fill text-success"></i> Estudiante seleccionado
+                        </label>
+                        <div class="selected-student-card">
+                            <div class="student-info">
+                                <span id="selected-student-name"></span>
+                                <small id="selected-student-email" class="text-muted"></small>
+                            </div>
+                            <button type="button" class="btn btn-sm btn-outline-danger" id="btn-remove-student" title="Quitar estudiante">
+                                <i class="bi bi-x-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Campo oculto para el ID del estudiante -->
+                    <input type="hidden" id="inp-linked-student-id" name="linked_student_id" value="">
+
+                </div>
+            </div>
+
             <div class="section-card">
                 <div class="section-header">
                     <h3><i class="bi bi-file-earmark-arrow-up-fill"></i> Documentos</h3>
@@ -192,12 +246,12 @@ try {
                         <small class="text-muted">Tamaño máximo: 2 MB | Formatos permitidos: PDF, JPG, PNG</small>
                     </div>
 
-                    <h4 class="alert-tfg alert-tfg-info">
+                    <h5 class="alert-tfg alert-tfg-info">
                         <i class="bi bi-info-circle"></i>
                         <div>
                             <strong>Importante:</strong> Esta solicitud no crea una cuenta automáticamente. La Subdirección revisará la información y enviará un correo con el resultado.
                         </div>
-                    </h4>
+                    </h5>
 
                     <div class="text-center mt-4">
 
@@ -230,6 +284,29 @@ try {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     (function () {
+        // Inyectar estilos CSS para SweetAlert2
+        const style = document.createElement('style');
+        style.textContent = `
+            .swal2-popup .swal2-actions {
+                gap: 0.5rem;
+                align-items: center;
+            }
+            
+            .swal2-popup .swal2-styled {
+                min-width: 110px;
+                padding: 10px 20px;
+                font-size: 1.2rem;
+                margin: 0;
+            }
+            
+            .swal2-popup .swal2-confirm,
+            .swal2-popup .swal2-cancel {
+                flex: 1;
+                margin: 0 !important;
+            }
+        `;
+        document.head.appendChild(style);
+
         function formatBytes(bytes) {
             if (!Number.isFinite(bytes) || bytes < 0) return '';
             if (bytes === 0) return '0 B';
@@ -239,6 +316,44 @@ try {
             const value = bytes / Math.pow(k, i);
             const decimals = i === 0 ? 0 : 2;
             return value.toFixed(decimals) + ' ' + units[i];
+        }
+
+        // Validación de tamaño máximo de archivos
+        function bindFileSizeValidation() {
+            const fileValidationRules = {
+                'inp-cv': { maxMB: 5, label: 'Currículum' },
+                'inp-id-copy': { maxMB: 2, label: 'Fotocopia de cédula' }
+            };
+
+            Object.keys(fileValidationRules).forEach(function (inputId) {
+                const input = document.getElementById(inputId);
+                if (!input) return;
+
+                const { maxMB, label } = fileValidationRules[inputId];
+                const maxBytes = maxMB * 1024 * 1024;
+
+                input.addEventListener('change', function () {
+                    const file = input.files && input.files[0] ? input.files[0] : null;
+                    
+                    if (!file) {
+                        input.setCustomValidity('');
+                        return;
+                    }
+
+                    if (file.size > maxBytes) {
+                        const fileSize = formatBytes(file.size);
+                        const maxSize = formatBytes(maxBytes);
+                        input.setCustomValidity(
+                            `${label} excede el tamaño máximo. ` +
+                            `Archivo: ${fileSize}, Máximo permitido: ${maxSize}`
+                        );
+                        input.reportValidity?.();
+                        return;
+                    }
+
+                    input.setCustomValidity('');
+                });
+            });
         }
 
         // Excepción personalizada para mensajes de validación
@@ -262,9 +377,11 @@ try {
                 },
                 'inp-cv': {
                     valueMissing: 'Debe adjuntar el currículum (PDF o DOCX).',
+                    fileSize: 'El currículum excede el tamaño máximo permitido (5 MB).',
                 },
                 'inp-id-copy': {
                     valueMissing: 'Debe adjuntar la fotocopia de cédula (PDF, JPG o PNG).',
+                    fileSize: 'La fotocopia de cédula excede el tamaño máximo permitido (2 MB).',
                 },
             };
 
@@ -282,6 +399,11 @@ try {
                 el.addEventListener('change', clear);
 
                 el.addEventListener('invalid', function () {
+                    // Si el mensaje personalizado ya coniene "excede", mantenerlo (viene de validación de tamaño)
+                    if (el.validationMessage && el.validationMessage.includes('excede')) {
+                        return;
+                    }
+
                     // Prioridad: requerido -> tipo/email -> patrón
                     if (el.validity.valueMissing && messages.valueMissing) {
                         el.setCustomValidity(messages.valueMissing);
@@ -293,6 +415,12 @@ try {
                     }
                     if (el.validity.patternMismatch && messages.patternMismatch) {
                         el.setCustomValidity(messages.patternMismatch);
+                        return;
+                    }
+
+                    // Si hay un mensaje personalizado por tamaño de archivo y está vacío, usar genérico
+                    if (el.customValidity === '' && messages.fileSize) {
+                        el.setCustomValidity(messages.fileSize);
                         return;
                     }
 
@@ -394,39 +522,229 @@ try {
             if (!form) return;
 
             form.addEventListener('submit', function (e) {
-                if (form.checkValidity()) return;
-                e.preventDefault();
+                // Si el formulario no es válido, mostrar errores
+                if (!form.checkValidity()) {
+                    e.preventDefault();
 
-                // Hallar primer campo inválido y mostrar su mensaje (en español)
-                const firstInvalid = form.querySelector(':invalid');
-                if (!firstInvalid) return;
+                    // Hallar primer campo inválido y mostrar su mensaje (en español)
+                    const firstInvalid = form.querySelector(':invalid');
+                    if (!firstInvalid) return;
 
-                // Intentar bubble nativa cuando sea posible
-                if (typeof firstInvalid.reportValidity === 'function') {
-                    try {
-                        firstInvalid.reportValidity();
-                        return;
-                    } catch (_) {
-                        // continuar a Swal
+                    // Intentar bubble nativa cuando sea posible
+                    if (typeof firstInvalid.reportValidity === 'function') {
+                        try {
+                            firstInvalid.reportValidity();
+                            return;
+                        } catch (_) {
+                            // continuar a Swal
+                        }
                     }
+
+                    const msg = firstInvalid.validationMessage || 'Debe completar los campos requeridos.';
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Revise el formulario',
+                        text: msg,
+                        confirmButtonText: 'Aceptar'
+                    });
+                    return;
                 }
 
-                const msg = firstInvalid.validationMessage || 'Debe completar los campos requeridos.';
+                // Validar que se haya seleccionado un estudiante
+                e.preventDefault();
+                
+                const linkedStudentId = document.getElementById('inp-linked-student-id');
+                if (!linkedStudentId || !linkedStudentId.value || linkedStudentId.value.trim() === '') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Estudiante requerido',
+                        text: 'Debe buscar y seleccionar el estudiante que desea asesorar antes de enviar la solicitud.',
+                        confirmButtonText: 'Entendido',
+                        confirmButtonColor: '#034991'
+                    });
+                    
+                    // Hacer scroll hacia la sección de estudiantes
+                    const studentSection = document.getElementById('inp-search-student');
+                    if (studentSection) {
+                        studentSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        setTimeout(() => studentSection.focus(), 500);
+                    }
+                    return;
+                }
+
+                // Si el formulario es válido y hay estudiante, mostrar confirmación antes de enviar
                 Swal.fire({
-                    icon: 'error',
-                    title: 'Revise el formulario',
-                    text: msg,
-                    confirmButtonText: 'Aceptar'
+                    title: 'Confirmar envío',
+                    text: '¿Está seguro de enviar la solicitud? Por favor, revise que toda la información sea correcta.',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#034991',
+                    cancelButtonColor: '#6c757d',
+                    confirmButtonText: 'Sí, enviar',
+                    cancelButtonText: 'Cancelar',
+                    reverseButtons: true
+                }).then(function (result) {
+                    if (result.isConfirmed) {
+                        // Remover el evento listeners para evitar mostrar el diálogo nuevamente
+                        form.removeEventListener('submit', arguments.callee);
+                        form.submit();
+                    }
                 });
             });
         }
 
         document.addEventListener('DOMContentLoaded', function () {
             bindCustomValidationMessages();
+            bindFileSizeValidation();
             bindCustomSingleFileInput('inp-cv', 'Seleccionar archivo', 'Ningún archivo seleccionado');
             bindCustomSingleFileInput('inp-id-copy', 'Seleccionar archivo', 'Ningún archivo seleccionado');
             bindFormValidationFallback();
+            initStudentSearch();
         });
+
+        // ===== Búsqueda de Estudiante =====
+        function initStudentSearch() {
+            const searchInput = document.getElementById('inp-search-student');
+            const searchBtn = document.getElementById('btn-search-student');
+            const resultsDiv = document.getElementById('div-search-student-results');
+            const selectedDiv = document.getElementById('div-selected-student');
+            const hiddenInput = document.getElementById('inp-linked-student-id');
+            const selectedName = document.getElementById('selected-student-name');
+            const selectedEmail = document.getElementById('selected-student-email');
+            const removeBtn = document.getElementById('btn-remove-student');
+
+            if (!searchInput || !searchBtn || !resultsDiv) return;
+
+            let searchTimeout = null;
+
+            // Búsqueda mientras escribe (debounced)
+            searchInput.addEventListener('input', function () {
+                clearTimeout(searchTimeout);
+                const term = this.value.trim();
+
+                if (term.length < 2) {
+                    resultsDiv.style.display = 'none';
+                    resultsDiv.innerHTML = '';
+                    return;
+                }
+
+                searchTimeout = setTimeout(() => searchStudents(term), 300);
+            });
+
+            // Búsqueda al presionar Enter
+            searchInput.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const term = this.value.trim();
+                    if (term.length >= 2) {
+                        searchStudents(term);
+                    }
+                }
+            });
+
+            // Búsqueda al hacer clic en botón
+            searchBtn.addEventListener('click', function () {
+                const term = searchInput.value.trim();
+                if (term.length >= 2) {
+                    searchStudents(term);
+                } else {
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Búsqueda',
+                        text: 'Ingrese al menos 2 caracteres para buscar.',
+                        confirmButtonText: 'Aceptar'
+                    });
+                }
+            });
+
+            // Quitar estudiante seleccionado
+            if (removeBtn) {
+                removeBtn.addEventListener('click', function () {
+                    clearSelection();
+                });
+            }
+
+            function searchStudents(term) {
+                resultsDiv.innerHTML = '<div class="no-results-message"><i class="bi bi-hourglass-split"></i> Buscando...</div>';
+                resultsDiv.style.display = 'block';
+
+                fetch('mod/admin/users/search_users.php?term=' + encodeURIComponent(term))
+                    .then(response => response.json())
+                    .then(data => {
+                        displayResults(data);
+                    })
+                    .catch(error => {
+                        console.error('Error en búsqueda:', error);
+                        resultsDiv.innerHTML = '<div class="no-results-message text-danger"><i class="bi bi-exclamation-circle"></i> Error al buscar estudiantes</div>';
+                    });
+            }
+
+            function displayResults(students) {
+                if (!students || students.length === 0) {
+                    resultsDiv.innerHTML = '<div class="no-results-message"><i class="bi bi-person-x"></i> No se encontraron estudiantes</div>';
+                    return;
+                }
+
+                let html = '';
+                students.forEach(student => {
+                    html += `
+                        <div class="search-result-item" data-id="${escapeHtml(student.id)}" data-name="${escapeHtml(student.nombre)}" data-email="${escapeHtml(student.email)}">
+                            <div class="student-info">
+                                <span class="student-name">${escapeHtml(student.nombre)}</span>
+                                <span class="student-email">${escapeHtml(student.email)}</span>
+                            </div>
+                            <button type="button" class="btn-select">
+                                <i class="bi bi-check-lg"></i> Seleccionar
+                            </button>
+                        </div>
+                    `;
+                });
+                resultsDiv.innerHTML = html;
+
+                // Agregar eventos de clic
+                resultsDiv.querySelectorAll('.search-result-item').forEach(item => {
+                    item.addEventListener('click', function () {
+                        selectStudent(
+                            this.dataset.id,
+                            this.dataset.name,
+                            this.dataset.email
+                        );
+                    });
+                });
+            }
+
+            function selectStudent(id, name, email) {
+                hiddenInput.value = id;
+                selectedName.textContent = name;
+                selectedEmail.textContent = email;
+                selectedDiv.style.display = 'block';
+                resultsDiv.style.display = 'none';
+                searchInput.value = '';
+
+                // Feedback visual
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Estudiante seleccionado',
+                    text: name,
+                    timer: 1500,
+                    showConfirmButton: false
+                });
+            }
+
+            function clearSelection() {
+                hiddenInput.value = '';
+                selectedName.textContent = '';
+                selectedEmail.textContent = '';
+                selectedDiv.style.display = 'none';
+            }
+
+            function escapeHtml(text) {
+                if (!text) return '';
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+        }
     })();
 </script>
 </body>

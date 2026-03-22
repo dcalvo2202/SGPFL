@@ -44,7 +44,7 @@ include_once(__DIR__ . "/inc/db/db.php");
             <div class="quick-actions-section">
                 <h2 class="section-title">
                     <i class="bi bi-lightning-fill text-rojo-una"></i>
-                    Acciones Rápidas
+                    Seguimiento de Estudiantes Asignados
                 </h2>
                 
                 <!-- Debe buscar con el estudiante relacionado a este asesor -->

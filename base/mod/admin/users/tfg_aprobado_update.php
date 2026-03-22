@@ -1,6 +1,9 @@
 <?php
 session_start();
 require_once '../../../inc/db/db.php';
+require_once '../../../inc/alert_functions.php';
+// Intentar obtener usuario autenticado para el historial (si el entorno lo provee)
+@include("../../login/check.php");
 
 // Add: helpers to validate/generate unique identificador
 function pa_ident_exists(mysqli $db, string $ident): bool {
@@ -30,26 +33,32 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $nombre = trim($_POST['nombre'] ?? '');                 // puede venir como título
 $proposal_id = (int)($_POST['proposal_id'] ?? 0);       // id de tfg_proposals
 
-// Obtiene/valida el título real según lo recibido
+// Obtiene/valida el título real según lo recibido (y asegura proposal_id válido)
 $nombre_title = '';
 if ($proposal_id > 0) {
-    $q = mysqli_prepare($id_con, "SELECT title FROM tfg_proposals WHERE id = ?");
+    $q = mysqli_prepare($id_con, "SELECT id, title FROM tfg_proposals WHERE id = ?");
     mysqli_stmt_bind_param($q, "i", $proposal_id);
     mysqli_stmt_execute($q);
     $rs = mysqli_stmt_get_result($q);
-    if ($rs && ($row = mysqli_fetch_assoc($rs))) { $nombre_title = $row['title']; }
+    if ($rs && ($row = mysqli_fetch_assoc($rs))) {
+        $proposal_id = (int)$row['id'];
+        $nombre_title = $row['title'];
+    }
     mysqli_stmt_close($q);
 } elseif ($nombre !== '') {
-    $q = mysqli_prepare($id_con, "SELECT title FROM tfg_proposals WHERE title = ?");
+    $q = mysqli_prepare($id_con, "SELECT id, title FROM tfg_proposals WHERE title = ?");
     mysqli_stmt_bind_param($q, "s", $nombre);
     mysqli_stmt_execute($q);
     $rs = mysqli_stmt_get_result($q);
-    if ($rs && ($row = mysqli_fetch_assoc($rs))) { $nombre_title = $row['title']; }
+    if ($rs && ($row = mysqli_fetch_assoc($rs))) {
+        $proposal_id = (int)$row['id'];
+        $nombre_title = $row['title'];
+    }
     mysqli_stmt_close($q);
 }
 
 // Si no hay título válido, error
-if ($nombre_title === '') {
+if ($nombre_title === '' || $proposal_id < 1) {
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
 }
 
@@ -76,6 +85,11 @@ $_SESSION['identificador_preview'] = $identificador;
 
 // Nuevo: leer y validar estado aprobado (1..4)
 $aprobado      = isset($_POST['aprobado']) ? (int)$_POST['aprobado'] : 0;
+
+// Nuevo: estado a guardar en tfg_proposals según el estado del proyecto
+// 1=Aprobado, 2=Prorrogado, 3=Vencido => sigue siendo un proyecto aprobado.
+// 4=Cancelado => se marca como Rechazado.
+$proposal_status = in_array($aprobado, [1, 2, 3], true) ? 'Aprobado' : 'Rechazado';
 
 if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $fecha_raw)) {
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
@@ -170,7 +184,117 @@ try {
     }
     mysqli_stmt_close($stmt2);
 
+    // Actualizar el estado de la propuesta cuando se registra el proyecto
+    $stmt3 = mysqli_prepare($id_con, "UPDATE tfg_proposals SET status = ? WHERE id = ?");
+    if (!$stmt3) { throw new Exception(mysqli_error($id_con)); }
+    mysqli_stmt_bind_param($stmt3, "si", $proposal_status, $proposal_id);
+    if (!mysqli_stmt_execute($stmt3)) {
+        throw new Exception(mysqli_stmt_error($stmt3));
+    }
+    mysqli_stmt_close($stmt3);
+
+    // Actualizar historial existente (sin insertar nuevas filas)
+    $reviewed_by = null;
+    if (isset($mySessionController) && is_object($mySessionController)) {
+        $tmpReviewer = $mySessionController->getVar("usuario");
+        if (!empty($tmpReviewer)) {
+            $reviewed_by = (string)$tmpReviewer;
+        }
+    }
+    if ($reviewed_by === null && isset($_SESSION['usuario'])) {
+        $reviewed_by = (string)$_SESSION['usuario'];
+    }
+
+    $history_comments = 'Estado actualizado desde registro de proyecto aprobado';
+
+    $stmtH = mysqli_prepare(
+        $id_con,
+        "UPDATE tfg_proposal_history
+         SET status = ?, reviewed_by = ?, comments = ?
+         WHERE proposal_id = ?
+         ORDER BY created_at DESC, id DESC
+         LIMIT 1"
+    );
+    if (!$stmtH) { throw new Exception(mysqli_error($id_con)); }
+
+    mysqli_stmt_bind_param($stmtH, "sssi", $proposal_status, $reviewed_by, $history_comments, $proposal_id);
+    if (!mysqli_stmt_execute($stmtH)) {
+        throw new Exception(mysqli_stmt_error($stmtH));
+    }
+    if (mysqli_stmt_affected_rows($stmtH) < 1) {
+        // No existe historial previo; por requerimiento NO insertamos aquí.
+        error_log('Aviso: No se encontró registro en tfg_proposal_history para proposal_id=' . $proposal_id);
+    }
+    mysqli_stmt_close($stmtH);
+
+    // Vincular miembros del comité (asesores internos) con los estudiantes del proyecto
+    $stmt_comite = mysqli_prepare($id_con, "SELECT tutor, asesor_1, asesor_2 FROM comite WHERE Id = ?");
+    if ($stmt_comite) {
+        mysqli_stmt_bind_param($stmt_comite, "i", $comite_id);
+        mysqli_stmt_execute($stmt_comite);
+        $rs_comite = mysqli_stmt_get_result($stmt_comite);
+        if ($rs_comite && ($comite_row = mysqli_fetch_assoc($rs_comite))) {
+            $internal_advisors = array_values(array_filter([
+                $comite_row['tutor'],
+                $comite_row['asesor_1'],
+                $comite_row['asesor_2']
+            ]));
+            $stmt_link = mysqli_prepare($id_con,
+                "INSERT INTO external_advisor_linked_students
+                 (internal_advisor_id, student_id, is_primary, project_id)
+                 VALUES (?, ?, 0, ?)
+                 ON DUPLICATE KEY UPDATE linked_at = NOW()"
+            );
+            if ($stmt_link) {
+                $link_project_id = ($registered_id > 0) ? $registered_id : null;
+                foreach ($internal_advisors as $advisor_id) {
+                    foreach ($unique as $student_id) {
+                        mysqli_stmt_bind_param($stmt_link, "ssi", $advisor_id, $student_id, $link_project_id);
+                        if (!mysqli_stmt_execute($stmt_link)) {
+                            error_log("Aviso: No se pudo vincular asesor interno $advisor_id con estudiante $student_id: " . mysqli_stmt_error($stmt_link));
+                        }
+                    }
+                }
+                mysqli_stmt_close($stmt_link);
+            }
+        }
+        mysqli_stmt_close($stmt_comite);
+    }
+
     mysqli_commit($id_con);
+    
+    // Enviar alerta a todos los estudiantes del proyecto
+    $sql_student = "SELECT user_id FROM tfg_proposals WHERE id = ?";
+    $stmt_student = mysqli_prepare($id_con, $sql_student);
+    if ($stmt_student) {
+        mysqli_stmt_bind_param($stmt_student, "i", $proposal_id);
+        mysqli_stmt_execute($stmt_student);
+        $rs_student = mysqli_stmt_get_result($stmt_student);
+        if ($rs_student && ($row_student = mysqli_fetch_assoc($rs_student))) {
+            $student_id = $row_student['user_id'];
+            registerProposalApprovedByCTFGAlert($id_con, $student_id, $nombre_title, $proposal_id);
+        }
+        mysqli_stmt_close($stmt_student);
+    }
+    
+    // Enviar alerta a los demás miembros del grupo
+    foreach ($unique as $member_id) {
+        $sql_student = "SELECT user_id FROM tfg_proposals WHERE id = ?";
+        $stmt_student = mysqli_prepare($id_con, $sql_student);
+        if ($stmt_student) {
+            mysqli_stmt_bind_param($stmt_student, "i", $proposal_id);
+            mysqli_stmt_execute($stmt_student);
+            $rs_student = mysqli_stmt_get_result($stmt_student);
+            if ($rs_student && ($row_student = mysqli_fetch_assoc($rs_student))) {
+                $leader_id = $row_student['user_id'];
+                if ($member_id !== $leader_id) {
+                    registerProposalApprovedByCTFGAlert($id_con, $member_id, $nombre_title, $proposal_id);
+                }
+            }
+            mysqli_stmt_close($stmt_student);
+        }
+    }
+    
     unset($_SESSION['identificador_preview']);
     header('Location: ../../../proyecto_aprobado.php?ok=1'); exit;
 } catch (Exception $ex) {

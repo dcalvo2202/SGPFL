@@ -89,11 +89,15 @@ mysqldump -u usuario -p base_db > respaldo_base_db.sql
 
 ## 4. Solución de problemas comunes
 
-| Problema                         | Posible causa                                          | Solución sugerida                                       |
-| -------------------------------- | ------------------------------------------------------ | ------------------------------------------------------- |
-| Error de conexión LDAP           | Versión o puerto incorrecto                            | Verificar configuración LDAPv3 y puerto en `config.inc` |
-| No se envían correos             | Configuración de `sendmail.ini` o `php.ini` incorrecta | Revisar credenciales y remitente en `sendmail.ini`      |
+| Problema                         | Posible causa                                          | Solución sugerida                                                 |
+| -------------------------------- | ------------------------------------------------------ | ----------------------------------------------------------------- |
+| Error de conexión LDAP           | Versión o puerto incorrecto                            | Verificar configuración LDAPv3 y puerto en `config.inc`           |
+| No se envían correos             | Configuración de `sendmail.ini` o `php.ini` incorrecta | Revisar credenciales y remitente en `sendmail.ini`                |
+| Sendmail se queda colgado        | Puerto 587 con TLS no compatible                       | Cambiar a puerto **465 con SSL** en `sendmail.ini`                |
+| Error de permisos en logs        | Carpeta sin permisos de escritura                      | Mover logs a `C:\xampp\tmp\` en `sendmail.ini`                    |
+| mail() retorna FALSE             | Apache no reiniciado tras cambios                      | Reiniciar Apache desde XAMPP Control Panel                        |
 | No carga la base de datos        | Credenciales incorrectas o base no creada              | Revisar `dbcommon.inc` y existencia de la base          |
+| Error "MySQL server has gone away" al subir archivos | `max_allowed_packet` bajo o timeout en MySQL/XAMPP | Aumentar parámetros en `my.ini` y reiniciar MySQL/Apache |
 | Listados incompletos o sin datos | `$page_cant` demasiado bajo                            | Ajustar valor en `config.inc`                           |
 | Accesos denegados en módulos     | Usuario no asignado al rol correcto                    | Revisar LDAP y tabla `sis_rolls`                        |
 
@@ -148,21 +152,67 @@ memory_limit = 256M
 
 ---
 
-### 3. Configuración de envío de correos
+### 2.1 Ajustes de MySQL para archivos grandes (XAMPP)
 
-Para el envío de notificaciones institucionales desde el sistema, debe configurarse el remitente predeterminado:
+Si durante la subida de documentos aparece el error:
 
-```ini
-sendmail_from = correo@institucional.edu
+```text
+MySQL server has gone away
 ```
 
-* **sendmail_from:** Dirección de correo que se utilizará como remitente en los mensajes automáticos generados por el sistema.
+normalmente la causa es un límite bajo en MySQL al guardar BLOBs.
 
-  * Debe pertenecer al dominio institucional o autorizado por el servidor SMTP correspondiente.
+Edite el archivo `my.ini` de XAMPP y ajuste en la sección `[mysqld]`:
+
+```ini
+max_allowed_packet = 64M
+innodb_log_file_size = 128M
+```
+
+**Ubicación habitual (Windows XAMPP):**
+- `C:\xampp\mysql\bin\my.ini`
+
+**Pasos recomendados:**
+1. Detener MySQL y Apache desde XAMPP Control Panel.
+2. Guardar los cambios en `my.ini`.
+3. Iniciar MySQL y Apache nuevamente.
+
+> Si el error persiste, revisar también `wait_timeout`/`interactive_timeout` en MySQL y confirmar los límites de PHP (`upload_max_filesize`, `post_max_size`).
 
 ---
 
-### 3. Consideraciones adicionales
+### 3. Configuración de envío de correos
+
+Para el envío de notificaciones institucionales desde el sistema, debe configurarse correctamente la sección `[mail function]` en `php.ini`:
+
+```ini
+[mail function]
+SMTP = smtp.gmail.com
+smtp_port = 465
+sendmail_from = correo-del-emisor
+sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t -i"
+```
+
+* **SMTP:** Dirección del servidor SMTP que procesará los correos.
+  * Gmail: `smtp.gmail.com`
+  * Outlook: `smtp-mail.outlook.com`
+
+* **smtp_port:** Puerto de conexión SMTP.
+  * Recomendado: **465** (SSL)
+  * Alternativa: 587 (TLS, puede tener problemas con sendmail.exe)
+
+* **sendmail_from:** Dirección de correo que se utilizará como remitente predeterminado.
+  * Debe pertenecer al dominio institucional o autorizado por el servidor SMTP.
+  * Ejemplo institucional: `no-reply@institucional.edu`
+
+* **sendmail_path:** Ruta completa al ejecutable de sendmail.
+  * Windows XAMPP: `"\"C:\xampp\sendmail\sendmail.exe\" -t -i"`
+
+> **Nota:** Esta configuración debe sincronizarse con `sendmail.ini` (ver sección "Configuración del servicio de correo").
+
+---
+
+### 4. Consideraciones adicionales
 
 * Después de realizar cambios en `php.ini`, **reinicie el servidor web** (por ejemplo, Apache o Nginx) para aplicar la configuración.
 * Verifique que las extensiones estén correctamente cargadas ejecutando el siguiente comando:
@@ -184,42 +234,111 @@ mysqli
 
 El archivo `sendmail.ini` define los parámetros necesarios para el envío de correos electrónicos desde el sistema. Esta configuración permite autenticar y utilizar una cuenta institucional o de servicio como remitente predeterminado.
 
+**Ubicación del archivo:**
+- **XAMPP Windows:** `C:\xampp\sendmail\sendmail.ini`
+- **XAMPP Linux/Mac:** `/opt/lampp/sendmail/sendmail.ini`
+
 ---
 
 ### 1. Configuración básica
 
-Ejemplo de configuración actual:
+Ejemplo de configuración funcional para Gmail:
 
 ```ini
-force_sender=rodri100ro@gmail.com
-auth_username=rodri100ro@gmail.com
+[sendmail]
+
+; Servidor SMTP
+smtp_server=smtp.gmail.com
+smtp_port=465
+
+; Protocolo de seguridad (SSL para puerto 465)
+smtp_ssl=ssl
+
+; Logs (con permisos de escritura)
+error_logfile=C:\xampp\tmp\sendmail_error.log
+debug_logfile=C:\xampp\tmp\sendmail_debug.log
+
+; Autenticación
+auth_username=correo-del-emisor
 auth_password=(contraseña de app de Gmail)
+
+; Remitente forzado
+force_sender=correo-del-emisor
 ```
 
-* **force_sender:** Dirección de correo electrónico que el sistema utilizará como remitente en todos los mensajes salientes.
+#### Parámetros importantes:
 
-  * Este valor debe pertenecer al dominio autorizado por el servicio de correo utilizado.
-  * En entornos institucionales, se recomienda reemplazarlo por una cuenta oficial (por ejemplo, `no-reply@institucional.edu`).
+* **smtp_server:** Dirección del servidor SMTP.
+  * Gmail: `smtp.gmail.com`
+  * Outlook: `smtp-mail.outlook.com`
 
-* **auth_username:** Usuario utilizado para la autenticación en el servidor SMTP.
+* **smtp_port:** Puerto de conexión SMTP.
+  * **465** (SSL) → Recomendado para sendmail.exe
+  * 587 (TLS) → Puede causar problemas con versiones antiguas de sendmail
 
-  * Generalmente coincide con la dirección del remitente.
+* **smtp_ssl:** Protocolo de seguridad.
+  * **ssl** → Para puerto 465 (más compatible)
+  * tls → Para puerto 587
+  * auto → Selección automática (no recomendado)
 
-* **auth_password:** Contraseña de aplicación o token generado para la cuenta configurada.
+* **error_logfile / debug_logfile:** Rutas de logs.
+  * Deben apuntar a una carpeta con **permisos de escritura**
+  * Recomendado: `C:\xampp\tmp\` en Windows
 
-  * En el caso de Gmail, debe usarse una **contraseña de aplicación** generada desde la cuenta con autenticación en dos pasos activada.
+* **auth_username:** Usuario para autenticación SMTP.
+  * Para Gmail, debe tener **verificación en 2 pasos** habilitada.
+
+* **auth_password:** Contraseña de aplicación.
+  * **Gmail:** Generar en https://myaccount.google.com/apppasswords
+  * **NO usar la contraseña normal de la cuenta**
+
+* **force_sender:** Dirección del remitente.
+  * Debe coincidir con `auth_username` o ser autorizada por el servicio SMTP.
+  * En entornos institucionales: `no-reply@institucional.edu`
 
 ---
 
-### 2. Consideraciones de seguridad
+### 2. Solución de problemas comunes
+
+| Problema | Causa | Solución |
+|----------|-------|----------|
+| Sendmail se queda colgado | Puerto 587 con TLS no compatible | Cambiar a puerto **465 con SSL** |
+| Error de permisos en logs | Carpeta sin permisos de escritura | Mover logs a `C:\xampp\tmp\` |
+| No autentica con Gmail | Contraseña incorrecta | Generar contraseña de aplicación |
+| Correos no salen | Apache no reiniciado | Reiniciar Apache después de cambios |
+
+---
+
+### 3. Consideraciones de seguridad
 
 * Nunca almacene contraseñas reales en texto plano dentro de entornos compartidos o repositorios.
 * Si es posible, limite los permisos de lectura del archivo `sendmail.ini` solo al usuario que ejecuta el servidor web.
 * Para entornos productivos, se recomienda configurar un **correo institucional dedicado** y no una cuenta personal.
+* Use siempre **contraseñas de aplicación**, nunca contraseñas de cuenta principales.
 
 ---
 
-### 3. Verificación de funcionamiento
+### 4. Configuración en `php.ini`
+
+Debe sincronizar la configuración de sendmail en `php.ini`:
+
+```ini
+[mail function]
+SMTP = smtp.gmail.com
+smtp_port = 465
+sendmail_from = correo-del-emisor
+sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t -i"
+```
+
+**Pasos importantes:**
+1. Editar `C:\xampp\php\php.ini`
+2. Buscar la sección `[mail function]`
+3. Configurar los valores como se muestra arriba
+4. **Reiniciar Apache** desde XAMPP Control Panel
+
+---
+
+### 5. Verificación de funcionamiento
 
 Una vez configurado, puede probar el envío de correos ejecutando un script PHP sencillo:
 
@@ -227,18 +346,24 @@ Una vez configurado, puede probar el envío de correos ejecutando un script PHP 
 <?php
 $to = "destinatario@institucional.edu";
 $subject = "Prueba de correo desde el sistema";
-$message = "Este es un correo de prueba para verificar la configuración de sendmail.";
-$headers = "From: rodri100ro@gmail.com";
+$message = "<b>Este es un correo de prueba</b> para verificar la configuración de sendmail.";
+$headers = "From: correo-del-emisor\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-type: text/html; charset=UTF-8\r\n";
 
 if(mail($to, $subject, $message, $headers)) {
-    echo "Correo enviado correctamente.";
+    echo "✓ Correo enviado correctamente.";
 } else {
-    echo "Error al enviar el correo.";
+    echo "✗ Error al enviar el correo.";
 }
 ?>
 ```
 
 Si el mensaje se envía correctamente, la configuración del archivo `sendmail.ini` es funcional.
+
+**Verificar logs:**
+- `C:\xampp\tmp\sendmail_debug.log` → Historial de conexiones SMTP
+- `C:\xampp\tmp\sendmail_error.log` → Errores específicos
 
 # Configuración general
 

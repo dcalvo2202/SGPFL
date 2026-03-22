@@ -230,8 +230,8 @@ function Do_Login(){
                     } else if(response === "6"){
                         Swal.fire({
                             icon: 'error',
-                            title: '<span style="font-size:1.3em;">Datos inválidos</span>',
-                            html: '<span style="font-size:1.2em;">Por favor verifique su usuario y contraseña.</span>',
+                            title: '<span style="font-size:1.3em;">Credenciales inválidos</span>',
+                            html: '<span style="font-size:1.2em;">Por favor intente de nuevo.</span>',
                             confirmButtonText: 'Aceptar',
                             customClass: { confirmButton: 'swal2-ok-btn-lg' }
                         });

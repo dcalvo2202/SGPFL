@@ -10,6 +10,8 @@ $db_name = $db;       // Guardar 'base_db'
 
 include_once __DIR__ . '/../../../lib/mysession/mySession.class.php';
 include_once __DIR__ . '/../../../lib/mysession/mySession.conf.php';
+include_once __DIR__ . '/../../../inc/tfg_final_functions.php';
+require_once __DIR__ . '/../../../inc/alert_functions.php';
 
 $mySessionController = mySession::getIstance($_MYSESSION_CONF);
 $current_user_id = $mySessionController->getVar("usuario");
@@ -55,32 +57,89 @@ if (!$all_addressed) {
     exit;
 }
 
-// Validar archivo PDF
-if (!isset($_FILES['document']) || $_FILES['document']['error'] !== UPLOAD_ERR_OK) {
+// Validar archivos PDF (múltiples o singular)
+include_once __DIR__ . '/../../../inc/upload_helpers.php';
+
+$uploaded_files = [];
+$file = null;
+$mime_type = '';
+
+// Nuevo formato: múltiples archivos con documents[]
+if (isset($_FILES['documents']) && is_array($_FILES['documents']['name'])) {
+    $files_count = count($_FILES['documents']['name']);
+    $max_size = 10 * 1024 * 1024; // 10 MB por archivo
+    $allowed_mime = ['application/pdf'];
+    
+    for ($i = 0; $i < $files_count; $i++) {
+        if ($_FILES['documents']['error'][$i] === UPLOAD_ERR_OK) {
+            $tmp = $_FILES['documents']['tmp_name'][$i];
+            $fname = $_FILES['documents']['name'][$i];
+            $fsize = $_FILES['documents']['size'][$i];
+            
+            if ($fsize > $max_size) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'message' => "El archivo \"$fname\" excede el tamaño máximo de 10 MB."]);
+                exit;
+            }
+            
+            $finfo = finfo_open(FILEINFO_MIME_TYPE);
+            $fmime = finfo_file($finfo, $tmp);
+            finfo_close($finfo);
+            
+            if (!in_array($fmime, $allowed_mime)) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'message' => "El archivo \"$fname\" no es un PDF válido."]);
+                exit;
+            }
+            
+            $uploaded_files[] = [
+                'name' => $fname,
+                'type' => $fmime,
+                'size' => $fsize,
+                'tmp_name' => $tmp,
+                'error' => UPLOAD_ERR_OK
+            ];
+        } elseif ($_FILES['documents']['error'][$i] !== UPLOAD_ERR_NO_FILE) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => 'Error al subir uno de los archivos.']);
+            exit;
+        }
+    }
+}
+// Compatibilidad: formato antiguo con un solo archivo (name="document")
+elseif (isset($_FILES['document']) && $_FILES['document']['error'] === UPLOAD_ERR_OK) {
+    $max_size = 10 * 1024 * 1024;
+    if ($_FILES['document']['size'] > $max_size) {
+        http_response_code(400);
+        echo json_encode(['success' => false, 'message' => 'El archivo excede el tamaño máximo de 10 MB.']);
+        exit;
+    }
+    $finfo = finfo_open(FILEINFO_MIME_TYPE);
+    $fmime = finfo_file($finfo, $_FILES['document']['tmp_name']);
+    finfo_close($finfo);
+    if (!in_array($fmime, ['application/pdf'])) {
+        http_response_code(400);
+        echo json_encode(['success' => false, 'message' => 'Solo se permiten archivos PDF.']);
+        exit;
+    }
+    $uploaded_files[] = [
+        'name' => $_FILES['document']['name'],
+        'type' => $fmime,
+        'size' => $_FILES['document']['size'],
+        'tmp_name' => $_FILES['document']['tmp_name'],
+        'error' => UPLOAD_ERR_OK
+    ];
+}
+
+if (empty($uploaded_files)) {
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'Error al subir el archivo. Por favor intente nuevamente.']);
     exit;
 }
 
-$file = $_FILES['document'];
-$max_size = 8 * 1024 * 1024; // 8 MB
-
-if ($file['size'] > $max_size) {
-    http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'El archivo excede el tamaño máximo de 8 MB.']);
-    exit;
-}
-
-$allowed_mime = ['application/pdf'];
-$finfo = finfo_open(FILEINFO_MIME_TYPE);
-$mime_type = finfo_file($finfo, $file['tmp_name']);
-finfo_close($finfo);
-
-if (!in_array($mime_type, $allowed_mime)) {
-    http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'Solo se permiten archivos PDF.']);
-    exit;
-}
+// Usar el primer archivo como documento principal
+$file = $uploaded_files[0];
+$mime_type = $file['type'];
 
 // ===============================
 // PROCESAMIENTO EN BD
@@ -132,13 +191,26 @@ try {
     // 3. Obtener la siguiente versión
     $next_version = $doc_data['version'] + 1;
     
-    // 4. Leer el archivo PDF
+    // 4. Leer el archivo PDF principal
     $file_content = file_get_contents($file['tmp_name']);
     if ($file_content === false) {
         throw new Exception("Error al leer el archivo PDF.");
     }
     
-    // 5. Insertar nueva versión en tfg_files
+    // 5. Limitar versiones antiguas del estudiante y calcular siguiente versión
+    $document_type_final = 'Documento Final TFG';
+    limitarVersionesTFGFiles($conn, $current_user_id, $document_type_final);
+
+    $sql_version = "SELECT MAX(version) AS max_version FROM tfg_files WHERE uploaded_by = ? AND document_type = ?";
+    $stmt_version = $conn->prepare($sql_version);
+    $stmt_version->bind_param("ss", $current_user_id, $document_type_final);
+    $stmt_version->execute();
+    $row_version = $stmt_version->get_result()->fetch_assoc();
+    $stmt_version->close();
+    // Reemplaza el cálculo simple $doc_data['version'] + 1 con el real por estudiante
+    $next_version = $row_version['max_version'] ? $row_version['max_version'] + 1 : 1;
+
+    // Insertar nueva versión en tfg_files
     $sql_file = "INSERT INTO tfg_files 
                  (file_name, mime_type, file_size, file_data, storage_path, uploaded_by, version, document_type) 
                  VALUES (?, ?, ?, ?, NULL, ?, ?, 'Documento Final TFG')";
@@ -148,14 +220,14 @@ try {
     
     // Bind parameters: s=string, i=int, b=blob, d=double (para version que es float)
     $null_blob = null;
-    $stmt_file->bind_param("ssibsds", 
+    $file_size_val = $file['size'];
+    $stmt_file->bind_param("ssibsd", 
         $file['name'],
         $mime_type,
-        $file['size'],
+        $file_size_val,
         $null_blob,
         $current_user_id,
-        $next_version,
-        'Documento Final TFG'
+        $next_version
     );
     
     // Enviar el contenido del BLOB (índice 3 = 4º parámetro, basado en 0)
@@ -182,6 +254,24 @@ try {
         throw new Exception("Error al actualizar el documento: " . $stmt_update->error);
     }
     $stmt_update->close();
+
+    // 6b. Vincular el nuevo archivo con este documento final
+    $stmt_link = $conn->prepare("UPDATE tfg_files SET final_document_id = ? WHERE id = ?");
+    if (!$stmt_link) throw new Exception("Error preparando vínculo de archivo: " . $conn->error);
+    $stmt_link->bind_param("ii", $document_id, $new_file_id);
+    $stmt_link->execute();
+    $stmt_link->close();
+    
+    // 6.5 Guardar archivos adicionales si hay más de uno
+    if (count($uploaded_files) > 1) {
+        $additional_saved = saveAdditionalFiles(
+            $conn,
+            $uploaded_files,
+            $current_user_id,
+            'Correccion TFG Anexo'
+        );
+        error_log("HU-020: Archivos adicionales de corrección guardados: $additional_saved");
+    }
     
     // 7. Insertar registro en tfg_document_reviews (respuesta del estudiante)
     $review_type = 'Correccion Estudiante';
@@ -209,6 +299,35 @@ try {
     
     // Confirmar transacción
     $conn->commit();
+    
+    // ===============================
+    // HU-037: REGISTRAR ALERTA INTERNA
+    // ===============================
+    try {
+        
+        // Obtener nombre del estudiante y título para la alerta
+        $sql_info = "SELECT u.nombre, tp.title 
+                     FROM sis_user u 
+                     INNER JOIN tfg_proposals tp ON tp.user_id = u.id
+                     WHERE u.id = ? AND tp.id = ?";
+        $stmt_info = $conn->prepare($sql_info);
+        $stmt_info->bind_param("si", $current_user_id, $doc_data['proposal_id']);
+        $stmt_info->execute();
+        $info_result = $stmt_info->get_result()->fetch_assoc();
+        $stmt_info->close();
+        
+        if ($info_result) {
+            registerCorrectionSubmittedAlert(
+                $conn, 
+                $info_result['nombre'], 
+                $info_result['title'], 
+                $document_id
+            );
+        }
+    } catch (\Throwable $alertEx) {
+        error_log("HU-037: Error registrando alerta (no crítico): " . $alertEx->getMessage());
+    }
+    
     $conn->close();
     
     // ===============================
@@ -246,7 +365,8 @@ try {
     // ===============================
     echo json_encode([
         'success' => true,
-        'message' => 'Correcciones enviadas exitosamente. La CTFG será notificada.',
+        'message' => '¡Correcciones enviadas exitosamente!',
+        'details' => 'Tu documento ha sido actualizado y la Comisión de TFG será notificada para revisar los cambios realizados.',
         'document_id' => $document_id,
         'version' => $next_version,
         'corrections_count' => $new_corrections_count

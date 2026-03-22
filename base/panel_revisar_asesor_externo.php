@@ -39,19 +39,21 @@ if (!in_array($filtro_status, $allowed_filters)) {
 
 try {
     // $id_con viene de inc/db/db.php
-    $sql = "SELECT id, applicant_id, full_name, email, telefono, institution, specialization,
-                   cv_file_name, cv_file_size, id_copy_file_name, id_copy_file_size,
-                   status, rejection_count, approval_expires_at, admin_comments, 
-                   reviewed_by, reviewed_at, created_at, updated_at
-            FROM external_advisor_profile_requests";
+    $sql = "SELECT ear.id, ear.applicant_id, ear.full_name, ear.email, ear.telefono, ear.institution, ear.specialization,
+                   ear.cv_file_name, ear.cv_file_size, ear.id_copy_file_name, ear.id_copy_file_size,
+                   ear.status, ear.rejection_count, ear.approval_expires_at, ear.admin_comments, 
+                   ear.reviewed_by, ear.reviewed_at, ear.created_at, ear.updated_at,
+                   ear.linked_student_id, u.nombre AS linked_student_name
+            FROM external_advisor_profile_requests ear
+            LEFT JOIN sis_user u ON ear.linked_student_id = u.id";
     
     if ($filtro_status === 'Pendiente') {
         // Buscar "En Revision" o "En Revisión" (con o sin tilde)
-        $sql .= " WHERE (status = 'En Revision' OR status = 'En Revisión')";
+        $sql .= " WHERE (ear.status = 'En Revision' OR ear.status = 'En Revisión')";
     } elseif ($filtro_status !== 'Todos') {
-        $sql .= " WHERE status = '" . mysqli_real_escape_string($id_con, $filtro_status) . "'";
+        $sql .= " WHERE ear.status = '" . mysqli_real_escape_string($id_con, $filtro_status) . "'";
     }
-    $sql .= " ORDER BY created_at DESC";
+    $sql .= " ORDER BY ear.created_at DESC";
 
     $result = mysqli_query($id_con, $sql);
     if ($result) {
@@ -90,18 +92,22 @@ function formatBytes($bytes) {
     <link href="<?= htmlspecialchars($base_url . 'inc/css/panel_estudiante.css') ?>" rel="stylesheet">
     
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 1.3rem; }
         
         .dashboard-header h1 {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: #034991;
         }
         
+        .dashboard-header .lead {
+            font-size: 1.5rem;
+        }
+        
         .status-badge { 
             padding: 0.35em 0.65em; 
-            font-size: 0.85em; 
+            font-size: 1.2rem; 
             border-radius: 0.25rem; 
             font-weight: 600;
         }
@@ -112,7 +118,7 @@ function formatBytes($bytes) {
         .action-btn { margin: 0 2px; }
         .filter-bar { margin-bottom: 1.5rem; }
         .card-solicitud { border-left: 4px solid #034991; margin-bottom: 1rem; }
-        .info-label { font-weight: 600; color: #555; }
+        .info-label { font-weight: 600; color: #555; font-size: 1.3rem; }
         .doc-link { text-decoration: none; }
         .doc-link:hover { text-decoration: underline; }
         
@@ -169,13 +175,13 @@ function formatBytes($bytes) {
         
         .modal-error {
             color: #dc3545;
-            font-size: 0.875rem;
+            font-size: 1.2rem;
             display: none;
             margin-bottom: 10px;
         }
         
         .modal-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 15px;
         }
         .modal-icon.success { color: #198754; }
@@ -197,7 +203,7 @@ function formatBytes($bytes) {
                 <h1>
                     <i class="bi bi-person-badge-fill"></i> Revisión de Solicitudes - Asesor Externo
                 </h1>
-                <p class="lead">HU-012: Validar y aprobar documentos de Asesores Externos</p>
+                <p class="lead">Validar y aprobar documentos de Asesores Externos</p>
             </div>
 
             <!-- Filtros -->
@@ -216,9 +222,11 @@ function formatBytes($bytes) {
                         <i class="bi bi-list"></i> Todos
                     </a>
                 </div>
-                <a href="panel_subdireccion.php" class="btn btn-outline-dark ms-3">
-                    <i class="bi bi-arrow-left"></i> Volver al Panel
+
+                <a href="dashboard.php" class="btn btn-secondary">
+                <i class="bi bi-arrow-left-circle"></i> Volver al panel principal
                 </a>
+
             </div>
 
             <!-- Listado de Solicitudes -->
@@ -248,6 +256,15 @@ function formatBytes($bytes) {
                                     <p><span class="info-label">Teléfono:</span> <?= htmlspecialchars($sol['telefono'] ?: 'No especificado') ?></p>
                                     <p><span class="info-label">Institución:</span> <?= htmlspecialchars($sol['institution']) ?></p>
                                     <p><span class="info-label">Especialización:</span> <?= htmlspecialchars($sol['specialization']) ?></p>
+                                    <p>
+                                        <span class="info-label"><i class="bi bi-mortarboard-fill text-primary"></i> Estudiante a asesorar:</span>
+                                        <?php if (!empty($sol['linked_student_name'])): ?>
+                                            <span class="badge bg-info"><?= htmlspecialchars($sol['linked_student_name']) ?></span>
+                                            <small class="text-muted">(ID: <?= htmlspecialchars($sol['linked_student_id']) ?>)</small>
+                                        <?php else: ?>
+                                            <span class="text-muted">No especificado</span>
+                                        <?php endif; ?>
+                                    </p>
                                 </div>
                                 <div class="col-md-6">
                                     <p>

@@ -51,11 +51,25 @@ try {
     // VERIFICAR PERMISOS DE ACCESO
     $can_download = false;
     if ($row['user_id'] === $current_user_id) {
+        // Dueño de la propuesta
         $can_download = true;
-    } elseif ($current_user_rol == 1 || $current_user_rol == 2) {
+    } elseif (in_array($current_user_rol, [1, 2, 3, 5])) {
+        // Admin, Gestor, CTFG, Asesor externo/interno
         $can_download = true;
-    } elseif ($current_user_rol == 3) {
-        $can_download = true;
+    } elseif ($current_user_rol == 4) {
+        // Estudiante miembro del grupo: verificar via project_members
+        $stmt_pm = $conn->prepare(
+            "SELECT 1 FROM registered_projects rp
+             INNER JOIN project_members pm ON pm.project_id = rp.id
+             WHERE rp.tfg_proposal_id = ? AND pm.user_id = ? AND pm.status = 'Activo'
+             LIMIT 1"
+        );
+        if ($stmt_pm) {
+            $stmt_pm->bind_param("is", $id, $current_user_id);
+            $stmt_pm->execute();
+            $can_download = $stmt_pm->get_result()->num_rows > 0;
+            $stmt_pm->close();
+        }
     }
 
     if (!$can_download) {

@@ -333,9 +333,9 @@ INSERT INTO `categorias` (`idCategoria`, `nombre`, `categoria`) VALUES
 
 CREATE TABLE `comite` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `tutor` varchar(50) NOT NULL,
-  `asesor_1` varchar(50) NOT NULL,
-  `asesor_2` varchar(50) NOT NULL,
+  `tutor` varchar(50),
+  `asesor_1` varchar(50),
+  `asesor_2` varchar(50),
   PRIMARY KEY (`Id`),
   KEY `idx_tutor` (`tutor`),
   KEY `idx_asesor_1` (`asesor_1`),
@@ -349,7 +349,8 @@ CREATE TABLE `comite` (
 
 INSERT INTO `comite` (`Id`, `tutor`, `asesor_1`, `asesor_2`) VALUES
 (7, '105710421', '107010122', '110600492'),
-(8, '116440018', '205610158', '206580363');
+(8, '116440018', '205610158', '206580363'),
+(9, '800870458', '503020651', '503230754');
 
 
 
@@ -405,7 +406,50 @@ CREATE TABLE `proyecto_notas` (
   CONSTRAINT `proyecto_notas_ibfk_1` FOREIGN KEY (`proyecto_id`) REFERENCES `proyecto_aprobado` (`id_aprobado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+ALTER TABLE proyecto_aprobado
+ADD COLUMN estado VARCHAR(20) NOT NULL DEFAULT 'ACTIVO';
 
+ALTER TABLE proyecto_aprobado
+ADD COLUMN fecha_ultimo_avance DATETIME NULL;
+
+-- --------------------------------
+-- Tabla de acuerdos de cancelacion
+-- --------------------------------
+
+
+CREATE TABLE acuerdo_cancelacion (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  proyecto_id INT NOT NULL,
+  usuario_id VARCHAR(50) NOT NULL,
+  motivo VARCHAR(500) NOT NULL,
+  observaciones TEXT,
+  fecha_cancelacion DATETIME NOT NULL,
+  fecha_ultimo_avance_usada DATETIME,
+  UNIQUE KEY uq_cancelacion_proyecto (proyecto_id),
+  CONSTRAINT fk_cancelacion_proyecto
+    FOREIGN KEY (proyecto_id)
+    REFERENCES proyecto_aprobado(id_aprobado)
+    ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tfg_extension_requests`
+--
+
+CREATE TABLE `tfg_extension_requests` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `proposal_id` int(11) NOT NULL,
+  `user_id` varchar(50) NOT NULL,
+  `extension_number` tinyint(4) NOT NULL COMMENT '1=Primera prórroga (1 año), 2=Segunda prórroga (6 meses)',
+  `reason` text NOT NULL,
+  `status` enum('pendiente','aprobada','rechazada') DEFAULT 'pendiente',
+  `request_date` datetime DEFAULT current_timestamp(),
+  `response_date` datetime DEFAULT NULL,
+  `responded_by` varchar(50) DEFAULT NULL,
+  `response_comment` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 -- ----------------------------
 -- Records of sis_sessions_vars
 -- ----------------------------
@@ -1438,6 +1482,127 @@ INSERT INTO project_types (type_name, max_members, description) VALUES
 ('Proyecto de Graduación', 3, 'Proyecto grupal de hasta 3 integrantes'),
 ('Seminario', 8, 'Trabajo grupal de hasta 8 integrantes');
 
+-- ----------------------------
+-- Datos semilla: propuesta TFG 2024 con comite #9
+-- ----------------------------
+INSERT INTO tfg_proposals (
+  user_id,
+  title,
+  disciplines,
+  project_description,
+  document,
+  file_name,
+  mime_type,
+  file_size,
+  status,
+  admin_comments,
+  reviewed_by,
+  reviewed_at,
+  created_at,
+  updated_at
+) VALUES (
+  '504410118',
+  'Desarrollo de expediente clinico digital para optimizar el programa de rehabilitacion cardiaca y cerebrovascular de la Universidad Nacional Sede Chorotega Campus Liberia',
+  'Desarrollo de Sistemas basados en WEB',
+  'Desarrollo de expediente clinico digital para optimizar el programa de rehabilitacion cardiaca y cerebrovascular de la Universidad Nacional Sede Chorotega Campus Liberia',
+  LOAD_FILE('C:/xampp/htdocs/base/README.pdf'),
+  'README.pdf',
+  'application/pdf',
+  143723,
+  'Aprobado',
+  'Datos base 2024. Acuerdos asociados visibles en la fuente: UNA-CTFG-EI-ACUE-038-2024, UNA-CTFG-EI-ACUE-056-2024 y UNA-CTFG-EI-ACUE-064-2024.',
+  '111710169',
+  '2024-10-04 00:00:00',
+  '2024-06-26 00:00:00',
+  '2024-10-04 00:00:00'
+);
+
+SET @seed_proposal_2024_id := LAST_INSERT_ID();
+
+INSERT INTO registered_projects (
+  tfg_proposal_id,
+  project_type_id,
+  status,
+  start_date,
+  end_date,
+  final_grade,
+  supervisor_id,
+  created_at,
+  updated_at
+) VALUES (
+  @seed_proposal_2024_id,
+  2,
+  'En Desarrollo',
+  '2024-06-26',
+  '2025-10-04',
+  NULL,
+  '800870458',
+  '2024-06-26 00:00:00',
+  '2024-10-04 00:00:00'
+);
+
+SET @seed_registered_project_2024_id := LAST_INSERT_ID();
+
+INSERT INTO project_members (
+  project_id,
+  user_id,
+  role,
+  status,
+  joined_at,
+  left_at
+) VALUES
+(
+  @seed_registered_project_2024_id,
+  '504410118',
+  'Líder',
+  'Activo',
+  '2024-06-26 00:00:00',
+  NULL
+),
+(
+  @seed_registered_project_2024_id,
+  '504430777',
+  'Miembro',
+  'Activo',
+  '2024-06-26 00:00:00',
+  NULL
+),
+(
+  @seed_registered_project_2024_id,
+  '118440202',
+  'Miembro',
+  'Activo',
+  '2024-06-26 00:00:00',
+  NULL
+);
+
+INSERT INTO proyecto_aprobado (
+  nombre,
+  proposal_id,
+  comite_id,
+  documento,
+  aprobado,
+  identificador,
+  fecha_creacion,
+  fecha_finalizacion
+) VALUES (
+  'Desarrollo de expediente clinico digital para optimizar el programa de rehabilitacion cardiaca y cerebrovascular de la Universidad Nacional Sede Chorotega Campus Liberia',
+  @seed_proposal_2024_id,
+  9,
+  '',
+  1,
+  'UNA-CTFG-EI-ACUE-064-2024',
+  '2024-10-04 00:00:00',
+  '2025-10-04 00:00:00'
+);
+
+SET @seed_approved_project_2024_id := LAST_INSERT_ID();
+
+INSERT INTO proyecto_aprobado_estudiantes (id_aprobado, estudiante_id) VALUES
+(@seed_approved_project_2024_id, '504410118'),
+(@seed_approved_project_2024_id, '504430777'),
+(@seed_approved_project_2024_id, '118440202');
+
 -- ============================================
 -- TABLAS PARA DOCUMENTOS FINALES DE TFG (HU-014)
 -- ============================================
@@ -1458,10 +1623,15 @@ CREATE TABLE `tfg_files` (
   `upload_date` datetime DEFAULT CURRENT_TIMESTAMP,
   `version` FLOAT NOT NULL DEFAULT 1,
   `document_type` VARCHAR(50) NOT NULL,
+  `proposal_id` int(11) DEFAULT NULL COMMENT 'FK a tfg_proposals (archivo de propuesta)',
+  `final_document_id` int(11) DEFAULT NULL COMMENT 'FK a tfg_final_documents (archivo de documento final)',
   PRIMARY KEY (`id`),
   KEY `idx_upload_date` (`upload_date`),
   KEY `fk_tfg_files_user` (`uploaded_by`),
-  CONSTRAINT `fk_tfg_files_user` FOREIGN KEY (`uploaded_by`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
+  KEY `idx_tfg_files_proposal` (`proposal_id`),
+  KEY `idx_tfg_files_final_document` (`final_document_id`),
+  CONSTRAINT `fk_tfg_files_user` FOREIGN KEY (`uploaded_by`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_tfg_files_proposal` FOREIGN KEY (`proposal_id`) REFERENCES `tfg_proposals` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- ----------------------------
@@ -1489,6 +1659,12 @@ CREATE TABLE `tfg_final_documents` (
   CONSTRAINT `fk_tfg_final_file` FOREIGN KEY (`file_id`) REFERENCES `tfg_files` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `fk_tfg_final_submitter` FOREIGN KEY (`submitted_by`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- Vincular tfg_files con tfg_final_documents (FK diferida por dependencia circular)
+ALTER TABLE `tfg_files`
+  ADD CONSTRAINT `fk_tfg_files_final_document`
+    FOREIGN KEY (`final_document_id`) REFERENCES `tfg_final_documents` (`id`)
+    ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- ----------------------------
 -- Table structure for `tfg_document_reviews`
@@ -1768,23 +1944,41 @@ CREATE TABLE `user_alerts` (
 DROP TABLE IF EXISTS `external_advisor_linked_students`;
 CREATE TABLE `external_advisor_linked_students` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
-    `advisor_request_id` int(11) NOT NULL COMMENT 'FK a external_advisor_profile_requests',
+    `advisor_request_id` int(11) DEFAULT NULL COMMENT 'FK a external_advisor_profile_requests (asesores externos; NULL para asesores internos)',
+    `internal_advisor_id` varchar(50) DEFAULT NULL COMMENT 'Cédula del asesor interno de comité (FK a sis_user; NULL para asesores externos)',
     `student_id` varchar(50) NOT NULL COMMENT 'ID del estudiante vinculado (FK a sis_user)',
     `is_primary` tinyint(1) DEFAULT 0 COMMENT '1 si es el estudiante principal (seleccionado en registro)',
     `project_id` int(11) DEFAULT NULL COMMENT 'FK a registered_projects (proyecto del grupo)',
     `linked_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha de vinculación',
     PRIMARY KEY (`id`),
     UNIQUE KEY `unique_advisor_student` (`advisor_request_id`, `student_id`),
+    UNIQUE KEY `unique_internal_advisor_student` (`internal_advisor_id`, `student_id`),
     KEY `idx_advisor_request` (`advisor_request_id`),
+    KEY `idx_internal_advisor` (`internal_advisor_id`),
     KEY `idx_student` (`student_id`),
     KEY `idx_project` (`project_id`),
     KEY `idx_eal_lookup` (`advisor_request_id`, `student_id`, `is_primary`),
     CONSTRAINT `fk_eal_advisor_request` FOREIGN KEY (`advisor_request_id`) 
         REFERENCES `external_advisor_profile_requests` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `fk_eal_internal_advisor` FOREIGN KEY (`internal_advisor_id`)
+        REFERENCES `sis_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT `fk_eal_student` FOREIGN KEY (`student_id`) 
         REFERENCES `sis_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci 
-COMMENT='HU-011: Vinculación de asesor externo con todos los estudiantes de un grupo TFG';
+COMMENT='HU-011: Vinculación de asesor (externo o interno de comité) con los estudiantes de un grupo TFG';
+
+-- Datos semilla: vincular miembros del comité #9 (asesores internos) con los estudiantes del proyecto 2024
+-- tutor=800870458 (Darinka Grbic, rol 5), asesor_1=503020651 (Carlos Chanto, rol 3), asesor_2=503230754 (Eddier López, rol 3)
+INSERT INTO external_advisor_linked_students (internal_advisor_id, student_id, is_primary, project_id) VALUES
+('800870458', '504410118', 1, @seed_registered_project_2024_id),
+('800870458', '504430777', 0, @seed_registered_project_2024_id),
+('800870458', '118440202', 0, @seed_registered_project_2024_id),
+('503020651', '504410118', 0, @seed_registered_project_2024_id),
+('503020651', '504430777', 0, @seed_registered_project_2024_id),
+('503020651', '118440202', 0, @seed_registered_project_2024_id),
+('503230754', '504410118', 0, @seed_registered_project_2024_id),
+('503230754', '504430777', 0, @seed_registered_project_2024_id),
+('503230754', '118440202', 0, @seed_registered_project_2024_id);
 
 -- ----------------------------
 -- HU-029: Table structure for `chat_conversations`

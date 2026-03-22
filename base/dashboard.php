@@ -33,7 +33,7 @@
         case 4: // Estudiante
             include 'Panel_SubirTFG.php';
             break;
-        case 5: // Asesor Externo
+        case 5: // Asesor
             include 'panel_asesor.php';
             break;
         default:

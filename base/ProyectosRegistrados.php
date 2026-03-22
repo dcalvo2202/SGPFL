@@ -109,7 +109,7 @@ list($estadoLabel, $estadoBadge) = estadoInfo($estado);
 
 // Construcción de consulta con condiciones dinámicas
 $proyectos_aprobados = [];
-$sql = "SELECT p.id_aprobado, p.nombre, p.aprobado, p.fecha_creacion, p.comite_id,
+$sql = "SELECT p.id_aprobado, p.nombre, p.aprobado, p.fecha_creacion, p.comite_id, p.estado,
                COALESCE(t.nombre,'-')  AS tutor_nombre,
                COALESCE(a1.nombre,'-') AS asesor1_nombre,
                COALESCE(a2.nombre,'-') AS asesor2_nombre
@@ -122,8 +122,19 @@ $conds  = [];
 $types  = "";
 $params = [];
 
+/**
+ * NUEVO: Manejo de "cancelados" (HU)
+ * - Si filtro estado=4: mostrar cancelados (HU o el estado viejo)
+ * - Si NO es estado=4: excluir cancelados de búsquedas activas
+ */
+if ($estado === 4) {
+  $conds[] = "(UPPER(COALESCE(p.estado,'')) = 'CANCELADO' OR p.aprobado = 4)";
+} else {
+  $conds[] = "(UPPER(COALESCE(p.estado,'')) <> 'CANCELADO' AND p.aprobado <> 4)";
+}
+
 // Agregar condiciones solo si hay filtros
-if ($estado > 0) {
+if ($estado > 0 && $estado !== 4) {
     $conds[] = "p.aprobado = ?";
     $types  .= "i";
     $params[] = $estado;
@@ -197,6 +208,14 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
       <div class="dashboard-header text-center mb-5">
         <h1 style="font-size: 2.5rem; font-weight: 700;">Proyectos registrados</h1>
         <p class="lead">Consulte y filtre proyectos Aprobados, Prorrogados, Vencidos o Cancelados.</p>
+        <?php if (isset($_GET['ok_cancel'])): ?>
+          <div class="alert alert-success py-2 mb-3">Proyecto cancelado correctamente.</div>
+        <?php endif; ?>
+        <?php if (isset($_GET['err_cancel'])): ?>
+          <div class="alert alert-danger py-2 mb-3">
+            No se pudo cancelar el proyecto: <?php echo htmlspecialchars($_GET['err_cancel'], ENT_QUOTES, 'UTF-8'); ?>
+          </div>
+        <?php endif; ?>
       </div>
 
       <!-- Estado seleccionado -->
@@ -282,11 +301,37 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
                         Fecha: <?php echo htmlspecialchars(substr($p['fecha_creacion'],0,10)); ?>
                       </small>
                     </div>
+                    <?php
+                      $isCanceladoHU  = (isset($p['estado']) && strtoupper((string)$p['estado']) === 'CANCELADO');
+                      $isCanceladoOld = ((int)$p['aprobado'] === 4);
+                      $isCancelado    = $isCanceladoHU || $isCanceladoOld;
+
+                      // Badge: si está cancelado por cualquiera, mostrar Cancelado
+                      if ($isCancelado) {
+                        $lbl = 'Cancelado';
+                        $bdg = 'secondary';
+                      } else {
+                        list($lbl,$bdg) = estadoInfo((int)$p['aprobado']);
+                      }
+                    ?>
+
                     <div class="item-actions">
                       <a class="btn btn-sm btn-outline-info"
-                         href="NotasProyecto.php?id=<?php echo (int)$p['id_aprobado']; ?>&nombre=<?php echo rawurlencode($p['nombre']); ?>">
+                        href="NotasProyecto.php?id=<?php echo (int)$p['id_aprobado']; ?>&nombre=<?php echo rawurlencode($p['nombre']); ?>">
                         <i class="bi bi-journal-text"></i> Notas
                       </a>
+
+                      <?php if (!$isCancelado): ?>
+                        <form method="post" action="cancelar_proyecto_aprobado.php" style="display:inline;" onsubmit="return confirm('¿Cancelar este proyecto?');">
+                          <input type="hidden" name="proyecto_id" value="<?php echo (int)$p['id_aprobado']; ?>">
+                          <input type="hidden" name="motivo" value="Prueba funcional de cancelación">
+                          <input type="hidden" name="observaciones" value="Prueba temporal sin modal">
+                          <button type="submit" class="btn btn-sm btn-outline-danger">
+                            <i class="bi bi-x-octagon"></i> Cancelar
+                          </button>
+                        </form>
+                      <?php endif; ?>
+
                       <span class="badge bg-<?php echo $bdg; ?>"><?php echo $lbl; ?></span>
                     </div>
                   </div>
@@ -303,10 +348,64 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
         </a>
       </div>
     </div>
+
+    <!-- Modal Cancelar -->
+    <div class="modal fade" id="modalCancelar" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <form method="post" action="cancelar_proyecto_aprobado.php">
+            <div class="modal-header">
+              <h5 class="modal-title">Cancelar proyecto</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+
+            <div class="modal-body">
+              <input type="hidden" name="proyecto_id" id="cancel_proyecto_id" value="">
+              <p class="mb-2">Proyecto: <strong id="cancel_proyecto_nombre"></strong></p>
+
+              <div class="mb-3">
+                <label class="form-label">Motivo (requerido)</label>
+                <input type="text" name="motivo" class="form-control" maxlength="500" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Observaciones</label>
+                <textarea name="observaciones" class="form-control" rows="4"></textarea>
+              </div>
+
+              <div class="alert alert-warning mb-0">
+                Se validará que el proyecto lleve <strong>≥ 6 meses sin avances</strong> antes de permitir la cancelación (Art. 73 RGPEA).
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-danger">
+                <i class="bi bi-check2-circle"></i> Confirmar cancelación
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </main>
 
   <?php include 'footer.php'; ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function(){
+      const modal = document.getElementById('modalCancelar');
+      if (!modal) return;
+
+      modal.addEventListener('show.bs.modal', function (event) {
+        const btn = event.relatedTarget;
+        const id = btn.getAttribute('data-id') || '';
+        const nombre = btn.getAttribute('data-nombre') || '';
+        document.getElementById('cancel_proyecto_id').value = id;
+        document.getElementById('cancel_proyecto_nombre').textContent = nombre;
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -97,6 +97,7 @@ function ejecutar_query($sql, $params = []) {
     require 'bdcommon.inc';
     $id_con = mysqli_connect($db_host, $usuario, $clave, $db);
     mysqli_set_charset($id_con, "utf8");
+    $affected_rows = 0;
     
     try {
         if (empty($params)) {
@@ -104,6 +105,7 @@ function ejecutar_query($sql, $params = []) {
             if (!$resultado) {
                 throw new Exception(mysqli_error($id_con));
             }
+            $affected_rows = mysqli_affected_rows($id_con);
         } else {
             $stmt = mysqli_prepare($id_con, $sql);
             if (!$stmt) {
@@ -127,12 +129,13 @@ function ejecutar_query($sql, $params = []) {
             if (!mysqli_stmt_execute($stmt)) {
                 throw new Exception(mysqli_stmt_error($stmt));
             }
+
+            $affected_rows = mysqli_stmt_affected_rows($stmt);
             
             mysqli_stmt_close($stmt);
         }
         
         $insert_id = mysqli_insert_id($id_con);
-        $affected_rows = mysqli_affected_rows($id_con);
         
         mysqli_close($id_con);
         

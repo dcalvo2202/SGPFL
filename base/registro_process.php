@@ -251,9 +251,15 @@ try {
     $id_tipo_tel = trim($_POST['id_tipo_tel'] ?? '');
     $institution = trim($_POST['institution'] ?? '');
     $specialization = trim($_POST['specialization'] ?? '');
+    $linked_student_id = trim($_POST['linked_student_id'] ?? '');
 
     if ($applicant_id === '' || $full_name === '' || $email === '' || $institution === '' || $specialization === '') {
         throw new Exception('Debe completar todos los campos requeridos');
+    }
+
+    // El estudiante a asesorar es requerido
+    if ($linked_student_id === '') {
+        throw new Exception('Debe seleccionar un estudiante a asesorar');
     }
 
     if (strlen($applicant_id) > 50) {
@@ -326,6 +332,19 @@ try {
         throw new Exception('Ya existe una solicitud para esta cédula con estado: ' . $existing_status . '');
     }
 
+    // Verificar que el email no esté siendo usado por otro usuario diferente
+    $stmt_email = $conn->prepare('SELECT applicant_id FROM external_advisor_profile_requests WHERE email = ? AND applicant_id != ? LIMIT 1');
+    $stmt_email->bind_param('ss', $email, $applicant_id);
+    $stmt_email->execute();
+    $res_email = $stmt_email->get_result();
+    if ($res_email && $res_email->num_rows > 0) {
+        $other_user = $res_email->fetch_assoc();
+        $stmt_email->close();
+        $conn->close();
+        throw new Exception('El correo electrónico ' . htmlspecialchars($email) . ' ya está registrado para otro usuario (ID: ' . htmlspecialchars($other_user['applicant_id']) . '). Por favor use otro correo o contacte a soporte.');
+    }
+    $stmt_email->close();
+
     $null_blob_1 = null;
     $null_blob_2 = null;
 
@@ -334,6 +353,7 @@ try {
                 SET full_name = ?, email = ?, telefono = ?, id_tipo_tel = ?, institution = ?, specialization = ?,
                     cv_document = ?, cv_file_name = ?, cv_mime_type = ?, cv_file_size = ?,
                     id_copy_document = ?, id_copy_file_name = ?, id_copy_mime_type = ?, id_copy_file_size = ?,
+                    linked_student_id = ?,
                     status = 'En Revisión', admin_comments = NULL, reviewed_by = NULL, reviewed_at = NULL,
                     updated_at = NOW()
                 WHERE applicant_id = ?";
@@ -345,9 +365,10 @@ try {
         }
 
         $telefono_param = ($telefono === '') ? null : $telefono;
+        $linked_student_param = ($linked_student_id === '') ? null : $linked_student_id;
 
         $stmt->bind_param(
-            'ssssssbssibssi' . 's',
+            'ssssssbssibssi' . 'ss',
             $full_name,
             $email,
             $telefono_param,
@@ -362,6 +383,7 @@ try {
             $id_copy['name'],
             $id_copy['mime'],
             $id_copy['size'],
+            $linked_student_param,
             $applicant_id
         );
 
@@ -390,8 +412,9 @@ try {
                 (applicant_id, full_name, email, telefono, id_tipo_tel, institution, specialization,
                  cv_document, cv_file_name, cv_mime_type, cv_file_size,
                  id_copy_document, id_copy_file_name, id_copy_mime_type, id_copy_file_size,
+                 linked_student_id,
                  status, created_at, updated_at)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'En Revisión', NOW(), NOW())";
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'En Revisión', NOW(), NOW())";
 
         $stmt = $conn->prepare($sql);
         if (!$stmt) {
@@ -400,9 +423,10 @@ try {
         }
 
         $telefono_param = ($telefono === '') ? null : $telefono;
+        $linked_student_param = ($linked_student_id === '') ? null : $linked_student_id;
 
         $stmt->bind_param(
-            'sssssssbssibssi',
+            'sssssssbssibssis',
             $applicant_id,
             $full_name,
             $email,
@@ -417,7 +441,8 @@ try {
             $null_blob_2,
             $id_copy['name'],
             $id_copy['mime'],
-            $id_copy['size']
+            $id_copy['size'],
+            $linked_student_param
         );
 
         $stmt->send_long_data(7, $cv['content']);
@@ -450,6 +475,27 @@ try {
 
     $conn->close();
 
+    // =============================== OBTENER NOMBRE DEL ESTUDIANTE VINCULADO ===============================
+    $linked_student_name = 'No especificado';
+    if (!empty($linked_student_id)) {
+        try {
+            include_once __DIR__ . '/inc/db/bdcommon.inc';
+            $conn2 = new mysqli($db_host, $usuario, $clave, $db);
+            $conn2->set_charset('utf8');
+            $stmt2 = $conn2->prepare('SELECT nombre FROM sis_user WHERE id = ? LIMIT 1');
+            $stmt2->bind_param('s', $linked_student_id);
+            $stmt2->execute();
+            $res2 = $stmt2->get_result();
+            if ($row2 = $res2->fetch_assoc()) {
+                $linked_student_name = $row2['nombre'];
+            }
+            $stmt2->close();
+            $conn2->close();
+        } catch (Exception $e) {
+            error_log('Error obteniendo nombre estudiante: ' . $e->getMessage());
+        }
+    }
+
     // =============================== NOTIFICACIÓN POR CORREO ===============================
     $secretaria_email = 'rodri100ro@gmail.com';
     $from_email = 'rodri100ro@gmail.com';
@@ -475,6 +521,7 @@ try {
           <li><strong>Correo:</strong> ' . htmlspecialchars($email) . '</li>
           <li><strong>Institución:</strong> ' . htmlspecialchars($institution) . '</li>
           <li><strong>Especialización:</strong> ' . htmlspecialchars($specialization) . '</li>
+          <li><strong>Estudiante a asesorar:</strong> ' . htmlspecialchars($linked_student_name) . ' (ID: ' . htmlspecialchars($linked_student_id) . ')</li>
           <li><strong>Estado:</strong> <strong>En Revisión</strong></li>
         </ul>
         <p>Puede ingresar al sistema para visualizar las solicitudes pendientes:</p>

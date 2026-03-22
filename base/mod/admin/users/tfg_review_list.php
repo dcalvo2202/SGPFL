@@ -19,7 +19,7 @@ if (!isset($base_url)) {
 $sql = "SELECT p.*, u.nombre as estudiante, u.id as estudiante_id
         FROM tfg_proposals p 
         JOIN sis_user u ON p.user_id = u.id 
-        WHERE p.status = 'Pendiente de Revisión'
+        WHERE p.status = 'Pendiente de Revision'
         ORDER BY p.created_at DESC";
 
 $result = $conn->query($sql);
@@ -51,10 +51,10 @@ $result = $conn->query($sql);
                         <a href="<?= htmlspecialchars($download_url) ?>" class="btn btn-sm btn-primary text-white" title="Descargar Propuesta">
                             <i class="bi bi-download"></i> Descargar
                         </a>
-                        <button class="btn btn-sm btn-success" onclick="updateStatus(<?= $row['id']; ?>, 'Cumple Requisitos')">
+                        <button class="btn btn-sm btn-success" onclick="updateStatus(<?= $row['id']; ?>, 'Cumple requisitos')">
                             <i class="bi bi-check-circle"></i> Cumple Requisitos
                         </button>
-                        <button class="btn btn-sm btn-danger" onclick="updateStatus(<?= $row['id']; ?>, 'No Cumple Requisitos')">
+                        <button class="btn btn-sm btn-danger" onclick="updateStatus(<?= $row['id']; ?>, 'No cumple requisitos')">
                             <i class="bi bi-x-circle"></i> No Cumple Requisitos
                         </button>
                     </div>
@@ -186,7 +186,7 @@ function showCustomAlert(title, message, isSuccess) {
 // --- Main Function to Open Comment Modal ---
 function updateStatus(id, status) {
     currentProposal = { id, status };
-    const actionText = status === 'Cumple Requisitos' ? 'marcar como "Cumple Requisitos"' : 'marcar como "No Cumple Requisitos"';
+    const actionText = status === 'Cumple requisitos' ? 'marcar como "Cumple requisitos"' : 'marcar como "No cumple requisitos"';
     
     modalText.textContent = `¿Desea ${actionText} esta propuesta?`;
     modalComments.value = '';
@@ -203,7 +203,7 @@ modalCancel.addEventListener('click', () => {
 modalConfirm.addEventListener('click', () => {
     const comments = modalComments.value;
 
-    if (currentProposal.status === 'No Cumple Requisitos' && comments.trim() === '') {
+    if (currentProposal.status === 'No cumple requisitos' && comments.trim() === '') {
         modalError.style.display = 'block';
         return;
     }

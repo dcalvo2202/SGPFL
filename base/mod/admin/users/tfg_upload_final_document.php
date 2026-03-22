@@ -27,6 +27,30 @@ require_once(__DIR__ . '/../../../inc/tfg_final_functions.php');
 // Verificar si puede subir documento final
 $upload_check = canUploadFinalDocument($current_user_id);
 
+// Si el documento está rechazado, verificar si alcanzó el límite de correcciones
+$has_reached_correction_limit = false;
+if (isset($upload_check['is_rejected']) && $upload_check['is_rejected'] && isset($upload_check['document_id'])) {
+    try {
+        include(__DIR__ . '/../../../inc/db/bdcommon.inc');
+        $conn_check = new mysqli($db_host, $usuario, $clave, $db);
+        $conn_check->set_charset("utf8");
+        
+        $sql_corrections = "SELECT COUNT(*) as correction_count FROM tfg_document_reviews 
+                           WHERE document_id = ? AND review_type = 'Correccion Estudiante'";
+        $stmt_corr = $conn_check->prepare($sql_corrections);
+        $stmt_corr->bind_param("i", $upload_check['document_id']);
+        $stmt_corr->execute();
+        $result_corr = $stmt_corr->get_result()->fetch_assoc();
+        $stmt_corr->close();
+        $conn_check->close();
+        
+        $correction_count = $result_corr['correction_count'] ?? 0;
+        $has_reached_correction_limit = ($correction_count >= 3);
+    } catch (Exception $e) {
+        error_log("Error verificando límite de correcciones: " . $e->getMessage());
+    }
+}
+
 // URLs portables
 $panel_href = $base_url . "Panel_SubirTFG.php";
 $form_action = "tfg_upload_final_process.php";
@@ -67,19 +91,46 @@ $additional_css = ['inc/css/tfg_upload.css'];
             <?php if (!$upload_check['can_upload']): ?>
                 <!-- Mostrar mensaje de error si no puede subir -->
                 <?php if (isset($upload_check['is_rejected']) && $upload_check['is_rejected']): ?>
-                    <!-- Caso especial: Documento rechazado - Redirigir a HU-020 -->
+                    <?php if ($has_reached_correction_limit): ?>
+                    <!-- CASO: Documento rechazado Y alcanzó límite de correcciones -->
+                    <div class="alert alert-danger d-flex align-items-start" role="alert" style="border-radius: 8px; padding: 20px;">
+                        <i class="bi bi-exclamation-octagon-fill" style="font-size: 2rem; margin-right: 15px; color: #dc3545;"></i>
+                        <div style="flex: 1;">
+                            <h5 style="margin-top: 0; color: #dc3545; margin-bottom: 10px;"><strong>Has alcanzado el límite de correcciones</strong></h5>
+                            <p style="margin: 10px 0; color: #555;">
+                                Tu documento final fue rechazado y has realizado <strong>3 ciclos de corrección</strong>. 
+                                Ha alcanzado el límite máximo permitido por el sistema.
+                            </p>
+                            <p style="margin: 10px 0; color: #555;">
+                                <strong>Próximos pasos:</strong> Contacta directamente con la <strong>Comisión de Trabajos Finales de Graduación (CTFG)</strong> 
+                                para discutir opciones adicionales o recibir orientación sobre cómo proceder.
+                            </p>
+                            <div style="margin-top: 15px;">
+                                <a href="mailto:infoctfg@una.crr" class="btn btn-primary" style="margin-right: 10px;">
+                                    <i class="bi bi-envelope-fill"></i> Contactar CTFG
+                                </a>
+                                <a href="<?= $base_url ?>Panel_SubirTFG.php" class="btn btn-secondary">
+                                    <i class="bi bi-arrow-left-circle"></i> Volver al panel principal
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <?php else: ?>
+                    <!-- CASO: Documento rechazado pero AÚN puede hacer correcciones -->
                     <div class="alert alert-danger" role="alert">
                         <h5><i class="bi bi-exclamation-triangle-fill"></i> Documento Final Rechazado</h5>
                         <p class="mb-3"><?= htmlspecialchars($upload_check['message']) ?></p>
+                        <p class="mb-3 text-danger fw-bold"><i class="bi bi-info-circle-fill"></i> Importante: Debe subir <u>todos</u> los archivos nuevamente al enviar la corrección, no solo los archivos modificados.</p>
                         <div class="d-flex gap-2">
-                            <a href="<?= $base_url ?>mod/admin/users/tfg_upload_correction.php?id=<?= $upload_check['document_id'] ?>" class="btn btn-warning">
-                                <i class="bi bi-file-earmark-arrow-up-fill"></i> Subir Correcciones (HU-020)
+                            <a  href="<?= $base_url ?>mod/admin/users/tfg_upload_correction.php?id=<?= $upload_check['document_id'] ?>" class="btn btn-primary">
+                                <i class="bi bi-file-earmark-arrow-up-fill"></i> Subir Correcciones
                             </a>
                             <a href="<?= htmlspecialchars($panel_href) ?>" class="btn btn-secondary">
                                 <i class="bi bi-arrow-left"></i> Volver al Panel
                             </a>
                         </div>
                     </div>
+                    <?php endif; ?>
                 <?php else: ?>
                     <!-- Otros casos de bloqueo -->
                     <div class="alert alert-danger" role="alert">
@@ -499,16 +550,45 @@ $additional_css = ['inc/css/tfg_upload.css'];
             Swal.fire({
                 title: '¿Subir documento(s) final(es)?',
                 html: `
-                    <p>Estás a punto de subir <strong>${filesCount} documento(s)</strong> final(es) de tu TFG.</p>
-                    <p><strong>Una vez subido(s), será(n) enviado(s) a la CTFG para revisión.</strong></p>
-                    <p>La CTFG verificará manualmente que el documento cumple con todos los requisitos de la Tabla 4.</p>
+                    <div style="text-align: left; padding: 30px 25px;">
+                        <p style="font-size: 16px; margin-bottom: 12px; line-height: 1.6;">
+                            Estás a punto de subir <strong>${filesCount} documento(s)</strong> final(es) de tu TFG.
+                        </p>
+                        <p style="font-size: 16px; margin-bottom: 12px; line-height: 1.6;">
+                            <strong>Una vez subido(s), será(n) enviado(s) a la CTFG para revisión.</strong>
+                        </p>
+                        <p style="font-size: 14px; color: #666; line-height: 1.6;">
+                            La CTFG verificará manualmente que el documento cumple con todos los requisitos de la Tabla 4.
+                        </p>
+                    </div>
                 `,
                 icon: 'question',
                 showCancelButton: true,
                 confirmButtonColor: '#CD1719',
                 cancelButtonColor: '#6c757d',
                 confirmButtonText: 'Sí, subir documento',
-                cancelButtonText: 'Cancelar'
+                cancelButtonText: 'Cancelar',
+                width: '44%',
+                maxWidth: '700px',
+                didOpen: (modal) => {
+                    const actions = modal.querySelector('.swal2-actions');
+                    if (actions) {
+                        actions.style.display = 'flex';
+                        actions.style.justifyContent = 'center';
+                        actions.style.alignItems = 'center';
+                        actions.style.gap = '10px';
+                        actions.style.marginTop = '8px';
+                    }
+                    const buttons = modal.querySelectorAll('.swal2-styled');
+                    buttons.forEach(button => {
+                        button.style.minWidth = '110px';
+                        button.style.padding = '9px 12px';
+                        button.style.fontSize = '14px';
+                        button.style.fontWeight = '500';
+                        button.style.margin = '1px';
+                        button.style.lineHeight = '1.2';
+                    });
+                }
             }).then((result) => {
                 if (result.isConfirmed) {
                     // Mostrar loading
@@ -548,8 +628,14 @@ $additional_css = ['inc/css/tfg_upload.css'];
                             Swal.fire({
                                 icon: 'success',
                                 title: '¡Documento subido!',
-                                html: data.message + '<br><br>La CTFG ha sido notificada y procederá con la revisión.',
-                                confirmButtonColor: '#034991'
+                                html: `
+                                    <div style="text-align: left; line-height: 1.6; padding: 12px 20px;">
+                                        <div style="font-size: 15px; color: #2c3e50; margin-bottom: 10px;">${data.message}</div>
+                                        <div style="font-size: 14px; color: #566573;">La CTFG ha sido notificada y procederá con la revisión.</div>
+                                    </div>
+                                `,
+                                width: '30%',
+                                confirmButtonColor: '#034991',
                             }).then(() => {
                                 window.location.href = '<?= $panel_href ?>?success=final_uploaded';
                             });

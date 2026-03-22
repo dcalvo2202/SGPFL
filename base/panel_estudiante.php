@@ -83,6 +83,7 @@ $usuario = $usuario_sesion ?? 'Estudiante';
                 <a href="<?= $base_url ?>" class="btn btn-outline-dark">Fechas importantes</a>
                 <a href="<?= $base_url ?>" class="btn btn-outline-dark">Enviar documentos</a>
                 <a href="<?= $base_url ?>historial_documentos.php" class="btn btn-outline-dark">Historial de documentos</a>
+                <a href="<?= $base_url ?>panel_solicitudProrroga.php" class="btn btn-outline-dark">Solicitud de Prórroga</a>
                 <a href="<?= $base_url ?>index.php" class="btn btn-outline-dark">Inicio</a>
             </header>
             <main class="flex-grow-1 container py-4">
@@ -124,6 +125,7 @@ $usuario = $usuario_sesion ?? 'Estudiante';
                                         <h6 class="alert-heading">Documento: <?= htmlspecialchars($doc['title']) ?></h6>
                                         <p class="mb-2">El CTFG ha solicitado correcciones en su documento final.</p>
                                         <p class="mb-2"><strong>Correcciones enviadas:</strong> <?= $doc['corrections_count'] ?> / 3</p>
+                                        <p class="mb-2 text-danger fw-bold"><i class="bi bi-info-circle-fill"></i> Importante: Debe subir <u>todos</u> los archivos nuevamente al enviar la corrección, no solo los archivos modificados.</p>
                                         <hr>
                                         <a href="<?= $base_url ?>mod/admin/users/tfg_upload_correction.php?id=<?= $doc['id'] ?>" 
                                            class="btn btn-warning btn-sm">
@@ -136,6 +138,7 @@ $usuario = $usuario_sesion ?? 'Estudiante';
 
                                 <div class="text-center mt-4">
                                     <a href="<?= $base_url ?>Panel_SubirTFG.php" class="btn btn-primary btn-lg me-2">Editar Propuesta TFG</a>
+                                    <a href="<?= $base_url ?>panel_solicitudProrroga.php" class="btn btn-warning btn-lg me-2">Solicitud de Prórroga</a>
                                     <a href="#" class="btn btn-secondary btn-lg">Ver Progreso</a>
                                 </div>
                             </div>

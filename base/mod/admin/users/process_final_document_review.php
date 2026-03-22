@@ -57,8 +57,14 @@ if (!in_array($new_status, $allowed_statuses)) {
 try {
     // Usar bdcommon.inc para la conexión para evitar conflicto de variables
     include __DIR__ . '/../../../inc/db/bdcommon.inc';
-    $conn = new mysqli($db_host, $usuario, $clave, $db);
-    if ($conn->connect_error) {
+    // Si se está ejecutando en un entorno de prueba, usar la conexión mockeada
+    if (isset($GLOBALS['__mysqli_mock'])) {
+        $conn = $GLOBALS['__mysqli_mock'];
+    // Si no, crear una nueva conexión y trabajar normalmente
+    } else {
+        $conn = new mysqli($db_host, $usuario, $clave, $db);
+    }
+    if (property_exists($conn, 'connect_error') && $conn->connect_error) {
         throw new Exception('Error de conexión a la base de datos: ' . $conn->connect_error);
     }
     $conn->set_charset("utf8");
@@ -86,10 +92,10 @@ try {
     $stmt_current->bind_param("i", $document_id);
     $stmt_current->execute();
     $result_current = $stmt_current->get_result();
-    if ($result_current->num_rows === 0) {
+    $current_doc = $result_current ? $result_current->fetch_assoc() : null;
+    if (!$current_doc) {
         throw new Exception("No se encontró el documento final original con ID " . $document_id);
     }
-    $current_doc = $result_current->fetch_assoc();
     $stmt_current->close();
 
     // 2. Determinar la nueva versión
@@ -139,6 +145,67 @@ try {
 
     // Si todo va bien, confirmar la transacción
     $conn->commit();
+    
+    // ===============================
+    // HU-037: REGISTRAR ALERTA INTERNA
+    // ===============================
+    try {
+        require_once __DIR__ . '/../../../inc/alert_functions.php';
+        $student_user_id = $current_doc['submitted_by'];
+        
+        // Obtener título de la propuesta
+        $sql_title = "SELECT title FROM tfg_proposals WHERE id = ?";
+        $stmt_title = $conn->prepare($sql_title);
+        $stmt_title->bind_param("i", $current_doc['proposal_id']);
+        $stmt_title->execute();
+        $title_result = $stmt_title->get_result()->fetch_assoc();
+        $proposal_title = $title_result['title'] ?? 'Tu TFG';
+        $stmt_title->close();
+
+        // Obtener todos los miembros activos del proyecto (lider y miembros)
+        $recipient_ids = [];
+        $recipient_ids[$student_user_id] = true;
+
+        $sql_project = "SELECT id FROM registered_projects WHERE tfg_proposal_id = ?";
+        $stmt_project = $conn->prepare($sql_project);
+        if ($stmt_project) {
+            $stmt_project->bind_param("i", $current_doc['proposal_id']);
+            $stmt_project->execute();
+            $project_result = $stmt_project->get_result()->fetch_assoc();
+            $project_id = $project_result['id'] ?? null;
+            $stmt_project->close();
+
+            if ($project_id) {
+                $sql_members = "SELECT user_id FROM project_members WHERE project_id = ? AND status = 'Activo'";
+                $stmt_members = $conn->prepare($sql_members);
+                if ($stmt_members) {
+                    $stmt_members->bind_param("i", $project_id);
+                    $stmt_members->execute();
+                    $members_result = $stmt_members->get_result();
+                    while ($members_result && ($member = $members_result->fetch_assoc())) {
+                        $recipient_ids[$member['user_id']] = true;
+                    }
+                    $stmt_members->close();
+                }
+            }
+        }
+
+        if ($db_status === 'Aprobado') {
+            // Documento aprobado para defensa
+            $subject = "¡Tu Documento Final ha sido Aprobado para Defensa!";
+            $message = "Tu documento final de TFG \"$proposal_title\" ha sido aprobado y está listo para la defensa.";
+            foreach (array_keys($recipient_ids) as $recipient_id) {
+                registerAlert($conn, $recipient_id, $subject, $message, 'Documento Final', 'Alta', 'document', $document_id);
+            }
+        } else {
+            // Correcciones requeridas
+            foreach (array_keys($recipient_ids) as $recipient_id) {
+                registerCorrectionRequestedAlert($conn, $recipient_id, $proposal_title, $document_id, $comments);
+            }
+        }
+    } catch (Exception $alertEx) {
+        error_log("HU-037: Error registrando alerta (no crítico): " . $alertEx->getMessage());
+    }
     
     // ===============================
     // ENVIAR CORREO AL ESTUDIANTE (HU-020)
@@ -306,21 +373,18 @@ try {
         }
     }
     
-    // HU-027: Si fue RECHAZADO, archivar como "Cancelado" y eliminar registro para desbloquear nueva subida
+    // HU-027: Si fue RECHAZADO, archivar como "Cancelado" 
+    // Nota: No eliminamos el registro físicamente para preservar auditoría y evitar conflictos de FK
     if ($db_status === 'Rechazado') {
         // Archivar el documento final rechazado
         $doc_archive_result = archiveFinalDocument($conn, $document_id, $current_doc['proposal_id'], $reviewer_id);
         
         if ($doc_archive_result['success']) {
-            // Eliminar el registro de tfg_final_documents para que el estudiante pueda subir otro
-            $stmt_delete = $conn->prepare("DELETE FROM tfg_final_documents WHERE id = ?");
-            $stmt_delete->bind_param("i", $document_id);
-            $stmt_delete->execute();
-            $stmt_delete->close();
-            
+            // El registro de tfg_final_documents se mantiene con status='Rechazado' para auditoría
+            // El estudiante puede subir un nuevo documento que creará un nuevo registro en tfg_final_documents
             $archived = true;
             $archive_message = 'Documento archivado. El estudiante puede subir un nuevo documento final.';
-            error_log("HU-027: Documento final $document_id rechazado y archivado. Estudiante desbloqueado para nueva subida.");
+            error_log("HU-027: Documento final $document_id rechazado y archivado. Estudiante puede subir nueva versión.");
         } else {
             error_log("HU-027 Warning: No se pudo archivar documento final rechazado {$document_id}: " . $doc_archive_result['message']);
         }

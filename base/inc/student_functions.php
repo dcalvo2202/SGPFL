@@ -170,4 +170,247 @@ function renderStudentsOptions($students, $selected_id = '') {
     
     return $html;
 }
+
+/**
+ * Obtiene todos los compañeros de grupo de un estudiante
+ * Busca en la tabla project_members para encontrar otros estudiantes
+ * que pertenezcan al mismo proyecto/grupo TFG
+ * 
+ * @param mysqli $conn Conexión a la base de datos
+ * @param string $student_id ID del estudiante principal
+ * @return array Lista de estudiantes del grupo (incluyendo al principal)
+ *               Cada elemento tiene: id, nombre, email, role, project_id, is_primary
+ */
+function getGroupMembersByStudentId($conn, $student_id) {
+    $student_id = $conn->real_escape_string($student_id);
+    
+    // Buscar el proyecto donde participa el estudiante
+    $sql_project = "SELECT DISTINCT pm.project_id 
+                    FROM project_members pm 
+                    WHERE pm.user_id = '$student_id' 
+                    AND pm.status = 'Activo'";
+    
+    $result_project = $conn->query($sql_project);
+    
+    if (!$result_project || $result_project->num_rows === 0) {
+        // El estudiante no tiene proyecto, retornar solo al estudiante principal
+        $sql_single = "SELECT u.id, u.nombre, u.email, 'N/A' as role, NULL as project_id, 1 as is_primary
+                       FROM sis_user u 
+                       WHERE u.id = '$student_id'";
+        $result_single = $conn->query($sql_single);
+        
+        if ($result_single && $result_single->num_rows > 0) {
+            return [$result_single->fetch_assoc()];
+        }
+        return [];
+    }
+    
+    // Obtener todos los project_ids donde participa
+    $project_ids = [];
+    while ($row = $result_project->fetch_assoc()) {
+        $project_ids[] = (int)$row['project_id'];
+    }
+    
+    $project_ids_str = implode(',', $project_ids);
+    
+    // Buscar todos los miembros de esos proyectos
+    $sql_members = "SELECT u.id, u.nombre, u.email, pm.role, pm.project_id,
+                           CASE WHEN u.id = '$student_id' THEN 1 ELSE 0 END as is_primary
+                    FROM project_members pm
+                    INNER JOIN sis_user u ON pm.user_id = u.id
+                    WHERE pm.project_id IN ($project_ids_str)
+                    AND pm.status = 'Activo'
+                    ORDER BY is_primary DESC, pm.role DESC, u.nombre ASC";
+    
+    $result_members = $conn->query($sql_members);
+    
+    $members = [];
+    if ($result_members) {
+        while ($row = $result_members->fetch_assoc()) {
+            $members[] = $row;
+        }
+    }
+    
+    // Si no se encontraron miembros, retornar al menos al estudiante principal
+    if (empty($members)) {
+        $sql_single = "SELECT u.id, u.nombre, u.email, 'N/A' as role, NULL as project_id, 1 as is_primary
+                       FROM sis_user u 
+                       WHERE u.id = '$student_id'";
+        $result_single = $conn->query($sql_single);
+        
+        if ($result_single && $result_single->num_rows > 0) {
+            return [$result_single->fetch_assoc()];
+        }
+    }
+    
+    return $members;
+}
+
+/**
+ * Vincula un asesor externo con todos los estudiantes de un grupo
+ * Inserta registros en la tabla external_advisor_linked_students
+ * 
+ * @param mysqli $conn Conexión a la base de datos
+ * @param int $advisor_request_id ID de la solicitud del asesor externo
+ * @param string $primary_student_id ID del estudiante principal (seleccionado en registro)
+ * @return array Resultado con success, message, linked_count
+ */
+function linkAdvisorToGroupMembers($conn, $advisor_request_id, $primary_student_id) {
+    $advisor_request_id = (int)$advisor_request_id;
+    $primary_student_id = $conn->real_escape_string($primary_student_id);
+    
+    // Obtener todos los miembros del grupo
+    $group_members = getGroupMembersByStudentId($conn, $primary_student_id);
+    
+    if (empty($group_members)) {
+        return [
+            'success' => false,
+            'message' => 'No se encontraron estudiantes para vincular',
+            'linked_count' => 0
+        ];
+    }
+    
+    $linked_count = 0;
+    $errors = [];
+    
+    // Verificar si la tabla existe
+    $table_check = $conn->query("SHOW TABLES LIKE 'external_advisor_linked_students'");
+    if (!$table_check || $table_check->num_rows === 0) {
+        // La tabla no existe, crearla
+        $create_table_sql = "
+        CREATE TABLE IF NOT EXISTS `external_advisor_linked_students` (
+            `id` int(11) NOT NULL AUTO_INCREMENT,
+            `advisor_request_id` int(11) DEFAULT NULL,
+            `internal_advisor_id` varchar(50) DEFAULT NULL,
+            `student_id` varchar(50) NOT NULL,
+            `is_primary` tinyint(1) DEFAULT 0,
+            `project_id` int(11) DEFAULT NULL,
+            `linked_at` datetime DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (`id`),
+            UNIQUE KEY `unique_advisor_student` (`advisor_request_id`, `student_id`),
+            UNIQUE KEY `unique_internal_advisor_student` (`internal_advisor_id`, `student_id`),
+            KEY `idx_advisor_request` (`advisor_request_id`),
+            KEY `idx_internal_advisor` (`internal_advisor_id`),
+            KEY `idx_student` (`student_id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci";
+        
+        if (!$conn->query($create_table_sql)) {
+            return [
+                'success' => false,
+                'message' => 'Error al crear la tabla de vinculación: ' . $conn->error,
+                'linked_count' => 0
+            ];
+        }
+    }
+    
+    // Preparar la consulta de inserción
+    $stmt = $conn->prepare("INSERT INTO external_advisor_linked_students 
+                            (advisor_request_id, student_id, is_primary, project_id, linked_at)
+                            VALUES (?, ?, ?, ?, NOW())
+                            ON DUPLICATE KEY UPDATE linked_at = NOW()");
+    
+    if (!$stmt) {
+        return [
+            'success' => false,
+            'message' => 'Error al preparar consulta de vinculación: ' . $conn->error,
+            'linked_count' => 0
+        ];
+    }
+    
+    foreach ($group_members as $member) {
+        $is_primary = ($member['id'] === $primary_student_id) ? 1 : 0;
+        $project_id = !empty($member['project_id']) ? (int)$member['project_id'] : null;
+        
+        $stmt->bind_param('isii', $advisor_request_id, $member['id'], $is_primary, $project_id);
+        
+        if ($stmt->execute()) {
+            $linked_count++;
+            error_log("VINCULACIÓN: Asesor $advisor_request_id vinculado a estudiante {$member['id']} (primary: $is_primary)");
+        } else {
+            $errors[] = "Error vinculando estudiante {$member['id']}: " . $stmt->error;
+        }
+    }
+    
+    $stmt->close();
+    
+    return [
+        'success' => $linked_count > 0,
+        'message' => $linked_count > 0 
+            ? "Se vinculó al asesor con $linked_count estudiante(s) del grupo" 
+            : "No se pudo vincular al asesor con ningún estudiante",
+        'linked_count' => $linked_count,
+        'group_members' => $group_members,
+        'errors' => $errors
+    ];
+}
+
+/**
+ * Obtiene todos los estudiantes vinculados a un asesor externo
+ * 
+ * @param mysqli $conn Conexión a la base de datos
+ * @param int $advisor_request_id ID de la solicitud del asesor externo
+ * @return array Lista de estudiantes vinculados
+ */
+function getLinkedStudentsByAdvisor($conn, $advisor_request_id) {
+    $advisor_request_id = (int)$advisor_request_id;
+    
+    // Verificar si la tabla existe
+    $table_check = $conn->query("SHOW TABLES LIKE 'external_advisor_linked_students'");
+    if (!$table_check || $table_check->num_rows === 0) {
+        // La tabla no existe, usar el campo linked_student_id de la tabla original
+        $sql = "SELECT u.id, u.nombre, u.email, 1 as is_primary, NULL as project_id
+                FROM external_advisor_profile_requests ear
+                INNER JOIN sis_user u ON ear.linked_student_id = u.id
+                WHERE ear.id = $advisor_request_id";
+        
+        $result = $conn->query($sql);
+        if ($result && $result->num_rows > 0) {
+            return [$result->fetch_assoc()];
+        }
+        return [];
+    }
+    
+    $sql = "SELECT u.id, u.nombre, u.email, eals.is_primary, eals.project_id
+            FROM external_advisor_linked_students eals
+            INNER JOIN sis_user u ON eals.student_id = u.id
+            WHERE eals.advisor_request_id = $advisor_request_id
+            ORDER BY eals.is_primary DESC, u.nombre ASC";
+    
+    $result = $conn->query($sql);
+    
+    $students = [];
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $students[] = $row;
+        }
+    }
+    
+    return $students;
+}
+
+/**
+ * Obtiene todos los estudiantes vinculados a un asesor externo por su ID de usuario
+ * (Útil cuando el asesor ya tiene cuenta en el sistema)
+ * 
+ * @param mysqli $conn Conexión a la base de datos
+ * @param string $advisor_user_id ID de usuario del asesor (cédula)
+ * @return array Lista de estudiantes vinculados
+ */
+function getLinkedStudentsByAdvisorUserId($conn, $advisor_user_id) {
+    $advisor_user_id = $conn->real_escape_string($advisor_user_id);
+    
+    // Primero obtener el ID de la solicitud del asesor
+    $sql_request = "SELECT id FROM external_advisor_profile_requests 
+                    WHERE applicant_id = '$advisor_user_id' AND status = 'Aprobado'";
+    
+    $result_request = $conn->query($sql_request);
+    
+    if (!$result_request || $result_request->num_rows === 0) {
+        return [];
+    }
+    
+    $advisor_request_id = (int)$result_request->fetch_assoc()['id'];
+    
+    return getLinkedStudentsByAdvisor($conn, $advisor_request_id);
+}
 ?>

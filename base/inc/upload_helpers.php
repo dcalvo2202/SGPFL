@@ -116,8 +116,20 @@ function validateMinFileSize($file_size, $min_size_kb = 100, $file_name = '') {
  */
 function generateUniqueFilename($user_id, $original_name, $index = 0) {
     $extension = pathinfo($original_name, PATHINFO_EXTENSION);
-    $suffix = $index > 0 ? '_' . $index : '';
-    return $user_id . '_' . date('Y-m-d_H-i-s') . '_' . uniqid() . $suffix . '.' . $extension;
+    $basename = pathinfo($original_name, PATHINFO_FILENAME);
+    
+    // Limpiar el nombre base: eliminar caracteres especiales y espacios, mantener guiones/underscores
+    $clean_basename = preg_replace('/[^a-zA-Z0-9_-]/', '_', $basename);
+    // Limitar longitud del nombre base para evitar nombres excesivamente largos
+    $clean_basename = substr($clean_basename, 0, 50);
+    
+    // Generar identificador único corto (primeros 8 caracteres de uniqid)
+    $unique_id = substr(uniqid(), -8);
+    
+    // Formato: NombreOriginal_UserID_FechaCorta_ID.ext
+    // Ejemplo: Mi-Propuesta-TFG_205550555_20260301_a7b2e4c0.pdf
+    $suffix = $index > 0 ? '_v' . $index : '';
+    return $clean_basename . '_' . $user_id . '_' . date('Ymd') . '_' . $unique_id . $suffix . '.' . $extension;
 }
 
 /**
@@ -252,11 +264,16 @@ function processMultipleFiles($files, $validator) {
  * @param array $files Array de archivos a insertar (sin el primero)
  * @param string $user_id ID del usuario
  * @param string $document_type Tipo de documento
+ * @param int|null $parent_id ID del padre (proposal_id o final_document_id)
+ * @param string $parent_type Tipo de padre: 'proposal' o 'final_document'
+ * @param float $version Número de versión del lote (todos los archivos del mismo envío comparten versión)
  * @return int Número de archivos guardados exitosamente
  */
-function saveAdditionalFiles($conn, $files, $user_id, $document_type = 'Anexo') {
+function saveAdditionalFiles($conn, $files, $user_id, $document_type = 'Anexo', $parent_id = null, $parent_type = 'proposal', $version = 1) {
     $saved_count = 0;
     
+    $col_parent = ($parent_type === 'final_document') ? 'final_document_id' : 'proposal_id';
+
     for ($i = 1; $i < count($files); $i++) {
         $file = $files[$i];
         
@@ -275,22 +292,22 @@ function saveAdditionalFiles($conn, $files, $user_id, $document_type = 'Anexo') 
             }
         }
         
-        $sql = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by, version, document_type) 
-                VALUES (?, ?, ?, ?, NULL, ?, 1, ?)";
+        $sql = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by, version, document_type, $col_parent) 
+                VALUES (?, ?, ?, ?, NULL, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         
         if ($stmt) {
             $null_blob = null;
             $file_name = isset($file['unique_name']) ? $file['unique_name'] : $file['name'];
-            // bind_param types: s = string, i = integer, b = blob
-            // "ssibss" => file_name (s), mime_type (s), file_size (i), file_data (b), uploaded_by (s), document_type (s)
-            $stmt->bind_param("ssibss", 
+            $stmt->bind_param("ssibsdsi", 
                 $file_name, 
                 $file['type'], 
                 $file['size'], 
                 $null_blob,
                 $user_id,
-                $document_type
+                $version,
+                $document_type,
+                $parent_id
             );
             
             if (!empty($file_content)) {

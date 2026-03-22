@@ -174,3 +174,155 @@
         word-break: break-word;
     }
 }
+
+/* ===== Sección Búsqueda de Estudiante ===== */
+.search-student-container .input-group {
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+}
+
+.search-student-container .form-control-tfg {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.search-student-container .btn {
+    flex-shrink: 0;
+    padding: 10px 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.search-results-container {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    background: #fff;
+    margin-top: 12px;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e9ecef;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background: #f1f8ff;
+}
+
+.search-result-item .student-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.search-result-item .student-name {
+    font-weight: 600;
+    font-size: 1.35rem;
+    color: #2c3e50;
+}
+
+.search-result-item .student-email {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+.search-result-item .btn-select {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.search-result-item .btn-select:hover {
+    background: #1e7e34;
+}
+
+.no-results-message {
+    padding: 16px;
+    text-align: center;
+    color: #6c757d;
+    font-size: 1.3rem;
+}
+
+.selected-student-container {
+    margin-top: 16px;
+}
+
+.selected-student-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border: 2px solid #4caf50;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.selected-student-card .student-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.selected-student-card .student-info span:first-child {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #2e7d32;
+}
+
+.selected-student-card .student-info small {
+    font-size: 1.2rem;
+    color: #388e3c;
+}
+
+.selected-student-card .btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+    font-size: 1.2rem;
+    padding: 6px 12px;
+}
+
+.selected-student-card .btn-outline-danger:hover {
+    background: #dc3545;
+    color: #fff;
+}
+
+@media (max-width: 576px) {
+    .search-student-container .input-group {
+        flex-direction: column;
+    }
+
+    .search-student-container .btn {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .selected-student-card {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .selected-student-card .btn-outline-danger {
+        width: 100%;
+    }
+}

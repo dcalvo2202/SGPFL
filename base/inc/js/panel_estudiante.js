@@ -141,7 +141,7 @@ class PanelEstudiantil {
             let tooltipText = '';
             
             switch(statusText) {
-                case 'Pendiente de Revisión':
+                case 'Pendiente de Revision':
                     tooltipText = 'Su propuesta está siendo evaluada por el comité académico';
                     break;
                 case 'Aprobado':

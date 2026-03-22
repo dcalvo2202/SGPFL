@@ -130,16 +130,61 @@ function formatFileSize($bytes) {
             color: #495057;
         }
         .archive-header {
-            background: linear-gradient(135deg, #495057 0%, #343a40 100%);
+            background: linear-gradient(135deg, #1a3a5c 0%, #2f587e 100%);
             color: white;
             padding: 2rem;
             border-radius: 8px 8px 0 0;
         }
+        .archive-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.9rem;
+        }
+        .archive-header-main {
+            min-width: 0;
+            flex: 1 1 auto;
+        }
+        .archive-header h3 {
+            color: #f8fbff;
+            margin-bottom: 0.5rem;
+        }
+        .archive-header p {
+            color: rgba(248, 251, 255, 0.9);
+        }
         .badge-concluido { background-color: #198754; }
-        .badge-cancelado { background-color: #dc3545; }
+        .badge-cancelado { background-color: #b26a00; }
+        .archive-status-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.45rem 0.8rem;
+            min-height: 2rem;
+            line-height: 1.1;
+            white-space: nowrap;
+            border-radius: 999px;
+            color: #fff;
+            font-weight: 600;
+            flex: 0 0 auto;
+        }
         .section-card {
-            border-left: 4px solid #6c757d;
+            border-left: 4px solid #2f587e;
             margin-bottom: 1.5rem;
+        }
+        .archive-section-header {
+            background: linear-gradient(180deg, #f5f8fc 0%, #ecf2f8 100%);
+            color: #1f3b56;
+            border-bottom: 1px solid #dbe5ef;
+            font-weight: 600;
+        }
+        .document-box {
+            border: 1px solid #dbe5ef;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            background: #f9fbfe;
+        }
+        .document-icon {
+            color: #2f587e;
         }
     </style>
 </head>
@@ -159,15 +204,15 @@ function formatFileSize($bytes) {
         <div class="card shadow">
             <!-- Cabecera -->
             <div class="archive-header">
-                <div class="d-flex justify-content-between align-items-start">
-                    <div>
+                <div class="archive-header-top">
+                    <div class="archive-header-main">
                         <h3 class="mb-2"><?php echo htmlspecialchars($proposal['title']); ?></h3>
                         <p class="mb-0 opacity-75">
                             <i class="bi bi-archive-fill me-2"></i>
                             Archivado el <?php echo date('d/m/Y \a \l\a\s H:i', strtotime($proposal['archived_at'])); ?>
                         </p>
                     </div>
-                    <span class="badge fs-6 <?php echo $proposal['archive_reason'] === 'Concluido' ? 'badge-concluido' : 'badge-cancelado'; ?>">
+                    <span class="badge archive-status-badge <?php echo $proposal['archive_reason'] === 'Concluido' ? 'badge-concluido' : 'badge-cancelado'; ?>">
                         <?php echo htmlspecialchars($proposal['archive_reason']); ?>
                     </span>
                 </div>
@@ -176,7 +221,7 @@ function formatFileSize($bytes) {
             <div class="card-body">
                 <!-- Información del Estudiante -->
                 <div class="card section-card mb-4">
-                    <div class="card-header bg-light">
+                    <div class="card-header archive-section-header">
                         <i class="bi bi-person-fill me-2"></i>Información del Estudiante
                     </div>
                     <div class="card-body">
@@ -199,7 +244,7 @@ function formatFileSize($bytes) {
                 
                 <!-- Información de la Propuesta -->
                 <div class="card section-card mb-4">
-                    <div class="card-header bg-light">
+                    <div class="card-header archive-section-header">
                         <i class="bi bi-file-text-fill me-2"></i>Propuesta TFG
                     </div>
                     <div class="card-body">
@@ -240,10 +285,10 @@ function formatFileSize($bytes) {
                         
                         <!-- Documento principal -->
                         <?php if ($proposal['file_size'] > 0): ?>
-                        <div class="border rounded p-3 bg-light">
+                        <div class="document-box">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
-                                    <i class="bi bi-file-pdf-fill text-danger fs-4 me-2"></i>
+                                    <i class="bi bi-file-pdf-fill document-icon fs-4 me-2"></i>
                                     <span class="fw-semibold"><?php echo htmlspecialchars($proposal['file_name']); ?></span>
                                     <br>
                                     <small class="text-muted">
@@ -267,7 +312,7 @@ function formatFileSize($bytes) {
                 <!-- Proyecto Registrado -->
                 <?php if ($project): ?>
                 <div class="card section-card mb-4">
-                    <div class="card-header bg-light">
+                    <div class="card-header archive-section-header">
                         <i class="bi bi-kanban-fill me-2"></i>Proyecto Registrado
                     </div>
                     <div class="card-body">
@@ -306,7 +351,7 @@ function formatFileSize($bytes) {
                 <!-- Miembros del Proyecto -->
                 <?php if (!empty($members)): ?>
                 <div class="card section-card mb-4">
-                    <div class="card-header bg-light">
+                    <div class="card-header archive-section-header">
                         <i class="bi bi-people-fill me-2"></i>Miembros del Proyecto
                     </div>
                     <div class="card-body">
@@ -341,7 +386,7 @@ function formatFileSize($bytes) {
                 <!-- Archivos Adicionales -->
                 <?php if (!empty($additional_files)): ?>
                 <div class="card section-card mb-4">
-                    <div class="card-header bg-light">
+                    <div class="card-header archive-section-header">
                         <i class="bi bi-folder-fill me-2"></i>Documentos Adicionales
                     </div>
                     <div class="card-body">
