@@ -231,6 +231,42 @@ CSS;
             <?php echo nl2br(htmlspecialchars($solicitud['reason'])); ?>
           </div>
           
+          <!-- Documento oficial de la solicitud -->
+          <?php 
+          $documentos = [];
+          if (!empty($solicitud['documento_path'])) {
+              $documentos = json_decode($solicitud['documento_path'], true);
+              if (!is_array($documentos)) {
+                  $documentos = [];
+              }
+          }
+          ?>
+          <?php if (!empty($documentos)): ?>
+          <div class="info-label mt-4"><i class="fa fa-file-pdf-o"></i> Documento oficial de la solicitud</div>
+          <div class="motivo-box" style="border-left-color: #CD1719;">
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <?php foreach ($documentos as $index => $doc_path): ?>
+                <?php 
+                  $nombre_archivo = basename($doc_path);
+                  $ruta_completa = __DIR__ . '/' . $doc_path;
+                ?>
+                <a href="<?php echo htmlspecialchars($doc_path); ?>" 
+                   target="_blank" 
+                   class="btn btn-sm" 
+                   style="background: linear-gradient(135deg, #CD1719 0%, #8B0000 100%); color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                  <i class="fa fa-download"></i>
+                  <?php echo htmlspecialchars($nombre_archivo); ?>
+                </a>
+              <?php endforeach; ?>
+            </div>
+          </div>
+          <?php else: ?>
+          <div class="info-label mt-4"><i class="fa fa-file-pdf-o"></i> Documento oficial de la solicitud</div>
+          <div class="motivo-box" style="border-left-color: #6c757d;">
+            <span class="text-muted"><i class="fa fa-info-circle"></i> No se adjuntó ningún documento a esta solicitud.</span>
+          </div>
+          <?php endif; ?>
+          
           <?php if ($solicitud['status'] === 'pendiente'): ?>
           <!-- Formulario de respuesta -->
           <hr style="margin: 30px 0;">

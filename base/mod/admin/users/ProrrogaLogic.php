@@ -19,9 +19,10 @@ class ProrrogaLogic {
      * @param string $user_id ID del usuario
      * @param int $extension_number Número de prórroga (1 o 2)
      * @param string $reason Motivo de la solicitud
+     * @param array $archivos Archivos subidos ($_FILES['documento_prorroga'])
      * @return array ['success' => bool, 'message' => string, 'id' => int|null]
      */
-    public function crearSolicitud($proposal_id, $user_id, $extension_number, $reason) {
+    public function crearSolicitud($proposal_id, $user_id, $extension_number, $reason, $archivos = []) {
         // Validar que no tenga más de 2 prórrogas aprobadas
         $aprobadas = $this->contarProrrogasAprobadas($proposal_id);
         if ($aprobadas >= 2) {
@@ -50,10 +51,20 @@ class ProrrogaLogic {
             ];
         }
 
+        // Procesar archivos si existen
+        $documento_path = null;
+        if (!empty($archivos) && isset($archivos['name']) && !empty($archivos['name'][0])) {
+            $resultado_archivos = $this->guardarArchivos($archivos, $proposal_id, $user_id);
+            if (!$resultado_archivos['success']) {
+                return $resultado_archivos;
+            }
+            $documento_path = json_encode($resultado_archivos['paths']);
+        }
+
         // Insertar solicitud
         $sql = "INSERT INTO tfg_extension_requests 
-                (proposal_id, user_id, extension_number, reason, status, request_date) 
-                VALUES (?, ?, ?, ?, 'pendiente', NOW())";
+                (proposal_id, user_id, extension_number, reason, status, request_date, documento_path) 
+                VALUES (?, ?, ?, ?, 'pendiente', NOW(), ?)";
         
         $stmt = $this->conn->prepare($sql);
         if (!$stmt) {
@@ -64,7 +75,7 @@ class ProrrogaLogic {
             ];
         }
 
-        $stmt->bind_param("isis", $proposal_id, $user_id, $extension_number, $reason);
+        $stmt->bind_param("isiss", $proposal_id, $user_id, $extension_number, $reason, $documento_path);
         
         if ($stmt->execute()) {
             $insert_id = $this->conn->insert_id;
@@ -83,6 +94,85 @@ class ProrrogaLogic {
                 'id' => null
             ];
         }
+    }
+
+    /**
+     * Guardar archivos de soporte de prórroga
+     * @param array $archivos $_FILES array
+     * @param int $proposal_id
+     * @param string $user_id
+     * @return array ['success' => bool, 'message' => string, 'paths' => array]
+     */
+    private function guardarArchivos($archivos, $proposal_id, $user_id) {
+        $base_path = realpath(__DIR__ . '/../../../');
+        $upload_dir = $base_path . '/uploads/prorrogas/' . $proposal_id . '/';
+        
+        // Crear directorio si no existe
+        if (!is_dir($upload_dir)) {
+            if (!mkdir($upload_dir, 0755, true)) {
+                return [
+                    'success' => false,
+                    'message' => 'Error al crear el directorio de uploads.',
+                    'paths' => []
+                ];
+            }
+        }
+
+        $paths = [];
+        $total_files = count($archivos['name']);
+        
+        for ($i = 0; $i < $total_files; $i++) {
+            if ($archivos['error'][$i] !== UPLOAD_ERR_OK) {
+                continue; // Saltar archivos con error
+            }
+
+            $nombre_original = $archivos['name'][$i];
+            $tmp_name = $archivos['tmp_name'][$i];
+            $size = $archivos['size'][$i];
+            $type = $archivos['type'][$i];
+
+            // Validar tipo de archivo (solo PDF)
+            if ($type !== 'application/pdf') {
+                return [
+                    'success' => false,
+                    'message' => 'Solo se permiten archivos PDF. El archivo "' . $nombre_original . '" no es válido.',
+                    'paths' => []
+                ];
+            }
+
+            // Validar tamaño (20MB máximo)
+            if ($size > 20 * 1024 * 1024) {
+                return [
+                    'success' => false,
+                    'message' => 'El archivo "' . $nombre_original . '" excede el tamaño máximo de 20 MB.',
+                    'paths' => []
+                ];
+            }
+
+            // Generar nombre único
+            $extension = pathinfo($nombre_original, PATHINFO_EXTENSION);
+            $nombre_seguro = preg_replace('/[^a-zA-Z0-9_-]/', '_', pathinfo($nombre_original, PATHINFO_FILENAME));
+            $nombre_final = $nombre_seguro . '_' . date('Ymd_His') . '_' . uniqid() . '.' . $extension;
+            $ruta_destino = $upload_dir . $nombre_final;
+
+            // Mover archivo
+            if (move_uploaded_file($tmp_name, $ruta_destino)) {
+                // Guardar ruta relativa
+                $paths[] = 'uploads/prorrogas/' . $proposal_id . '/' . $nombre_final;
+            } else {
+                return [
+                    'success' => false,
+                    'message' => 'Error al guardar el archivo "' . $nombre_original . '".',
+                    'paths' => []
+                ];
+            }
+        }
+
+        return [
+            'success' => true,
+            'message' => 'Archivos guardados correctamente.',
+            'paths' => $paths
+        ];
     }
 
     /**
