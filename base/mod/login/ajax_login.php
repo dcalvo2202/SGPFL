@@ -28,6 +28,9 @@ try {
 }
 include(dirname(__FILE__) . "/../../config.inc");
 
+define('LOGIN_FAILED_ATTEMPT_WINDOW_MINUTES', 15);
+define('LOGIN_FAILED_ATTEMPT_THRESHOLD', 5);
+
 // =============================
 // FUNCIONES AUXILIARES
 // =============================
@@ -67,8 +70,89 @@ function verificarEstudiante($user){
         }
 }
 
+function getClientIpAddress() {
+    $keys = [
+        'HTTP_CLIENT_IP',
+        'HTTP_X_FORWARDED_FOR',
+        'HTTP_X_FORWARDED',
+        'HTTP_X_CLUSTER_CLIENT_IP',
+        'HTTP_FORWARDED_FOR',
+        'HTTP_FORWARDED',
+        'REMOTE_ADDR'
+    ];
+
+    foreach ($keys as $key) {
+        if (!empty($_SERVER[$key])) {
+            $ipList = explode(',', $_SERVER[$key]);
+            $ip = trim($ipList[0]);
+            if ($ip !== '') {
+                return substr($ip, 0, 45);
+            }
+        }
+    }
+
+    return '';
+}
+
+function getClientDeviceInfo() {
+    $ua = isset($_SERVER['HTTP_USER_AGENT']) ? trim($_SERVER['HTTP_USER_AGENT']) : '';
+    return substr($ua, 0, 255);
+}
+
+function registrarAuditoriaAcceso($user, $actionType, $actionResult, $ipAddress, $deviceInfo, $detail) {
+    $sql = "INSERT INTO sis_log (id_user, date_bi, action_type, action_result, ip_address, device_info, detail)
+            VALUES (?, NOW(), ?, ?, ?, ?, ?)";
+
+    return ejecutar_query($sql, [
+        $user,
+        $actionType,
+        $actionResult,
+        $ipAddress,
+        $deviceInfo,
+        $detail
+    ]);
+}
+
+function getFailedAttemptsCount($user, $ipAddress, $windowMinutes = LOGIN_FAILED_ATTEMPT_WINDOW_MINUTES) {
+    $cutoff = date('Y-m-d H:i:s', time() - ($windowMinutes * 60));
+    $sql = "SELECT COUNT(*) AS total
+            FROM sis_log
+            WHERE action_type = 'LOGIN'
+              AND action_result = 'FAIL'
+              AND date_bi >= ?
+              AND (
+                    (id_user = ?)
+                    OR (ip_address = ?)
+              )";
+
+    $rows = seleccion_segura($sql, [$cutoff, $user, $ipAddress]);
+    if (!$rows || !isset($rows[0]['total'])) {
+        return 0;
+    }
+
+    return (int)$rows[0]['total'];
+}
+
+function registrarAlertaIntentosFallidos($user, $ipAddress, $deviceInfo, $failedAttempts) {
+    $detail = "Alerta de seguridad: multiples intentos fallidos de acceso detectados. " .
+              "Usuario: {$user}. IP: {$ipAddress}. Intentos en ventana de " .
+              LOGIN_FAILED_ATTEMPT_WINDOW_MINUTES . " minutos: {$failedAttempts}.";
+
+    registrarAuditoriaAcceso($user, 'SECURITY_ALERT', 'ALERT', $ipAddress, $deviceInfo, $detail);
+}
+
+function shouldRaiseFailedLoginAlert($user, $ipAddress, $deviceInfo) {
+    $failedAttempts = getFailedAttemptsCount($user, $ipAddress, LOGIN_FAILED_ATTEMPT_WINDOW_MINUTES);
+    if ($failedAttempts >= LOGIN_FAILED_ATTEMPT_THRESHOLD) {
+        registrarAlertaIntentosFallidos($user, $ipAddress, $deviceInfo, $failedAttempts);
+        return true;
+    }
+
+    return false;
+}
+
 // Función para crear sesión y guardar variables luego de login exitoso
-function finalizarLoginExitoso($mySessionController, $user, $id_roll, $nombre_final, $cds_domain, $cds_locate, $page_cant, $page_title, $footer_title, $vocab) {
+function finalizarLoginExitoso($mySessionController, $user, $id_roll, $nombre_final, $cds_domain, $cds_locate, $page_cant, $page_title, $footer_title, $vocab, $authMethod, $ipAddress, $deviceInfo) {
     $mySessionController->save("usuario", $user);
     $mySessionController->save("nombre", $nombre_final);
     $mySessionController->save("rol", $id_roll);
@@ -81,6 +165,9 @@ function finalizarLoginExitoso($mySessionController, $user, $id_roll, $nombre_fi
 
     // IMPORTANTE: Asegurar que el nuevo ID de sesión se envíe al cliente
     session_write_close(); // Fuerza escritura de sesión en BD
+
+    $detail = "Inicio de sesion exitoso por {$authMethod}. Rol interno: {$id_roll}.";
+    registrarAuditoriaAcceso($user, 'LOGIN', 'SUCCESS', $ipAddress, $deviceInfo, $detail);
 
     // === LÓGICA ESPECIAL PARA ESTUDIANTES LDAP (ROL 4) ===
     if ($id_roll == 4) {
@@ -146,6 +233,9 @@ if ($user === '' || $pass === '') {
 }
 $out = "";
 $user_name = "";
+$authMethod = 'LOCAL';
+$ipAddress = getClientIpAddress();
+$deviceInfo = getClientDeviceInfo();
 
 // =============================
 // VERIFICACIÓN DE SESIÓN ACTIVA
@@ -157,6 +247,7 @@ $usuario_sesion = $mySessionController->getVar('usuario');
 // Si hay sesión activa y el usuario es el mismo, retornar éxito sin reloguear
 if (!empty($usuario_sesion) && $usuario_sesion === $user) {
     // Ya hay sesión activa para este usuario, retornar éxito sin reloguear
+    registrarAuditoriaAcceso($user, 'LOGIN', 'SUCCESS', $ipAddress, $deviceInfo, 'Login reutilizado: sesion activa ya existente para el usuario.');
     echo 0;
     exit();
 }
@@ -243,7 +334,7 @@ if ($out == 0) {
     $nombre_final = $sqlout1[0]['nombre'];
 
     // Guardar los datos en sesión y retornar éxito
-    finalizarLoginExitoso($mySessionController, $user, $id_roll, $nombre_final, $cds_domain, $cds_locate, $page_cant, $page_title, $footer_title, $vocab);
+    finalizarLoginExitoso($mySessionController, $user, $id_roll, $nombre_final, $cds_domain, $cds_locate, $page_cant, $page_title, $footer_title, $vocab, 'LOCAL', $ipAddress, $deviceInfo);
 
 }
 
@@ -253,6 +344,7 @@ if ($out == 0) {
 
 // 2. Intentar autenticación por LDAP
 else if ($ldap_status == 1) {
+    $authMethod = 'LDAP';
 
     // --- Verificar disponibilidad del servidor LDAP con socket ---
     $ldap_server_str = is_array($ldap_server) ? $ldap_server[0] : $ldap_server;
@@ -415,12 +507,19 @@ if ($out == 0) {
     }
 
     // Guardar los datos en sesión y retornar éxito
-    finalizarLoginExitoso($mySessionController, $user, $id_roll, $nombre_final, $cds_domain, $cds_locate, $page_cant, $page_title, $footer_title, $vocab);
+    finalizarLoginExitoso($mySessionController, $user, $id_roll, $nombre_final, $cds_domain, $cds_locate, $page_cant, $page_title, $footer_title, $vocab, $authMethod, $ipAddress, $deviceInfo);
 }
 else{
+    $detail = "Fallo de inicio de sesion. Codigo de error: {$out}. Metodo intentado: {$authMethod}.";
+    registrarAuditoriaAcceso($user, 'LOGIN', 'FAIL', $ipAddress, $deviceInfo, $detail);
+
+    if (in_array((int)$out, [1, 2, 5], true) && shouldRaiseFailedLoginAlert($user, $ipAddress, $deviceInfo)) {
+        sendError(8); // Código: alerta por múltiples intentos fallidos
+    }
+
     // Si falla el login, enviar error
     sendError($out);
 }
 
-// echo $out; / 0 todo bien / 1 contraseña erronea / 2 usuario no existe /3 problema con LDAP /4 cuenta deshabilitada /5 no pertenece al grupo autorizado / 6 datos de entrada inválidos /7 error en base de datos
+// echo $out; / 0 todo bien / 1 contraseña erronea / 2 usuario no existe /3 problema con LDAP /4 cuenta deshabilitada /5 no pertenece al grupo autorizado / 6 datos de entrada inválidos /7 error en base de datos /8 alerta por intentos fallidos
 ?>

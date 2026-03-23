@@ -245,6 +245,15 @@ function Do_Login(){
                             customClass: { confirmButton: 'swal2-ok-btn-lg' }
                         });
                         page.innerHTML="";
+                    } else if(response === "8"){
+                        Swal.fire({
+                            icon: 'warning',
+                            title: '<span style="font-size:1.3em;">Alerta de seguridad</span>',
+                            html: '<span style="font-size:1.2em;">Se detectaron múltiples intentos fallidos de acceso.<br>Intente nuevamente más tarde o contacte al administrador.</span>',
+                            confirmButtonText: 'Aceptar',
+                            customClass: { confirmButton: 'swal2-ok-btn-lg' }
+                        });
+                        page.innerHTML="";
                     } else {
                         Swal.fire({
                             icon: 'error',

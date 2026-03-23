@@ -162,7 +162,7 @@ try {
     error_log("Tokens obsoletos limpiados para usuario: " . $user_id);
 
     // Log de la acción
-    $log_sql = "INSERT INTO sis_log (id_user, date_bi, detail) VALUES (?, NOW(), ?)";
+    $log_sql = "INSERT INTO sis_log (id_user, date_bi, action_type, action_result, detail) VALUES (?, NOW(), 'PASSWORD_RECOVERY', 'SUCCESS', ?)";
     $detail = "Cambio de contraseña - Recuperación por asesor externo";
 
     $log_result = ejecutar_query($log_sql, [$user_id, $detail]);
