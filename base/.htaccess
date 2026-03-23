@@ -7,3 +7,20 @@ php_value max_input_time 300
 php_value memory_limit 256M
 
 # Forzar HTTPS en todo el sitio.
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	# Redirigir tráfico HTTP a HTTPS en producción.
+	# Excepción para entorno local/desarrollo (sin certificado SSL).
+	# - localhost (con o sin puerto)
+	RewriteCond %{HTTP_HOST} !^localhost(:[0-9]+)?$ [NC]
+	# - 127.0.0.1 (con o sin puerto)
+	RewriteCond %{HTTP_HOST} !^127\.0\.0\.1(:[0-9]+)?$
+	# - ::1 / [::1] (loopback IPv6, con o sin puerto)
+	RewriteCond %{HTTP_HOST} !^(\[::1\]|::1)(:[0-9]+)?$
+	# Solo redirigir si realmente no viene ya por HTTPS
+	RewriteCond %{HTTPS} !=on
+	# Compatibilidad detrás de proxy/reverse proxy
+	RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+	RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>

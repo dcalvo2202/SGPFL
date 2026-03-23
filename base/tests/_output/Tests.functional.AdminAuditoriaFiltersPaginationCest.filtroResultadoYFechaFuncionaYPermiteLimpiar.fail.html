@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>SGPFL</title>
+    <!-- Logo de la escuela -->
+    <link rel="icon" type="image/webp" href="http://localhost//base/img/logo.webp">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <link href="http://localhost//base/inc/css/estilo.css" rel="stylesheet">
+    <link href="http://localhost//base/inc/css/panel_estudiante.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        </head><body class="fondo-una d-flex flex-column min-vh-100">
+
+    <!-- JQuery -->
+<script src="/base/lib/jquery-3.1.0.min.js" type="text/javascript"></script>
+<!-- SweetAlert2 -->
+<script src="/base/lib/sweetalert2/sweetalert2-v11-23-0.js" type="text/javascript"></script>
+<!-- JQuery Alerts-->
+<link href="/base/lib/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css"/>
+<script src="/base/lib/jquery-alerts/jquery.alerts.js" type="text/javascript"></script>
+
+<!-- JQuery DataTables-->
+<script src="/base/lib/DataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="/base/lib/DataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+<link href="/base/lib/DataTables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+<link href="/base/lib/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+<!-- Prototype EvalScript -->
+<script src="/base/inc/js/prototype.js" type="text/javascript"></script>
+
+<!-- Main  -->
+<script src="/base/inc/js/main.js" type="text/javascript"></script>
+<script src="/base/inc/js/validator.js" type="text/javascript"></script>
+
+<!-- Modulos -->
+<script src="/base/inc/js/login.js" type="text/javascript"></script>
+<script src="/base/inc/js/permit.js" type="text/javascript"></script>
+<script src="/base/inc/js/roll.js" type="text/javascript"></script>
+<script src="/base/inc/js/user.js" type="text/javascript"></script>
+
+<!-- Bootstrap + Font-Awesome + Estilo -->
+<link href="/base/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>  
+<link href="/base/lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<script src="/base/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/base/lib/bootstrap/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
+<link href="/base/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<script src="/base/lib/calendar/calendar.js" type="text/javascript"></script>
+<link href="/base/lib/calendar/calendar.css" rel="stylesheet" type="text/css"/>
+<link href="/base/inc/css/estilo.css" rel="stylesheet" type="text/css"/>
+<link href="/base/inc/css/panel_estudiante.css" rel="stylesheet" type="text/css"/>
+<link href="/base/inc/css/tfg_upload.css" rel="stylesheet" type="text/css"/>
+
+ <!-- =============================== HEADER =============================== -->
+    <style>
+        .notification-bell {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            margin-right: 0.5rem;
+        }
+        .notification-bell:hover {
+            background: rgba(255,255,255,0.25);
+            color: white;
+            transform: scale(1.05);
+        }
+        .notification-bell i {
+            font-size: 1.3rem;
+        }
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            min-width: 20px;
+            height: 20px;
+            padding: 0 5px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #fff;
+            background: #ffc107;
+            border: 2px solid #CD1719;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse-badge 2s infinite;
+        }
+        @keyframes pulse-badge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        .user-profile-link {
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.65rem 1.2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .user-profile-link:hover {
+            background: rgba(255,255,255,0.35);
+            border-color: rgba(255,255,255,0.6);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        .user-profile-link:active {
+            transform: translateY(0);
+        }
+        .user-profile-link i {
+            font-size: 1.4rem;
+            margin-right: 0.5rem;
+        }
+        .user-profile-link::after {
+            font-size: 1.1rem;
+            margin-left: 0.5rem;
+            opacity: 0.7;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .user-profile-link:hover::after {
+            opacity: 1;
+            transform: translateX(3px);
+        }
+        /* HU-029: Chat bell */
+        .chat-bell {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            margin-right: 0.5rem;
+        }
+        .chat-bell:hover {
+            background: rgba(255,255,255,0.25);
+            color: white;
+            transform: scale(1.05);
+        }
+        .chat-bell i {
+            font-size: 1.3rem;
+        }
+        .chat-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            min-width: 20px;
+            height: 20px;
+            padding: 0 5px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #fff;
+            background: #6f42c1;
+            border: 2px solid #CD1719;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse-badge 2s infinite;
+        }
+        .navbar-una {
+            position: sticky;
+            top: 0;
+            z-index: 1050;
+        }
+    </style>
+    <header class="navbar-una" style="background: linear-gradient(135deg, #CD1719, #A01215) !important; padding: 1.25rem 0;">
+        <div class="container-fluid px-4">
+            <div class="header-left d-flex align-items-center">
+                <img src="http://localhost//base/img/logo.webp" alt="Logo UNA" class="logo-una" style="height: 70px;">
+                <div class="header-text ms-3">
+                    <h5 class="mb-0 text-white fw-bold">Universidad Nacional de Costa Rica</h5>
+                    <small class="text-light opacity-85">Escuela de Informática</small>
+                </div>
+            </div>
+            <div class="header-right text-end">
+                <div class="user-info text-white mb-2">
+                    <a href="http://localhost//base/perfil.php" class="user-profile-link" title="Haz clic para ver tu perfil">
+                        <i class="bi bi-person-badge"></i>
+                        <span>OSCAR CHAVES BARRANTES</span>
+                    </a>
+                </div>
+                <div class="header-actions user-details">
+                    <small class="text-light opacity-75 me-2">ID: 205610158</small>
+                    
+                    <!-- HU-037: Campanita de notificaciones -->
+                    <a href="http://localhost//base/historial_alertas.php" class="notification-bell" title="Mis Notificaciones">
+                        <i class="bi bi-bell-fill"></i>
+                                                    <span class="notification-badge">4</span>
+                                            </a>
+                    
+                    <!-- HU-029: Chat de comunicación interna -->
+                    <a href="http://localhost//base/chat.php" class="chat-bell" title="Mensajes">
+                        <i class="bi bi-chat-dots-fill"></i>
+                                                    <span class="chat-badge" id="chatHeaderBadge" style="display:none;"></span>
+                                            </a>
+                    
+                    <a href="http://localhost//base/dashboard.php" class="btn btn-outline-light btn-sm ms-1" style="font-size: 1.05rem; padding: 0.55rem 1.1rem;">
+                        <i class="bi bi-house-fill"></i> Inicio
+                    </a>
+                    <a href="http://localhost//base/mod/login/logout.php" 
+                       class="btn btn-outline-light btn-sm ms-2" 
+                       style="font-size: 1.05rem; padding: 0.55rem 1.1rem;"
+                       onclick="return confirmarCierreSesion(event, 'http://localhost//base/')">
+                        <i class="bi bi-box-arrow-right"></i> Salir
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="flex-fill">
+        <div class="container my-4">
+            <div class="dashboard-header text-center mb-4">
+                <h1>Auditoría de Accesos</h1>
+                <p class="lead">Monitoreo de eventos de acceso y seguridad del sistema</p>
+            </div>
+
+            <div class="alert alert-info" role="alert">
+                Se muestran registros de acceso, intentos fallidos y alertas de seguridad. Usa filtros y paginación para navegar.
+            </div>
+
+            <div class="row g-3 mb-4">
+                <div class="col-md-3">
+                    <div class="card shadow-sm h-100 border-start border-4" style="border-color:#0d6efd !important;">
+                        <div class="card-body">
+                            <h6 class="text-muted mb-1">Total registros</h6>
+                            <h4 class="mb-0">6</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card shadow-sm h-100 border-start border-4" style="border-color:#198754 !important;">
+                        <div class="card-body">
+                            <h6 class="text-muted mb-1">Éxitos</h6>
+                            <h4 class="mb-0">0</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card shadow-sm h-100 border-start border-4" style="border-color:#dc3545 !important;">
+                        <div class="card-body">
+                            <h6 class="text-muted mb-1">Fallidos</h6>
+                            <h4 class="mb-0">0</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card shadow-sm h-100 border-start border-4" style="border-color:#ffc107 !important;">
+                        <div class="card-body">
+                            <h6 class="text-muted mb-1">Alertas</h6>
+                            <h4 class="mb-0">6</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                                                <div>
+                        <strong>Filtro por resultado:</strong>
+                        <a href="admin_auditoria.php?fecha_desde=2026-03-23&fecha_hasta=2026-03-23&resultado=TODOS&pagina=1" class="btn btn-sm btn-outline-primary ms-2">Todos</a>
+                        <a href="admin_auditoria.php?fecha_desde=2026-03-23&fecha_hasta=2026-03-23&resultado=SUCCESS&pagina=1" class="btn btn-sm btn-outline-success">Éxitos</a>
+                        <a href="admin_auditoria.php?fecha_desde=2026-03-23&fecha_hasta=2026-03-23&resultado=FAIL&pagina=1" class="btn btn-sm btn-outline-danger">Fallidos</a>
+                        <a href="admin_auditoria.php?fecha_desde=2026-03-23&fecha_hasta=2026-03-23&resultado=ALERT&pagina=1" class="btn btn-sm btn-warning text-dark">Alertas</a>
+                    </div>
+                    <div>
+                        <small class="text-muted">Mostrando 10 por página · Página 1 de 1</small>
+                    </div>
+                </div>
+
+                    <form method="get" class="row g-3 align-items-end">
+                        <input type="hidden" name="resultado" value="ALERT">
+                        <input type="hidden" name="pagina" value="1">
+                        <div class="col-md-4">
+                            <label class="form-label">Fecha desde</label>
+                            <input type="date" name="fecha_desde" class="form-control" value="2026-03-23">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Fecha hasta</label>
+                            <input type="date" name="fecha_hasta" class="form-control" value="2026-03-23">
+                        </div>
+                        <div class="col-md-4 text-end">
+                            <button type="submit" class="btn btn-primary" style="margin-right: 10px;">
+                                <i class="fa fa-filter"></i> Aplicar fechas
+                            </button>
+                            <a href="admin_auditoria.php" class="btn btn-secondary">Limpiar filtros</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-end align-items-center mb-3">
+                                <a class="btn btn-outline-secondary btn-sm disabled" href="admin_auditoria.php?fecha_desde=2026-03-23&fecha_hasta=2026-03-23&resultado=ALERT&pagina=1">Anterior</a>
+                <span class="mx-2">Página 1 de 1</span>
+                <a class="btn btn-outline-secondary btn-sm disabled" href="admin_auditoria.php?fecha_desde=2026-03-23&fecha_hasta=2026-03-23&resultado=ALERT&pagina=1">Siguiente</a>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="mb-3">Listado de eventos</h5>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Fecha/Hora</th>
+                                    <th>Usuario</th>
+                                    <th>Nombre</th>
+                                    <th>Acción</th>
+                                    <th>Resultado</th>
+                                    <th>IP</th>
+                                    <th>Dispositivo</th>
+                                    <th>Detalle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                                                                                                                                    <tr>
+                                            <td>2026-03-23 03:03:52</td>
+                                            <td>205610158</td>
+                                            <td>OSCAR CHAVES BARRANTES</td>
+                                            <td>ALERTA DE SEGURIDAD</td>
+                                            <td>
+                                                                                                    <span class="badge bg-warning text-dark">ALERTA</span>
+                                                                                            </td>
+                                            <td>127.0.0.1</td>
+                                            <td>Codeception-Functional</td>
+                                            <td>AUDIT_TEST_20260323100352_8045 #1</td>
+                                        </tr>
+                                                                                                                    <tr>
+                                            <td>2026-03-23 03:02:56</td>
+                                            <td>205610158</td>
+                                            <td>OSCAR CHAVES BARRANTES</td>
+                                            <td>ALERTA DE SEGURIDAD</td>
+                                            <td>
+                                                                                                    <span class="badge bg-warning text-dark">ALERTA</span>
+                                                                                            </td>
+                                            <td>::1</td>
+                                            <td>CodeceptionFunctionalTest/1.0</td>
+                                            <td>Alerta de seguridad: multiples intentos fallidos de acceso detectados. Usuario: 205610158. IP: ::1. Intentos en ventana de 15 minutos: 20.</td>
+                                        </tr>
+                                                                                                                    <tr>
+                                            <td>2026-03-23 03:00:55</td>
+                                            <td>205610158</td>
+                                            <td>OSCAR CHAVES BARRANTES</td>
+                                            <td>ALERTA DE SEGURIDAD</td>
+                                            <td>
+                                                                                                    <span class="badge bg-warning text-dark">ALERTA</span>
+                                                                                            </td>
+                                            <td>::1</td>
+                                            <td>CodeceptionFunctionalTest/1.0</td>
+                                            <td>Alerta de seguridad: multiples intentos fallidos de acceso detectados. Usuario: 205610158. IP: ::1. Intentos en ventana de 15 minutos: 15.</td>
+                                        </tr>
+                                                                                                                    <tr>
+                                            <td>2026-03-23 03:00:03</td>
+                                            <td>205610158</td>
+                                            <td>OSCAR CHAVES BARRANTES</td>
+                                            <td>ALERTA DE SEGURIDAD</td>
+                                            <td>
+                                                                                                    <span class="badge bg-warning text-dark">ALERTA</span>
+                                                                                            </td>
+                                            <td>::1</td>
+                                            <td></td>
+                                            <td>Alerta de seguridad: multiples intentos fallidos de acceso detectados. Usuario: 205610158. IP: ::1. Intentos en ventana de 15 minutos: 10.</td>
+                                        </tr>
+                                                                                                                    <tr>
+                                            <td>2026-03-23 03:00:02</td>
+                                            <td>205610158</td>
+                                            <td>OSCAR CHAVES BARRANTES</td>
+                                            <td>ALERTA DE SEGURIDAD</td>
+                                            <td>
+                                                                                                    <span class="badge bg-warning text-dark">ALERTA</span>
+                                                                                            </td>
+                                            <td>::1</td>
+                                            <td></td>
+                                            <td>Alerta de seguridad: multiples intentos fallidos de acceso detectados. Usuario: 205610158. IP: ::1. Intentos en ventana de 15 minutos: 5.</td>
+                                        </tr>
+                                                                                                                    <tr>
+                                            <td>2026-03-23 02:42:07</td>
+                                            <td>118910482</td>
+                                            <td></td>
+                                            <td>ALERTA DE SEGURIDAD</td>
+                                            <td>
+                                                                                                    <span class="badge bg-warning text-dark">ALERTA</span>
+                                                                                            </td>
+                                            <td>::1</td>
+                                            <td>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36</td>
+                                            <td>Alerta de seguridad: multiples intentos fallidos de acceso detectados. Usuario: 118910482. IP: ::1. Intentos en ventana de 15 minutos: 15.</td>
+                                        </tr>
+                                                                                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-end align-items-center mt-3 mb-4">
+                                <a class="btn btn-outline-secondary btn-sm disabled" href="admin_auditoria.php?fecha_desde=2026-03-23&fecha_hasta=2026-03-23&resultado=ALERT&pagina=1">Anterior</a>
+                <span class="mx-2">Página 1 de 1</span>
+                <a class="btn btn-outline-secondary btn-sm disabled" href="admin_auditoria.php?fecha_desde=2026-03-23&fecha_hasta=2026-03-23&resultado=ALERT&pagina=1">Siguiente</a>
+            </div>
+
+            <div class="mt-4 text-center">
+                <a href="http://localhost//base/dashboard.php" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left-circle"></i> Volver al Panel Principal
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-una mt-auto">
+        <div class="container">
+            <p class="mb-1">&copy; 2026 Universidad Nacional de Costa Rica</p>
+            <small>Escuela de Informática - Proyecto SGPFL v3.0</small>
+        </div>
+    </footer>
+</body>
+</html>

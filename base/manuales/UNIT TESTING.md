@@ -55,6 +55,26 @@ Esto equivale a correr **unit tests** (por defecto) con la config `phpunit.unit.
 composer test:unit
 ```
 
+### 2.1.1 Ejecutar un único archivo de test (sin `composer test:unit`)
+
+Si quieres correr solo una clase/archivo específico, usa PHPUnit directo indicando el archivo:
+
+```powershell
+vendor\bin\phpunit -c phpunit.unit.xml --testdox tests\unit\LoginAccessAuditHU024SourceTest.php
+```
+
+También puedes usar ruta absoluta si lo prefieres:
+
+```powershell
+vendor\bin\phpunit -c phpunit.unit.xml --testdox C:\xampp\htdocs\base\tests\unit\LoginAccessAuditHU024SourceTest.php
+```
+
+Opcional: ejecutar un solo método dentro del archivo:
+
+```powershell
+vendor\bin\phpunit -c phpunit.unit.xml --filter testHu024LogsInalterablesYRetencionCincoAniosEnBaseSql tests\unit\LoginAccessAuditHU024SourceTest.php
+```
+
 ### 2.2 Integration tests (Selenium / WebDriver)
 
 Estos tests requieren un **Selenium Server/Grid** accesible. En este repo, el test de ejemplo usa:
@@ -198,4 +218,3 @@ xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
 
 3) Añadir `composer.lock` (si no existe) y decidir si `vendor/` debe versionarse o ignorarse.
 
-Si me confirmas que quieres separar unit/integration, te creo `phpunit.unit.xml`, `phpunit.integration.xml` y scripts `composer test:unit` / `composer test:integration`.

@@ -1,8 +1,8 @@
 <?php
-$db_host = 'localhost';
-$usuario = 'root';      // Usuario de base de datos
-$clave = '';            // Contraseña de base de datos
-$db = 'base_db';
+$db_host = getenv('DB_HOST') ?: 'localhost';
+$usuario = getenv('DB_USER') ?: 'root';
+$clave   = getenv('DB_PASS') ?: '';
+$db      = getenv('DB_NAME') ?: 'base_db';
 $DBMS = 'mysql';
 
 // Ruta base para redirecciones (ajusta según tu estructura)

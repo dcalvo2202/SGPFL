@@ -22,7 +22,7 @@
 
     switch ($rol) {
         case 1: // Administrador
-            include 'main.php';
+            include 'admin.php';
             break;
         case 2: // Gestor Académico
             include 'panel_subdireccion.php';

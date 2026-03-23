@@ -9,10 +9,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
+include("../../login/check.php");
+include("../../../functions.php");
 include(dirname(__FILE__) . "/../../../lib/AuthLdap/class.AuthLdap.php");
 include("../../../config.inc");
 
-$id = $_GET['id'];
+$user_rol = (int)$mySessionController->getVar("rol");
+if (!check_permiso($mod3, $act1, $user_rol)) {
+    http_response_code(403);
+    echo "";
+    exit();
+}
+
+$id = isset($_GET['id']) ? trim($_GET['id']) : '';
+if ($id === '') {
+    echo "";
+    exit();
+}
+
 $ldap = new AuthLdap();
 $ldap->server = $ldap_server;
 $ldap->dn = $ldap_dn; // Base DN of our organisation

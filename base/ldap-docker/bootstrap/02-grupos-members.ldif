@@ -1,0 +1,42 @@
+# Administrador
+dn: cn=Administrador,ou=Groups,dc=una,dc=ac,dc=cr
+changetype: modify
+replace: member
+member: uid=205610158,ou=People,dc=una,dc=ac,dc=cr
+
+# Gestor Academico
+dn: cn=Gestor Academico,ou=Groups,dc=una,dc=ac,dc=cr
+changetype: modify
+replace: member
+member: uid=111710169,ou=People,dc=una,dc=ac,dc=cr
+member: uid=800810596,ou=People,dc=una,dc=ac,dc=cr
+
+# CTFG
+dn: cn=CTFG,ou=Groups,dc=una,dc=ac,dc=cr
+changetype: modify
+replace: member
+member: uid=110600492,ou=People,dc=una,dc=ac,dc=cr
+member: uid=503230754,ou=People,dc=una,dc=ac,dc=cr
+member: uid=503020651,ou=People,dc=una,dc=ac,dc=cr
+
+# Estudiante
+dn: cn=Estudiante,ou=Groups,dc=una,dc=ac,dc=cr
+changetype: modify
+replace: member
+member: uid=206580363,ou=People,dc=una,dc=ac,dc=cr
+member: uid=503550224,ou=People,dc=una,dc=ac,dc=cr
+member: uid=504410118,ou=People,dc=una,dc=ac,dc=cr
+member: uid=504430777,ou=People,dc=una,dc=ac,dc=cr
+member: uid=118440202,ou=People,dc=una,dc=ac,dc=cr
+member: uid=402290345,ou=People,dc=una,dc=ac,dc=cr
+member: uid=116440018,ou=People,dc=una,dc=ac,dc=cr
+
+# Asesor Externo
+dn: cn=Asesor Externo,ou=Groups,dc=una,dc=ac,dc=cr
+changetype: modify
+replace: member
+member: uid=105710421,ou=People,dc=una,dc=ac,dc=cr
+member: uid=800870458,ou=People,dc=una,dc=ac,dc=cr
+member: uid=205830110,ou=People,dc=una,dc=ac,dc=cr
+member: uid=107010122,ou=People,dc=una,dc=ac,dc=cr
+member: uid=701810347,ou=People,dc=una,dc=ac,dc=cr

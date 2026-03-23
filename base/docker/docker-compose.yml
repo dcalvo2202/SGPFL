@@ -1,0 +1,55 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: docker/php/Dockerfile
+    container_name: sgpfl-app
+    volumes:
+      - ../../:/var/www/html
+      - ./msmtp/msmtprc:/etc/msmtprc:ro
+    ports:
+      - "8080:80"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_NAME: base_db
+      DB_USER: sgpfl
+      DB_PASS: sgpfl1234
+      LDAP_HOST: ldap://sgpfl-ldap:389
+    networks:
+      - sgpfl-net
+      - sgpfl-shared
+
+  db:
+    image: mysql:8.0
+    container_name: sgpfl-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root1234
+      MYSQL_DATABASE: base_db
+      MYSQL_USER: sgpfl
+      MYSQL_PASSWORD: sgpfl1234
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/conf.d/sgpfl.cnf:ro
+      - ../../base.sql:/docker-entrypoint-initdb.d/base.sql:ro
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot1234"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - sgpfl-net
+
+volumes:
+  db_data:
+
+networks:
+  sgpfl-net:
+    driver: bridge
+  sgpfl-shared:
+    external: true
+    name: sgpfl-shared
