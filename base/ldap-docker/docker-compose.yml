@@ -1,0 +1,59 @@
+services:
+  openldap:
+    build: .
+    container_name: sgpfl-ldap
+    environment:
+      LDAP_ORGANISATION: "Universidad Nacional"
+      LDAP_DOMAIN: "una.ac.cr"
+      LDAP_BASE_DN: "dc=una,dc=ac,dc=cr"
+      LDAP_ADMIN_PASSWORD: "admin"
+      LDAP_CONFIG_PASSWORD: "config"
+      LDAP_READONLY_USER: "false"
+      LDAP_RFC2307BIS_SCHEMA: "false"
+      LDAP_BACKEND: "mdb"
+      LDAP_TLS: "false"
+    volumes:
+      - ldap_data:/var/lib/ldap
+      - ldap_config:/etc/ldap/slapd.d
+    ports:
+      - "389:389"
+    networks:
+      - ldap-net
+      - sgpfl-shared
+
+  ldap-init:
+    image: osixia/openldap:1.5.0
+    container_name: sgpfl-ldap-init
+    depends_on:
+      - openldap
+    volumes:
+      - ./bootstrap/01-estructura.ldif:/tmp/estructura.ldif:ro
+      - ./bootstrap/load-ldif.sh:/tmp/load-ldif.sh:ro
+    entrypoint: ["bash", "/tmp/load-ldif.sh"]
+    networks:
+      - ldap-net
+    restart: "no"
+
+  phpldapadmin:
+    image: osixia/phpldapadmin:0.9.0
+    container_name: sgpfl-ldapadmin
+    environment:
+      PHPLDAPADMIN_LDAP_HOSTS: "openldap"
+      PHPLDAPADMIN_HTTPS: "false"
+    ports:
+      - "8090:80"
+    depends_on:
+      - openldap
+    networks:
+      - ldap-net
+
+volumes:
+  ldap_data:
+  ldap_config:
+
+networks:
+  ldap-net:
+    driver: bridge
+  sgpfl-shared:
+    external: true
+    name: sgpfl-shared
