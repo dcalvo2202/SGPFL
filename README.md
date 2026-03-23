@@ -530,7 +530,7 @@ supportedLDAPVersion: 3
 
 ---
 
-## Integracin adicional (contenido de base/README.md)
+## Integracion adicional (contenido de base/README.md)
 
 # Introducción
 
