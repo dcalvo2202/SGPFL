@@ -448,8 +448,12 @@ CREATE TABLE `tfg_extension_requests` (
   `request_date` datetime DEFAULT current_timestamp(),
   `response_date` datetime DEFAULT NULL,
   `responded_by` varchar(50) DEFAULT NULL,
-  `response_comment` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `response_comment` text DEFAULT NULL,
+  `documento_path` text DEFAULT NULL COMMENT 'Rutas de los documentos de soporte (JSON array)',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+
+
 -- ----------------------------
 -- Records of sis_sessions_vars
 -- ----------------------------

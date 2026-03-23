@@ -37,9 +37,15 @@ if (strlen($motivo) > 200) {
     exit;
 }
 
+// Procesar archivos subidos (opcional)
+$archivos = [];
+if (isset($_FILES['documento_prorroga']) && !empty($_FILES['documento_prorroga']['name'][0])) {
+    $archivos = $_FILES['documento_prorroga'];
+}
+
 try {
     $prorrogaLogic = new ProrrogaLogic();
-    $resultado = $prorrogaLogic->crearSolicitud($proposal_id, $current_user_id, $extension_number, $motivo);
+    $resultado = $prorrogaLogic->crearSolicitud($proposal_id, $current_user_id, $extension_number, $motivo, $archivos);
     
     if ($resultado['success']) {
         $mySessionController->save('prorroga_success', $resultado['message']);
