@@ -20,11 +20,55 @@ include(dirname(__FILE__) . "/../../lib/mysession/mySession.class.php");
 include(dirname(__FILE__) . "/../../lib/mysession/mySession.conf.php");
 include(dirname(__FILE__) . "/../../lib/AuthLdap/class.AuthLdap.php");
 include(dirname(__FILE__) . "/../../lang/lang.es");
+
+// =============================
+// FUNCIONES AUXILIARES (INICIALES)
+// =============================
+
+// Funciones para obtener información del cliente (se necesitan temprano para logging)
+function getClientIpAddress() {
+    $keys = [
+        'HTTP_CLIENT_IP',
+        'HTTP_X_FORWARDED_FOR',
+        'HTTP_X_FORWARDED',
+        'HTTP_X_CLUSTER_CLIENT_IP',
+        'HTTP_FORWARDED_FOR',
+        'HTTP_FORWARDED',
+        'REMOTE_ADDR'
+    ];
+
+    foreach ($keys as $key) {
+        if (!empty($_SERVER[$key])) {
+            $ipList = explode(',', $_SERVER[$key]);
+            $ip = trim($ipList[0]);
+            if ($ip !== '') {
+                return substr($ip, 0, 45);
+            }
+        }
+    }
+
+    return '';
+}
+
+function getClientDeviceInfo() {
+    $ua = isset($_SERVER['HTTP_USER_AGENT']) ? trim($_SERVER['HTTP_USER_AGENT']) : '';
+    return substr($ua, 0, 255);
+}
+
+// Capturar IP del cliente temprano
+$ipAddress = getClientIpAddress();
+$deviceInfo = getClientDeviceInfo();
+
 // Manejar excepción de conexión a la base de datos
 try {
     include(dirname(__FILE__) . "/../../inc/db/db.php");
 } catch (Throwable $e) {
-    sendError(7); // Código: error en base de datos
+    // Registrar intento fallido por error de BD
+    $detail = "Fallo de inicio de sesion: Error de conexion a base de datos. Excepcion: " . substr($e->getMessage(), 0, 200);
+    // Aquí no podemos registrar en BD, pero registramos en log local
+    error_log("[" . date('Y-m-d H:i:s') . "] LOGIN_DB_ERROR | IP: $ipAddress | Mensaje: " . $detail);
+    echo 7;
+    exit();
 }
 include(dirname(__FILE__) . "/../../config.inc");
 
@@ -70,40 +114,11 @@ function verificarEstudiante($user){
         }
 }
 
-function getClientIpAddress() {
-    $keys = [
-        'HTTP_CLIENT_IP',
-        'HTTP_X_FORWARDED_FOR',
-        'HTTP_X_FORWARDED',
-        'HTTP_X_CLUSTER_CLIENT_IP',
-        'HTTP_FORWARDED_FOR',
-        'HTTP_FORWARDED',
-        'REMOTE_ADDR'
-    ];
-
-    foreach ($keys as $key) {
-        if (!empty($_SERVER[$key])) {
-            $ipList = explode(',', $_SERVER[$key]);
-            $ip = trim($ipList[0]);
-            if ($ip !== '') {
-                return substr($ip, 0, 45);
-            }
-        }
-    }
-
-    return '';
-}
-
-function getClientDeviceInfo() {
-    $ua = isset($_SERVER['HTTP_USER_AGENT']) ? trim($_SERVER['HTTP_USER_AGENT']) : '';
-    return substr($ua, 0, 255);
-}
-
 function registrarAuditoriaAcceso($user, $actionType, $actionResult, $ipAddress, $deviceInfo, $detail) {
     $sql = "INSERT INTO sis_log (id_user, date_bi, action_type, action_result, ip_address, device_info, detail)
             VALUES (?, NOW(), ?, ?, ?, ?, ?)";
 
-    return ejecutar_query($sql, [
+    $result = ejecutar_query($sql, [
         $user,
         $actionType,
         $actionResult,
@@ -111,6 +126,32 @@ function registrarAuditoriaAcceso($user, $actionType, $actionResult, $ipAddress,
         $deviceInfo,
         $detail
     ]);
+
+    if (isset($result['success']) && $result['success'] === false) {
+        // Fallback para ambientes donde id_user tenga restricciones (FK/NOT NULL)
+        // en intentos fallidos con usuario inexistente/no sincronizado.
+        $fallbackDetail = $detail;
+        if (!empty($user)) {
+            $fallbackDetail .= " | attempted_user=" . $user;
+        }
+
+        $fallback = ejecutar_query($sql, [
+            null,
+            $actionType,
+            $actionResult,
+            $ipAddress,
+            $deviceInfo,
+            $fallbackDetail
+        ]);
+
+        if (isset($fallback['success']) && $fallback['success'] === false) {
+            error_log("[" . date('Y-m-d H:i:s') . "] LOGIN_AUDIT_INSERT_ERROR | user=" . $user . " | action=" . $actionType . " | result=" . $actionResult . " | db_error=" . $fallback['error']);
+        }
+
+        return $fallback;
+    }
+
+    return $result;
 }
 
 function getFailedAttemptsCount($user, $ipAddress, $windowMinutes = LOGIN_FAILED_ATTEMPT_WINDOW_MINUTES) {
@@ -228,14 +269,20 @@ function mapearGrupoALRol($grupo) {
 // Sanitización y validación básica de entrada (compatible PHP 8.1+)
 $user = isset($_POST['user']) ? strip_tags(trim($_POST['user'])) : '';
 $pass = isset($_POST['pass']) ? trim($_POST['pass']) : '';
+$ipAddress = getClientIpAddress();
+$deviceInfo = getClientDeviceInfo();
+
 if ($user === '' || $pass === '') {
+    // Registrar intento fallido por datos inválidos (usando IP si user está vacío)
+    $userForLog = !empty($user) ? $user : 'UNKNOWN_' . substr($ipAddress, 0, 15);
+    $detail = "Intento de login con datos de entrada inválidos (usuario y/o contraseña vacíos).";
+    registrarAuditoriaAcceso($userForLog, 'LOGIN', 'FAIL', $ipAddress, $deviceInfo, $detail);
+    
     sendError(6); // Código: datos de entrada inválidos
 }
 $out = "";
 $user_name = "";
 $authMethod = 'LOCAL';
-$ipAddress = getClientIpAddress();
-$deviceInfo = getClientDeviceInfo();
 
 // =============================
 // VERIFICACIÓN DE SESIÓN ACTIVA
@@ -302,6 +349,8 @@ if (!$sqlout || count($sqlout) == 0) {
             $sql_update = "UPDATE sis_login SET pass = '$new_hash' WHERE id = '$user'";
             $update1 = ejecutar_query($sql_update);
             if ($update1 === false) {
+                $detail = "Fallo de inicio de sesion: Error en actualización de credenciales (migración MD5 a password_hash).";
+                registrarAuditoriaAcceso($user, 'LOGIN', 'FAIL', $ipAddress, $deviceInfo, $detail);
                 sendError(7); // Código: error en update a la base de datos
             }
             // Login exitoso
@@ -327,6 +376,8 @@ if ($out == 0) {
     $sql1 = "SELECT l.id_roll, u.nombre FROM sis_login l LEFT JOIN sis_user u ON l.id = u.id WHERE l.id='" . $user . "';";
     $sqlout1 = seleccion($sql1);
     if ($sqlout1 === false) {
+        $detail = "Fallo de inicio de sesion: Error al recuperar información de usuario/rol de BD (autenticacion LOCAL).";
+        registrarAuditoriaAcceso($user, 'LOGIN', 'FAIL', $ipAddress, $deviceInfo, $detail);
         sendError(7); // Código: error en consulta a la base de datos
     }
 
@@ -358,6 +409,8 @@ else if ($ldap_status == 1) {
     $socket_timeout = 1; // segundos
     $fp = @fsockopen($ldap_host, $ldap_port, $errno, $errstr, $socket_timeout);
     if (!$fp) {
+        $detail = "Fallo de inicio de sesion: servidor LDAP no disponible (socket). Host: {$ldap_host}, puerto: {$ldap_port}.";
+        registrarAuditoriaAcceso($user, 'LOGIN', 'FAIL', $ipAddress, $deviceInfo, $detail);
         sendError(3); // Código: problema con servidor LDAP
     } else {
         fclose($fp);
@@ -412,6 +465,11 @@ else if ($ldap_status == 1) {
                         }
                         // Si no tiene grupos, denegar acceso
                         if (empty($grupos_usuario)) {
+                            $detail = "Fallo de inicio de sesion: usuario LDAP sin grupos autorizados asociados.";
+                            registrarAuditoriaAcceso($user, 'LOGIN', 'FAIL', $ipAddress, $deviceInfo, $detail);
+                            if (shouldRaiseFailedLoginAlert($user, $ipAddress, $deviceInfo)) {
+                                sendError(8); // Código: alerta por múltiples intentos fallidos
+                            }
                             sendError(5); // Código: no pertenece al grupo autorizado
                         }
 
@@ -433,6 +491,11 @@ else if ($ldap_status == 1) {
                         }
                         // Si no pertenece a grupo autorizado, denegar acceso antes de importar/login
                         if ($grupo_valido == '') {
+                            $detail = "Fallo de inicio de sesion: usuario LDAP no pertenece a un grupo permitido en sis_rolls.";
+                            registrarAuditoriaAcceso($user, 'LOGIN', 'FAIL', $ipAddress, $deviceInfo, $detail);
+                            if (shouldRaiseFailedLoginAlert($user, $ipAddress, $deviceInfo)) {
+                                sendError(8); // Código: alerta por múltiples intentos fallidos
+                            }
                             sendError(5); // Código: no pertenece al grupo autorizado
                         }
                         // Mapeo simple a rol interno (sin modificar variables originales)
@@ -473,6 +536,8 @@ if ($out == 0) {
     $sql1 = "SELECT l.id_roll, u.nombre FROM sis_login l LEFT JOIN sis_user u ON l.id = u.id WHERE l.id='" . $user . "';";
     $sqlout1 = seleccion($sql1);
     if ($sqlout1 === false) {
+        $detail = "Fallo de inicio de sesion: Error al recuperar información de usuario/rol de BD (autenticacion LDAP).";
+        registrarAuditoriaAcceso($user, 'LOGIN', 'FAIL', $ipAddress, $deviceInfo, $detail);
         sendError(7); // Código: error en consulta a la base de datos
     }
 
@@ -486,11 +551,15 @@ if ($out == 0) {
         $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
         $sql_insert_login = "INSERT INTO sis_login (id, pass, id_roll) VALUES ('" . $user . "', '" . $pass_hash . "', '" . $rol_interno . "');";
         if (transaccion($sql_insert_login) === false) {
+            $detail = "Fallo de inicio de sesion: Error insertando usuario en tabla sis_login (sincronización LDAP)";
+            registrarAuditoriaAcceso($user, 'LOGIN', 'FAIL', $ipAddress, $deviceInfo, $detail);
             sendError(7); // Código: error en base de datos
         }
         // Insertar en sis_user con todos los campos
         $sql_insert_user = "INSERT INTO sis_user (id, nombre, email, telefono, id_tipo_tel) VALUES ('" . $user . "', '" . $user_name . "', '" . $user_email . "', '" . $user_tel . "', 'M');";
         if (transaccion($sql_insert_user) === false) {
+            $detail = "Fallo de inicio de sesion: Error insertando usuario en tabla sis_user (sincronización LDAP)";
+            registrarAuditoriaAcceso($user, 'LOGIN', 'FAIL', $ipAddress, $deviceInfo, $detail);
             sendError(7); // Código: error en base de datos
         }
         $id_roll = $rol_interno;
@@ -510,7 +579,20 @@ if ($out == 0) {
     finalizarLoginExitoso($mySessionController, $user, $id_roll, $nombre_final, $cds_domain, $cds_locate, $page_cant, $page_title, $footer_title, $vocab, $authMethod, $ipAddress, $deviceInfo);
 }
 else{
-    $detail = "Fallo de inicio de sesion. Codigo de error: {$out}. Metodo intentado: {$authMethod}.";
+    // Generar detalle específico según el código de error
+    $errorMessages = [
+        1 => "Contraseña incorrecta para usuario existente.",
+        2 => "Usuario no existe en sistema local. Intento con usuario: {$user}",
+        3 => "Fallo de autenticación: Servidor LDAP no disponible o error de conexión.",
+        4 => "Cuenta deshabilitada o no autorizada.",
+        5 => "Usuario no pertenece a grupo LDAP autorizado.",
+        6 => "Datos de entrada inválidos (usuario y/o contraseña vacíos).",
+        7 => "Error de conexión o consulta a base de datos durante autenticación.",
+        8 => "Múltiples intentos fallidos detectados - Acceso bloqueado temporalmente."
+    ];
+    
+    $specificDetail = isset($errorMessages[$out]) ? $errorMessages[$out] : "Error desconocido.";
+    $detail = "Intento fallido de inicio de sesion. Metodo: {$authMethod}. Razon: {$specificDetail}";
     registrarAuditoriaAcceso($user, 'LOGIN', 'FAIL', $ipAddress, $deviceInfo, $detail);
 
     if (in_array((int)$out, [1, 2, 5], true) && shouldRaiseFailedLoginAlert($user, $ipAddress, $deviceInfo)) {
