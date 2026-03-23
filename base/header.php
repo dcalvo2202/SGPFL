@@ -166,6 +166,11 @@ try {
             justify-content: center;
             animation: pulse-badge 2s infinite;
         }
+        .navbar-una {
+            position: sticky;
+            top: 0;
+            z-index: 1050;
+        }
     </style>
     <header class="navbar-una" style="background: linear-gradient(135deg, #CD1719, #A01215) !important; padding: 1.25rem 0;">
         <div class="container-fluid px-4">

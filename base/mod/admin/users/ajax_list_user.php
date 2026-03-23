@@ -10,7 +10,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 include("../../login/check.php");
+include("../../../functions.php");
 include("../../../inc/db/db.php");
+
+$user_rol = (int)$mySessionController->getVar("rol");
+if (!check_permiso($mod3, $act2, $user_rol)) {
+    http_response_code(403);
+    echo json_encode([
+        "sEcho" => isset($_GET['sEcho']) ? intval($_GET['sEcho']) : 0,
+        "iTotalRecords" => 0,
+        "iTotalDisplayRecords" => 0,
+        "aaData" => []
+    ]);
+    exit();
+}
 
 /* Tabla de la base de datos */
 $sTable = "vis_user"; //Escriba el nombre de la tabla a consultar

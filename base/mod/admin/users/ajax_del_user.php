@@ -10,9 +10,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 include("../../login/check.php");
+include("../../../functions.php");
 include("../../../inc/db/db.php");
 
-$id_user = $_GET['id_user'];
+$user_rol = (int)$mySessionController->getVar("rol");
+if (!check_permiso($mod3, $act5, $user_rol)) {
+    http_response_code(403);
+    echo 2;
+    exit();
+}
+
+$id_user = isset($_GET['id_user']) ? trim($_GET['id_user']) : '';
+if ($id_user === '') {
+    echo 2;
+    exit();
+}
+
+$id_user = mysqli_real_escape_string($id_con, $id_user);
 $sql_a = "CALL delete_user('$id_user',@res);";
 $sql_b = "SELECT @res as res;";
 //echo $sql_a.$sql_b;

@@ -10,15 +10,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 include("../../login/check.php");
+include("../../../functions.php");
 include("../../../inc/db/db.php");
 
-$id = $_GET['id'];
-$nombre = $_GET['nombre'];
-$email = $_GET['email'];
-$telefono = $_GET['telefono'];
-$id_tipo_tel = $_GET['id_tipo_tel'];
-$id_roll = $_GET['id_roll'];
-$pass = isset($_GET['pass']) ? $_GET['pass'] : "";
+$user_rol = (int)$mySessionController->getVar("rol");
+if (!check_permiso($mod3, $act3, $user_rol)) {
+    http_response_code(403);
+    echo 2;
+    exit();
+}
+
+$id = isset($_GET['id']) ? trim($_GET['id']) : '';
+$nombre = isset($_GET['nombre']) ? trim($_GET['nombre']) : '';
+$email = isset($_GET['email']) ? trim($_GET['email']) : '';
+$telefono = isset($_GET['telefono']) ? trim($_GET['telefono']) : '';
+$id_tipo_tel = isset($_GET['id_tipo_tel']) ? trim($_GET['id_tipo_tel']) : '';
+$id_roll = isset($_GET['id_roll']) ? (int)$_GET['id_roll'] : 0;
+$pass = isset($_GET['pass']) ? (string)$_GET['pass'] : "";
+
+if ($id === '' || $nombre === '' || $email === '' || $telefono === '' || $id_tipo_tel === '' || $id_roll <= 0) {
+    echo 2;
+    exit();
+}
+
+$id = mysqli_real_escape_string($id_con, $id);
+$nombre = mysqli_real_escape_string($id_con, $nombre);
+$email = mysqli_real_escape_string($id_con, $email);
+$telefono = mysqli_real_escape_string($id_con, $telefono);
+$id_tipo_tel = mysqli_real_escape_string($id_con, $id_tipo_tel);
 $sql_a = "CALL insert_user('$id','$nombre','$email','$telefono','$id_tipo_tel',$id_roll,'" . md5($pass) . "',@res);";
 $sql_b = "SELECT @res as res;";
 //echo $sql_a.$sql_b;

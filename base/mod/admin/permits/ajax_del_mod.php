@@ -12,9 +12,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
  * Realiza las transacciones a la base de datos por medio de funciones
  */
 include("../../login/check.php");
+include("../../../functions.php");
 include("../../../inc/db/db.php");
 
-$id_mod = $_GET['id_mod'];
+$user_rol = (int)$mySessionController->getVar("rol");
+if (!check_permiso($mod1, $act5, $user_rol)) {
+    http_response_code(403);
+    echo "KO";
+    exit();
+}
+
+$id_mod = isset($_GET['id_mod']) ? (int)$_GET['id_mod'] : 0;
+if ($id_mod <= 0) {
+    echo "KO";
+    exit();
+}
+
 $sql = "CALL delete_mod(" . $id_mod . ",@respuesta);";
 //echo $sql; //DEBUG
 $res = transaccion($sql);

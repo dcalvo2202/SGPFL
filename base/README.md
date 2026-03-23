@@ -21,27 +21,49 @@ Este apartado describe los pasos necesarios para instalar y poner en funcionamie
 ### 1.1 Requisitos previos
 
 * Servidor web: Apache o Nginx
-* PHP >= 7.4 con extensiones: `ldap`, `mysqli` (Recomendado PHP 8.4.12)
+* PHP >= 7.4 con extensiones: `ldap`, `mysqli`, `zip`, `mbstring`, `fileinfo` (Recomendado PHP 8.4)
 * MySQL o MariaDB >= 5.7
 * Acceso a un servidor LDAP v3 (puede ser OpenLDAP o Active Directory)
 * Acceso a un servidor SMTP para el envío de correos institucionales
 
-### 1.2 Pasos de instalación
+### 1.2 Opción A — Instalación con XAMPP
 
 1. Copiar los archivos del proyecto en la ruta deseada del servidor web.
 2. Configurar las variables de entorno en:
 
    * `config.inc` → dominio, ubicación del sistema, LDAP, módulos y acciones
-   * `dbcommon.inc` → conexión a la base de datos
+   * `inc/db/bdcommon.inc` → conexión a la base de datos
 3. Crear la base de datos e importar el esquema inicial:
 
    ```bash
-   mysql -u usuario -p base_db < base_inicial.sql
+   mysql -u usuario -p base_db < base.sql
    ```
 4. Configurar LDAP y verificar la conexión según lo definido en `config.inc`.
 5. Configurar envío de correos electrónicos mediante `php.ini` y `sendmail.ini`.
 6. Reiniciar el servidor web para aplicar cambios.
 7. Acceder al sistema desde un navegador para verificar que todas las funcionalidades estén operativas.
+
+### 1.3 Opción B — Instalación con Docker (sin XAMPP)
+
+El sistema incluye un entorno Docker completo. Ver manuales detallados en `/manuales/`:
+
+| Manual | Descripción |
+|--------|-------------|
+| `LDAP_DOCKER_GUIDE.md` | Servidor OpenLDAP + phpLDAPadmin |
+| `DOCKER_SISTEMA_GUIDE.md` | Apache + PHP + MySQL |
+
+```bash
+# 1. Crear red compartida (solo una vez)
+docker network create sgpfl-shared
+
+# 2. Levantar LDAP
+cd ldap-docker && docker-compose up -d --build
+
+# 3. Levantar sistema
+cd ../docker && docker-compose up -d --build
+```
+
+El sistema queda disponible en **http://localhost:8080/base/**
 
 ---
 
@@ -50,11 +72,14 @@ Este apartado describe los pasos necesarios para instalar y poner en funcionamie
 Se recomienda que los administradores se familiaricen con la estructura de carpetas y archivos principales:
 
 ```
-/inc         → Archivos de configuración y librerías generales
-/inc/db      → Archivos de conexión a la base de datos
-/mod     → Módulos funcionales del sistema
-/uploads     → Archivos cargados por los usuarios
-/img         → Recursos gráficos como favicon, logos, íconos
+/inc             → Archivos de configuración y librerías generales
+/inc/db          → Archivos de conexión a la base de datos
+/mod             → Módulos funcionales del sistema
+/uploads         → Archivos cargados por los usuarios
+/img             → Recursos gráficos como favicon, logos, íconos
+/docker          → Entorno Docker: Apache + PHP + MySQL (sin XAMPP)
+/ldap-docker     → Entorno Docker: servidor OpenLDAP + phpLDAPadmin
+/manuales        → Documentación técnica del sistema
 ```
 
 * Las modificaciones en módulos o rutas deben reflejarse en los archivos de configuración y, si corresponde, en la base de datos.
@@ -116,10 +141,16 @@ Asegúrese de que las siguientes extensiones estén habilitadas en `php.ini`:
 ```ini
 extension=ldap
 extension=mysqli
+extension=zip
+extension=mbstring
+extension=fileinfo
 ```
 
 * **ldap:** Permite la autenticación y comunicación con el servidor LDAP.
 * **mysqli:** Gestiona la conexión con la base de datos MySQL utilizada por el sistema.
+* **zip:** Manejo de archivos comprimidos en uploads.
+* **mbstring:** Manejo de strings multibyte (requerido por PHP moderno).
+* **fileinfo:** Validación de tipos de archivos subidos por usuarios.
 
 > Si las líneas anteriores están comentadas (precedidas por `;`), deben descomentarse eliminando el punto y coma.
 
@@ -127,14 +158,14 @@ extension=mysqli
 
 ### 2. Límites de subida de archivos (IMPORTANTE)
 
-Para permitir que los estudiantes suban propuestas TFG de hasta **8MB**, debe configurar los siguientes valores en `php.ini`:
+Para permitir que los estudiantes suban propuestas TFG, debe configurar los siguientes valores en `php.ini`:
 
 ```ini
-upload_max_filesize = 8M
-post_max_size = 10M
+upload_max_filesize = 40M
+post_max_size = 40M
 max_execution_time = 300
 max_input_time = 300
-memory_limit = 256M
+memory_limit = 512M
 ```
 
 **Ubicación del archivo `php.ini`:**
@@ -165,8 +196,12 @@ normalmente la causa es un límite bajo en MySQL al guardar BLOBs.
 Edite el archivo `my.ini` de XAMPP y ajuste en la sección `[mysqld]`:
 
 ```ini
-max_allowed_packet = 64M
-innodb_log_file_size = 128M
+max_allowed_packet       = 64M
+innodb_log_file_size     = 128M
+innodb_buffer_pool_size  = 16M
+innodb_log_buffer_size   = 8M
+innodb_flush_log_at_trx_commit = 1
+innodb_lock_wait_timeout = 50
 ```
 
 **Ubicación habitual (Windows XAMPP):**
@@ -183,7 +218,9 @@ innodb_log_file_size = 128M
 
 ### 3. Configuración de envío de correos
 
-Para el envío de notificaciones institucionales desde el sistema, debe configurarse correctamente la sección `[mail function]` en `php.ini`:
+#### En XAMPP (Windows)
+
+Debe configurarse la sección `[mail function]` en `php.ini`:
 
 ```ini
 [mail function]
@@ -192,6 +229,17 @@ smtp_port = 465
 sendmail_from = correo-del-emisor
 sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t -i"
 ```
+
+#### En Docker (Linux)
+
+En el contenedor se usa `msmtp` como relay SMTP (equivalente a `sendmail.exe`). La configuración está en `docker/msmtp/msmtprc` y el `php.ini` del contenedor apunta a él:
+
+```ini
+sendmail_path = /usr/bin/msmtp -t
+sendmail_from = correo-del-emisor
+```
+
+Ver la correspondencia completa de parámetros en `manuales/DOCKER_SISTEMA_GUIDE.md`.
 
 * **SMTP:** Dirección del servidor SMTP que procesará los correos.
   * Gmail: `smtp.gmail.com`
@@ -207,8 +255,9 @@ sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t -i"
 
 * **sendmail_path:** Ruta completa al ejecutable de sendmail.
   * Windows XAMPP: `"\"C:\xampp\sendmail\sendmail.exe\" -t -i"`
+  * Docker/Linux: `/usr/bin/msmtp -t`
 
-> **Nota:** Esta configuración debe sincronizarse con `sendmail.ini` (ver sección "Configuración del servicio de correo").
+> **Nota:** Esta configuración debe sincronizarse con `sendmail.ini` en XAMPP o con `msmtprc` en Docker.
 
 ---
 
@@ -397,9 +446,11 @@ $cds_locate = "base/";
 
 ### 2. Configuración del servidor LDAP
 
+El archivo usa variable de entorno con fallback, compatible con XAMPP y Docker:
+
 ```php
 $ldap_status = 1;
-$ldap_server[0] = "ldap://localhost:389";
+$ldap_server[0] = getenv('LDAP_HOST') ?: "ldap://localhost:389";
 $ldap_dn = "dc=una,dc=ac,dc=cr";
 $ldap_user = "cn=admin,dc=una,dc=ac,dc=cr";
 $ldap_pass = "admin";
@@ -484,18 +535,20 @@ El archivo `dbcommon.inc` contiene los parámetros de conexión a la base de dat
 
 ### 1. Configuración de conexión a la base de datos
 
+El archivo usa variables de entorno con fallback a `localhost`, compatible con XAMPP y Docker sin cambios:
+
 ```php
-$db_host = 'localhost';
-$usuario = 'root';
-$clave = '';
-$db = 'base_db';
+$db_host = getenv('DB_HOST') ?: 'localhost';
+$usuario = getenv('DB_USER') ?: 'root';
+$clave   = getenv('DB_PASS') ?: '';
+$db      = getenv('DB_NAME') ?: 'base_db';
 $DBMS = 'mysql';
 ```
 
 * **$db_host:** Dirección del servidor de base de datos.
 
-  * Valor por defecto: `'localhost'`
-  * Debe reemplazarse por el dominio, nombre de host o dirección IP del servidor de base de datos en el entorno productivo.
+  * En XAMPP: usa `localhost` por defecto.
+  * En Docker: se inyecta `DB_HOST=db` como variable de entorno.
 
 * **$usuario:** Nombre de usuario con permisos de acceso a la base de datos.
 
@@ -527,7 +580,8 @@ $base_url = '/base/';
 
 ### 3. Consideraciones de despliegue
 
-* Todos los valores con `'localhost'` deben ser reemplazados por la información del servidor donde esté alojada la base de datos.
+* En **XAMPP**: los valores de `$db_host`, `$usuario`, `$clave` y `$db` se toman del fallback (`localhost`, `root`, vacío, `base_db`).
+* En **Docker**: se inyectan las variables de entorno `DB_HOST=db`, `DB_USER=sgpfl`, `DB_PASS=sgpfl1234`, `DB_NAME=base_db` desde `docker-compose.yml`.
 * Se recomienda mantener este archivo fuera del control de versiones o utilizar variables de entorno para proteger las credenciales.
 * Antes de realizar cambios en las credenciales o el host, verifique la conexión con el nuevo servidor y respalde la base de datos.
 

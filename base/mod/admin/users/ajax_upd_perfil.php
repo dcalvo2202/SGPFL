@@ -11,11 +11,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 include("../../login/check.php");
 include("../../../inc/db/db.php");
-$id = $_GET['id'];
-$email = $_GET['email'];
-$telefono = $_GET['telefono'];
-$id_tipo_tel = $_GET['id_tipo_tel'];
-$pass = isset($_GET['pass']) ? $_GET['pass'] : "";
+$id = isset($_GET['id']) ? trim($_GET['id']) : '';
+$email = isset($_GET['email']) ? trim($_GET['email']) : '';
+$telefono = isset($_GET['telefono']) ? trim($_GET['telefono']) : '';
+$id_tipo_tel = isset($_GET['id_tipo_tel']) ? trim($_GET['id_tipo_tel']) : '';
+$pass = isset($_GET['pass']) ? (string)$_GET['pass'] : "";
+
+$session_user = (string)$mySessionController->getVar("usuario");
+if ($id === '' || $id !== $session_user || $email === '' || $telefono === '' || $id_tipo_tel === '') {
+    http_response_code(403);
+    echo 2;
+    exit();
+}
+
+$id = mysqli_real_escape_string($id_con, $id);
+$email = mysqli_real_escape_string($id_con, $email);
+$telefono = mysqli_real_escape_string($id_con, $telefono);
+$id_tipo_tel = mysqli_real_escape_string($id_con, $id_tipo_tel);
 $sql_a = "CALL update_perfil('$id','$email','$telefono','$id_tipo_tel','" . md5($pass) . "',@res);";
 $sql_b = "SELECT @res as res;";
 //echo $sql_a.$sql_b;

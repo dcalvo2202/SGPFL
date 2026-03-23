@@ -2,6 +2,7 @@
 include("mod/login/check.php");
 include("config.inc");
 $vocab = $mySessionController->getVar("vocab");
+$image_example_src = $mySessionController->getVar("cds_domain") . $mySessionController->getVar("cds_locate") . "img/logo.webp";
 
 ?>
 <head>
@@ -158,7 +159,7 @@ $vocab = $mySessionController->getVar("vocab");
                 </div>
                 <div class="form-group">
                     <label for="">Elemento input type image</label>
-                    <input id="" name="" class="form-control" type="image" src="http://www.escinf.una.ac.cr/templates/zt_zizia/images/logo.png" placeholder="propiedad placeholder" title="propiedad title"/>
+                    <input id="" name="" class="form-control" type="image" src="<?= htmlspecialchars($image_example_src) ?>" placeholder="propiedad placeholder" title="propiedad title" onclick="return false;"/>
                     <p class="help-block">Permite colocar una imagen en el imput, con la propiedad src</p>
                 </div>
                 <!-- HTML5 -->
