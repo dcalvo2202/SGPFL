@@ -14,6 +14,28 @@ A lo largo del documento se detallan los siguientes aspectos:
 
 Esta documentación debe mantenerse actualizada conforme se realicen cambios en el entorno del servidor o en la estructura interna del sistema, con el fin de asegurar su estabilidad, compatibilidad y seguridad operativa.
 
+## Índice
+
+- [Instalación y despliegue](#instalación-y-despliegue)
+  - [1.1 Requisitos previos](#11-requisitos-previos)
+  - [1.2 Pasos de instalación](#12-pasos-de-instalación)
+- [2. Estructura del proyecto](#2-estructura-del-proyecto)
+- [3. Mantenimiento y respaldo](#3-mantenimiento-y-respaldo)
+  - [3.1 Copia de seguridad de la base de datos](#31-copia-de-seguridad-de-la-base-de-datos)
+  - [3.2 Copia de seguridad de archivos críticos](#32-copia-de-seguridad-de-archivos-críticos)
+  - [3.3 Actualizaciones y cambios](#33-actualizaciones-y-cambios)
+- [4. Solución de problemas comunes](#4-solución-de-problemas-comunes)
+- [Configuración del sistema](#configuración-del-sistema)
+  - [Configuración requerida en `php.ini`](#configuración-requerida-en-phpini)
+  - [Configuración del servicio de correo: `sendmail.ini`](#configuración-del-servicio-de-correo-sendmailini)
+- [Configuración general](#configuración-general)
+  - [Archivo de configuración: `config.inc`](#archivo-de-configuración-configinc)
+  - [Archivo de configuración: `/inc/db/dbcommon.inc`](#archivo-de-configuración-incdbdbcommoninc)
+- [Integración con LDAP y estructura de roles](#integración-con-ldap-y-estructura-de-roles)
+- [Compatibilidad y versión de LDAP](#compatibilidad-y-versión-de-ldap)
+- [Anexo](#anexo)
+- [Integración adicional (contenido de `base/README.md`)](#integracin-adicional-contenido-de-basereadmemd)
+
 ## Instalación y despliegue
 
 Este apartado describe los pasos necesarios para instalar y poner en funcionamiento el sistema SGPFL en un entorno local o productivo.
