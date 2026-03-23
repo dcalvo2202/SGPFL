@@ -73,7 +73,7 @@ try {
 include(dirname(__FILE__) . "/../../config.inc");
 
 define('LOGIN_FAILED_ATTEMPT_WINDOW_MINUTES', 15);
-define('LOGIN_FAILED_ATTEMPT_THRESHOLD', 5);
+define('LOGIN_FAILED_ATTEMPT_THRESHOLD', 10);
 
 // =============================
 // FUNCIONES AUXILIARES
