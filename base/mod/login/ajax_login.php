@@ -73,7 +73,7 @@ try {
 include(dirname(__FILE__) . "/../../config.inc");
 
 define('LOGIN_FAILED_ATTEMPT_WINDOW_MINUTES', 15);
-define('LOGIN_FAILED_ATTEMPT_THRESHOLD', 10);
+define('LOGIN_FAILED_ATTEMPT_THRESHOLD', 5);
 
 // =============================
 // FUNCIONES AUXILIARES
@@ -155,18 +155,18 @@ function registrarAuditoriaAcceso($user, $actionType, $actionResult, $ipAddress,
 }
 
 function getFailedAttemptsCount($user, $ipAddress, $windowMinutes = LOGIN_FAILED_ATTEMPT_WINDOW_MINUTES) {
-    $cutoff = date('Y-m-d H:i:s', time() - ($windowMinutes * 60));
+    $windowMinutes = (int)$windowMinutes;
     $sql = "SELECT COUNT(*) AS total
             FROM sis_log
             WHERE action_type = 'LOGIN'
               AND action_result = 'FAIL'
-              AND date_bi >= ?
+              AND date_bi >= (NOW() - INTERVAL {$windowMinutes} MINUTE)
               AND (
                     (id_user = ?)
                     OR (ip_address = ?)
               )";
 
-    $rows = seleccion_segura($sql, [$cutoff, $user, $ipAddress]);
+    $rows = seleccion_segura($sql, [$user, $ipAddress]);
     if (!$rows || !isset($rows[0]['total'])) {
         return 0;
     }
@@ -180,11 +180,59 @@ function registrarAlertaIntentosFallidos($user, $ipAddress, $deviceInfo, $failed
               LOGIN_FAILED_ATTEMPT_WINDOW_MINUTES . " minutos: {$failedAttempts}.";
 
     registrarAuditoriaAcceso($user, 'SECURITY_ALERT', 'ALERT', $ipAddress, $deviceInfo, $detail);
+
+    notificarAdministradoresIntentosFallidos($user, $ipAddress, $deviceInfo, $failedAttempts);
+}
+
+function notificarAdministradoresIntentosFallidos($user, $ipAddress, $deviceInfo, $failedAttempts) {
+    $ipLabel = trim((string)$ipAddress) !== '' ? trim((string)$ipAddress) : 'IP_DESCONOCIDA';
+    $subject = "Alerta de seguridad: {$failedAttempts} intentos fallidos desde IP {$ipLabel}";
+    $windowMinutes = (int)LOGIN_FAILED_ATTEMPT_WINDOW_MINUTES;
+
+    $sqlDuplicate = "SELECT COUNT(*) AS total
+                     FROM user_alerts
+                     WHERE alert_type = 'Sistema'
+                       AND subject = ?
+                       AND sent_at >= (NOW() - INTERVAL {$windowMinutes} MINUTE)";
+    $rows = seleccion_segura($sqlDuplicate, [$subject]);
+    if ($rows && isset($rows[0]['total']) && (int)$rows[0]['total'] > 0) {
+        return;
+    }
+
+    $sqlAdmins = "SELECT id FROM sis_login WHERE id_roll = ?";
+    $admins = seleccion_segura($sqlAdmins, [1]);
+    if (!$admins || count($admins) === 0) {
+        return;
+    }
+
+    $message = "Se detectaron multiples intentos fallidos de acceso en la ventana de " .
+               LOGIN_FAILED_ATTEMPT_WINDOW_MINUTES . " minutos.\n" .
+               "Usuario reportado: " . ($user !== '' ? $user : 'DESCONOCIDO') . "\n" .
+               "IP origen: {$ipLabel}\n" .
+               "Intentos fallidos contabilizados: {$failedAttempts}\n" .
+               "Dispositivo: " . ($deviceInfo !== '' ? $deviceInfo : 'No disponible');
+
+    $sqlInsert = "INSERT INTO user_alerts (user_id, subject, message, alert_type, priority, sent_at)
+                  VALUES (?, ?, ?, 'Sistema', 'Alta', NOW())";
+
+    foreach ($admins as $admin) {
+        if (!isset($admin['id']) || trim((string)$admin['id']) === '') {
+            continue;
+        }
+
+        $result = ejecutar_query($sqlInsert, [(string)$admin['id'], $subject, $message]);
+        if (isset($result['success']) && $result['success'] === false) {
+            error_log("[" . date('Y-m-d H:i:s') . "] LOGIN_ADMIN_ALERT_INSERT_ERROR | admin_id=" . $admin['id'] . " | error=" . $result['error']);
+        }
+    }
 }
 
 function shouldRaiseFailedLoginAlert($user, $ipAddress, $deviceInfo) {
     $failedAttempts = getFailedAttemptsCount($user, $ipAddress, LOGIN_FAILED_ATTEMPT_WINDOW_MINUTES);
-    if ($failedAttempts >= LOGIN_FAILED_ATTEMPT_THRESHOLD) {
+    if (
+        $failedAttempts >= LOGIN_FAILED_ATTEMPT_THRESHOLD &&
+        ($failedAttempts % LOGIN_FAILED_ATTEMPT_THRESHOLD) === 0
+    ) {
         registrarAlertaIntentosFallidos($user, $ipAddress, $deviceInfo, $failedAttempts);
         return true;
     }
@@ -281,6 +329,7 @@ if ($user === '' || $pass === '') {
     sendError(6); // Código: datos de entrada inválidos
 }
 $out = "";
+$out_local = null;
 $user_name = "";
 $authMethod = 'LOCAL';
 
@@ -395,6 +444,7 @@ if ($out == 0) {
 
 // 2. Intentar autenticación por LDAP
 else if ($ldap_status == 1) {
+    $out_local = $out; // preservar resultado local (1=pass incorrecta, 2=usuario no existe)
     $authMethod = 'LDAP';
 
     // --- Verificar disponibilidad del servidor LDAP con socket ---
@@ -590,9 +640,18 @@ else{
         7 => "Error de conexión o consulta a base de datos durante autenticación.",
         8 => "Múltiples intentos fallidos detectados - Acceso bloqueado temporalmente."
     ];
-    
+
     $specificDetail = isset($errorMessages[$out]) ? $errorMessages[$out] : "Error desconocido.";
-    $detail = "Intento fallido de inicio de sesion. Metodo: {$authMethod}. Razon: {$specificDetail}";
+
+    // Construir contexto real del fallo según el método y el resultado local previo
+    if ($authMethod === 'LDAP' && $out_local !== null) {
+        $localContext = $out_local === 2
+            ? "Usuario no encontrado en BD local."
+            : "Contraseña incorrecta en BD local.";
+        $detail = "Intento fallido de inicio de sesion. Metodo: LOCAL+LDAP. Contexto local: {$localContext} Resultado LDAP: {$specificDetail}";
+    } else {
+        $detail = "Intento fallido de inicio de sesion. Metodo: {$authMethod}. Razon: {$specificDetail}";
+    }
     registrarAuditoriaAcceso($user, 'LOGIN', 'FAIL', $ipAddress, $deviceInfo, $detail);
 
     if (in_array((int)$out, [1, 2, 5], true) && shouldRaiseFailedLoginAlert($user, $ipAddress, $deviceInfo)) {
