@@ -9,10 +9,9 @@
 include("mod/login/check.php");
 
 // Incluir archivos necesarios
-// Mantener estilos/scripts legacy para conservar el look original de la vista
-// pero desactivar Prototype solo en chat para evitar conflicto con jQuery.
+// Usar el mismo header compartido que el resto de vistas.
+// Solo desactivar Prototype para evitar conflicto con jQuery en chat.
 $disable_prototype_js = true;
-include('includes.php');
 include('lang/lang.es');
 require_once 'inc/chat_functions.php';
 require_once 'inc/constants.php';
