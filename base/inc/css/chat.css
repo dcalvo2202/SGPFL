@@ -25,8 +25,8 @@
 
 /* =============================== PANEL IZQUIERDO: SIDEBAR =============================== */
 .chat-sidebar {
-    width: 340px;
-    min-width: 280px;
+    width: 310px;
+    min-width: 260px;
     background: #f8fafc;
     border-right: 1px solid var(--chat-border);
     display: flex;
@@ -42,7 +42,7 @@
 
 .chat-sidebar-header h5 {
     margin: 0 0 0.75rem 0;
-    font-size: 1.1rem;
+    font-size: 1.28rem;
     font-weight: 700;
     color: var(--chat-blue);
 }
@@ -136,7 +136,7 @@
 
 .chat-search-result-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     padding: 0.65rem 1rem;
     cursor: pointer;
     transition: background 0.15s ease;
@@ -162,6 +162,7 @@
     font-size: 0.85rem;
     color: #fff;
     margin-right: 0.75rem;
+    margin-top: 2px;
     flex-shrink: 0;
 }
 
@@ -172,11 +173,18 @@
 
 .chat-search-result-item .user-name {
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.98rem;
     color: #1a1a1a;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.chat-search-result-item .rol-badge {
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    line-height: 1.15;
 }
 
 .chat-search-result-item .user-details-row {
@@ -188,12 +196,14 @@
 }
 
 .chat-search-result-item .user-email {
-    font-size: 0.72rem;
-    color: #888;
-    margin-top: 1px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    font-size: 0.84rem;
+    color: #6f7c8e;
+    margin-top: 3px;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    overflow-wrap: anywhere;
+    line-height: 1.25;
 }
 
 .chat-search-result-item .user-email i {
@@ -202,10 +212,10 @@
 }
 
 .chat-search-result-item .user-id-tag {
-    font-size: 0.7rem;
+    font-size: 0.84rem;
     color: #999;
     background: #f0f0f0;
-    padding: 1px 6px;
+    padding: 2px 8px;
     border-radius: 4px;
 }
 
@@ -248,14 +258,14 @@
 }
 
 .chat-conversation-item .conv-avatar {
-    width: 44px;
-    height: 44px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.12rem;
     color: #fff;
     margin-right: 0.75rem;
     flex-shrink: 0;
@@ -274,7 +284,7 @@
 
 .chat-conversation-item .conv-name {
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1.08rem;
     color: #1a1a1a;
     white-space: nowrap;
     overflow: hidden;
@@ -283,7 +293,7 @@
 }
 
 .chat-conversation-item .conv-last-message {
-    font-size: 0.8rem;
+    font-size: 0.98rem;
     color: #888;
     white-space: nowrap;
     overflow: hidden;
@@ -297,7 +307,7 @@
 }
 
 .chat-conversation-item .conv-time {
-    font-size: 0.72rem;
+    font-size: 0.84rem;
     color: #aaa;
     margin-bottom: 4px;
 }
@@ -335,13 +345,13 @@
 }
 
 .chat-header {
-    padding: 0.85rem 1.25rem;
+    padding: 1rem 1.35rem;
     border-bottom: 1px solid var(--chat-border);
     background: linear-gradient(180deg, #ffffff 0%, #fdfdfe 100%);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 65px;
+    min-height: 82px;
 }
 
 .chat-header .chat-header-info {
@@ -356,8 +366,8 @@
 }
 
 .chat-header .header-avatar {
-    width: 40px;
-    height: 40px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -371,9 +381,9 @@
 
 .chat-header .header-name {
     font-weight: 700;
-    font-size: 1.03rem;
+    font-size: 1.34rem;
     color: #172334;
-    line-height: 1.15;
+    line-height: 1.2;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -381,8 +391,13 @@
 }
 
 .chat-header .header-subtitle {
-    font-size: 0.8rem;
+    font-size: 0.96rem;
     color: var(--chat-muted);
+}
+
+.chat-header .rol-badge {
+    font-size: 0.9rem;
+    padding: 3px 11px;
 }
 
 .chat-main-header {
@@ -468,7 +483,7 @@
 .chat-message {
     display: flex;
     margin-bottom: 0.5rem;
-    max-width: 75%;
+    max-width: 82%;
     animation: msgFadeIn 0.2s ease;
 }
 
@@ -487,14 +502,14 @@
 }
 
 .chat-message .msg-avatar {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 0.75rem;
+    font-size: 0.82rem;
     color: #fff;
     flex-shrink: 0;
     margin-top: 4px;
@@ -527,20 +542,20 @@
 
 .chat-message .msg-sender-name {
     font-weight: 600;
-    font-size: 0.8rem;
+    font-size: 0.98rem;
     color: #444;
 }
 
 .chat-message .msg-time {
-    font-size: 0.7rem;
+    font-size: 0.84rem;
     color: #aaa;
 }
 
 .chat-message .msg-bubble {
-    padding: 0.6rem 0.9rem;
+    padding: 0.78rem 1rem;
     border-radius: 12px;
-    font-size: 0.9rem;
-    line-height: 1.45;
+    font-size: 1.08rem;
+    line-height: 1.5;
     word-wrap: break-word;
     white-space: pre-wrap;
 }
@@ -705,12 +720,14 @@
 .chat-empty-state h4 {
     font-weight: 600;
     color: #666;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.65rem;
+    font-size: 2rem;
 }
 
 .chat-empty-state p {
-    font-size: 0.9rem;
-    max-width: 320px;
+    font-size: 1.05rem;
+    max-width: 420px;
+    color: #7f8997;
 }
 
 /* =============================== SEPARADOR DE FECHA =============================== */
