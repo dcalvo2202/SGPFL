@@ -149,8 +149,52 @@ function getOfficialCommitteeUserIdsByProposalId($conn, $proposal_id) {
 
 /**
  * HU-032
- * Registra alertas para todos los miembros del comité oficial
+ * Verifica si el usuario ya está cubierto por la alerta general
+ * de documento final (Gestor o CTFG).
+ *
+ * @param mysqli $conn
+ * @param string $user_id
+ * @return bool
+ */
+function isCoveredByGeneralFinalDocumentAlert($conn, $user_id) {
+    $sql = "SELECT id_roll
+            FROM sis_login
+            WHERE id = ?
+            LIMIT 1";
+
+    $stmt = $conn->prepare($sql);
+    if (!$stmt) {
+        error_log("HU-032: Error preparando validación de rol para {$user_id}: " . $conn->error);
+        return false;
+    }
+
+    $stmt->bind_param("s", $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result ? $result->fetch_assoc() : null;
+    $stmt->close();
+
+    if (!$row) {
+        return false;
+    }
+
+    $rol_id = (int)$row['id_roll'];
+
+    // Ya recibe la alerta general por rol:
+    // 2 = Gestor Académico
+    // 3 = CTFG
+    return in_array($rol_id, [2, 3], true);
+}
+
+/**
+ * HU-032
+ * Registra alertas para los miembros del comité oficial
  * cuando el estudiante sube formalmente el Documento Final.
+ *
+ * Regla especial:
+ * - Si el usuario ya recibe la alerta general por ser Gestor (rol 2)
+ *   o CTFG (rol 3), NO se le envía la alerta del comité para evitar
+ *   duplicidad en la campana.
  *
  * @param mysqli $conn
  * @param int $proposal_id
@@ -177,6 +221,14 @@ function registerFinalDocumentCommitteeAlert($conn, $proposal_id, $student_name,
     $count = 0;
 
     foreach ($committee_ids as $committee_user_id) {
+        // Opción B:
+        // Si ya recibe la alerta general por ser Gestor o CTFG,
+        // no enviar la alerta HU-032 para evitar duplicidad.
+        if (isCoveredByGeneralFinalDocumentAlert($conn, $committee_user_id)) {
+            error_log("HU-032: Usuario {$committee_user_id} omitido por ya recibir alerta general (rol 2/3)");
+            continue;
+        }
+
         if (registerAlert(
             $conn,
             $committee_user_id,
@@ -192,6 +244,65 @@ function registerFinalDocumentCommitteeAlert($conn, $proposal_id, $student_name,
     }
 
     return $count;
+}
+
+/**
+ * HU-032
+ * Verifica si ya existe una alerta igual reciente para evitar duplicados.
+ *
+ * @param mysqli $conn
+ * @param string $user_id
+ * @param string $subject
+ * @param string $alert_type
+ * @param string|null $related_entity_type
+ * @param int|null $related_entity_id
+ * @param int $seconds Ventana de tiempo en segundos
+ * @return bool
+ */
+function existsRecentDuplicateCommitteeAlert($conn, $user_id, $subject, $alert_type, $related_entity_type = null, $related_entity_id = null, $seconds = 60) {
+    $seconds = max(1, (int)$seconds);
+    $cutoff = date('Y-m-d H:i:s', time() - $seconds);
+
+    $sql = "SELECT 1
+            FROM user_alerts
+            WHERE user_id = ?
+              AND subject = ?
+              AND alert_type = ?
+              AND (
+                    (related_entity_type = ?)
+                    OR (related_entity_type IS NULL AND ? IS NULL)
+                  )
+              AND (
+                    (related_entity_id = ?)
+                    OR (related_entity_id IS NULL AND ? IS NULL)
+                  )
+              AND sent_at >= ?
+            LIMIT 1";
+
+    $stmt = $conn->prepare($sql);
+    if (!$stmt) {
+        error_log("HU-032: Error preparando validación de duplicado: " . $conn->error);
+        return false;
+    }
+
+    $stmt->bind_param(
+        "sssssiss",
+        $user_id,
+        $subject,
+        $alert_type,
+        $related_entity_type,
+        $related_entity_type,
+        $related_entity_id,
+        $related_entity_id,
+        $cutoff
+    );
+
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $exists = $result && $result->fetch_row();
+    $stmt->close();
+
+    return (bool)$exists;
 }
 
 /**
