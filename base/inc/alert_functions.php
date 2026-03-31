@@ -78,6 +78,123 @@ function registerAlertToRole($conn, $rol_id, $subject, $message, $alert_type = '
 }
 
 /**
+ * HU-032
+ * Obtiene los usuarios del comité oficial asignado a una propuesta,
+ * usando la relación proyecto_aprobado -> comite.
+ *
+ * @param mysqli $conn
+ * @param int $proposal_id
+ * @return array IDs de usuario únicos del comité
+ */
+function getOfficialCommitteeUserIdsByProposalId($conn, $proposal_id) {
+    $proposal_id = (int)$proposal_id;
+    if ($proposal_id <= 0) {
+        return [];
+    }
+
+    $sql = "SELECT c.tutor, c.asesor_1, c.asesor_2
+            FROM proyecto_aprobado pa
+            INNER JOIN comite c ON c.Id = pa.comite_id
+            WHERE pa.proposal_id = ?
+            ORDER BY pa.id_aprobado DESC
+            LIMIT 1";
+
+    $stmt = $conn->prepare($sql);
+    if (!$stmt) {
+        error_log("HU-032: Error preparando consulta de comité oficial: " . $conn->error);
+        return [];
+    }
+
+    $stmt->bind_param("i", $proposal_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result ? $result->fetch_assoc() : null;
+    $stmt->close();
+
+    if (!$row) {
+        error_log("HU-032: No se encontró comité oficial para proposal_id {$proposal_id}");
+        return [];
+    }
+
+    $candidate_ids = array_filter([
+        $row['tutor'] ?? null,
+        $row['asesor_1'] ?? null,
+        $row['asesor_2'] ?? null
+    ]);
+
+    $committee_ids = [];
+
+    // Verificar que el usuario tenga cuenta en sis_login para poder recibir alertas
+    $sql_user = "SELECT 1 FROM sis_login WHERE id = ? LIMIT 1";
+    $stmt_user = $conn->prepare($sql_user);
+
+    if (!$stmt_user) {
+        error_log("HU-032: Error preparando validación de usuarios del comité: " . $conn->error);
+        return array_values(array_unique($candidate_ids));
+    }
+
+    foreach ($candidate_ids as $user_id) {
+        $stmt_user->bind_param("s", $user_id);
+        $stmt_user->execute();
+        $user_result = $stmt_user->get_result();
+        if ($user_result && $user_result->fetch_row()) {
+            $committee_ids[] = $user_id;
+        }
+    }
+
+    $stmt_user->close();
+
+    return array_values(array_unique($committee_ids));
+}
+
+/**
+ * HU-032
+ * Registra alertas para todos los miembros del comité oficial
+ * cuando el estudiante sube formalmente el Documento Final.
+ *
+ * @param mysqli $conn
+ * @param int $proposal_id
+ * @param string $student_name
+ * @param string $proposal_title
+ * @param int $document_id
+ * @return int Cantidad de alertas enviadas
+ */
+function registerFinalDocumentCommitteeAlert($conn, $proposal_id, $student_name, $proposal_title, $document_id) {
+    $committee_ids = getOfficialCommitteeUserIdsByProposalId($conn, $proposal_id);
+
+    if (empty($committee_ids)) {
+        error_log("HU-032: No hay miembros de comité para notificar en proposal_id {$proposal_id}");
+        return 0;
+    }
+
+    $subject = "Nuevo Documento Final TFG Recibido";
+    $message = "El estudiante ha realizado una entrega formal en el sistema.\n\n";
+    $message .= "Estudiante: {$student_name}\n";
+    $message .= "Título: {$proposal_title}\n";
+    $message .= "Entrega: Documento Final\n\n";
+    $message .= "El documento ya fue registrado y está disponible para seguimiento.";
+
+    $count = 0;
+
+    foreach ($committee_ids as $committee_user_id) {
+        if (registerAlert(
+            $conn,
+            $committee_user_id,
+            $subject,
+            $message,
+            'Documento Final',
+            'Alta',
+            'document',
+            $document_id
+        )) {
+            $count++;
+        }
+    }
+
+    return $count;
+}
+
+/**
  * Obtiene las alertas de un usuario
  * 
  * @param mysqli $conn Conexión a la base de datos

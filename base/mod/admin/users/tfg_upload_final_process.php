@@ -171,8 +171,18 @@ try {
                 $proposal_title, 
                 $doc_id
             );
-            
+
+            // HU-032: notificar también al comité oficial asignado al proyecto
+            $committee_alert_count = registerFinalDocumentCommitteeAlert(
+                $conn_alert,
+                $proposal_id,
+                $user_name,
+                $proposal_title,
+                $doc_id
+            );
+
             error_log("HU-037: Alertas de documento final enviadas: $alert_count");
+            error_log("HU-032: Alertas al comité oficial enviadas: $committee_alert_count");
             
             $conn_alert->close();
         }
@@ -190,7 +200,8 @@ try {
         'document_id' => $save_result['document_id'],
         'notification_sent' => $notification_sent,
         'total_files' => count($uploaded_files),
-        'additional_files' => $additional_files_saved
+        'additional_files' => $additional_files_saved,
+        'committee_alerts' => $committee_alert_count ?? 0
     ]);
     
 } catch (Exception $e) {
