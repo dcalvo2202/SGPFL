@@ -5,8 +5,6 @@ include("mod/login/check.php");
 // 1. INCLUIR ARCHIVOS NECESARIOS
 include('lang/lang.es');
 
-//panel_revision_tfg.php
-
 // 2. OBTENER VARIABLES DE SESIÓN
 $current_user_id = $mySessionController->getVar("usuario");
 $current_user_name = $mySessionController->getVar("nombre");

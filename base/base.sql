@@ -500,6 +500,33 @@ CREATE TABLE `tfg_proposal_history` (
     FOREIGN KEY (reviewed_by) REFERENCES sis_user(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+
+-- =====================================================
+-- TABLA: auditoria_cambios_fecha
+-- Propósito: Registrar modificaciones en fechas de proyectos y prórrogas
+-- Tablas auditadas: registered_projects, tfg_extension_requests
+-- =====================================================
+
+CREATE TABLE `auditoria_cambios_fecha` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `tabla_origen` VARCHAR(100) NOT NULL COMMENT 'Tabla donde se hizo el cambio (registered_projects, tfg_extension_requests)',
+    `id_registro` INT NOT NULL COMMENT 'ID del registro modificado',
+    `campo_modificado` VARCHAR(100) NOT NULL COMMENT 'Nombre del campo de fecha que cambió',
+    `valor_anterior` DATETIME DEFAULT NULL COMMENT 'Valor antes del cambio',
+    `valor_nuevo` DATETIME DEFAULT NULL COMMENT 'Valor después del cambio',
+    `modificado_por` VARCHAR(50) NOT NULL COMMENT 'ID del usuario que realizó el cambio',
+    `fecha_modificacion` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha y hora del cambio',
+    `descripcion` TEXT DEFAULT NULL COMMENT 'Descripción adicional o contexto del cambio',
+    
+    INDEX `idx_tabla_origen` (`tabla_origen`),
+    INDEX `idx_id_registro` (`id_registro`),
+    INDEX `idx_modificado_por` (`modificado_por`),
+    INDEX `idx_fecha_modificacion` (`fecha_modificacion`),
+    INDEX `idx_campo_modificado` (`campo_modificado`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Auditoría de cambios en fechas de proyectos y prórrogas';
+
+
+
 -- ----------------------------
 -- Table structure for `sis_tipo_tel`
 -- ----------------------------
