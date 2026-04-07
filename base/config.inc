@@ -67,10 +67,12 @@ $mod1 = 1; // Administracion
 $mod2 = 2; // Modulos
 $mod3 = 3; // Usuarios
 
+*/
+
 // Configuración de alertas de vencimiento
 define('DEADLINE_THRESHOLDS', [30, 15, 7, 3, 1]); // Días antes del vencimiento
 define('DEADLINE_EMAIL_ENABLED', true);
-define('DEADLINE_FROM_EMAIL', 'noreply@una.cr');
+define('DEADLINE_FROM_EMAIL', 'carlos.lopez@est.una.ac.cr');
 define('DEADLINE_FROM_NAME', 'SGPFL - Escuela de Informática');
 
 
