@@ -92,13 +92,13 @@ function dibujarFirma($pdf, $x, $y, $w, $nombre, $cargo)
 {
     $pdf->Line($x, $y, $x + $w, $y);
 
-    $pdf->SetXY($x, $y + 2);
-    $pdf->SetFont('Arial', 'B', 10);
-    $pdf->MultiCell($w, 5, pdfText($nombre), 0, 'C');
+    $pdf->SetXY($x, $y + 1.5);
+    $pdf->SetFont('Arial', 'B', 9);
+    $pdf->MultiCell($w, 4.2, pdfText($nombre), 0, 'C');
 
     $pdf->SetX($x);
-    $pdf->SetFont('Arial', '', 9);
-    $pdf->MultiCell($w, 4, pdfText($cargo), 0, 'C');
+    $pdf->SetFont('Arial', '', 8.5);
+    $pdf->MultiCell($w, 3.8, pdfText($cargo), 0, 'C');
 }
 
 /*
@@ -292,27 +292,46 @@ $pdf->MultiCell(
 
 $pdf->Ln(10);
 
-/* Firmas del tribunal */
-$startY = $pdf->GetY();
-$leftX  = 20;
-$rightX = 115;
-$wFirma = 70;
+$pdf->Ln(4);
 
-dibujarFirma($pdf, $leftX,  $startY,      $wFirma, $presidente_nombre, $presidente_cargo);
-dibujarFirma($pdf, $rightX, $startY,      $wFirma, $director_nombre,   $director_cargo);
+/*
+|--------------------------------------------------------------------------
+| FIRMAS
+|--------------------------------------------------------------------------
+*/
+$bottomMargin = 20;
+$pageHeight   = 297;
+$espacioDisponible = $pageHeight - $bottomMargin - $pdf->GetY();
+$altoBloqueFirmas = $hay_segundo_postulante ? 72 : 60;
 
-$ySegundaFila = $startY + 28;
+if ($espacioDisponible < $altoBloqueFirmas) {
+    $pdf->AddPage();
+}
+
+$startY   = $pdf->GetY() + 5;
+$leftX    = 16;
+$rightX   = 110;
+$wFirma   = 80;
+$saltoFila = 24;
+$saltoPost = 26;
+
+/* Tribunal - fila 1 */
+dibujarFirma($pdf, $leftX,  $startY, $wFirma, $presidente_nombre, $presidente_cargo);
+dibujarFirma($pdf, $rightX, $startY, $wFirma, $director_nombre,   $director_cargo);
+
+/* Tribunal - fila 2 */
+$ySegundaFila = $startY + $saltoFila;
 dibujarFirma($pdf, $leftX,  $ySegundaFila, $wFirma, $tutor_nombre,  $tutor_cargo);
 dibujarFirma($pdf, $rightX, $ySegundaFila, $wFirma, $asesor_nombre, $asesor_cargo);
 
-/* Firmas de postulantes */
-$yPostulantes = $ySegundaFila + 35;
+/* Postulantes */
+$yPostulantes = $ySegundaFila + $saltoPost;
 
 if ($hay_segundo_postulante) {
     dibujarFirma($pdf, $leftX,  $yPostulantes, $wFirma, $nombre_estudiante_1, 'Postulante');
     dibujarFirma($pdf, $rightX, $yPostulantes, $wFirma, $nombre_estudiante_2, 'Postulante');
 } else {
-    dibujarFirma($pdf, 62, $yPostulantes, 85, $nombre_estudiante_1, 'Postulante');
+    dibujarFirma($pdf, 55, $yPostulantes, 100, $nombre_estudiante_1, 'Postulante');
 }
 
 /* Guardar PDF */
