@@ -173,6 +173,16 @@ try {
                             <p>Solicitar extensión de plazo para TFG</p>
                         </div>
                     </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>panel_plantillas.php'" style="border-left: 4px solid #6f42c1;">
+                            <div class="card-icon">
+                                <i class="bi bi-file-earmark-arrow-down-fill"></i>
+                            </div>
+                            <h5>Plantillas Oficiales</h5>
+                            <p>Descargar plantillas para el TFG</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>

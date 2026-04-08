@@ -251,6 +251,17 @@ try {
                             <p>Generar y descargar el reporte de proyectos con prórrogas aprobadas.</p>
                         </div>
                     </div>
+
+                    <!-- Plantillas Oficiales -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card w-100 h-100" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_plantillas.php'" style="border-left: 4px solid #6f42c1;">
+                            <div class="card-icon">
+                                <i class="bi bi-file-earmark-arrow-down-fill"></i>
+                            </div>
+                            <h5>Plantillas Oficiales</h5>
+                            <p>Agregar, gestionar y publicar plantillas para los estudiantes.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

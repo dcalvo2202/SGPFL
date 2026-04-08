@@ -2184,3 +2184,47 @@ CREATE TABLE `chat_messages` (
   CONSTRAINT `fk_chat_msg_conversation` FOREIGN KEY (`conversation_id`) REFERENCES `chat_conversations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_chat_msg_sender` FOREIGN KEY (`sender_id`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci COMMENT='HU-029: Mensajes del sistema de chat';
+
+
+-- ============================================================================
+-- HU-022: PLANTILLAS OFICIALES
+-- Tabla para almacenar plantillas descargables (DOCX/PDF) según Anexo 1
+-- El Gestor Académico puede agregar/eliminar; el Estudiante solo visualiza y descarga
+-- ============================================================================
+
+DROP TABLE IF EXISTS `plantillas_oficiales`;
+CREATE TABLE `plantillas_oficiales` (
+  `id`            int(11)      NOT NULL AUTO_INCREMENT,
+  `nombre`        varchar(255) NOT NULL                 COMMENT 'Nombre visible de la plantilla',
+  `descripcion`   varchar(500) DEFAULT NULL             COMMENT 'Descripción breve del uso de la plantilla',
+  `tipo`          enum('Propuesta','Informe Final','Acta','Otro') NOT NULL DEFAULT 'Otro' COMMENT 'Categoría de la plantilla',
+  `archivo`       longblob     NOT NULL                 COMMENT 'Contenido binario del archivo (DOCX o PDF)',
+  `file_name`     varchar(255) NOT NULL                 COMMENT 'Nombre original del archivo para la descarga',
+  `mime_type`     varchar(100) NOT NULL                 COMMENT 'Tipo MIME: application/pdf o application/vnd.openxmlformats...',
+  `file_size`     int(11)      NOT NULL DEFAULT 0       COMMENT 'Tamaño del archivo en bytes',
+  `activo`        tinyint(1)   NOT NULL DEFAULT 1       COMMENT '1 = visible para estudiantes, 0 = oculta',
+  `subido_por`    varchar(50)  NOT NULL                 COMMENT 'ID del usuario que subió la plantilla (FK a sis_user)',
+  `created_at`    datetime     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at`    datetime     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_tipo`      (`tipo`),
+  KEY `idx_activo`    (`activo`),
+  KEY `idx_subido_por`(`subido_por`),
+  CONSTRAINT `fk_plantilla_usuario` FOREIGN KEY (`subido_por`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
+  COMMENT='HU-022: Plantillas oficiales descargables (Anexo 1 Instrucción de Dirección)';
+
+-- ============================================================================
+-- HU-022: PERMISOS PARA PLANTILLAS OFICIALES
+-- Se reutiliza mod5 (Documentación y versionado) que ya existe en el sistema.
+-- Estudiante (4): solo Ver(1) y Listar(2) → puede ver y descargar plantillas
+-- Gestor (2) y Admin (1): ya tienen todos los permisos sobre mod5
+-- Se agregan permisos de Agregar(3) y Eliminar(5) sobre mod5 para Gestor
+-- que aún no estaban explícitamente asignados para esta funcionalidad
+-- (el Administrador ya tiene permisos totales por la función check_permits)
+-- ============================================================================
+
+-- Verificar que Gestor tenga Agregar y Eliminar en mod5 (por si no estaban)
+INSERT IGNORE INTO `sis_permits` (`id_mod`, `id_action`, `id_roll`) VALUES
+(5, 3, 2),  -- Gestor: Agregar en Documentación y versionado
+(5, 5, 2);  -- Gestor: Eliminar en Documentación y versionado
