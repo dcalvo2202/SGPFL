@@ -60,108 +60,134 @@ function calculateRealDeadline($fecha_base, $prorrogas) {
 function sendDeadlineEmail($to, $data) {
     if (!constant('DEADLINE_EMAIL_ENABLED')) return false;
 
-    $subject = "[SGPFL - Universidad Nacional] Notificación oficial de vencimiento de plazo";
+    $subject = "Recordatorio de vencimiento del plazo de entrega - SGPFL";
 
     $body = '
 <html>
-  <body style="margin:0; padding:0; background-color:#eef2f6; font-family:Georgia, Times New Roman, serif; color:#1f2937;">
-    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#eef2f6; padding:32px 0;">
-      <tr>
-        <td align="center">
-          <table width="760" cellpadding="0" cellspacing="0" border="0" style="width:760px; max-width:760px; background:#ffffff; border:1px solid #cfd8e3;">
-            <tr>
-              <td style="padding:28px 36px 12px 36px; border-bottom:4px solid #b91c1c;">
-                <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                  <tr>
-                    <td valign="top" style="font-size:13px; line-height:1.6; color:#374151;">
-                      <div style="font-size:18px; font-weight:bold; color:#111827;">
-                        Universidad Nacional
-                      </div>
-                      <div>Sistema de Gestión de Proyectos Finales de Graduación</div>
-                      <div>Comunicación oficial automatizada</div>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        color: #333333;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 18px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        background-color: #fafafa;
+      }
+      .notice {
+        border-left: 4px solid #b91c1c;
+        background-color: #fff1f2;
+        padding: 12px 14px;
+        margin: 14px 0;
+      }
+      .details {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+      }
+      .details td {
+        border: 1px solid #d9d9d9;
+        padding: 8px 10px;
+        vertical-align: top;
+      }
+      .details td:first-child {
+        width: 210px;
+        font-weight: bold;
+        background-color: #f3f4f6;
+      }
+      .footer {
+        margin-top: 25px;
+        padding-top: 15px;
+        border-top: 1px solid #ccc;
+        font-size: 13px;
+        color: #555;
+      }
+      .footer img {
+        width: 120px;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+      .footer td {
+        vertical-align: top;
+      }
+      .divider {
+        border-left: 2px solid #999;
+        width: 1px;
+      }
+      a {
+        color: #0056b3;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>Estimado/a estudiante <strong>' . htmlspecialchars($data['nombre'], ENT_QUOTES, 'UTF-8') . '</strong>,</p>
 
-            <tr> 
-              <td style="padding:36px;">
-                <div style="font-size:22px; font-weight:bold; color:#111827; margin-bottom:18px;">
-                  Notificación oficial de vencimiento de plazo
-                </div>
+      <p>
+        Le recordamos que el plazo para la entrega del documento final de su Trabajo Final de Graduación
+        se encuentra próximo a vencer.
+      </p>
 
-                <p style="margin:0 0 18px 0; font-size:16px; line-height:1.8;">
-                  Estimado/a señor/a <strong>' . htmlspecialchars($data['nombre'], ENT_QUOTES, 'UTF-8') . '</strong>:
-                </p>
+      <div class="notice">
+        Este es un recordatorio automático del sistema SGPFL para evitar atrasos en el proceso de cierre académico.
+      </div>
 
-                <p style="margin:0 0 18px 0; font-size:15px; line-height:1.9; text-align:justify;">
-                  Por este medio se le informa que el plazo establecido para la entrega del documento final del proyecto
-                  <strong>' . htmlspecialchars($data['proyecto'], ENT_QUOTES, 'UTF-8') . '</strong>
-                  vencerá el día <strong>' . htmlspecialchars($data['fecha_limite'], ENT_QUOTES, 'UTF-8') . '</strong>.
-                </p>
+      <p><strong>Detalle del recordatorio:</strong></p>
+      <table class="details">
+        <tr>
+          <td>Proyecto</td>
+          <td>' . htmlspecialchars($data['proyecto'], ENT_QUOTES, 'UTF-8') . '</td>
+        </tr>
+        <tr>
+          <td>Fecha límite de entrega</td>
+          <td>' . htmlspecialchars($data['fecha_limite'], ENT_QUOTES, 'UTF-8') . '</td>
+        </tr>
+        <tr>
+          <td>Días restantes</td>
+          <td><strong>' . (int)$data['dias_restantes'] . '</strong></td>
+        </tr>
+        <tr>
+          <td>Fecha de emisión</td>
+          <td>' . date('d/m/Y H:i') . '</td>
+        </tr>
+      </table>
 
-                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:26px 0; border:1px solid #d1d5db; background:#f9fafb;">
-                  <tr>
-                    <td colspan="2" style="padding:14px 18px; background:#e5e7eb; font-size:14px; font-weight:bold; color:#111827;">
-                      Detalle de la notificación
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="padding:14px 18px; width:220px; font-size:14px; font-weight:bold; border-top:1px solid #d1d5db;">
-                      Proyecto
-                    </td>
-                    <td style="padding:14px 18px; font-size:14px; border-top:1px solid #d1d5db;">
-                      ' . htmlspecialchars($data['proyecto'], ENT_QUOTES, 'UTF-8') . '
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="padding:14px 18px; width:220px; font-size:14px; font-weight:bold; border-top:1px solid #d1d5db;">
-                      Fecha límite de entrega
-                    </td>
-                    <td style="padding:14px 18px; font-size:14px; border-top:1px solid #d1d5db;">
-                      ' . htmlspecialchars($data['fecha_limite'], ENT_QUOTES, 'UTF-8') . '
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="padding:14px 18px; width:220px; font-size:14px; font-weight:bold; border-top:1px solid #d1d5db;">
-                      Días restantes
-                    </td>
-                    <td style="padding:14px 18px; font-size:14px; border-top:1px solid #d1d5db;">
-                      ' . (int)$data['dias_restantes'] . '
-                    </td>
-                  </tr>
-                </table>
+      <p style="margin-top:16px;">
+        Le solicitamos tomar las previsiones necesarias y realizar la entrega dentro del plazo indicado para cumplir
+        con los procedimientos académicos y administrativos correspondientes.
+      </p>
 
-                <p style="margin:0 0 18px 0; font-size:15px; line-height:1.9; text-align:justify;">
-                  Se le solicita tomar las previsiones necesarias y realizar la entrega dentro del plazo indicado, a fin de cumplir con los procedimientos académicos y administrativos correspondientes.
-                </p>
+      <p>
+        En caso de requerir apoyo, favor comunicarse por los medios oficiales de la Escuela de Informática.
+      </p>
 
-                <p style="margin:0 0 28px 0; font-size:15px; line-height:1.9; text-align:justify;">
-                  En caso de requerir información adicional, favor comunicarse por los medios oficiales establecidos por la unidad académica.
-                </p>
-
-                <p style="margin:0; font-size:15px; line-height:1.8;">
-                  Atentamente,
-                </p>
-
-                <p style="margin:10px 0 0 0; font-size:15px; line-height:1.8;">
-                  <strong>Sistema de Gestión de Proyectos Finales de Graduación</strong><br>
-                  Universidad Nacional
-                </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td style="padding:18px 36px; background:#f3f4f6; border-top:1px solid #d1d5db; font-size:12px; color:#4b5563; line-height:1.7;">
-                Este correo corresponde a una notificación automática generada por el sistema institucional SGPFL.
-                Por favor, no responda directamente a este mensaje.
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
+      <div class="footer">
+        <table>
+          <tr>
+            <td><img src="http://www.escinf.una.ac.cr/templates/zt_zizia/images/logo.png" alt="Escuela de Informática"></td>
+            <td class="divider"></td>
+            <td>
+              <strong>Escuela de Informática</strong><br>
+              Tel: <strong>(506) 2562-6363</strong> &nbsp;·&nbsp; Fax: <strong>(506) 2562-6384</strong><br>
+              <a href="mailto:escinf@una.cr">escinf@una.cr</a><br>
+              Universidad Nacional · Campus Presbítero Benjamín Núñez<br>
+              Heredia, Costa Rica
+            </td>
+          </tr>
+        </table>
+        <p style="margin-top:10px; font-size:12px; color:#777;">Este correo fue generado automáticamente por el SGPFL. Por favor no responda este mensaje.</p>
+      </div>
+    </div>
   </body>
 </html>';
 
