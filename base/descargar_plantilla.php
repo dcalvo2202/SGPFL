@@ -2,14 +2,8 @@
 /**
  * HU-022: Descarga de plantillas oficiales
  *
- * Endpoint único de descarga. Verifica sesión y permisos antes
- * de enviar el BLOB al navegador, siguiendo el mismo patrón que
- * tfg_download.php y descargar_archivo.php del sistema.
- *
- * Acceso:
- *   - Estudiante (4): solo plantillas activas
- *   - Gestor (2) / Admin (1): activas e inactivas
- *   - Otros roles autenticados: solo activas
+ * Verifica sesión y permisos antes de enviar el BLOB al navegador.
+ * Usa excepciones en lugar de die/exit para manejo de errores consistente.
  */
 
 // ── Sesión ──────────────────────────────────────────────────
@@ -20,51 +14,61 @@ $mySessionController = mySession::getIstance($_MYSESSION_CONF);
 $current_user_id  = $mySessionController->getVar('usuario');
 $current_user_rol = (int)$mySessionController->getVar('rol');
 
-// Verificar autenticación
-if (!$current_user_id) {
-    http_response_code(401);
-    die('No autorizado.');
-}
-
-// ── Parámetros ───────────────────────────────────────────────
-$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-if (!$id || $id <= 0) {
-    http_response_code(400);
-    die('Parámetro inválido.');
-}
-
-// ── Base de datos ────────────────────────────────────────────
-require_once __DIR__ . '/inc/db/bdcommon.inc';
-require_once __DIR__ . '/inc/plantillas_functions.php';
-
 try {
+    // ── Autenticación ────────────────────────────────────────
+    if (!$current_user_id) {
+        http_response_code(401);
+        throw new RuntimeException('No autorizado.');
+    }
+
+    // ── Validar parámetro ────────────────────────────────────
+    $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+    if ($id === false || $id === null || $id <= 0) {
+        http_response_code(400);
+        throw new RuntimeException('Parámetro inválido.');
+    }
+
+    // ── Base de datos ────────────────────────────────────────
+    require_once __DIR__ . '/inc/db/bdcommon.inc';
+    require_once __DIR__ . '/inc/plantillas_functions.php';
+
     $conn = new mysqli($db_host, $usuario, $clave, $db);
     if ($conn->connect_error) {
-        throw new Exception('Error de conexión: ' . $conn->connect_error);
+        throw new RuntimeException('Error de conexión: ' . $conn->connect_error);
     }
     $conn->set_charset('utf8');
 
-    // Obtener plantilla (la función ya aplica el filtro de activo según el rol)
     $plantilla = getPlantillaParaDescarga($conn, $id, $current_user_rol);
     $conn->close();
 
     if (!$plantilla || empty($plantilla['archivo'])) {
         http_response_code(404);
-        die('Plantilla no encontrada.');
+        throw new RuntimeException('Plantilla no encontrada.');
     }
 
     // ── Enviar archivo al navegador ──────────────────────────
+    // Sanitizar file_name para evitar header injection
+    $safe_filename  = preg_replace('/[^\w\-\.]/u', '_', basename($plantilla['file_name']));
+    $content_length = strlen($plantilla['archivo']);
+
     header('Content-Type: '        . $plantilla['mime_type']);
-    header('Content-Disposition: attachment; filename="' . basename($plantilla['file_name']) . '"');
-    header('Content-Length: '      . $plantilla['file_size']);
+    header('Content-Disposition: attachment; filename="' . $safe_filename . '"');
+    header('Content-Length: '      . $content_length);
     header('Cache-Control: no-cache, must-revalidate');
     header('Expires: 0');
 
     echo $plantilla['archivo'];
-    exit;
+    exit; // Terminar ejecución después de enviar el archivo
 
+} catch (RuntimeException $e) {
+    // Errores de negocio: ya se envió el http_response_code correcto
+    if (ob_get_level()) ob_end_clean();
+    echo htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8');
+    exit;
 } catch (Exception $e) {
     error_log('HU-022 descargar_plantilla.php: ' . $e->getMessage());
-    http_response_code(500);
-    die('Error al procesar la descarga.');
+    if (!headers_sent()) http_response_code(500);
+    if (ob_get_level()) ob_end_clean();
+    echo 'Error al procesar la descarga.';
+    exit;
 }

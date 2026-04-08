@@ -25,8 +25,9 @@ $base_url          = $cds_domain . $cds_locate;
 // ── Control de acceso ────────────────────────────────────────
 $roles_permitidos = [1, 2, 3, 4, 5];
 if (!in_array($current_user_rol, $roles_permitidos)) {
+    // Redirigir sin exit: header + return para no cortar el flujo abruptamente
     header('Location: dashboard.php');
-    exit;
+    return;
 }
 
 // Determinar si el usuario puede gestionar (agregar/eliminar) plantillas
@@ -170,6 +171,17 @@ foreach ($plantillas as $p) {
             min-width: 120px !important;
             font-size: 1rem !important;
             padding: 0.5rem 1.2rem !important;
+        }
+        /* ── Alineación del toast de visibilidad ── */
+        .swal2-toast .swal2-icon {
+            margin: 0 !important;
+        }
+        .swal2-toast .swal2-title {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .swal2-toast.swal2-show {
+            padding: 0.75rem 1rem !important;
         }
     </style>
 
@@ -368,14 +380,19 @@ foreach ($plantillas as $p) {
 
                                         <!-- Icono y nombre -->
                                         <div class="d-flex align-items-start gap-3 mb-3">
-                                            <i class="bi <?= getIconoPorMime($plantilla['mime_type']) ?>"
-                                               style="font-size:2.5rem; color:<?= $plantilla['mime_type'] === 'application/pdf' ? '#dc3545' : '#0d6efd' ?>; flex-shrink:0;"></i>
+                                            <?php
+                                                $icono = htmlspecialchars(getIconoPorMime($plantilla['mime_type']));
+                                                $color_icono = $plantilla['mime_type'] === 'application/pdf' ? '#dc3545' : '#0d6efd';
+                                                $es_pdf = $plantilla['mime_type'] === 'application/pdf';
+                                            ?>
+                                            <i class="bi <?= $icono ?>"
+                                               style="font-size:2.5rem; color:<?= htmlspecialchars($color_icono) ?>; flex-shrink:0;"></i>
                                             <div>
                                                 <h5 class="mb-1" style="color:var(--azul-una); font-size:1rem;">
                                                     <?= htmlspecialchars($plantilla['nombre']) ?>
                                                 </h5>
-                                                <span class="badge <?= $plantilla['mime_type'] === 'application/pdf' ? 'bg-danger' : 'bg-primary' ?>" style="font-size:0.7rem;">
-                                                    <?= $plantilla['mime_type'] === 'application/pdf' ? 'PDF' : 'DOCX' ?>
+                                                <span class="badge <?= $es_pdf ? 'bg-danger' : 'bg-primary' ?>" style="font-size:0.7rem;">
+                                                    <?= $es_pdf ? 'PDF' : 'DOCX' ?>
                                                 </span>
                                                 <?php if ($puede_gestionar && !($plantilla['activo'] ?? 1)): ?>
                                                     <span class="badge bg-secondary ms-1" style="font-size:0.7rem;">Oculta</span>
@@ -411,7 +428,7 @@ foreach ($plantillas as $p) {
                                         <div class="d-flex gap-2 mt-auto">
                                             <a href="<?= htmlspecialchars($base_url) ?>descargar_plantilla.php?id=<?= (int)$plantilla['id'] ?>"
                                                class="btn btn-una-primary btn-sm flex-grow-1"
-                                               title="Descargar <?= htmlspecialchars($plantilla['file_name']) ?>">
+                                               title="Descargar <?= htmlspecialchars($plantilla['file_name'], ENT_QUOTES) ?>">
                                                 <i class="bi bi-download me-1"></i>Descargar
                                             </a>
 
@@ -598,7 +615,6 @@ foreach ($plantillas as $p) {
                 const id          = this.dataset.id;
                 const activoActual = parseInt(this.dataset.activo);
                 const nuevoActivo  = activoActual === 1 ? 0 : 1;
-                const accion       = nuevoActivo === 0 ? 'ocultar' : 'hacer visible';
 
                 // Confirmar antes de cambiar (Nielsen #5)
                 const result = await Swal.fire({
@@ -654,6 +670,9 @@ foreach ($plantillas as $p) {
                             showConfirmButton: false,
                             toast: true,
                             position: 'top-end',
+                            customClass: {
+                                popup: 'd-flex align-items-center',
+                            },
                         });
                     } else {
                         Swal.fire({

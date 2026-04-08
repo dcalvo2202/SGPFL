@@ -66,17 +66,19 @@ function getTodasLasPlantillas(mysqli $conn): array {
  * @return array|null          Fila completa o null si no existe/no tiene acceso
  */
 function getPlantillaParaDescarga(mysqli $conn, int $id, int $rol_usuario): ?array {
-    // Gestor (2) y Admin (1) pueden descargar aunque esté inactiva
-    $filtro_activo = in_array($rol_usuario, [1, 2]) ? "" : "AND activo = 1";
+    // Gestor (2) y Admin (1) pueden descargar aunque esté inactiva.
+    // Se usa prepared statement con parámetro extra en lugar de interpolación
+    // para evitar inyección SQL aunque el valor sea controlado.
+    $solo_activas = in_array($rol_usuario, [1, 2]) ? 0 : 1;
 
     $stmt = $conn->prepare(
         "SELECT id, nombre, archivo, file_name, mime_type, file_size
          FROM plantillas_oficiales
-         WHERE id = ? $filtro_activo"
+         WHERE id = ? AND (? = 0 OR activo = 1)"
     );
     if (!$stmt) return null;
 
-    $stmt->bind_param("i", $id);
+    $stmt->bind_param("ii", $id, $solo_activas);
     $stmt->execute();
     $result = $stmt->get_result();
     $row = $result->num_rows > 0 ? $result->fetch_assoc() : null;
