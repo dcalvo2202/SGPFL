@@ -5,6 +5,7 @@ include('lang/lang.es');
 require_once __DIR__ . '/inc/db/db.php';
 require_once __DIR__ . '/lib/mysession/mySession.conf.php';
 require_once __DIR__ . '/lib/mysession/mySession.class.php';
+require_once __DIR__ . '/service/cancelaciones/CancelacionProyectoRules.php';
 
 $mySessionController = mySession::getIstance($_MYSESSION_CONF);
 
@@ -32,9 +33,10 @@ $proyecto_id   = (int)($_POST['proyecto_id'] ?? 0);
 $motivo        = trim($_POST['motivo'] ?? '');
 $observaciones = trim($_POST['observaciones'] ?? '');
 
-if ($proyecto_id <= 0) backErr('ID de proyecto no válido.');
-if ($motivo === '' || mb_strlen($motivo) > 500) backErr('Motivo es requerido (máx. 500 caracteres).');
-if (!$current_user_id) backErr('Sesión inválida.');
+$erroresEntrada = CancelacionProyectoRules::validarEntrada($proyecto_id, $motivo, $current_user_id);
+if (!empty($erroresEntrada)) {
+  backErr($erroresEntrada[0]);
+}
 
 function getProyecto(mysqli $db, int $pid): array {
   $sql = "SELECT id_aprobado, proposal_id, estado, fecha_creacion, fecha_ultimo_avance
@@ -72,13 +74,6 @@ function getUltimoAvance(mysqli $db, int $pid, array $proyecto): ?string {
   return null;
 }
 
-function validarSeisMeses(string $fechaUltimoAvance): void {
-  $hoy = new DateTime('now');
-  $base = new DateTime($fechaUltimoAvance);
-  $limite = (clone $base)->modify('+6 months');
-  if ($hoy < $limite) backErr('No se puede cancelar: el proyecto registra avances en los últimos 6 meses (Art. 73 RGPEA).');
-}
-
 function existeCancelacion(mysqli $db, int $pid): bool {
   $stmt = mysqli_prepare($db, "SELECT 1 FROM acuerdo_cancelacion WHERE proyecto_id = ? LIMIT 1");
   mysqli_stmt_bind_param($stmt, 'i', $pid);
@@ -96,7 +91,12 @@ if (existeCancelacion($id_con, $proyecto_id)) backErr('Ya existe un acuerdo de c
 
 $fechaUltimoAvance = getUltimoAvance($id_con, $proyecto_id, $proyecto);
 if ($fechaUltimoAvance === null) backErr('No hay fechas para validar 6 meses sin avances.');
-validarSeisMeses($fechaUltimoAvance);
+CancelacionProyectoRules::validarSeisMeses($fechaUltimoAvance);
+
+$erroresSeisMeses = CancelacionProyectoRules::validarSeisMeses($fechaUltimoAvance);
+if (!empty($erroresSeisMeses)) {
+  backErr($erroresSeisMeses[0]);
+}
 
 mysqli_begin_transaction($id_con);
 try {
