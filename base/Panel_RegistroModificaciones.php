@@ -1,5 +1,10 @@
+
 <?php
 // VERIFICAR AUTENTICACIÓN Y PERMISOS
+// Las tablas de modificaciones registradas son tfg_extension_requests y registered_projects,
+// sus respectivas columnas son fecha_inicio, fecha_fin, fecha_solicitud_prorroga, fecha_respuesta_prorroga-
+// Solo se registran cambios en estas columnas y tablas, por lo que el panel se centra exclusivamente en ellas para mantener la simplicidad y relevancia de la información mostrada.
+
 include("mod/login/check.php");
 
 // 1. INCLUIR ARCHIVOS NECESARIOS
