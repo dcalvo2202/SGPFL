@@ -85,10 +85,19 @@ function formatearFecha($fecha) {
 }
 
 // Helper para formatear fecha corta (solo fecha sin hora)
-function formatearFechaCorta($fecha) {
-    if (empty($fecha)) return '<span class="text-muted">NULL</span>';
-    $dt = new DateTime($fecha);
-    return $dt->format('d/m/Y');
+function formatearFechaCorta($fecha, $esValorAnterior = false) {
+    if ($fecha === null || $fecha === '') {
+        return $esValorAnterior
+            ? '<span class="text-muted">Sin valor previo</span>'
+            : '<span class="text-muted">NULL</span>';
+    }
+
+    try {
+        $dt = new DateTime($fecha);
+        return $dt->format('d/m/Y');
+    } catch (Exception $e) {
+        return '<span class="text-muted">Fecha inválida</span>';
+    }
 }
 ?>
 
@@ -112,10 +121,10 @@ function formatearFechaCorta($fecha) {
             </div>
 
             <!-- ALERTA INFORMATIVA -->
-            <div class="alert alert-info" role="alert">
-                <i class="fa fa-info-circle"></i> 
-                Este panel muestra el historial de modificaciones en fechas de las tablas 
-                <strong>registered_projects</strong> y <strong>tfg_extension_requests</strong>.
+            <div class="alert alert-info text-center" role="alert">
+                <i class="fa fa-info-circle"></i>
+                Este panel muestra el historial de modificaciones en fechas
+                
             </div>
 
             <!-- ==================== DASHBOARD ESTADÍSTICAS ==================== -->
@@ -161,6 +170,8 @@ function formatearFechaCorta($fecha) {
                 </div>
                 <div class="card-body">
                     <form method="get" class="row g-3">
+                        <input type="hidden" name="campo" value="todos">
+
                         <!-- Tabla origen -->
                         <div class="col-md-3">
                             <label class="form-label">Tabla origen</label>
@@ -168,18 +179,6 @@ function formatearFechaCorta($fecha) {
                                 <option value="todas" <?= $tabla_origen === 'todas' ? 'selected' : '' ?>>Todas</option>
                                 <option value="registered_projects" <?= $tabla_origen === 'registered_projects' ? 'selected' : '' ?>>Proyectos</option>
                                 <option value="tfg_extension_requests" <?= $tabla_origen === 'tfg_extension_requests' ? 'selected' : '' ?>>Prórrogas</option>
-                            </select>
-                        </div>
-                        
-                        <!-- Campo modificado -->
-                        <div class="col-md-3">
-                            <label class="form-label">Campo modificado</label>
-                            <select name="campo" class="form-select">
-                                <option value="todos" <?= $campo_modificado === 'todos' ? 'selected' : '' ?>>Todos</option>
-                                <option value="start_date" <?= $campo_modificado === 'start_date' ? 'selected' : '' ?>>Fecha inicio (start_date)</option>
-                                <option value="end_date" <?= $campo_modificado === 'end_date' ? 'selected' : '' ?>>Fecha fin (end_date)</option>
-                                <option value="request_date" <?= $campo_modificado === 'request_date' ? 'selected' : '' ?>>Fecha solicitud (request_date)</option>
-                                <option value="response_date" <?= $campo_modificado === 'response_date' ? 'selected' : '' ?>>Fecha respuesta (response_date)</option>
                             </select>
                         </div>
                         
@@ -250,7 +249,6 @@ function formatearFechaCorta($fecha) {
                                         <th style="width:140px;">Fecha cambio</th>
                                         <th>Usuario</th>
                                         <th>Tabla</th>
-                                        <th>Campo</th>
                                         <th>ID Reg.</th>
                                         <th>Valor anterior</th>
                                         <th>Valor nuevo</th>
@@ -275,14 +273,11 @@ function formatearFechaCorta($fecha) {
                                                 <?php endif; ?>
                                             </td>
                                             <td>
-                                                <code><?= htmlspecialchars($reg['campo_modificado']) ?></code>
-                                            </td>
-                                            <td>
                                                 <span class="badge bg-secondary">#<?= (int)$reg['id_registro'] ?></span>
                                             </td>
                                             <td>
                                                 <span class="text-danger">
-                                                    <?= formatearFechaCorta($reg['valor_anterior']) ?>
+                                                    <?= formatearFechaCorta($reg['valor_anterior'], true) ?>
                                                 </span>
                                             </td>
                                             <td>
@@ -296,10 +291,8 @@ function formatearFechaCorta($fecha) {
                                                         data-fecha="<?= htmlspecialchars(formatearFecha($reg['fecha_modificacion'])) ?>"
                                                         data-usuario="<?= htmlspecialchars($reg['nombre_usuario']) ?>"
                                                         data-usuario-id="<?= htmlspecialchars($reg['modificado_por']) ?>"
-                                                        data-tabla="<?= htmlspecialchars($reg['tabla_origen']) ?>"
                                                         data-registro="<?= (int)$reg['id_registro'] ?>"
-                                                        data-campo="<?= htmlspecialchars($reg['campo_modificado']) ?>"
-                                                        data-anterior="<?= htmlspecialchars(formatearFechaCorta($reg['valor_anterior'])) ?>"
+                                                        data-anterior="<?= htmlspecialchars(formatearFechaCorta($reg['valor_anterior'], true)) ?>"
                                                         data-nuevo="<?= htmlspecialchars(formatearFechaCorta($reg['valor_nuevo'])) ?>"
                                                         data-descripcion="<?= htmlspecialchars($reg['descripcion'] ?? '') ?>"
                                                         title="Ver detalle">
@@ -391,9 +384,7 @@ function formatearFechaCorta($fecha) {
                 var fecha = this.getAttribute('data-fecha');
                 var usuario = this.getAttribute('data-usuario');
                 var usuarioId = this.getAttribute('data-usuario-id');
-                var tabla = this.getAttribute('data-tabla');
                 var registro = this.getAttribute('data-registro');
-                var campo = this.getAttribute('data-campo');
                 var anterior = this.getAttribute('data-anterior');
                 var nuevo = this.getAttribute('data-nuevo');
                 var descripcion = this.getAttribute('data-descripcion');
@@ -414,16 +405,8 @@ function formatearFechaCorta($fecha) {
                             <td>${usuario} <small class="text-muted">(${usuarioId})</small></td>
                         </tr>
                         <tr>
-                            <th>Tabla origen:</th>
-                            <td><code>${tabla}</code></td>
-                        </tr>
-                        <tr>
                             <th>ID registro:</th>
                             <td><span class="badge bg-secondary">#${registro}</span></td>
-                        </tr>
-                        <tr>
-                            <th>Campo modificado:</th>
-                            <td><code>${campo}</code></td>
                         </tr>
                         <tr>
                             <th>Valor anterior:</th>
