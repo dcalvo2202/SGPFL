@@ -70,10 +70,18 @@ $mod3 = 3; // Usuarios
 */
 
 // Configuración de alertas de vencimiento
-define('DEADLINE_THRESHOLDS', [30, 15, 7, 3, 1]); // Días antes del vencimiento
-define('DEADLINE_EMAIL_ENABLED', true);
-define('DEADLINE_FROM_EMAIL', 'noreply@una.cr\r\n');
-define('DEADLINE_FROM_NAME', 'SGPFL - Escuela de Informática');
+if (!defined('DEADLINE_THRESHOLDS')) {
+    define('DEADLINE_THRESHOLDS', [30, 15, 7, 3, 1]); // Días antes del vencimiento
+}
+if (!defined('DEADLINE_EMAIL_ENABLED')) {
+    define('DEADLINE_EMAIL_ENABLED', true);
+}
+if (!defined('DEADLINE_FROM_EMAIL')) {
+    define('DEADLINE_FROM_EMAIL', 'noreply@una.cr\r\n');
+}
+if (!defined('DEADLINE_FROM_NAME')) {
+    define('DEADLINE_FROM_NAME', 'SGPFL - Escuela de Informática');
+}
 
 
 

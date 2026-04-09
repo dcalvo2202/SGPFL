@@ -1,6 +1,6 @@
 <?php
 include("mod/login/check.php");
-include("config.inc");
+include_once("config.inc");
 $vocab = $mySessionController->getVar("vocab");
 $image_example_src = $mySessionController->getVar("cds_domain") . $mySessionController->getVar("cds_locate") . "img/logo.webp";
 
