@@ -24,31 +24,30 @@
 
 function registerAlert($conn, $user_id, $subject, $message, $alert_type = 'Informativa', $priority = 'Media', $related_entity_type = null, $related_entity_id = null) {
     $sql = "INSERT INTO user_alerts (user_id, subject, message, alert_type, priority, related_entity_type, related_entity_id, sent_at) 
-            VALUES (:user_id, :subject, :message, :alert_type, :priority, :related_entity_type, :related_entity_id, NOW())";
+            VALUES (?, ?, ?, ?, ?, ?, ?, NOW())";
     try {
-        /** @var PDOStatement|false $stmt */
         $stmt = $conn->prepare($sql);
-        if (!$stmt || !is_object($stmt)) {
-            $errorInfo = (is_object($conn) && method_exists($conn, 'errorInfo')) ? json_encode($conn->errorInfo()) : 'prepare failed';
-            error_log("Error preparando alerta para usuario $user_id: " . $errorInfo);
+        if (!$stmt) {
+            error_log("Error preparando alerta para usuario $user_id: " . $conn->error);
             return false;
         }
-        $params = [
-            ':user_id' => $user_id,
-            ':subject' => $subject,
-            ':message' => $message,
-            ':alert_type' => $alert_type,
-            ':priority' => $priority,
-            ':related_entity_type' => $related_entity_type,
-            ':related_entity_id' => $related_entity_id
-        ];
-        $result = $stmt->execute($params);
+        
+        // MySQLi bind_param: tipos de datos (s=string, i=integer)
+        $stmt->bind_param("ssssssi", 
+            $user_id, 
+            $subject, 
+            $message, 
+            $alert_type, 
+            $priority, 
+            $related_entity_type, 
+            $related_entity_id
+        );
+        
+        $result = $stmt->execute();
         if (!$result) {
-            $errorInfo = (is_object($stmt) && method_exists($stmt, 'errorInfo'))
-                ? json_encode($stmt->errorInfo())
-                : ((is_object($conn) && method_exists($conn, 'errorInfo')) ? json_encode($conn->errorInfo()) : 'execute failed');
-            error_log("Error registrando alerta para usuario $user_id: " . $errorInfo);
+            error_log("Error registrando alerta para usuario $user_id: " . $stmt->error);
         }
+        $stmt->close();
         return $result;
     } catch (Exception $e) {
         error_log("Error en registerAlert: " . $e->getMessage());
