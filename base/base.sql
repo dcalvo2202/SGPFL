@@ -525,6 +525,59 @@ CREATE TABLE `auditoria_cambios_fecha` (
     INDEX `idx_campo_modificado` (`campo_modificado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Auditoría de cambios en fechas de proyectos y prórrogas';
 
+-- =====================================================
+-- HU-037: ALERTAS INTERNAS (incluye Vencimiento Plazo)
+-- =====================================================
+DROP TABLE IF EXISTS user_alerts;
+CREATE TABLE user_alerts (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  user_id varchar(50) NOT NULL COMMENT 'Usuario destinatario de la alerta',
+  subject varchar(255) NOT NULL COMMENT 'Asunto de la alerta',
+  message text NOT NULL COMMENT 'Mensaje detallado',
+  alert_type enum(
+    'Nueva Propuesta',
+    'Propuesta Aprobada',
+    'Propuesta Rechazada',
+    'Documento Final',
+    'Correccion Solicitada',
+    'Asesor Aprobado',
+    'Asesor Rechazado',
+    'Prorroga',
+    'Informativa',
+    'Sistema',
+    'Vencimiento Plazo'
+  ) NOT NULL DEFAULT 'Informativa' COMMENT 'Tipo de alerta',
+  priority enum('Alta','Media','Baja') DEFAULT 'Media' COMMENT 'Prioridad de la alerta',
+  related_entity_type varchar(50) DEFAULT NULL COMMENT 'Tipo de entidad relacionada (proposal, document, project, etc.)',
+  related_entity_id int(11) DEFAULT NULL COMMENT 'ID de la entidad relacionada',
+  read_at datetime DEFAULT NULL COMMENT 'Fecha/hora en que se leyó la alerta',
+  sent_at datetime DEFAULT current_timestamp() COMMENT 'Fecha/hora de envío',
+  PRIMARY KEY (id),
+  KEY idx_user_id (user_id),
+  KEY idx_alert_type (alert_type),
+  KEY idx_priority (priority),
+  KEY idx_read_at (read_at),
+  KEY idx_sent_at (sent_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
+COMMENT='HU-037: Alertas internas del sistema';
+
+-- =====================================================
+-- HU-005: DEDUPLICACIÓN DE CORREOS DE VENCIMIENTO
+-- =====================================================
+DROP TABLE IF EXISTS deadline_alerts_sent;
+CREATE TABLE deadline_alerts_sent (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  user_id varchar(50) NOT NULL COMMENT 'Usuario destinatario',
+  project_id int(11) NOT NULL COMMENT 'ID de proyecto_aprobado.id_aprobado',
+  days_threshold int(11) NOT NULL COMMENT 'Umbral de días (30,15,7,3,1...)',
+  sent_at datetime DEFAULT current_timestamp() COMMENT 'Fecha/hora de envío exitoso',
+  PRIMARY KEY (id),
+  UNIQUE KEY uq_deadline_once (user_id, project_id, days_threshold),
+  KEY idx_project_days (project_id, days_threshold),
+  KEY idx_user (user_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+COMMENT='HU-005: Control de alertas de vencimiento ya enviadas';
+
 
 
 -- ----------------------------
@@ -2088,20 +2141,32 @@ CREATE TABLE `user_alerts` (
   `user_id` varchar(50) NOT NULL COMMENT 'Usuario destinatario de la alerta',
   `subject` varchar(255) NOT NULL COMMENT 'Asunto de la alerta',
   `message` text NOT NULL COMMENT 'Mensaje detallado',
-  `alert_type` enum('Nueva Propuesta','Propuesta Aprobada','Propuesta Rechazada','Documento Final','Correccion Solicitada','Asesor Aprobado','Asesor Rechazado','Prorroga','Informativa','Sistema') NOT NULL DEFAULT 'Informativa' COMMENT 'Tipo de alerta',
+  `alert_type` enum(
+    'Nueva Propuesta',
+    'Propuesta Aprobada',
+    'Propuesta Rechazada',
+    'Documento Final',
+    'Correccion Solicitada',
+    'Asesor Aprobado',
+    'Asesor Rechazado',
+    'Prorroga',
+    'Informativa',
+    'Sistema',
+    'Vencimiento Plazo'
+  ) NOT NULL DEFAULT 'Informativa' COMMENT 'Tipo de alerta',
   `priority` enum('Alta','Media','Baja') DEFAULT 'Media' COMMENT 'Prioridad de la alerta',
-  `related_entity_type` varchar(50) DEFAULT NULL COMMENT 'Tipo de entidad relacionada (proposal, document, etc.)',
+  `related_entity_type` varchar(50) DEFAULT NULL COMMENT 'Tipo de entidad relacionada (proposal, document, project, etc.)',
   `related_entity_id` int(11) DEFAULT NULL COMMENT 'ID de la entidad relacionada',
   `read_at` datetime DEFAULT NULL COMMENT 'Fecha/hora en que se leyó la alerta',
-  `sent_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha/hora de envío',
+  `sent_at` datetime DEFAULT current_timestamp() COMMENT 'Fecha/hora de envío',
   PRIMARY KEY (`id`),
   KEY `idx_user_id` (`user_id`),
   KEY `idx_alert_type` (`alert_type`),
   KEY `idx_priority` (`priority`),
   KEY `idx_read_at` (`read_at`),
   KEY `idx_sent_at` (`sent_at`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci COMMENT='HU-037: Alertas internas del sistema';
-
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
+COMMENT='HU-037: Alertas internas del sistema';
 -- ----------------------------
 -- HU-011: Table structure for `external_advisor_linked_students`
 -- Vinculación de asesor externo con todos los estudiantes de un grupo TFG
