@@ -525,6 +525,39 @@ CREATE TABLE `auditoria_cambios_fecha` (
     INDEX `idx_campo_modificado` (`campo_modificado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Auditoría de cambios en fechas de proyectos y prórrogas';
 
+-- ----------------------------
+-- Triggers structure for `tfg_extension_requests`
+-- ----------------------------
+DROP TRIGGER IF EXISTS `trg_audit_extension_requests_dates`;
+DELIMITER ;;
+CREATE TRIGGER `trg_audit_extension_requests_dates` BEFORE UPDATE ON `tfg_extension_requests` FOR EACH ROW BEGIN
+  DECLARE v_user VARCHAR(50);
+
+  SET v_user = IFNULL(@current_user_id, 'SYSTEM');
+
+  IF (OLD.request_date IS NULL AND NEW.request_date IS NOT NULL)
+     OR (OLD.request_date IS NOT NULL AND NEW.request_date IS NULL)
+     OR (OLD.request_date <> NEW.request_date) THEN
+    INSERT INTO auditoria_cambios_fecha
+      (tabla_origen, id_registro, campo_modificado, valor_anterior, valor_nuevo, modificado_por, descripcion)
+    VALUES
+      ('tfg_extension_requests', OLD.id, 'request_date', OLD.request_date, NEW.request_date, v_user,
+       CONCAT('Prórroga ID: ', OLD.id, ' - Propuesta: ', OLD.proposal_id, ' - Cambio en fecha de solicitud'));
+  END IF;
+
+  IF (OLD.response_date IS NULL AND NEW.response_date IS NOT NULL)
+     OR (OLD.response_date IS NOT NULL AND NEW.response_date IS NULL)
+     OR (OLD.response_date <> NEW.response_date) THEN
+    INSERT INTO auditoria_cambios_fecha
+      (tabla_origen, id_registro, campo_modificado, valor_anterior, valor_nuevo, modificado_por, descripcion)
+    VALUES
+      ('tfg_extension_requests', OLD.id, 'response_date', OLD.response_date, NEW.response_date, v_user,
+       CONCAT('Prórroga ID: ', OLD.id, ' - Propuesta: ', OLD.proposal_id, ' - Cambio en fecha de respuesta'));
+  END IF;
+END
+;;
+DELIMITER ;
+
 -- =====================================================
 -- HU-037: ALERTAS INTERNAS (incluye Vencimiento Plazo)
 -- =====================================================
@@ -1651,6 +1684,39 @@ CREATE TABLE registered_projects (
     CONSTRAINT fk_registered_projects_tfg FOREIGN KEY (tfg_proposal_id) REFERENCES tfg_proposals(id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT fk_registered_projects_type FOREIGN KEY (project_type_id) REFERENCES project_types(id) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+  -- ----------------------------
+  -- Triggers structure for `registered_projects`
+  -- ----------------------------
+  DROP TRIGGER IF EXISTS `trg_audit_registered_projects_dates`;
+  DELIMITER ;;
+  CREATE TRIGGER `trg_audit_registered_projects_dates` BEFORE UPDATE ON `registered_projects` FOR EACH ROW BEGIN
+    DECLARE v_user VARCHAR(50);
+
+    SET v_user = IFNULL(@current_user_id, 'SYSTEM');
+
+    IF (OLD.start_date IS NULL AND NEW.start_date IS NOT NULL)
+       OR (OLD.start_date IS NOT NULL AND NEW.start_date IS NULL)
+       OR (OLD.start_date <> NEW.start_date) THEN
+      INSERT INTO auditoria_cambios_fecha
+        (tabla_origen, id_registro, campo_modificado, valor_anterior, valor_nuevo, modificado_por, descripcion)
+      VALUES
+        ('registered_projects', OLD.id, 'start_date', OLD.start_date, NEW.start_date, v_user,
+         CONCAT('Proyecto ID: ', OLD.id, ' - Cambio en fecha de inicio'));
+    END IF;
+
+    IF (OLD.end_date IS NULL AND NEW.end_date IS NOT NULL)
+       OR (OLD.end_date IS NOT NULL AND NEW.end_date IS NULL)
+       OR (OLD.end_date <> NEW.end_date) THEN
+      INSERT INTO auditoria_cambios_fecha
+        (tabla_origen, id_registro, campo_modificado, valor_anterior, valor_nuevo, modificado_por, descripcion)
+      VALUES
+        ('registered_projects', OLD.id, 'end_date', OLD.end_date, NEW.end_date, v_user,
+         CONCAT('Proyecto ID: ', OLD.id, ' - Cambio en fecha de finalización'));
+    END IF;
+  END
+  ;;
+  DELIMITER ;
 
 -- ----------------------------
 -- TABLA 4: MIEMBROS DE PROYECTO

@@ -182,7 +182,7 @@ CSS;
                 <table class="table table-striped table-sm align-middle mb-2">
                   <thead>
                     <tr>
-                      <th style="width:180px;">user_id</th>
+                      <th style="width:180px;">Cédula</th>
                       <th>Nombre</th>
                     </tr>
                   </thead>
