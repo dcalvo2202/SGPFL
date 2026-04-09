@@ -76,6 +76,14 @@ if ($current_user_rol !== 1) {
                             <p>Consultar accesos y eventos de seguridad</p>
                         </div>
                     </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>Panel_RegistroModificaciones.php'" style="border-left: 4px solid #6610f2;">
+                            <div class="card-icon"><i class="bi bi-calendar2-week-fill"></i></div>
+                            <h5>Registro de Modificaciones</h5>
+                            <p>Consultar cambios en fechas de proyectos y prórrogas</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 

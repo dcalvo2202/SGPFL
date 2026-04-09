@@ -1,3 +1,4 @@
+
 <?php
 /**
  * HU-037: Sistema de Alertas Internas
@@ -19,25 +20,40 @@
  * @param int|null $related_entity_id ID de la entidad relacionada
  * @return bool True si se registró correctamente
  */
+
+
 function registerAlert($conn, $user_id, $subject, $message, $alert_type = 'Informativa', $priority = 'Media', $related_entity_type = null, $related_entity_id = null) {
     $sql = "INSERT INTO user_alerts (user_id, subject, message, alert_type, priority, related_entity_type, related_entity_id, sent_at) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, NOW())";
-    
-    $stmt = $conn->prepare($sql);
-    if (!$stmt) {
-        error_log("Error preparando alerta: " . $conn->error);
+            VALUES (:user_id, :subject, :message, :alert_type, :priority, :related_entity_type, :related_entity_id, NOW())";
+    try {
+        /** @var PDOStatement|false $stmt */
+        $stmt = $conn->prepare($sql);
+        if (!$stmt || !is_object($stmt)) {
+            $errorInfo = (is_object($conn) && method_exists($conn, 'errorInfo')) ? json_encode($conn->errorInfo()) : 'prepare failed';
+            error_log("Error preparando alerta para usuario $user_id: " . $errorInfo);
+            return false;
+        }
+        $params = [
+            ':user_id' => $user_id,
+            ':subject' => $subject,
+            ':message' => $message,
+            ':alert_type' => $alert_type,
+            ':priority' => $priority,
+            ':related_entity_type' => $related_entity_type,
+            ':related_entity_id' => $related_entity_id
+        ];
+        $result = $stmt->execute($params);
+        if (!$result) {
+            $errorInfo = (is_object($stmt) && method_exists($stmt, 'errorInfo'))
+                ? json_encode($stmt->errorInfo())
+                : ((is_object($conn) && method_exists($conn, 'errorInfo')) ? json_encode($conn->errorInfo()) : 'execute failed');
+            error_log("Error registrando alerta para usuario $user_id: " . $errorInfo);
+        }
+        return $result;
+    } catch (Exception $e) {
+        error_log("Error en registerAlert: " . $e->getMessage());
         return false;
     }
-    
-    $stmt->bind_param("ssssssi", $user_id, $subject, $message, $alert_type, $priority, $related_entity_type, $related_entity_id);
-    $result = $stmt->execute();
-    
-    if (!$result) {
-        error_log("Error registrando alerta para usuario $user_id: " . $stmt->error);
-    }
-    
-    $stmt->close();
-    return $result;
 }
 
 /**
@@ -659,4 +675,23 @@ function registerAdvisorAssignedToStudentAlert($conn, $student_id, $advisor_name
     $message .= "Tu asesor externo podrá visualizar los documentos de tu TFG.";
     
     return registerAlert($conn, $student_id, $subject, $message, 'Informativa', 'Alta', null, null);
+}
+
+/**
+ * HU-005
+ * 
+ * Registra una alerta de vencimiento de plazo para entrega de documento final.
+ * @param mysqli $conn Conexión a la base de datos
+ * @param string $user_id ID del usuario destinatario
+ * @param string $project_title Título del proyecto
+ * @param string $deadline Fecha límite (YYYY-MM-DD)
+ * @param int $days_remaining Días restantes para el vencimiento
+ * @param int $project_id ID del proyecto
+ * @return bool True si se registró correctamente
+ */
+function registerDeadlineAlert($conn, $user_id, $project_title, $deadline, $days_remaining, $project_id) {
+    $subject = "¡Atención! Plazo de entrega próximo a vencer";
+    $message = "El plazo para entregar el documento final del proyecto \"{$project_title}\" vence el día {$deadline} ({$days_remaining} días restantes).\n";
+    $message .= "Por favor, asegúrate de cumplir con la entrega antes de la fecha límite.";
+    return registerAlert($conn, $user_id, $subject, $message, 'Vencimiento Plazo', 'Alta', 'project', $project_id);
 }

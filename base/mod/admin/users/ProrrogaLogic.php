@@ -251,6 +251,9 @@ class ProrrogaLogic {
             return ['success' => false, 'message' => 'Estado inválido.'];
         }
 
+        // Establecer usuario para trigger de auditoría
+        $this->conn->query("SET @current_user_id = '" . $this->conn->real_escape_string($responded_by) . "'");
+
         $sql = "UPDATE tfg_extension_requests 
                 SET status = ?, response_date = NOW(), responded_by = ?, response_comment = ?
                 WHERE id = ? AND status = 'pendiente'";

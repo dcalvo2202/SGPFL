@@ -252,14 +252,13 @@ try {
                         </div>
                     </div>
 
-                    <!-- Plantillas Oficiales -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card w-100 h-100" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_plantillas.php'" style="border-left: 4px solid #6f42c1;">
+                        <div class="quick-action-card w-100 h-100" onclick="location.href='<?= htmlspecialchars($base_url) ?>Panel_RegistroModificaciones.php'">
                             <div class="card-icon">
-                                <i class="bi bi-file-earmark-arrow-down-fill"></i>
+                                <i class="bi bi-calendar2-week-fill"></i>
                             </div>
-                            <h5>Plantillas Oficiales</h5>
-                            <p>Agregar, gestionar y publicar plantillas para los estudiantes.</p>
+                            <h5>Registro de Modificaciones</h5>
+                            <p>Consultar la auditoría de cambios en fechas de proyectos y prórrogas.</p>
                         </div>
                     </div>
                 </div>
