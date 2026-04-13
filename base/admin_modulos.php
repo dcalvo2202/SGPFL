@@ -243,7 +243,7 @@ if (!is_array($modulos)) {
                         <input type="hidden" name="find_key" value="<?= htmlspecialchars($find_key) ?>">
 
                         <div class="col-md-4">
-                            <label class="form-label">Nombre</label>
+                            <label class="form-label">Nombre <span style="color: red;">*</span></label>
                             <input type="text" name="mod_name" class="form-control" required value="<?= htmlspecialchars($form_mod_name) ?>">
                         </div>
                         <div class="col-md-8">

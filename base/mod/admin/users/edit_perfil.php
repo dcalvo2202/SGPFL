@@ -26,12 +26,12 @@ $res = seleccion($sql);
                 <p class="guidelines" id="guide_2"><small><?= $vocab["user_name_desc"] ?></small></p> 
             </div>	
             <div class="form-group">
-                <label for="correo_txt"><?= $vocab["user_mail"] ?> </label>
+                <label for="correo_txt"><?= $vocab["user_mail"] ?> <span style="color: red;">*</span></label>
                 <input id="correo_txt" name="correo_txt" class="form-control" type="text" maxlength="255" value="<?= $res[0]['email'] ?>"/> 
                 <p class="guidelines" id="guide_3"><small><?= $vocab["user_mail_desc"] ?></small></p> 
             </div>
             <div class="form-group">
-                <label for="telefono_txt"><?= $vocab["user_tel"] ?> </label>
+                <label for="telefono_txt"><?= $vocab["user_tel"] ?> <span style="color: red;">*</span></label>
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <input id="telefono_txt" name="telefono_txt" class="form-control" type="text" maxlength="255" value="<?= $res[0]['telefono'] ?>" onkeypress="return onlyNumbers(event, 0)"/>
