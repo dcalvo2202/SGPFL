@@ -500,6 +500,119 @@ CREATE TABLE `tfg_proposal_history` (
     FOREIGN KEY (reviewed_by) REFERENCES sis_user(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+
+-- =====================================================
+-- TABLA: auditoria_cambios_fecha
+-- Propósito: Registrar modificaciones en fechas de proyectos y prórrogas
+-- Tablas auditadas: registered_projects, tfg_extension_requests
+-- =====================================================
+
+CREATE TABLE `auditoria_cambios_fecha` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `tabla_origen` VARCHAR(100) NOT NULL COMMENT 'Tabla donde se hizo el cambio (registered_projects, tfg_extension_requests)',
+    `id_registro` INT NOT NULL COMMENT 'ID del registro modificado',
+    `campo_modificado` VARCHAR(100) NOT NULL COMMENT 'Nombre del campo de fecha que cambió',
+    `valor_anterior` DATETIME DEFAULT NULL COMMENT 'Valor antes del cambio',
+    `valor_nuevo` DATETIME DEFAULT NULL COMMENT 'Valor después del cambio',
+    `modificado_por` VARCHAR(50) NOT NULL COMMENT 'ID del usuario que realizó el cambio',
+    `fecha_modificacion` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha y hora del cambio',
+    `descripcion` TEXT DEFAULT NULL COMMENT 'Descripción adicional o contexto del cambio',
+    
+    INDEX `idx_tabla_origen` (`tabla_origen`),
+    INDEX `idx_id_registro` (`id_registro`),
+    INDEX `idx_modificado_por` (`modificado_por`),
+    INDEX `idx_fecha_modificacion` (`fecha_modificacion`),
+    INDEX `idx_campo_modificado` (`campo_modificado`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Auditoría de cambios en fechas de proyectos y prórrogas';
+
+-- ----------------------------
+-- Triggers structure for `tfg_extension_requests`
+-- ----------------------------
+DROP TRIGGER IF EXISTS `trg_audit_extension_requests_dates`;
+DELIMITER ;;
+CREATE TRIGGER `trg_audit_extension_requests_dates` BEFORE UPDATE ON `tfg_extension_requests` FOR EACH ROW BEGIN
+  DECLARE v_user VARCHAR(50);
+
+  SET v_user = IFNULL(@current_user_id, 'SYSTEM');
+
+  IF (OLD.request_date IS NULL AND NEW.request_date IS NOT NULL)
+     OR (OLD.request_date IS NOT NULL AND NEW.request_date IS NULL)
+     OR (OLD.request_date <> NEW.request_date) THEN
+    INSERT INTO auditoria_cambios_fecha
+      (tabla_origen, id_registro, campo_modificado, valor_anterior, valor_nuevo, modificado_por, descripcion)
+    VALUES
+      ('tfg_extension_requests', OLD.id, 'request_date', OLD.request_date, NEW.request_date, v_user,
+       CONCAT('Prórroga ID: ', OLD.id, ' - Propuesta: ', OLD.proposal_id, ' - Cambio en fecha de solicitud'));
+  END IF;
+
+  IF (OLD.response_date IS NULL AND NEW.response_date IS NOT NULL)
+     OR (OLD.response_date IS NOT NULL AND NEW.response_date IS NULL)
+     OR (OLD.response_date <> NEW.response_date) THEN
+    INSERT INTO auditoria_cambios_fecha
+      (tabla_origen, id_registro, campo_modificado, valor_anterior, valor_nuevo, modificado_por, descripcion)
+    VALUES
+      ('tfg_extension_requests', OLD.id, 'response_date', OLD.response_date, NEW.response_date, v_user,
+       CONCAT('Prórroga ID: ', OLD.id, ' - Propuesta: ', OLD.proposal_id, ' - Cambio en fecha de respuesta'));
+  END IF;
+END
+;;
+DELIMITER ;
+
+-- =====================================================
+-- HU-037: ALERTAS INTERNAS (incluye Vencimiento Plazo)
+-- =====================================================
+DROP TABLE IF EXISTS user_alerts;
+CREATE TABLE user_alerts (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  user_id varchar(50) NOT NULL COMMENT 'Usuario destinatario de la alerta',
+  subject varchar(255) NOT NULL COMMENT 'Asunto de la alerta',
+  message text NOT NULL COMMENT 'Mensaje detallado',
+  alert_type enum(
+    'Nueva Propuesta',
+    'Propuesta Aprobada',
+    'Propuesta Rechazada',
+    'Documento Final',
+    'Correccion Solicitada',
+    'Asesor Aprobado',
+    'Asesor Rechazado',
+    'Prorroga',
+    'Informativa',
+    'Sistema',
+    'Vencimiento Plazo'
+  ) NOT NULL DEFAULT 'Informativa' COMMENT 'Tipo de alerta',
+  priority enum('Alta','Media','Baja') DEFAULT 'Media' COMMENT 'Prioridad de la alerta',
+  related_entity_type varchar(50) DEFAULT NULL COMMENT 'Tipo de entidad relacionada (proposal, document, project, etc.)',
+  related_entity_id int(11) DEFAULT NULL COMMENT 'ID de la entidad relacionada',
+  read_at datetime DEFAULT NULL COMMENT 'Fecha/hora en que se leyó la alerta',
+  sent_at datetime DEFAULT current_timestamp() COMMENT 'Fecha/hora de envío',
+  PRIMARY KEY (id),
+  KEY idx_user_id (user_id),
+  KEY idx_alert_type (alert_type),
+  KEY idx_priority (priority),
+  KEY idx_read_at (read_at),
+  KEY idx_sent_at (sent_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
+COMMENT='HU-037: Alertas internas del sistema';
+
+-- =====================================================
+-- HU-005: DEDUPLICACIÓN DE CORREOS DE VENCIMIENTO
+-- =====================================================
+DROP TABLE IF EXISTS deadline_alerts_sent;
+CREATE TABLE deadline_alerts_sent (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  user_id varchar(50) NOT NULL COMMENT 'Usuario destinatario',
+  project_id int(11) NOT NULL COMMENT 'ID de proyecto_aprobado.id_aprobado',
+  days_threshold int(11) NOT NULL COMMENT 'Umbral de días (30,15,7,3,1...)',
+  sent_at datetime DEFAULT current_timestamp() COMMENT 'Fecha/hora de envío exitoso',
+  PRIMARY KEY (id),
+  UNIQUE KEY uq_deadline_once (user_id, project_id, days_threshold),
+  KEY idx_project_days (project_id, days_threshold),
+  KEY idx_user (user_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+COMMENT='HU-005: Control de alertas de vencimiento ya enviadas';
+
+
+
 -- ----------------------------
 -- Table structure for `sis_tipo_tel`
 -- ----------------------------
@@ -1572,6 +1685,39 @@ CREATE TABLE registered_projects (
     CONSTRAINT fk_registered_projects_type FOREIGN KEY (project_type_id) REFERENCES project_types(id) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+  -- ----------------------------
+  -- Triggers structure for `registered_projects`
+  -- ----------------------------
+  DROP TRIGGER IF EXISTS `trg_audit_registered_projects_dates`;
+  DELIMITER ;;
+  CREATE TRIGGER `trg_audit_registered_projects_dates` BEFORE UPDATE ON `registered_projects` FOR EACH ROW BEGIN
+    DECLARE v_user VARCHAR(50);
+
+    SET v_user = IFNULL(@current_user_id, 'SYSTEM');
+
+    IF (OLD.start_date IS NULL AND NEW.start_date IS NOT NULL)
+       OR (OLD.start_date IS NOT NULL AND NEW.start_date IS NULL)
+       OR (OLD.start_date <> NEW.start_date) THEN
+      INSERT INTO auditoria_cambios_fecha
+        (tabla_origen, id_registro, campo_modificado, valor_anterior, valor_nuevo, modificado_por, descripcion)
+      VALUES
+        ('registered_projects', OLD.id, 'start_date', OLD.start_date, NEW.start_date, v_user,
+         CONCAT('Proyecto ID: ', OLD.id, ' - Cambio en fecha de inicio'));
+    END IF;
+
+    IF (OLD.end_date IS NULL AND NEW.end_date IS NOT NULL)
+       OR (OLD.end_date IS NOT NULL AND NEW.end_date IS NULL)
+       OR (OLD.end_date <> NEW.end_date) THEN
+      INSERT INTO auditoria_cambios_fecha
+        (tabla_origen, id_registro, campo_modificado, valor_anterior, valor_nuevo, modificado_por, descripcion)
+      VALUES
+        ('registered_projects', OLD.id, 'end_date', OLD.end_date, NEW.end_date, v_user,
+         CONCAT('Proyecto ID: ', OLD.id, ' - Cambio en fecha de finalización'));
+    END IF;
+  END
+  ;;
+  DELIMITER ;
+
 -- ----------------------------
 -- TABLA 4: MIEMBROS DE PROYECTO
 -- ----------------------------
@@ -2061,20 +2207,32 @@ CREATE TABLE `user_alerts` (
   `user_id` varchar(50) NOT NULL COMMENT 'Usuario destinatario de la alerta',
   `subject` varchar(255) NOT NULL COMMENT 'Asunto de la alerta',
   `message` text NOT NULL COMMENT 'Mensaje detallado',
-  `alert_type` enum('Nueva Propuesta','Propuesta Aprobada','Propuesta Rechazada','Documento Final','Correccion Solicitada','Asesor Aprobado','Asesor Rechazado','Prorroga','Informativa','Sistema') NOT NULL DEFAULT 'Informativa' COMMENT 'Tipo de alerta',
+  `alert_type` enum(
+    'Nueva Propuesta',
+    'Propuesta Aprobada',
+    'Propuesta Rechazada',
+    'Documento Final',
+    'Correccion Solicitada',
+    'Asesor Aprobado',
+    'Asesor Rechazado',
+    'Prorroga',
+    'Informativa',
+    'Sistema',
+    'Vencimiento Plazo'
+  ) NOT NULL DEFAULT 'Informativa' COMMENT 'Tipo de alerta',
   `priority` enum('Alta','Media','Baja') DEFAULT 'Media' COMMENT 'Prioridad de la alerta',
-  `related_entity_type` varchar(50) DEFAULT NULL COMMENT 'Tipo de entidad relacionada (proposal, document, etc.)',
+  `related_entity_type` varchar(50) DEFAULT NULL COMMENT 'Tipo de entidad relacionada (proposal, document, project, etc.)',
   `related_entity_id` int(11) DEFAULT NULL COMMENT 'ID de la entidad relacionada',
   `read_at` datetime DEFAULT NULL COMMENT 'Fecha/hora en que se leyó la alerta',
-  `sent_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha/hora de envío',
+  `sent_at` datetime DEFAULT current_timestamp() COMMENT 'Fecha/hora de envío',
   PRIMARY KEY (`id`),
   KEY `idx_user_id` (`user_id`),
   KEY `idx_alert_type` (`alert_type`),
   KEY `idx_priority` (`priority`),
   KEY `idx_read_at` (`read_at`),
   KEY `idx_sent_at` (`sent_at`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci COMMENT='HU-037: Alertas internas del sistema';
-
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
+COMMENT='HU-037: Alertas internas del sistema';
 -- ----------------------------
 -- HU-011: Table structure for `external_advisor_linked_students`
 -- Vinculación de asesor externo con todos los estudiantes de un grupo TFG
@@ -2184,3 +2342,47 @@ CREATE TABLE `chat_messages` (
   CONSTRAINT `fk_chat_msg_conversation` FOREIGN KEY (`conversation_id`) REFERENCES `chat_conversations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_chat_msg_sender` FOREIGN KEY (`sender_id`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci COMMENT='HU-029: Mensajes del sistema de chat';
+
+
+-- ============================================================================
+-- HU-022: PLANTILLAS OFICIALES
+-- Tabla para almacenar plantillas descargables (DOCX/PDF) según Anexo 1
+-- El Gestor Académico puede agregar/eliminar; el Estudiante solo visualiza y descarga
+-- ============================================================================
+
+DROP TABLE IF EXISTS `plantillas_oficiales`;
+CREATE TABLE `plantillas_oficiales` (
+  `id`            int(11)      NOT NULL AUTO_INCREMENT,
+  `nombre`        varchar(255) NOT NULL                 COMMENT 'Nombre visible de la plantilla',
+  `descripcion`   varchar(500) DEFAULT NULL             COMMENT 'Descripción breve del uso de la plantilla',
+  `tipo`          enum('Propuesta','Informe Final','Acta','Otro') NOT NULL DEFAULT 'Otro' COMMENT 'Categoría de la plantilla',
+  `archivo`       longblob     NOT NULL                 COMMENT 'Contenido binario del archivo (DOCX o PDF)',
+  `file_name`     varchar(255) NOT NULL                 COMMENT 'Nombre original del archivo para la descarga',
+  `mime_type`     varchar(100) NOT NULL                 COMMENT 'Tipo MIME: application/pdf o application/vnd.openxmlformats...',
+  `file_size`     int(11)      NOT NULL DEFAULT 0       COMMENT 'Tamaño del archivo en bytes',
+  `activo`        tinyint(1)   NOT NULL DEFAULT 1       COMMENT '1 = visible para estudiantes, 0 = oculta',
+  `subido_por`    varchar(50)  NOT NULL                 COMMENT 'ID del usuario que subió la plantilla (FK a sis_user)',
+  `created_at`    datetime     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at`    datetime     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_tipo`      (`tipo`),
+  KEY `idx_activo`    (`activo`),
+  KEY `idx_subido_por`(`subido_por`),
+  CONSTRAINT `fk_plantilla_usuario` FOREIGN KEY (`subido_por`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
+  COMMENT='HU-022: Plantillas oficiales descargables (Anexo 1 Instrucción de Dirección)';
+
+-- ============================================================================
+-- HU-022: PERMISOS PARA PLANTILLAS OFICIALES
+-- Se reutiliza mod5 (Documentación y versionado) que ya existe en el sistema.
+-- Estudiante (4): solo Ver(1) y Listar(2) → puede ver y descargar plantillas
+-- Gestor (2) y Admin (1): ya tienen todos los permisos sobre mod5
+-- Se agregan permisos de Agregar(3) y Eliminar(5) sobre mod5 para Gestor
+-- que aún no estaban explícitamente asignados para esta funcionalidad
+-- (el Administrador ya tiene permisos totales por la función check_permits)
+-- ============================================================================
+
+-- Verificar que Gestor tenga Agregar y Eliminar en mod5 (por si no estaban)
+INSERT IGNORE INTO `sis_permits` (`id_mod`, `id_action`, `id_roll`) VALUES
+(5, 3, 2),  -- Gestor: Agregar en Documentación y versionado
+(5, 5, 2);  -- Gestor: Eliminar en Documentación y versionado

@@ -26,7 +26,7 @@ $res = seleccion($sql);
             <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($mySessionController->getCsrfToken()) ?>">
             <input type="hidden" id="id_mod" name="id_mod" value="<?= $id_mod ?>"/>
             <div class="form-group">
-                <label for="name_mod"><?= $vocab["symbol_name"] ?> </label>
+                <label for="name_mod"><?= $vocab["symbol_name"] ?> <span style="color: red;">*</span></label>
                 <input <?= ($view_mode == 0) ? "readonly" : ""; ?> id="name_mod" name="name_mod" class="form-control" type="text" maxlength="255" value="<?= $res[0]['mod_name'] ?>"/> 
                 <p class="help-block"><small><?= $vocab["permits_name_desc"] ?></small></p> 
             </div>

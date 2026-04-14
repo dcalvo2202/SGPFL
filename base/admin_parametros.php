@@ -192,7 +192,7 @@ if (!is_array($parametros)) {
                         <input type="hidden" name="action" value="save">
                         <input type="hidden" name="id_pv" value="<?= (int)$editing_id ?>">
                         <div class="col-md-4">
-                            <label class="form-label">Parámetro</label>
+                            <label class="form-label">Parámetro <span style="color: red;">*</span></label>
                             <input type="text" name="parametro" class="form-control" required value="<?= htmlspecialchars($form_parametro) ?>">
                         </div>
                         <div class="col-md-4">

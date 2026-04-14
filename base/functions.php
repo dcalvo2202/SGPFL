@@ -1,7 +1,7 @@
 <?php
 
 include("inc/db/db.php");
-include("config.inc");
+include_once("config.inc");
 
 /**
  * Revisa los permisos del usuario para cada acción controlada por el sistema
@@ -17,7 +17,7 @@ function check_permiso($mod, $act, $rol) {
 
 function get_ldap_name($id) {
     require_once(dirname(__FILE__) . "/lib/AuthLdap/class.AuthLdap.php");
-    include("config.inc");
+    include_once("config.inc");
     $ldap = new AuthLdap();
     $ldap->server = $ldap_server;
     $ldap->dn = $ldap_dn; // Base DN of our organisation

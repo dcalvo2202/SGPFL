@@ -21,6 +21,7 @@ if ($current_user_rol != 3) {
 
 // ================== LÓGICA DEL PANEL ==================
 require_once 'PanelGestorLogic.php';
+
 $panel = new PanelGestor();
 
 $revisiones_ctfg         = $panel->getRevisionesPendientes();

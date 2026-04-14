@@ -40,7 +40,7 @@ function check_modulo($mod, $rol) {
             <div class="col-lg-5 col-md-5 col-sm-8 col-xs-12">
                 <input type="hidden" id="id_roll" name="id_roll" value="<?= $id_roll ?>"/>
                 <div class="from-group">
-                    <label for="name_roll"><?= $vocab["symbol_name"] ?> </label>
+                    <label for="name_roll"><?= $vocab["symbol_name"] ?> <span style="color: red;">*</span></label>
                     <input <?= ($view_mode == 0) ? "readonly" : ""; ?> id="name_roll" name="name_roll" class="form-control" type="text" maxlength="255" value="<?= $res[0]['roll_name'] ?>"/> 
                     <p class="help-block"><small><?= $vocab["rols_name_desc"] ?></small></p> 
                 </div>		

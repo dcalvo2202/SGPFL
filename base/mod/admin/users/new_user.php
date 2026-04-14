@@ -13,22 +13,22 @@ $user_rol = $mySessionController->getVar("rol");
         <form method="post" action="">
             <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($mySessionController->getCsrfToken()) ?>">
             <div class="form-group">
-                <label  for="id_user"><?= $vocab["user_id"] ?> </label>
+                <label  for="id_user"><?= $vocab["user_id"] ?> <span style="color: red;">*</span></label>
                 <input id="id_user" name="id_user" class="form-control" type="text" placeholder="123456789" onchange="javascrip:onchange_cedula();" onblur="javascrip:onchange_cedula();" /> 
                 <p class="help-block"><small><?= $vocab["user_id_desc"] ?></small></p> 
             </div>
             <div class="form-group">
-                <label  for="nombre_txt"><?= $vocab["symbol_name"] ?></label>
+                <label  for="nombre_txt"><?= $vocab["symbol_name"] ?> <span style="color: red;">*</span></label>
                 <input id="nombre_txt" name="nombre_txt" class="form-control" type="text" value="" <?= ($ldap_status == 1) ? "readonly" : "" ?>/> 
                 <p class="help-block"><small><?= $vocab["user_name_desc"] ?></small></p> 
             </div>
             <div class="form-group">
-                <label  for="correo_txt"><?= $vocab["user_mail"] ?> </label>
+                <label  for="correo_txt"><?= $vocab["user_mail"] ?> <span style="color: red;">*</span></label>
                 <input id="correo_txt" name="correo_txt" class="form-control" type="text" value=""/> 
                 <p class="help-block"><small><?= $vocab["user_mail_desc"] ?></small></p> 
             </div>
             <div class="form-group">
-                <label  for="telefono_txt"><?= $vocab["user_tel"] ?> </label>
+                <label  for="telefono_txt"><?= $vocab["user_tel"] ?> <span style="color: red;">*</span></label>
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <input id="telefono_txt" name="telefono_txt" class="form-control" type="text" value="" onkeypress="return onlyNumbers(event, 0)"/>
@@ -49,7 +49,7 @@ $user_rol = $mySessionController->getVar("rol");
                 <p class="help-block"><small><?= $vocab["user_tel_desc"] ?></small></p> 
             </div>
             <div class="form-group">
-                <label  for="telefono_txt"><?= $vocab["rols"] ?> </label>
+                <label  for="telefono_txt"><?= $vocab["rols"] ?> <span style="color: red;">*</span></label>
                 <select name="rol_slc" id="rol_slc" class="form-control" >
                     <option value="0" value="" selected="selected">[<?= $vocab["symbol_select"] ?>]</option>
                     <?php

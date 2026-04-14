@@ -16,7 +16,7 @@ $user_rol = $mySessionController->getVar("rol");
         <form method="post" action="">
             <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($mySessionController->getCsrfToken()) ?>">
             <div class="form-group">
-                <label for="name_mod"><?= $vocab["symbol_name"] ?> </label>
+                <label for="name_mod"><?= $vocab["symbol_name"] ?> <span style="color: red;">*</span></label>
                 <input id="name_mod" name="name_mod1" class="form-control" type="text" placeholder="Nombre del nuevo modulo"/>
                 <p class="help-block"><small><?= $vocab["permits_name_desc"] ?></small></p>
             </div>

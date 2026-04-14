@@ -182,7 +182,7 @@ CSS;
                 <table class="table table-striped table-sm align-middle mb-2">
                   <thead>
                     <tr>
-                      <th style="width:180px;">user_id</th>
+                      <th style="width:180px;">Cédula</th>
                       <th>Nombre</th>
                     </tr>
                   </thead>
@@ -221,11 +221,13 @@ CSS;
             <!-- Documento -->
             <div class="mb-3">
               <label for="documento">Documento (Word, PDF):</label><br>
-              <label for="documento" class="btn-tfg"><i class="bi bi-upload"></i> Subir documento</label>
-              <input type="file" id="documento" name="documento" accept=".pdf,.doc,.docx,.xls,.xlsx" required hidden>
-              <div id="previewBox" class="d-flex align-items-center gap-2 mt-2" style="display:none;">
-                <img id="previewIcon" alt="Archivo seleccionado" hidden>
-                <span id="previewName" style="font-size:1.3rem;color:#092567;"></span>
+              <div class="d-flex align-items-center gap-3 flex-wrap mt-1">
+                <label for="documento" class="btn-tfg mb-0"><i class="bi bi-upload"></i> Subir documento</label>
+                <input type="file" id="documento" name="documento" accept=".pdf,.doc,.docx,.xls,.xlsx" required hidden>
+                <div id="previewBox" class="d-flex align-items-center gap-2" style="display:none;min-width:0;">
+                  <img id="previewIcon" alt="Archivo seleccionado" hidden>
+                  <span id="previewName" style="font-size:1.3rem;color:#092567;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:420px;"></span>
+                </div>
               </div>
             </div>
 
@@ -273,7 +275,7 @@ CSS;
 
   <script>
     // Usa el icono solo cuando haya archivo
-    const ICON_URL = 'https://w1.pngwing.com/pngs/341/112/png-transparent-green-grass-symbol-logo-dialog-box-accept-yellow-circle.png';
+    const ICON_URL = 'https://icons.getbootstrap.com/assets/icons/check2-circle.svg';
 
     // Helper para ocultar el preview cuando no hay archivo
     function hidePreview() {

@@ -251,6 +251,16 @@ try {
                             <p>Generar y descargar el reporte de proyectos con prórrogas aprobadas.</p>
                         </div>
                     </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card w-100 h-100" onclick="location.href='<?= htmlspecialchars($base_url) ?>Panel_RegistroModificaciones.php'">
+                            <div class="card-icon">
+                                <i class="bi bi-calendar2-week-fill"></i>
+                            </div>
+                            <h5>Registro de Modificaciones</h5>
+                            <p>Consultar la auditoría de cambios en fechas de proyectos y prórrogas.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

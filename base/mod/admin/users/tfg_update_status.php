@@ -131,7 +131,7 @@ try {
     }
 
     // 4. Send email notification
-    $to = "rodri100ro@gmail.com";//$proposal['email'];
+    $to = "david.calvo.hernandez@est.una.ac.cr";//$proposal['email'];
     $subject = "Actualización de estado - Propuesta TFG";
     $message = "Estimado/a " . $proposal['nombre'] . ",\n\n";
     $message .= "Su propuesta de TFG \"" . $proposal['title'] . "\" ha sido revisada.\n\n";
@@ -151,8 +151,8 @@ try {
     $message .= "\nPuede revisar su propuesta en el panel de estudiante.\n\n";
     $message .= "Saludos,\nEscuela de Informática - UNA";
 
-    $headers = "From: rodri100ro@gmail.com\r\n";
-    $headers .= "Reply-To: rodri100ro@gmail.com\r\n";
+    $headers = "From: david.calvo.hernandez@est.una.ac.cr\r\n";
+    $headers .= "Reply-To: david.calvo.hernandez@est.una.ac.cr\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
     
     if (mail($to, $subject, $message, $headers)) {

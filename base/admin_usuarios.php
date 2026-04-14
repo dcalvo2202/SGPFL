@@ -386,27 +386,27 @@ if (!is_array($usuarios)) {
                         <input type="hidden" name="page" value="<?= (int)$page ?>">
 
                         <div class="col-md-3">
-                            <label class="form-label">ID</label>
+                            <label class="form-label">ID <span style="color: red;">*</span></label>
                             <input type="text" name="id" class="form-control" required value="<?= htmlspecialchars($form_id) ?>" <?= $editing_id !== '' ? 'readonly' : '' ?>>
                         </div>
 
                         <div class="col-md-5">
-                            <label class="form-label">Nombre</label>
+                            <label class="form-label">Nombre <span style="color: red;">*</span></label>
                             <input type="text" name="nombre" class="form-control" required value="<?= htmlspecialchars($form_nombre) ?>">
                         </div>
 
                         <div class="col-md-4">
-                            <label class="form-label">Correo</label>
+                            <label class="form-label">Correo <span style="color: red;">*</span></label>
                             <input type="email" name="email" class="form-control" value="<?= htmlspecialchars($form_email) ?>">
                         </div>
 
                         <div class="col-md-3">
-                            <label class="form-label">Teléfono</label>
+                            <label class="form-label">Teléfono <span style="color: red;">*</span></label>
                             <input type="text" name="telefono" class="form-control" value="<?= htmlspecialchars($form_telefono) ?>">
                         </div>
 
                         <div class="col-md-3">
-                            <label class="form-label">Tipo teléfono</label>
+                            <label class="form-label">Tipo teléfono <span style="color: red;">*</span></label>
                             <select name="id_tipo_tel" class="form-select">
                                 <?php foreach ($tiposTel as $tipo): ?>
                                     <?php $tipoId = (string)$tipo['id_tipo_tel']; ?>
@@ -418,7 +418,7 @@ if (!is_array($usuarios)) {
                         </div>
 
                         <div class="col-md-3">
-                            <label class="form-label">Rol</label>
+                            <label class="form-label">Rol <span style="color: red;">*</span></label>
                             <select name="id_roll" class="form-select" required>
                                 <option value="0">[Seleccionar]</option>
                                 <?php foreach ($roles as $rol): ?>

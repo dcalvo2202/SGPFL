@@ -18,7 +18,7 @@ $user_rol = $mySessionController->getVar("rol");
         <div class="row">
             <div class="col-lg-5 col-md-5 col-sm-8 col-xs-12">
                 <div class="form-group">
-                    <label for="name_roll"><?= $vocab["symbol_name"] ?> </label>
+                    <label for="name_roll"><?= $vocab["symbol_name"] ?> <span style="color: red;">*</span></label>
                     <input id="name_roll" name="name_roll" class="form-control" type="text" maxlength="255" value=""/> 
                     <p class="help-block"><small><?= $vocab["rols_name_desc"] ?></small></p> 
                 </div>		
