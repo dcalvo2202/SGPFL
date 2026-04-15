@@ -460,6 +460,44 @@ CREATE TABLE acuerdo_cancelacion (
     ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+-- --------------------------------
+-- Acuerdo de defensa publica
+-- --------------------------------
+
+CREATE TABLE acuerdo_defensa_publica (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  proyecto_id INT NOT NULL,
+  proposal_id INT NOT NULL,
+  codigo_acuerdo VARCHAR(30) NOT NULL,
+  fecha_aprobacion_documento_final DATE NOT NULL,
+  fecha_defensa DATE NOT NULL,
+  archivo_nombre VARCHAR(255) NOT NULL,
+  archivo_ruta VARCHAR(500) NOT NULL,
+  mime_type VARCHAR(100) NOT NULL DEFAULT 'application/pdf',
+  file_size BIGINT NOT NULL DEFAULT 0,
+  enviado_correo TINYINT(1) NOT NULL DEFAULT 0,
+  correo_destino VARCHAR(255) DEFAULT NULL,
+  subido_por VARCHAR(50) NOT NULL,
+  creado_en DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  actualizado_en DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+  UNIQUE KEY uq_acuerdo_defensa_proyecto (proyecto_id),
+  UNIQUE KEY uq_acuerdo_defensa_codigo (codigo_acuerdo),
+
+  CONSTRAINT fk_adp_proyecto
+    FOREIGN KEY (proyecto_id) REFERENCES proyecto_aprobado(id_aprobado)
+    ON DELETE CASCADE ON UPDATE CASCADE,
+
+  CONSTRAINT fk_adp_proposal
+    FOREIGN KEY (proposal_id) REFERENCES tfg_proposals(id)
+    ON DELETE CASCADE ON UPDATE CASCADE,
+
+  CONSTRAINT fk_adp_usuario
+    FOREIGN KEY (subido_por) REFERENCES sis_user(id)
+    ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
 -- --------------------------------------------------------
 
 --
