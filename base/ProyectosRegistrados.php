@@ -321,6 +321,13 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
                         <i class="bi bi-journal-text"></i> Notas
                       </a>
 
+                      <?php if ((int)$current_user_rol === 3 && !$isCancelado): ?>
+                        <a class="btn btn-sm btn-outline-primary"
+                          href="mod/admin/users/tfg_upload_defense_agreement.php?id=<?php echo (int)$p['id_aprobado']; ?>">
+                          <i class="bi bi-file-earmark-arrow-up"></i> Acuerdo defensa
+                        </a>
+                      <?php endif; ?>
+
                       <?php if (!$isCancelado): ?>
                         <form method="post" action="cancelar_proyecto_aprobado.php" style="display:inline;" onsubmit="return confirm('¿Cancelar este proyecto?');">
                           <input type="hidden" name="proyecto_id" value="<?php echo (int)$p['id_aprobado']; ?>">

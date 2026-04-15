@@ -1,0 +1,164 @@
+<?php
+include("mod/login/check.php");
+include('lang/lang.es');
+require_once __DIR__ . '/inc/db/db.php';
+
+$current_user_id   = $mySessionController->getVar("usuario");
+$current_user_name = $mySessionController->getVar("nombre");
+$current_user_rol  = (int)$mySessionController->getVar("rol");
+$base_url          = $mySessionController->getVar("cds_domain") . $mySessionController->getVar("cds_locate");
+
+if ($current_user_rol !== 3) {
+    header('Location: dashboard.php');
+    exit;
+}
+
+$proyecto_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+if ($proyecto_id <= 0) {
+    header('Location: ProyectosRegistrados.php');
+    exit;
+}
+
+$sql = "SELECT p.id_aprobado,
+               p.proposal_id,
+               p.nombre,
+               DATE(p.fecha_creacion) AS fecha_registro_proyecto,
+               DATE(p.fecha_finalizacion) AS fecha_defensa
+        FROM proyecto_aprobado p
+        WHERE p.id_aprobado = ?
+        LIMIT 1";
+
+$stmt = mysqli_prepare($id_con, $sql);
+mysqli_stmt_bind_param($stmt, "i", $proyecto_id);
+mysqli_stmt_execute($stmt);
+$rs = mysqli_stmt_get_result($stmt);
+$proyecto = mysqli_fetch_assoc($rs);
+mysqli_stmt_close($stmt);
+
+if (!$proyecto) {
+    header('Location: ProyectosRegistrados.php');
+    exit;
+}
+
+$page_title = 'Adjuntar acuerdo de defensa';
+$inlineStyles = <<<'CSS'
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+.dashboard-header h1 { font-size: 2.5rem; font-weight: 700; color: #034991; margin-bottom: .5rem; }
+.dashboard-header .lead { color: #6c757d; }
+.form-card { background:#fff; border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,.08); }
+.form-card .card-header { background:#f8f9fa; font-weight:600; color:#034991; }
+.form-card .card-body { padding:24px; }
+label { font-weight:600; color:#092567; }
+CSS;
+?>
+<!doctype html>
+<html lang="es">
+<?php include __DIR__ . '/head.php'; ?>
+<body class="fondo-una d-flex flex-column min-vh-100">
+<?php include 'header.php'; ?>
+
+<main class="flex-fill">
+  <div class="container my-5">
+    <div class="dashboard-header text-center mb-5">
+      <h1>Adjuntar acuerdo de defensa pública</h1>
+      <p class="lead"><?= htmlspecialchars($proyecto['nombre']) ?></p>
+    </div>
+
+    <div id="msgBox"></div>
+
+    <div class="card form-card shadow-sm">
+      <div class="card-header">Registro del acuerdo de defensa</div>
+      <div class="card-body">
+        <form id="frmAcuerdo" enctype="multipart/form-data">
+          <input type="hidden" name="proyecto_id" value="<?= (int)$proyecto['id_aprobado'] ?>">
+          <input type="hidden" name="proposal_id" value="<?= (int)$proyecto['proposal_id'] ?>">
+
+          <div class="mb-3">
+            <label class="form-label">Código del acuerdo</label>
+            <input type="text"
+                   name="codigo_acuerdo"
+                   class="form-control"
+                   placeholder="UNA-CTFG-EI-ACUE-001-<?= date('Y') ?>"
+                   required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Fecha de aprobación del documento final</label>
+            <input type="date" name="fecha_aprobacion_documento_final" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Fecha de defensa</label>
+            <input type="date"
+                   name="fecha_defensa"
+                   class="form-control"
+                   value="<?= htmlspecialchars($proyecto['fecha_defensa'] ?? '') ?>"
+                   required>
+            <small class="text-muted">
+              Puede ajustarla si la fecha real de defensa difiere de la fecha final del proyecto.
+            </small>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Correo destino</label>
+            <input type="email"
+                   name="correo_destino"
+                   class="form-control"
+                   value="malcolm.chaves.obando@est.una.ac.cr"
+                   required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Documento PDF</label>
+            <input type="file"
+                   name="documento"
+                   class="form-control"
+                   accept="application/pdf,.pdf"
+                   required>
+            <small class="text-muted">Solo PDF. Tamaño máximo: 10 MB.</small>
+          </div>
+
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-save"></i> Guardar acuerdo
+            </button>
+            <a href="ProyectosRegistrados.php" class="btn btn-secondary">
+              <i class="bi bi-arrow-left-circle"></i> Volver
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+<?php include 'footer.php'; ?>
+
+<script>
+document.getElementById('frmAcuerdo').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const response = await fetch('tfg_upload_defense_agreement_process.php', {
+        method: 'POST',
+        body: formData
+    });
+
+    const data = await response.json();
+    const box = document.getElementById('msgBox');
+
+    box.innerHTML = `
+      <div class="alert alert-${data.success ? 'success' : 'danger'}">
+        ${data.message}
+      </div>
+    `;
+
+    if (data.success) {
+        this.reset();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+});
+</script>
+</body>
+</html>
+?>
