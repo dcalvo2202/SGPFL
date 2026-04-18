@@ -17,6 +17,24 @@ $base_url = rtrim($cds_domain, '/') . '/' . trim($cds_locate, '/') . '/';
 $redirect_ok = $base_url . 'login.php';
 $redirect_back = $base_url . 'registro.php';
 
+try {
+    require_once __DIR__ . '/lib/mysession/mySession.conf.php';
+    require_once __DIR__ . '/lib/mysession/mySession.class.php';
+    $mySessionController = mySession::getIstance($_MYSESSION_CONF);
+    $current_user_rol = (int)($mySessionController->getVar('rol') ?? 0);
+    $current_user_id = (string)($mySessionController->getVar('usuario') ?? '');
+    
+    if ($current_user_id !== '') {
+        if ($current_user_rol === 4) {
+            $redirect_ok = $base_url . 'Panel_SubirTFG.php';
+        } else {
+            $redirect_ok = $base_url . 'dashboard.php';
+        }
+    }
+} catch (Throwable $e) {
+    // Ignorar si no hay sesión activa
+}
+
 function render_swal_and_exit(string $icon, string $title, string $message, string $redirect_url): void {
     while (ob_get_level() > 0) {
         ob_end_clean();

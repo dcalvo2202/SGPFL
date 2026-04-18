@@ -173,6 +173,16 @@ try {
                             <p>Solicitar extensión de plazo para TFG</p>
                         </div>
                     </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>registro.php'" style="border-left: 4px solid #198754;">
+                            <div class="card-icon">
+                                <i class="bi bi-person-plus-fill"></i>
+                            </div>
+                            <h5>Solicitar Asesor/Tutor</h5>
+                            <p>Solicitar tutor o asesor para tu proyecto</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
