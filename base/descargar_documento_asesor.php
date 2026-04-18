@@ -3,7 +3,7 @@
  * HU-012: Descarga de documentos de solicitud de Asesor Externo
  * 
  * Permite descargar el CV o cédula de una solicitud pendiente
- * Solo accesible por Gestor Académico (2) o Administrador (1)
+ * Solo accesible por Gestor Académico (2), CTFG (3) o Administrador (1)
  */
 
 // Cargar sesión
@@ -15,7 +15,7 @@ $current_user_id = $mySessionController->getVar("usuario");
 $current_user_rol = $mySessionController->getVar("rol");
 
 // Control de acceso
-if (!$current_user_id || ($current_user_rol != 2 && $current_user_rol != 1)) {
+if (!$current_user_id || ($current_user_rol != 2 && $current_user_rol != 3 && $current_user_rol != 1)) {
     http_response_code(403);
     die('Acceso denegado.');
 }
@@ -27,7 +27,7 @@ include_once __DIR__ . '/inc/db/bdcommon.inc';
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 $type = isset($_GET['type']) ? $_GET['type'] : '';
 
-if ($id <= 0 || !in_array($type, ['cv', 'id_copy'])) {
+if ($id <= 0 || !in_array($type, ['cv', 'id_copy', 'cover_letter'], true)) {
     http_response_code(400);
     die('Parámetros inválidos.');
 }
@@ -45,11 +45,16 @@ try {
         $col_name = 'cv_file_name';
         $col_mime = 'cv_mime_type';
         $col_size = 'cv_file_size';
-    } else {
+    } elseif ($type === 'id_copy') {
         $col_data = 'id_copy_document';
         $col_name = 'id_copy_file_name';
         $col_mime = 'id_copy_mime_type';
         $col_size = 'id_copy_file_size';
+    } else {
+        $col_data = 'cover_letter_document';
+        $col_name = 'cover_letter_file_name';
+        $col_mime = 'cover_letter_mime_type';
+        $col_size = 'cover_letter_file_size';
     }
 
     $sql = "SELECT {$col_data} AS file_data, {$col_name} AS file_name, {$col_mime} AS mime_type, {$col_size} AS file_size 

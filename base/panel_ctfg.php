@@ -123,6 +123,24 @@ $avisos_generales = $panel->getAvisos();
                             <p>Buscar y consultar proyectos aprobados, sin aprobar o en corrección.</p>
                         </div>
                     </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_revisar_asesor_externo.php'" style="border-left: 4px solid #17a2b8;">
+                            <div class="card-icon" style="color: #17a2b8;">
+                                <i class="bi bi-person-badge-fill"></i>
+                            </div>
+                            <h5>Solicitudes Comité Asesor</h5>
+                            <p>Revisar y aprobar solicitudes de tutor, asesor interno y asesor externo.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_comites_asesores.php'" style="border-left: 4px solid #6f42c1;">
+                            <div class="card-icon" style="color: #6f42c1;">
+                                <i class="bi bi-diagram-3-fill"></i>
+                            </div>
+                            <h5>Gestión de Comités</h5>
+                            <p>Aprobar o rechazar comités propuestos desde solicitudes aprobadas y listar comités actuales.</p>
+                        </div>
+                    </div>
                     <!-- HU-027: Archivo Histórico -->
                     <div class="col-md-6 col-lg-4">
                         <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_archivo_historico.php'" style="border-left: 4px solid #6c757d;">

@@ -11,6 +11,7 @@ ini_set('max_execution_time', 300);
 ini_set('memory_limit', '256M');
 
 require_once __DIR__ . '/config.inc';
+require_once __DIR__ . '/inc/hu041_committee_audit.php';
 
 $base_url = rtrim($cds_domain, '/') . '/' . trim($cds_locate, '/') . '/';
 $redirect_ok = $base_url . 'login.php';
@@ -252,9 +253,28 @@ try {
     $institution = trim($_POST['institution'] ?? '');
     $specialization = trim($_POST['specialization'] ?? '');
     $linked_student_id = trim($_POST['linked_student_id'] ?? '');
+    $postulation_type = trim($_POST['postulation_type'] ?? '');
+    $committee_subrole = trim($_POST['committee_subrole'] ?? '');
+    $committee_role = trim($_POST['committee_role'] ?? '');
 
     if ($applicant_id === '' || $full_name === '' || $email === '' || $institution === '' || $specialization === '') {
         throw new Exception('Debe completar todos los campos requeridos');
+    }
+
+    $valid_postulation_types = ['Asesor Externo', 'Asesor Interno', 'Tutor'];
+    if (!in_array($postulation_type, $valid_postulation_types, true)) {
+        throw new Exception('Debe seleccionar el tipo de postulación.');
+    }
+
+    if ($postulation_type === 'Tutor') {
+        $committee_subrole = null;
+        $committee_role = 'Tutor';
+    } else {
+        $valid_subroles = ['Asesor 1', 'Asesor 2'];
+        if (!in_array($committee_subrole, $valid_subroles, true)) {
+            throw new Exception('Debe seleccionar Asesor 1 o Asesor 2 para este tipo de postulación.');
+        }
+        $committee_role = $committee_subrole;
     }
 
     // El estudiante a asesorar es requerido
@@ -288,18 +308,26 @@ try {
 
     $cv = validate_uploaded_file(
         $_FILES['cv_document'] ?? [],
-        ['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
-        ['pdf', 'docx'],
+        ['application/pdf'],
+        ['pdf'],
         5,
         'el Currículum'
     );
 
     $id_copy = validate_uploaded_file(
         $_FILES['id_copy_document'] ?? [],
-        ['application/pdf', 'image/jpeg', 'image/png'],
-        ['pdf', 'jpg', 'jpeg', 'png'],
+        ['image/jpeg', 'image/png'],
+        ['jpg', 'jpeg', 'png'],
         2,
         'la fotocopia de cédula'
+    );
+
+    $cover_letter = validate_uploaded_file(
+        $_FILES['cover_letter_document'] ?? [],
+        ['application/pdf'],
+        ['pdf'],
+        5,
+        'la carta de solicitud'
     );
 
     // =============================== BD ===============================
@@ -327,7 +355,7 @@ try {
     }
     $stmt_check->close();
 
-    if (in_array($existing_status, ['En Revisión', 'Aprobado'], true)) {
+    if (in_array($existing_status, ['En Revisión', 'En Revision', 'Aprobado'], true)) {
         $conn->close();
         throw new Exception('Ya existe una solicitud para esta cédula con estado: ' . $existing_status . '');
     }
@@ -347,14 +375,17 @@ try {
 
     $null_blob_1 = null;
     $null_blob_2 = null;
+    $null_blob_3 = null;
 
     if ($existing_status === 'Rechazado') {
         $sql = "UPDATE external_advisor_profile_requests
                 SET full_name = ?, email = ?, telefono = ?, id_tipo_tel = ?, institution = ?, specialization = ?,
+                    postulation_type = ?, committee_subrole = ?, committee_role = ?,
                     cv_document = ?, cv_file_name = ?, cv_mime_type = ?, cv_file_size = ?,
                     id_copy_document = ?, id_copy_file_name = ?, id_copy_mime_type = ?, id_copy_file_size = ?,
-                    linked_student_id = ?,
-                    status = 'En Revisión', admin_comments = NULL, reviewed_by = NULL, reviewed_at = NULL,
+                    cover_letter_document = ?, cover_letter_file_name = ?, cover_letter_mime_type = ?, cover_letter_file_size = ?,
+                    linked_student_id = ?, linked_comite_id = NULL, linked_at = NULL,
+                    status = 'En Revision', admin_comments = NULL, reviewed_by = NULL, reviewed_at = NULL,
                     updated_at = NOW()
                 WHERE applicant_id = ?";
 
@@ -368,13 +399,16 @@ try {
         $linked_student_param = ($linked_student_id === '') ? null : $linked_student_id;
 
         $stmt->bind_param(
-            'ssssssbssibssi' . 'ss',
+            'sssssssssbssibssibssiss',
             $full_name,
             $email,
             $telefono_param,
             $id_tipo_tel,
             $institution,
             $specialization,
+            $postulation_type,
+            $committee_subrole,
+            $committee_role,
             $null_blob_1,
             $cv['name'],
             $cv['mime'],
@@ -383,12 +417,17 @@ try {
             $id_copy['name'],
             $id_copy['mime'],
             $id_copy['size'],
+            $null_blob_3,
+            $cover_letter['name'],
+            $cover_letter['mime'],
+            $cover_letter['size'],
             $linked_student_param,
             $applicant_id
         );
 
-        $stmt->send_long_data(6, $cv['content']);
-        $stmt->send_long_data(10, $id_copy['content']);
+        $stmt->send_long_data(9, $cv['content']);
+        $stmt->send_long_data(13, $id_copy['content']);
+        $stmt->send_long_data(17, $cover_letter['content']);
 
         if (!$stmt->execute()) {
             $err = $stmt->error;
@@ -409,12 +448,14 @@ try {
         $stmt->close();
     } else {
         $sql = "INSERT INTO external_advisor_profile_requests
-                (applicant_id, full_name, email, telefono, id_tipo_tel, institution, specialization,
-                 cv_document, cv_file_name, cv_mime_type, cv_file_size,
-                 id_copy_document, id_copy_file_name, id_copy_mime_type, id_copy_file_size,
-                 linked_student_id,
-                 status, created_at, updated_at)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'En Revisión', NOW(), NOW())";
+            (applicant_id, full_name, email, telefono, id_tipo_tel, institution, specialization,
+             postulation_type, committee_subrole, committee_role,
+             cv_document, cv_file_name, cv_mime_type, cv_file_size,
+             id_copy_document, id_copy_file_name, id_copy_mime_type, id_copy_file_size,
+             cover_letter_document, cover_letter_file_name, cover_letter_mime_type, cover_letter_file_size,
+             linked_student_id,
+             status, created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'En Revision', NOW(), NOW())";
 
         $stmt = $conn->prepare($sql);
         if (!$stmt) {
@@ -426,7 +467,7 @@ try {
         $linked_student_param = ($linked_student_id === '') ? null : $linked_student_id;
 
         $stmt->bind_param(
-            'sssssssbssibssis',
+            'ssssssssssbssibssibssis',
             $applicant_id,
             $full_name,
             $email,
@@ -434,6 +475,9 @@ try {
             $id_tipo_tel,
             $institution,
             $specialization,
+            $postulation_type,
+            $committee_subrole,
+            $committee_role,
             $null_blob_1,
             $cv['name'],
             $cv['mime'],
@@ -442,11 +486,16 @@ try {
             $id_copy['name'],
             $id_copy['mime'],
             $id_copy['size'],
+            $null_blob_3,
+            $cover_letter['name'],
+            $cover_letter['mime'],
+            $cover_letter['size'],
             $linked_student_param
         );
 
-        $stmt->send_long_data(7, $cv['content']);
-        $stmt->send_long_data(11, $id_copy['content']);
+        $stmt->send_long_data(10, $cv['content']);
+        $stmt->send_long_data(14, $id_copy['content']);
+        $stmt->send_long_data(18, $cover_letter['content']);
 
         if (!$stmt->execute()) {
             $err = $stmt->error;
@@ -472,6 +521,12 @@ try {
         }
         $stmt->close();
     }
+
+    hu041_register_audit($conn, $applicant_id, 'REQUEST_CREATED', 'solicitud_comite', null, [
+        'postulation_type' => $postulation_type,
+        'committee_role' => $committee_role,
+        'linked_student_id' => $linked_student_id,
+    ]);
 
     $conn->close();
 
@@ -507,22 +562,24 @@ try {
 
     $panel_subdireccion_url = $base_url . 'panel_subdireccion.php';
 
-    $subject_secretaria = 'Notificación: Solicitud de Asesor Externo en revisión - SGPFL';
+    $subject_secretaria = 'Notificación: Solicitud de Comité Asesor en revisión - SGPFL';
     $message_secretaria = '
     <html><head><meta charset="UTF-8"></head><body>
       <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
         <p>Estimada/o Secretaría/o de Subdirección,</p>
-        <p>Se ha recibido una nueva solicitud de <strong>Registro de Asesor Externo</strong> en el SGPFL.</p>
+        <p>Se ha recibido una nueva solicitud para <strong>integrar un Comité Asesor</strong> en el SGPFL.</p>
         <p><strong>Datos del solicitante:</strong></p>
         <ul>
           <li><strong>Fecha:</strong> ' . date('d/m/Y H:i') . '</li>
           <li><strong>ID:</strong> ' . htmlspecialchars($applicant_id) . '</li>
           <li><strong>Nombre:</strong> ' . htmlspecialchars($full_name) . '</li>
           <li><strong>Correo:</strong> ' . htmlspecialchars($email) . '</li>
+          <li><strong>Tipo de postulación:</strong> ' . htmlspecialchars($postulation_type) . '</li>
+          <li><strong>Rol solicitado:</strong> ' . htmlspecialchars($committee_role) . '</li>
           <li><strong>Institución:</strong> ' . htmlspecialchars($institution) . '</li>
           <li><strong>Especialización:</strong> ' . htmlspecialchars($specialization) . '</li>
           <li><strong>Estudiante a asesorar:</strong> ' . htmlspecialchars($linked_student_name) . ' (ID: ' . htmlspecialchars($linked_student_id) . ')</li>
-          <li><strong>Estado:</strong> <strong>En Revisión</strong></li>
+                    <li><strong>Estado:</strong> <strong>En Revision</strong></li>
         </ul>
         <p>Puede ingresar al sistema para visualizar las solicitudes pendientes:</p>
         <p><a href="' . htmlspecialchars($panel_subdireccion_url) . '">' . htmlspecialchars($panel_subdireccion_url) . '</a></p>
@@ -533,15 +590,17 @@ try {
     // Enviar correo a la Secretaría de Subdirección
     @mail($secretaria_email, $subject_secretaria, $message_secretaria, $headers);
 
-    $subject_applicant = 'Confirmación: Solicitud recibida para revisión - SGPFL';
+    $subject_applicant = 'Confirmación: Solicitud para Comité Asesor recibida - SGPFL';
     $message_applicant = '
     <html><head><meta charset="UTF-8"></head><body>
       <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
         <p>Estimado/a ' . htmlspecialchars($full_name) . ',</p>
-        <p>Le confirmamos que su solicitud de <strong>Registro como Asesor Externo</strong> fue recibida correctamente.</p>
+                <p>Le confirmamos que su solicitud para integrar un <strong>Comité Asesor</strong> fue recibida correctamente.</p>
         <ul>
           <li><strong>Fecha:</strong> ' . date('d/m/Y H:i') . '</li>
-          <li><strong>Estado actual:</strong> <strong>En Revisión</strong></li>
+                    <li><strong>Tipo de postulación:</strong> ' . htmlspecialchars($postulation_type) . '</li>
+                    <li><strong>Rol solicitado:</strong> ' . htmlspecialchars($committee_role) . '</li>
+                    <li><strong>Estado actual:</strong> <strong>En Revision</strong></li>
         </ul>
         <p>La Subdirección revisará la información y los documentos aportados. Recibirá una notificación cuando exista un resultado.</p>
         <p style="margin-top:20px; font-size:12px; color:#777;">' . date('d/m/Y') . '</p>

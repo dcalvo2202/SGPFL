@@ -30,7 +30,7 @@ try {
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Registro Asesor Externo - SGPFL</title>
+    <title>Solicitud Comité Asesor - SGPFL</title>
 
     <link rel="icon" type="image/webp" href="<?= htmlspecialchars($favicon_url) ?>">
 
@@ -73,14 +73,49 @@ try {
 
         <div class="dashboard-header text-center mb-4">
             <h1 style="font-size: 2.25rem; font-weight: 700;">
-                <i class="bi bi-mortarboard-fill"></i> Solicitud de Registro - Asesor Externo
+                <i class="bi bi-mortarboard-fill"></i> Solicitud de Integrante de Comité Asesor
             </h1>
             <p class="lead text-muted">
-                Complete la información y adjunte los documentos requeridos. Su solicitud quedará en estado <strong>En Revisión</strong>.
+                Reutilice este formulario para postularse como asesor externo, asesor interno o tutor. La solicitud quedará en estado <strong>En Revisión</strong>.
             </p>
         </div>
 
         <form action="registro_process.php" method="POST" enctype="multipart/form-data">
+
+            <div class="section-card">
+                <div class="section-header">
+                    <h3><i class="bi bi-diagram-3-fill"></i> Tipo de postulación</h3>
+                </div>
+                <div class="section-body">
+
+                    <div class="form-group-tfg">
+                        <label class="form-label-tfg" for="inp-postulation-type">
+                            <i class="bi bi-ui-checks-grid"></i> Seleccione su tipo de postulación *
+                        </label>
+                        <select class="form-control-tfg" id="inp-postulation-type" name="postulation_type" required>
+                            <option value="" disabled selected hidden>Seleccione tipo de postulación</option>
+                            <option value="Asesor Externo">Asesor externo</option>
+                            <option value="Asesor Interno">Asesor interno</option>
+                            <option value="Tutor">Tutor</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group-tfg" id="subrole-wrapper">
+                        <label class="form-label-tfg" for="inp-committee-subrole">
+                            <i class="bi bi-person-lines-fill"></i> Subrol del comité *
+                        </label>
+                        <select class="form-control-tfg" id="inp-committee-subrole" name="committee_subrole">
+                            <option value="" disabled selected hidden>Seleccione subrol</option>
+                            <option value="Asesor 1">Asesor 1</option>
+                            <option value="Asesor 2">Asesor 2</option>
+                        </select>
+                        <small class="text-muted">Aplica cuando la postulación es para asesor externo o asesor interno.</small>
+                    </div>
+
+                    <input type="hidden" id="inp-committee-role" name="committee_role" value="">
+
+                </div>
+            </div>
 
             <div class="section-card">
                 <div class="section-header">
@@ -231,19 +266,27 @@ try {
                     <div class="form-group-tfg">
                         <label class="form-label-tfg" for="inp-cv">
                             <i class="bi bi-filetype-pdf"></i> 
-                            Currículum actualizado (PDF/DOCX) *
+                            Currículum actualizado (PDF) *
                         </label>
-                        <input type="file" class="form-control-tfg" id="inp-cv" name="cv_document" accept=".pdf,.docx" required>
-                        <small class="text-muted">Tamaño máximo: 5 MB | Formatos permitidos: PDF, DOCX</small>
+                        <input type="file" class="form-control-tfg" id="inp-cv" name="cv_document" accept=".pdf" required>
+                        <small class="text-muted">Tamaño máximo: 5 MB | Formato permitido: PDF</small>
                     </div>
 
                     <div class="form-group-tfg">
                         <label class="form-label-tfg" for="inp-id-copy">
-                            <i class="bi bi-person-badge"></i> Fotocopia de cédula (PDF/JPG/PNG) *
+                            <i class="bi bi-person-badge"></i> Fotocopia de cédula (JPG/PNG) *
                             
                         </label>
-                        <input type="file" class="form-control-tfg" id="inp-id-copy" name="id_copy_document" accept=".pdf,.jpg,.jpeg,.png" required>
-                        <small class="text-muted">Tamaño máximo: 2 MB | Formatos permitidos: PDF, JPG, PNG</small>
+                        <input type="file" class="form-control-tfg" id="inp-id-copy" name="id_copy_document" accept=".jpg,.jpeg,.png" required>
+                        <small class="text-muted">Tamaño máximo: 2 MB | Formatos permitidos: JPG, PNG</small>
+                    </div>
+
+                    <div class="form-group-tfg">
+                        <label class="form-label-tfg" for="inp-cover-letter">
+                            <i class="bi bi-filetype-pdf"></i> Carta de solicitud (PDF) *
+                        </label>
+                        <input type="file" class="form-control-tfg" id="inp-cover-letter" name="cover_letter_document" accept=".pdf" required>
+                        <small class="text-muted">Tamaño máximo: 5 MB | Formato permitido: PDF</small>
                     </div>
 
                     <h5 class="alert-tfg alert-tfg-info">
@@ -322,7 +365,8 @@ try {
         function bindFileSizeValidation() {
             const fileValidationRules = {
                 'inp-cv': { maxMB: 5, label: 'Currículum' },
-                'inp-id-copy': { maxMB: 2, label: 'Fotocopia de cédula' }
+                'inp-id-copy': { maxMB: 2, label: 'Fotocopia de cédula' },
+                'inp-cover-letter': { maxMB: 5, label: 'Carta de solicitud' }
             };
 
             Object.keys(fileValidationRules).forEach(function (inputId) {
@@ -375,13 +419,23 @@ try {
                 'inp-specialization': {
                     valueMissing: 'Debe ingresar el área de especialización.',
                 },
+                'inp-postulation-type': {
+                    valueMissing: 'Debe seleccionar el tipo de postulación.',
+                },
+                'inp-committee-subrole': {
+                    valueMissing: 'Debe seleccionar el subrol para asesor externo o interno.',
+                },
                 'inp-cv': {
-                    valueMissing: 'Debe adjuntar el currículum (PDF o DOCX).',
+                    valueMissing: 'Debe adjuntar el currículum en formato PDF.',
                     fileSize: 'El currículum excede el tamaño máximo permitido (5 MB).',
                 },
                 'inp-id-copy': {
-                    valueMissing: 'Debe adjuntar la fotocopia de cédula (PDF, JPG o PNG).',
+                    valueMissing: 'Debe adjuntar la fotocopia de cédula (JPG o PNG).',
                     fileSize: 'La fotocopia de cédula excede el tamaño máximo permitido (2 MB).',
+                },
+                'inp-cover-letter': {
+                    valueMissing: 'Debe adjuntar la carta de solicitud en formato PDF.',
+                    fileSize: 'La carta de solicitud excede el tamaño máximo permitido (5 MB).',
                 },
             };
 
@@ -593,12 +647,58 @@ try {
             });
         }
 
+        function initPostulationTypeWorkflow() {
+            const postulationType = document.getElementById('inp-postulation-type');
+            const subroleWrapper = document.getElementById('subrole-wrapper');
+            const subroleInput = document.getElementById('inp-committee-subrole');
+            const committeeRoleInput = document.getElementById('inp-committee-role');
+
+            if (!postulationType || !subroleWrapper || !subroleInput || !committeeRoleInput) {
+                return;
+            }
+
+            function syncRoleFields() {
+                const type = postulationType.value;
+
+                if (type === 'Tutor') {
+                    subroleWrapper.style.display = 'none';
+                    subroleInput.required = false;
+                    subroleInput.value = '';
+                    subroleInput.setCustomValidity('');
+                    committeeRoleInput.value = 'Tutor';
+                    return;
+                }
+
+                if (type === 'Asesor Externo' || type === 'Asesor Interno') {
+                    subroleWrapper.style.display = '';
+                    subroleInput.required = true;
+                    committeeRoleInput.value = subroleInput.value || '';
+                    return;
+                }
+
+                subroleWrapper.style.display = 'none';
+                subroleInput.required = false;
+                subroleInput.value = '';
+                subroleInput.setCustomValidity('');
+                committeeRoleInput.value = '';
+            }
+
+            postulationType.addEventListener('change', syncRoleFields);
+            subroleInput.addEventListener('change', function () {
+                committeeRoleInput.value = subroleInput.value || '';
+            });
+
+            syncRoleFields();
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
             bindCustomValidationMessages();
             bindFileSizeValidation();
             bindCustomSingleFileInput('inp-cv', 'Seleccionar archivo', 'Ningún archivo seleccionado');
             bindCustomSingleFileInput('inp-id-copy', 'Seleccionar archivo', 'Ningún archivo seleccionado');
+            bindCustomSingleFileInput('inp-cover-letter', 'Seleccionar archivo', 'Ningún archivo seleccionado');
             bindFormValidationFallback();
+            initPostulationTypeWorkflow();
             initStudentSearch();
         });
 
