@@ -495,7 +495,7 @@ CREATE TABLE acuerdo_defensa_publica (
   CONSTRAINT fk_adp_usuario
     FOREIGN KEY (subido_por) REFERENCES sis_user(id)
     ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 
 -- --------------------------------------------------------
