@@ -5,7 +5,6 @@
         include('includes.php');
         include('lang/lang.es');
         require_once __DIR__ . '/config.inc';
-        require_once __DIR__ . '/config.inc';
         require_once __DIR__ . '/lib/mysession/mySession.conf.php';
         // Si existe una cookie de sesión previa, la limpiamos para evitar conflictos
         if (isset($_COOKIE[$_MYSESSION_CONF['SID']])) {
@@ -39,7 +38,7 @@
                     <h2 class="mb-1" style="font-weight:700;"><?= $vocab["login_title"] ?></h2>
                     <p class="text-muted mb-3"><?= $vocab["login_title_desc"] ?></p>
                 </div>
-                <form method="post" action="mod/login/ajax_login.php" onsubmit="Do_Login(); return false;">
+                <form method="post" action="mod/login/ajax_login.php" onsubmit="Do_Login(); return false;" class="login-form-wrap">
                     <div class="form-group">
                         <label for="user" class="fw-bold"><?= $vocab["login_user"] ?> </label>
                         <div class="input-group">
@@ -70,9 +69,9 @@
                         <?= $vocab["login_but_start"] ?>
                     </button>
                     
-                    <div class="text-center p-0">
-                        <a href="registro.php" class="btn btn-outline-secondary w-100" tabindex="-1">
-                            ¿Eres Asesor Externo? <strong>Solicita tu registro aquí</strong>
+                    <div class="text-center p-0 mt-2 login-register-wrap">
+                        <a href="registro.php" class="login-register-link" tabindex="-1">
+                            ¿Deseas pertenecer como asesor o tutor? <strong>Inicia tu solicitud aquí</strong>
                         </a>
                     </div>
                 </form>
@@ -120,6 +119,29 @@
 </html>
 
 <style>
+.login-form-wrap {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.login-register-wrap {
+    line-height: 1.35;
+}
+
+.login-register-link {
+    display: inline-block;
+    color: #2f6fb5;
+    font-size: 1.05em;
+    text-decoration: none;
+}
+
+.login-register-link:hover,
+.login-register-link:focus {
+    color: #1e5797;
+    text-decoration: underline;
+}
+
 /* Centrar modal usando posicionamiento absoluto */
 .modal.fade.in {
     padding: 0 !important;

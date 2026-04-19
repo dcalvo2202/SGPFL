@@ -1,9 +1,9 @@
 <?php
 /**
- * HU-012: Panel de Revisión de Solicitudes de Asesor Externo
+ * HU-012 / HU-041: Panel de revisión de solicitudes de comité asesor
  * 
- * Permite a la Subdirección (Gestor Académico) revisar, aprobar o rechazar
- * las solicitudes de registro de Asesores Externos.
+ * Permite a Gestor Académico y CTFG revisar, aprobar o rechazar
+ * solicitudes de integración de comité (asesor externo/interno/tutor).
  * 
  * Usa header.php e includes.php como el resto del sistema.
  * Usa modales HTML personalizados (igual que panel_ctfg_review_final_documents.php)
@@ -23,8 +23,8 @@ $current_user_name = $mySessionController->getVar("nombre");
 $current_user_rol = $mySessionController->getVar("rol");
 $base_url = $mySessionController->getVar("cds_domain") . $mySessionController->getVar("cds_locate");
 
-// 4. CONTROL DE ACCESO POR ROL (Solo Gestor Académico rol 2 o Administrador rol 1)
-if ($current_user_rol != 2 && $current_user_rol != 1) {
+// 4. CONTROL DE ACCESO POR ROL (Gestor 2, CTFG 3 o Administrador 1)
+if ($current_user_rol != 2 && $current_user_rol != 3 && $current_user_rol != 1) {
     header('Location: dashboard.php');
     exit;
 }
@@ -40,7 +40,9 @@ if (!in_array($filtro_status, $allowed_filters)) {
 try {
     // $id_con viene de inc/db/db.php
     $sql = "SELECT ear.id, ear.applicant_id, ear.full_name, ear.email, ear.telefono, ear.institution, ear.specialization,
+                   ear.postulation_type, ear.committee_subrole, ear.committee_role,
                    ear.cv_file_name, ear.cv_file_size, ear.id_copy_file_name, ear.id_copy_file_size,
+                   ear.cover_letter_file_name, ear.cover_letter_file_size,
                    ear.status, ear.rejection_count, ear.approval_expires_at, ear.admin_comments, 
                    ear.reviewed_by, ear.reviewed_at, ear.created_at, ear.updated_at,
                    ear.linked_student_id, u.nombre AS linked_student_name
@@ -78,7 +80,7 @@ function formatBytes($bytes) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revisar Solicitudes Asesor Externo - SGPFL UNA</title>
+    <title>Revisar Solicitudes Comité Asesor - SGPFL UNA</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="<?= htmlspecialchars($base_url) ?>img/logo.webp">
@@ -201,9 +203,9 @@ function formatBytes($bytes) {
             
             <div class="dashboard-header text-center mb-4">
                 <h1>
-                    <i class="bi bi-person-badge-fill"></i> Revisión de Solicitudes - Asesor Externo
+                    <i class="bi bi-person-badge-fill"></i> Revisión de Solicitudes - Comité Asesor
                 </h1>
-                <p class="lead">Validar y aprobar documentos de Asesores Externos</p>
+                <p class="lead">Validar y aprobar solicitudes de tutor, asesor interno y asesor externo</p>
             </div>
 
             <!-- Filtros -->
@@ -256,6 +258,8 @@ function formatBytes($bytes) {
                                     <p><span class="info-label">Teléfono:</span> <?= htmlspecialchars($sol['telefono'] ?: 'No especificado') ?></p>
                                     <p><span class="info-label">Institución:</span> <?= htmlspecialchars($sol['institution']) ?></p>
                                     <p><span class="info-label">Especialización:</span> <?= htmlspecialchars($sol['specialization']) ?></p>
+                                    <p><span class="info-label">Tipo de postulación:</span> <?= htmlspecialchars($sol['postulation_type'] ?: 'Asesor Externo') ?></p>
+                                    <p><span class="info-label">Rol solicitado:</span> <?= htmlspecialchars($sol['committee_role'] ?: '-') ?></p>
                                     <p>
                                         <span class="info-label"><i class="bi bi-mortarboard-fill text-primary"></i> Estudiante a asesorar:</span>
                                         <?php if (!empty($sol['linked_student_name'])): ?>
@@ -279,6 +283,13 @@ function formatBytes($bytes) {
                                         <a href="descargar_documento_asesor.php?id=<?= $sol['id'] ?>&type=id_copy" class="doc-link" target="_blank">
                                             <i class="bi bi-file-earmark-image text-primary"></i> <?= htmlspecialchars($sol['id_copy_file_name']) ?>
                                             (<?= formatBytes($sol['id_copy_file_size']) ?>)
+                                        </a>
+                                    </p>
+                                    <p>
+                                        <span class="info-label">Carta:</span>
+                                        <a href="descargar_documento_asesor.php?id=<?= $sol['id'] ?>&type=cover_letter" class="doc-link" target="_blank">
+                                            <i class="bi bi-file-earmark-pdf text-danger"></i> <?= htmlspecialchars($sol['cover_letter_file_name']) ?>
+                                            (<?= formatBytes($sol['cover_letter_file_size']) ?>)
                                         </a>
                                     </p>
                                     <p><span class="info-label">Fecha solicitud:</span> <?= date('d/m/Y H:i', strtotime($sol['created_at'])) ?></p>
@@ -344,9 +355,9 @@ function formatBytes($bytes) {
     <div id="modalAprobar" class="custom-modal-overlay">
         <div class="custom-modal-content text-center">
             <i class="bi bi-check-circle-fill modal-icon question"></i>
-            <h4>Aprobar Asesor Externo</h4>
+            <h4>Aprobar Solicitud de Comité</h4>
             <p id="modalAprobarTexto">¿Está seguro de aprobar esta solicitud?</p>
-            <p class="text-muted small">Se creará automáticamente una cuenta de usuario con rol Asesor Externo.</p>
+            <p class="text-muted small">La solicitud quedará disponible para crear o editar comités asesores.</p>
             <div class="btn-group-modal">
                 <button type="button" class="btn btn-secondary" id="btnCancelarAprobar">Cancelar</button>
                 <button type="button" class="btn btn-success" id="btnConfirmarAprobar">

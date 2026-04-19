@@ -18,8 +18,26 @@ $cds_domain = $mySessionController->getVar("cds_domain");
 $cds_locate = $mySessionController->getVar("cds_locate");
 $base_url = $cds_domain . $cds_locate;
 
+$has_committee_approval = false;
+try {
+    $authConn = new mysqli($db_host, $usuario, $clave, $db);
+    if (!$authConn->connect_error) {
+        $authConn->set_charset('utf8');
+        $authStmt = $authConn->prepare("SELECT id FROM external_advisor_profile_requests WHERE applicant_id = ? AND status = 'Aprobado' LIMIT 1");
+        if ($authStmt) {
+            $authStmt->bind_param('s', $current_user_id);
+            $authStmt->execute();
+            $has_committee_approval = $authStmt->get_result()->num_rows > 0;
+            $authStmt->close();
+        }
+        $authConn->close();
+    }
+} catch (Exception $e) {
+    error_log("Error validando aprobación de comité en historial: " . $e->getMessage());
+}
+
 // Restringir acceso: estudiantes (4), asesores externos (5), admin (1), asesores internos de comité (3)
-if ($current_user_rol != 4 && $current_user_rol != 5 && $current_user_rol != 1 && $current_user_rol != 3) {
+if ($current_user_rol != 4 && $current_user_rol != 5 && $current_user_rol != 1 && $current_user_rol != 3 && !$has_committee_approval) {
     header('Location: dashboard.php');
     exit;
 }
@@ -32,7 +50,7 @@ $target_student_id = $current_user_id; // Por defecto, el mismo usuario
 $linked_student_name = '';
 $linked_students_list = []; // Array para todos los estudiantes del grupo
 $group_member_ids = []; // IDs de todos los miembros del grupo (para consultas)
-$is_external_advisor = ($current_user_rol == 5);
+$is_external_advisor = ($current_user_rol == 5 || $has_committee_approval);
 $is_internal_advisor = ($current_user_rol == 3); // Miembro de comité (tutor/asesor interno)
 $is_advisor = ($is_external_advisor || $is_internal_advisor);
 $is_student = ($current_user_rol == 4);
@@ -263,24 +281,30 @@ if ($is_student) {
         $conn->set_charset("utf8");
         
         $sql = "SELECT ear.applicant_id, ear.full_name as advisor_name, ear.email as advisor_email, 
-                  ear.institution as institucion_procedencia, eals.linked_at
+                  ear.institution as institucion_procedencia,
+                  ear.postulation_type,
+                  ear.committee_role,
+                  eals.linked_at
                 FROM external_advisor_linked_students eals
                 INNER JOIN external_advisor_profile_requests ear ON eals.advisor_request_id = ear.id
                 WHERE eals.student_id = ? 
                 AND ear.status = 'Aprobado'
-                ORDER BY eals.linked_at DESC
-                LIMIT 1";
+                ORDER BY eals.linked_at DESC";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $current_user_id);
         $stmt->execute();
         $result = $stmt->get_result();
         
-        if ($row = $result->fetch_assoc()) {
+        while ($row = $result->fetch_assoc()) {
+            $roleLabel = trim((string)($row['committee_role'] ?? ''));
+            if ($roleLabel === '') {
+                $roleLabel = trim((string)($row['postulation_type'] ?? 'Asesor'));
+            }
             $assigned_advisors[] = [
                 'advisor_name' => $row['advisor_name'],
                 'advisor_email' => $row['advisor_email'],
                 'institucion_procedencia' => $row['institucion_procedencia'] ?? '',
-                'advisor_type' => 'Externo'
+                'advisor_type' => $roleLabel
             ];
         }
         $stmt->close();
@@ -306,11 +330,21 @@ if ($is_student) {
         $result = $stmt->get_result();
 
         while ($row = $result->fetch_assoc()) {
+            $already = false;
+            foreach ($assigned_advisors as $advisor) {
+                if (($advisor['advisor_name'] ?? '') === ($row['advisor_name'] ?? '') && ($advisor['advisor_email'] ?? '') === ($row['advisor_email'] ?? '')) {
+                    $already = true;
+                    break;
+                }
+            }
+            if ($already) {
+                continue;
+            }
             $assigned_advisors[] = [
                 'advisor_name' => $row['advisor_name'],
                 'advisor_email' => $row['advisor_email'] ?? '',
                 'institucion_procedencia' => '',
-                'advisor_type' => 'Interno'
+                'advisor_type' => 'Asesor Interno'
             ];
         }
 

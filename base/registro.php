@@ -5,6 +5,49 @@ require_once('includes.php');
 $base_url = rtrim($cds_domain, '/') . '/' . trim($cds_locate, '/') . '/';
 $favicon_url = $base_url . 'img/logo.webp';
 
+$current_user_id = '';
+$current_user_name = '';
+$current_user_email = '';
+$current_user_rol = 0;
+$is_logged_student = false;
+$unread_notifications = 0;
+$unread_messages = 0;
+$current_student_role_counts = [
+    'Tutor' => 0,
+    'Asesor 1' => 0,
+    'Asesor 2' => 0,
+];
+
+try {
+    require_once __DIR__ . '/lib/mysession/mySession.conf.php';
+    require_once __DIR__ . '/lib/mysession/mySession.class.php';
+    $mySessionController = mySession::getIstance($_MYSESSION_CONF);
+    $current_user_id = (string)($mySessionController->getVar('usuario') ?? '');
+    $current_user_name = (string)($mySessionController->getVar('nombre') ?? '');
+    $current_user_rol = (int)($mySessionController->getVar('rol') ?? 0);
+    $is_logged_student = ($current_user_rol === 4 && $current_user_id !== '');
+} catch (Throwable $e) {
+    $is_logged_student = false;
+}
+
+if ($current_user_id !== '') {
+    try {
+        require_once __DIR__ . '/inc/alert_functions.php';
+        require_once __DIR__ . '/inc/chat_functions.php';
+        include_once __DIR__ . '/inc/db/bdcommon.inc';
+        $conn_header = new mysqli($db_host, $usuario, $clave, $db);
+        if (!$conn_header->connect_error) {
+            $conn_header->set_charset('utf8');
+            $unread_notifications = getUnreadAlertCount($conn_header, $current_user_id);
+            $unread_messages = getTotalUnreadMessages($conn_header, $current_user_id);
+            $conn_header->close();
+        }
+    } catch (Exception $e) {
+        $unread_notifications = 0;
+        $unread_messages = 0;
+    }
+}
+
 $tipo_tel_options = [];
 try {
     include_once __DIR__ . '/inc/db/bdcommon.inc';
@@ -24,13 +67,64 @@ try {
     error_log('Error cargando tipos de teléfono: ' . $e->getMessage());
 }
 
+if ($is_logged_student) {
+    try {
+        include_once __DIR__ . '/inc/db/bdcommon.inc';
+        $conn = new mysqli($db_host, $usuario, $clave, $db);
+        if (!$conn->connect_error) {
+            $conn->set_charset('utf8');
+
+            $stmt_user = $conn->prepare('SELECT nombre, email FROM sis_user WHERE id = ? LIMIT 1');
+            if ($stmt_user) {
+                $stmt_user->bind_param('s', $current_user_id);
+                $stmt_user->execute();
+                $result_user = $stmt_user->get_result();
+                if ($row_user = $result_user->fetch_assoc()) {
+                    $current_user_name = (string)($row_user['nombre'] ?? $current_user_name);
+                    $current_user_email = (string)($row_user['email'] ?? '');
+                }
+                $stmt_user->close();
+            }
+
+            $stmt_roles = $conn->prepare(
+                "SELECT ear.committee_role, COUNT(*) AS total
+                 FROM external_advisor_linked_students eals
+                 INNER JOIN external_advisor_profile_requests ear ON eals.advisor_request_id = ear.id
+                 WHERE eals.student_id = ? AND ear.status = 'Aprobado'
+                 GROUP BY ear.committee_role"
+            );
+            if ($stmt_roles) {
+                $stmt_roles->bind_param('s', $current_user_id);
+                $stmt_roles->execute();
+                $result_roles = $stmt_roles->get_result();
+                while ($row_role = $result_roles->fetch_assoc()) {
+                    $role_name = (string)($row_role['committee_role'] ?? '');
+                    if (isset($current_student_role_counts[$role_name])) {
+                        $current_student_role_counts[$role_name] = (int)($row_role['total'] ?? 0);
+                    }
+                }
+                $stmt_roles->close();
+            }
+
+            $conn->close();
+        }
+    } catch (Exception $e) {
+        error_log('Error cargando roles actuales del estudiante: ' . $e->getMessage());
+    }
+}
+
+$tutor_taken = $current_student_role_counts['Tutor'] > 0;
+$advisor1_taken = $current_student_role_counts['Asesor 1'] > 0;
+$advisor2_taken = $current_student_role_counts['Asesor 2'] > 0;
+$advisor_slots_available = (!$advisor1_taken || !$advisor2_taken);
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Registro Asesor Externo - SGPFL</title>
+    <title>Solicitud Comité Asesor - SGPFL</title>
 
     <link rel="icon" type="image/webp" href="<?= htmlspecialchars($favicon_url) ?>">
 
@@ -46,41 +140,80 @@ try {
 <body class="d-flex flex-column min-vh-100 fondo-una">
 
 <!-- =============================== HEADER =============================== -->
-<header class="navbar-una registro-navbar">
-    <div class="container-fluid px-4">
-        <div class="header-left d-flex align-items-center">
-            <img src="<?= htmlspecialchars($base_url) ?>img/logo.webp" alt="Logo UNA" class="logo-una">
-            <div class="header-text ms-3">
-                <h5 class="mb-0 text-white fw-bold">Universidad Nacional de Costa Rica</h5>
-                 <small class="text-light opacity-85">Escuela de Informática</small>
+<?php if (!empty($current_user_id)): ?>
+    <?php include 'header.php'; ?>
+<?php else: ?>
+    <header class="navbar-una sticky-top" style="background: linear-gradient(135deg, #CD1719, #A01215) !important; padding: 1.25rem 0; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);">
+        <div class="container-fluid px-4">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                <div class="header-left d-flex align-items-center">
+                    <img src="<?= htmlspecialchars($base_url) ?>img/logo.webp" alt="Logo UNA" class="logo-una" style="height: 70px; width: auto;">
+                    <div class="header-text ms-3">
+                        <h5 class="mb-0 text-white fw-bold" style="font-size: 1.75rem; line-height: 1.05;">Universidad Nacional de Costa Rica</h5>
+                        <small class="text-light opacity-85" style="font-size: 1.05rem;">Escuela de Informática</small>
+                    </div>
+                </div>
+                <div class="header-right text-end">
+                    <a href="login.php" class="btn text-white fw-semibold" style="border: 2px solid rgba(255, 255, 255, 0.3); font-size: 0.98rem; padding: 0.55rem 1rem; border-radius: 12px; transition: all 0.2s ease;">
+                        <i class="bi bi-box-arrow-in-right"></i> Iniciar sesión
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="header-right text-end">
-
-            <div class="user-details">
-           
-                <a href="login.php" 
-                   class="btn btn-outline-light btn-sm ms-2 registro-back-btn">
-                        <i class="bi bi-arrow-left"></i> Regresar a iniciar sesión
-                </a>
-            </div>
-        </div>
-    </div>
-</header>
+    </header>
+<?php endif; ?>
 
 <main class="flex-fill">
     <div class="container my-5">
 
         <div class="dashboard-header text-center mb-4">
             <h1 style="font-size: 2.25rem; font-weight: 700;">
-                <i class="bi bi-mortarboard-fill"></i> Solicitud de Registro - Asesor Externo
+                <i class="bi bi-mortarboard-fill"></i> Solicitud de Integrante de Comité Asesor
             </h1>
             <p class="lead text-muted">
-                Complete la información y adjunte los documentos requeridos. Su solicitud quedará en estado <strong>En Revisión</strong>.
+                Reutilice este formulario para postularse como asesor externo, asesor interno o tutor. La solicitud quedará en estado <strong>En Revisión</strong>.
             </p>
         </div>
 
         <form action="registro_process.php" method="POST" enctype="multipart/form-data">
+
+            <div class="section-card">
+                <div class="section-header">
+                    <h3><i class="bi bi-diagram-3-fill"></i> Tipo de postulación</h3>
+                </div>
+                <div class="section-body">
+
+                    <div class="form-group-tfg">
+                        <label class="form-label-tfg" for="inp-postulation-type">
+                            <i class="bi bi-ui-checks-grid"></i> Seleccione su tipo de postulación *
+                        </label>
+                        <select class="form-control-tfg" id="inp-postulation-type" name="postulation_type" required>
+                            <option value="" disabled selected hidden>Seleccione tipo de postulación</option>
+                            <option value="Asesor Externo" <?= $advisor_slots_available ? '' : 'disabled' ?>>Asesor externo</option>
+                            <option value="Asesor Interno" <?= $advisor_slots_available ? '' : 'disabled' ?>>Asesor interno</option>
+                            <option value="Tutor" <?= $tutor_taken ? 'disabled' : '' ?>>Tutor</option>
+                        </select>
+                        <?php if ($is_logged_student): ?>
+                            <small class="text-muted d-block mt-1">Las opciones ya asignadas a su proyecto aparecen deshabilitadas.</small>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="form-group-tfg" id="subrole-wrapper">
+                        <label class="form-label-tfg" for="inp-committee-subrole">
+                            <i class="bi bi-person-lines-fill"></i> Subrol del comité *
+                        </label>
+                        <select class="form-control-tfg" id="inp-committee-subrole" name="committee_subrole">
+                            <option value="" disabled selected hidden>Seleccione subrol</option>
+                            <option value="Asesor 1" <?= $advisor1_taken ? 'disabled' : '' ?>>Asesor 1</option>
+                            <option value="Asesor 2" <?= $advisor2_taken ? 'disabled' : '' ?>>Asesor 2</option>
+                        </select>
+                        <small class="text-muted">Aplica cuando la postulación es para asesor externo o asesor interno.</small>
+                    </div>
+
+                    <input type="hidden" id="inp-committee-role" name="committee_role" value="">
+
+                </div>
+            </div>
 
             <div class="section-card">
                 <div class="section-header">
@@ -93,7 +226,7 @@ try {
                             <i class="bi bi-person-badge-fill"></i> Cédula / Identificación *
                         </label>
                         <input type="text" class="form-control-tfg" id="inp-applicant-id" name="applicant_id" maxlength="50" required
-                               placeholder="Ej: 123456789">
+                               placeholder="Ej: 123456789" value="<?= htmlspecialchars($is_logged_student ? '' : $current_user_id) ?>">
                         <small class="text-muted">Debe coincidir con el identificador que se usará al crear su cuenta.</small>
                     </div>
 
@@ -102,7 +235,7 @@ try {
                             <i class="bi bi-person-fill"></i> Nombre completo *
                         </label>
                         <input type="text" class="form-control-tfg" id="inp-full-name" name="full_name" maxlength="255" required
-                               placeholder="Ingrese su nombre completo">
+                               placeholder="Ingrese su nombre completo" value="<?= htmlspecialchars($is_logged_student ? '' : $current_user_name) ?>">
                     </div>
 
                     <div class="form-group-tfg">
@@ -110,7 +243,7 @@ try {
                             <i class="bi bi-envelope-fill"></i> Correo electrónico *
                         </label>
                         <input type="email" class="form-control-tfg" id="inp-email" name="email" maxlength="100" required
-                               placeholder="correo@ejemplo.com">
+                               placeholder="correo@ejemplo.com" value="<?= htmlspecialchars($is_logged_student ? '' : $current_user_email) ?>">
                     </div>
 
                     <div class="row">
@@ -174,50 +307,72 @@ try {
                 </div>
                 <div class="section-body">
 
-                    <h5 class="alert-tfg alert-tfg-info mb-3">
-                        <i class="bi bi-info-circle"></i>
-                        <div>
-                            <strong>Instrucciones:</strong> Busque y seleccione el estudiante al que desea asesorar en su Trabajo Final de Graduación. (Al seleccionar un estudiante se vincula con el resto del grupo de TFG)
+                    <?php if ($is_logged_student): ?>
+                        <h5 class="alert-tfg alert-tfg-info mb-3">
+                            <i class="bi bi-info-circle"></i>
+                            <div>
+                                <strong>Solicitud para tu proyecto:</strong> Este bloque identifica a tu grupo actual como estudiante a asesorar.
+                            </div>
+                        </h5>
+                        <div class="selected-student-container">
+                            <label class="form-label-tfg">
+                                <i class="bi bi-person-check-fill text-success"></i> Estudiante seleccionado
+                            </label>
+                            <div class="selected-student-card">
+                                <div class="student-info">
+                                    <span><?= htmlspecialchars($current_user_name) ?></span>
+                                    <small class="text-muted"><?= htmlspecialchars($current_user_email) ?></small>
+                                </div>
+                            </div>
                         </div>
-                    </h5>
 
-                    <div class="form-group-tfg">
-                        <label class="form-label-tfg" for="inp-search-student">
-                            <i class="bi bi-search"></i> Buscar estudiante *
-                        </label>
-                        <div class="search-student-container">
-                            <div class="input-group">
-                                <input type="text" class="form-control-tfg" id="inp-search-student" 
-                                       placeholder="Escriba el nombre o cédula del estudiante..." autocomplete="off">
-                                <button type="button" class="btn btn-primary" id="btn-search-student">
-                                    <i class="bi bi-search"></i> Buscar
+                        <input type="hidden" id="inp-linked-student-id" name="linked_student_id" value="<?= htmlspecialchars($current_user_id) ?>">
+                    <?php else: ?>
+                        <h5 class="alert-tfg alert-tfg-info mb-3">
+                            <i class="bi bi-info-circle"></i>
+                            <div>
+                                <strong>Instrucciones:</strong> Busque y seleccione el estudiante al que desea asesorar en su Trabajo Final de Graduación. (Al seleccionar un estudiante se vincula con el resto del grupo de TFG)
+                            </div>
+                        </h5>
+
+                        <div class="form-group-tfg">
+                            <label class="form-label-tfg" for="inp-search-student">
+                                <i class="bi bi-search"></i> Buscar estudiante *
+                            </label>
+                            <div class="search-student-container">
+                                <div class="input-group">
+                                    <input type="text" class="form-control-tfg" id="inp-search-student" 
+                                           placeholder="Escriba el nombre o cédula del estudiante..." autocomplete="off">
+                                    <button type="button" class="btn btn-primary" id="btn-search-student">
+                                        <i class="bi bi-search"></i> Buscar
+                                    </button>
+                                </div>
+                                <small class="text-muted">Ingrese al menos 2 caracteres para iniciar la búsqueda</small>
+                            </div>
+                        </div>
+
+                        <!-- Resultados de búsqueda -->
+                        <div id="div-search-student-results" class="search-results-container" style="display: none;"></div>
+
+                        <!-- Estudiante seleccionado -->
+                        <div id="div-selected-student" class="selected-student-container" style="display: none;">
+                            <label class="form-label-tfg">
+                                <i class="bi bi-person-check-fill text-success"></i> Estudiante seleccionado
+                            </label>
+                            <div class="selected-student-card">
+                                <div class="student-info">
+                                    <span id="selected-student-name"></span>
+                                    <small id="selected-student-email" class="text-muted"></small>
+                                </div>
+                                <button type="button" class="btn btn-sm btn-outline-danger" id="btn-remove-student" title="Quitar estudiante">
+                                    <i class="bi bi-x-circle"></i>
                                 </button>
                             </div>
-                            <small class="text-muted">Ingrese al menos 2 caracteres para iniciar la búsqueda</small>
                         </div>
-                    </div>
 
-                    <!-- Resultados de búsqueda -->
-                    <div id="div-search-student-results" class="search-results-container" style="display: none;"></div>
-
-                    <!-- Estudiante seleccionado -->
-                    <div id="div-selected-student" class="selected-student-container" style="display: none;">
-                        <label class="form-label-tfg">
-                            <i class="bi bi-person-check-fill text-success"></i> Estudiante seleccionado
-                        </label>
-                        <div class="selected-student-card">
-                            <div class="student-info">
-                                <span id="selected-student-name"></span>
-                                <small id="selected-student-email" class="text-muted"></small>
-                            </div>
-                            <button type="button" class="btn btn-sm btn-outline-danger" id="btn-remove-student" title="Quitar estudiante">
-                                <i class="bi bi-x-circle"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Campo oculto para el ID del estudiante -->
-                    <input type="hidden" id="inp-linked-student-id" name="linked_student_id" value="">
+                        <!-- Campo oculto para el ID del estudiante -->
+                        <input type="hidden" id="inp-linked-student-id" name="linked_student_id" value="">
+                    <?php endif; ?>
 
                 </div>
             </div>
@@ -231,19 +386,27 @@ try {
                     <div class="form-group-tfg">
                         <label class="form-label-tfg" for="inp-cv">
                             <i class="bi bi-filetype-pdf"></i> 
-                            Currículum actualizado (PDF/DOCX) *
+                            Currículum actualizado (PDF) *
                         </label>
-                        <input type="file" class="form-control-tfg" id="inp-cv" name="cv_document" accept=".pdf,.docx" required>
-                        <small class="text-muted">Tamaño máximo: 5 MB | Formatos permitidos: PDF, DOCX</small>
+                        <input type="file" class="form-control-tfg" id="inp-cv" name="cv_document" accept=".pdf" required>
+                        <small class="text-muted">Tamaño máximo: 5 MB | Formato permitido: PDF</small>
                     </div>
 
                     <div class="form-group-tfg">
                         <label class="form-label-tfg" for="inp-id-copy">
-                            <i class="bi bi-person-badge"></i> Fotocopia de cédula (PDF/JPG/PNG) *
+                            <i class="bi bi-person-badge"></i> Fotocopia de cédula (JPG/PNG) *
                             
                         </label>
-                        <input type="file" class="form-control-tfg" id="inp-id-copy" name="id_copy_document" accept=".pdf,.jpg,.jpeg,.png" required>
-                        <small class="text-muted">Tamaño máximo: 2 MB | Formatos permitidos: PDF, JPG, PNG</small>
+                        <input type="file" class="form-control-tfg" id="inp-id-copy" name="id_copy_document" accept=".jpg,.jpeg,.png" required>
+                        <small class="text-muted">Tamaño máximo: 2 MB | Formatos permitidos: JPG, PNG</small>
+                    </div>
+
+                    <div class="form-group-tfg">
+                        <label class="form-label-tfg" for="inp-cover-letter">
+                            <i class="bi bi-filetype-pdf"></i> Carta de solicitud (PDF) *
+                        </label>
+                        <input type="file" class="form-control-tfg" id="inp-cover-letter" name="cover_letter_document" accept=".pdf" required>
+                        <small class="text-muted">Tamaño máximo: 5 MB | Formato permitido: PDF</small>
                     </div>
 
                     <h5 class="alert-tfg alert-tfg-info">
@@ -322,7 +485,8 @@ try {
         function bindFileSizeValidation() {
             const fileValidationRules = {
                 'inp-cv': { maxMB: 5, label: 'Currículum' },
-                'inp-id-copy': { maxMB: 2, label: 'Fotocopia de cédula' }
+                'inp-id-copy': { maxMB: 2, label: 'Fotocopia de cédula' },
+                'inp-cover-letter': { maxMB: 5, label: 'Carta de solicitud' }
             };
 
             Object.keys(fileValidationRules).forEach(function (inputId) {
@@ -375,13 +539,23 @@ try {
                 'inp-specialization': {
                     valueMissing: 'Debe ingresar el área de especialización.',
                 },
+                'inp-postulation-type': {
+                    valueMissing: 'Debe seleccionar el tipo de postulación.',
+                },
+                'inp-committee-subrole': {
+                    valueMissing: 'Debe seleccionar el subrol para asesor externo o interno.',
+                },
                 'inp-cv': {
-                    valueMissing: 'Debe adjuntar el currículum (PDF o DOCX).',
+                    valueMissing: 'Debe adjuntar el currículum en formato PDF.',
                     fileSize: 'El currículum excede el tamaño máximo permitido (5 MB).',
                 },
                 'inp-id-copy': {
-                    valueMissing: 'Debe adjuntar la fotocopia de cédula (PDF, JPG o PNG).',
+                    valueMissing: 'Debe adjuntar la fotocopia de cédula (JPG o PNG).',
                     fileSize: 'La fotocopia de cédula excede el tamaño máximo permitido (2 MB).',
+                },
+                'inp-cover-letter': {
+                    valueMissing: 'Debe adjuntar la carta de solicitud en formato PDF.',
+                    fileSize: 'La carta de solicitud excede el tamaño máximo permitido (5 MB).',
                 },
             };
 
@@ -593,12 +767,58 @@ try {
             });
         }
 
+        function initPostulationTypeWorkflow() {
+            const postulationType = document.getElementById('inp-postulation-type');
+            const subroleWrapper = document.getElementById('subrole-wrapper');
+            const subroleInput = document.getElementById('inp-committee-subrole');
+            const committeeRoleInput = document.getElementById('inp-committee-role');
+
+            if (!postulationType || !subroleWrapper || !subroleInput || !committeeRoleInput) {
+                return;
+            }
+
+            function syncRoleFields() {
+                const type = postulationType.value;
+
+                if (type === 'Tutor') {
+                    subroleWrapper.style.display = 'none';
+                    subroleInput.required = false;
+                    subroleInput.value = '';
+                    subroleInput.setCustomValidity('');
+                    committeeRoleInput.value = 'Tutor';
+                    return;
+                }
+
+                if (type === 'Asesor Externo' || type === 'Asesor Interno') {
+                    subroleWrapper.style.display = '';
+                    subroleInput.required = true;
+                    committeeRoleInput.value = subroleInput.value || '';
+                    return;
+                }
+
+                subroleWrapper.style.display = 'none';
+                subroleInput.required = false;
+                subroleInput.value = '';
+                subroleInput.setCustomValidity('');
+                committeeRoleInput.value = '';
+            }
+
+            postulationType.addEventListener('change', syncRoleFields);
+            subroleInput.addEventListener('change', function () {
+                committeeRoleInput.value = subroleInput.value || '';
+            });
+
+            syncRoleFields();
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
             bindCustomValidationMessages();
             bindFileSizeValidation();
             bindCustomSingleFileInput('inp-cv', 'Seleccionar archivo', 'Ningún archivo seleccionado');
             bindCustomSingleFileInput('inp-id-copy', 'Seleccionar archivo', 'Ningún archivo seleccionado');
+            bindCustomSingleFileInput('inp-cover-letter', 'Seleccionar archivo', 'Ningún archivo seleccionado');
             bindFormValidationFallback();
+            initPostulationTypeWorkflow();
             initStudentSearch();
         });
 

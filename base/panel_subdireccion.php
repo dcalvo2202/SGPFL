@@ -173,17 +173,26 @@ try {
                             <p>Consultar proyectos concluidos o cancelados (Art. 68 RGPEA).</p>
                         </div>
                     </div>
-                    <!-- HU-012: Revisar Solicitudes de Asesor Externo -->
+                    <!-- HU-012/HU-041: Revisar Solicitudes de Comité -->
                     <div class="col-md-6 col-lg-4">
                         <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_revisar_asesor_externo.php'" style="border-left: 4px solid #17a2b8;">
                             <div class="card-icon" style="color: #17a2b8;">
                                 <i class="bi bi-person-badge-fill"></i>
                             </div>
-                            <h5>Asesores Externos</h5>
-                            <p>Revisar y aprobar solicitudes de perfil académico de asesores externos.</p>
+                            <h5>Solicitudes Comité Asesor</h5>
+                            <p>Revisar y aprobar solicitudes de tutor, asesor interno y asesor externo.</p>
                             <?php if ($external_profiles_pending > 0): ?>
                                 <span class="badge bg-warning text-dark"><?= (int)$external_profiles_pending ?> pendiente(s)</span>
                             <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_comites_asesores.php'" style="border-left: 4px solid #6f42c1;">
+                            <div class="card-icon" style="color: #6f42c1;">
+                                <i class="bi bi-diagram-3-fill"></i>
+                            </div>
+                            <h5>Gestión de Comités</h5>
+                            <p>Aprobar o rechazar comités propuestos desde solicitudes aprobadas y listar comités actuales.</p>
                         </div>
                     </div>
                 </div>
