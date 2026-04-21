@@ -18,17 +18,22 @@ class ExternalAdvisorProfileHU011Test extends TestCase
     {
         $src = $this->readSource('registro_process.php');
 
-        // Currículum: PDF/DOCX <= 5MB
-        $this->assertStringContainsString("['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']", $src);
-        $this->assertStringContainsString("['pdf', 'docx']", $src);
+        // Currículum: PDF <= 5MB
+        $this->assertStringContainsString("['application/pdf']", $src);
+        $this->assertStringContainsString("['pdf']", $src);
         $this->assertStringContainsString("'el Currículum'", $src);
         $this->assertMatchesRegularExpression('/validate_uploaded_file\s*\(\s*\$_FILES\[\'cv_document\'\][\s\S]*?,\s*5\s*,\s*\'el Currículum\'/u', $src);
 
-        // Cédula: PDF/JPG/PNG <= 2MB
-        $this->assertStringContainsString("['application/pdf', 'image/jpeg', 'image/png']", $src);
-        $this->assertStringContainsString("['pdf', 'jpg', 'jpeg', 'png']", $src);
+        // Cédula: JPG/PNG <= 2MB
+        $this->assertStringContainsString("['image/jpeg', 'image/png']", $src);
+        $this->assertStringContainsString("['jpg', 'jpeg', 'png']", $src);
         $this->assertStringContainsString("'la fotocopia de cédula'", $src);
         $this->assertMatchesRegularExpression('/validate_uploaded_file\s*\(\s*\$_FILES\[\'id_copy_document\'\][\s\S]*?,\s*2\s*,\s*\'la fotocopia de cédula\'/u', $src);
+
+        // Carta: PDF <= 5MB
+        $this->assertStringContainsString("'cover_letter_document'", $src);
+        $this->assertStringContainsString("'la carta de solicitud'", $src);
+        $this->assertMatchesRegularExpression('/validate_uploaded_file\s*\(\s*\$_FILES\[\'cover_letter_document\'\][\s\S]*?,\s*5\s*,\s*\'la carta de solicitud\'/u', $src);
     }
 
     public function testRegistroProcessRegistraEstadoEnRevisionYBloqueaReenvioNoEditable(): void
@@ -37,7 +42,7 @@ class ExternalAdvisorProfileHU011Test extends TestCase
 
         // Bloqueo para solicitudes ya enviadas/aprobadas (no modificables)
         $this->assertStringContainsString("in_array(", $src);
-        $this->assertStringContainsString("['En Revisión', 'Aprobado']", $src);
+        $this->assertStringContainsString("['En Revisión', 'En Revision', 'Aprobado']", $src);
 
         // Estado inicial requerido por HU-011
         $this->assertStringContainsString("status = 'En Revisión'", $src);
@@ -51,7 +56,7 @@ class ExternalAdvisorProfileHU011Test extends TestCase
     {
         $src = $this->readSource('registro_process.php');
 
-        $this->assertStringContainsString('Notificación: Solicitud de Asesor Externo en revisión - SGPFL', $src);
+        $this->assertStringContainsString('Notificación: Solicitud de Comité Asesor en revisión - SGPFL', $src);
         $this->assertStringContainsString("panel_subdireccion.php", $src);
 
         // Datos requeridos en la salida/notificación
@@ -97,6 +102,6 @@ class ExternalAdvisorProfileHU011Test extends TestCase
 
         // Listado para validación de solicitudes pendientes
         $this->assertStringContainsString("WHERE (ear.status = 'En Revision' OR ear.status = 'En Revisión')", $panelRevision);
-        $this->assertStringContainsString('Revisión de Solicitudes - Asesor Externo', $panelRevision);
+        $this->assertStringContainsString('Revisión de Solicitudes - Comité Asesor', $panelRevision);
     }
 }

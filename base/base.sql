@@ -2073,6 +2073,9 @@ CREATE TABLE `external_advisor_profile_requests` (
   `id_tipo_tel` varchar(1) DEFAULT NULL,
   `institution` varchar(255) NOT NULL,
   `specialization` varchar(255) NOT NULL,
+  `postulation_type` enum('Asesor Externo','Asesor Interno','Tutor') NOT NULL DEFAULT 'Asesor Externo',
+  `committee_subrole` enum('Asesor 1','Asesor 2') DEFAULT NULL,
+  `committee_role` enum('Tutor','Asesor 1','Asesor 2') NOT NULL DEFAULT 'Asesor 1',
 
   `cv_document` longblob NOT NULL,
   `cv_file_name` varchar(255) NOT NULL,
@@ -2083,12 +2086,18 @@ CREATE TABLE `external_advisor_profile_requests` (
   `id_copy_file_name` varchar(255) NOT NULL,
   `id_copy_mime_type` varchar(100) NOT NULL,
   `id_copy_file_size` int(11) NOT NULL,
+  `cover_letter_document` longblob DEFAULT NULL,
+  `cover_letter_file_name` varchar(255) DEFAULT NULL,
+  `cover_letter_mime_type` varchar(100) DEFAULT NULL,
+  `cover_letter_file_size` int(11) DEFAULT NULL,
 
   `status` enum('En Revision','Aprobado','Rechazado') NOT NULL DEFAULT 'En Revision',
   `rejection_count` int(11) DEFAULT 0 COMMENT 'Contador de rechazos (máximo 2 antes de bloqueo)',
   `approval_expires_at` datetime DEFAULT NULL COMMENT 'Fecha de vencimiento de la aprobación',
   `linked_proposal_id` int(11) DEFAULT NULL COMMENT 'FK a tfg_proposals (propuesta vinculada)',
   `linked_student_id` varchar(50) DEFAULT NULL COMMENT 'ID del estudiante a asesorar',
+  `linked_comite_id` int(11) DEFAULT NULL,
+  `linked_at` datetime DEFAULT NULL,
   `admin_comments` text DEFAULT NULL,
   `reviewed_by` varchar(50) DEFAULT NULL,
   `reviewed_at` datetime DEFAULT NULL,
@@ -2099,8 +2108,31 @@ CREATE TABLE `external_advisor_profile_requests` (
   KEY `idx_external_advisor_request_status` (`status`),
   KEY `idx_approval_expires` (`approval_expires_at`),
   KEY `idx_linked_proposal` (`linked_proposal_id`),
+  KEY `idx_ear_committee_role` (`committee_role`),
+  KEY `idx_ear_linked_comite` (`linked_comite_id`),
   KEY `fk_external_advisor_request_reviewer` (`reviewed_by`),
+  CONSTRAINT `fk_ear_linked_comite` FOREIGN KEY (`linked_comite_id`) REFERENCES `comite` (`Id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_external_advisor_request_reviewer` FOREIGN KEY (`reviewed_by`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- ----------------------------
+-- HU-041: Table structure for `hu041_committee_audit`
+-- Auditoría de acciones sobre solicitudes/comités
+-- ----------------------------
+DROP TABLE IF EXISTS `hu041_committee_audit`;
+CREATE TABLE `hu041_committee_audit` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `actor_id` varchar(50) NOT NULL,
+  `action_type` varchar(80) NOT NULL,
+  `entity_type` varchar(50) NOT NULL,
+  `entity_id` int(11) DEFAULT NULL,
+  `details` text DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_hu041_actor` (`actor_id`),
+  KEY `idx_hu041_action` (`action_type`),
+  KEY `idx_hu041_entity` (`entity_type`,`entity_id`),
+  CONSTRAINT `fk_hu041_actor` FOREIGN KEY (`actor_id`) REFERENCES `sis_user` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- ----------------------------

@@ -21,7 +21,7 @@ final class ExternalAdvisorProfileHU011Cest
     {
         $I->amOnPage('/registro.php');
 
-        $I->see('Solicitud de Registro - Asesor Externo');
+        $I->see('Solicitud de Integrante de Comité Asesor');
         $I->see('Su solicitud quedará en estado');
         $I->see('En Revisión');
 
@@ -30,6 +30,7 @@ final class ExternalAdvisorProfileHU011Cest
         $I->seeElement('input[name="specialization"]');
         $I->seeElement('input[name="cv_document"]');
         $I->seeElement('input[name="id_copy_document"]');
+        $I->seeElement('input[name="cover_letter_document"]');
         $I->seeElement('input[name="linked_student_id"]');
 
         $I->see('Tamaño máximo: 5 MB');

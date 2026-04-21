@@ -13,8 +13,25 @@ $cds_domain = $mySessionController->getVar("cds_domain");
 $cds_locate = $mySessionController->getVar("cds_locate");
 $base_url = $cds_domain . $cds_locate;
 
-// Verificar que sea asesor (rol 5 según la base de datos)
+// Permitir rol asesor (5) o cualquier usuario con solicitud de comité aprobada.
+$has_committee_approval = false;
 if ($current_user_rol != 5) {
+    include_once(__DIR__ . "/inc/db/bdcommon.inc");
+    $conn = new mysqli($db_host, $usuario, $clave, $db);
+    if (!$conn->connect_error) {
+        $conn->set_charset('utf8');
+        $stmt = $conn->prepare("SELECT id FROM external_advisor_profile_requests WHERE applicant_id = ? AND status = 'Aprobado' LIMIT 1");
+        if ($stmt) {
+            $stmt->bind_param('s', $current_user_id);
+            $stmt->execute();
+            $has_committee_approval = $stmt->get_result()->num_rows > 0;
+            $stmt->close();
+        }
+        $conn->close();
+    }
+}
+
+if ($current_user_rol != 5 && !$has_committee_approval) {
     header('Location: dashboard.php');
     exit;
 }
