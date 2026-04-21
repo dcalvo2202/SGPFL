@@ -27,7 +27,6 @@ if ($proyecto_id <= 0) {
 $sql = "SELECT p.id_aprobado,
                p.proposal_id,
                p.nombre,
-               DATE(p.fecha_creacion) AS fecha_registro_proyecto,
                DATE(p.fecha_finalizacion) AS fecha_defensa
         FROM proyecto_aprobado p
         WHERE p.id_aprobado = ?
@@ -80,47 +79,31 @@ CSS;
 
           <div class="mb-3">
             <label class="form-label">Código del acuerdo</label>
-            <input type="text"
-                   name="codigo_acuerdo"
-                   class="form-control"
-                   placeholder="UNA-CTFG-EI-ACUE-001-<?= date('Y') ?>"
-                   required>
+            <input type="text" name="codigo_acuerdo" class="form-control"
+                   placeholder="UNA-CTFG-EI-ACUE-001-<?= date('Y') ?>" required>
           </div>
 
           <div class="mb-3">
             <label class="form-label">Fecha de aprobación del documento final</label>
-            <input type="date"
-                   name="fecha_aprobacion_documento_final"
-                   class="form-control"
-                   required>
+            <input type="date" name="fecha_aprobacion_documento_final" class="form-control" required>
           </div>
 
           <div class="mb-3">
             <label class="form-label">Fecha de defensa</label>
-            <input type="date"
-                   name="fecha_defensa"
-                   class="form-control"
-                   value="<?= htmlspecialchars($proyecto['fecha_defensa'] ?? '') ?>"
-                   required>
+            <input type="date" name="fecha_defensa" class="form-control"
+                   value="<?= htmlspecialchars($proyecto['fecha_defensa'] ?? '') ?>" required>
           </div>
 
           <div class="mb-3">
             <label class="form-label">Correo destino</label>
-            <input type="email"
-                   name="correo_destino"
-                   class="form-control"
-                   value="malcolm.chaves.obando@est.una.ac.cr"
-                   required>
+            <input type="email" name="correo_destino" class="form-control"
+                   value="malcolm.chaves.obando@est.una.ac.cr" required>
           </div>
 
           <div class="mb-3">
             <label class="form-label">Documento PDF</label>
-            <input type="file"
-                   name="documento"
-                   class="form-control"
-                   accept="application/pdf,.pdf"
-                   required>
-            <small class="text-muted">Solo PDF. Tamaño máximo: 10 MB.</small>
+            <input type="file" name="documento" class="form-control"
+                   accept="application/pdf,.pdf" required>
           </div>
 
           <div class="d-flex gap-2">
@@ -149,20 +132,7 @@ document.getElementById('frmAcuerdo').addEventListener('submit', async function 
         body: formData
     });
 
-    const text = await response.text();
-    let data;
-
-    try {
-        data = JSON.parse(text);
-    } catch (e) {
-        document.getElementById('msgBox').innerHTML = `
-          <div class="alert alert-danger">
-            El servidor no devolvió JSON válido.
-            <pre style="white-space: pre-wrap;">${text}</pre>
-          </div>
-        `;
-        return;
-    }
+    const data = await response.json();
 
     document.getElementById('msgBox').innerHTML = `
       <div class="alert alert-${data.success ? 'success' : 'danger'}">
@@ -171,6 +141,21 @@ document.getElementById('frmAcuerdo').addEventListener('submit', async function 
     `;
 
     if (data.success) {
+        const mailBody = new URLSearchParams({
+            tipo: 'Acuerdo Defensa Pública',
+            proyecto_id: formData.get('proyecto_id'),
+            proposal_id: formData.get('proposal_id'),
+            codigo_acuerdo: formData.get('codigo_acuerdo'),
+            fecha_defensa: formData.get('fecha_defensa'),
+            correo_destino: formData.get('correo_destino')
+        });
+
+        fetch('send_tfg_mail.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: mailBody.toString()
+        });
+
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 });
