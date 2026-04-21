@@ -1,21 +1,26 @@
 <?php
-include("mod/login/check.php");
-include('lang/lang.es');
-require_once __DIR__ . '/inc/db/db.php';
+include_once __DIR__ . '/../../login/check.php';
+
+$base_path = realpath(__DIR__ . '/../../../');
+
+include_once $base_path . '/lang/lang.es';
+require_once $base_path . '/inc/db/db.php';
 
 $current_user_id   = $mySessionController->getVar("usuario");
 $current_user_name = $mySessionController->getVar("nombre");
 $current_user_rol  = (int)$mySessionController->getVar("rol");
-$base_url          = $mySessionController->getVar("cds_domain") . $mySessionController->getVar("cds_locate");
+$cds_domain        = $mySessionController->getVar("cds_domain");
+$cds_locate        = $mySessionController->getVar("cds_locate");
+$base_url          = $cds_domain . $cds_locate;
 
 if ($current_user_rol !== 3) {
-    header('Location: dashboard.php');
+    header('Location: ' . $base_url . 'dashboard.php');
     exit;
 }
 
 $proyecto_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 if ($proyecto_id <= 0) {
-    header('Location: ProyectosRegistrados.php');
+    header('Location: ' . $base_url . 'ProyectosRegistrados.php');
     exit;
 }
 
@@ -36,7 +41,7 @@ $proyecto = mysqli_fetch_assoc($rs);
 mysqli_stmt_close($stmt);
 
 if (!$proyecto) {
-    header('Location: ProyectosRegistrados.php');
+    header('Location: ' . $base_url . 'ProyectosRegistrados.php');
     exit;
 }
 
@@ -53,9 +58,9 @@ CSS;
 ?>
 <!doctype html>
 <html lang="es">
-<?php include __DIR__ . '/head.php'; ?>
+<?php include $base_path . '/head.php'; ?>
 <body class="fondo-una d-flex flex-column min-vh-100">
-<?php include 'header.php'; ?>
+<?php include $base_path . '/header.php'; ?>
 
 <main class="flex-fill">
   <div class="container my-5">
@@ -84,7 +89,10 @@ CSS;
 
           <div class="mb-3">
             <label class="form-label">Fecha de aprobación del documento final</label>
-            <input type="date" name="fecha_aprobacion_documento_final" class="form-control" required>
+            <input type="date"
+                   name="fecha_aprobacion_documento_final"
+                   class="form-control"
+                   required>
           </div>
 
           <div class="mb-3">
@@ -94,9 +102,6 @@ CSS;
                    class="form-control"
                    value="<?= htmlspecialchars($proyecto['fecha_defensa'] ?? '') ?>"
                    required>
-            <small class="text-muted">
-              Puede ajustarla si la fecha real de defensa difiere de la fecha final del proyecto.
-            </small>
           </div>
 
           <div class="mb-3">
@@ -122,7 +127,7 @@ CSS;
             <button type="submit" class="btn btn-primary">
               <i class="bi bi-save"></i> Guardar acuerdo
             </button>
-            <a href="ProyectosRegistrados.php" class="btn btn-secondary">
+            <a href="<?= htmlspecialchars($base_url) ?>ProyectosRegistrados.php" class="btn btn-secondary">
               <i class="bi bi-arrow-left-circle"></i> Volver
             </a>
           </div>
@@ -132,7 +137,7 @@ CSS;
   </div>
 </main>
 
-<?php include 'footer.php'; ?>
+<?php include $base_path . '/footer.php'; ?>
 
 <script>
 document.getElementById('frmAcuerdo').addEventListener('submit', async function (e) {
@@ -144,17 +149,28 @@ document.getElementById('frmAcuerdo').addEventListener('submit', async function 
         body: formData
     });
 
-    const data = await response.json();
-    const box = document.getElementById('msgBox');
+    const text = await response.text();
+    let data;
 
-    box.innerHTML = `
+    try {
+        data = JSON.parse(text);
+    } catch (e) {
+        document.getElementById('msgBox').innerHTML = `
+          <div class="alert alert-danger">
+            El servidor no devolvió JSON válido.
+            <pre style="white-space: pre-wrap;">${text}</pre>
+          </div>
+        `;
+        return;
+    }
+
+    document.getElementById('msgBox').innerHTML = `
       <div class="alert alert-${data.success ? 'success' : 'danger'}">
         ${data.message}
       </div>
     `;
 
     if (data.success) {
-        this.reset();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 });
