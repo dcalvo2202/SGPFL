@@ -49,6 +49,12 @@ if (!isset($_FILES['documento']) || $_FILES['documento']['error'] !== UPLOAD_ERR
     exit;
 }
 
+$max_size = 10 * 1024 * 1024;
+if ($_FILES['documento']['size'] > $max_size) {
+    echo json_encode(['success' => false, 'message' => 'El archivo excede el tamaño máximo de 10 MB.']);
+    exit;
+}
+
 $finfo = finfo_open(FILEINFO_MIME_TYPE);
 $mime_type = finfo_file($finfo, $_FILES['documento']['tmp_name']);
 finfo_close($finfo);
@@ -60,6 +66,8 @@ if ($mime_type !== 'application/pdf') {
 
 $conn = $id_con;
 mysqli_set_charset($conn, "utf8mb4");
+
+$newFileAbsolutePath = null;
 
 try {
     mysqli_begin_transaction($conn);
@@ -112,6 +120,8 @@ try {
         throw new Exception("No se pudo guardar el archivo en el servidor.");
     }
 
+    $newFileAbsolutePath = $targetPath;
+
     if ($acuerdoExistente) {
         $stmtUpdate = mysqli_prepare($conn, "
             UPDATE acuerdo_defensa_publica
@@ -141,7 +151,9 @@ try {
             $current_user_id,
             $proyecto_id
         );
-        mysqli_stmt_execute($stmtUpdate);
+        if (!mysqli_stmt_execute($stmtUpdate)) {
+            throw new Exception("No se pudo actualizar el acuerdo.");
+        }
         mysqli_stmt_close($stmtUpdate);
 
         if (!empty($acuerdoExistente['archivo_ruta'])) {
@@ -172,12 +184,18 @@ try {
             $correo_destino,
             $current_user_id
         );
-        mysqli_stmt_execute($stmtInsert);
+        if (!mysqli_stmt_execute($stmtInsert)) {
+            throw new Exception("No se pudo registrar el acuerdo.");
+        }
         mysqli_stmt_close($stmtInsert);
     }
 
     $studentIds = [];
-    $stmtStudents = mysqli_prepare($conn, "SELECT estudiante_id FROM proyecto_aprobado_estudiantes WHERE id_aprobado = ?");
+    $stmtStudents = mysqli_prepare($conn, "
+        SELECT estudiante_id
+        FROM proyecto_aprobado_estudiantes
+        WHERE id_aprobado = ?
+    ");
     mysqli_stmt_bind_param($stmtStudents, "i", $proyecto_id);
     mysqli_stmt_execute($stmtStudents);
     $rsStudents = mysqli_stmt_get_result($stmtStudents);
@@ -203,10 +221,15 @@ try {
 
     echo json_encode([
         'success' => true,
-        'message' => 'Acuerdo registrado y notificación enviada correctamente.'
+        'message' => 'Acuerdo registrado y notificación interna enviada correctamente.'
     ]);
 } catch (Exception $e) {
     mysqli_rollback($conn);
+
+    if ($newFileAbsolutePath && is_file($newFileAbsolutePath)) {
+        @unlink($newFileAbsolutePath);
+    }
+
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => $e->getMessage()]);
 }
