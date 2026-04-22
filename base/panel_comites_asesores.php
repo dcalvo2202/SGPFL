@@ -698,8 +698,8 @@ $conn->close();
         </div>
 
         <div class="text-center mt-4">
-            <a href="dashboard.php" class="btn btn-secondary">
-                <i class="bi bi-arrow-left-circle"></i> Volver al panel principal
+            <a href="dashboard.php" class="btn btn-secondary btn-lg px-4">
+                <i class="bi bi-arrow-left-circle"></i> Volver al Panel Principal
             </a>
         </div>
     </div>
