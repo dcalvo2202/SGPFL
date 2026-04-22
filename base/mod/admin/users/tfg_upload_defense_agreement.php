@@ -45,6 +45,7 @@ if (!$proyecto) {
 }
 
 $page_title = 'Adjuntar acuerdo de defensa';
+
 $inlineStyles = <<<'CSS'
 body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 .dashboard-header h1 { font-size: 2.5rem; font-weight: 700; color: #034991; margin-bottom: .5rem; }
@@ -79,31 +80,47 @@ CSS;
 
           <div class="mb-3">
             <label class="form-label">Código del acuerdo</label>
-            <input type="text" name="codigo_acuerdo" class="form-control"
-                   placeholder="UNA-CTFG-EI-ACUE-001-<?= date('Y') ?>" required>
+            <input type="text"
+                   name="codigo_acuerdo"
+                   class="form-control"
+                   placeholder="UNA-CTFG-EI-ACUE-001-<?= date('Y') ?>"
+                   required>
           </div>
 
           <div class="mb-3">
             <label class="form-label">Fecha de aprobación del documento final</label>
-            <input type="date" name="fecha_aprobacion_documento_final" class="form-control" required>
+            <input type="date"
+                   name="fecha_aprobacion_documento_final"
+                   class="form-control"
+                   required>
           </div>
 
           <div class="mb-3">
             <label class="form-label">Fecha de defensa</label>
-            <input type="date" name="fecha_defensa" class="form-control"
-                   value="<?= htmlspecialchars($proyecto['fecha_defensa'] ?? '') ?>" required>
+            <input type="date"
+                   name="fecha_defensa"
+                   class="form-control"
+                   value="<?= htmlspecialchars($proyecto['fecha_defensa'] ?? '') ?>"
+                   required>
           </div>
 
           <div class="mb-3">
             <label class="form-label">Correo destino</label>
-            <input type="email" name="correo_destino" class="form-control"
-                   value="malcolm.chaves.obando@est.una.ac.cr" required>
+            <input type="email"
+                   name="correo_destino"
+                   class="form-control"
+                   value="malcolm.chaves.obando@est.una.ac.cr"
+                   required>
           </div>
 
           <div class="mb-3">
             <label class="form-label">Documento PDF</label>
-            <input type="file" name="documento" class="form-control"
-                   accept="application/pdf,.pdf" required>
+            <input type="file"
+                   name="documento"
+                   class="form-control"
+                   accept="application/pdf,.pdf"
+                   required>
+            <small class="text-muted">Solo PDF. Tamaño máximo: 10 MB.</small>
           </div>
 
           <div class="d-flex gap-2">
@@ -126,40 +143,76 @@ CSS;
 document.getElementById('frmAcuerdo').addEventListener('submit', async function (e) {
     e.preventDefault();
 
+    const msgBox = document.getElementById('msgBox');
+    msgBox.innerHTML = '';
+
     const formData = new FormData(this);
-    const response = await fetch('tfg_upload_defense_agreement_process.php', {
+
+    // 1. Guardar acuerdo + PDF + alerta interna
+    const saveResponse = await fetch('tfg_upload_defense_agreement_process.php', {
         method: 'POST',
         body: formData
     });
 
-    const data = await response.json();
+    const saveText = await saveResponse.text();
+    let saveData;
 
-    document.getElementById('msgBox').innerHTML = `
-      <div class="alert alert-${data.success ? 'success' : 'danger'}">
-        ${data.message}
+    try {
+        saveData = JSON.parse(saveText);
+    } catch (e) {
+        msgBox.innerHTML = `
+          <div class="alert alert-danger">
+            El servidor no devolvió JSON válido al guardar el acuerdo.
+            <pre style="white-space: pre-wrap;">${saveText}</pre>
+          </div>
+        `;
+        return;
+    }
+
+    msgBox.innerHTML = `
+      <div class="alert alert-${saveData.success ? 'success' : 'danger'}">
+        ${saveData.message}
       </div>
     `;
 
-    if (data.success) {
-        const mailBody = new URLSearchParams({
-            tipo: 'Acuerdo Defensa Pública',
-            proyecto_id: formData.get('proyecto_id'),
-            proposal_id: formData.get('proposal_id'),
-            codigo_acuerdo: formData.get('codigo_acuerdo'),
-            fecha_defensa: formData.get('fecha_defensa'),
-            correo_destino: formData.get('correo_destino')
-        });
-
-        fetch('send_tfg_mail.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: mailBody.toString()
-        });
-
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (!saveData.success) {
+        return;
     }
+
+    // 2. Intentar enviar correo de HU-016 sin tocar archivos compartidos
+    const mailBody = new URLSearchParams({
+        proyecto_id: formData.get('proyecto_id')
+    });
+
+    const mailResponse = await fetch('send_defense_agreement_mail.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: mailBody.toString()
+    });
+
+    const mailText = await mailResponse.text();
+    let mailData;
+
+    try {
+        mailData = JSON.parse(mailText);
+    } catch (e) {
+        msgBox.innerHTML += `
+          <div class="alert alert-warning mt-3">
+            El acuerdo se guardó, pero el servidor no devolvió JSON válido al intentar enviar el correo.
+            <pre style="white-space: pre-wrap;">${mailText}</pre>
+          </div>
+        `;
+        return;
+    }
+
+    msgBox.innerHTML += `
+      <div class="alert alert-${mailData.success ? 'success' : 'warning'} mt-3">
+        ${mailData.message}
+      </div>
+    `;
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 </script>
 </body>
 </html>
-?>
