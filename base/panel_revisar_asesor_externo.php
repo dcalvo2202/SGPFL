@@ -303,7 +303,7 @@ function formatBytes($bytes) {
                                     <?php endif; ?>
                                     <?php if ($sol['rejection_count'] > 0): ?>
                                         <p><span class="info-label">Rechazos previos:</span> 
-                                            <span class="badge bg-warning text-dark"><?= $sol['rejection_count'] ?> de 2</span>
+                                            <span class="badge bg-warning text-dark"><?= $sol['rejection_count'] ?></span>
                                         </p>
                                     <?php endif; ?>
                                 </div>
@@ -316,9 +316,6 @@ function formatBytes($bytes) {
                             <?php endif; ?>
                             
                             <?php if ($sol['status'] === 'En Revision' || $sol['status'] === 'En Revisión'): ?>
-                                <?php 
-                                $remaining_attempts = 2 - intval($sol['rejection_count']);
-                                ?>
                                 <div class="mt-3">
                                     <button type="button" class="btn btn-success action-btn btn-aprobar"
                                             data-id="<?= $sol['id'] ?>" 
@@ -327,15 +324,9 @@ function formatBytes($bytes) {
                                     </button>
                                     <button type="button" class="btn btn-danger action-btn btn-rechazar"
                                             data-id="<?= $sol['id'] ?>" 
-                                            data-nombre="<?= htmlspecialchars($sol['full_name'], ENT_QUOTES) ?>"
-                                            data-intentos="<?= $remaining_attempts ?>">
+                                            data-nombre="<?= htmlspecialchars($sol['full_name'], ENT_QUOTES) ?>">
                                         <i class="bi bi-x-lg"></i> Rechazar
                                     </button>
-                                    <?php if ($sol['rejection_count'] > 0): ?>
-                                        <small class="text-muted ms-2">
-                                            (Reintento <?= $sol['rejection_count'] + 1 ?> de 3)
-                                        </small>
-                                    <?php endif; ?>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -508,16 +499,7 @@ function formatBytes($bytes) {
                 e.preventDefault();
                 currentRequest.id = this.getAttribute('data-id');
                 currentRequest.nombre = this.getAttribute('data-nombre');
-                var intentosRestantes = this.getAttribute('data-intentos') || '2';
-                
-                var advertencia = '';
-                if (intentosRestantes === '1') {
-                    advertencia = '<p class="text-warning small"><i class="bi bi-exclamation-triangle"></i> <strong>Advertencia:</strong> Este es el último intento del solicitante.</p>';
-                } else if (intentosRestantes === '0') {
-                    advertencia = '<p class="text-danger small"><i class="bi bi-x-octagon"></i> <strong>El solicitante ya agotó todos sus intentos.</strong></p>';
-                }
-                
-                modalRechazarTexto.innerHTML = '¿Por qué rechaza la solicitud de <strong>' + currentRequest.nombre + '</strong>?' + advertencia;
+                modalRechazarTexto.innerHTML = '¿Por qué rechaza la solicitud de <strong>' + currentRequest.nombre + '</strong>?';
                 motivoRechazo.value = '';
                 errorRechazo.style.display = 'none';
                 showModal(modalRechazar);

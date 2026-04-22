@@ -22,7 +22,6 @@ if (!$current_user_id || ($current_user_rol != 2 && $current_user_rol != 3 && $c
 }
 
 $base_url = rtrim($cds_domain, '/') . '/' . trim($cds_locate, '/') . '/';
-$MAX_REJECTION_ATTEMPTS = 2;
 
 $id = isset($_POST['id']) ? intval($_POST['id']) : 0;
 $decision = isset($_POST['decision']) ? trim($_POST['decision']) : '';
@@ -70,34 +69,50 @@ try {
         $temp_password = '';
         $linked_students_info = [];
         $linked_student_id = trim((string)($solicitud['linked_student_id'] ?? ''));
+        $login_exists = false;
+        $user_exists = false;
 
         $check_stmt = $conn->prepare("SELECT id FROM sis_login WHERE id = ?");
         $check_stmt->bind_param('s', $solicitud['applicant_id']);
         $check_stmt->execute();
         $check_result = $check_stmt->get_result();
-        if ($check_result->num_rows > 0) {
-            throw new Exception('Ya existe un usuario con esa cédula en el sistema.');
-        }
+        $login_exists = ($check_result->num_rows > 0);
         $check_stmt->close();
 
-        $temp_password = substr($solicitud['applicant_id'], 0, 4) . date('Y');
-        $hashed_password = md5($temp_password);
+        if (!$login_exists) {
+            $temp_password = substr($solicitud['applicant_id'], 0, 4) . date('Y');
+            $hashed_password = md5($temp_password);
 
-        $rol_asesor = 5;
-        $stmt_login = $conn->prepare("INSERT INTO sis_login (id, pass, id_roll) VALUES (?, ?, ?)");
-        $stmt_login->bind_param('ssi', $solicitud['applicant_id'], $hashed_password, $rol_asesor);
-        if (!$stmt_login->execute()) {
-            throw new Exception('Error al crear credenciales de acceso: ' . $stmt_login->error);
+            $rol_asesor = 5;
+            $stmt_login = $conn->prepare("INSERT INTO sis_login (id, pass, id_roll) VALUES (?, ?, ?)");
+            $stmt_login->bind_param('ssi', $solicitud['applicant_id'], $hashed_password, $rol_asesor);
+            if (!$stmt_login->execute()) {
+                throw new Exception('Error al crear credenciales de acceso: ' . $stmt_login->error);
+            }
+            $stmt_login->close();
         }
-        $stmt_login->close();
 
-        $stmt_user = $conn->prepare("INSERT INTO sis_user (id, nombre, email, telefono, id_tipo_tel) VALUES (?, ?, ?, ?, ?)");
         $nombre_upper = strtoupper($solicitud['full_name']);
         $telefono = $solicitud['telefono'] ?: null;
         $id_tipo_tel = $solicitud['id_tipo_tel'] ?: null;
-        $stmt_user->bind_param('sssss', $solicitud['applicant_id'], $nombre_upper, $solicitud['email'], $telefono, $id_tipo_tel);
+
+        $check_user_stmt = $conn->prepare("SELECT id FROM sis_user WHERE id = ?");
+        $check_user_stmt->bind_param('s', $solicitud['applicant_id']);
+        $check_user_stmt->execute();
+        $check_user_result = $check_user_stmt->get_result();
+        $user_exists = ($check_user_result->num_rows > 0);
+        $check_user_stmt->close();
+
+        if ($user_exists) {
+            $stmt_user = $conn->prepare("UPDATE sis_user SET nombre = ?, email = ?, telefono = ?, id_tipo_tel = ? WHERE id = ?");
+            $stmt_user->bind_param('sssss', $nombre_upper, $solicitud['email'], $telefono, $id_tipo_tel, $solicitud['applicant_id']);
+        } else {
+            $stmt_user = $conn->prepare("INSERT INTO sis_user (id, nombre, email, telefono, id_tipo_tel) VALUES (?, ?, ?, ?, ?)");
+            $stmt_user->bind_param('sssss', $solicitud['applicant_id'], $nombre_upper, $solicitud['email'], $telefono, $id_tipo_tel);
+        }
         if (!$stmt_user->execute()) {
-            throw new Exception('Error al crear perfil de usuario: ' . $stmt_user->error);
+            $user_action = $user_exists ? 'actualizar' : 'crear';
+            throw new Exception('Error al ' . $user_action . ' perfil de usuario: ' . $stmt_user->error);
         }
         $stmt_user->close();
 
@@ -195,9 +210,9 @@ try {
         @mail($solicitud['email'], $subject, $message_body, $headers);
 
         $linked_count = count($linked_students_info);
-        $base_message = ($temp_password !== '')
+        $base_message = (!$login_exists)
             ? "Solicitud aprobada. Se creó el usuario {$solicitud['applicant_id']}."
-            : "Solicitud aprobada correctamente.";
+            : "Solicitud aprobada. Se reutilizó el usuario existente {$solicitud['applicant_id']}.";
         $grupo_msg = $linked_count > 1
             ? " Se vinculó automáticamente con $linked_count estudiantes del grupo TFG."
             : ($linked_count === 1 ? " Se vinculó con el estudiante asignado." : "");
@@ -209,12 +224,7 @@ try {
         ]);
     } else {
         $current_rejections = intval($solicitud['rejection_count']);
-        if ($current_rejections >= $MAX_REJECTION_ATTEMPTS) {
-            throw new Exception("Esta solicitud ya alcanzó el límite máximo de {$MAX_REJECTION_ATTEMPTS} rechazos. No puede volver a enviarse.");
-        }
-
         $new_rejection_count = $current_rejections + 1;
-        $remaining_attempts = $MAX_REJECTION_ATTEMPTS - $new_rejection_count;
 
         $stmt_update = $conn->prepare("UPDATE external_advisor_profile_requests 
                                         SET status = 'Rechazado', 
@@ -236,9 +246,7 @@ try {
 
         $conn->commit();
 
-        $reintentos_msg = $remaining_attempts > 0
-            ? "<p>Puede corregir los documentos y volver a enviar su solicitud (<strong>{$remaining_attempts} intento(s) restante(s)</strong>).</p>"
-            : "<p style='color: #dc3545;'><strong>Ha agotado todos los intentos de reenvío.</strong> Para continuar, contacte a la Subdirección.</p>";
+        $reintentos_msg = "<p>Puede corregir los documentos y volver a enviar su solicitud cuando lo considere necesario.</p>";
 
         $subject = 'Solicitud Rechazada - Comité Asesor SGPFL';
         $message_body = "
@@ -263,9 +271,7 @@ try {
         $headers .= "Content-type:text/html;charset=UTF-8\r\n";
         @mail($solicitud['email'], $subject, $message_body, $headers);
 
-        $msg = $remaining_attempts > 0
-            ? "Solicitud rechazada. El solicitante puede reenviar ({$remaining_attempts} intento(s) restante(s))."
-            : "Solicitud rechazada definitivamente. El solicitante agotó todos los intentos.";
+        $msg = "Solicitud rechazada. El solicitante puede reenviar la solicitud cuando lo considere necesario.";
 
         echo json_encode([
             'success' => true,

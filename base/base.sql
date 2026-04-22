@@ -2092,7 +2092,7 @@ CREATE TABLE `external_advisor_profile_requests` (
   `cover_letter_file_size` int(11) DEFAULT NULL,
 
   `status` enum('En Revision','Aprobado','Rechazado') NOT NULL DEFAULT 'En Revision',
-  `rejection_count` int(11) DEFAULT 0 COMMENT 'Contador de rechazos (máximo 2 antes de bloqueo)',
+  `rejection_count` int(11) DEFAULT 0 COMMENT 'Contador de rechazos',
   `approval_expires_at` datetime DEFAULT NULL COMMENT 'Fecha de vencimiento de la aprobación',
   `linked_proposal_id` int(11) DEFAULT NULL COMMENT 'FK a tfg_proposals (propuesta vinculada)',
   `linked_student_id` varchar(50) DEFAULT NULL COMMENT 'ID del estudiante a asesorar',
