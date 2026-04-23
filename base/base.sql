@@ -2092,7 +2092,7 @@ CREATE TABLE `external_advisor_profile_requests` (
   `cover_letter_file_size` int(11) DEFAULT NULL,
 
   `status` enum('En Revision','Aprobado','Rechazado') NOT NULL DEFAULT 'En Revision',
-  `rejection_count` int(11) DEFAULT 0 COMMENT 'Contador de rechazos (máximo 2 antes de bloqueo)',
+  `rejection_count` int(11) DEFAULT 0 COMMENT 'Contador de rechazos',
   `approval_expires_at` datetime DEFAULT NULL COMMENT 'Fecha de vencimiento de la aprobación',
   `linked_proposal_id` int(11) DEFAULT NULL COMMENT 'FK a tfg_proposals (propuesta vinculada)',
   `linked_student_id` varchar(50) DEFAULT NULL COMMENT 'ID del estudiante a asesorar',
@@ -2451,6 +2451,59 @@ CREATE TABLE `plantillas_oficiales` (
 -- que aún no estaban explícitamente asignados para esta funcionalidad
 -- (el Administrador ya tiene permisos totales por la función check_permits)
 -- ============================================================================
+
+-- =====================================================
+-- HU-035: Minutas por sesion del Comite Asesor
+-- =====================================================
+
+CREATE TABLE IF NOT EXISTS `project_minutes` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `project_id` INT(11) NOT NULL COMMENT 'FK a proyecto_aprobado.id_aprobado',
+  `session_date` DATE NOT NULL COMMENT 'Fecha de la sesion registrada en la minuta',
+  `file_name` VARCHAR(255) NOT NULL COMMENT 'Nombre original del PDF',
+  `mime_type` VARCHAR(100) NOT NULL DEFAULT 'application/pdf',
+  `file_size` BIGINT(20) NOT NULL DEFAULT 0 COMMENT 'Tamano del archivo en bytes',
+  `file_data` LONGBLOB NOT NULL COMMENT 'Contenido binario del PDF',
+  `uploaded_by` VARCHAR(50) NOT NULL COMMENT 'Usuario que sube la minuta',
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_pm_project_date` (`project_id`, `session_date`),
+  KEY `idx_pm_uploaded_by` (`uploaded_by`),
+  KEY `idx_pm_created_at` (`created_at`),
+  CONSTRAINT `fk_pm_project`
+    FOREIGN KEY (`project_id`) REFERENCES `proyecto_aprobado` (`id_aprobado`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_pm_uploaded_by`
+    FOREIGN KEY (`uploaded_by`) REFERENCES `sis_user` (`id`)
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
+COMMENT='HU-035: Minutas PDF por sesion vinculadas a un proyecto';
+
+
+CREATE TABLE IF NOT EXISTS `project_minute_attendees` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `minute_id` INT(11) NOT NULL COMMENT 'FK a project_minutes.id',
+  `user_id` VARCHAR(50) NOT NULL COMMENT 'Usuario participante de la sesion',
+  `participant_role` ENUM('TUTOR','ASESOR_1','ASESOR_2','ESTUDIANTE') NOT NULL,
+  `attended` TINYINT(1) NOT NULL DEFAULT 0 COMMENT '1=asistio, 0=no asistio',
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uq_pma_minute_user` (`minute_id`, `user_id`),
+  KEY `idx_pma_user` (`user_id`),
+  KEY `idx_pma_attended` (`attended`),
+  CONSTRAINT `fk_pma_minute`
+    FOREIGN KEY (`minute_id`) REFERENCES `project_minutes` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_pma_user`
+    FOREIGN KEY (`user_id`) REFERENCES `sis_user` (`id`)
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
+COMMENT='HU-035: Asistentes registrados por minuta';
 
 -- Verificar que Gestor tenga Agregar y Eliminar en mod5 (por si no estaban)
 INSERT IGNORE INTO `sis_permits` (`id_mod`, `id_action`, `id_roll`) VALUES

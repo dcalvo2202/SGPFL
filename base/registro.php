@@ -143,18 +143,18 @@ $advisor_slots_available = (!$advisor1_taken || !$advisor2_taken);
 <?php if (!empty($current_user_id)): ?>
     <?php include 'header.php'; ?>
 <?php else: ?>
-    <header class="navbar-una sticky-top" style="background: linear-gradient(135deg, #CD1719, #A01215) !important; padding: 1.25rem 0; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);">
+    <header class="navbar-una sticky-top" style="background: linear-gradient(135deg, #CD1719, #A01215) !important; padding: 1.25rem 0;">
         <div class="container-fluid px-4">
-            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
-                <div class="header-left d-flex align-items-center">
-                    <img src="<?= htmlspecialchars($base_url) ?>img/logo.webp" alt="Logo UNA" class="logo-una" style="height: 70px; width: auto;">
-                    <div class="header-text ms-3">
-                        <h5 class="mb-0 text-white fw-bold" style="font-size: 1.75rem; line-height: 1.05;">Universidad Nacional de Costa Rica</h5>
-                        <small class="text-light opacity-85" style="font-size: 1.05rem;">Escuela de Informática</small>
-                    </div>
+            <div class="header-left d-flex align-items-center">
+                <img src="<?= htmlspecialchars($base_url) ?>img/logo.webp" alt="Logo UNA" class="logo-una" style="height: 70px;">
+                <div class="header-text ms-3">
+                    <h5 class="mb-0 text-white fw-bold">Universidad Nacional de Costa Rica</h5>
+                    <small class="text-light opacity-85">Escuela de Informática</small>
                 </div>
-                <div class="header-right text-end">
-                    <a href="login.php" class="btn text-white fw-semibold" style="border: 2px solid rgba(255, 255, 255, 0.3); font-size: 0.98rem; padding: 0.55rem 1rem; border-radius: 12px; transition: all 0.2s ease;">
+            </div>
+            <div class="header-right text-end">
+                <div class="header-actions user-details">
+                    <a href="login.php" class="btn btn-outline-light btn-sm ms-1" style="font-size: 1.05rem; padding: 0.55rem 1.1rem;">
                         <i class="bi bi-box-arrow-in-right"></i> Iniciar sesión
                     </a>
                 </div>
@@ -450,6 +450,15 @@ $advisor_slots_available = (!$advisor1_taken || !$advisor2_taken);
         // Inyectar estilos CSS para SweetAlert2
         const style = document.createElement('style');
         style.textContent = `
+            .registro-loader-gif {
+                width: 18px;
+                height: 18px;
+                object-fit: contain;
+                margin-right: 0.5rem;
+                vertical-align: middle;
+                filter: hue-rotate(200deg) saturate(5) brightness(0.85);
+            }
+
             .swal2-popup .swal2-actions {
                 gap: 0.5rem;
                 align-items: center;
@@ -694,8 +703,27 @@ $advisor_slots_available = (!$advisor1_taken || !$advisor2_taken);
         function bindFormValidationFallback() {
             const form = document.querySelector('form[action="registro_process.php"]');
             if (!form) return;
+            const submitButton = form.querySelector('button[type="submit"]');
 
-            form.addEventListener('submit', function (e) {
+            function setSubmitButtonProcessing(isProcessing) {
+                if (!submitButton) return;
+
+                if (isProcessing) {
+                    if (!submitButton.dataset.originalHtml) {
+                        submitButton.dataset.originalHtml = submitButton.innerHTML;
+                    }
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = '<img src="<?= htmlspecialchars($base_url . 'img/loader_circle.gif') ?>" alt="Procesando" class="registro-loader-gif">Procesando la información...';
+                    return;
+                }
+
+                submitButton.disabled = false;
+                if (submitButton.dataset.originalHtml) {
+                    submitButton.innerHTML = submitButton.dataset.originalHtml;
+                }
+            }
+
+            function handleSubmit(e) {
                 // Si el formulario no es válido, mostrar errores
                 if (!form.checkValidity()) {
                     e.preventDefault();
@@ -726,9 +754,10 @@ $advisor_slots_available = (!$advisor1_taken || !$advisor2_taken);
 
                 // Validar que se haya seleccionado un estudiante
                 e.preventDefault();
-                
+
                 const linkedStudentId = document.getElementById('inp-linked-student-id');
                 if (!linkedStudentId || !linkedStudentId.value || linkedStudentId.value.trim() === '') {
+                    setSubmitButtonProcessing(false);
                     Swal.fire({
                         icon: 'warning',
                         title: 'Estudiante requerido',
@@ -736,7 +765,7 @@ $advisor_slots_available = (!$advisor1_taken || !$advisor2_taken);
                         confirmButtonText: 'Entendido',
                         confirmButtonColor: '#034991'
                     });
-                    
+
                     // Hacer scroll hacia la sección de estudiantes
                     const studentSection = document.getElementById('inp-search-student');
                     if (studentSection) {
@@ -759,12 +788,15 @@ $advisor_slots_available = (!$advisor1_taken || !$advisor2_taken);
                     reverseButtons: true
                 }).then(function (result) {
                     if (result.isConfirmed) {
+                        setSubmitButtonProcessing(true);
                         // Remover el evento listeners para evitar mostrar el diálogo nuevamente
-                        form.removeEventListener('submit', arguments.callee);
+                        form.removeEventListener('submit', handleSubmit);
                         form.submit();
                     }
                 });
-            });
+            }
+
+            form.addEventListener('submit', handleSubmit);
         }
 
         function initPostulationTypeWorkflow() {
