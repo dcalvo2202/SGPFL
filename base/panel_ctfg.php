@@ -2,7 +2,7 @@
 // ================== VERIFICAR AUTENTICACIÓN ==================
 include("mod/login/check.php");
 include('lang/lang.es');
-
+require_once __DIR__ . '/mod/admin/users/CommitteeMinuteProjectRepository.php';
 // ================== VARIABLES DE SESIÓN ==================
 $current_user_id   = $mySessionController->getVar("usuario");
 $current_user_name = $mySessionController->getVar("nombre");
@@ -18,6 +18,8 @@ include_once(__DIR__ . "/inc/db/bdcommon.inc");
 // Este arreglo se llena solo cuando el usuario CTFG también está ligado
 // como asesor interno (tutor/asesor de comité) a uno o más estudiantes.
 $advisor_linked_students = [];
+$committee_projects = [];
+$has_committee_projects = false;
 try {
     $conn = new mysqli($db_host, $usuario, $clave, $db);
     $conn->set_charset("utf8");
@@ -39,6 +41,12 @@ try {
         }
         $stmt->close();
     }
+    
+    // Proyectos donde este usuario CTFG también participa como comité asesor
+    $committee_project_repository = new CommitteeMinuteProjectRepository($conn);
+    $committee_projects = $committee_project_repository->findProjectsByCommitteeMember((string)$current_user_id);
+    $has_committee_projects = !empty($committee_projects);
+
     $conn->close();
 } catch (Exception $e) {
     // No bloquea el panel CTFG: solo registra el error y continúa.
@@ -103,16 +111,6 @@ $avisos_generales = $panel->getAvisos();
                             <p>Gestionar y aprobar proyectos de TFG.</p>
                         </div>
                     </div>
-                    <!-- Revisar Documentos Finales -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_ctfg_review_final_documents.php'" style="border-left: 4px solid #0d6efd;">
-                            <div class="card-icon">
-                                <i class="bi bi-file-earmark-check-fill"></i>
-                            </div>
-                            <h5>Revisar Documentos Finales</h5>
-                            <p>Ver y gestionar documentos finales de TFG pendientes de revisión.</p>
-                        </div>
-                    </div>  
                     <!-- Proyectos Registrados -->
                     <div class="col-md-6 col-lg-4">
                         <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>ProyectosRegistrados.php'" style="border-left: 4px solid #ffc107;">
@@ -173,7 +171,7 @@ $avisos_generales = $panel->getAvisos();
                 </div>
             </div>
 
-            <?php if (!empty($advisor_linked_students)): ?>
+            <?php if (!empty($advisor_linked_students) || $has_committee_projects): ?>
             <!-- Sección opcional: solo se renderiza cuando el usuario tiene estudiantes vinculados como asesor -->
             <div class="quick-actions-section mt-5">
                 <h2 class="section-title">
@@ -182,16 +180,33 @@ $avisos_generales = $panel->getAvisos();
                 </h2>
 
                 <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-4">
-                        <!-- Acceso directo al historial compartido del/los estudiante(s) vinculados -->
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>historial_documentos.php'" style="border-left: 4px solid #6c757d;">
-                            <div class="card-icon" style="color: #6c757d;">
-                                <i class="bi bi-clock-history"></i>
+                    <?php if (!empty($advisor_linked_students)): ?>
+                        <div class="col-md-6 col-lg-4 d-flex">
+                            <!-- Acceso directo al historial compartido del/los estudiante(s) vinculados -->
+                            <div class="quick-action-card w-100 d-flex flex-column justify-content-center" onclick="location.href='<?= htmlspecialchars($base_url) ?>historial_documentos.php'" style="border-left: 4px solid #6c757d;">
+                                <div class="card-icon" style="color: #6c757d;">
+                                    <i class="bi bi-clock-history"></i>
+                                </div>
+                                <h5>Historial de documentos</h5>
+                                <p>Tienes <?= count($advisor_linked_students) ?> estudiante(s) vinculado(s). Ver documentos del grupo asignado.</p>
                             </div>
-                            <h5>Historial de documentos</h5>
-                            <p>Tienes <?= count($advisor_linked_students) ?> estudiante(s) vinculado(s). Ver documentos del grupo asignado.</p>
                         </div>
-                    </div>
+                    <?php endif; ?>
+
+                    <?php if ($has_committee_projects): ?>
+                        <div class="col-md-6 col-lg-4 d-flex">
+                            <div class="quick-action-card w-100 d-flex flex-column justify-content-center" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_committee_minutes.php'" style="border-left: 4px solid #c8151a;">
+                                <div class="card-icon" style="color: #c8151a;">
+                                    <i class="bi bi-file-earmark-text-fill"></i>
+                                </div>
+                                <h5>Registrar Minutas</h5>
+                                <p>Registrar acuerdos y minutas por sesión del Comité Asesor.</p>
+                                <span class="badge bg-danger mt-2 align-self-center">
+                                    <?= count($committee_projects) ?> proyecto(s)
+                                </span>
+                            </div>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
             <?php endif; ?>
