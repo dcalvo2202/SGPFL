@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>SGPFL</title>
+    <!-- Logo de la escuela -->
+    <link rel="icon" type="image/webp" href="http://localhost//base/img/logo.webp">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <link href="http://localhost//base/inc/css/estilo.css" rel="stylesheet">
+    <link href="http://localhost//base/inc/css/panel_estudiante.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        </head><body class="fondo-una d-flex flex-column min-vh-100">
+
+<!-- JQuery -->
+<script src="/base/lib/jquery-3.1.0.min.js" type="text/javascript"></script>
+<!-- SweetAlert2 -->
+<script src="/base/lib/sweetalert2/sweetalert2-v11-23-0.js" type="text/javascript"></script>
+<!-- JQuery Alerts-->
+<link href="/base/lib/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css"/>
+<script src="/base/lib/jquery-alerts/jquery.alerts.js" type="text/javascript"></script>
+
+<!-- JQuery DataTables-->
+<script src="/base/lib/DataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="/base/lib/DataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+<link href="/base/lib/DataTables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+<link href="/base/lib/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+<!-- Prototype EvalScript -->
+<script src="/base/inc/js/prototype.js" type="text/javascript"></script>
+
+<!-- Main  -->
+<script src="/base/inc/js/main.js" type="text/javascript"></script>
+<script src="/base/inc/js/validator.js" type="text/javascript"></script>
+
+<!-- Modulos -->
+<script src="/base/inc/js/login.js" type="text/javascript"></script>
+<script src="/base/inc/js/permit.js" type="text/javascript"></script>
+<script src="/base/inc/js/roll.js" type="text/javascript"></script>
+<script src="/base/inc/js/user.js" type="text/javascript"></script>
+
+<!-- Bootstrap + Font-Awesome + Estilo -->
+<link href="/base/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>  
+<link href="/base/lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<script src="/base/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/base/lib/bootstrap/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
+<link href="/base/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<script src="/base/lib/calendar/calendar.js" type="text/javascript"></script>
+<link href="/base/lib/calendar/calendar.css" rel="stylesheet" type="text/css"/>
+<link href="/base/inc/css/estilo.css" rel="stylesheet" type="text/css"/>
+<link href="/base/inc/css/panel_estudiante.css" rel="stylesheet" type="text/css"/>
+<link href="/base/inc/css/tfg_upload.css" rel="stylesheet" type="text/css"/>
+
+
+ <!-- =============================== HEADER =============================== -->
+    <style>
+        .notification-bell {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            margin-right: 0.5rem;
+        }
+        .notification-bell:hover {
+            background: rgba(255,255,255,0.25);
+            color: white;
+            transform: scale(1.05);
+        }
+        .notification-bell i {
+            font-size: 1.3rem;
+        }
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            min-width: 20px;
+            height: 20px;
+            padding: 0 5px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #fff;
+            background: #ffc107;
+            border: 2px solid #CD1719;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse-badge 2s infinite;
+        }
+        @keyframes pulse-badge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        .user-profile-link {
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.65rem 1.2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .user-profile-link:hover {
+            background: rgba(255,255,255,0.35);
+            border-color: rgba(255,255,255,0.6);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        .user-profile-link:active {
+            transform: translateY(0);
+        }
+        .user-profile-link i {
+            font-size: 1.4rem;
+            margin-right: 0.5rem;
+        }
+        .user-profile-link::after {
+            font-size: 1.1rem;
+            margin-left: 0.5rem;
+            opacity: 0.7;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .user-profile-link:hover::after {
+            opacity: 1;
+            transform: translateX(3px);
+        }
+        /* HU-029: Chat bell */
+        .chat-bell {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            margin-right: 0.5rem;
+        }
+        .chat-bell:hover {
+            background: rgba(255,255,255,0.25);
+            color: white;
+            transform: scale(1.05);
+        }
+        .chat-bell i {
+            font-size: 1.3rem;
+        }
+        .chat-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            min-width: 20px;
+            height: 20px;
+            padding: 0 5px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #fff;
+            background: #6f42c1;
+            border: 2px solid #CD1719;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse-badge 2s infinite;
+        }
+        .navbar-una {
+            position: sticky;
+            top: 0;
+            z-index: 1050;
+            
+        }
+    </style>
+    <header class="navbar-una" style="background: linear-gradient(135deg, #CD1719, #A01215) !important; padding: 1.25rem 0;">
+        <div class="container-fluid px-4">
+            <div class="header-left d-flex align-items-center">
+                <img src="http://localhost//base/img/logo.webp" alt="Logo UNA" class="logo-una" style="height: 70px;">
+                <div class="header-text ms-3">
+                    <h5 class="mb-0 text-white fw-bold">Universidad Nacional de Costa Rica</h5>
+                    <small class="text-light opacity-85">Escuela de Informática</small>
+                </div>
+            </div>
+            <div class="header-right text-end">
+                <div class="user-info text-white mb-2">
+                    <a href="http://localhost//base/perfil.php" class="user-profile-link" title="Haz clic para ver tu perfil">
+                        <i class="bi bi-person-badge"></i>
+                        <span>DARINKA GRBIC GRBIC</span>
+                    </a>
+                </div>
+                <div class="header-actions user-details">
+                    <small class="text-light opacity-75 me-2">ID: 800870458</small>
+                    
+                    <!-- HU-037: Campanita de notificaciones -->
+                    <a href="http://localhost//base/historial_alertas.php" class="notification-bell" title="Mis Notificaciones">
+                        <i class="bi bi-bell-fill"></i>
+                                            </a>
+                    
+                    <!-- HU-029: Chat de comunicación interna -->
+                    <a href="http://localhost//base/chat.php" class="chat-bell" title="Mensajes">
+                        <i class="bi bi-chat-dots-fill"></i>
+                                                    <span class="chat-badge" id="chatHeaderBadge" style="display:none;"></span>
+                                            </a>
+                    
+                    <a href="http://localhost//base/dashboard.php" class="btn btn-outline-light btn-sm ms-1" style="font-size: 1.05rem; padding: 0.55rem 1.1rem;">
+                        <i class="bi bi-house-fill"></i> Inicio
+                    </a>
+                    <a href="http://localhost//base/mod/login/logout.php" 
+                       class="btn btn-outline-light btn-sm ms-2" 
+                       style="font-size: 1.05rem; padding: 0.55rem 1.1rem;"
+                       onclick="return confirmarCierreSesion(event, 'http://localhost//base/')">
+                        <i class="bi bi-box-arrow-right"></i> Salir
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+<main class="flex-fill">
+    <div class="container my-5">
+
+        <div class="dashboard-header text-center mb-5">
+            <h1>Registro de minutas del Comité Asesor</h1>
+            <p class="lead">
+                Seleccione un proyecto donde usted forme parte del comité asesor,
+                cargue la minuta oficial en PDF y marque los asistentes de la sesión.
+            </p>
+        </div>
+
+        
+                    <div class="alert alert-success shadow-sm" role="alert">
+                La minuta se registró correctamente. No se permitirá otra minuta para esa misma fecha en este proyecto.            </div>
+        
+        
+        
+                    <div class="card document-table mb-4">
+                <div class="card-body p-4">
+                    <h2 class="minute-section-title mb-4">
+                        <i class="bi bi-folder-check"></i> Selección de proyecto
+                    </h2>
+
+                    <form method="get" action="panel_committee_minutes.php" class="row g-3 align-items-end">
+                        <div class="col-lg-9">
+                            <label for="project_id" class="form-label fw-semibold">Proyecto</label>
+                            <select name="project_id" id="project_id" class="form-select" required>
+                                <option value="">Seleccione un proyecto</option>
+                                                                    <option
+                                        value="12"
+                                                                            >
+                                        UNA-CTFG-EI-ACUE-064-2024                                        -
+                                        Desarrollo de expediente clinico digital para optimizar el programa de rehabilitacion cardiaca y cerebrovascular de la Universidad Nacional Sede Choro                                        (TUTOR)
+                                    </option>
+                                                            </select>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-danger">
+                                    <i class="bi bi-search me-2"></i> Cargar asistentes
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="alert alert-info mt-4 mb-0">
+                        Solo se listan proyectos donde el usuario autenticado figura como
+                        <strong>tutor</strong>, <strong>asesor 1</strong> o <strong>asesor 2</strong>.
+                    </div>
+                </div>
+            </div>
+        
+        
+        <div class="text-center mt-4">
+            <a href="dashboard.php" class="btn btn-secondary">
+                <i class="bi bi-arrow-left-circle"></i> Volver al panel principal
+            </a>
+        </div>
+    </div>
+</main>
+
+<footer class="footer-una mt-auto">
+        <div class="container">
+            <p class="mb-1">&copy; 2026 Universidad Nacional de Costa Rica</p>
+            <small>Escuela de Informática - Proyecto SGPFL v3.0</small>
+        </div>
+</footer>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .dashboard-header h1 {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #034991;
+        margin-bottom: 0.5rem;
+    }
+
+    .dashboard-header .lead {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #6c757d;
+        max-width: 920px;
+        margin: 0 auto;
+    }
+
+    .document-table {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
+        border: 0;
+    }
+
+    .minute-section-title {
+        color: #c8151a;
+        font-size: 1.35rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .minute-subtitle {
+        color: #034991;
+        font-size: 1.15rem;
+        font-weight: 700;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .table thead th {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: #034991;
+        border-bottom: 2px solid #dee2e6;
+    }
+
+    .table tbody td {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        vertical-align: middle;
+    }
+
+    .minute-empty-state {
+        padding: 2.5rem 1.5rem;
+        text-align: center;
+        color: #6c757d;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .minute-empty-state i {
+        font-size: 2.5rem;
+        color: #adb5bd;
+        margin-bottom: 0.75rem;
+        display: block;
+    }
+</style>
+
+</body>
+</html>

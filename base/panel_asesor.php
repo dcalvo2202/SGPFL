@@ -2,6 +2,7 @@
 // VERIFICAR AUTENTICACIÓN USANDO EL SISTEMA ESTÁNDAR
 include("mod/login/check.php");
 include('lang/lang.es');
+require_once __DIR__ . '/mod/admin/users/CommitteeMinuteProjectRepository.php';
 
 // Obtener variables de sesión
 $current_user_id = $mySessionController->getVar("usuario");
@@ -40,6 +41,25 @@ if ($current_user_rol != 5 && !$has_committee_approval) {
 include_once(__DIR__ . "/inc/db/bdcommon.inc");
 include_once(__DIR__ . "/inc/db/db.php");
 
+$committee_projects = [];
+$has_committee_projects = false;
+
+try {
+    $committee_conn = new mysqli($db_host, $usuario, $clave, $db);
+    if (!$committee_conn->connect_error) {
+        $committee_conn->set_charset('utf8');
+
+        $committee_project_repository = new CommitteeMinuteProjectRepository($committee_conn);
+        $committee_projects = $committee_project_repository->findProjectsByCommitteeMember((string)$current_user_id);
+        $has_committee_projects = !empty($committee_projects);
+
+        $committee_conn->close();
+    }
+} catch (Throwable $e) {
+    $committee_projects = [];
+    $has_committee_projects = false;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -66,8 +86,8 @@ include_once(__DIR__ . "/inc/db/db.php");
                 
                 <!-- Debe buscar con el estudiante relacionado a este asesor -->
                 <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>historial_documentos.php'" style="border-left: 4px solid #6c757d;">
+                    <div class="col-md-6 col-lg-4 d-flex">
+                        <div class="quick-action-card w-100 d-flex flex-column justify-content-center" onclick="location.href='<?= $base_url ?>historial_documentos.php'" style="border-left: 4px solid #6c757d;">
                             <div class="card-icon">
                                 <i class="bi bi-clock-history"></i>
                             </div>
@@ -75,10 +95,23 @@ include_once(__DIR__ . "/inc/db/db.php");
                             <p>Ver documentos subidos al sistema</p>
                         </div>
                     </div>
-                </div>
 
-            </div>
-            
+                    <?php if ($has_committee_projects): ?>
+                        <div class="col-md-6 col-lg-4 d-flex">
+                            <div class="quick-action-card w-100 d-flex flex-column justify-content-center" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_committee_minutes.php'" style="border-left: 4px solid #c8151a;">
+                                <div class="card-icon" style="color: #c8151a;">
+                                    <i class="bi bi-file-earmark-text-fill"></i>
+                                </div>
+                                <h5>Registrar Minutas</h5>
+                                <p>Registrar acuerdos y minutas por sesión del Comité Asesor.</p>
+                                <span class="badge bg-danger mt-2 align-self-center">
+                                    <?= count($committee_projects) ?> proyecto(s)
+                                </span>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div> 
         </div>
     </main>
 
