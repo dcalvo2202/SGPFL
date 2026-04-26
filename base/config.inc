@@ -69,6 +69,14 @@ $mod3 = 3; // Usuarios
 
 */
 
+// Configuración de Google Calendar
+$google_calendar_config = [
+    'client_id'     => '491149849634-oa6s8i71e37q51ta2ovhpp84dtf3d9ls.apps.googleusercontent.com',
+    'client_secret' => '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',
+    'redirect_uri'  => 'http://localhost/base/auth/google_callback.php',
+    'scopes'        => ['https://www.googleapis.com/auth/calendar'],
+];
+
 // Configuración de alertas de vencimiento
 if (!defined('DEADLINE_THRESHOLDS')) {
     define('DEADLINE_THRESHOLDS', [30, 15, 7, 3, 1]); // Días antes del vencimiento
