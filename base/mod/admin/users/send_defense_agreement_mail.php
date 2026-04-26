@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-include_once(__DIR__ . '/../../../lib/mysession/mySession.class.php');
-include_once(__DIR__ . '/../../../lib/mysession/mySession.conf.php');
+include_once __DIR__ . '/../../../lib/mysession/mySession.class.php';
+include_once __DIR__ . '/../../../lib/mysession/mySession.conf.php';
 
 $mySessionController = mySession::getIstance($_MYSESSION_CONF);
 $user_id = $mySessionController->getVar("usuario");
@@ -29,7 +29,7 @@ if ($proyecto_id <= 0) {
     exit;
 }
 
-include_once(__DIR__ . '/defense_agreement_mail_helper.php');
+include_once __DIR__ . '/defense_agreement_mail_helper.php';
 
 $result = sendDefenseAgreementMail($proyecto_id);
 
