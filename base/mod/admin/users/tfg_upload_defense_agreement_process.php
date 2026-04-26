@@ -27,7 +27,7 @@ $proposal_id      = isset($_POST['proposal_id']) ? (int)$_POST['proposal_id'] : 
 $fecha_aprobacion = trim($_POST['fecha_aprobacion_documento_final'] ?? '');
 $fecha_defensa    = trim($_POST['fecha_defensa'] ?? '');
 $codigo_acuerdo   = trim($_POST['codigo_acuerdo'] ?? '');
-$correo_destino   = trim($_POST['correo_destino'] ?? 'malcolm.chaves.obando@est.una.ac.cr');
+$correo_destino   = trim($_POST['correo_destino'] ?? '');
 
 if ($proyecto_id <= 0 || $proposal_id <= 0) {
     echo json_encode(['success' => false, 'message' => 'Proyecto o propuesta inválidos.']);
@@ -41,6 +41,11 @@ if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $fecha_aprobacion) || !preg_match('/^\d
 
 if ($codigo_acuerdo === '') {
     echo json_encode(['success' => false, 'message' => 'El código del acuerdo es obligatorio.']);
+    exit;
+}
+
+if ($correo_destino === '') {
+    echo json_encode(['success' => false, 'message' => 'El correo destino es obligatorio.']);
     exit;
 }
 
@@ -66,7 +71,6 @@ if ($mime_type !== 'application/pdf') {
 
 $conn = $id_con;
 mysqli_set_charset($conn, "utf8mb4");
-
 $newFileAbsolutePath = null;
 
 try {

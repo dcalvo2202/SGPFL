@@ -45,7 +45,6 @@ if (!$proyecto) {
 }
 
 $page_title = 'Adjuntar acuerdo de defensa';
-
 $inlineStyles = <<<'CSS'
 body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 .dashboard-header h1 { font-size: 2.5rem; font-weight: 700; color: #034991; margin-bottom: .5rem; }
@@ -111,6 +110,7 @@ CSS;
                    class="form-control"
                    value="malcolm.chaves.obando@est.una.ac.cr"
                    required>
+            <small class="text-muted">Use el correo institucional de secretaría/dirección para la prueba final.</small>
           </div>
 
           <div class="mb-3">
@@ -175,11 +175,9 @@ document.getElementById('frmAcuerdo').addEventListener('submit', async function 
       </div>
     `;
 
-    if (!saveData.success) {
-        return;
-    }
+    if (!saveData.success) return;
 
-    // 2. Intentar enviar correo de HU-016 sin tocar archivos compartidos
+    // 2. Intentar correo en flujo separado, igual al patrón del proyecto
     const mailBody = new URLSearchParams({
         proyecto_id: formData.get('proyecto_id')
     });
