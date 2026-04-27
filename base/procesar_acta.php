@@ -1,5 +1,6 @@
 <?php
 require('fpdf186/fpdf.php');
+include_once __DIR__ . '/mod/login/check.php';
 
 date_default_timezone_set('America/Costa_Rica');
 
@@ -401,6 +402,55 @@ fputcsv($fp, ['Texto observaciones', $texto_observaciones]);
 fputcsv($fp, ['Texto mención', $texto_mencion]);
 
 fclose($fp);
+
+/*
+|--------------------------------------------------------------------------
+| SINCRONIZACIÓN GOOGLE CALENDAR
+|--------------------------------------------------------------------------
+*/
+try {
+    $gc_user_id = $mySessionController->getVar('usuario');
+    if ($gc_user_id !== '' && $gc_user_id !== null) {
+        require_once __DIR__ . '/vendor/autoload.php';
+        require_once __DIR__ . '/inc/db/bdcommon.inc';
+
+        $gc_conn = new mysqli($db_host, $usuario, $clave, $db);
+        if (!$gc_conn->connect_error) {
+            $gc_conn->set_charset('utf8');
+
+            if (class_exists('Service\GoogleCalendarService')) {
+                $googleCalendarService = new Service\GoogleCalendarService($gc_conn);
+
+                if ($googleCalendarService->isSyncEnabled($gc_user_id)) {
+                    $gc_attendees = array_filter([
+                        $nombre_estudiante_1,
+                        $nombre_estudiante_2,
+                        $presidente_nombre,
+                        $director_nombre,
+                        $tutor_nombre,
+                        $asesor_nombre,
+                    ]);
+
+                    $minutesData = [
+                        'project_name' => $titulo_tfg,
+                        'meeting_date' => $fecha,
+                        'attendees'    => implode(', ', $gc_attendees),
+                        'notes'        => $observaciones_detalle,
+                    ];
+
+                    $googleCalendarService->syncProjectMinutes(
+                        $gc_user_id,
+                        $numero_acta,
+                        $minutesData
+                    );
+                }
+            }
+            $gc_conn->close();
+        }
+    }
+} catch (\Throwable $e) {
+    error_log('Google Calendar sync (acta): ' . $e->getMessage());
+}
 
 /*
 |--------------------------------------------------------------------------

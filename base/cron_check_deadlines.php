@@ -36,6 +36,20 @@ try {
     exit(1);
 }
 
+// Conexión mysqli separada para GoogleCalendarService
+$gc_conn = null;
+try {
+    require_once __DIR__ . '/vendor/autoload.php';
+    require_once __DIR__ . '/inc/db/bdcommon.inc';
+    $gc_mysqli = new mysqli($db_host, $usuario, $clave, $db);
+    if (!$gc_mysqli->connect_error) {
+        $gc_mysqli->set_charset('utf8');
+        $gc_conn = $gc_mysqli;
+    }
+} catch (\Throwable $gc_init_e) {
+    error_log('[cron_check_deadlines] Google Calendar init: ' . $gc_init_e->getMessage());
+}
+
 $log = [];
 $proyectos = getProjectsNearDeadline($conn);
 $log[] = 'Proyectos próximos a vencer: ' . count($proyectos);
@@ -87,6 +101,25 @@ foreach ($proyectos as $p) {
 
             // Solo marcar como enviada cuando el correo se entregó correctamente.
             markAlertAsSent($conn, $user_id, $project_id, $dias_restantes);
+
+            // Sincronizar con Google Calendar si el usuario tiene sync activo
+            if ($gc_conn !== null && class_exists('Service\GoogleCalendarService')) {
+                try {
+                    $gcService = new Service\GoogleCalendarService($gc_conn);
+                    if ($gcService->isSyncEnabled($user_id)) {
+                        $deadlineData = [
+                            'project_name'  => $titulo,
+                            'deadline_date' => $fecha_limite,
+                            'description'   => 'Quedan ' . $dias_restantes . ' día(s) para la fecha límite de entrega del TFG.',
+                        ];
+                        $gcService->syncDeadline($user_id, $project_id . '_' . $dias_restantes, $deadlineData);
+                        $log[] = "Google Calendar sync (deadline) para usuario $user_id";
+                    }
+                } catch (\Throwable $gc_e) {
+                    error_log('[cron_check_deadlines] Google Calendar sync: ' . $gc_e->getMessage());
+                    $log[] = "Error Google Calendar sync para usuario $user_id: " . $gc_e->getMessage();
+                }
+            }
         } else {
             $log[] = "Error al enviar correo a $email";
         }
