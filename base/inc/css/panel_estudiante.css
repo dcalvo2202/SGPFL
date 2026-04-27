@@ -150,11 +150,14 @@
 .quick-actions-grid {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
     margin-bottom: 3rem;
+    flex-wrap: wrap;
 }
 
 .quick-action-card {
+    flex: 1 1 280px;
+    max-width: 320px;
     background: white;
     padding: 30px;
     border-radius: 12px;
@@ -381,6 +384,85 @@
 
 /* --- Diseño Responsivo (Responsive) --- */
 @media (max-width: 768px) {
+    .dashboard-container {
+        padding: 24px 14px;
+    }
+
+    .dashboard-header {
+        margin-bottom: 1.25rem;
+        padding: 0.5rem 0;
+    }
+
+    .dashboard-header h1 {
+        font-size: 1.85rem !important;
+        line-height: 1.15;
+    }
+
+    .dashboard-header .lead {
+        font-size: 1.1rem !important;
+        line-height: 1.35;
+        margin-bottom: 0;
+    }
+
+    .section-title {
+        margin-bottom: 18px;
+        padding-bottom: 8px;
+    }
+
+    .filter-bar,
+    .comites-toolbar,
+    .action-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.65rem;
+    }
+
+    .filter-bar .btn,
+    .comites-toolbar .btn,
+    .action-bar .btn,
+    .btn-group > .btn {
+        min-height: 42px;
+        font-size: 0.95rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+    }
+
+    .btn-group {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+    }
+
+    .btn-group > .btn {
+        flex: 1 1 calc(50% - 0.45rem);
+        border-radius: 0.5rem !important;
+    }
+
+    .table-responsive {
+        border-radius: 10px;
+    }
+
+    .table-responsive .table th,
+    .table-responsive .table td {
+        font-size: 0.95rem !important;
+        white-space: nowrap;
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+    }
+
+    .card-header {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .status-badge,
+    .badge {
+        font-size: 0.82rem !important;
+    }
+
     .status-date-row {
         flex-direction: column;
         align-items: stretch;
@@ -394,17 +476,55 @@
     .section-title {
         font-size: 24px;
     }
+
+    .quick-actions-grid {
+        gap: 1rem;
+    }
+
+    .quick-action-card {
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 @media (max-width: 576px) {
-    .quick-actions-grid {
-        /* Se ajusta con flexbox, esta regla puede ser opcional o ajustada */
-        flex-direction: column;
-        align-items: center;
+    .dashboard-container {
+        padding: 18px 10px;
     }
-    
+
     .dashboard-header h1 {
         font-size: 1.75rem;
+    }
+
+    .dashboard-header .lead {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 1.45rem;
+    }
+
+    .btn-group > .btn,
+    .filter-bar .btn,
+    .comites-toolbar .btn,
+    .action-bar .btn {
+        flex: 1 1 100%;
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .table-responsive .table th,
+    .table-responsive .table td {
+        font-size: 0.88rem !important;
+    }
+
+    .quick-actions-grid {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .quick-action-card {
+        padding: 22px;
     }
 }
 

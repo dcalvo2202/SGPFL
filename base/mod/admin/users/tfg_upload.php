@@ -212,10 +212,10 @@ $additional_css = ['inc/css/tfg_upload.css'];
 
     <!-- =============================== CONTENIDO PRINCIPAL =============================== -->
     <main class="flex-fill">
-        <div class="container my-5">
+        <div class="container my-5 tfg-upload-container tfg-proposal-upload-page">
             
             <div class="dashboard-header text-center mb-4">
-                <h1 style="font-size: 2.5rem; font-weight: 700;">
+                <h1>
                     <i class="bi bi-file-earmark-plus-fill"></i> Nueva Propuesta de TFG
                 </h1>
                 <p class="lead text-muted">Complete la información de su propuesta y forme su grupo de trabajo</p>
@@ -321,13 +321,13 @@ $additional_css = ['inc/css/tfg_upload.css'];
                         <label for="inp-search-members" class="form-label-tfg">
                             <i class="bi bi-person-plus-fill"></i> Agregar Miembros al Grupo (Opcional)
                         </label>
-                        <div style="display: flex; gap: 0;">
+                        <div class="proposal-member-search-row">
                             <input type="text" 
-                                   class="form-control-tfg" 
+                                class="form-control-tfg proposal-member-search-input" 
                                    id="inp-search-members" 
                                    placeholder="Buscar por nombre, email o ID de estudiante"
-                                   style="border-radius: 6px 0 0 6px; flex: 1;">
-                            <button type="button" class="btn-tfg btn-tfg-secondary" id="btn-search-members" style="border-radius: 0 6px 6px 0;">
+                                >
+                            <button type="button" class="btn-tfg btn-tfg-secondary proposal-member-search-btn" id="btn-search-members">
                                 <i class="bi bi-search"></i> Buscar
                             </button>
                         </div>
@@ -337,7 +337,7 @@ $additional_css = ['inc/css/tfg_upload.css'];
                     <div id="div-search-results" style="display: none;"></div>
 
                     <div class="form-group-tfg">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="proposal-members-header">
                             <h6><i class="bi bi-people"></i> Miembros del Grupo:</h6>
                             <small class="text-muted">Total: <span id="member-count">1/1</span></small>
                         </div>
@@ -368,15 +368,15 @@ $additional_css = ['inc/css/tfg_upload.css'];
                     </div>
 
                     <div class="form-group-tfg">
-                        <div style="display: flex; align-items: flex-start; gap: 12px;">
-                            <input type="checkbox" id="chk-terms" name="accept_terms" required style="margin-top: 4px;">
-                            <label for="chk-terms" style="cursor: pointer;">
+                        <div class="proposal-terms-row">
+                            <input type="checkbox" id="chk-terms" name="accept_terms" required class="proposal-terms-checkbox">
+                            <label for="chk-terms" class="proposal-terms-label">
                                 Acepto los términos y condiciones del Sistema de Gestión de TFG y autorizo la creación del proyecto grupal asociado *
                             </label>
                         </div>
                     </div>
 
-                    <div style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 24px;">
+                    <div class="proposal-submit-actions">
                         <a href="<?= htmlspecialchars($panel_href) ?>" class="btn-tfg btn-tfg-secondary">
                             <i class="bi bi-x-circle"></i> Cancelar
                         </a>

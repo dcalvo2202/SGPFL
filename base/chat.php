@@ -37,12 +37,12 @@ $page_title = 'Chat - SGPFL';
 <head>
     <?php include 'head.php'; ?>
 </head>
-<body class="d-flex flex-column min-vh-100" style="background: #f0f2f5;">
+<body class="d-flex flex-column min-vh-100 chat-page-body" style="background: #f0f2f5;">
 
     <?php include 'header.php'; ?>
 
     <!-- =============================== CONTENEDOR PRINCIPAL =============================== -->
-    <div class="container-fluid flex-grow-1 py-3 px-md-4">
+    <div class="container-fluid flex-grow-1 py-3 px-md-4 chat-page-shell">
         <div class="chat-container">
             
             <!-- ==================== SIDEBAR ==================== -->

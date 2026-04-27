@@ -15,6 +15,6 @@ $base_url = $cds_domain . $cds_locate;
 <footer class="footer-una mt-auto">
         <div class="container">
             <p class="mb-1">&copy; <?= date('Y') ?> Universidad Nacional de Costa Rica</p>
-            <small>Escuela de Informática - Proyecto SGPFL v3.0</small>
+            <small>Escuela de Informática - Proyecto SGPFL v3.2</small>
         </div>
 </footer>

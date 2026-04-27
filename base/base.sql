@@ -2468,7 +2468,7 @@ CREATE TABLE IF NOT EXISTS `project_minutes` (
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  KEY `idx_pm_project_date` (`project_id`, `session_date`),
+  UNIQUE KEY `uq_project_minutes_project_date` (`project_id`, `session_date`),
   KEY `idx_pm_uploaded_by` (`uploaded_by`),
   KEY `idx_pm_created_at` (`created_at`),
   CONSTRAINT `fk_pm_project`

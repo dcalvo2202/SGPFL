@@ -148,7 +148,6 @@ document.getElementById('frmAcuerdo').addEventListener('submit', async function 
 
     const formData = new FormData(this);
 
-    // 1. Guardar acuerdo + PDF + alerta interna
     const saveResponse = await fetch('tfg_upload_defense_agreement_process.php', {
         method: 'POST',
         body: formData
@@ -175,11 +174,8 @@ document.getElementById('frmAcuerdo').addEventListener('submit', async function 
       </div>
     `;
 
-    if (!saveData.success) {
-        return;
-    }
+    if (!saveData.success) return;
 
-    // 2. Intentar enviar correo de HU-016 sin tocar archivos compartidos
     const mailBody = new URLSearchParams({
         proyecto_id: formData.get('proyecto_id')
     });

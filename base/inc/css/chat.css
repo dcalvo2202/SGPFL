@@ -972,49 +972,200 @@
 
 /* =============================== RESPONSIVE =============================== */
 @media (max-width: 768px) {
-    .chat-container {
-        height: calc(100vh - 140px);
-        border-radius: 0;
+    .chat-page-shell {
+        padding: 0 !important;
     }
-    
+
+    .chat-page-body .navbar-una {
+        margin-bottom: 0;
+    }
+
+    .chat-page-body .footer-una {
+        display: none;
+    }
+
+    .chat-container {
+        height: calc(100dvh - 170px);
+        min-height: 420px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        box-shadow: none;
+    }
+
     .chat-sidebar {
         width: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        z-index: 10;
-        transition: transform 0.3s ease;
+        min-width: 0;
+        position: relative;
+        left: auto;
+        top: auto;
+        bottom: auto;
+        transform: none;
+        z-index: 1;
     }
-    
-    .chat-container.chat-open .chat-sidebar {
-        transform: translateX(-100%);
-    }
-    
-    .chat-container.chat-open .chat-main {
-        display: flex;
-    }
-    
+
     .chat-main {
         display: none;
         width: 100%;
+        min-width: 0;
     }
-    
-    .chat-header-back {
-        display: block;
+
+    .chat-container.chat-open .chat-sidebar {
+        display: none;
     }
-    
+
+    .chat-container.chat-open .chat-main {
+        display: flex;
+    }
+
+    .chat-sidebar-header {
+        padding: 0.75rem 0.85rem;
+    }
+
+    .chat-sidebar-header h5 {
+        font-size: 1.08rem;
+        margin-bottom: 0.45rem;
+    }
+
+    .chat-search-box {
+        padding: 0.55rem 0.75rem;
+    }
+
+    #chatSearchInput {
+        height: 42px;
+        font-size: 0.95rem;
+    }
+
+    .chat-conversation-item {
+        padding: 0.75rem 0.85rem;
+    }
+
+    .chat-conversation-item .conv-avatar {
+        width: 44px;
+        height: 44px;
+        font-size: 0.96rem;
+    }
+
+    .chat-conversation-item .conv-name {
+        font-size: 0.96rem;
+    }
+
+    .chat-conversation-item .conv-last-message {
+        font-size: 0.88rem;
+    }
+
+    .chat-header {
+        min-height: 64px;
+        padding: 0.65rem 0.75rem;
+    }
+
+    .chat-header .header-avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .chat-header .header-name {
+        font-size: 1rem;
+        max-width: 70vw;
+    }
+
+    .chat-header .header-subtitle {
+        font-size: 0.82rem;
+    }
+
+    #chatGroupMembersBtn {
+        min-width: 38px;
+        height: 38px;
+        padding: 0.25rem 0.45rem;
+    }
+
+    #chatGroupMembersBtn .me-1 {
+        margin-right: 0 !important;
+    }
+
+    #chatGroupMembersBtn {
+        font-size: 0;
+    }
+
+    #chatGroupMembersBtn i {
+        font-size: 1rem;
+    }
+
+    .chat-messages-area {
+        padding: 0.75rem;
+    }
+
     .chat-message {
-        max-width: 90%;
+        max-width: 94%;
+    }
+
+    .chat-message .msg-bubble {
+        font-size: 0.96rem;
+        padding: 0.66rem 0.8rem;
+    }
+
+    .chat-input-area {
+        padding: 0.65rem 0.75rem;
+        gap: 0.45rem;
+    }
+
+    #chatMessageInput {
+        min-height: 40px;
+        font-size: 0.92rem;
+        padding: 0.5rem 0.7rem;
+    }
+
+    .chat-send-btn {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+    }
+
+    .chat-empty-state {
+        padding: 1.25rem;
+    }
+
+    .chat-empty-state i {
+        font-size: 2.3rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .chat-empty-state h4 {
+        font-size: 1.15rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .chat-empty-state p {
+        font-size: 0.92rem;
     }
 }
 
 @media (max-width: 576px) {
-    .chat-sidebar-header h5 {
-        font-size: 1rem;
+    .chat-container {
+        height: calc(100dvh - 155px);
+        min-height: 380px;
     }
-    
+
+    .chat-sidebar-header,
+    .chat-search-box,
+    .chat-conversation-item,
+    .chat-header,
+    .chat-messages-area,
+    .chat-input-area {
+        padding-left: 0.65rem;
+        padding-right: 0.65rem;
+    }
+
+    .chat-message {
+        max-width: 97%;
+    }
+
     .chat-message .msg-bubble {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
+        line-height: 1.35;
+    }
+
+    .chat-conversation-item .conv-time {
+        font-size: 0.74rem;
     }
 }

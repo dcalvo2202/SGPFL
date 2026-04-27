@@ -79,7 +79,7 @@ $additional_css = ['inc/css/tfg_upload.css'];
     <?php include $base_path . '/header.php'; ?>
     <!-- =============================== CONTENIDO PRINCIPAL =============================== -->
     <main class="flex-fill">
-        <div class="container my-5">
+        <div class="container my-5 tfg-upload-container tfg-final-upload-page">
             
             <div class="dashboard-header text-center mb-4">
                 <h1>
@@ -105,8 +105,8 @@ $additional_css = ['inc/css/tfg_upload.css'];
                                 <strong>Próximos pasos:</strong> Contacta directamente con la <strong>Comisión de Trabajos Finales de Graduación (CTFG)</strong> 
                                 para discutir opciones adicionales o recibir orientación sobre cómo proceder.
                             </p>
-                            <div style="margin-top: 15px;">
-                                <a href="mailto:infoctfg@una.crr" class="btn btn-primary" style="margin-right: 10px;">
+                            <div class="final-upload-alert-actions mt-3">
+                                <a href="mailto:infoctfg@una.crr" class="btn btn-primary">
                                     <i class="bi bi-envelope-fill"></i> Contactar CTFG
                                 </a>
                                 <a href="<?= $base_url ?>Panel_SubirTFG.php" class="btn btn-secondary">
@@ -121,7 +121,7 @@ $additional_css = ['inc/css/tfg_upload.css'];
                         <h5><i class="bi bi-exclamation-triangle-fill"></i> Documento Final Rechazado</h5>
                         <p class="mb-3"><?= htmlspecialchars($upload_check['message']) ?></p>
                         <p class="mb-3 text-danger fw-bold"><i class="bi bi-info-circle-fill"></i> Importante: Debe subir <u>todos</u> los archivos nuevamente al enviar la corrección, no solo los archivos modificados.</p>
-                        <div class="d-flex gap-2">
+                        <div class="d-flex gap-2 final-upload-alert-actions">
                             <a  href="<?= $base_url ?>mod/admin/users/tfg_upload_correction.php?id=<?= $upload_check['document_id'] ?>" class="btn btn-primary">
                                 <i class="bi bi-file-earmark-arrow-up-fill"></i> Subir Correcciones
                             </a>
@@ -260,7 +260,7 @@ $additional_css = ['inc/css/tfg_upload.css'];
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-between mt-4">
+                    <div class="d-flex justify-content-between mt-4 final-upload-actions">
                         <a href="<?= htmlspecialchars($panel_href) ?>" class="btn btn-secondary btn-lg">
                             <i class="bi bi-arrow-left"></i> Cancelar
                         </a>
