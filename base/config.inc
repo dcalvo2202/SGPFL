@@ -71,10 +71,12 @@ $mod3 = 3; // Usuarios
 
 // Configuración de Google Calendar
 $google_calendar_config = [
-    'client_id'     => '491149849634-oa6s8i71e37q51ta2ovhpp84dtf3d9ls.apps.googleusercontent.com',
-    'client_secret' => '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',
-    'redirect_uri'  => 'http://localhost/base/auth/google_callback.php',
-    'scopes'        => ['https://www.googleapis.com/auth/calendar'],
+    'client_id'        => getenv('GOOGLE_CLIENT_ID')         ?: '491149849634-oa6s8i71e37q51ta2ovhpp84dtf3d9ls.apps.googleusercontent.com',
+    'client_secret'    => getenv('GOOGLE_CLIENT_SECRET')     ?: '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',
+    'redirect_uri'     => getenv('GOOGLE_REDIRECT_URI')      ?: 'http://localhost/base/auth/google_callback.php',
+    'scopes'           => ['https://www.googleapis.com/auth/calendar'],
+    'token_cipher'     => 'aes-256-gcm',
+    'token_cipher_key' => getenv('GOOGLE_TOKEN_CIPHER_KEY')  ?: 'CAMBIAR_ESTA_CLAVE_EN_PRODUCCION',
 ];
 
 // Configuración de alertas de vencimiento

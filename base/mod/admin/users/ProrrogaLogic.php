@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "/../../../inc/db/db.php";
+require_once __DIR__ . '/../../../vendor/autoload.php';
 
 class ProrrogaLogic {
     private $conn;
@@ -80,6 +81,29 @@ class ProrrogaLogic {
         if ($stmt->execute()) {
             $insert_id = $this->conn->insert_id;
             $stmt->close();
+
+            // Sincronizar con Google Calendar si el usuario lo tiene habilitado.
+            // No debe bloquear la creación de la solicitud si falla la sincronización.
+            try {
+                if (class_exists('Service\\GoogleCalendarService')) {
+                    $googleCalendarService = new Service\GoogleCalendarService($this->conn);
+
+                    if ($googleCalendarService->isSyncEnabled($user_id)) {
+                        $projectData = $this->buildExtensionProjectData($proposal_id);
+                        $projectData['status'] = 'pendiente';
+                        $projectData['request_date'] = date('Y-m-d H:i:s');
+
+                        $googleCalendarService->syncExtensionRequest(
+                            $user_id,
+                            $insert_id,
+                            $projectData
+                        );
+                    }
+                }
+            } catch (Throwable $e) {
+                error_log('ProrrogaLogic::crearSolicitud Google Sync Error: ' . $e->getMessage());
+            }
+
             return [
                 'success' => true,
                 'message' => 'Solicitud de prórroga enviada correctamente.',
@@ -344,6 +368,56 @@ class ProrrogaLogic {
         $stmt->close();
         
         return $historial;
+    }
+
+    /**
+     * Construir datos de proyecto para la sincronización de prórroga.
+     * @param int $proposal_id
+     * @return array
+     */
+    private function buildExtensionProjectData($proposal_id) {
+        $projectName = '';
+        $studentNames = '';
+
+        $sqlProject = "SELECT tp.title, tp.user_id, su.nombre AS owner_name
+                       FROM tfg_proposals tp
+                       LEFT JOIN sis_user su ON su.id = tp.user_id
+                       WHERE tp.id = ?
+                       LIMIT 1";
+        $stmtProject = $this->conn->prepare($sqlProject);
+        if ($stmtProject) {
+            $stmtProject->bind_param('i', $proposal_id);
+            $stmtProject->execute();
+            $resultProject = $stmtProject->get_result();
+            if ($row = $resultProject->fetch_assoc()) {
+                $projectName = $row['title'] ?? '';
+                $studentNames = $row['owner_name'] ?? '';
+            }
+            $stmtProject->close();
+        }
+
+        $sqlMembers = "SELECT GROUP_CONCAT(DISTINCT su.nombre ORDER BY su.nombre SEPARATOR ', ') AS student_names
+                       FROM registered_projects rp
+                       INNER JOIN project_members pm ON pm.project_id = rp.id AND pm.status = 'Activo'
+                       INNER JOIN sis_user su ON su.id = pm.user_id
+                       WHERE rp.tfg_proposal_id = ?";
+        $stmtMembers = $this->conn->prepare($sqlMembers);
+        if ($stmtMembers) {
+            $stmtMembers->bind_param('i', $proposal_id);
+            $stmtMembers->execute();
+            $resultMembers = $stmtMembers->get_result();
+            if ($rowMembers = $resultMembers->fetch_assoc()) {
+                if (!empty($rowMembers['student_names'])) {
+                    $studentNames = $rowMembers['student_names'];
+                }
+            }
+            $stmtMembers->close();
+        }
+
+        return [
+            'project_name' => $projectName,
+            'student_names' => $studentNames,
+        ];
     }
 
     public function __destruct() {

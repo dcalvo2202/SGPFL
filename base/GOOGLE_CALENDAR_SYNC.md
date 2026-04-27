@@ -50,19 +50,22 @@ Este documento describe los pasos necesarios para sincronizar eventos de la apli
 composer require google/apiclient
 ```
 
-### 2.2 Crear archivo de configuración
-**Archivo:** `config/google_calendar_config.php`
+### 2.2 Agregar configuración en `config.inc`
+
+Agregar la configuración de Google Calendar dentro del arreglo global ya centralizado en `config.inc`.
 
 ```php
-<?php
-return [
-    'client_id' => 'YOUR_CLIENT_ID.apps.googleusercontent.com',
-    'client_secret' => 'YOUR_CLIENT_SECRET',
-    'redirect_uri' => 'http://localhost/base/auth/google_callback.php',
+$google_calendar_config = [
+    'client_id' => getenv('GOOGLE_CLIENT_ID') ?: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
+    'client_secret' => getenv('GOOGLE_CLIENT_SECRET') ?: 'YOUR_CLIENT_SECRET',
+    'redirect_uri' => getenv('GOOGLE_REDIRECT_URI') ?: 'http://localhost/base/auth/google_callback.php',
     'scopes' => ['https://www.googleapis.com/auth/calendar'],
+    'token_cipher' => 'aes-256-gcm',
+    'token_cipher_key' => getenv('GOOGLE_TOKEN_CIPHER_KEY') ?: 'CAMBIAR_ESTA_CLAVE_EN_PRODUCCION',
 ];
-?>
 ```
+
+**Importante:** `GOOGLE_TOKEN_CIPHER_KEY` debe resolverse a 32 bytes efectivos para AES-256. En la implementación del servicio se normaliza con `hash('sha256', $clave, true)` para obtener una clave binaria segura y de longitud fija.
 
 ---
 
@@ -77,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `google_calendar_tokens` (
   `id_user` varchar(50) NOT NULL,
   `access_token` longtext NOT NULL,
   `refresh_token` longtext,
-  `token_expires_at` datetime NOT NULL,
+  `token_expires_at` longtext NOT NULL,
   `calendar_id` varchar(255),
   `sync_enabled` tinyint(1) DEFAULT 1,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -133,7 +136,7 @@ class GoogleCalendarService
     private $client;
     private $calendarService;
     private $dbConnection;
-    private $configPath = __DIR__ . '/../config/google_calendar_config.php';
+    private $googleCalendarConfig;
 
     public function __construct($dbConnection)
     {
@@ -146,17 +149,97 @@ class GoogleCalendarService
      */
     private function initializeClient()
     {
-        $config = require $this->configPath;
+        require_once __DIR__ . '/../config.inc';
+        global $google_calendar_config;
+
+        if (!isset($google_calendar_config) || !is_array($google_calendar_config)) {
+            throw new Exception('No se encontró la configuración de Google Calendar en config.inc');
+        }
+
+        $this->googleCalendarConfig = $google_calendar_config;
         
         $this->client = new Client();
-        $this->client->setClientId($config['client_id']);
-        $this->client->setClientSecret($config['client_secret']);
-        $this->client->setRedirectUri($config['redirect_uri']);
-        $this->client->addScope($config['scopes']);
+        $this->client->setClientId($this->googleCalendarConfig['client_id']);
+        $this->client->setClientSecret($this->googleCalendarConfig['client_secret']);
+        $this->client->setRedirectUri($this->googleCalendarConfig['redirect_uri']);
+        $this->client->addScope($this->googleCalendarConfig['scopes']);
         $this->client->setAccessType('offline');
         $this->client->setPrompt('consent');
         
         $this->calendarService = new Calendar($this->client);
+    }
+
+    /**
+     * Obtener clave de cifrado normalizada a 32 bytes
+     */
+    private function getEncryptionKey()
+    {
+        return hash('sha256', $this->googleCalendarConfig['token_cipher_key'], true);
+    }
+
+    /**
+     * Cifrar un valor usando OpenSSL y AES-256-GCM
+     */
+    private function encryptValue($plainText)
+    {
+        if ($plainText === null || $plainText === '') {
+            return null;
+        }
+
+        $cipher = $this->googleCalendarConfig['token_cipher'] ?? 'aes-256-gcm';
+        $ivLength = openssl_cipher_iv_length($cipher);
+        $iv = random_bytes($ivLength);
+        $tag = '';
+
+        $cipherText = openssl_encrypt(
+            (string) $plainText,
+            $cipher,
+            $this->getEncryptionKey(),
+            OPENSSL_RAW_DATA,
+            $iv,
+            $tag
+        );
+
+        if ($cipherText === false) {
+            throw new Exception('No se pudo cifrar el valor del token');
+        }
+
+        return json_encode([
+            'iv' => base64_encode($iv),
+            'tag' => base64_encode($tag),
+            'data' => base64_encode($cipherText),
+        ]);
+    }
+
+    /**
+     * Descifrar un valor previamente protegido con OpenSSL
+     */
+    private function decryptValue($encryptedPayload)
+    {
+        if ($encryptedPayload === null || $encryptedPayload === '') {
+            return null;
+        }
+
+        $payload = json_decode($encryptedPayload, true);
+
+        if (!is_array($payload) || !isset($payload['iv'], $payload['tag'], $payload['data'])) {
+            throw new Exception('El payload cifrado es inválido');
+        }
+
+        $plainText = openssl_decrypt(
+            base64_decode($payload['data']),
+            $this->googleCalendarConfig['token_cipher'] ?? 'aes-256-gcm',
+            $this->getEncryptionKey(),
+            OPENSSL_RAW_DATA,
+            base64_decode($payload['iv']),
+            base64_decode($payload['tag'])
+        );
+
+        if ($plainText === false) {
+            throw new Exception('No se pudo descifrar el valor del token');
+        }
+
+        return $plainText;
     }
 
     /**
@@ -196,6 +279,9 @@ class GoogleCalendarService
     {
         $refreshToken = $accessToken['refresh_token'] ?? null;
         $expiresAt = date('Y-m-d H:i:s', time() + $accessToken['expires_in']);
+        $encryptedAccessToken = $this->encryptValue(json_encode($accessToken));
+        $encryptedRefreshToken = $this->encryptValue($refreshToken);
+        $encryptedExpiresAt = $this->encryptValue($expiresAt);
 
         $query = "
             INSERT INTO google_calendar_tokens 
@@ -209,7 +295,7 @@ class GoogleCalendarService
         ";
 
         $stmt = $this->dbConnection->prepare($query);
-        $stmt->bind_param('ssss', $userId, json_encode($accessToken), $refreshToken, $expiresAt);
+        $stmt->bind_param('ssss', $userId, $encryptedAccessToken, $encryptedRefreshToken, $encryptedExpiresAt);
         
         if (!$stmt->execute()) {
             throw new Exception('Error al guardar tokens: ' . $stmt->error);
@@ -232,14 +318,16 @@ class GoogleCalendarService
         }
 
         $row = $result->fetch_assoc();
-        $accessToken = json_decode($row['access_token'], true);
+        $accessToken = json_decode($this->decryptValue($row['access_token']), true);
+        $refreshToken = $this->decryptValue($row['refresh_token']);
+        $tokenExpiresAt = $this->decryptValue($row['token_expires_at']);
         
         // Verificar si el token está expirado
-        if (strtotime($row['token_expires_at']) < time()) {
-            if ($row['refresh_token']) {
+        if (strtotime($tokenExpiresAt) < time()) {
+            if ($refreshToken) {
                 // Refrescar token
                 $this->client->setAccessToken($accessToken);
-                $refreshedToken = $this->client->fetchAccessTokenWithRefreshToken($row['refresh_token']);
+                $refreshedToken = $this->client->fetchAccessTokenWithRefreshToken($refreshToken);
                 
                 if (!isset($refreshedToken['error'])) {
                     $this->saveTokens($userId, $refreshedToken);
@@ -814,6 +902,7 @@ exit;
 2. Hacer clic en "Conectar Google Calendar"
 3. Autorizar la aplicación
 4. Verificar que se guarden los tokens en BD
+5. Confirmar que `access_token`, `refresh_token` y `token_expires_at` no queden legibles en texto plano en la base de datos
 
 ### 9.2 Test de sincronización de prorrogas
 1. Crear una nueva solicitud de prórroga
@@ -837,23 +926,24 @@ exit;
 ## PASO 10: Configuración de Producción
 
 ### 10.1 Configurar variables de entorno
-Crear archivo `.env`:
+Definir estas variables en el entorno del servidor web o cargarlas desde un archivo `.env` usando una librería como `vlucas/phpdotenv` antes de ejecutar el flujo de autenticación:
 ```
 GOOGLE_CLIENT_ID=tu_client_id
 GOOGLE_CLIENT_SECRET=tu_client_secret
 GOOGLE_REDIRECT_URI=https://tudominio.com/base/auth/google_callback.php
+GOOGLE_TOKEN_CIPHER_KEY=una_clave_de_32_bytes_super_segura
 ```
 
-### 10.2 Actualizar `config/google_calendar_config.php`
+### 10.2 Leer variables desde `config.inc`
 ```php
-<?php
-return [
-    'client_id' => $_ENV['GOOGLE_CLIENT_ID'] ?? 'YOUR_CLIENT_ID',
-    'client_secret' => $_ENV['GOOGLE_CLIENT_SECRET'] ?? 'YOUR_CLIENT_SECRET',
-    'redirect_uri' => $_ENV['GOOGLE_REDIRECT_URI'] ?? 'http://localhost/base/auth/google_callback.php',
+$google_calendar_config = [
+    'client_id' => getenv('GOOGLE_CLIENT_ID') ?: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
+    'client_secret' => getenv('GOOGLE_CLIENT_SECRET') ?: 'YOUR_CLIENT_SECRET',
+    'redirect_uri' => getenv('GOOGLE_REDIRECT_URI') ?: 'http://localhost/base/auth/google_callback.php',
     'scopes' => ['https://www.googleapis.com/auth/calendar'],
+    'token_cipher' => 'aes-256-gcm',
+    'token_cipher_key' => getenv('GOOGLE_TOKEN_CIPHER_KEY') ?: 'CAMBIAR_ESTA_CLAVE_EN_PRODUCCION',
 ];
-?>
 ```
 
 ### 10.3 Ejecutar migraciones de BD
@@ -928,17 +1018,15 @@ mysql -u root base_db < sql/google_calendar_sync_log.sql
 
 1. **Nunca** guardar tokens en localStorage o cookies
 2. **Siempre** usar HTTPS en producción
-3. **Encriptar** tokens en BD: `ALTER TABLE google_calendar_tokens MODIFY access_token VARBINARY(MAX);`
+3. **Encriptar** `access_token`, `refresh_token` y `token_expires_at` en la capa PHP con `openssl_encrypt` usando `AES-256-GCM`
 4. **Auditar** acceso a tokens
-5. **Rotar** tokens regularmente
+5. **Guardar** `GOOGLE_TOKEN_CIPHER_KEY` fuera del repositorio y rotarla de forma controlada
 
 ---
 
 ## Resumen de Archivos a Crear
 
 ```
-├── config/
-│   └── google_calendar_config.php      (Configuración)
 ├── service/
 │   └── GoogleCalendarService.php       (Servicio principal)
 ├── auth/
@@ -948,6 +1036,7 @@ mysql -u root base_db < sql/google_calendar_sync_log.sql
 ├── sql/
 │   ├── google_calendar_tokens.sql      (Tabla de tokens)
 │   └── google_calendar_sync_log.sql    (Log de sincronización)
+├── config.inc                          (Configuración centralizada)
 └── GOOGLE_CALENDAR_SYNC.md             (Este archivo)
 ```
 
